@@ -1,0 +1,280 @@
+.shell {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.header {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.headerRow {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-weight: 760;
+  letter-spacing: -0.03em;
+}
+
+.brandMark {
+  display: grid;
+  width: 30px;
+  height: 34px;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 5px;
+  background: var(--surface);
+  box-shadow: 4px 4px 0 var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navLink,
+.localeControl {
+  min-height: 40px;
+  padding: 9px 12px;
+  border-radius: 7px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  color: var(--ink);
+  background: var(--surface-raised);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.localeControl {
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+}
+
+.mobileNav {
+  display: none;
+}
+
+.button,
+.secondaryButton {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 17px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 730;
+  line-height: 1.2;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.button {
+  color: #fff;
+  background: var(--accent);
+}
+
+.button:hover {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
+}
+
+.secondaryButton {
+  border-color: var(--line-strong);
+  color: var(--ink);
+  background: var(--surface);
+}
+
+.secondaryButton:hover {
+  border-color: var(--accent);
+}
+
+.disabledButton {
+  cursor: not-allowed;
+  color: var(--muted);
+  background: var(--surface-subtle);
+}
+
+.draft {
+  border-bottom: 1px solid var(--warning-line);
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+
+.draftInner {
+  padding-block: 9px;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.footer {
+  margin-top: 96px;
+  border-top: 1px solid var(--line);
+  background: var(--ink);
+  color: #dce6f5;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(140px, 1fr));
+  gap: 48px;
+  padding-block: 56px 36px;
+}
+
+.footerTitle {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.footerText {
+  max-width: 50ch;
+  color: #9eacc1;
+}
+
+.footerLinks {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.footerLinks a {
+  color: #dce6f5;
+}
+
+.footerMeta {
+  padding-block: 18px 28px;
+  border-top: 1px solid #29364a;
+  color: #8391a8;
+  font-size: 13px;
+}
+
+.rail {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.railItem {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-subtle);
+}
+
+.railIndex {
+  display: grid;
+  width: 34px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.railTitle {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.railMeta {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.railArrow {
+  color: var(--accent);
+  font-size: 20px;
+}
+
+@media (max-width: 840px) {
+  .nav,
+  .desktopAction {
+    display: none;
+  }
+
+  .mobileNav {
+    display: block;
+  }
+
+  .mobileNav summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 10px 12px;
+    border: 1px solid var(--line-strong);
+    border-radius: 7px;
+    font-weight: 700;
+  }
+
+  .mobilePanel {
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    display: grid;
+    width: min(300px, calc(100vw - 32px));
+    gap: 4px;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .secondaryButton {
+    transition: none;
+  }
+}

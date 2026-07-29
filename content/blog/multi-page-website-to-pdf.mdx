@@ -1,0 +1,18 @@
+## Define the crawl before starting
+
+“Convert this website” is unbounded unless the service sets a start URL,
+same-origin rule, depth limit, page limit and duplicate policy.
+
+## Keep external links external
+
+Following every link can cross into unrelated domains and create a large,
+surprising workload. A safe first version crawls only the original origin and
+keeps external destinations as clickable links in the output.
+
+## Build one navigable document
+
+Page titles and source paths can become bookmarks in a merged PDF. Failed pages
+should be listed clearly rather than silently omitted.
+
+Authenticated sites need a different workflow. The public crawler should not
+accept session cookies or attempt to bypass login pages.

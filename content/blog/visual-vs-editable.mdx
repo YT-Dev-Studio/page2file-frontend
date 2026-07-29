@@ -1,0 +1,18 @@
+## Visual mode is a fidelity contract
+
+Visual mode captures meaningful webpage sections as stable images. It is useful
+for complex layouts, custom typography, charts and decorative composition. The
+tradeoff is that text may not remain selectable or easy to edit.
+
+## Editable mode is a capability contract
+
+Editable mode rebuilds supported text, images, shapes and links using document
+primitives. It produces a more reusable file, but browser layout and document
+layout are different systems.
+
+## Adaptive fallback is the honest middle
+
+The practical strategy is not to promise universal editability. Preserve
+ordinary text and links, then rasterize only the blocks that cannot be
+reproduced reliably. Each fallback should appear as a warning before the user
+downloads the file.

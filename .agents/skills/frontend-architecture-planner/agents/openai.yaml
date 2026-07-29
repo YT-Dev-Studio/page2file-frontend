@@ -1,0 +1,6 @@
+interface:
+    display_name: 'Frontend Architecture Planner'
+    short_description: 'Plan frontend architecture'
+    default_prompt: 'Use $frontend-architecture-planner to plan frontend ownership boundaries, routing, state, data, styling, forms, build/workspace concerns, approval gates, and implementation handoff before code changes.'
+policy:
+    allow_implicit_invocation: true

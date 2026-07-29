@@ -1,0 +1,6 @@
+interface:
+    display_name: 'Project Onboarding Adapter'
+    short_description: 'Adapt host project context'
+    default_prompt: 'Use $project-onboarding-adapter when the user says адаптируйся or asks to adapt .agents to the current frontend project, create project overlays, scan MCP needs, cache project context, and record limited framework-agnostic skill applicability when the project is outside React/Next.js.'
+policy:
+    allow_implicit_invocation: true

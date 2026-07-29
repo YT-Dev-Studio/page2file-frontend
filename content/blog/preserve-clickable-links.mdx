@@ -1,0 +1,22 @@
+## Links need a semantic target
+
+A screenshot can look exact while losing every link. A clickable PDF requires
+the converter to identify anchor elements, map their visible bounds and carry
+safe targets into the document.
+
+Buttons are more complicated. Some are links styled as controls, while others
+run JavaScript and have no meaningful document destination. A converter should
+not invent a target for an interactive button.
+
+## Remove unsafe destinations
+
+Only normal web destinations such as `https:` links should survive by default.
+Targets using script schemes, embedded credentials or private network hosts
+need to be removed and reported in preview.
+
+## Test the exported document
+
+Check representative text links, image links and call-to-action buttons in the
+actual PDF reader. A visible blue underline is not evidence that a PDF
+annotation exists. The preview should state when a link was removed rather than
+quietly flattening it.

@@ -1,0 +1,20 @@
+## Viewport cuts are not document sections
+
+A long webpage is designed for continuous scrolling. Cutting it every fixed
+number of pixels can split headings from paragraphs, crop images and leave
+single lines at the top of a page.
+
+## Detect meaningful boundaries
+
+Headings, article sections, repeated cards and strong visual separators provide
+better candidate breaks. The converter can score these boundaries and then fit
+them to the selected paper size.
+
+## Give the user local control
+
+Automatic detection will never understand every design. A preview needs
+reorder, split, merge, remove and restore controls. Keyboard-accessible move
+buttons are important even when drag and drop is available.
+
+The final render should apply a small ordered list of operations to the preview
+revision, not upload the complete page again.

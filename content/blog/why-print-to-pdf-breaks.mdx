@@ -1,0 +1,20 @@
+## Web layouts are not paper layouts
+
+Responsive pages choose dimensions from a viewport. Printed documents use fixed
+paper sizes and page fragmentation rules. Sticky headers, full-height panels
+and overflow containers can behave very differently.
+
+## The print stylesheet may be incomplete
+
+Some sites provide excellent print CSS. Others hide useful content, preserve
+navigation overlays or never load lazy sections before printing.
+
+## Preview the document structure
+
+A section-aware exporter can stabilize the page, detect meaningful blocks and
+show proposed breaks before rendering. It should still respect the site rather
+than claiming a perfect editable copy of every browser feature.
+
+Browser Print to PDF remains a good choice for simple pages with intentional
+print styles. Use a richer preview workflow when the page structure needs
+repair.

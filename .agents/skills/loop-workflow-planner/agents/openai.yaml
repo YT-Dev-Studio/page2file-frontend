@@ -1,0 +1,6 @@
+interface:
+    display_name: 'Loop Workflow Planner'
+    short_description: 'Plan bounded verification loops'
+    default_prompt: 'Use $loop-workflow-planner to define a platform-neutral bounded loop with measurable acceptance criteria, retry limits, review, memory, and stop conditions.'
+policy:
+    allow_implicit_invocation: true

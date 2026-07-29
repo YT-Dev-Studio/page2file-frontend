@@ -1,0 +1,20 @@
+## The active tab already has the conversation
+
+Private AI chats often require an authenticated browser session. Sending
+cookies or chat HTML to a remote URL service creates an unnecessary trust
+boundary.
+
+A browser extension can work after an explicit user click, read the visible
+conversation in the active tab and build a local preview.
+
+## Preserve conversation structure
+
+Useful export keeps speaker order, messages, code blocks, tables and visible
+citations. A clean-document option may reflow the presentation, but it should
+not erase authorship or source context.
+
+## Know what is not loaded
+
+Long chats may virtualize older messages. Collapsed branches, unloaded content
+and off-DOM artifacts cannot be captured until the user makes them available.
+The extension should explain this instead of claiming hidden access.

@@ -1,0 +1,6 @@
+interface:
+    display_name: 'Goal Planner'
+    short_description: 'Define frontend task goals'
+    default_prompt: 'Use $goal-planner to define the goal, resolve material ambiguity one question at a time, and set observable acceptance criteria before standard or deep frontend work.'
+policy:
+    allow_implicit_invocation: true

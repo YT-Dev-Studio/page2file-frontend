@@ -1,0 +1,6 @@
+interface:
+    display_name: 'Pattern Library Manager'
+    short_description: 'Maintain reusable pattern rules'
+    default_prompt: 'Use $pattern-library-manager to add or tighten reusable approved patterns and anti-patterns, include small bad and good examples, update graph links and evals, and validate the bundle.'
+policy:
+    allow_implicit_invocation: true

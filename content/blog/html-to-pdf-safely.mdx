@@ -1,0 +1,20 @@
+## Treat supplied HTML as executable input
+
+HTML can contain scripts, network requests, embedded frames and URLs that target
+internal services. A production HTML-to-PDF feature must not load it in the
+same browser context as the public application.
+
+## Start with a narrow input contract
+
+Accept bounded HTML and inline CSS. Disable scripts, external network access and
+file access. Exclude ZIP projects until archive traversal, size and dependency
+policies are designed.
+
+## Isolate the renderer
+
+Use a disposable browser process with CPU, memory and time limits. Network
+policy should deny private, reserved and metadata ranges even if application
+validation misses an edge case.
+
+The current Page2File frontend does not execute supplied HTML. It only describes
+the future sandbox boundary.
