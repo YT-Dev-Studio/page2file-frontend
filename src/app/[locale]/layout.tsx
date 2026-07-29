@@ -4,7 +4,7 @@ import "../globals.css";
 import { getLocaleDefinition, isLocale, localeRegistry } from "@/shared/i18n/locales";
 import { SiteShell } from "@/shared/ui/site-shell";
 
-export const generateStaticParams = (): ReadonlyArray<{ locale: string }> => {
+export const generateStaticParams = (): Array<{ locale: string }> => {
   const localeParam = (
     definition: (typeof localeRegistry)[number],
   ): { locale: string } => ({ locale: definition.code });

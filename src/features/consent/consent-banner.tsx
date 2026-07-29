@@ -56,24 +56,44 @@ const readAttribution = (): Attribution => {
   return attribution;
 };
 
-const loadGoogleAnalytics = (attribution: Attribution): void => {
-  if (!gaMeasurementId || document.querySelector("[data-page2file-ga]")) {
+const setGoogleAnalyticsDisabled = (disabled: boolean): void => {
+  if (!gaMeasurementId) {
     return;
   }
+  const analyticsWindow = window as unknown as Record<string, unknown>;
+  analyticsWindow[`ga-disable-${gaMeasurementId}`] = disabled;
+};
+
+const loadGoogleAnalytics = (attribution: Attribution): void => {
+  if (!gaMeasurementId) {
+    return;
+  }
+  setGoogleAnalyticsDisabled(false);
   window.dataLayer = window.dataLayer ?? [];
   window.gtag = (...args: Array<unknown>): void => {
     window.dataLayer?.push(args);
   };
-  const script = document.createElement("script");
-  script.async = true;
-  script.dataset.page2fileGa = "true";
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`;
-  document.head.append(script);
+  window.gtag("consent", "update", { analytics_storage: "granted" });
   window.gtag("js", new Date());
   window.gtag("config", gaMeasurementId, {
     send_page_view: true,
     ...attribution,
   });
+
+  if (document.querySelector("[data-page2file-ga]")) {
+    return;
+  }
+  const script = document.createElement("script");
+  script.async = true;
+  script.dataset.page2fileGa = "true";
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`;
+  document.head.append(script);
+};
+
+const disableGoogleAnalytics = (): void => {
+  window.gtag?.("consent", "update", { analytics_storage: "denied" });
+  setGoogleAnalyticsDisabled(true);
+  document.querySelector("[data-page2file-ga]")?.remove();
 };
 
 export const ConsentBanner = ({ locale }: { locale: Locale }): ReactNode => {
@@ -81,12 +101,15 @@ export const ConsentBanner = ({ locale }: { locale: Locale }): ReactNode => {
   const [consent, setConsent] = useState<ConsentState>("unknown");
   const [preferencesOpen, setPreferencesOpen] = useState(false);
 
-  useEffect(function initializeConsent(): void {
-    const storedConsent = readConsent();
-    setConsent(storedConsent);
-    if (storedConsent === "accepted") {
-      loadGoogleAnalytics(readAttribution());
-    }
+  useEffect(function initializeConsent(): () => void {
+    const timer = window.setTimeout(function synchronizeConsent(): void {
+      const storedConsent = readConsent();
+      setConsent(storedConsent);
+      if (storedConsent === "accepted") {
+        loadGoogleAnalytics(readAttribution());
+      }
+    }, 0);
+    return (): void => window.clearTimeout(timer);
   }, []);
 
   const saveConsent = (nextConsent: ConsentState): void => {
@@ -95,6 +118,8 @@ export const ConsentBanner = ({ locale }: { locale: Locale }): ReactNode => {
     setPreferencesOpen(false);
     if (nextConsent === "accepted") {
       loadGoogleAnalytics(readAttribution());
+    } else {
+      disableGoogleAnalytics();
     }
   };
 

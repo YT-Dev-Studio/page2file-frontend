@@ -122,3 +122,10 @@
 - `AC-010` — consent и UTM flow не отправляет analytics до разрешенного consent state.
 - `AC-011` — backend roadmap начинается с testable narrow slice и не обещает сразу полный editable engine.
 - `AC-012` — frontend roadmap включает все страницы и состояния с test content.
+
+## Статус реализации frontend на 2026-07-29
+
+Frontend-объём `AC-002`, `AC-003`, `AC-004`, `AC-009`, `AC-010` и `AC-012`
+реализован как работающий prototype. Все conversion results остаются явно
+обозначенными sample-файлами; backend-ориентированные критерии остаются планом
+следующего отдельного проекта.

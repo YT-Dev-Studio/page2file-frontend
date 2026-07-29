@@ -268,3 +268,11 @@ Frontend считается «полностью тестово реализов
 - Keyboard and screen-reader critical flow review.
 - Responsive visual QA на converter, preview, article и landing templates.
 - Browser E2E только после отдельного approval на test setup.
+
+## Статус реализации на 2026-07-29
+
+План реализован в текущем репозитории как Next.js `16.2.12` frontend prototype.
+Production data boundary — будущий контракт; текущая реализация использует только
+mock adapter, локальные MDX-материалы и sample PDF/PPTX. BFF и `src/app/api` не
+реализованы. Browser QA выполняется внешним Playwright MCP без добавления
+Playwright/Vitest-конфигурации в репозиторий.

@@ -152,3 +152,10 @@ Chrome extension -----> local tab/chat conversion by default
 - Network policy для Chromium.
 
 Конкретные providers выбираются после load/fidelity spike; план не привязывает архитектуру к одному облаку.
+
+## Текущая граница реализации на 2026-07-29
+
+В этом репозитории реализован только frontend. `src/app/api` намеренно отсутствует,
+а UI обращается только к локальному deterministic mock adapter. BFF и внешний
+backend остаются отдельными будущими deployable-проектами и не требуются для
+сборки или демонстрации текущего frontend prototype.

@@ -61,6 +61,8 @@ export const PreviewWorkspace = ({
   const [stage, setStage] = useState<MockJobStage>(
     job.scenario === "human-verification" ? "human-verification" : "queued",
   );
+  const [verified, setVerified] = useState(false);
+  const [retryAsHappyPath, setRetryAsHappyPath] = useState(false);
   const [sections, setSections] = useState<ReadonlyArray<PreviewSection>>(
     createPreviewSections(job.format),
   );
@@ -69,15 +71,18 @@ export const PreviewWorkspace = ({
   const [draggedId, setDraggedId] = useState("");
 
   useEffect(function advanceMockJob(): (() => void) | undefined {
-    if (job.scenario === "human-verification") {
+    if (job.scenario === "human-verification" && !verified) {
       return undefined;
     }
+    const terminalStage: MockJobStage = retryAsHappyPath
+      ? "preview-ready"
+      : scenarioStage(job);
     const stages: ReadonlyArray<MockJobStage> = [
       "queued",
       "loading-source",
       "analyzing",
       "rendering-preview",
-      scenarioStage(job),
+      terminalStage,
     ];
     const currentIndex = stages.indexOf(stage);
     if (currentIndex < 0 || currentIndex === stages.length - 1) {
@@ -87,7 +92,7 @@ export const PreviewWorkspace = ({
       setStage(stages[currentIndex + 1]);
     }, 520);
     return (): void => window.clearTimeout(timer);
-  }, [job, stage]);
+  }, [job, retryAsHappyPath, stage, verified]);
 
   const selectedSection =
     sections.find((section: PreviewSection): boolean => section.id === selectedId) ??
@@ -148,26 +153,34 @@ export const PreviewWorkspace = ({
   };
 
   const mergeWithNext = (sectionId: string): void => {
+    const sourceIndex = sections.findIndex(
+      (section: PreviewSection): boolean => section.id === sectionId,
+    );
+    const nextSection = sections[sourceIndex + 1];
+    if (sourceIndex < 0 || !nextSection) {
+      return;
+    }
+
     setSections((currentSections: ReadonlyArray<PreviewSection>): ReadonlyArray<PreviewSection> => {
-      const sourceIndex = currentSections.findIndex(
+      const currentSourceIndex = currentSections.findIndex(
         (section: PreviewSection): boolean => section.id === sectionId,
       );
-      const nextSection = currentSections[sourceIndex + 1];
-      if (sourceIndex < 0 || !nextSection) {
+      const currentNextSection = currentSections[currentSourceIndex + 1];
+      if (currentSourceIndex < 0 || !currentNextSection) {
         return currentSections;
       }
       const mergedSection: PreviewSection = {
-        ...currentSections[sourceIndex],
-        title: `${currentSections[sourceIndex].title} + ${nextSection.title}`,
+        ...currentSections[currentSourceIndex],
+        title: `${currentSections[currentSourceIndex].title} + ${currentNextSection.title}`,
       };
       const remainingSections = currentSections.filter(
-        (section: PreviewSection): boolean => section.id !== nextSection.id,
+        (section: PreviewSection): boolean => section.id !== currentNextSection.id,
       );
       const replaceMerged = (section: PreviewSection): PreviewSection =>
         section.id === sectionId ? mergedSection : section;
-      addOperation({ type: "merge", sectionId, withSectionId: nextSection.id });
       return remainingSections.map(replaceMerged);
     });
+    addOperation({ type: "merge", sectionId, withSectionId: nextSection.id });
   };
 
   const handleDragStart = (event: DragEvent<HTMLElement>, sectionId: string): void => {
@@ -192,8 +205,14 @@ export const PreviewWorkspace = ({
     }, 900);
   };
 
-  const retryJob = (): void => setStage("queued");
-  const completeVerification = (): void => setStage("queued");
+  const retryJob = (): void => {
+    setRetryAsHappyPath(true);
+    setStage("queued");
+  };
+  const completeVerification = (): void => {
+    setVerified(true);
+    setStage("queued");
+  };
   const currentStatus = statusContent[stage];
   const showWorkspace = !isTerminalError(stage) && stage !== "human-verification";
 

@@ -24,7 +24,7 @@ const staticContentRoutes: ReadonlyArray<string> = [
   ...updateEntries.map((entry): string => `updates/${entry.slug}`),
 ];
 
-export const generateStaticParams = (): ReadonlyArray<RouteParams> => {
+export const generateStaticParams = (): Array<RouteParams> => {
   const params: Array<RouteParams> = [];
   const addLocale = (
     definition: (typeof localeRegistry)[number],
@@ -68,6 +68,15 @@ const getRouteMetadata = (
       route,
       title: "Convert a webpage to PowerPoint",
       description: "Turn webpage sections into previewable visual or editable 16:9 slides.",
+    });
+  }
+  if (route === "chrome-extension/how-to-use") {
+    return buildMetadata({
+      locale,
+      route,
+      title: "How to use the Page2File Chrome extension",
+      description:
+        "Follow the step-by-step guide or video transcript to export webpages and AI chats to PDF or PowerPoint.",
     });
   }
   if (segments[0] === "preview" || segments[0] === "download") {

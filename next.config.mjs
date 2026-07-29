@@ -1,6 +1,9 @@
 import createMDX from "@next/mdx";
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const withMDX = createMDX({});
+const projectRoot = dirname(fileURLToPath(import.meta.url));
 
 const securityHeaders = [
   {
@@ -21,6 +24,9 @@ const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   poweredByHeader: false,
   reactStrictMode: true,
+  turbopack: {
+    root: projectRoot,
+  },
   async headers() {
     return [
       {

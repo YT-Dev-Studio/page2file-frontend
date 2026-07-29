@@ -121,3 +121,10 @@
 - Публикация GPTs или расширения.
 - Создание юридически окончательных текстов без legal review.
 - Обещание production-grade editable conversion до проведения fidelity spike.
+
+## Статус реализации frontend на 2026-07-29
+
+- Этот репозиторий теперь является самостоятельным Next.js frontend-проектом.
+- Реализован mock-only adapter; BFF, backend API и реальная конвертация в репозитории отсутствуют.
+- Зафиксированы 15 locale prefixes, consent-gated GA4, test content и sample artifacts.
+- Next.js обновлён до security patch `16.2.12`; продуктовые решения документа сохраняются.
