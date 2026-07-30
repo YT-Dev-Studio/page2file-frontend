@@ -190,6 +190,7 @@ export const RealPreviewWorkspace = ({
   const [operationStatus, setOperationStatus] = useState<
     "idle" | "submitting"
   >("idle");
+  const [pollVersion, setPollVersion] = useState(0);
 
   useEffect(
     function pollRealJob(): (() => void) {
@@ -200,8 +201,11 @@ export const RealPreviewWorkspace = ({
           const job = await getRealJob(jobId);
           if (!active) return;
           setWorkspace({ status: "ready", job });
-          if (!selectedId && job.preview?.sections[0]) {
-            setSelectedId(job.preview.sections[0].id);
+          if (job.preview?.sections[0]) {
+            setSelectedId(
+              (currentSelection): string =>
+                currentSelection || job.preview?.sections[0]?.id || "",
+            );
           }
           if (activeStatuses.has(job.status)) {
             timer = window.setTimeout(load, 1_000);
@@ -225,7 +229,7 @@ export const RealPreviewWorkspace = ({
         window.clearTimeout(timer);
       };
     },
-    [jobId, selectedId],
+    [jobId, pollVersion],
   );
 
   if (workspace.status === "loading") {
@@ -349,6 +353,7 @@ export const RealPreviewWorkspace = ({
     try {
       const nextJob = await renderRealJob(jobId, manifest.revision);
       setWorkspace({ status: "ready", job: nextJob });
+      setPollVersion((currentVersion): number => currentVersion + 1);
     } catch (error) {
       const code =
         error instanceof ConversionApiError
