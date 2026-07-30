@@ -94,7 +94,7 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
         {
           title: "Public webpage",
           text:
-            "The future server workflow will temporarily process a public HTTPS URL. This prototype demonstrates the complete review UI with mock jobs.",
+            "The self-hosted conversion service temporarily processes a public HTTPS URL, creates a reviewable preview, and deletes source data and artifacts on short retention schedules.",
         },
         {
           title: "Current tab or AI chat",
@@ -107,17 +107,17 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
       aiChatLink: "Export AI chats locally",
       blogLink: "Read practical conversion guides",
       questionsLabel: "Questions",
-      questionsTitle: "Clear boundaries before real conversion begins",
+      questionsTitle: "Clear boundaries before conversion begins",
       faq: [
         {
-          question: "Does this prototype fetch my URL?",
+          question: "Does the service fetch my URL?",
           answer:
-            "No. It validates the shape locally and runs a deterministic mock job.",
+            "Yes, after you submit the form. The backend validates the URL against SSRF rules before every connection and processes it only for the active anonymous job.",
         },
         {
           question: "Can every element stay editable?",
           answer:
-            "No. The production design uses adaptive raster fallback and shows those decisions before download.",
+            "No. Editable mode uses adaptive raster fallback and shows those decisions before download.",
         },
         {
           question: "Is conversion history stored?",
@@ -139,7 +139,7 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
     landing: {
       legalDraft:
         "Draft content — legal owner, jurisdiction and processor review are required before indexing.",
-      tryPrototype: "Try the web prototype",
+      tryPrototype: "Open the web converter",
       relatedPages: "Related workflows",
     },
   },
@@ -181,7 +181,7 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
         {
           title: "Общедоступная веб-страница",
           text:
-            "Будущий серверный процесс будет временно обрабатывать открытый HTTPS URL. Сейчас прототип показывает полный интерфейс проверки на детерминированных mock-задачах.",
+            "Self-hosted сервис временно обрабатывает открытый HTTPS URL, создаёт проверяемый предпросмотр и удаляет исходные данные и файлы по коротким срокам хранения.",
         },
         {
           title: "Текущая вкладка или AI-чат",
@@ -194,17 +194,17 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
       aiChatLink: "Экспортировать AI-чаты локально",
       blogLink: "Читать практические руководства",
       questionsLabel: "Вопросы",
-      questionsTitle: "Понятные границы до начала реальной конвертации",
+      questionsTitle: "Понятные границы до начала конвертации",
       faq: [
         {
-          question: "Прототип загружает введённый URL?",
+          question: "Сервис загружает введённый URL?",
           answer:
-            "Нет. Он только проверяет формат адреса в браузере и запускает детерминированную mock-задачу.",
+            "Да, после отправки формы. Backend проверяет URL по правилам защиты от SSRF перед каждым соединением и обрабатывает его только для активной анонимной задачи.",
         },
         {
           question: "Каждый элемент останется редактируемым?",
           answer:
-            "Нет. Будущая система будет переводить сложные блоки в изображения и заранее показывать это решение в предпросмотре.",
+            "Нет. Редактируемый режим переводит сложные блоки в изображения и заранее показывает это решение в предпросмотре.",
         },
         {
           question: "История конвертаций сохраняется?",
@@ -238,7 +238,7 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
     landing: {
       legalDraft:
         "Черновой текст — до индексации требуется проверка юридического владельца, юрисдикции и списка обработчиков данных.",
-      tryPrototype: "Открыть веб-прототип",
+      tryPrototype: "Открыть веб-конвертер",
       relatedPages: "Связанные сценарии",
     },
   },

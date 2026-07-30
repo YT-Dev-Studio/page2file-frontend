@@ -165,3 +165,14 @@ Source URL хранится только в защищенном payload сто�
 > When exporting the current tab or an AI conversation locally, page content and the generated file stay in your browser.
 
 Точный текст должен пройти legal/content review и соответствовать фактической реализации.
+
+## Статус реализации на 2026-07-30
+
+State machine, revision conflict, remove/restore/move/split/merge, cancellation,
+three download attempts, success grace и TTL cleanup реализованы. Split/merge
+materialize новые thumbnails, поэтому preview и final используют одну revision,
+а заменённые objects удаляются.
+
+Filesystem TTL/encryption проверены unit tests. Redis restart recovery,
+MinIO lifecycle, cancellation under active Chromium и orphan-zero drill
+остаются Docker-dependent verification gates.

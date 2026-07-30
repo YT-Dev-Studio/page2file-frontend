@@ -123,9 +123,10 @@
 - `AC-011` — backend roadmap начинается с testable narrow slice и не обещает сразу полный editable engine.
 - `AC-012` — frontend roadmap включает все страницы и состояния с test content.
 
-## Статус реализации frontend на 2026-07-29
+## Статус реализации на 2026-07-30
 
-Frontend-объём `AC-002`, `AC-003`, `AC-004`, `AC-009`, `AC-010` и `AC-012`
-реализован как работающий prototype. Все conversion results остаются явно
-обозначенными sample-файлами; backend-ориентированные критерии остаются планом
-следующего отдельного проекта.
+Frontend-критерии реализованы. Backend-критерии реализованы на уровне
+self-hosted MVP в отдельном проекте и прошли non-container checks. Реальные
+conversion results включены через real adapter; sample/mock остаются только для
+localhost/test. Критерии, требующие Redis/MinIO/remote Chromium, load/fidelity
+measurement и deletion drill, ожидают Docker gate.

@@ -14,6 +14,10 @@ import { HomePage } from "@/features/marketing/home-page";
 import { LandingPage } from "@/features/marketing/landing-page";
 import { DownloadPage } from "@/features/preview/download-page";
 import { PreviewWorkspace } from "@/features/preview/preview-workspace";
+import { RealDownloadPage } from "@/features/preview/real-download-page";
+import { RealPreviewWorkspace } from "@/features/preview/real-preview-workspace";
+import { isRealJobId } from "@/shared/api/backend-contract";
+import { conversionAdapter } from "@/shared/config/site";
 import type { Locale } from "@/shared/i18n/locales";
 import { isStaticRoute } from "@/shared/routes/routes";
 import { Container } from "@/shared/ui/site-shell";
@@ -61,7 +65,15 @@ export const PageRouter = ({
     return <ChangelogPage locale={locale} />;
   }
   if (segments[0] === "preview" && segments.length === 2) {
-    const job = parseMockJob(segments[1], mode);
+    if (isRealJobId(segments[1])) {
+      return (
+        <Container>
+          <RealPreviewWorkspace jobId={segments[1]} locale={locale} />
+        </Container>
+      );
+    }
+    const job =
+      conversionAdapter === "mock" ? parseMockJob(segments[1], mode) : null;
     return job ? (
       <Container>
         <PreviewWorkspace job={job} locale={locale} />
@@ -69,7 +81,11 @@ export const PageRouter = ({
     ) : notFound();
   }
   if (segments[0] === "download" && segments.length === 2) {
-    const job = parseMockJob(segments[1], mode);
+    if (isRealJobId(segments[1])) {
+      return <RealDownloadPage jobId={segments[1]} locale={locale} />;
+    }
+    const job =
+      conversionAdapter === "mock" ? parseMockJob(segments[1], mode) : null;
     return job ? <DownloadPage job={job} locale={locale} /> : notFound();
   }
   if (isStaticRoute(route)) {

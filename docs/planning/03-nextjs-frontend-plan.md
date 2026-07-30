@@ -269,10 +269,15 @@ Frontend считается «полностью тестово реализов
 - Responsive visual QA на converter, preview, article и landing templates.
 - Browser E2E только после отдельного approval на test setup.
 
-## Статус реализации на 2026-07-29
+## Статус реализации на 2026-07-30
 
-План реализован в текущем репозитории как Next.js `16.2.12` frontend prototype.
-Production data boundary — будущий контракт; текущая реализация использует только
-mock adapter, локальные MDX-материалы и sample PDF/PPTX. BFF и `src/app/api` не
-реализованы. Browser QA выполняется внешним Playwright MCP без добавления
-Playwright/Vitest-конфигурации в репозиторий.
+План реализован как Next.js `16.2.12` frontend. Canonical backend OpenAPI
+закреплён snapshot-файлом и generated TypeScript types. Реализованы HttpOnly
+anonymous session, double-submit CSRF, Origin validation, server-only HMAC,
+status/thumbnail/download proxy, real polling, authoritative preview revision,
+cancellation и streamed download. Mock сохранён только для localhost/test.
+
+EN/RU runtime errors и privacy copy локализованы; SEO/noindex, consent-first
+GA4 и UTM-правила не ослаблены. Repository test framework не добавлялся.
+Rendered QA этой итерации заблокирован отсутствием доступного in-app Browser;
+lint/typecheck/validators/build и live HTTP BFF checks выполнены.

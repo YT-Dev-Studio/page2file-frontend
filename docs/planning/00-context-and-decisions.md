@@ -112,19 +112,21 @@
 - индексируются только полноценно переведенные и проверенные страницы;
 - IP-редиректы для поисковых роботов не используются.
 
-## Не включено в этот этап
+## Не включено в self-hosted MVP
 
-- Реализация кода.
-- Scaffold Next.js или backend.
-- Установка runtime-зависимостей.
 - Выбор конкретного облака и тарифов.
 - Публикация GPTs или расширения.
+- Исходный код Chrome-расширения.
 - Создание юридически окончательных текстов без legal review.
-- Обещание production-grade editable conversion до проведения fidelity spike.
+- Внешний pentest и production-grade SLO до fidelity/load spike.
 
-## Статус реализации frontend на 2026-07-29
+## Статус реализации на 2026-07-30
 
-- Этот репозиторий теперь является самостоятельным Next.js frontend-проектом.
-- Реализован mock-only adapter; BFF, backend API и реальная конвертация в репозитории отсутствуют.
-- Зафиксированы 15 locale prefixes, consent-gated GA4, test content и sample artifacts.
-- Next.js обновлён до security patch `16.2.12`; продуктовые решения документа сохраняются.
+- Этот репозиторий является самостоятельным Next.js `16.2.12`
+  frontend-проектом с 16 locale prefixes.
+- Реализованы secure same-origin BFF и real conversion adapter; mock доступен
+  только для localhost/test.
+- Отдельный sibling `page2file-backend` реализует self-hosted conversion MVP.
+- Consent-gated GA4 использует `G-7MVCPE7QMR` и исключает localhost.
+- Container/E2E/fidelity/load gates остаются непроверенными до установки Docker
+  Desktop; это не переименовывается в production readiness.

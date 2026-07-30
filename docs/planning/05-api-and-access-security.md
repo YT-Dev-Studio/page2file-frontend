@@ -250,3 +250,15 @@ Public message локализуется web frontend. Backend logs исполь�
 - `Cache-Control: private, no-store`.
 - Неиндексируемый route + `X-Robots-Tag: noindex, nofollow`.
 - Ограниченное число повторных попыток для interrupted download.
+
+## Статус реализации на 2026-07-30
+
+Canonical OpenAPI v1 содержит 19 paths. Web channel использует session-bound
+HMAC и Redis nonce replay protection; BFF добавляет HttpOnly SameSite=Strict
+cookie, double-submit CSRF и Origin validation. GPT channel имеет отдельные
+hash-only identities, scopes, quotas, concurrency и revoke flag.
+
+Download capability token создаётся stateless HMAC на job/session/artifact
+expiry, не хранится и не попадает в browser URL: BFF получает его server-side
+из signed status response. Download остаётся session-bound, no-store и
+ограничен тремя попытками с 60-секундным grace.

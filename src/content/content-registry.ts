@@ -157,7 +157,7 @@ export const updateEntries: ReadonlyArray<ContentEntry> = [
     kind: "update",
     slug: "preview-workspace",
     title: "A section-first preview workspace",
-    description: "The Page2File prototype now makes PDF page and PowerPoint slide boundaries, local operations and fallback warnings visible before download.",
+    description: "Page2File makes PDF page and PowerPoint slide boundaries, revisioned operations and fallback warnings visible before final rendering.",
     author: "Page2File product",
     publishedAt: "2026-07-24",
     updatedAt: "2026-07-29",
@@ -306,7 +306,7 @@ const russianUpdateEntries: ReadonlyArray<ContentEntry> = [
     slug: "preview-workspace",
     title: "Рабочая область предпросмотра по секциям",
     description:
-      "Прототип Page2File показывает границы страниц PDF и слайдов PowerPoint, локальные операции и предупреждения о заменах до скачивания.",
+      "Page2File показывает границы страниц PDF и слайдов PowerPoint, версионные операции и предупреждения о заменах до финальной обработки.",
     author: "Команда Page2File",
     publishedAt: "2026-07-24",
     updatedAt: "2026-07-30",

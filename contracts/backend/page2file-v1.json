@@ -1,0 +1,273 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Page2File API",
+    "version": "1.0.0",
+    "description": "Temporary webpage and bounded HTML conversion jobs. Public error messages are stable codes and clients localize them."
+  },
+  "servers": [
+    { "url": "https://api.example.invalid" }
+  ],
+  "tags": [
+    { "name": "health" },
+    { "name": "web" },
+    { "name": "gpt" },
+    { "name": "extension" }
+  ],
+  "components": {
+    "securitySchemes": {
+      "WebHmac": { "type": "apiKey", "in": "header", "name": "x-p2f-signature" },
+      "GptApiKey": { "type": "apiKey", "in": "header", "name": "authorization" }
+    },
+    "schemas": {
+      "ConversionMode": { "type": "string", "enum": ["visual", "editable"] },
+      "ConversionOutput": { "type": "string", "enum": ["pdf", "pptx"] },
+      "JobStatus": {
+        "type": "string",
+        "enum": ["accepted", "queued", "loading", "analyzing", "preview_rendering", "preview_ready", "final_queued", "final_rendering", "download_ready", "downloaded", "failed_recoverable", "failed_terminal", "cancelled", "expired"]
+      },
+      "UrlSource": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "value"],
+        "properties": {
+          "kind": { "const": "url" },
+          "value": { "type": "string", "maxLength": 2048 }
+        }
+      },
+      "HtmlSource": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "value"],
+        "properties": {
+          "kind": { "const": "html" },
+          "value": { "type": "string", "maxLength": 2097152 }
+        }
+      },
+      "CreatePreviewRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "output", "mode", "clientRequestId"],
+        "properties": {
+          "source": { "oneOf": [{ "$ref": "#/components/schemas/UrlSource" }, { "$ref": "#/components/schemas/HtmlSource" }] },
+          "output": { "$ref": "#/components/schemas/ConversionOutput" },
+          "mode": { "$ref": "#/components/schemas/ConversionMode" },
+          "clientRequestId": { "type": "string", "minLength": 8, "maxLength": 128 },
+          "options": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "includeLinks": { "type": "boolean", "default": true },
+              "viewportPreset": { "type": "string", "enum": ["desktop-1440"], "default": "desktop-1440" },
+              "outputPreset": { "type": "string", "enum": ["a4", "wide"], "default": "a4" }
+            }
+          }
+        }
+      },
+      "GptUrlJobRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sourceUrl", "mode", "clientRequestId"],
+        "properties": {
+          "sourceUrl": { "type": "string", "maxLength": 2048 },
+          "mode": { "$ref": "#/components/schemas/ConversionMode" },
+          "clientRequestId": { "type": "string", "minLength": 8, "maxLength": 128 },
+          "options": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": { "includeLinks": { "type": "boolean" } }
+          }
+        }
+      },
+      "GptHtmlJobRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["html", "mode", "clientRequestId"],
+        "properties": {
+          "html": { "type": "string", "maxLength": 2097152 },
+          "mode": { "$ref": "#/components/schemas/ConversionMode" },
+          "clientRequestId": { "type": "string", "minLength": 8, "maxLength": 128 },
+          "options": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": { "includeLinks": { "type": "boolean" } }
+          }
+        }
+      },
+      "JobReference": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["jobId", "status", "expiresAt", "statusUrl"],
+        "properties": {
+          "jobId": { "type": "string" },
+          "status": { "$ref": "#/components/schemas/JobStatus" },
+          "expiresAt": { "type": "string", "format": "date-time" },
+          "statusUrl": { "type": "string" },
+          "accessToken": { "type": "string" }
+        }
+      },
+      "PreviewSection": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "width", "height", "fidelity", "warnings", "removed", "canSplit", "thumbnailUrl"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "width": { "type": "number", "exclusiveMinimum": 0 },
+          "height": { "type": "number", "exclusiveMinimum": 0 },
+          "fidelity": { "type": "string", "enum": ["native", "mixed", "visual"] },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["RASTER_FALLBACK", "FONT_SUBSTITUTED", "RESOURCE_OMITTED", "STABILIZATION_INCOMPLETE", "LINK_REMOVED", "CRAWL_PAGE_SKIPPED"]
+            }
+          },
+          "removed": { "type": "boolean" },
+          "canSplit": { "type": "boolean" },
+          "thumbnailUrl": { "type": "string" }
+        }
+      },
+      "PreviewManifest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["revision", "capabilitySummary", "sections"],
+        "properties": {
+          "revision": { "type": "integer", "minimum": 1 },
+          "capabilitySummary": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["nativeText", "clickableLinks", "rasterFallback"],
+            "properties": {
+              "nativeText": { "type": "boolean" },
+              "clickableLinks": { "type": "boolean" },
+              "rasterFallback": { "type": "boolean" }
+            }
+          },
+          "sections": {
+            "type": "array",
+            "maxItems": 100,
+            "items": { "$ref": "#/components/schemas/PreviewSection" }
+          }
+        }
+      },
+      "JobView": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["jobId", "status", "stage", "progress", "output", "mode", "warnings", "expiresAt"],
+        "properties": {
+          "jobId": { "type": "string", "pattern": "^job_[A-Za-z0-9_-]{20,80}$" },
+          "status": { "$ref": "#/components/schemas/JobStatus" },
+          "stage": { "type": "string" },
+          "progress": { "type": "integer", "minimum": 0, "maximum": 100 },
+          "output": { "$ref": "#/components/schemas/ConversionOutput" },
+          "mode": { "$ref": "#/components/schemas/ConversionMode" },
+          "warnings": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "expiresAt": { "type": "string", "format": "date-time" },
+          "previewExpiresAt": { "type": "string", "format": "date-time" },
+          "artifactExpiresAt": { "type": "string", "format": "date-time" },
+          "error": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["code"],
+            "properties": { "code": { "type": "string" } }
+          },
+          "preview": { "$ref": "#/components/schemas/PreviewManifest" },
+          "downloadUrl": { "type": "string" }
+        }
+      },
+      "PreviewOperation": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "sectionId"],
+            "properties": {
+              "type": { "type": "string", "enum": ["remove", "restore", "split"] },
+              "sectionId": { "type": "string" }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "sectionId", "toIndex"],
+            "properties": {
+              "type": { "const": "move" },
+              "sectionId": { "type": "string" },
+              "toIndex": { "type": "integer", "minimum": 0 }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "sectionId", "withSectionId"],
+            "properties": {
+              "type": { "const": "merge" },
+              "sectionId": { "type": "string" },
+              "withSectionId": { "type": "string" }
+            }
+          }
+        ]
+      },
+      "PreviewRevisionRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["revision", "operations"],
+        "properties": {
+          "revision": { "type": "integer", "minimum": 1 },
+          "operations": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 100,
+            "items": { "$ref": "#/components/schemas/PreviewOperation" }
+          }
+        }
+      },
+      "RenderRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["revision"],
+        "properties": {
+          "revision": { "type": "integer", "minimum": 1 }
+        }
+      },
+      "PublicError": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "correlationId"],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": ["INVALID_REQUEST", "INVALID_URL", "UNSUPPORTED_SCHEME", "PRIVATE_NETWORK_TARGET", "DNS_VALIDATION_FAILED", "REDIRECT_BLOCKED", "SOURCE_REQUIRES_AUTH", "SOURCE_BLOCKED_AUTOMATION", "PAGE_TOO_LARGE", "RESOURCE_LIMIT_EXCEEDED", "LOAD_TIMEOUT", "UNSUPPORTED_HTML", "PREVIEW_EXPIRED", "REVISION_CONFLICT", "RATE_LIMITED", "HUMAN_VERIFICATION_REQUIRED", "RENDER_FAILED", "DOWNLOAD_EXPIRED", "UNAUTHORIZED", "FORBIDDEN", "NOT_FOUND", "CONFLICT", "INTERNAL_ERROR"]
+          },
+          "correlationId": { "type": "string" },
+          "retryAfterMs": { "type": "integer", "minimum": 0 }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/health/live": { "get": { "tags": ["health"], "responses": { "200": { "description": "Process is alive" } } } },
+    "/health/ready": { "get": { "tags": ["health"], "responses": { "200": { "description": "Dependencies are ready" }, "503": { "description": "Dependency unavailable" } } } },
+    "/web/v1/capabilities": { "get": { "tags": ["web"], "security": [{ "WebHmac": [] }], "responses": { "200": { "description": "Capabilities" } } } },
+    "/web/v1/sessions": { "post": { "tags": ["web"], "security": [{ "WebHmac": [] }], "responses": { "201": { "description": "Anonymous session binding" } } } },
+    "/web/v1/previews": { "post": { "tags": ["web"], "security": [{ "WebHmac": [] }], "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/CreatePreviewRequest" } } } }, "responses": { "202": { "description": "Accepted", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JobView" } } } }, "400": { "description": "Invalid input" }, "429": { "description": "Rate limited" } } } },
+    "/web/v1/jobs/{jobId}": { "get": { "tags": ["web"], "security": [{ "WebHmac": [] }], "parameters": [{ "in": "path", "name": "jobId", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Job status", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JobView" } } } }, "404": { "description": "Not found" } } } },
+    "/web/v1/jobs/{jobId}/preview": { "patch": { "tags": ["web"], "security": [{ "WebHmac": [] }], "parameters": [{ "in": "path", "name": "jobId", "required": true, "schema": { "type": "string" } }], "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/PreviewRevisionRequest" } } } }, "responses": { "200": { "description": "Updated manifest", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JobView" } } } }, "409": { "description": "Revision conflict" } } } },
+    "/web/v1/jobs/{jobId}/render": { "post": { "tags": ["web"], "security": [{ "WebHmac": [] }], "parameters": [{ "in": "path", "name": "jobId", "required": true, "schema": { "type": "string" } }], "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/RenderRequest" } } } }, "responses": { "202": { "description": "Render queued", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JobView" } } } }, "409": { "description": "Revision conflict" } } } },
+    "/web/v1/jobs/{jobId}/cancel": { "post": { "tags": ["web"], "security": [{ "WebHmac": [] }], "parameters": [{ "in": "path", "name": "jobId", "required": true, "schema": { "type": "string" } }], "responses": { "202": { "description": "Cancellation accepted" } } } },
+    "/web/v1/jobs/{jobId}/thumbnails/{sectionId}": { "get": { "tags": ["web"], "security": [{ "WebHmac": [] }], "parameters": [{ "in": "path", "name": "jobId", "required": true, "schema": { "type": "string" } }, { "in": "path", "name": "sectionId", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Preview thumbnail", "content": { "image/png": { "schema": { "type": "string", "contentEncoding": "binary" } }, "image/jpeg": { "schema": { "type": "string", "contentEncoding": "binary" } } } }, "404": { "description": "Not found" } } } },
+    "/web/v1/jobs/{jobId}/download": { "get": { "tags": ["web"], "security": [{ "WebHmac": [] }], "parameters": [{ "in": "path", "name": "jobId", "required": true, "schema": { "type": "string" } }, { "in": "query", "name": "token", "required": true, "schema": { "type": "string", "minLength": 32, "maxLength": 128 } }], "responses": { "200": { "description": "Attachment" }, "403": { "description": "Invalid capability token" }, "410": { "description": "Expired" } } } },
+    "/gpt/v1/page2pdf/jobs": { "post": { "tags": ["gpt"], "security": [{ "GptApiKey": [] }], "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/GptUrlJobRequest" } } } }, "responses": { "202": { "description": "Accepted" } } } },
+    "/gpt/v1/web2pdf/jobs": { "post": { "tags": ["gpt"], "security": [{ "GptApiKey": [] }], "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/GptUrlJobRequest" } } } }, "responses": { "202": { "description": "Accepted" } } } },
+    "/gpt/v1/html2pdf/jobs": { "post": { "tags": ["gpt"], "security": [{ "GptApiKey": [] }], "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/GptHtmlJobRequest" } } } }, "responses": { "202": { "description": "Accepted" } } } },
+    "/gpt/v1/web2powerpoint/jobs": { "post": { "tags": ["gpt"], "security": [{ "GptApiKey": [] }], "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/GptUrlJobRequest" } } } }, "responses": { "202": { "description": "Accepted" } } } },
+    "/gpt/v1/jobs/{jobId}": { "get": { "tags": ["gpt"], "security": [{ "GptApiKey": [] }], "parameters": [{ "in": "path", "name": "jobId", "required": true, "schema": { "type": "string" } }], "responses": { "200": { "description": "Job status" } } } },
+    "/gpt/v1/jobs/{jobId}/download": { "get": { "tags": ["gpt"], "security": [{ "GptApiKey": [] }], "parameters": [{ "in": "path", "name": "jobId", "required": true, "schema": { "type": "string" } }, { "in": "query", "name": "token", "required": true, "schema": { "type": "string", "minLength": 32, "maxLength": 128 } }], "responses": { "200": { "description": "Attachment" } } } },
+    "/extension/v1/capabilities": { "get": { "tags": ["extension"], "responses": { "200": { "description": "Local-first capability policy" } } } },
+    "/extension/v1/challenge": { "post": { "tags": ["extension"], "responses": { "200": { "description": "Short-lived challenge" }, "403": { "description": "Server conversion disabled" } } } }
+  }
+}

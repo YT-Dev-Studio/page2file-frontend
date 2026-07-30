@@ -153,9 +153,13 @@ Chrome extension -----> local tab/chat conversion by default
 
 Конкретные providers выбираются после load/fidelity spike; план не привязывает архитектуру к одному облаку.
 
-## Текущая граница реализации на 2026-07-29
+## Текущая граница реализации на 2026-07-30
 
-В этом репозитории реализован только frontend. `src/app/api` намеренно отсутствует,
-а UI обращается только к локальному deterministic mock adapter. BFF и внешний
-backend остаются отдельными будущими deployable-проектами и не требуются для
-сборки или демонстрации текущего frontend prototype.
+Архитектура реализована в двух независимых Git/npm-проектах. Frontend содержит
+только thin BFF в `src/app/api/conversions/**`; Chromium, очередь, storage и
+document renderers находятся в `page2file-backend`. Browser credential не
+публикуется. Mock adapter ограничен localhost/test.
+
+Фактическая проверка Redis/MinIO/remote Chromium network topology зависит от
+Docker Desktop и пока не выполнена. Cloud ingress, WAF/CDN, autoscaling и
+managed services остаются post-MVP.

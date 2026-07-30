@@ -222,3 +222,13 @@ Budgets пересматриваются после baseline benchmark.
 - Consent verified in supported regions.
 - Public legal/security copy matches runtime.
 - Incident runbooks exist.
+
+## Статус реализации на 2026-07-30
+
+Добавлены backend unit/security/integration/fixture/E2E/load suites, CI,
+Prometheus metrics с закрытым bearer endpoint, redacted structured logs,
+backpressure и operations/security runbooks. Non-container suites проходят.
+
+Fixture, E2E и load suites корректно помечены skipped без Docker, а не считаются
+пройденными. Поэтому visual diff, p50/p95, restart/failure injection и
+deletion/orphan thresholds остаются незакрытыми launch gates.

@@ -1,11 +1,17 @@
 # Page2File: пакет проектной документации
 
-Статус: frontend prototype реализован; backend, BFF и production conversion engine отложены.
+Статус на 2026-07-30: frontend и self-hosted backend MVP реализованы. Полная
+container/E2E-проверка ожидает установленный Docker Desktop.
 
 Этот каталог фиксирует согласованную продуктовую и техническую архитектуру для двух независимых проектов:
 
-- `page2file-web` — текущий Next.js frontend-репозиторий: маркетинговые и SEO-страницы, локализованный контент, converter/preview UI и единственная текущая data boundary в виде mock adapter;
-- `page2file-backend` — отдельный Node.js API, очередь, Chromium workers, preview, PDF/PPTX и временные артефакты.
+- `page2file-web` — текущий Next.js frontend-репозиторий: маркетинговые и
+  SEO-страницы, локализованный контент, converter/preview UI, secure same-origin
+  BFF и localhost/test mock adapter;
+- `page2file-backend` — отдельный Git/npm-проект
+  `C:\Users\yt\Desktop\DEV\page2file-backend`: Fastify API, BullMQ/Redis,
+  Chromium workers, preview, PDF/PPTX, crawler, HTML sandbox и временные
+  encrypted artifacts.
 
 Chrome-расширение считается отдельным внешним клиентом системы. Его исходники не должны находиться в Next.js-проекте. Если расширение будет разрабатываться в этом же продукте, для него нужен третий самостоятельный репозиторий.
 
@@ -24,13 +30,20 @@ Chrome-расширение считается отдельным внешним
 11. [10-delivery-roadmap.md](./10-delivery-roadmap.md) — последовательность реализации и acceptance gates.
 12. [11-open-questions-and-approvals.md](./11-open-questions-and-approvals.md) — решения, которые нельзя скрыто принять при кодировании.
 13. [12-source-register.md](./12-source-register.md) — первичные документы, на которых основан план.
+14. [13-implementation-convergence.md](./13-implementation-convergence.md) —
+    фактическое состояние реализации, проверки и внешние gates.
 
 ## Главные ограничения
 
-- В текущем репозитории реализован самостоятельный frontend prototype без `src/app/api`, server credentials и сетевой загрузки пользовательского URL.
+- Браузер не обращается к пользовательскому URL напрямую; запрос проходит через
+  same-origin BFF и отдельный backend.
+- Backend credential существует только в server runtime Next.js и не имеет
+  `NEXT_PUBLIC_` префикса.
 - Нет регистрации, аккаунтов и истории конвертаций.
 - Результаты и preview существуют только в рамках короткого TTL.
 - Текущая вкладка и AI-чаты должны обрабатываться локально расширением.
 - Публичный URL обрабатывается сервером временно; нельзя заявлять, что такой файл «никогда не касается серверов».
 - Web и backend — разные проекты и разные deployments.
 - Все версии страниц можно индексировать только после полноценного перевода и контентной проверки.
+- Self-hosted MVP не означает production deployment, внешний pentest или
+  юридическое утверждение.

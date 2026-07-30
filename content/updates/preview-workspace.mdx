@@ -1,10 +1,11 @@
 ## What changed
 
-The prototype now treats preview as a workspace rather than a loading screen.
+Page2File treats preview as a workspace rather than a loading screen.
 Every section has a title, output size, conversion mode and warning state.
 
-Users can reorder, remove, restore, split and merge sections before opening the
-sample download. Drag and drop has button-based keyboard alternatives.
+Users can reorder, remove, restore, split and merge sections before starting the
+final render. Drag and drop has button-based keyboard alternatives.
 
-This is still deterministic demo data. The separate backend will later provide
-real preview manifests and short-lived artifact links.
+The real adapter now receives revisioned preview manifests and short-lived
+artifact links from the separately deployed backend. Deterministic mock jobs
+remain available only for localhost and test workflows.

@@ -156,7 +156,7 @@
 
 ## Test/verification approval
 
-Пользователь должен отдельно разрешить:
+Пользователь отдельно разрешил в full-stack implementation plan:
 
 - создание test infrastructure;
 - browser E2E;
@@ -165,7 +165,9 @@
 - security corpus/tests;
 - CI workflows.
 
-План описывает эти проверки, но сейчас не создает их.
+Backend test infrastructure, Docker Compose, security corpus, load script и CI
+созданы. Frontend сохраняет внешний Browser QA без repository Playwright
+dependency.
 
 ## Decisions already safe to treat as fixed
 
@@ -180,3 +182,16 @@
 - ChatGPT/Claude/Gemini/Grok landing pages.
 - Temporary server storage only for URL/GPT jobs.
 - Local extension processing for current tab/AI chats.
+
+## Решения, зафиксированные реализацией 2026-07-30
+
+- Node.js 24, Fastify 5.11, BullMQ 5.81, Playwright 1.62, MinIO, pdf-lib,
+  PptxGenJS и Sharp.
+- HMAC BFF-to-backend с key id/timestamp/nonce/session/body binding.
+- Production source URLs только HTTPS:443; HTTP только allowlisted fixture.
+- PDF A4 portrait, PPTX 16:9, Web2PDF same-origin depth 2/pages 20/robots.
+- Fonts substitute to Arial/Times New Roman/Courier New families.
+- Basic Consent Mode; UTM не создаёт собственную историю.
+- Docker Desktop устанавливает и запускает пользователь.
+- Cloud provider, published extension/GPT, final legal profile и external
+  pentest не выбраны.

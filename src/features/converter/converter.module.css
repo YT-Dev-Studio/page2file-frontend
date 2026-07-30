@@ -129,6 +129,11 @@
   background: var(--accent-strong);
 }
 
+.submit:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 .demo {
   display: grid;
   gap: 10px;

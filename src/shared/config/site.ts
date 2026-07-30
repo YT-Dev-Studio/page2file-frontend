@@ -75,6 +75,19 @@ export const mockControlsEnabled =
   parseBoolean(process.env.NEXT_PUBLIC_ENABLE_MOCK_CONTROLS) ||
   process.env.NODE_ENV === "development";
 
+export type ConversionAdapter = "mock" | "real";
+
+const requestedConversionAdapter =
+  process.env.NEXT_PUBLIC_CONVERSION_ADAPTER === "mock" ? "mock" : "real";
+const localSite =
+  LOCAL_HOSTNAMES.has(siteUrl.hostname.toLowerCase()) ||
+  siteUrl.hostname.toLowerCase().endsWith(".localhost");
+export const conversionAdapter: ConversionAdapter =
+  requestedConversionAdapter === "mock" &&
+  (process.env.NODE_ENV !== "production" || localSite)
+    ? "mock"
+    : "real";
+
 const rawGaMeasurementId =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ?? "";
 export const gaMeasurementId = /^G-[A-Z0-9]+$/.test(rawGaMeasurementId)

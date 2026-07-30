@@ -10,8 +10,16 @@ import type {
 } from "@/entities/conversion/model";
 import type { Locale } from "@/shared/i18n/locales";
 import { getMessages } from "@/shared/i18n/messages";
-import { mockControlsEnabled } from "@/shared/config/site";
+import {
+  conversionAdapter,
+  mockControlsEnabled,
+} from "@/shared/config/site";
+import { getConversionRuntimeCopy } from "./conversion-runtime-copy";
 import { createMockPreview, mockScenarios } from "./mock-adapter";
+import {
+  ConversionApiError,
+  createRealPreview,
+} from "./real-adapter";
 import styles from "./converter.module.css";
 import { getConverterCopy } from "./converter-copy";
 import { validatePublicUrl } from "./url-validation";
@@ -27,11 +35,15 @@ export const ConverterForm = ({
 }: ConverterFormProps): ReactNode => {
   const messages = getMessages(locale);
   const copy = getConverterCopy(locale);
+  const runtimeCopy = getConversionRuntimeCopy(locale);
   const router = useRouter();
   const [sourceUrl, setSourceUrl] = useState("https://example.com/long-article");
   const [mode, setMode] = useState<ConversionMode>("visual");
   const [scenario, setScenario] = useState<MockScenario>("happy");
   const [error, setError] = useState("");
+  const [submissionStatus, setSubmissionStatus] = useState<
+    "idle" | "submitting"
+  >("idle");
 
   const handleUrlChange = (event: ChangeEvent<HTMLInputElement>): void => {
     setSourceUrl(event.target.value);
@@ -53,7 +65,9 @@ export const ConverterForm = ({
     </option>
   );
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (
+    event: FormEvent<HTMLFormElement>,
+  ): Promise<void> => {
     event.preventDefault();
     const validation = validatePublicUrl(sourceUrl);
     if (!validation.valid) {
@@ -61,13 +75,43 @@ export const ConverterForm = ({
       document.getElementById(`${format}-source-url`)?.focus();
       return;
     }
-    const job = createMockPreview({
-      sourceUrl: validation.normalizedUrl,
-      format,
-      mode,
-      scenario,
-    });
-    router.push(`/${locale}/preview/${job.jobId}?mode=${job.mode}`);
+    setSubmissionStatus("submitting");
+    try {
+      if (conversionAdapter === "mock") {
+        const job = createMockPreview({
+          sourceUrl: validation.normalizedUrl,
+          format,
+          mode,
+          scenario,
+        });
+        router.push(`/${locale}/preview/${job.jobId}?mode=${job.mode}`);
+        return;
+      }
+      const job = await createRealPreview({
+        source: { kind: "url", value: validation.normalizedUrl },
+        output: format,
+        mode,
+        clientRequestId: crypto.randomUUID(),
+        options: {
+          includeLinks: true,
+          outputPreset: format === "pdf" ? "a4" : "wide",
+          viewportPreset: "desktop-1440",
+        },
+      });
+      router.push(`/${locale}/preview/${job.jobId}`);
+    } catch (requestError) {
+      const code =
+        requestError instanceof ConversionApiError
+          ? requestError.code
+          : "INTERNAL_ERROR";
+      const localizedCode =
+        code in runtimeCopy.errors
+          ? (code as keyof typeof runtimeCopy.errors)
+          : "INTERNAL_ERROR";
+      setError(runtimeCopy.errors[localizedCode]);
+      setSubmissionStatus("idle");
+      document.getElementById(`${format}-source-url`)?.focus();
+    }
   };
 
   return (
@@ -111,7 +155,7 @@ export const ConverterForm = ({
         </label>
       </fieldset>
 
-      {mockControlsEnabled ? (
+      {conversionAdapter === "mock" && mockControlsEnabled ? (
         <label className={styles.demo}>
           <strong>{copy.demoState}</strong>
           <span className={styles.hint}>{copy.demoHint}</span>
@@ -121,8 +165,14 @@ export const ConverterForm = ({
         </label>
       ) : null}
 
-      <button className={styles.submit} type="submit">
-        {copy.submit[format]}
+      <button
+        className={styles.submit}
+        disabled={submissionStatus === "submitting"}
+        type="submit"
+      >
+        {submissionStatus === "submitting"
+          ? runtimeCopy.submitPending
+          : copy.submit[format]}
       </button>
     </form>
   );

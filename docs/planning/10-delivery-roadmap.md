@@ -345,3 +345,17 @@ Crawler не включается до отдельного legal/robots/product
 - decisions/approval needed.
 
 Нельзя переходить к crawler/HTML/GPT production integration, если Visual single-page slice не прошла security, TTL и preview consistency gates.
+
+## Фактическое выполнение на 2026-07-30
+
+- Milestones 0–12 реализованы на уровне self-hosted MVP в двух репозиториях.
+- Frontend, contract, auth/replay, URL/IP corpus, encrypted filesystem storage,
+  PDF/PPTX unit rendering, preview operations, idempotency и cross-session
+  isolation прошли автоматические проверки.
+- Milestone 13 частично реализован: есть metrics, redacted logs, backpressure,
+  CI, runbooks и Docker-gated fixture/E2E/load suites.
+- Финальный gate Milestone 13 не закрыт: на хосте отсутствует Docker Desktop,
+  поэтому Redis/MinIO/remote Chromium, deletion drill, visual diff и local load
+  benchmark не запускались.
+- Chrome extension source, cloud production deployment, published GPTs,
+  external pentest и legal approval остаются post-MVP, как и было зафиксировано.

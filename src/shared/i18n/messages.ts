@@ -65,7 +65,7 @@ const en: Messages = {
     pdf: "Convert to PDF",
     powerpoint: "Convert to PowerPoint",
     preview: "Generate preview",
-    download: "Download sample",
+    download: "Download file",
     install: "Install extension",
     comingSoon: "Coming soon",
     preferences: "Privacy preferences",
@@ -87,14 +87,14 @@ const en: Messages = {
     menu: "Menu",
     language: "Language",
     footerDescription:
-      "A privacy-first prototype for turning webpage sections into reviewed PDF pages or PowerPoint slides.",
+      "A privacy-first service for turning webpage sections into reviewed PDF pages or PowerPoint slides.",
     pdfLink: "Webpage to PDF",
     powerpointLink: "Webpage to PowerPoint",
     extensionLink: "Chrome extension",
     changelogLink: "Changelog",
     acceptableUse: "Acceptable use",
     footerMeta:
-      "Prototype · No accounts · No conversion history · Sample outputs only",
+      "No accounts · No conversion history · Temporary processing",
   },
   consent: {
     title: "Optional analytics",
@@ -126,7 +126,7 @@ const messages: Record<Locale, Messages> = {
       pdf: "Конвертировать в PDF",
       powerpoint: "Конвертировать в PowerPoint",
       preview: "Создать предпросмотр",
-      download: "Скачать пример",
+      download: "Скачать файл",
       install: "Установить расширение",
       comingSoon: "Скоро",
       preferences: "Настройки конфиденциальности",
@@ -149,14 +149,14 @@ const messages: Record<Locale, Messages> = {
       menu: "Меню",
       language: "Язык",
       footerDescription:
-        "Прототип с приоритетом конфиденциальности: превращает секции веб-страницы в проверяемые страницы PDF или слайды PowerPoint.",
+        "Сервис с приоритетом конфиденциальности: превращает секции веб-страницы в проверяемые страницы PDF или слайды PowerPoint.",
       pdfLink: "Веб-страница в PDF",
       powerpointLink: "Веб-страница в PowerPoint",
       extensionLink: "Расширение Chrome",
       changelogLink: "История изменений",
       acceptableUse: "Допустимое использование",
       footerMeta:
-        "Прототип · Без аккаунтов · Без истории конвертаций · Только демонстрационные файлы",
+        "Без аккаунтов · Без истории конвертаций · Временная обработка",
     },
     consent: {
       title: "Необязательная аналитика",

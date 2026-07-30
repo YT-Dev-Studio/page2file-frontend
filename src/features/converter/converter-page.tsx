@@ -2,9 +2,11 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import type { ConversionFormat } from "@/entities/conversion/model";
 import type { Locale } from "@/shared/i18n/locales";
+import { conversionAdapter } from "@/shared/config/site";
 import { Container } from "@/shared/ui/site-shell";
 import styles from "./converter.module.css";
 import { getConverterCopy } from "./converter-copy";
+import { getConversionRuntimeCopy } from "./conversion-runtime-copy";
 import { ConverterForm } from "./converter-form";
 
 export const ConverterPage = ({
@@ -15,6 +17,7 @@ export const ConverterPage = ({
   locale: Locale;
 }): ReactNode => {
   const copy = getConverterCopy(locale);
+  const runtimeCopy = getConversionRuntimeCopy(locale);
   const formatCopy = copy.formats[format];
   return (
     <main className={styles.page} id="main-content">
@@ -28,7 +31,11 @@ export const ConverterPage = ({
           </div>
           <aside className={styles.aside}>
             <h2>{formatCopy.asideTitle}</h2>
-            <p>{copy.prototypeNotice}</p>
+            <p>
+              {conversionAdapter === "mock"
+                ? copy.prototypeNotice
+                : runtimeCopy.runtimeNotice}
+            </p>
             <ul className={styles.asideList}>
               <li><strong>{copy.visualTitle}</strong><span>{copy.visualText}</span></li>
               <li><strong>{copy.editableTitle}</strong><span>{copy.editableText}</span></li>

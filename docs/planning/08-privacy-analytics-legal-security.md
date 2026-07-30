@@ -233,3 +233,14 @@ Log retention задается отдельно и документируетс�
 - Storage lifecycle/orphan cleanup drill.
 - Dependency/container scanning after technology approval.
 - External penetration test before broad public launch.
+
+## Статус реализации на 2026-07-30
+
+Consent-first GA4, UTM allowlist, localhost exclusion, draft/noindex legal
+guards и frontend injection controls сохранены. Backend logs редактируют body,
+authorization, cookies, signatures и set-cookie; source URL query/content не
+передаются в analytics.
+
+SSRF IP/URL/HMAC corpus проходит. Container redirect/egress, raw HTML sandbox
+escape, storage deletion и external penetration gates ещё не выполнялись.
+Legal copy остаётся draft/noindex.

@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { gaMeasurementId } from "@/shared/config/site";
@@ -74,9 +75,12 @@ const captureAttribution = (): Attribution => {
 
 const isAnalyticsAllowedForCurrentHost = (): boolean => {
   const hostname = window.location.hostname.toLowerCase();
+  const technicalConversionRoute =
+    /^\/[^/]+\/(?:preview|download)\//.test(window.location.pathname);
   return (
     !LOCAL_ANALYTICS_HOSTS.has(hostname) &&
-    !hostname.endsWith(".localhost")
+    !hostname.endsWith(".localhost") &&
+    !technicalConversionRoute
   );
 };
 
@@ -103,8 +107,9 @@ const toCampaignParameters = (
 
 const getAnalyticsPageLocation = (attribution: Attribution): string => {
   const pageLocation = new URL(window.location.href);
+  pageLocation.search = "";
+  pageLocation.hash = "";
   const replaceAttributionParameter = (key: AttributionKey): void => {
-    pageLocation.searchParams.delete(key);
     const value = attribution[key];
     if (value) {
       pageLocation.searchParams.set(key, value);
@@ -159,6 +164,7 @@ const disableGoogleAnalytics = (): void => {
 
 export const ConsentBanner = ({ locale }: { locale: Locale }): ReactNode => {
   const messages = getMessages(locale);
+  const pathname = usePathname();
   const [consent, setConsent] = useState<ConsentState>("unknown");
   const [preferencesOpen, setPreferencesOpen] = useState(false);
 
@@ -172,7 +178,7 @@ export const ConsentBanner = ({ locale }: { locale: Locale }): ReactNode => {
       }
     }, 0);
     return (): void => window.clearTimeout(timer);
-  }, []);
+  }, [pathname]);
 
   const saveConsent = (nextConsent: ConsentState): void => {
     window.localStorage.setItem(CONSENT_KEY, nextConsent);

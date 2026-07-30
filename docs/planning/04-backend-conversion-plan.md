@@ -340,3 +340,15 @@ Preview показывает понятные warnings, а не внутренн
 - Web2PDF crawler.
 - HTML2PDF sandbox.
 - Load testing/autoscaling.
+
+## Статус реализации на 2026-07-30
+
+Все перечисленные модули до self-hosted MVP реализованы в
+`page2file-backend`: Fastify gateway, BullMQ, encrypted storage, isolated
+Chromium, analyzer, thumbnails, visual/editable PDF/PPTX, revision operations,
+crawler и HTML sandbox. PDF содержит bookmarks и safe link annotations; PPTX
+использует bounded hyperlink overlays.
+
+Unit rendering и security corpus проходят. Remote Chromium/egress, MinIO,
+crawler/HTML fixtures и fidelity thresholds не проверены без Docker Desktop.
+Autoscaling и cloud provider остаются post-MVP.

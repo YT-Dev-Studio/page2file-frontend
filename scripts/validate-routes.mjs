@@ -126,17 +126,33 @@ const run = async () => {
     }
   }
 
-  const apiDirectory = join(ROOT, "src", "app", "api");
-  try {
-    await access(apiDirectory);
-    throw new Error("src/app/api must not exist in the mock-only frontend.");
-  } catch (error) {
-    if (error instanceof Error && error.message.includes("must not exist")) {
-      throw error;
-    }
+  const bffRoutes = [
+    ["session", "route.ts"],
+    ["previews", "route.ts"],
+    ["jobs", "[jobId]", "route.ts"],
+    ["jobs", "[jobId]", "preview", "route.ts"],
+    ["jobs", "[jobId]", "render", "route.ts"],
+    ["jobs", "[jobId]", "cancel", "route.ts"],
+    ["jobs", "[jobId]", "thumbnails", "[sectionId]", "route.ts"],
+    ["jobs", "[jobId]", "download", "route.ts"],
+  ];
+  for (const routeParts of bffRoutes) {
+    await access(
+      join(ROOT, "src", "app", "api", "conversions", ...routeParts),
+    );
+  }
+  const bffClient = await readFile(
+    join(ROOT, "src", "shared", "api", "server", "backend-config.ts"),
+    "utf8",
+  );
+  if (
+    !bffClient.includes("PAGE2FILE_WEB_HMAC_SECRET") ||
+    bffClient.includes("NEXT_PUBLIC_PAGE2FILE_WEB_HMAC_SECRET")
+  ) {
+    throw new Error("BFF service credentials must remain server-only.");
   }
 
-  console.log(`Routes valid: ${REQUIRED_ROUTES.length} public routes across ${REQUIRED_LOCALES.length} locales.`);
+  console.log(`Routes valid: ${REQUIRED_ROUTES.length} public routes across ${REQUIRED_LOCALES.length} locales and ${bffRoutes.length} BFF routes.`);
 };
 
 await run();
