@@ -4,6 +4,7 @@ import type { ConversionFormat } from "@/entities/conversion/model";
 import type { Locale } from "@/shared/i18n/locales";
 import { Container } from "@/shared/ui/site-shell";
 import styles from "./converter.module.css";
+import { getConverterCopy } from "./converter-copy";
 import { ConverterForm } from "./converter-form";
 
 export const ConverterPage = ({
@@ -13,37 +14,29 @@ export const ConverterPage = ({
   format: ConversionFormat;
   locale: Locale;
 }): ReactNode => {
-  const isPdf = format === "pdf";
+  const copy = getConverterCopy(locale);
+  const formatCopy = copy.formats[format];
   return (
     <main className={styles.page} id="main-content">
       <Container>
         <div className={styles.layout}>
           <div>
-            <p className={styles.eyebrow}>{isPdf ? "Public URL → PDF" : "Public URL → 16:9 slides"}</p>
-            <h1 className={styles.title}>
-              {isPdf ? "Convert one webpage to PDF" : "Convert a webpage to PowerPoint"}
-            </h1>
-            <p className={styles.lead}>
-              {isPdf
-                ? "Validate a public URL, choose a fidelity contract and review every page before the sample download."
-                : "Map meaningful webpage sections to slides, choose visual or editable output and inspect every fallback."}
-            </p>
+            <p className={styles.eyebrow}>{formatCopy.eyebrow}</p>
+            <h1 className={styles.title}>{formatCopy.title}</h1>
+            <p className={styles.lead}>{formatCopy.lead}</p>
             <ConverterForm format={format} locale={locale} />
           </div>
           <aside className={styles.aside}>
-            <h2>{isPdf ? "Preview before pagination" : "Preview before the deck"}</h2>
-            <p>
-              This prototype never fetches the entered URL. It demonstrates the
-              intended review flow with deterministic sample data.
-            </p>
+            <h2>{formatCopy.asideTitle}</h2>
+            <p>{copy.prototypeNotice}</p>
             <ul className={styles.asideList}>
-              <li><strong>Visual mode</strong><span>Highest layout fidelity through section images.</span></li>
-              <li><strong>Editable mode</strong><span>Supported text and links remain editable and clickable.</span></li>
-              <li><strong>Honest warnings</strong><span>Fonts, canvas, media and unsafe links show their fallback before download.</span></li>
+              <li><strong>{copy.visualTitle}</strong><span>{copy.visualText}</span></li>
+              <li><strong>{copy.editableTitle}</strong><span>{copy.editableText}</span></li>
+              <li><strong>{copy.warningsTitle}</strong><span>{copy.warningsText}</span></li>
             </ul>
             <p>
-              Signed-in or private page?{" "}
-              <Link href={`/${locale}/chrome-extension`}>Use the extension workflow</Link>.
+              {copy.privateQuestion}{" "}
+              <Link href={`/${locale}/chrome-extension`}>{copy.extensionLink}</Link>.
             </p>
           </aside>
         </div>

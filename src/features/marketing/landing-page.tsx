@@ -1,11 +1,16 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import type { LandingContent, ContentSection } from "@/content/landings";
+import type {
+  LandingContent,
+  ContentSection,
+  RelatedRoute,
+} from "@/content/landings";
 import type { Locale } from "@/shared/i18n/locales";
 import { getMessages } from "@/shared/i18n/messages";
 import { ExternalCta } from "@/shared/ui/external-cta";
 import { Container } from "@/shared/ui/site-shell";
 import uiStyles from "@/shared/ui/ui.module.css";
+import { getMarketingCopy } from "./marketing-copy";
 import styles from "./marketing.module.css";
 
 const ContentBlock = ({ section }: { section: ContentSection }): ReactNode => {
@@ -27,12 +32,25 @@ export const LandingPage = ({
   locale: Locale;
 }): ReactNode => {
   const messages = getMessages(locale);
+  const { landing } = getMarketingCopy(locale);
   const sectionBlock = (section: ContentSection): ReactNode => (
     <ContentBlock key={section.heading} section={section} />
   );
   const internalHref = content.primaryHref
     ? `/${locale}${content.primaryHref}`
     : null;
+  const relatedRoutes = content.relatedRoutes?.filter(
+    (relatedRoute: RelatedRoute): boolean =>
+      relatedRoute.route !== content.route,
+  );
+  const relatedLink = (relatedRoute: RelatedRoute): ReactNode => (
+    <Link
+      href={`/${locale}/${relatedRoute.route}`}
+      key={relatedRoute.route}
+    >
+      {relatedRoute.label}
+    </Link>
+  );
 
   return (
     <main className={styles.main} id="main-content">
@@ -40,7 +58,7 @@ export const LandingPage = ({
         <Container>
           {content.legal ? (
             <div className={styles.draftLegal}>
-              Draft content — legal owner, jurisdiction and processor review are required before indexing.
+              {landing.legalDraft}
             </div>
           ) : null}
           <p className={styles.eyebrow}>{content.eyebrow}</p>
@@ -61,7 +79,7 @@ export const LandingPage = ({
             ) : null}
             {!content.legal ? (
               <Link className={uiStyles.secondaryButton} href={`/${locale}/convert-webpage-to-pdf`}>
-                Try the web prototype
+                {landing.tryPrototype}
               </Link>
             ) : null}
           </div>
@@ -70,6 +88,12 @@ export const LandingPage = ({
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <Container>
           <div className={styles.contentGrid}>{content.sections.map(sectionBlock)}</div>
+          {relatedRoutes && relatedRoutes.length > 0 ? (
+            <nav aria-label={landing.relatedPages} className={styles.relatedLinks}>
+              <h2>{landing.relatedPages}</h2>
+              <div>{relatedRoutes.map(relatedLink)}</div>
+            </nav>
+          ) : null}
         </Container>
       </section>
     </main>

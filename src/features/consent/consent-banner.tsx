@@ -20,10 +20,18 @@ declare global {
   interface Window {
     dataLayer?: Array<unknown>;
     gtag?: (...args: Array<unknown>) => void;
+    page2fileAttribution?: Attribution;
   }
 }
 
 const CONSENT_KEY = "page2file.analytics-consent";
+const LOCAL_ANALYTICS_HOSTS: ReadonlySet<string> = new Set([
+  "0.0.0.0",
+  "127.0.0.1",
+  "::1",
+  "[::1]",
+  "localhost",
+]);
 const UTM_KEYS: ReadonlyArray<AttributionKey> = [
   "utm_source",
   "utm_medium",
@@ -56,6 +64,56 @@ const readAttribution = (): Attribution => {
   return attribution;
 };
 
+const captureAttribution = (): Attribution => {
+  const currentAttribution = readAttribution();
+  if (Object.keys(currentAttribution).length > 0) {
+    window.page2fileAttribution = currentAttribution;
+  }
+  return window.page2fileAttribution ?? {};
+};
+
+const isAnalyticsAllowedForCurrentHost = (): boolean => {
+  const hostname = window.location.hostname.toLowerCase();
+  return (
+    !LOCAL_ANALYTICS_HOSTS.has(hostname) &&
+    !hostname.endsWith(".localhost")
+  );
+};
+
+const toCampaignParameters = (
+  attribution: Attribution,
+): Record<string, string> => {
+  const campaignParameters: Record<string, string> = {};
+  const parameterNames: Record<AttributionKey, string> = {
+    utm_source: "campaign_source",
+    utm_medium: "campaign_medium",
+    utm_campaign: "campaign_name",
+    utm_term: "campaign_term",
+    utm_content: "campaign_content",
+  };
+  const addCampaignParameter = (key: AttributionKey): void => {
+    const value = attribution[key];
+    if (value) {
+      campaignParameters[parameterNames[key]] = value;
+    }
+  };
+  UTM_KEYS.forEach(addCampaignParameter);
+  return campaignParameters;
+};
+
+const getAnalyticsPageLocation = (attribution: Attribution): string => {
+  const pageLocation = new URL(window.location.href);
+  const replaceAttributionParameter = (key: AttributionKey): void => {
+    pageLocation.searchParams.delete(key);
+    const value = attribution[key];
+    if (value) {
+      pageLocation.searchParams.set(key, value);
+    }
+  };
+  UTM_KEYS.forEach(replaceAttributionParameter);
+  return pageLocation.toString();
+};
+
 const setGoogleAnalyticsDisabled = (disabled: boolean): void => {
   if (!gaMeasurementId) {
     return;
@@ -65,7 +123,9 @@ const setGoogleAnalyticsDisabled = (disabled: boolean): void => {
 };
 
 const loadGoogleAnalytics = (attribution: Attribution): void => {
-  if (!gaMeasurementId) {
+  if (!gaMeasurementId || !isAnalyticsAllowedForCurrentHost()) {
+    setGoogleAnalyticsDisabled(true);
+    document.querySelector("[data-page2file-ga]")?.remove();
     return;
   }
   setGoogleAnalyticsDisabled(false);
@@ -77,7 +137,8 @@ const loadGoogleAnalytics = (attribution: Attribution): void => {
   window.gtag("js", new Date());
   window.gtag("config", gaMeasurementId, {
     send_page_view: true,
-    ...attribution,
+    page_location: getAnalyticsPageLocation(attribution),
+    ...toCampaignParameters(attribution),
   });
 
   if (document.querySelector("[data-page2file-ga]")) {
@@ -104,9 +165,10 @@ export const ConsentBanner = ({ locale }: { locale: Locale }): ReactNode => {
   useEffect(function initializeConsent(): () => void {
     const timer = window.setTimeout(function synchronizeConsent(): void {
       const storedConsent = readConsent();
+      const attribution = captureAttribution();
       setConsent(storedConsent);
       if (storedConsent === "accepted") {
-        loadGoogleAnalytics(readAttribution());
+        loadGoogleAnalytics(attribution);
       }
     }, 0);
     return (): void => window.clearTimeout(timer);
@@ -117,7 +179,7 @@ export const ConsentBanner = ({ locale }: { locale: Locale }): ReactNode => {
     setConsent(nextConsent);
     setPreferencesOpen(false);
     if (nextConsent === "accepted") {
-      loadGoogleAnalytics(readAttribution());
+      loadGoogleAnalytics(captureAttribution());
     } else {
       disableGoogleAnalytics();
     }
@@ -126,6 +188,13 @@ export const ConsentBanner = ({ locale }: { locale: Locale }): ReactNode => {
   const acceptAnalytics = (): void => saveConsent("accepted");
   const rejectAnalytics = (): void => saveConsent("rejected");
   const openPreferences = (): void => setPreferencesOpen(true);
+  const closePreferences = (): void => setPreferencesOpen(false);
+  const preferenceStatus =
+    consent === "accepted"
+      ? messages.consent.preferencesAccepted
+      : consent === "rejected"
+        ? messages.consent.preferencesRejected
+        : messages.consent.preferencesUnknown;
 
   if (consent !== "unknown" && !preferencesOpen) {
     return (
@@ -137,11 +206,13 @@ export const ConsentBanner = ({ locale }: { locale: Locale }): ReactNode => {
 
   return (
     <section aria-labelledby="consent-title" className={styles.banner}>
-      <h2 id="consent-title">Optional analytics</h2>
-      <p>
-        Essential features work without analytics. Google Analytics loads only
-        after you accept and only when the site owner configures a Measurement ID.
-      </p>
+      <h2 id="consent-title">
+        {preferencesOpen
+          ? messages.consent.preferencesTitle
+          : messages.consent.title}
+      </h2>
+      <p>{messages.consent.summary}</p>
+      <p>{messages.consent.details}</p>
       <div className={styles.actions}>
         <button className={styles.accept} onClick={acceptAnalytics} type="button">
           {messages.actions.accept}
@@ -149,9 +220,14 @@ export const ConsentBanner = ({ locale }: { locale: Locale }): ReactNode => {
         <button className={styles.reject} onClick={rejectAnalytics} type="button">
           {messages.actions.reject}
         </button>
+        {preferencesOpen ? (
+          <button className={styles.reject} onClick={closePreferences} type="button">
+            {messages.consent.close}
+          </button>
+        ) : null}
       </div>
       {consent !== "unknown" ? (
-        <p className={styles.status}>Current choice: {consent}</p>
+        <p className={styles.status}>{preferenceStatus}</p>
       ) : null}
     </section>
   );

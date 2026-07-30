@@ -239,6 +239,29 @@
   font-weight: 680;
 }
 
+.relatedLinks {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.relatedLinks h2 {
+  margin: 0 0 14px;
+  font-size: 18px;
+}
+
+.relatedLinks div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+.relatedLinks a {
+  color: var(--accent);
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
 @media (max-width: 900px) {
   .heroGrid {
     grid-template-columns: 1fr;

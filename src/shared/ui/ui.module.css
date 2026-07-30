@@ -233,6 +233,33 @@
   font-size: 20px;
 }
 
+.breadcrumbs {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs li {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.breadcrumbs a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 @media (max-width: 840px) {
   .nav,
   .desktopAction {

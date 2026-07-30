@@ -6,6 +6,7 @@ import { getLandingContent } from "@/content/landings";
 import { PageRouter } from "@/features/routing/page-router";
 import { isLocale, localeRegistry, type Locale } from "@/shared/i18n/locales";
 import { buildMetadata } from "@/shared/seo/metadata";
+import { getSeoCopy } from "@/shared/seo/seo-copy";
 import { isStaticRoute, staticRoutes } from "@/shared/routes/routes";
 
 type RouteParams = {
@@ -47,70 +48,81 @@ const getRouteMetadata = (
 ): Metadata => {
   const route = segments.join("/");
   if (!route) {
-    return buildMetadata({
-      locale,
-      route,
-      title: "Webpage to PDF or PowerPoint",
-      description: "Preview public webpage sections before exporting a PDF or PowerPoint sample.",
-    });
+    return buildMetadata({ locale, route, ...getSeoCopy(locale, "home") });
   }
   if (route === "convert-webpage-to-pdf") {
-    return buildMetadata({
-      locale,
-      route,
-      title: "Convert a webpage to PDF",
-      description: "Choose visual or editable PDF output and review page sections before download.",
-    });
+    return buildMetadata({ locale, route, ...getSeoCopy(locale, "pdf") });
   }
   if (route === "convert-webpage-to-powerpoint") {
     return buildMetadata({
       locale,
       route,
-      title: "Convert a webpage to PowerPoint",
-      description: "Turn webpage sections into previewable visual or editable 16:9 slides.",
+      ...getSeoCopy(locale, "powerpoint"),
     });
   }
   if (route === "chrome-extension/how-to-use") {
+    return buildMetadata({ locale, route, ...getSeoCopy(locale, "guide") });
+  }
+  if (segments[0] === "preview" || segments[0] === "download") {
+    const key = segments[0] === "preview" ? "preview" : "download";
     return buildMetadata({
       locale,
       route,
-      title: "How to use the Page2File Chrome extension",
-      description:
-        "Follow the step-by-step guide or video transcript to export webpages and AI chats to PDF or PowerPoint.",
-    });
-  }
-  if (segments[0] === "preview" || segments[0] === "download") {
-    return buildMetadata({
-      locale,
-      route: segments[0] === "preview" ? "convert-webpage-to-pdf" : "",
-      title: segments[0] === "preview" ? "Private preview" : "Sample download",
-      description: "Temporary prototype state.",
+      ...getSeoCopy(locale, key),
       noindex: true,
     });
   }
   if (segments[0] === "blog" && segments.length === 2) {
-    const entry = getBlogEntry(segments[1]);
+    const entry = getBlogEntry(locale, segments[1]);
     return entry
-      ? buildMetadata({ locale, route, title: entry.title, description: entry.description })
-      : buildMetadata({ locale, route: "blog", title: "Article not found", description: "Unknown article.", noindex: true });
+      ? buildMetadata({
+          locale,
+          route,
+          title: entry.title,
+          description: entry.description,
+          kind: "article",
+          publishedAt: entry.publishedAt,
+          updatedAt: entry.updatedAt,
+          author: entry.author,
+        })
+      : buildMetadata({
+          locale,
+          route,
+          ...getSeoCopy(locale, "notFound"),
+          noindex: true,
+        });
   }
   if (segments[0] === "updates" && segments.length === 2) {
-    const entry = getUpdateEntry(segments[1]);
+    const entry = getUpdateEntry(locale, segments[1]);
     return entry
-      ? buildMetadata({ locale, route, title: entry.title, description: entry.description })
-      : buildMetadata({ locale, route: "updates", title: "Update not found", description: "Unknown update.", noindex: true });
+      ? buildMetadata({
+          locale,
+          route,
+          title: entry.title,
+          description: entry.description,
+          kind: "article",
+          publishedAt: entry.publishedAt,
+          updatedAt: entry.updatedAt,
+          author: entry.author,
+        })
+      : buildMetadata({
+          locale,
+          route,
+          ...getSeoCopy(locale, "notFound"),
+          noindex: true,
+        });
   }
   if (route === "blog") {
-    return buildMetadata({ locale, route, title: "Webpage export guides", description: "Ten practical guides to PDF, PowerPoint, links, HTML and private chat export." });
+    return buildMetadata({ locale, route, ...getSeoCopy(locale, "blog") });
   }
   if (route === "updates") {
-    return buildMetadata({ locale, route, title: "Product updates", description: "Human-readable Page2File prototype updates." });
+    return buildMetadata({ locale, route, ...getSeoCopy(locale, "updates") });
   }
   if (route === "changelog") {
-    return buildMetadata({ locale, route, title: "Changelog", description: "Versioned Page2File prototype changes." });
+    return buildMetadata({ locale, route, ...getSeoCopy(locale, "changelog") });
   }
   if (isStaticRoute(route)) {
-    const content = getLandingContent(route);
+    const content = getLandingContent(locale, route);
     if (content) {
       return buildMetadata({
         locale,
@@ -124,9 +136,8 @@ const getRouteMetadata = (
   }
   return buildMetadata({
     locale,
-    route: "",
-    title: "Page not found",
-    description: "The requested Page2File page does not exist.",
+    route,
+    ...getSeoCopy(locale, "notFound"),
     noindex: true,
   });
 };

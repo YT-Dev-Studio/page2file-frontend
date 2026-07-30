@@ -13,6 +13,7 @@ import { getMessages } from "@/shared/i18n/messages";
 import { mockControlsEnabled } from "@/shared/config/site";
 import { createMockPreview, mockScenarios } from "./mock-adapter";
 import styles from "./converter.module.css";
+import { getConverterCopy } from "./converter-copy";
 import { validatePublicUrl } from "./url-validation";
 
 type ConverterFormProps = {
@@ -25,6 +26,7 @@ export const ConverterForm = ({
   locale,
 }: ConverterFormProps): ReactNode => {
   const messages = getMessages(locale);
+  const copy = getConverterCopy(locale);
   const router = useRouter();
   const [sourceUrl, setSourceUrl] = useState("https://example.com/long-article");
   const [mode, setMode] = useState<ConversionMode>("visual");
@@ -47,7 +49,7 @@ export const ConverterForm = ({
     item: (typeof mockScenarios)[number],
   ): ReactNode => (
     <option key={item.value} value={item.value}>
-      {item.label}
+      {copy.scenarios[item.value]}
     </option>
   );
 
@@ -55,7 +57,7 @@ export const ConverterForm = ({
     event.preventDefault();
     const validation = validatePublicUrl(sourceUrl);
     if (!validation.valid) {
-      setError(validation.message);
+      setError(copy.validation[validation.code]);
       document.getElementById(`${format}-source-url`)?.focus();
       return;
     }
@@ -96,23 +98,23 @@ export const ConverterForm = ({
       </div>
 
       <fieldset className={styles.modes}>
-        <legend className="srOnly">Conversion mode</legend>
+        <legend className="srOnly">{copy.modeLegend}</legend>
         <label className={styles.mode}>
           <input checked={mode === "visual"} name="mode" onChange={handleModeChange} type="radio" value="visual" />
           <span className={styles.modeTitle}>{messages.converter.visual}</span>
-          <span className={styles.modeText}>Prioritize layout fidelity. Each detected section becomes a stable image.</span>
+          <span className={styles.modeText}>{copy.visualText}</span>
         </label>
         <label className={styles.mode}>
           <input checked={mode === "editable"} name="mode" onChange={handleModeChange} type="radio" value="editable" />
           <span className={styles.modeTitle}>{messages.converter.editable}</span>
-          <span className={styles.modeText}>Rebuild supported text, images and safe links; rasterize only complex blocks.</span>
+          <span className={styles.modeText}>{copy.editableText}</span>
         </label>
       </fieldset>
 
       {mockControlsEnabled ? (
         <label className={styles.demo}>
-          <strong>DEMO STATE</strong>
-          <span className={styles.hint}>Select a deterministic state without contacting the entered URL.</span>
+          <strong>{copy.demoState}</strong>
+          <span className={styles.hint}>{copy.demoHint}</span>
           <select className={styles.select} onChange={handleScenarioChange} value={scenario}>
             {mockScenarios.map(scenarioOption)}
           </select>
@@ -120,7 +122,7 @@ export const ConverterForm = ({
       ) : null}
 
       <button className={styles.submit} type="submit">
-        {format === "pdf" ? "Generate PDF preview" : "Generate PowerPoint preview"}
+        {copy.submit[format]}
       </button>
     </form>
   );

@@ -1,15 +1,21 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import {
-  blogEntries,
-  changelogEntries,
+  getBlogEntries,
+  getChangelogEntries,
+  getUpdateEntries,
   type ChangelogEntry,
   type ContentEntry,
-  updateEntries,
 } from "@/content/content-registry";
 import type { Locale } from "@/shared/i18n/locales";
 import { getLocaleDefinition } from "@/shared/i18n/locales";
 import { Container } from "@/shared/ui/site-shell";
+import {
+  ArticleJsonLd,
+  SeoBreadcrumbs,
+  type BreadcrumbItem,
+} from "@/shared/seo/structured-data";
+import { formatContentDate, getContentCopy } from "./content-copy";
 import styles from "./content.module.css";
 
 const EntryRow = ({
@@ -19,15 +25,20 @@ const EntryRow = ({
   entry: ContentEntry;
   locale: Locale;
 }): ReactNode => {
+  const copy = getContentCopy(locale);
   const base = entry.kind === "blog" ? "blog" : "updates";
   return (
     <article className={styles.entry}>
-      <time className={styles.entryDate} dateTime={entry.publishedAt}>{entry.publishedAt}</time>
+      <time className={styles.entryDate} dateTime={entry.publishedAt}>
+        {formatContentDate(locale, entry.publishedAt)}
+      </time>
       <div>
         <h2><Link href={`/${locale}/${base}/${entry.slug}`}>{entry.title}</Link></h2>
         <p>{entry.description}</p>
       </div>
-      <span className={styles.entryMeta}>{entry.readingMinutes} min</span>
+      <span className={styles.entryMeta}>
+        {copy.minuteLabel(entry.readingMinutes)}
+      </span>
     </article>
   );
 };
@@ -39,7 +50,10 @@ export const ContentIndexPage = ({
   kind: "blog" | "updates";
   locale: Locale;
 }): ReactNode => {
-  const entries = kind === "blog" ? blogEntries : updateEntries;
+  const copy = getContentCopy(locale);
+  const entries =
+    kind === "blog" ? getBlogEntries(locale) : getUpdateEntries(locale);
+  const indexCopy = kind === "blog" ? copy.blog : copy.updates;
   const entryRow = (entry: ContentEntry): ReactNode => (
     <EntryRow entry={entry} key={entry.slug} locale={locale} />
   );
@@ -47,13 +61,19 @@ export const ContentIndexPage = ({
     <main className={styles.page} id="main-content">
       <Container>
         <header className={styles.hero}>
-          <p className={styles.eyebrow}>{kind === "blog" ? "Conversion field notes" : "Product updates"}</p>
-          <h1 className={styles.title}>{kind === "blog" ? "Practical webpage export guides" : "What changed and why"}</h1>
-          <p className={styles.description}>
-            {kind === "blog"
-              ? "Ten focused articles about fidelity, links, page breaks, slides, private chats and safe HTML."
-              : "Human-readable prototype changes, each connected to the technical changelog."}
-          </p>
+          <div className={styles.draft}>
+            {copy.prototypeSamples}
+          </div>
+          <p className={styles.eyebrow}>{indexCopy.eyebrow}</p>
+          <h1 className={styles.title}>{indexCopy.title}</h1>
+          <p className={styles.description}>{indexCopy.description}</p>
+          {kind === "updates" ? (
+            <p>
+              <Link href={`/${locale}/changelog`}>
+                {copy.changelogLink}
+              </Link>
+            </p>
+          ) : null}
         </header>
         <div className={styles.list}>{entries.map(entryRow)}</div>
       </Container>
@@ -70,26 +90,50 @@ export const ContentArticlePage = ({
 }): ReactNode => {
   const Article = entry.component;
   const definition = getLocaleDefinition(locale);
+  const copy = getContentCopy(locale);
+  const base = entry.kind === "blog" ? "blog" : "updates";
+  const breadcrumbs: ReadonlyArray<BreadcrumbItem> = [
+    { label: copy.homeLabel, href: `/${locale}` },
+    {
+      label:
+        entry.kind === "blog"
+          ? copy.blogBreadcrumb
+          : copy.updatesBreadcrumb,
+      href: `/${locale}/${base}`,
+    },
+    { label: entry.title, href: `/${locale}/${base}/${entry.slug}` },
+  ];
   return (
     <main className={styles.page} id="main-content">
       <Container>
+        <SeoBreadcrumbs
+          items={breadcrumbs}
+          label={copy.breadcrumbLabel}
+          locale={locale}
+        />
+        <ArticleJsonLd entry={entry} locale={locale} />
         <header className={styles.articleHeader}>
-          {!definition.reviewed ? <div className={styles.draft}>English fallback article — this locale is not indexed.</div> : null}
-          <p className={styles.eyebrow}>{entry.kind === "blog" ? "Guide" : "Product update"}</p>
+          <div className={styles.draft}>
+            {copy.articleSample}
+          </div>
+          {!definition.reviewed ? <div className={styles.draft}>{copy.fallbackArticle}</div> : null}
+          <p className={styles.eyebrow}>{entry.kind === "blog" ? copy.guideLabel : copy.updateLabel}</p>
           <h1 className={styles.title}>{entry.title}</h1>
           <p className={styles.description}>{entry.description}</p>
           <div className={styles.articleMeta}>
             <span>{entry.author}</span>
-            <time dateTime={entry.updatedAt}>Updated {entry.updatedAt}</time>
-            <span>{entry.readingMinutes} min read</span>
+            <time dateTime={entry.updatedAt}>
+              {copy.updatedLabel} {formatContentDate(locale, entry.updatedAt)}
+            </time>
+            <span>{copy.readLabel(entry.readingMinutes)}</span>
           </div>
         </header>
         <article className={styles.article}>
           <Article />
           {entry.kind === "update" ? (
-            <p><Link href={`/${locale}/changelog`}>See the technical changelog →</Link></p>
+            <p><Link href={`/${locale}/changelog`}>{copy.seeChangelog}</Link></p>
           ) : (
-            <p><Link href={`/${locale}/convert-webpage-to-pdf`}>Open the PDF prototype →</Link></p>
+            <p><Link href={`/${locale}/convert-webpage-to-pdf`}>{copy.openPdf}</Link></p>
           )}
         </article>
       </Container>
@@ -104,26 +148,31 @@ const Release = ({
   entry: ChangelogEntry;
   locale: Locale;
 }): ReactNode => {
+  const copy = getContentCopy(locale);
   const listItem = (item: string): ReactNode => <li key={item}>{item}</li>;
   return (
     <article className={styles.release}>
       <div>
         <h2>{entry.version}</h2>
-        <time className={styles.entryDate} dateTime={entry.date}>{entry.date}</time>
+        <time className={styles.entryDate} dateTime={entry.date}>
+          {formatContentDate(locale, entry.date)}
+        </time>
       </div>
       <div>
-        <h3>Added</h3>
+        <h3>{copy.added}</h3>
         <ul>{entry.added.map(listItem)}</ul>
-        <h3>Improved</h3>
+        <h3>{copy.improved}</h3>
         <ul>{entry.improved.map(listItem)}</ul>
-        {entry.fixed.length > 0 ? <><h3>Fixed</h3><ul>{entry.fixed.map(listItem)}</ul></> : null}
-        {entry.relatedUpdate ? <Link href={`/${locale}/updates/${entry.relatedUpdate}`}>Read the related update →</Link> : null}
+        {entry.fixed.length > 0 ? <><h3>{copy.fixed}</h3><ul>{entry.fixed.map(listItem)}</ul></> : null}
+        {entry.relatedUpdate ? <Link href={`/${locale}/updates/${entry.relatedUpdate}`}>{copy.relatedUpdate}</Link> : null}
       </div>
     </article>
   );
 };
 
 export const ChangelogPage = ({ locale }: { locale: Locale }): ReactNode => {
+  const copy = getContentCopy(locale);
+  const entries = getChangelogEntries(locale);
   const release = (entry: ChangelogEntry): ReactNode => (
     <Release entry={entry} key={entry.version} locale={locale} />
   );
@@ -131,11 +180,14 @@ export const ChangelogPage = ({ locale }: { locale: Locale }): ReactNode => {
     <main className={styles.page} id="main-content">
       <Container>
         <header className={styles.hero}>
-          <p className={styles.eyebrow}>Technical history</p>
-          <h1 className={styles.title}>Changelog</h1>
-          <p className={styles.description}>Versioned prototype changes. Sample entries are clearly labelled and link back to product updates.</p>
+          <div className={styles.draft}>
+            {copy.prototypeSamples}
+          </div>
+          <p className={styles.eyebrow}>{copy.changelog.eyebrow}</p>
+          <h1 className={styles.title}>{copy.changelog.title}</h1>
+          <p className={styles.description}>{copy.changelog.description}</p>
         </header>
-        <div className={styles.changelog}>{changelogEntries.map(release)}</div>
+        <div className={styles.changelog}>{entries.map(release)}</div>
       </Container>
     </main>
   );

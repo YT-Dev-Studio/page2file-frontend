@@ -14,32 +14,65 @@ import type {
 } from "@/entities/conversion/model";
 import type { Locale } from "@/shared/i18n/locales";
 import { createPreviewSections } from "@/features/converter/mock-adapter";
+import { getPreviewCopy, type PreviewCopy } from "./preview-copy";
 import styles from "./preview.module.css";
 
-type StatusContent = {
-  title: string;
-  text: string;
+type StatusBehavior = {
   tone: "progress" | "warning" | "error" | "success";
   pending: boolean;
 };
 
-const statusContent: Record<MockJobStage, StatusContent> = {
-  idle: { title: "Waiting to start", text: "Choose a source and mode.", tone: "progress", pending: false },
-  queued: { title: "Queued", text: "A worker slot is reserved for this mock job.", tone: "progress", pending: true },
-  "loading-source": { title: "Loading page", text: "The production service would load and stabilize the public page here.", tone: "progress", pending: true },
-  analyzing: { title: "Analyzing sections", text: "Headings, visual breaks and safe links are being mapped.", tone: "progress", pending: true },
-  "rendering-preview": { title: "Rendering preview", text: "Page and slide thumbnails are being prepared.", tone: "progress", pending: true },
-  "preview-ready": { title: "Preview ready", text: "Review sections and warnings before final render.", tone: "success", pending: false },
-  "partial-warning": { title: "Preview ready with fallbacks", text: "One complex block was rasterized; the rest remains editable.", tone: "warning", pending: false },
-  "rendering-final": { title: "Rendering final file", text: "Your selected operations are being applied to the sample.", tone: "progress", pending: true },
-  "download-ready": { title: "Download ready", text: "This is a static sample artifact, not a conversion of the entered URL.", tone: "success", pending: false },
-  "human-verification": { title: "Human verification needed", text: "A production service could ask for a privacy-preserving challenge before expensive work.", tone: "warning", pending: false },
-  "rate-limited": { title: "Rate limit reached", text: "Wait before starting another conversion. No job history was stored.", tone: "error", pending: false },
-  "source-blocked": { title: "Source blocked or sign-in required", text: "The public converter does not bypass access controls. Use the current-tab extension.", tone: "error", pending: false },
-  "page-too-large": { title: "Page is too large", text: "Reduce the source scope or use a bounded multi-page workflow.", tone: "error", pending: false },
-  timeout: { title: "Source timed out", text: "The page did not stabilize within the allowed processing window.", tone: "error", pending: false },
-  expired: { title: "Preview expired", text: "Temporary jobs are not kept as history. Start a new preview.", tone: "error", pending: false },
-  failed: { title: "Preview could not be completed", text: "This mock failure is recoverable. Retry the workflow.", tone: "error", pending: false },
+const statusBehavior: Record<MockJobStage, StatusBehavior> = {
+  idle: { tone: "progress", pending: false },
+  queued: { tone: "progress", pending: true },
+  "loading-source": { tone: "progress", pending: true },
+  analyzing: { tone: "progress", pending: true },
+  "rendering-preview": { tone: "progress", pending: true },
+  "preview-ready": { tone: "success", pending: false },
+  "partial-warning": { tone: "warning", pending: false },
+  "rendering-final": { tone: "progress", pending: true },
+  "download-ready": { tone: "success", pending: false },
+  "human-verification": { tone: "warning", pending: false },
+  "rate-limited": { tone: "error", pending: false },
+  "source-blocked": { tone: "error", pending: false },
+  "page-too-large": { tone: "error", pending: false },
+  timeout: { tone: "error", pending: false },
+  expired: { tone: "error", pending: false },
+  failed: { tone: "error", pending: false },
+};
+
+const createLocalizedSections = (
+  format: "pdf" | "pptx",
+  copy: PreviewCopy,
+): ReadonlyArray<PreviewSection> => {
+  const localizeSection = (section: PreviewSection): PreviewSection => {
+    if (
+      section.id === "hero" ||
+      section.id === "comparison" ||
+      section.id === "canvas" ||
+      section.id === "article"
+    ) {
+      const localized = copy.sections[section.id];
+      return {
+        ...section,
+        title:
+          section.id === "hero" && format === "pptx"
+            ? copy.pptxTitle
+            : localized.title,
+        warning: localized.warning,
+        dimensions:
+          format === "pdf"
+            ? section.id === "article"
+              ? copy.dimensions.twoPages
+              : copy.dimensions.onePage
+            : section.id === "article"
+              ? copy.dimensions.twoSlides
+              : copy.dimensions.oneSlide,
+      };
+    }
+    return section;
+  };
+  return createPreviewSections(format).map(localizeSection);
 };
 
 const scenarioStage = (job: MockJobReference): MockJobStage => {
@@ -58,13 +91,14 @@ export const PreviewWorkspace = ({
   job: MockJobReference;
   locale: Locale;
 }): ReactNode => {
+  const copy = getPreviewCopy(locale);
   const [stage, setStage] = useState<MockJobStage>(
     job.scenario === "human-verification" ? "human-verification" : "queued",
   );
   const [verified, setVerified] = useState(false);
   const [retryAsHappyPath, setRetryAsHappyPath] = useState(false);
   const [sections, setSections] = useState<ReadonlyArray<PreviewSection>>(
-    createPreviewSections(job.format),
+    createLocalizedSections(job.format, copy),
   );
   const [selectedId, setSelectedId] = useState("hero");
   const [operations, setOperations] = useState<ReadonlyArray<PreviewOperation>>([]);
@@ -74,7 +108,9 @@ export const PreviewWorkspace = ({
     if (job.scenario === "human-verification" && !verified) {
       return undefined;
     }
-    const terminalStage: MockJobStage = retryAsHappyPath
+    const terminalStage: MockJobStage =
+      retryAsHappyPath ||
+      (job.scenario === "human-verification" && verified)
       ? "preview-ready"
       : scenarioStage(job);
     const stages: ReadonlyArray<MockJobStage> = [
@@ -145,7 +181,7 @@ export const PreviewWorkspace = ({
       nextSections.splice(sourceIndex + 1, 0, {
         ...source,
         id: `${sectionId}-split`,
-        title: `${source.title} · continuation`,
+        title: `${source.title} · ${copy.continuation}`,
       });
       return nextSections;
     });
@@ -213,7 +249,10 @@ export const PreviewWorkspace = ({
     setVerified(true);
     setStage("queued");
   };
-  const currentStatus = statusContent[stage];
+  const currentStatus = {
+    ...statusBehavior[stage],
+    ...copy.status[stage],
+  };
   const showWorkspace = !isTerminalError(stage) && stage !== "human-verification";
 
   const sectionCard = (section: PreviewSection, index: number): ReactNode => {
@@ -240,14 +279,14 @@ export const PreviewWorkspace = ({
       >
         <button className={styles.sectionSelect} onClick={selectSection} type="button">
           <strong>{String(index + 1).padStart(2, "0")} · {section.title}</strong>
-          <span>{section.dimensions} · {section.kind}</span>
+          <span>{section.dimensions} · {copy.kindLabels[section.kind]}</span>
         </button>
         <div className={styles.sectionActions}>
-          <button className={styles.smallButton} disabled={index === 0} onClick={moveUp} type="button">Up</button>
-          <button className={styles.smallButton} disabled={index === sections.length - 1} onClick={moveDown} type="button">Down</button>
-          <button className={styles.smallButton} onClick={removeOrRestore} type="button">{section.removed ? "Restore" : "Remove"}</button>
-          <button className={styles.smallButton} onClick={split} type="button">Split</button>
-          <button className={styles.smallButton} disabled={index === sections.length - 1} onClick={merge} type="button">Merge</button>
+          <button className={styles.smallButton} disabled={index === 0} onClick={moveUp} type="button">{copy.up}</button>
+          <button className={styles.smallButton} disabled={index === sections.length - 1} onClick={moveDown} type="button">{copy.down}</button>
+          <button className={styles.smallButton} onClick={removeOrRestore} type="button">{section.removed ? copy.restore : copy.remove}</button>
+          <button className={styles.smallButton} onClick={split} type="button">{copy.split}</button>
+          <button className={styles.smallButton} disabled={index === sections.length - 1} onClick={merge} type="button">{copy.merge}</button>
         </div>
       </article>
     );
@@ -257,10 +296,10 @@ export const PreviewWorkspace = ({
     <main className={styles.page} id="main-content">
       <div className={styles.topbar}>
         <div>
-          <p className={styles.eyebrow}>Mock preview workspace</p>
-          <h1 className={styles.title}>{job.format === "pdf" ? "PDF pages" : "PowerPoint slides"}</h1>
+          <p className={styles.eyebrow}>{copy.workspaceEyebrow}</p>
+          <h1 className={styles.title}>{job.format === "pdf" ? copy.pdfTitle : copy.pptxTitle}</h1>
         </div>
-        <p className={styles.jobMeta}>{job.jobId} · {job.mode}</p>
+        <p className={styles.jobMeta}>{job.jobId} · {copy.modeLabels[job.mode]}</p>
       </div>
 
       <section aria-live="polite" className={styles.statusPanel} data-tone={currentStatus.tone}>
@@ -268,23 +307,23 @@ export const PreviewWorkspace = ({
         <p className={styles.statusText}>{currentStatus.text}</p>
         {currentStatus.pending ? <div className={styles.progressTrack}><div className={styles.progressValue} /></div> : null}
         {stage === "human-verification" ? (
-          <button className={styles.secondaryAction} onClick={completeVerification} type="button">Complete demo verification</button>
+          <button className={styles.secondaryAction} onClick={completeVerification} type="button">{copy.completeVerification}</button>
         ) : null}
         {isTerminalError(stage) ? (
-          <button className={styles.secondaryAction} onClick={retryJob} type="button">Retry with the happy path</button>
+          <button className={styles.secondaryAction} onClick={retryJob} type="button">{copy.retry}</button>
         ) : null}
       </section>
 
       {showWorkspace ? (
         <div className={styles.workspace}>
           <aside className={styles.rail}>
-            <h2 className={styles.panelTitle}>Sections</h2>
+            <h2 className={styles.panelTitle}>{copy.sectionsTitle}</h2>
             <div className={styles.sectionList}>{sections.map(sectionCard)}</div>
           </aside>
-          <section className={styles.canvasArea} aria-label="Document preview">
+          <section className={styles.canvasArea} aria-label={copy.previewLabel}>
             <div className={styles.canvas} data-format={job.format}>
               <div className={styles.canvasHeader}>
-                <span>{job.format.toUpperCase()} · {job.mode}</span>
+                <span>{job.format.toUpperCase()} · {copy.modeLabels[job.mode]}</span>
                 <h2>{selectedSection?.title}</h2>
               </div>
               <div className={styles.canvasBody}>
@@ -294,27 +333,29 @@ export const PreviewWorkspace = ({
                 <div className={styles.mockMedia} />
               </div>
               <div className={styles.canvasFooter}>
-                <span>PAGE2FILE SAMPLE</span>
+                <span>{copy.sampleLabel}</span>
                 <span>{selectedSection?.dimensions}</span>
               </div>
             </div>
           </section>
           <aside className={styles.inspector}>
-            <h2 className={styles.panelTitle}>Inspector</h2>
-            <span className={styles.badge}>{selectedSection?.kind}</span>
+            <h2 className={styles.panelTitle}>{copy.inspectorTitle}</h2>
+            <span className={styles.badge}>
+              {selectedSection ? copy.kindLabels[selectedSection.kind] : null}
+            </span>
             <p className={styles.inspectorText}>
-              {selectedSection?.warning ?? "No conversion warnings for this section."}
+              {selectedSection?.warning ?? copy.noWarnings}
             </p>
-            <h3 className={styles.panelTitle}>Global warnings</h3>
+            <h3 className={styles.panelTitle}>{copy.globalWarningsTitle}</h3>
             <ul className={styles.warningList}>
-              <li className={styles.warning}>Demo output — no source URL was fetched.</li>
-              <li className={styles.warning}>Video and animation use static poster frames.</li>
-              {job.mode === "editable" ? <li className={styles.warning}>One complex graphic remains a visual fallback.</li> : null}
+              <li className={styles.warning}>{copy.demoWarning}</li>
+              <li className={styles.warning}>{copy.mediaWarning}</li>
+              {job.mode === "editable" ? <li className={styles.warning}>{copy.editableWarning}</li> : null}
             </ul>
-            <p className={styles.inspectorText}>{operations.length} local edit operations</p>
+            <p className={styles.inspectorText}>{copy.operationCount(operations.length)}</p>
             {stage === "download-ready" ? (
               <Link className={styles.primaryAction} href={`/${locale}/download/${job.jobId}?mode=${job.mode}`}>
-                Open sample download
+                {copy.openDownload}
               </Link>
             ) : (
               <button
@@ -323,7 +364,7 @@ export const PreviewWorkspace = ({
                 onClick={startFinalRender}
                 type="button"
               >
-                Render final sample
+                {copy.renderFinal}
               </button>
             )}
           </aside>

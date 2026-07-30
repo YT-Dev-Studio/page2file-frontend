@@ -1,10 +1,17 @@
 import type { ExternalLinkKey } from "@/shared/config/site";
 import type { StaticRoute } from "@/shared/routes/routes";
+import type { Locale } from "@/shared/i18n/locales";
+import { russianLandingContent } from "./russian-landings";
 
 export type ContentSection = {
   heading: string;
   body: string;
   points?: ReadonlyArray<string>;
+};
+
+export type RelatedRoute = {
+  route: StaticRoute;
+  label: string;
 };
 
 export type LandingContent = {
@@ -19,7 +26,23 @@ export type LandingContent = {
   externalLinkKey?: ExternalLinkKey;
   noindex?: boolean;
   legal?: boolean;
+  relatedRoutes?: ReadonlyArray<RelatedRoute>;
 };
+
+const gptRelatedRoutes: ReadonlyArray<RelatedRoute> = [
+  { route: "page2pdf-gpt", label: "Page2PDF GPT" },
+  { route: "web2pdf-gpt", label: "Web2PDF GPT" },
+  { route: "html2pdf-gpt", label: "HTML2PDF GPT" },
+  { route: "web2powerpoint-gpt", label: "Web2PowerPoint GPT" },
+];
+
+const aiChatRelatedRoutes: ReadonlyArray<RelatedRoute> = [
+  { route: "export-ai-chat-to-pdf", label: "All AI chat exports" },
+  { route: "export-chatgpt-to-pdf", label: "ChatGPT to PDF" },
+  { route: "export-claude-to-pdf", label: "Claude to PDF" },
+  { route: "export-gemini-to-pdf", label: "Gemini to PDF" },
+  { route: "export-grok-to-pdf", label: "Grok to PDF" },
+];
 
 export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
   "chrome-extension": {
@@ -66,12 +89,16 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     primaryHref: "/chrome-extension/how-to-use",
     primaryLabel: "Open the full guide",
     noindex: true,
+    relatedRoutes: [
+      { route: "updates", label: "Product updates" },
+      { route: "changelog", label: "Changelog" },
+    ],
   },
   "page2pdf-gpt": {
     route: "page2pdf-gpt",
     eyebrow: "GPT workflow · one page",
     title: "Turn one public webpage into a reviewed PDF",
-    description: "Page2PDF GPT landing page for one-page public URL conversion.",
+    description: "Use the Page2PDF GPT workflow to convert one public HTTPS webpage into a visual or editable PDF with mandatory preview and visible limitations.",
     lead:
       "Give the GPT one public HTTPS URL, choose visual or editable output, and review the generated preview before downloading.",
     sections: [
@@ -81,12 +108,13 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     ],
     externalLinkKey: "page2pdfGpt",
     primaryLabel: "Open Page2PDF GPT",
+    relatedRoutes: gptRelatedRoutes,
   },
   "web2pdf-gpt": {
     route: "web2pdf-gpt",
     eyebrow: "GPT workflow · bounded crawl",
     title: "Collect a small website into one organized PDF",
-    description: "Web2PDF GPT landing page for limited same-origin website conversion.",
+    description: "Use the Web2PDF GPT workflow for a bounded same-origin website crawl with explicit page limits, organized PDF output and reviewable failures.",
     lead:
       "Start from one public URL and collect a bounded set of same-origin pages into a merged document with page titles and bookmarks.",
     sections: [
@@ -96,12 +124,13 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     ],
     externalLinkKey: "web2pdfGpt",
     primaryLabel: "Open Web2PDF GPT",
+    relatedRoutes: gptRelatedRoutes,
   },
   "html2pdf-gpt": {
     route: "html2pdf-gpt",
     eyebrow: "GPT workflow · supplied HTML",
     title: "Render supplied HTML without trusting its scripts",
-    description: "HTML2PDF GPT landing page for sandboxed HTML and inline CSS conversion.",
+    description: "Use the HTML2PDF GPT workflow for bounded HTML and inline CSS conversion in a planned sandbox with scripts and external network access disabled.",
     lead:
       "Provide bounded HTML and inline CSS. Scripts and network access stay disabled in the planned backend sandbox.",
     sections: [
@@ -111,12 +140,13 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     ],
     externalLinkKey: "html2pdfGpt",
     primaryLabel: "Open HTML2PDF GPT",
+    relatedRoutes: gptRelatedRoutes,
   },
   "web2powerpoint-gpt": {
     route: "web2powerpoint-gpt",
     eyebrow: "GPT workflow · webpage to deck",
     title: "Translate webpage sections into presentation slides",
-    description: "Web2PowerPoint GPT landing page for visual and editable slide conversion.",
+    description: "Use the Web2PowerPoint GPT workflow to turn meaningful public webpage sections into visual or editable 16:9 slides with preview warnings.",
     lead:
       "Turn the meaningful sections of a public webpage into a 16:9 deck, then review slide boundaries before download.",
     sections: [
@@ -126,12 +156,13 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     ],
     externalLinkKey: "web2powerpointGpt",
     primaryLabel: "Open Web2PowerPoint GPT",
+    relatedRoutes: gptRelatedRoutes,
   },
   "export-ai-chat-to-pdf": {
     route: "export-ai-chat-to-pdf",
     eyebrow: "Local AI chat export",
     title: "Keep the conversation in your browser",
-    description: "Export supported AI conversations to PDF locally with the Page2File extension.",
+    description: "Export supported ChatGPT, Claude, Gemini and Grok conversations to PDF locally with the Page2File extension and no conversion history.",
     lead:
       "Choose the original conversation look or a clean reading document. The prototype positions chat export as a local browser task.",
     sections: [
@@ -142,30 +173,34 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
       },
       { heading: "Original look", body: "Preserve message grouping, code blocks, tables and visible source links." },
       { heading: "Clean document", body: "Reflow supported text into a quieter document while retaining authorship and link targets." },
+      { heading: "Independent product", body: "Page2File is not affiliated with, endorsed by or operated by any supported AI platform." },
     ],
     externalLinkKey: "chromeExtension",
     primaryLabel: "Install the extension",
+    relatedRoutes: aiChatRelatedRoutes,
   },
   "export-chatgpt-to-pdf": {
     route: "export-chatgpt-to-pdf",
     eyebrow: "ChatGPT export",
     title: "Export long ChatGPT conversations to PDF locally",
-    description: "A local extension workflow for ChatGPT messages, code, tables and long conversations.",
+    description: "Export visible ChatGPT messages, code blocks, tables, links and long conversations to a reviewed PDF through a local current-tab extension workflow.",
     lead:
       "Capture the conversation you can see in the active tab, review page breaks, and download without creating a Page2File account.",
     sections: [
       { heading: "What is preserved", body: "Messages, speaker order, code blocks, tables and visible links are mapped into the preview." },
       { heading: "Two reading styles", body: "Keep the original visual rhythm or choose a cleaner document optimized for reading and printing." },
       { heading: "Platform-specific limits", body: "Collapsed branches, unloaded messages and off-DOM content may require scrolling or expansion before capture." },
+      { heading: "No official affiliation", body: "Page2File is an independent export tool and is not endorsed by or affiliated with OpenAI or ChatGPT." },
     ],
     externalLinkKey: "chromeExtension",
     primaryLabel: "Install for ChatGPT",
+    relatedRoutes: aiChatRelatedRoutes,
   },
   "export-claude-to-pdf": {
     route: "export-claude-to-pdf",
     eyebrow: "Claude export",
     title: "Save Claude conversations and visible artifacts",
-    description: "Export Claude conversations, Markdown, code and visible artifact context to PDF locally.",
+    description: "Export visible Claude conversations, Markdown, code, citations and available artifact context to a reviewed PDF through the local browser extension.",
     lead:
       "The extension reads the active conversation after an explicit click and prepares a local preview with long-response handling.",
     sections: [
@@ -175,6 +210,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     ],
     externalLinkKey: "chromeExtension",
     primaryLabel: "Install for Claude",
+    relatedRoutes: aiChatRelatedRoutes,
   },
   "export-gemini-to-pdf": {
     route: "export-gemini-to-pdf",
@@ -190,12 +226,13 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     ],
     externalLinkKey: "chromeExtension",
     primaryLabel: "Install for Gemini",
+    relatedRoutes: aiChatRelatedRoutes,
   },
   "export-grok-to-pdf": {
     route: "export-grok-to-pdf",
     eyebrow: "Grok export",
     title: "Export Grok threads with visible citations",
-    description: "A local PDF export workflow for Grok conversations, X links, posts and visible citations.",
+    description: "Export visible Grok conversations, X links, quoted posts and citations to a reviewed PDF through a local current-tab browser extension workflow.",
     lead:
       "Capture the active thread, preserve visible source context and choose a visual or clean document preview.",
     sections: [
@@ -205,6 +242,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     ],
     externalLinkKey: "chromeExtension",
     primaryLabel: "Install for Grok",
+    relatedRoutes: aiChatRelatedRoutes,
   },
   privacy: {
     route: "privacy",
@@ -273,5 +311,9 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
   },
 };
 
-export const getLandingContent = (route: StaticRoute): LandingContent | null =>
-  landingContent[route] ?? null;
+export const getLandingContent = (
+  locale: Locale,
+  route: StaticRoute,
+): LandingContent | null =>
+  (locale === "ru" ? russianLandingContent[route] : landingContent[route]) ??
+  null;

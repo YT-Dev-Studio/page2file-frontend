@@ -1,6 +1,14 @@
+export type UrlValidationCode =
+  | "empty"
+  | "tooLong"
+  | "malformed"
+  | "insecure"
+  | "credentials"
+  | "blockedHost";
+
 export type UrlValidationResult =
   | { valid: true; normalizedUrl: string }
-  | { valid: false; message: string };
+  | { valid: false; code: UrlValidationCode };
 
 const MAX_URL_LENGTH = 2048;
 const BLOCKED_HOSTS: ReadonlyArray<string> = [
@@ -59,27 +67,27 @@ const isBlockedHostname = (hostname: string): boolean => {
 export const validatePublicUrl = (value: string): UrlValidationResult => {
   const trimmedValue = value.trim();
   if (!trimmedValue) {
-    return { valid: false, message: "Enter a public HTTPS URL." };
+    return { valid: false, code: "empty" };
   }
   if (trimmedValue.length > MAX_URL_LENGTH) {
-    return { valid: false, message: "The URL is too long." };
+    return { valid: false, code: "tooLong" };
   }
 
   let parsedUrl: URL;
   try {
     parsedUrl = new URL(trimmedValue);
   } catch {
-    return { valid: false, message: "Enter a complete URL such as https://example.com/page." };
+    return { valid: false, code: "malformed" };
   }
 
   if (parsedUrl.protocol !== "https:") {
-    return { valid: false, message: "Only HTTPS URLs are accepted." };
+    return { valid: false, code: "insecure" };
   }
   if (parsedUrl.username || parsedUrl.password) {
-    return { valid: false, message: "URLs containing credentials are not accepted." };
+    return { valid: false, code: "credentials" };
   }
   if (isBlockedHostname(parsedUrl.hostname)) {
-    return { valid: false, message: "Private, local and metadata hosts are blocked." };
+    return { valid: false, code: "blockedHost" };
   }
 
   parsedUrl.hash = "";

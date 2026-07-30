@@ -47,14 +47,14 @@ export const PageRouter = ({
     return <ContentIndexPage kind="blog" locale={locale} />;
   }
   if (segments[0] === "blog" && segments.length === 2) {
-    const entry = getBlogEntry(segments[1]);
+    const entry = getBlogEntry(locale, segments[1]);
     return entry ? <ContentArticlePage entry={entry} locale={locale} /> : notFound();
   }
   if (route === "updates") {
     return <ContentIndexPage kind="updates" locale={locale} />;
   }
   if (segments[0] === "updates" && segments.length === 2) {
-    const entry = getUpdateEntry(segments[1]);
+    const entry = getUpdateEntry(locale, segments[1]);
     return entry ? <ContentArticlePage entry={entry} locale={locale} /> : notFound();
   }
   if (route === "changelog") {
@@ -73,7 +73,7 @@ export const PageRouter = ({
     return job ? <DownloadPage job={job} locale={locale} /> : notFound();
   }
   if (isStaticRoute(route)) {
-    const content = getLandingContent(route);
+    const content = getLandingContent(locale, route);
     return content ? <LandingPage content={content} locale={locale} /> : notFound();
   }
   return notFound();

@@ -25,6 +25,32 @@ export type Messages = {
     visual: string;
     editable: string;
   };
+  shell: {
+    skipToContent: string;
+    primaryNavigation: string;
+    mobileNavigation: string;
+    productNavigation: string;
+    legalNavigation: string;
+    menu: string;
+    language: string;
+    footerDescription: string;
+    pdfLink: string;
+    powerpointLink: string;
+    extensionLink: string;
+    changelogLink: string;
+    acceptableUse: string;
+    footerMeta: string;
+  };
+  consent: {
+    title: string;
+    summary: string;
+    details: string;
+    preferencesTitle: string;
+    preferencesAccepted: string;
+    preferencesRejected: string;
+    preferencesUnknown: string;
+    close: string;
+  };
   footer: {
     privacy: string;
     terms: string;
@@ -52,11 +78,104 @@ const en: Messages = {
     visual: "Visual",
     editable: "Editable & clickable",
   },
+  shell: {
+    skipToContent: "Skip to content",
+    primaryNavigation: "Primary navigation",
+    mobileNavigation: "Mobile navigation",
+    productNavigation: "Product",
+    legalNavigation: "Legal",
+    menu: "Menu",
+    language: "Language",
+    footerDescription:
+      "A privacy-first prototype for turning webpage sections into reviewed PDF pages or PowerPoint slides.",
+    pdfLink: "Webpage to PDF",
+    powerpointLink: "Webpage to PowerPoint",
+    extensionLink: "Chrome extension",
+    changelogLink: "Changelog",
+    acceptableUse: "Acceptable use",
+    footerMeta:
+      "Prototype · No accounts · No conversion history · Sample outputs only",
+  },
+  consent: {
+    title: "Optional analytics",
+    summary:
+      "Page2File works without analytics. Google Analytics loads only after you accept.",
+    details:
+      "Your choice is stored in this browser. Allowed UTM values stay in memory and are sent only after consent.",
+    preferencesTitle: "Analytics preferences",
+    preferencesAccepted: "Analytics is currently enabled.",
+    preferencesRejected: "Only essential browser storage is currently enabled.",
+    preferencesUnknown: "You have not chosen an analytics preference yet.",
+    close: "Close",
+  },
   footer: { privacy: "Privacy", terms: "Terms", security: "Security" },
 };
 
 const messages: Record<Locale, Messages> = {
   en,
+  ru: {
+    ...en,
+    draftTranslation: "Черновой перевод — некоторые большие разделы пока доступны на английском.",
+    navigation: {
+      convert: "Конвертация",
+      extension: "Расширение",
+      guides: "Инструкции",
+      blog: "Блог",
+    },
+    actions: {
+      pdf: "Конвертировать в PDF",
+      powerpoint: "Конвертировать в PowerPoint",
+      preview: "Создать предпросмотр",
+      download: "Скачать пример",
+      install: "Установить расширение",
+      comingSoon: "Скоро",
+      preferences: "Настройки конфиденциальности",
+      accept: "Разрешить аналитику",
+      reject: "Только обязательные функции",
+    },
+    converter: {
+      urlLabel: "URL общедоступной веб-страницы",
+      urlHint:
+        "Только HTTPS. Для закрытых страниц и сайтов с авторизацией используйте расширение.",
+      visual: "Визуальный",
+      editable: "Редактируемый и кликабельный",
+    },
+    shell: {
+      skipToContent: "Перейти к содержимому",
+      primaryNavigation: "Основная навигация",
+      mobileNavigation: "Мобильная навигация",
+      productNavigation: "Продукт",
+      legalNavigation: "Правовая информация",
+      menu: "Меню",
+      language: "Язык",
+      footerDescription:
+        "Прототип с приоритетом конфиденциальности: превращает секции веб-страницы в проверяемые страницы PDF или слайды PowerPoint.",
+      pdfLink: "Веб-страница в PDF",
+      powerpointLink: "Веб-страница в PowerPoint",
+      extensionLink: "Расширение Chrome",
+      changelogLink: "История изменений",
+      acceptableUse: "Допустимое использование",
+      footerMeta:
+        "Прототип · Без аккаунтов · Без истории конвертаций · Только демонстрационные файлы",
+    },
+    consent: {
+      title: "Необязательная аналитика",
+      summary:
+        "Page2File работает без аналитики. Google Analytics загружается только после вашего согласия.",
+      details:
+        "Выбор хранится в этом браузере. Разрешённые UTM-метки остаются в памяти и передаются только после согласия.",
+      preferencesTitle: "Настройки аналитики",
+      preferencesAccepted: "Сейчас аналитика разрешена.",
+      preferencesRejected: "Сейчас используется только обязательное хранилище браузера.",
+      preferencesUnknown: "Вы ещё не выбрали настройку аналитики.",
+      close: "Закрыть",
+    },
+    footer: {
+      privacy: "Конфиденциальность",
+      terms: "Условия",
+      security: "Безопасность",
+    },
+  },
   de: {
     ...en,
     draftTranslation: "Übersetzungsentwurf — längere Abschnitte sind teilweise auf Englisch.",

@@ -45,7 +45,7 @@ const SiteHeader = ({ locale }: { locale: Locale }): ReactNode => {
             <span className={styles.brandMark} aria-hidden="true">P2F</span>
             <span>Page2File</span>
           </Link>
-          <nav className={styles.nav} aria-label="Primary navigation">
+          <nav className={styles.nav} aria-label={messages.shell.primaryNavigation}>
             <Link className={styles.navLink} href={`/${locale}/convert-webpage-to-pdf`}>
               {messages.navigation.convert}
             </Link>
@@ -70,8 +70,8 @@ const SiteHeader = ({ locale }: { locale: Locale }): ReactNode => {
               />
             </span>
             <details className={styles.mobileNav}>
-              <summary>Menu</summary>
-              <nav className={styles.mobilePanel} aria-label="Mobile navigation">
+              <summary>{messages.shell.menu}</summary>
+              <nav className={styles.mobilePanel} aria-label={messages.shell.mobileNavigation}>
                 <Link className={styles.navLink} href={`/${locale}/convert-webpage-to-pdf`}>
                   PDF
                 </Link>
@@ -102,25 +102,24 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
           <div>
             <h2 className={styles.footerTitle}>Page2File</h2>
             <p className={styles.footerText}>
-              A privacy-first prototype for turning webpage sections into
-              reviewed PDF pages or PowerPoint slides.
+              {messages.shell.footerDescription}
             </p>
           </div>
-          <nav className={styles.footerLinks} aria-label="Product">
-            <Link href={`/${locale}/convert-webpage-to-pdf`}>Webpage to PDF</Link>
-            <Link href={`/${locale}/convert-webpage-to-powerpoint`}>Webpage to PowerPoint</Link>
-            <Link href={`/${locale}/chrome-extension`}>Chrome extension</Link>
-            <Link href={`/${locale}/changelog`}>Changelog</Link>
+          <nav className={styles.footerLinks} aria-label={messages.shell.productNavigation}>
+            <Link href={`/${locale}/convert-webpage-to-pdf`}>{messages.shell.pdfLink}</Link>
+            <Link href={`/${locale}/convert-webpage-to-powerpoint`}>{messages.shell.powerpointLink}</Link>
+            <Link href={`/${locale}/chrome-extension`}>{messages.shell.extensionLink}</Link>
+            <Link href={`/${locale}/changelog`}>{messages.shell.changelogLink}</Link>
           </nav>
-          <nav className={styles.footerLinks} aria-label="Legal">
+          <nav className={styles.footerLinks} aria-label={messages.shell.legalNavigation}>
             <Link href={`/${locale}/privacy`}>{messages.footer.privacy}</Link>
             <Link href={`/${locale}/terms`}>{messages.footer.terms}</Link>
             <Link href={`/${locale}/security`}>{messages.footer.security}</Link>
-            <Link href={`/${locale}/acceptable-use`}>Acceptable use</Link>
+            <Link href={`/${locale}/acceptable-use`}>{messages.shell.acceptableUse}</Link>
           </nav>
         </div>
         <div className={styles.footerMeta}>
-          Prototype · No accounts · No conversion history · Sample outputs only
+          {messages.shell.footerMeta}
         </div>
       </Container>
     </footer>

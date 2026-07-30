@@ -10,13 +10,17 @@ export type MetadataInput = {
   description: string;
   noindex?: boolean;
   legal?: boolean;
+  kind?: "website" | "article";
+  publishedAt?: string;
+  updatedAt?: string;
+  author?: string;
 };
 
 const getLanguageAlternates = (
   route: string,
 ): Record<string, string> => {
   const alternates: Record<string, string> = {
-    "x-default": absoluteUrl("/"),
+    "x-default": absoluteUrl(routePath("en", route)),
   };
   const addReviewedLocale = (locale: (typeof localeRegistry)[number]): void => {
     if (locale.reviewed && locale.indexable) {
@@ -34,23 +38,64 @@ export const buildMetadata = ({
   description,
   noindex = false,
   legal = false,
+  kind = "website",
+  publishedAt,
+  updatedAt,
+  author,
 }: MetadataInput): Metadata => {
   const definition = getLocaleDefinition(locale);
-  const canIndex =
-    indexingEnabled &&
+  const routeIsIndexable =
     definition.indexable &&
     !noindex &&
     (!legal || legalReviewed);
+  const canIndex = indexingEnabled && routeIsIndexable;
   const pathname = routePath(locale, route);
   const canonical = absoluteUrl(pathname);
   const fullTitle = `${title} | ${siteName}`;
+  const alternateLocales = localeRegistry
+    .filter(
+      (candidate): boolean =>
+        candidate.reviewed &&
+        candidate.indexable &&
+        candidate.code !== locale,
+    )
+    .map((candidate): string => candidate.openGraphLocale);
+  const commonOpenGraph = {
+    locale: definition.openGraphLocale,
+    alternateLocale: canIndex ? alternateLocales : undefined,
+    title: fullTitle,
+    description,
+    url: canonical,
+    siteName,
+    images: [
+      {
+        url: absoluteUrl("/demos/share-card.svg"),
+        width: 1200,
+        height: 630,
+        alt: `${title} — ${siteName}`,
+      },
+    ],
+  };
+  const openGraph: Metadata["openGraph"] =
+    kind === "article"
+      ? {
+          ...commonOpenGraph,
+          type: "article",
+          publishedTime: publishedAt,
+          modifiedTime: updatedAt,
+          authors: author ? [author] : undefined,
+        }
+      : {
+          ...commonOpenGraph,
+          type: "website",
+        };
 
   return {
     title: fullTitle,
     description,
     alternates: {
       canonical,
-      languages: getLanguageAlternates(route),
+      languages: canIndex ? getLanguageAlternates(route) : undefined,
     },
     robots: {
       index: canIndex,
@@ -60,15 +105,7 @@ export const buildMetadata = ({
         follow: canIndex,
       },
     },
-    openGraph: {
-      type: "website",
-      locale: definition.htmlLang,
-      title: fullTitle,
-      description,
-      url: canonical,
-      siteName,
-      images: [{ url: absoluteUrl("/demos/share-card.svg"), width: 1200, height: 630 }],
-    },
+    openGraph,
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
