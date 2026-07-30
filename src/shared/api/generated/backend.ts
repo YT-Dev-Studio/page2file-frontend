@@ -782,7 +782,7 @@ export interface components {
             value: string;
         };
         CreatePreviewRequest: {
-            source: components["schemas"]["UrlSource"] | components["schemas"]["HtmlSource"];
+            source: components["schemas"]["UrlSource"];
             output: components["schemas"]["ConversionOutput"];
             mode: components["schemas"]["ConversionMode"];
             clientRequestId: string;

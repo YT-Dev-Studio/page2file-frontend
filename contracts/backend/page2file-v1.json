@@ -49,7 +49,7 @@
         "additionalProperties": false,
         "required": ["source", "output", "mode", "clientRequestId"],
         "properties": {
-          "source": { "oneOf": [{ "$ref": "#/components/schemas/UrlSource" }, { "$ref": "#/components/schemas/HtmlSource" }] },
+          "source": { "$ref": "#/components/schemas/UrlSource" },
           "output": { "$ref": "#/components/schemas/ConversionOutput" },
           "mode": { "$ref": "#/components/schemas/ConversionMode" },
           "clientRequestId": { "type": "string", "minLength": 8, "maxLength": 128 },
