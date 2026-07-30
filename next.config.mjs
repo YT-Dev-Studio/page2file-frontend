@@ -22,6 +22,7 @@ const securityHeaders = [
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+  output: "standalone",
   poweredByHeader: false,
   reactStrictMode: true,
   turbopack: {
@@ -52,3 +53,5 @@ const nextConfig = {
 };
 
 export default withMDX(nextConfig);
+
+import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());
