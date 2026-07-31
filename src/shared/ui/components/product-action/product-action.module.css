@@ -1,0 +1,81 @@
+.action {
+  display: inline-flex;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+  min-width: 0;
+  min-height: var(--p2f-control-size-default);
+  align-items: center;
+  justify-content: center;
+  gap: var(--p2f-space-8);
+  padding: var(--p2f-space-12) var(--p2f-space-16);
+  overflow: hidden;
+  border-radius: var(--p2f-radius-control);
+  font-size: var(--p2f-type-label-medium-font-size);
+  font-weight: var(--p2f-type-label-medium-font-weight);
+  line-height: var(--p2f-type-label-medium-line-height);
+  letter-spacing: var(--p2f-type-label-medium-letter-spacing);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: var(--p2f-icon-size-medium);
+  height: var(--p2f-icon-size-medium);
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.master {
+  color: var(--p2f-color-ink-navy-800);
+  background: var(--p2f-color-format-master-default);
+}
+
+.pdf {
+  color: var(--p2f-color-ink-navy-800);
+  background: var(--p2f-color-format-pdf-default);
+}
+
+.pptx {
+  color: var(--p2f-color-ink-navy-800);
+  background: var(--p2f-color-format-pptx-default);
+}
+
+.slides {
+  color: var(--p2f-color-text-inverse);
+  background: var(--p2f-color-format-slides-default);
+}
+
+/*
+ * Format-specific hover and pressed colors were not supplied in inspect.
+ * Keep the verified format/default pair instead of inventing tokens or ramps.
+ */
+.action:not(.disabled):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--p2f-interaction-focus-ring-width)
+    var(--p2f-interaction-focus-ring-color);
+}
+
+.disabled {
+  color: var(--p2f-color-ink-navy-300);
+  background: var(--p2f-color-background-disabled);
+  cursor: not-allowed;
+}
