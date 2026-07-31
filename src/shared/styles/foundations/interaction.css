@@ -1,0 +1,7 @@
+:root {
+  --p2f-interaction-focus-ring-width: var(--p2f-border-width-focus);
+  --p2f-interaction-focus-ring-color: var(--p2f-color-action-focus-ring);
+  --p2f-interaction-disabled-opacity: var(--p2f-opacity-48);
+  --p2f-interaction-muted-opacity: var(--p2f-opacity-64);
+  --p2f-interaction-default-control-size: var(--p2f-control-size-default);
+}

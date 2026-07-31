@@ -1,0 +1,52 @@
+:root {
+  /* 4px spacing grid */
+  --p2f-space-0: 0;
+  --p2f-space-4: 4px;
+  --p2f-space-8: 8px;
+  --p2f-space-12: 12px;
+  --p2f-space-16: 16px;
+  --p2f-space-24: 24px;
+  --p2f-space-32: 32px;
+  --p2f-space-40: 40px;
+  --p2f-space-48: 48px;
+  --p2f-space-64: 64px;
+  --p2f-space-80: 80px;
+  --p2f-space-96: 96px;
+
+  /* Control and icon sizes */
+  --p2f-control-size-compact: 36px;
+  --p2f-control-size-default: 44px;
+  --p2f-control-size-large: 52px;
+  --p2f-icon-size-small: 16px;
+  --p2f-icon-size-medium: 20px;
+  --p2f-icon-size-large: 24px;
+
+  /* Radius */
+  --p2f-radius-none: 0;
+  --p2f-radius-compact: 10px;
+  --p2f-radius-control: 12px;
+  --p2f-radius-card: 16px;
+  --p2f-radius-pill: 999px;
+
+  /* Border width */
+  --p2f-border-width-none: 0;
+  --p2f-border-width-default: 1px;
+  --p2f-border-width-strong: 1.5px;
+  --p2f-border-width-focus: 2px;
+
+  /* Opacity */
+  --p2f-opacity-0: 0;
+  --p2f-opacity-8: 0.08;
+  --p2f-opacity-48: 0.48;
+  --p2f-opacity-64: 0.64;
+  --p2f-opacity-100: 1;
+
+  /* Effects */
+  --p2f-shadow-card: 0 10px 30px rgb(17 26 77 / 8%);
+  --p2f-texture-paper-noise-opacity-min: 0.01;
+  --p2f-texture-paper-noise-opacity-max: 0.03;
+
+  /* Logo geometry */
+  --p2f-logo-detailed-min-size: 64px;
+  --p2f-logo-clear-space-ratio: 0.125;
+}

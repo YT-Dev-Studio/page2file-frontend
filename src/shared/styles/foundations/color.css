@@ -1,0 +1,115 @@
+:root {
+  /* Neutral primitives */
+  --p2f-color-neutral-warm-paper: #fbf8f1;
+  --p2f-color-neutral-pure-paper: #ffffff;
+  --p2f-color-neutral-soft-black: #171a2e;
+  --p2f-color-neutral-muted-ink: #646b7a;
+  --p2f-color-neutral-paper-border: #dcd8ce;
+
+  /* Ink Navy */
+  --p2f-color-ink-navy-50: #f1f2fa;
+  --p2f-color-ink-navy-100: #e0e3f2;
+  --p2f-color-ink-navy-300: #98a2cd;
+  --p2f-color-ink-navy-500: #505e98;
+  --p2f-color-ink-navy-600: #2d3867;
+  --p2f-color-ink-navy-800: #111a4d;
+  --p2f-color-ink-navy-950: #0a102f;
+
+  /* Gel Blue */
+  --p2f-color-gel-blue-50: #eef8ff;
+  --p2f-color-gel-blue-100: #d9efff;
+  --p2f-color-gel-blue-300: #8fcfff;
+  --p2f-color-gel-blue-500: #42a5f5;
+  --p2f-color-gel-blue-600: #258cdb;
+  --p2f-color-gel-blue-800: #205e91;
+  --p2f-color-gel-blue-950: #15334f;
+
+  /* Coral Ink */
+  --p2f-color-coral-ink-50: #fff1ee;
+  --p2f-color-coral-ink-100: #ffe1db;
+  --p2f-color-coral-ink-300: #ff9c88;
+  --p2f-color-coral-ink-500: #f0523d;
+  --p2f-color-coral-ink-600: #ce392b;
+  --p2f-color-coral-ink-800: #8c281f;
+  --p2f-color-coral-ink-950: #40100d;
+
+  /* Orange Ink */
+  --p2f-color-orange-ink-50: #fff4ea;
+  --p2f-color-orange-ink-100: #ffe7d0;
+  --p2f-color-orange-ink-300: #ffae73;
+  --p2f-color-orange-ink-500: #f57b2b;
+  --p2f-color-orange-ink-600: #d35a16;
+  --p2f-color-orange-ink-800: #873417;
+  --p2f-color-orange-ink-950: #3d140a;
+
+  /* Violet Ink */
+  --p2f-color-violet-ink-50: #f6f2ff;
+  --p2f-color-violet-ink-100: #eee6ff;
+  --p2f-color-violet-ink-300: #c6aeff;
+  --p2f-color-violet-ink-500: #7654d8;
+  --p2f-color-violet-ink-600: #6341bc;
+  --p2f-color-violet-ink-800: #452f80;
+  --p2f-color-violet-ink-950: #241843;
+
+  /* Semantic backgrounds */
+  --p2f-color-background-page: var(--p2f-color-neutral-warm-paper);
+  --p2f-color-background-surface: var(--p2f-color-neutral-pure-paper);
+  --p2f-color-background-subtle: var(--p2f-color-ink-navy-50);
+  --p2f-color-background-selected: var(--p2f-color-gel-blue-50);
+  --p2f-color-background-disabled: var(--p2f-color-ink-navy-100);
+  --p2f-color-background-inverse: var(--p2f-color-ink-navy-800);
+
+  /* Semantic text */
+  --p2f-color-text-primary: var(--p2f-color-neutral-soft-black);
+  --p2f-color-text-secondary: var(--p2f-color-neutral-muted-ink);
+  --p2f-color-text-brand: var(--p2f-color-ink-navy-800);
+  --p2f-color-text-inverse: var(--p2f-color-neutral-pure-paper);
+  --p2f-color-text-link: var(--p2f-color-gel-blue-800);
+  --p2f-color-text-error: var(--p2f-color-coral-ink-800);
+
+  /* Semantic borders */
+  --p2f-color-border-default: var(--p2f-color-neutral-paper-border);
+  --p2f-color-border-strong: var(--p2f-color-ink-navy-300);
+  --p2f-color-border-focus: var(--p2f-color-gel-blue-500);
+  --p2f-color-border-error: var(--p2f-color-coral-ink-500);
+
+  /* Actions */
+  --p2f-color-action-primary-background: var(--p2f-color-gel-blue-500);
+  --p2f-color-action-primary-foreground: var(--p2f-color-ink-navy-800);
+  /* Brandbook handoff defines the master-action hover as Gel Blue 600. */
+  --p2f-color-action-primary-hover-background: var(--p2f-color-gel-blue-600);
+  --p2f-color-action-secondary-background: var(--p2f-color-ink-navy-800);
+  --p2f-color-action-secondary-foreground: var(--p2f-color-neutral-pure-paper);
+  --p2f-color-action-secondary-hover-background: var(--p2f-color-ink-navy-600);
+  --p2f-color-action-ghost-hover-background: var(--p2f-color-ink-navy-50);
+  --p2f-color-action-focus-ring: var(--p2f-color-gel-blue-500);
+
+  /* Product format accents */
+  --p2f-color-format-master-default: var(--p2f-color-gel-blue-500);
+  --p2f-color-format-master-subtle: var(--p2f-color-gel-blue-50);
+  --p2f-color-format-pdf-default: var(--p2f-color-coral-ink-500);
+  --p2f-color-format-pdf-subtle: var(--p2f-color-coral-ink-50);
+  --p2f-color-format-pptx-default: var(--p2f-color-orange-ink-500);
+  --p2f-color-format-pptx-subtle: var(--p2f-color-orange-ink-50);
+  --p2f-color-format-slides-default: var(--p2f-color-violet-ink-500);
+  --p2f-color-format-slides-subtle: var(--p2f-color-violet-ink-50);
+
+  /* Gel-ink graphic recipe; keep these out of flat UI surfaces. */
+  --p2f-color-graphic-ink-highlight: var(--p2f-color-gel-blue-300);
+  --p2f-color-graphic-ink-fill: var(--p2f-color-gel-blue-500);
+  --p2f-color-graphic-ink-contour: #1e71b5;
+  --p2f-color-graphic-ink-outline: var(--p2f-color-ink-navy-800);
+
+  /* Brandbook handoff aliases */
+  --p2f-paper: var(--p2f-color-background-page);
+  --p2f-surface: var(--p2f-color-background-surface);
+  --p2f-ink: var(--p2f-color-text-brand);
+  --p2f-text: var(--p2f-color-text-primary);
+  --p2f-text-muted: var(--p2f-color-text-secondary);
+  --p2f-border: var(--p2f-color-border-default);
+  --p2f-blue: var(--p2f-color-gel-blue-500);
+  --p2f-blue-hover: var(--p2f-color-gel-blue-600);
+  --p2f-coral: var(--p2f-color-coral-ink-500);
+  --p2f-orange: var(--p2f-color-orange-ink-500);
+  --p2f-violet: var(--p2f-color-violet-ink-500);
+}

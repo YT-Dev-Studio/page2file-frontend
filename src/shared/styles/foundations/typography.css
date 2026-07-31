@@ -1,0 +1,96 @@
+:root {
+  --p2f-font-family-primary:
+    "Manrope Variable", Manrope, ui-sans-serif, system-ui, sans-serif;
+
+  --p2f-font-weight-regular: 400;
+  --p2f-font-weight-semibold: 600;
+  --p2f-font-weight-bold: 700;
+  --p2f-font-weight-extrabold: 800;
+
+  --p2f-font-size-12: 12px;
+  --p2f-font-size-14: 14px;
+  --p2f-font-size-16: 16px;
+  --p2f-font-size-18: 18px;
+  --p2f-font-size-20: 20px;
+  --p2f-font-size-24: 24px;
+  --p2f-font-size-32: 32px;
+  --p2f-font-size-40: 40px;
+  --p2f-font-size-48: 48px;
+
+  --p2f-line-height-16: 16px;
+  --p2f-line-height-20: 20px;
+  --p2f-line-height-24: 24px;
+  --p2f-line-height-28: 28px;
+  --p2f-line-height-32: 32px;
+  --p2f-line-height-40: 40px;
+  --p2f-line-height-48: 48px;
+  --p2f-line-height-56: 56px;
+
+  --p2f-letter-spacing-tight: -0.5px;
+  --p2f-letter-spacing-default: 0;
+  --p2f-letter-spacing-label: 0.2px;
+
+  /* Display */
+  --p2f-type-display-large-font-size: var(--p2f-font-size-48);
+  --p2f-type-display-large-line-height: var(--p2f-line-height-56);
+  --p2f-type-display-large-font-weight: var(--p2f-font-weight-extrabold);
+  --p2f-type-display-large-letter-spacing: var(--p2f-letter-spacing-tight);
+  --p2f-type-display-medium-font-size: var(--p2f-font-size-40);
+  --p2f-type-display-medium-line-height: var(--p2f-line-height-48);
+  --p2f-type-display-medium-font-weight: var(--p2f-font-weight-extrabold);
+  --p2f-type-display-medium-letter-spacing: var(--p2f-letter-spacing-tight);
+
+  /* Heading */
+  --p2f-type-heading-h1-font-size: var(--p2f-font-size-32);
+  --p2f-type-heading-h1-line-height: var(--p2f-line-height-40);
+  --p2f-type-heading-h1-font-weight: var(--p2f-font-weight-extrabold);
+  --p2f-type-heading-h1-letter-spacing: var(--p2f-letter-spacing-tight);
+  --p2f-type-heading-h2-font-size: var(--p2f-font-size-24);
+  --p2f-type-heading-h2-line-height: var(--p2f-line-height-32);
+  --p2f-type-heading-h2-font-weight: var(--p2f-font-weight-bold);
+  --p2f-type-heading-h2-letter-spacing: var(--p2f-letter-spacing-tight);
+  --p2f-type-heading-h3-font-size: var(--p2f-font-size-20);
+  --p2f-type-heading-h3-line-height: var(--p2f-line-height-28);
+  --p2f-type-heading-h3-font-weight: var(--p2f-font-weight-bold);
+  --p2f-type-heading-h3-letter-spacing: var(--p2f-letter-spacing-tight);
+
+  /* Body */
+  --p2f-type-body-large-font-size: var(--p2f-font-size-18);
+  --p2f-type-body-large-line-height: var(--p2f-line-height-28);
+  --p2f-type-body-large-font-weight: var(--p2f-font-weight-regular);
+  --p2f-type-body-large-letter-spacing: var(--p2f-letter-spacing-default);
+  --p2f-type-body-medium-font-size: var(--p2f-font-size-16);
+  --p2f-type-body-medium-line-height: var(--p2f-line-height-24);
+  --p2f-type-body-medium-font-weight: var(--p2f-font-weight-regular);
+  --p2f-type-body-medium-letter-spacing: var(--p2f-letter-spacing-default);
+  --p2f-type-body-small-font-size: var(--p2f-font-size-14);
+  --p2f-type-body-small-line-height: var(--p2f-line-height-20);
+  --p2f-type-body-small-font-weight: var(--p2f-font-weight-regular);
+  --p2f-type-body-small-letter-spacing: var(--p2f-letter-spacing-default);
+
+  /* Label */
+  --p2f-type-label-large-font-size: var(--p2f-font-size-16);
+  --p2f-type-label-large-line-height: var(--p2f-line-height-20);
+  --p2f-type-label-large-font-weight: var(--p2f-font-weight-bold);
+  --p2f-type-label-large-letter-spacing: var(--p2f-letter-spacing-label);
+  --p2f-type-label-medium-font-size: var(--p2f-font-size-14);
+  --p2f-type-label-medium-line-height: var(--p2f-line-height-20);
+  --p2f-type-label-medium-font-weight: var(--p2f-font-weight-semibold);
+  --p2f-type-label-medium-letter-spacing: var(--p2f-letter-spacing-label);
+  --p2f-type-label-small-font-size: var(--p2f-font-size-12);
+  --p2f-type-label-small-line-height: var(--p2f-line-height-16);
+  --p2f-type-label-small-font-weight: var(--p2f-font-weight-semibold);
+  --p2f-type-label-small-letter-spacing: var(--p2f-letter-spacing-label);
+
+  /* Caption */
+  --p2f-type-caption-regular-font-size: var(--p2f-font-size-12);
+  --p2f-type-caption-regular-line-height: var(--p2f-line-height-16);
+  --p2f-type-caption-regular-font-weight: var(--p2f-font-weight-regular);
+  --p2f-type-caption-regular-letter-spacing: var(
+    --p2f-letter-spacing-default
+  );
+  --p2f-type-caption-strong-font-size: var(--p2f-font-size-12);
+  --p2f-type-caption-strong-line-height: var(--p2f-line-height-16);
+  --p2f-type-caption-strong-font-weight: var(--p2f-font-weight-bold);
+  --p2f-type-caption-strong-letter-spacing: var(--p2f-letter-spacing-default);
+}

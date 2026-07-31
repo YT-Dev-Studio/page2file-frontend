@@ -4,8 +4,8 @@
 
 ## Репозитории
 
-- Frontend: `C:\Users\yt\Desktop\DEV\page2file-converter`.
-- Backend: `C:\Users\yt\Desktop\DEV\page2file-backend`.
+- Frontend: `C:\Users\yt\Desktop\DEV\Page2File\page2file-converter`.
+- Backend: `C:\Users\yt\Desktop\DEV\Page2File\page2file-backend`.
 - Оба каталога являются независимыми Git/npm-проектами и рассчитаны на
   отдельные deployments.
 
@@ -68,11 +68,11 @@ Frontend:
 - Content: 10 EN + 10 RU articles и 2 updates на локаль.
 - Routes: 22 public routes × 16 locales и 8 BFF routes.
 - Pinned contract checksum:
-  `fb8bc514f8d7554e337ab4834ddc633018c50bdade4d814ecd76129f57d782c4`.
+  `408461d0dab29ecd739037b0d789efadec93f0e18652a1ce266810313a0b7b08`.
 - Next.js production build сгенерировал 567 страниц.
 - Production dependency audit: 0 vulnerabilities.
 
-## Незакрытые внешние gates
+## Исторический заблокированный срез
 
 Docker CLI/Desktop отсутствует на текущем хосте (`DOCKER_UNAVAILABLE`).
 Поэтому следующие проверки подготовлены, но не могли фактически выполниться:
@@ -109,5 +109,48 @@ npm run test:load
 4. Когда Browser runtime станет доступен, повторить rendered EN/RU QA для real
    PDF/PPTX preview/download, consent/network, keyboard и responsive states.
 
-Только успешный проход этих gates закрывает `G-004` и позволяет называть
-self-hosted MVP полностью проверенным.
+Этот раздел сохранён как историческая запись предыдущего checkpoint. Указанные
+Docker и Browser gates впоследствии стали доступны и успешно пройдены; текущее
+состояние зафиксировано ниже.
+
+## Финальный convergence — 2026-07-30
+
+Docker Desktop/WSL2, Docker Engine и in-app Browser доступны. Полная topology
+`api`, `worker`, `cleanup`, `redis`, `minio`, `browser`, `egress-proxy` и
+`fixture-server` собрана и проверена.
+
+Backend:
+
+- `npm run check` прошёл: lint, strict TypeScript, OpenAPI с 19 обязательными
+  paths, 20 unit и 9 security tests, production build.
+- 3 integration tests, 1 container fixture и 2 E2E scenarios прошли без skip.
+- URL PDF lifecycle прошёл create, preview, revision, render и download;
+  malicious HTML не выполнил script, network, WebSocket или file access.
+- Load gate: 20 принятых jobs, 75 контролируемых `RATE_LIMITED`, accept p95
+  61.6 ms, preview p95 265.7 ms, final render p95 3101.8 ms.
+- Operations drill подтвердил restart recovery, лимит download attempts,
+  retention deletion и нулевое число orphan objects.
+
+Frontend:
+
+- `npm run check` прошёл, включая EN/RU content, 16 locale trees, BFF routes,
+  pinned OpenAPI checksum и production build на 567 страниц.
+- В Browser пройдены реальные Visual PDF и Editable PPTX preview/render/download
+  flows, включая remove/restore и автоматический переход к `download_ready`.
+- Desktop 1440, tablet 768 и mobile 375 проверки подтвердили один H1,
+  отсутствие overflow, EN/RU локализацию, keyboard focus и русскую 404.
+- До consent Google tag отсутствует; на localhost аналитика не загружается и
+  после consent. Language switch удаляет UTM и другие query parameters.
+- Production SEO gate подтвердил self-canonical, EN/RU/x-default reciprocity,
+  article/website JSON-LD и 58 sitemap URLs (29 EN + 29 RU, 174 alternates).
+  Welcome, preview/download и draft legal остаются noindex и исключены из
+  sitemap.
+
+Во время живой проверки устранены четыре integration gap: DNS ownership между
+worker и egress proxy, перезапуск frontend polling после render acceptance,
+ложный fixture skip и разбор opaque locator, начинающегося с `-`.
+
+Итог: все acceptance criteria G-004 подтверждены. Незакрыты только launch-gates,
+не входящие в self-hosted MVP: production deployment/domain, облачные
+credentials, юридическое утверждение, публикация GPT/Chrome extension и
+независимый внешний pentest.

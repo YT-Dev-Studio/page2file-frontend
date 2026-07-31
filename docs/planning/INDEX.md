@@ -1,7 +1,8 @@
 # Page2File: пакет проектной документации
 
-Статус на 2026-07-30: frontend и self-hosted backend MVP реализованы. Полная
-container/E2E-проверка ожидает установленный Docker Desktop.
+Статус на 2026-07-30: frontend и self-hosted backend MVP реализованы и
+проверены полным Docker Compose, fixture/E2E/load/operations и Browser QA
+проходом.
 
 Этот каталог фиксирует согласованную продуктовую и техническую архитектуру для двух независимых проектов:
 
@@ -9,7 +10,7 @@ container/E2E-проверка ожидает установленный Docker 
   SEO-страницы, локализованный контент, converter/preview UI, secure same-origin
   BFF и localhost/test mock adapter;
 - `page2file-backend` — отдельный Git/npm-проект
-  `C:\Users\yt\Desktop\DEV\page2file-backend`: Fastify API, BullMQ/Redis,
+  `C:\Users\yt\Desktop\DEV\Page2File\page2file-backend`: Fastify API, BullMQ/Redis,
   Chromium workers, preview, PDF/PPTX, crawler, HTML sandbox и временные
   encrypted artifacts.
 
