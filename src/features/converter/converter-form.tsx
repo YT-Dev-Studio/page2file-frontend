@@ -23,6 +23,7 @@ import {
 import styles from "./converter.module.css";
 import { getConverterCopy } from "./converter-copy";
 import { validatePublicUrl } from "./url-validation";
+import { WebsiteUrlField } from "./website-url-field";
 
 type ConverterFormProps = {
   format: ConversionFormat;
@@ -45,8 +46,8 @@ export const ConverterForm = ({
     "idle" | "submitting"
   >("idle");
 
-  const handleUrlChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    setSourceUrl(event.target.value);
+  const handleUrlChange = (value: string): void => {
+    setSourceUrl(value);
     if (error) {
       setError("");
     }
@@ -116,30 +117,17 @@ export const ConverterForm = ({
 
   return (
     <form className={styles.form} noValidate onSubmit={handleSubmit}>
-      <div className={styles.field}>
-        <label className={styles.label} htmlFor={`${format}-source-url`}>
-          {messages.converter.urlLabel}
-        </label>
-        <input
-          aria-describedby={`${format}-url-hint ${error ? `${format}-url-error` : ""}`}
-          aria-invalid={Boolean(error)}
-          className={styles.input}
-          id={`${format}-source-url`}
-          inputMode="url"
-          onChange={handleUrlChange}
-          spellCheck={false}
-          type="url"
-          value={sourceUrl}
-        />
-        <span className={styles.hint} id={`${format}-url-hint`}>
-          {messages.converter.urlHint}
-        </span>
-        {error ? (
-          <span className={styles.error} id={`${format}-url-error`} role="alert">
-            {error}
-          </span>
-        ) : null}
-      </div>
+      <WebsiteUrlField
+        emptyError={copy.validation.empty}
+        error={error}
+        helper={messages.converter.urlHint}
+        id={`${format}-source-url`}
+        invalidError={copy.validation.malformed}
+        label={messages.converter.urlLabel}
+        onValueChange={handleUrlChange}
+        required
+        value={sourceUrl}
+      />
 
       <fieldset className={styles.modes}>
         <legend className="srOnly">{copy.modeLegend}</legend>

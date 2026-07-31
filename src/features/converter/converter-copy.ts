@@ -85,10 +85,10 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
       failed: "Recoverable failure",
     },
     validation: {
-      empty: "Enter a public HTTPS URL.",
+      empty: "Enter a URL.",
       tooLong: "The URL is too long.",
-      malformed: "Enter a complete URL such as https://example.com/page.",
-      insecure: "Only HTTPS URLs are accepted.",
+      malformed: "Enter a valid URL starting with http:// or https://.",
+      insecure: "Enter a valid URL starting with http:// or https://.",
       credentials: "URLs containing credentials are not accepted.",
       blockedHost: "Private, local and metadata hosts are blocked.",
     },
@@ -142,11 +142,12 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
       failed: "Восстанавливаемая ошибка",
     },
     validation: {
-      empty: "Введите общедоступный HTTPS URL.",
+      empty: "Введите URL.",
       tooLong: "URL слишком длинный.",
       malformed:
-        "Введите полный адрес, например https://example.com/page.",
-      insecure: "Разрешены только HTTPS URL.",
+        "Введите корректный URL, начинающийся с http:// или https://.",
+      insecure:
+        "Введите корректный URL, начинающийся с http:// или https://.",
       credentials: "URL с логином или паролем не принимаются.",
       blockedHost:
         "Локальные, частные и служебные адреса заблокированы.",

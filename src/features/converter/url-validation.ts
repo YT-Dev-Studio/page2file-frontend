@@ -80,7 +80,10 @@ export const validatePublicUrl = (value: string): UrlValidationResult => {
     return { valid: false, code: "malformed" };
   }
 
-  if (parsedUrl.protocol !== "https:") {
+  if (
+    parsedUrl.protocol !== "http:" &&
+    parsedUrl.protocol !== "https:"
+  ) {
     return { valid: false, code: "insecure" };
   }
   if (parsedUrl.username || parsedUrl.password) {
@@ -90,6 +93,5 @@ export const validatePublicUrl = (value: string): UrlValidationResult => {
     return { valid: false, code: "blockedHost" };
   }
 
-  parsedUrl.hash = "";
-  return { valid: true, normalizedUrl: parsedUrl.toString() };
+  return { valid: true, normalizedUrl: trimmedValue };
 };

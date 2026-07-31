@@ -1,0 +1,42 @@
+.field {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  gap: var(--p2f-space-8);
+  color: var(--p2f-color-text-primary);
+}
+
+.label {
+  min-width: 0;
+  overflow: hidden;
+  font-size: var(--p2f-type-label-medium-font-size);
+  font-weight: var(--p2f-type-label-medium-font-weight);
+  line-height: var(--p2f-type-label-medium-line-height);
+  letter-spacing: var(--p2f-type-label-medium-letter-spacing);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}
+
+.message {
+  min-height: var(--p2f-line-height-16);
+  color: var(--p2f-color-text-secondary);
+  font-size: var(--p2f-type-caption-regular-font-size);
+  font-weight: var(--p2f-type-caption-regular-font-weight);
+  line-height: var(--p2f-type-caption-regular-line-height);
+  letter-spacing: var(--p2f-type-caption-regular-letter-spacing);
+}
+
+.error {
+  color: var(--p2f-color-text-error);
+}
