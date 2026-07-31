@@ -1,10 +1,11 @@
 {
-  "name": "page2file-web",
+  "name": "page2file-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build:next": "next build",
+    "build": "npm run build:next && opennextjs-cloudflare build --skipNextBuild",
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -13,7 +14,11 @@
     "validate:backend-contract": "node scripts/validate-backend-contract.mjs",
     "generate:backend-types": "openapi-typescript contracts/backend/page2file-v1.json -o src/shared/api/generated/backend.ts",
     "check": "npm run lint && npm run typecheck && npm run validate:content && npm run validate:routes && npm run validate:backend-contract && npm run build",
-    "generate:demos": "node scripts/generate-demo-artifacts.mjs"
+    "generate:demos": "node scripts/generate-demo-artifacts.mjs",
+    "preview": "npm run build && opennextjs-cloudflare preview",
+    "deploy": "npm run build && opennextjs-cloudflare deploy",
+    "upload": "npm run build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "3.1.1",
@@ -24,13 +29,15 @@
     "react-dom": "19.2.8"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "1.20.2",
     "@types/node": "24.13.3",
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
     "eslint": "9.39.5",
     "eslint-config-next": "16.2.12",
     "openapi-typescript": "^7.13.0",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "wrangler": "4.115.0"
   },
   "overrides": {
     "postcss": "8.5.25",
