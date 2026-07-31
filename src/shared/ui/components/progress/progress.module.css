@@ -1,0 +1,75 @@
+.progress {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  gap: var(--p2f-space-8);
+  color: var(--p2f-color-text-primary);
+}
+
+.info {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--p2f-space-8);
+  font-size: var(--p2f-type-label-medium-font-size);
+  font-weight: var(--p2f-type-label-medium-font-weight);
+  line-height: var(--p2f-type-label-medium-line-height);
+  letter-spacing: var(--p2f-type-label-medium-letter-spacing);
+}
+
+.label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.value {
+  flex: 0 0 auto;
+  min-width: 4ch;
+  color: currentcolor;
+  text-align: right;
+}
+
+.track {
+  display: block;
+  width: 100%;
+  height: var(--p2f-space-8);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--p2f-radius-pill);
+  background: var(--p2f-color-background-disabled);
+  appearance: none;
+}
+
+.track::-webkit-progress-bar {
+  border-radius: var(--p2f-radius-pill);
+  background: var(--p2f-color-background-disabled);
+}
+
+.track::-webkit-progress-value {
+  border-radius: var(--p2f-radius-pill);
+  background: currentcolor;
+}
+
+.track::-moz-progress-bar {
+  border-radius: var(--p2f-radius-pill);
+  background: currentcolor;
+}
+
+.master {
+  color: var(--p2f-color-format-master-default);
+}
+
+.pdf {
+  color: var(--p2f-color-format-pdf-default);
+}
+
+.pptx {
+  color: var(--p2f-color-format-pptx-default);
+}
+
+.slides {
+  color: var(--p2f-color-format-slides-default);
+}
