@@ -10,6 +10,7 @@ import type {
 } from "@/entities/conversion/model";
 import type { Locale } from "@/shared/i18n/locales";
 import { getMessages } from "@/shared/i18n/messages";
+import { Select } from "@/shared/ui/components/select/select";
 import {
   conversionAdapter,
   mockControlsEnabled,
@@ -58,14 +59,6 @@ export const ConverterForm = ({
   const handleScenarioChange = (event: ChangeEvent<HTMLSelectElement>): void => {
     setScenario(event.target.value as MockScenario);
   };
-  const scenarioOption = (
-    item: (typeof mockScenarios)[number],
-  ): ReactNode => (
-    <option key={item.value} value={item.value}>
-      {copy.scenarios[item.value]}
-    </option>
-  );
-
   const handleSubmit = async (
     event: FormEvent<HTMLFormElement>,
   ): Promise<void> => {
@@ -144,13 +137,16 @@ export const ConverterForm = ({
       </fieldset>
 
       {conversionAdapter === "mock" && mockControlsEnabled ? (
-        <label className={styles.demo}>
-          <strong>{copy.demoState}</strong>
-          <span className={styles.hint}>{copy.demoHint}</span>
-          <select className={styles.select} onChange={handleScenarioChange} value={scenario}>
-            {mockScenarios.map(scenarioOption)}
-          </select>
-        </label>
+        <Select
+          helper={copy.demoHint}
+          label={copy.demoState}
+          onChange={handleScenarioChange}
+          options={mockScenarios.map((item) => ({
+            label: copy.scenarios[item.value],
+            value: item.value,
+          }))}
+          value={scenario}
+        />
       ) : null}
 
       <button
