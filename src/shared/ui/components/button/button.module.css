@@ -1,0 +1,151 @@
+.button {
+  display: inline-flex;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+  border: var(--p2f-border-width-none) solid transparent;
+  color: var(--p2f-color-action-primary-foreground);
+  background: var(--p2f-color-action-primary-background);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  appearance: none;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.small {
+  min-height: var(--p2f-control-size-compact);
+  gap: var(--p2f-space-8);
+  padding: var(--p2f-space-8) var(--p2f-space-12);
+  border-radius: var(--p2f-radius-compact);
+  font-size: var(--p2f-type-label-medium-font-size);
+  font-weight: var(--p2f-type-label-medium-font-weight);
+  line-height: var(--p2f-type-label-medium-line-height);
+  letter-spacing: var(--p2f-type-label-medium-letter-spacing);
+}
+
+.medium {
+  min-height: var(--p2f-control-size-default);
+  gap: var(--p2f-space-8);
+  padding: var(--p2f-space-12) var(--p2f-space-16);
+  border-radius: var(--p2f-radius-control);
+  font-size: var(--p2f-type-label-medium-font-size);
+  font-weight: var(--p2f-type-label-medium-font-weight);
+  line-height: var(--p2f-type-label-medium-line-height);
+  letter-spacing: var(--p2f-type-label-medium-letter-spacing);
+}
+
+.large {
+  min-height: var(--p2f-control-size-large);
+  gap: var(--p2f-space-12);
+  padding: var(--p2f-space-12) var(--p2f-space-24);
+  border-radius: var(--p2f-radius-control);
+  font-size: var(--p2f-type-label-large-font-size);
+  font-weight: var(--p2f-type-label-large-font-weight);
+  line-height: var(--p2f-type-label-large-line-height);
+  letter-spacing: var(--p2f-type-label-large-letter-spacing);
+}
+
+.label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: currentcolor;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.small .icon {
+  width: var(--p2f-icon-size-small);
+  height: var(--p2f-icon-size-small);
+}
+
+.medium .icon {
+  width: var(--p2f-icon-size-medium);
+  height: var(--p2f-icon-size-medium);
+}
+
+.large .icon {
+  width: var(--p2f-icon-size-large);
+  height: var(--p2f-icon-size-large);
+}
+
+.primary {
+  color: var(--p2f-color-action-primary-foreground);
+  background: var(--p2f-color-action-primary-background);
+}
+
+.secondary {
+  color: var(--p2f-color-action-secondary-foreground);
+  background: var(--p2f-color-action-secondary-background);
+  box-shadow: inset 0 0 0 var(--p2f-border-width-default)
+    var(--p2f-color-border-default);
+}
+
+/* Figma uses Gel Blue 300 here; the frozen semantic hover token points to 600. */
+.primary:not(:disabled):is(:hover, .previewHover) {
+  background: #8fcfff;
+}
+
+.secondary:not(:disabled):is(:hover, .previewHover) {
+  background: var(--p2f-color-action-secondary-hover-background);
+}
+
+.button:not(:disabled):is(:focus-visible, .previewFocused) {
+  outline: none;
+  box-shadow: 0 0 0 var(--p2f-interaction-focus-ring-width)
+    var(--p2f-interaction-focus-ring-color);
+}
+
+.secondary:not(:disabled):is(:focus-visible, .previewFocused) {
+  box-shadow:
+    inset 0 0 0 var(--p2f-border-width-default)
+      var(--p2f-color-border-default),
+    0 0 0 var(--p2f-interaction-focus-ring-width)
+      var(--p2f-interaction-focus-ring-color);
+}
+
+/* No pressed semantic aliases exist in the frozen foundation registry. */
+.primary:not(:disabled):is(:active, .previewPressed) {
+  background: #258cdb;
+}
+
+.secondary:not(:disabled):is(:active, .previewPressed) {
+  background: #0a102f;
+  box-shadow: inset 0 0 0 var(--p2f-border-width-strong)
+    var(--p2f-color-border-strong);
+}
+
+/* The frozen registry has no disabled text semantic alias. */
+.button:is(:disabled, .previewDisabled) {
+  color: #98a2cd;
+  background: var(--p2f-color-background-disabled);
+  cursor: not-allowed;
+}
+
+.secondary:is(:disabled, .previewDisabled) {
+  box-shadow: inset 0 0 0 var(--p2f-border-width-default)
+    var(--p2f-color-border-default);
+}
+
+.button:is(:disabled, .previewDisabled) .icon {
+  opacity: var(--p2f-interaction-disabled-opacity);
+}
