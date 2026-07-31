@@ -33,6 +33,9 @@ Chrome-расширение считается отдельным внешним
 13. [12-source-register.md](./12-source-register.md) — первичные документы, на которых основан план.
 14. [13-implementation-convergence.md](./13-implementation-convergence.md) —
     фактическое состояние реализации, проверки и внешние gates.
+15. [14-reusable-components-implementation-plan.md](./14-reusable-components-implementation-plan.md) —
+    визуальные контракты, API, URL/file validation, этапы реализации и
+    acceptance gates для переиспользуемых UI-компонентов.
 
 ## Главные ограничения
 
