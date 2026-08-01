@@ -14,7 +14,7 @@ describe("getExtensionLink", () => {
 
     expect(getExtensionLink("de")).toEqual({
       external: false,
-      href: "/de/chrome-extension",
+      href: "/de/chrome-extension/how-to-use",
     });
   });
 });

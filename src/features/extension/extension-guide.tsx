@@ -18,7 +18,6 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getExtensionCopy(locale);
   const breadcrumbs: ReadonlyArray<BreadcrumbItem> = [
     { label: copy.homeLabel, href: `/${locale}` },
-    { label: copy.extensionLabel, href: `/${locale}/chrome-extension` },
     {
       label: copy.guideLabel,
       href: `/${locale}/chrome-extension/how-to-use`,

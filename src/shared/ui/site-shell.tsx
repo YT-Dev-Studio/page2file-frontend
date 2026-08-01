@@ -51,7 +51,7 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
             <Link href={`/${locale}/convert-webpage-to-powerpoint`}>
               {copy.links.webpageToPowerpoint}
             </Link>
-            <Link href={`/${locale}/chrome-extension`}>
+            <Link href={`/${locale}/chrome-extension/how-to-use`}>
               {copy.links.extension}
             </Link>
           </nav>

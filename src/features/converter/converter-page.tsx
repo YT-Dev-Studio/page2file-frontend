@@ -43,7 +43,10 @@ export const ConverterPage = ({
             </ul>
             <p>
               {copy.privateQuestion}{" "}
-              <Link href={`/${locale}/chrome-extension`}>{copy.extensionLink}</Link>.
+              <Link href={`/${locale}/chrome-extension/how-to-use`}>
+                {copy.extensionLink}
+              </Link>
+              .
             </p>
           </aside>
         </div>

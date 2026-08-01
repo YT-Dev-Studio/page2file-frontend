@@ -9,8 +9,6 @@ import Article07 from "../../content/blog/html-to-pdf-safely.mdx";
 import Article08 from "../../content/blog/multi-page-website-to-pdf.mdx";
 import Article09 from "../../content/blog/why-print-to-pdf-breaks.mdx";
 import Article10 from "../../content/blog/sections-to-slides.mdx";
-import UpdatePreview from "../../content/updates/preview-workspace.mdx";
-import UpdateChat from "../../content/updates/local-chat-export.mdx";
 import RuArticle01 from "../../content/ru/blog/save-webpage-as-pdf.mdx";
 import RuArticle02 from "../../content/ru/blog/preserve-clickable-links.mdx";
 import RuArticle03 from "../../content/ru/blog/visual-vs-editable.mdx";
@@ -21,8 +19,6 @@ import RuArticle07 from "../../content/ru/blog/html-to-pdf-safely.mdx";
 import RuArticle08 from "../../content/ru/blog/multi-page-website-to-pdf.mdx";
 import RuArticle09 from "../../content/ru/blog/why-print-to-pdf-breaks.mdx";
 import RuArticle10 from "../../content/ru/blog/sections-to-slides.mdx";
-import RuUpdatePreview from "../../content/ru/updates/preview-workspace.mdx";
-import RuUpdateChat from "../../content/ru/updates/local-chat-export.mdx";
 import type { Locale } from "@/shared/i18n/locales";
 
 export type ContentKind = "blog" | "update";
@@ -152,30 +148,7 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   },
 ];
 
-export const updateEntries: ReadonlyArray<ContentEntry> = [
-  {
-    kind: "update",
-    slug: "preview-workspace",
-    title: "A section-first preview workspace",
-    description: "Page2File makes PDF page and PowerPoint slide boundaries, revisioned operations and fallback warnings visible before final rendering.",
-    author: "Page2File product",
-    publishedAt: "2026-07-24",
-    updatedAt: "2026-07-29",
-    readingMinutes: 2,
-    component: UpdatePreview,
-  },
-  {
-    kind: "update",
-    slug: "local-chat-export",
-    title: "Local AI chat export direction",
-    description: "ChatGPT, Claude, Gemini and Grok now have dedicated local-export pages with platform limitations, privacy boundaries and independence notices.",
-    author: "Page2File product",
-    publishedAt: "2026-07-18",
-    updatedAt: "2026-07-29",
-    readingMinutes: 2,
-    component: UpdateChat,
-  },
-];
+export const updateEntries: ReadonlyArray<ContentEntry> = [];
 
 const russianBlogEntries: ReadonlyArray<ContentEntry> = [
   {
@@ -300,32 +273,7 @@ const russianBlogEntries: ReadonlyArray<ContentEntry> = [
   },
 ];
 
-const russianUpdateEntries: ReadonlyArray<ContentEntry> = [
-  {
-    kind: "update",
-    slug: "preview-workspace",
-    title: "Рабочая область предпросмотра по секциям",
-    description:
-      "Page2File показывает границы страниц PDF и слайдов PowerPoint, версионные операции и предупреждения о заменах до финальной обработки.",
-    author: "Команда Page2File",
-    publishedAt: "2026-07-24",
-    updatedAt: "2026-07-30",
-    readingMinutes: 2,
-    component: RuUpdatePreview,
-  },
-  {
-    kind: "update",
-    slug: "local-chat-export",
-    title: "Направление локального экспорта AI-чатов",
-    description:
-      "ChatGPT, Claude, Gemini и Grok получили отдельные страницы локального экспорта через расширение с ограничениями платформ и privacy-дисклеймерами.",
-    author: "Команда Page2File",
-    publishedAt: "2026-07-18",
-    updatedAt: "2026-07-30",
-    readingMinutes: 2,
-    component: RuUpdateChat,
-  },
-];
+const russianUpdateEntries: ReadonlyArray<ContentEntry> = [];
 
 export type ChangelogEntry = {
   version: string;
@@ -333,7 +281,6 @@ export type ChangelogEntry = {
   added: ReadonlyArray<string>;
   improved: ReadonlyArray<string>;
   fixed: ReadonlyArray<string>;
-  relatedUpdate?: string;
 };
 
 export const changelogEntries: ReadonlyArray<ChangelogEntry> = [
@@ -343,7 +290,6 @@ export const changelogEntries: ReadonlyArray<ChangelogEntry> = [
     added: ["PDF and PowerPoint mock converters", "Section preview operations", "15 locale route shells"],
     improved: ["Consent-first analytics boundary", "Route and content validation"],
     fixed: ["Draft locales are excluded from sitemap"],
-    relatedUpdate: "preview-workspace",
   },
   {
     version: "0.2.0-prototype",
@@ -351,7 +297,6 @@ export const changelogEntries: ReadonlyArray<ChangelogEntry> = [
     added: ["Extension instruction modes", "AI chat export landing cluster"],
     improved: ["Local-processing copy and platform disclaimers"],
     fixed: ["Welcome page indexing policy"],
-    relatedUpdate: "local-chat-export",
   },
   {
     version: "0.1.0-prototype",
@@ -376,7 +321,6 @@ const russianChangelogEntries: ReadonlyArray<ChangelogEntry> = [
       "Проверка маршрутов и контента",
     ],
     fixed: ["Черновые локали исключены из sitemap"],
-    relatedUpdate: "preview-workspace",
   },
   {
     version: "0.2.0-prototype",
@@ -389,7 +333,6 @@ const russianChangelogEntries: ReadonlyArray<ChangelogEntry> = [
       "Описание локальной обработки и дисклеймеры платформ",
     ],
     fixed: ["Политика индексации welcome-страницы"],
-    relatedUpdate: "local-chat-export",
   },
   {
     version: "0.1.0-prototype",

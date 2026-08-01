@@ -45,55 +45,6 @@ const aiChatRelatedRoutes: ReadonlyArray<RelatedRoute> = [
 ];
 
 export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
-  "chrome-extension": {
-    route: "chrome-extension",
-    eyebrow: "Current tab, kept local",
-    title: "Export the page you are already viewing",
-    description:
-      "A privacy-first Chrome extension prototype for exporting current tabs and AI chats to PDF or PowerPoint.",
-    lead:
-      "Use the extension when a page requires sign-in, contains a private conversation, or should never be sent to a remote conversion service.",
-    sections: [
-      {
-        heading: "A deliberate permission model",
-        body:
-          "Page2File requests temporary access after you click the extension. It does not need permanent access to every site for the prototype flow.",
-        points: ["User-initiated capture", "Current-tab scope", "No conversion history"],
-      },
-      {
-        heading: "Two useful output modes",
-        body:
-          "Visual mode prioritizes the original appearance. Editable mode rebuilds supported text, images and links, with clear fallback warnings.",
-      },
-      {
-        heading: "Built for long, private material",
-        body:
-          "The extension experience is designed for signed-in pages and long AI conversations that a public URL converter cannot access.",
-      },
-    ],
-    externalLinkKey: "chromeExtension",
-    primaryLabel: "Install extension",
-  },
-  "chrome-extension/welcome": {
-    route: "chrome-extension/welcome",
-    eyebrow: "Installation complete",
-    title: "Your first export takes three steps",
-    description: "Post-install guide for the Page2File Chrome extension prototype.",
-    lead:
-      "Pin the extension, open the page you want to export, then choose PDF or PowerPoint from the toolbar panel.",
-    sections: [
-      { heading: "1. Pin Page2File", body: "Open the extensions menu and keep Page2File visible in the toolbar." },
-      { heading: "2. Open the source", body: "Navigate to the exact page or conversation you want to capture." },
-      { heading: "3. Review before download", body: "Choose a mode, inspect the local preview and download when the sections look right." },
-    ],
-    primaryHref: "/chrome-extension/how-to-use",
-    primaryLabel: "Open the full guide",
-    noindex: true,
-    relatedRoutes: [
-      { route: "updates", label: "Product updates" },
-      { route: "changelog", label: "Changelog" },
-    ],
-  },
   "page2pdf-gpt": {
     route: "page2pdf-gpt",
     eyebrow: "GPT workflow · one page",

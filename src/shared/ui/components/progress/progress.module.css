@@ -51,11 +51,13 @@
 .track::-webkit-progress-value {
   border-radius: var(--p2f-radius-pill);
   background: currentcolor;
+  transition: width 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .track::-moz-progress-bar {
   border-radius: var(--p2f-radius-pill);
   background: currentcolor;
+  transition: width 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .master {
@@ -72,4 +74,11 @@
 
 .slides {
   color: var(--p2f-color-format-slides-default);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track::-webkit-progress-value,
+  .track::-moz-progress-bar {
+    transition: none;
+  }
 }

@@ -130,12 +130,14 @@ const run = async () => {
   if (blogFiles.length !== 10) {
     throw new Error(`Expected exactly 10 blog entries, found ${blogFiles.length}`);
   }
-  if (updateFiles.length !== 2) {
-    throw new Error(`Expected exactly 2 update entries, found ${updateFiles.length}`);
-  }
-  if (russianBlogFiles.length !== 10 || russianUpdateFiles.length !== 2) {
+  if (updateFiles.length !== 0) {
     throw new Error(
-      "Russian content must contain exactly 10 blog entries and 2 updates.",
+      `Expected no update entries before the first release, found ${updateFiles.length}`,
+    );
+  }
+  if (russianBlogFiles.length !== 10 || russianUpdateFiles.length !== 0) {
+    throw new Error(
+      "Russian content must contain exactly 10 blog entries and no pre-release updates.",
     );
   }
 
@@ -225,8 +227,6 @@ const run = async () => {
   validateMetadataSource(landingSource, "Russian landing content");
   validateMetadataSource(seoCopySource, "Route SEO copy");
   const requiredRussianLandingRoutes = [
-    "chrome-extension",
-    "chrome-extension/welcome",
     "page2pdf-gpt",
     "web2pdf-gpt",
     "html2pdf-gpt",

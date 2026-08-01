@@ -178,11 +178,6 @@ const Release = ({
             <ul>{entry.fixed.map(listItem)}</ul>
           </>
         ) : null}
-        {entry.relatedUpdate ? (
-          <Link href={`/${locale}/updates/${entry.relatedUpdate}`}>
-            {copy.relatedUpdate}
-          </Link>
-        ) : null}
       </div>
     </article>
   );

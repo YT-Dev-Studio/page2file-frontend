@@ -9,8 +9,6 @@ const REQUIRED_LOCALES = [
 const REQUIRED_ROUTES = [
   "convert-webpage-to-pdf",
   "convert-webpage-to-powerpoint",
-  "chrome-extension",
-  "chrome-extension/welcome",
   "chrome-extension/how-to-use",
   "page2pdf-gpt",
   "web2pdf-gpt",

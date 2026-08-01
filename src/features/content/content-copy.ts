@@ -23,7 +23,6 @@ type ContentCopy = {
   added: string;
   improved: string;
   fixed: string;
-  relatedUpdate: string;
   breadcrumbLabel: string;
   homeLabel: string;
   blogBreadcrumb: string;
@@ -43,13 +42,13 @@ const contentCopy: LocalizedPublished<ContentCopy> = {
       eyebrow: "Product updates",
       title: "What changed and why",
       description:
-        "Human-readable prototype changes, each connected to the technical changelog.",
+        "Product updates will appear here after the first release.",
     },
     changelog: {
       eyebrow: "Technical history",
       title: "Changelog",
       description:
-        "Versioned prototype changes. Sample entries are clearly labelled and link back to product updates.",
+        "Versioned prototype changes with clearly labelled sample entries.",
     },
     changelogLink: "Open the technical changelog →",
     guideLabel: "Guide",
@@ -62,7 +61,6 @@ const contentCopy: LocalizedPublished<ContentCopy> = {
     added: "Added",
     improved: "Improved",
     fixed: "Fixed",
-    relatedUpdate: "Read the related update →",
     breadcrumbLabel: "Breadcrumbs",
     homeLabel: "Home",
     blogBreadcrumb: "Blog",
@@ -81,13 +79,13 @@ const contentCopy: LocalizedPublished<ContentCopy> = {
       eyebrow: "Обновления продукта",
       title: "Что изменилось и почему",
       description:
-        "Понятное описание изменений прототипа со ссылками на техническую историю версий.",
+        "Обновления продукта появятся здесь после первого релиза.",
     },
     changelog: {
       eyebrow: "Техническая история",
       title: "История изменений",
       description:
-        "Версии прототипа с понятными тестовыми записями и ссылками на связанные обновления продукта.",
+        "Версии прототипа с понятными тестовыми записями.",
     },
     changelogLink: "Открыть техническую историю изменений →",
     guideLabel: "Руководство",
@@ -112,7 +110,6 @@ const contentCopy: LocalizedPublished<ContentCopy> = {
     added: "Добавлено",
     improved: "Улучшено",
     fixed: "Исправлено",
-    relatedUpdate: "Читать связанное обновление →",
     breadcrumbLabel: "Хлебные крошки",
     homeLabel: "Главная",
     blogBreadcrumb: "Блог",

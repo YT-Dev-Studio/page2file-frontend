@@ -10,7 +10,9 @@ describe("HomeExtensionPromo", () => {
       name: /save the current tab.*in chrome installieren/i,
     });
 
-    expect(promo.getAttribute("href")).toBe("/de/chrome-extension");
+    expect(promo.getAttribute("href")).toBe(
+      "/de/chrome-extension/how-to-use",
+    );
     expect(promo.getAttribute("target")).toBe("_blank");
     expect(promo.getAttribute("rel")).toBe("noopener noreferrer");
     expect(promo.querySelector("button")).toBeNull();

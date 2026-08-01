@@ -11,5 +11,8 @@ export const getExtensionLink = (locale: Locale): ExtensionLink => {
 
   return href
     ? { external: true, href }
-    : { external: false, href: `/${locale}/chrome-extension` };
+    : {
+        external: false,
+        href: `/${locale}/chrome-extension/how-to-use`,
+      };
 };

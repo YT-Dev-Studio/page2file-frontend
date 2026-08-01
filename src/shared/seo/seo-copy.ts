@@ -61,7 +61,7 @@ const seoCopy: LocalizedPublished<Record<SeoCopyKey, SeoCopy>> = {
     updates: {
       title: "Page2File product updates and decisions",
       description:
-        "Follow human-readable Page2File prototype updates covering preview controls, local AI chat export, privacy boundaries and product limitations.",
+        "Page2File product updates will be published here after the first public release, with concise notes about shipped changes and decisions.",
     },
     changelog: {
       title: "Page2File technical prototype changelog",
@@ -113,7 +113,7 @@ const seoCopy: LocalizedPublished<Record<SeoCopyKey, SeoCopy>> = {
     updates: {
       title: "Обновления и продуктовые решения Page2File",
       description:
-        "Следите за обновлениями прототипа Page2File: предпросмотром секций, локальным экспортом AI-чатов, конфиденциальностью и ограничениями.",
+        "Обновления продукта Page2File появятся здесь после первого публичного релиза с краткими описаниями выпущенных изменений и решений.",
     },
     changelog: {
       title: "Техническая история версий Page2File",
