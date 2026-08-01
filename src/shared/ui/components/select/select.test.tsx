@@ -1,5 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import {
+  useState,
+  type ChangeEvent,
+  type ReactNode,
+} from "react";
 import { describe, expect, test, vi } from "vitest";
 import { Select } from "./select";
 
@@ -8,57 +13,89 @@ const options = [
   { label: "PowerPoint", value: "pptx" },
 ];
 
-const getSelect = (name: string): HTMLSelectElement => {
+const getCombobox = (name: string): HTMLButtonElement => {
   const element = screen.getByRole("combobox", { name });
 
-  if (!(element instanceof HTMLSelectElement)) {
-    throw new Error("Expected a native HTMLSelectElement.");
+  if (!(element instanceof HTMLButtonElement)) {
+    throw new Error("Expected a button-based combobox.");
   }
 
   return element;
 };
 
+const ControlledSelect = ({
+  onValueChange,
+}: {
+  onValueChange: (value: string) => void;
+}): ReactNode => {
+  const [value, setValue] = useState("pdf");
+
+  const handleChange = (
+    event: ChangeEvent<HTMLSelectElement>,
+  ): void => {
+    setValue(event.currentTarget.value);
+    onValueChange(event.currentTarget.value);
+  };
+
+  return (
+    <Select
+      label="Output format"
+      onChange={handleChange}
+      options={options}
+      value={value}
+    />
+  );
+};
+
 describe("Select", () => {
-  test("renders placeholder and selected native values", () => {
+  test("renders placeholder and selected values", () => {
+    const handleChange = vi.fn();
     const { rerender } = render(
       <Select
         label="Output format"
+        onChange={handleChange}
         options={options}
         placeholder="Choose a format"
         value=""
       />,
     );
 
-    expect(getSelect("Output format").value).toBe("");
-    expect(screen.getByRole("option", { name: "Choose a format" })).not.toBeNull();
+    expect(getCombobox("Output format").textContent).toContain(
+      "Choose a format",
+    );
 
     rerender(
       <Select
         label="Output format"
+        onChange={handleChange}
         options={options}
         placeholder="Choose a format"
         value="pdf"
       />,
     );
-    expect(getSelect("Output format").value).toBe("pdf");
+    expect(getCombobox("Output format").textContent).toContain("PDF");
   });
 
-  test("supports native change and keyboard interaction", async () => {
-    const handleChange = vi.fn();
+  test("supports styled listbox and keyboard selection", async () => {
+    const handleValueChange = vi.fn();
     const user = userEvent.setup();
 
-    render(
-      <Select
-        label="Output format"
-        onChange={handleChange}
-        options={options}
-      />,
-    );
-    const select = getSelect("Output format");
+    render(<ControlledSelect onValueChange={handleValueChange} />);
+    const combobox = getCombobox("Output format");
 
-    await user.selectOptions(select, "pptx");
-    expect(select.value).toBe("pptx");
-    expect(handleChange).toHaveBeenCalledTimes(1);
+    await user.click(combobox);
+    expect(screen.getByRole("listbox")).not.toBeNull();
+    expect(
+      screen.getByRole("option", { name: "PDF" }).getAttribute(
+        "aria-selected",
+      ),
+    ).toBe("true");
+
+    await user.keyboard("{ArrowDown}{Enter}");
+    expect(combobox.textContent).toContain("PowerPoint");
+    expect(handleValueChange).toHaveBeenCalledWith("pptx");
+    expect(handleValueChange).toHaveBeenCalledTimes(1);
+    expect(screen.queryByRole("listbox")).toBeNull();
   });
 
   test("wires error and disabled behavior", async () => {
@@ -74,14 +111,15 @@ describe("Select", () => {
         options={options}
       />,
     );
-    const select = getSelect("Output format");
+    const combobox = getCombobox("Output format");
 
-    await user.selectOptions(select, "pptx");
-    expect(select.disabled).toBe(true);
-    expect(select.getAttribute("aria-invalid")).toBe("true");
+    await user.click(combobox);
+    expect(combobox.disabled).toBe(true);
+    expect(combobox.getAttribute("aria-invalid")).toBe("true");
     expect(screen.getByRole("alert").textContent).toBe(
       "Select one export format",
     );
+    expect(screen.queryByRole("listbox")).toBeNull();
     expect(handleChange).not.toHaveBeenCalled();
   });
 

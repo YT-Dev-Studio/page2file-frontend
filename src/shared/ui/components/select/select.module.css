@@ -4,15 +4,16 @@
   min-width: 0;
 }
 
-.select {
+.trigger {
   box-sizing: border-box;
+  display: flex;
   width: 100%;
   min-width: 0;
   height: var(--p2f-control-size-default);
   margin: 0;
-  padding: var(--p2f-space-12) var(--p2f-space-40)
-    var(--p2f-space-12) var(--p2f-space-12);
-  overflow: hidden;
+  padding: var(--p2f-space-12);
+  align-items: center;
+  gap: var(--p2f-space-8);
   border: var(--p2f-border-width-default) solid
     var(--p2f-color-border-default);
   border-radius: var(--p2f-radius-control);
@@ -23,45 +24,64 @@
   font-weight: var(--p2f-type-body-small-font-weight);
   line-height: var(--p2f-type-body-small-line-height);
   letter-spacing: var(--p2f-type-body-small-letter-spacing);
-  text-overflow: ellipsis;
-  appearance: none;
+  text-align: left;
   cursor: pointer;
 }
 
-.select:not(:disabled):hover {
+.trigger:not(:disabled):hover,
+.trigger[aria-expanded="true"] {
   border-color: var(--p2f-color-border-strong);
 }
 
-.select:not(:disabled):focus-visible {
+.trigger:not(:disabled):focus-visible,
+.trigger[aria-expanded="true"] {
   border-color: var(--p2f-color-border-focus);
   box-shadow: inset 0 0 0 var(--p2f-border-width-default)
     var(--p2f-color-border-focus);
 }
 
-.select[aria-invalid="true"] {
+.trigger[aria-invalid="true"] {
   border-color: var(--p2f-color-border-error);
   box-shadow: inset 0 0 0 var(--p2f-border-width-default)
     var(--p2f-color-border-error);
 }
 
-.select:disabled {
+.trigger:disabled {
   color: var(--p2f-color-ink-navy-300);
   background: var(--p2f-color-background-disabled);
   cursor: not-allowed;
 }
 
+.value {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.placeholder {
+  color: var(--p2f-color-text-secondary);
+}
+
+.trigger:disabled .placeholder {
+  color: var(--p2f-color-ink-navy-300);
+}
+
 .icon {
-  position: absolute;
-  top: 50%;
-  right: var(--p2f-space-12);
   display: inline-flex;
   width: var(--p2f-icon-size-medium);
   height: var(--p2f-icon-size-medium);
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   color: var(--p2f-color-text-secondary);
   pointer-events: none;
-  transform: translateY(-50%);
+  transition: transform 160ms ease;
+}
+
+.iconOpen {
+  transform: rotate(180deg);
 }
 
 .icon svg {
@@ -69,6 +89,106 @@
   height: 100%;
 }
 
-.select:disabled + .icon {
+.trigger:disabled .icon {
   color: var(--p2f-color-ink-navy-300);
+}
+
+.listbox {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + var(--p2f-space-8));
+  left: 0;
+  box-sizing: border-box;
+  display: grid;
+  width: 100%;
+  max-height: 240px;
+  padding: var(--p2f-space-4);
+  overflow-y: auto;
+  gap: var(--p2f-space-4);
+  border: var(--p2f-border-width-default) solid
+    var(--p2f-color-border-default);
+  border-radius: var(--p2f-radius-control);
+  background: var(--p2f-color-background-surface);
+  box-shadow: var(--p2f-shadow-card);
+}
+
+.option {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  min-height: var(--p2f-control-size-compact);
+  margin: 0;
+  padding: var(--p2f-space-8) var(--p2f-space-12);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--p2f-space-8);
+  border: 0;
+  border-radius: var(--p2f-radius-compact);
+  outline: none;
+  color: var(--p2f-color-text-primary);
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.option:hover,
+.optionActive {
+  background: var(--p2f-color-background-subtle);
+}
+
+.optionSelected {
+  color: var(--p2f-color-text-brand);
+  background: var(--p2f-color-background-selected);
+  font-weight: var(--p2f-type-label-medium-font-weight);
+}
+
+.optionActive.optionSelected {
+  background: var(--p2f-color-gel-blue-100);
+}
+
+.option:disabled {
+  color: var(--p2f-color-ink-navy-300);
+  cursor: not-allowed;
+}
+
+.optionLabel {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.check {
+  display: inline-flex;
+  width: var(--p2f-icon-size-medium);
+  height: var(--p2f-icon-size-medium);
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: var(--p2f-color-text-brand);
+}
+
+.check svg {
+  width: 100%;
+  height: 100%;
+}
+
+.nativeSelect {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon {
+    transition: none;
+  }
 }
