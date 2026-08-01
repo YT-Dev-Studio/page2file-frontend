@@ -1,9 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import type { ReactNode } from "react";
-import { useState } from "react";
+import type { KeyboardEvent, ReactNode } from "react";
+import { useRef, useState } from "react";
 import type { Locale } from "@/shared/i18n/locales";
+import { getMessages } from "@/shared/i18n/messages";
+import { getSiteCopy } from "@/shared/i18n/site-copy";
+import { ExternalCta } from "@/shared/ui/external-cta";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
 import {
@@ -17,6 +20,8 @@ type GuideMode = "steps" | "video";
 
 export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getExtensionCopy(locale);
+  const messages = getMessages(locale);
+  const siteCopy = getSiteCopy(locale);
   const breadcrumbs: ReadonlyArray<BreadcrumbItem> = [
     { label: copy.homeLabel, href: `/${locale}` },
     {
@@ -25,8 +30,37 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
     },
   ];
   const [mode, setMode] = useState<GuideMode>("steps");
-  const showSteps = (): void => setMode("steps");
-  const showVideo = (): void => setMode("video");
+  const stepsTabRef = useRef<HTMLButtonElement>(null);
+  const videoTabRef = useRef<HTMLButtonElement>(null);
+  const selectMode = (nextMode: GuideMode): void => {
+    setMode(nextMode);
+  };
+  const showSteps = (): void => selectMode("steps");
+  const showVideo = (): void => selectMode("video");
+  const focusMode = (nextMode: GuideMode): void => {
+    selectMode(nextMode);
+    const target =
+      nextMode === "steps" ? stepsTabRef.current : videoTabRef.current;
+    target?.focus();
+  };
+  const handleTabKeyDown = (
+    event: KeyboardEvent<HTMLButtonElement>,
+  ): void => {
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      event.preventDefault();
+      focusMode(mode === "steps" ? "video" : "steps");
+      return;
+    }
+    if (event.key === "Home") {
+      event.preventDefault();
+      focusMode("steps");
+      return;
+    }
+    if (event.key === "End") {
+      event.preventDefault();
+      focusMode("video");
+    }
+  };
   const step = (item: (typeof copy.steps)[number]): ReactNode => (
     <article className={styles.step} key={item.number}>
       <div className={styles.media}>
@@ -64,7 +98,13 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
           eyebrow={`${copy.eyebrow} · ${locale.toUpperCase()}`}
           lead={copy.lead}
           title={copy.title}
-        />
+        >
+          <ExternalCta
+            comingSoonLabel={messages.actions.comingSoon}
+            externalLinkKey="chromeExtension"
+            label={siteCopy.header.extensionAction}
+          />
+        </PublicHero>
         <div
           aria-label={copy.formatLabel}
           className={styles.tabs}
@@ -74,8 +114,12 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
             aria-controls="steps-panel"
             aria-selected={mode === "steps"}
             className={styles.tab}
+            id="steps-tab"
             onClick={showSteps}
+            onKeyDown={handleTabKeyDown}
+            ref={stepsTabRef}
             role="tab"
+            tabIndex={mode === "steps" ? 0 : -1}
             type="button"
           >
             {copy.stepsTab}
@@ -84,8 +128,12 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
             aria-controls="video-panel"
             aria-selected={mode === "video"}
             className={styles.tab}
+            id="video-tab"
             onClick={showVideo}
+            onKeyDown={handleTabKeyDown}
+            ref={videoTabRef}
             role="tab"
+            tabIndex={mode === "video" ? 0 : -1}
             type="button"
           >
             {copy.videoTab}
@@ -96,6 +144,7 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
           className={styles.panel}
           hidden={mode !== "steps"}
           id="steps-panel"
+          aria-labelledby="steps-tab"
           role="tabpanel"
         >
           <div className={styles.steps}>{copy.steps.map(step)}</div>
@@ -105,6 +154,7 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
           className={styles.panel}
           hidden={mode !== "video"}
           id="video-panel"
+          aria-labelledby="video-tab"
           role="tabpanel"
         >
           <div className={styles.videoGrid}>
