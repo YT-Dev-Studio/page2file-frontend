@@ -158,6 +158,10 @@
   gap: var(--p2f-space-4);
 }
 
+.mobilePanel .navigationLink {
+  min-height: var(--p2f-control-size-default);
+}
+
 .mobileActions {
   padding-top: var(--p2f-space-12);
   border-top: var(--p2f-border-width-default) solid

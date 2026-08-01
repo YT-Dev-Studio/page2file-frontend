@@ -1,11 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import page2FileLogo from "@/app/assets/logo.png";
 import { ConsentBanner } from "@/features/consent/consent-banner";
-import { getMessages } from "@/shared/i18n/messages";
 import { getLocaleDefinition, type Locale } from "@/shared/i18n/locales";
-import { ExternalCta } from "./external-cta";
-import { LocaleSwitcher } from "./locale-switcher";
-import { RussianSiteHeader } from "./russian-site-header";
+import { getMessages } from "@/shared/i18n/messages";
+import { getSiteCopy } from "@/shared/i18n/site-copy";
+import { SiteHeader } from "./site-header";
 import styles from "./ui.module.css";
 
 type SiteShellProps = {
@@ -13,7 +14,11 @@ type SiteShellProps = {
   locale: Locale;
 };
 
-export const Container = ({ children }: { children: ReactNode }): ReactNode => (
+export const Container = ({
+  children,
+}: {
+  children: ReactNode;
+}): ReactNode => (
   <div className={styles.container}>{children}</div>
 );
 
@@ -23,124 +28,130 @@ export const DraftTranslationNotice = ({
   locale: Locale;
 }): ReactNode => {
   const definition = getLocaleDefinition(locale);
+
   if (definition.reviewed) {
     return null;
   }
+
   const messages = getMessages(locale);
+
   return (
     <div className={styles.draft} role="status">
       <Container>
-        <div className={styles.draftInner}>{messages.draftTranslation}</div>
+        <div className={styles.draftInner}>
+          {messages.draftTranslation}
+        </div>
       </Container>
     </div>
   );
 };
 
-const SiteHeader = ({ locale }: { locale: Locale }): ReactNode => {
-  const messages = getMessages(locale);
-  return (
-    <header className={styles.header}>
-      <Container>
-        <div className={styles.headerRow}>
-          <Link className={styles.brand} href={`/${locale}`}>
-            <span className={styles.brandMark} aria-hidden="true">P2F</span>
-            <span>Page2File</span>
-          </Link>
-          <nav className={styles.nav} aria-label={messages.shell.primaryNavigation}>
-            <Link className={styles.navLink} href={`/${locale}/convert-webpage-to-pdf`}>
-              {messages.navigation.convert}
-            </Link>
-            <Link className={styles.navLink} href={`/${locale}/chrome-extension`}>
-              {messages.navigation.extension}
-            </Link>
-            <Link className={styles.navLink} href={`/${locale}/chrome-extension/how-to-use`}>
-              {messages.navigation.guides}
-            </Link>
-            <Link className={styles.navLink} href={`/${locale}/blog`}>
-              {messages.navigation.blog}
-            </Link>
-          </nav>
-          <div className={styles.headerActions}>
-            <LocaleSwitcher locale={locale} />
-            <span className={styles.desktopAction}>
-              <ExternalCta
-                externalLinkKey="chromeExtension"
-                label={messages.actions.install}
-                comingSoonLabel={messages.actions.comingSoon}
-                compact
-              />
-            </span>
-            <details className={styles.mobileNav}>
-              <summary>{messages.shell.menu}</summary>
-              <nav className={styles.mobilePanel} aria-label={messages.shell.mobileNavigation}>
-                <Link className={styles.navLink} href={`/${locale}/convert-webpage-to-pdf`}>
-                  PDF
-                </Link>
-                <Link className={styles.navLink} href={`/${locale}/convert-webpage-to-powerpoint`}>
-                  PowerPoint
-                </Link>
-                <Link className={styles.navLink} href={`/${locale}/chrome-extension`}>
-                  {messages.navigation.extension}
-                </Link>
-                <Link className={styles.navLink} href={`/${locale}/blog`}>
-                  {messages.navigation.blog}
-                </Link>
-              </nav>
-            </details>
-          </div>
-        </div>
-      </Container>
-    </header>
-  );
-};
-
 const SiteFooter = ({
-  flushTop = false,
   locale,
 }: {
-  flushTop?: boolean;
   locale: Locale;
 }): ReactNode => {
-  const messages = getMessages(locale);
-  const footerClassName =
-    `${styles.footer} ${flushTop ? styles.footerFlush : ""}`.trim();
+  const copy = getSiteCopy(locale).footer;
+
   return (
-    <footer className={footerClassName}>
+    <footer className={styles.footer}>
       <Container>
         <div className={styles.footerGrid}>
-          <div>
-            <h2 className={styles.footerTitle}>Page2File</h2>
-            <p className={styles.footerText}>
-              {messages.shell.footerDescription}
-            </p>
+          <div className={styles.footerBrand}>
+            <Link
+              aria-label="Page2File"
+              className={styles.footerBrandLink}
+              href={`/${locale}`}
+            >
+              <Image
+                alt=""
+                className={styles.footerLogo}
+                height={52}
+                loading="eager"
+                src={page2FileLogo}
+                width={52}
+              />
+              <span>PAGE2FILE</span>
+            </Link>
+            <p>{copy.brandDescription}</p>
           </div>
-          <nav className={styles.footerLinks} aria-label={messages.shell.productNavigation}>
-            <Link href={`/${locale}/convert-webpage-to-pdf`}>{messages.shell.pdfLink}</Link>
-            <Link href={`/${locale}/convert-webpage-to-powerpoint`}>{messages.shell.powerpointLink}</Link>
-            <Link href={`/${locale}/chrome-extension`}>{messages.shell.extensionLink}</Link>
-            <Link href={`/${locale}/changelog`}>{messages.shell.changelogLink}</Link>
+
+          <nav
+            aria-label={copy.servicesTitle}
+            className={styles.footerLinks}
+          >
+            <h2>{copy.servicesTitle}</h2>
+            <Link href={`/${locale}/convert-webpage-to-pdf`}>
+              {copy.links.webpageToPdf}
+            </Link>
+            <Link href={`/${locale}/convert-webpage-to-powerpoint`}>
+              {copy.links.webpageToPowerpoint}
+            </Link>
+            <Link href={`/${locale}/chrome-extension`}>
+              {copy.links.extension}
+            </Link>
           </nav>
-          <nav className={styles.footerLinks} aria-label={messages.shell.legalNavigation}>
-            <Link href={`/${locale}/privacy`}>{messages.footer.privacy}</Link>
-            <Link href={`/${locale}/terms`}>{messages.footer.terms}</Link>
-            <Link href={`/${locale}/security`}>{messages.footer.security}</Link>
-            <Link href={`/${locale}/acceptable-use`}>{messages.shell.acceptableUse}</Link>
+
+          <nav
+            aria-label={copy.gptsTitle}
+            className={styles.footerLinks}
+          >
+            <h2>{copy.gptsTitle}</h2>
+            <Link href={`/${locale}/page2pdf-gpt`}>
+              One Page 2 PDF
+            </Link>
+            <Link href={`/${locale}/web2pdf-gpt`}>
+              Web 2 PDF
+            </Link>
+            <Link href={`/${locale}/html2pdf-gpt`}>
+              HTML 2 PDF
+            </Link>
+            <Link href={`/${locale}/web2powerpoint-gpt`}>
+              Web 2 PowerPoint
+            </Link>
+          </nav>
+
+          <nav
+            aria-label={copy.companyTitle}
+            className={styles.footerLinks}
+          >
+            <h2>{copy.companyTitle}</h2>
+            <Link href={`/${locale}/blog`}>{copy.links.blog}</Link>
+            <Link href={`/${locale}/security`}>
+              {copy.links.security}
+            </Link>
+            <Link href={`/${locale}/privacy`}>
+              {copy.links.privacy}
+            </Link>
           </nav>
         </div>
+
         <div className={styles.footerMeta}>
-          {messages.shell.footerMeta}
+          <span>{copy.copyright}</span>
+          <nav aria-label={copy.legalTitle}>
+            <Link href={`/${locale}/terms`}>{copy.links.terms}</Link>
+            <Link href={`/${locale}/cookie-policy`}>
+              {copy.links.cookiePolicy}
+            </Link>
+            <Link href={`/${locale}/acceptable-use`}>
+              {copy.links.acceptableUse}
+            </Link>
+          </nav>
         </div>
       </Container>
     </footer>
   );
 };
 
-export const SiteShell = ({ children, locale }: SiteShellProps): ReactNode => (
+export const SiteShell = ({
+  children,
+  locale,
+}: SiteShellProps): ReactNode => (
   <div className={styles.shell}>
-    {locale === "ru" ? <RussianSiteHeader /> : <SiteHeader locale={locale} />}
+    <SiteHeader locale={locale} />
     <DraftTranslationNotice locale={locale} />
     {children}
-    <SiteFooter flushTop={locale === "ru"} locale={locale} />
+    <SiteFooter locale={locale} />
     <ConsentBanner locale={locale} />
   </div>
 );

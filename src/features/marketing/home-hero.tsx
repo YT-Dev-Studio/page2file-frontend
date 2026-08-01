@@ -18,6 +18,7 @@ import {
   Select,
   type SelectOption,
 } from "@/shared/ui/components/select/select";
+import type { Locale } from "@/shared/i18n/locales";
 import { DownloadIcon } from "@/shared/ui/utilities/icons/glyphs/download-icon";
 import { getConversionRuntimeCopy } from "@/features/converter/conversion-runtime-copy";
 import { createMockPreview } from "@/features/converter/mock-adapter";
@@ -28,40 +29,36 @@ import {
 import { getConverterCopy } from "@/features/converter/converter-copy";
 import { validatePublicUrl } from "@/features/converter/url-validation";
 import { WebsiteUrlField } from "@/features/converter/website-url-field";
-import { russianHomeCopy } from "./russian-home-copy";
-import styles from "./russian-home.module.css";
+import { getHomeCopy, type HomeCopy } from "./home-copy";
+import styles from "./home.module.css";
 
 const formatOptions: ReadonlyArray<SelectOption> = [
   { label: "PDF", value: "pdf" },
   { label: "PowerPoint", value: "pptx" },
 ];
 
-const pdfModeOptions: ReadonlyArray<SelectOption> = [
-  { label: "Снимки страницы", value: "visual" },
-  { label: "Редактируемый PDF", value: "editable" },
-];
-
-const powerpointModeOptions: ReadonlyArray<SelectOption> = [
-  { label: "Снимки слайдов", value: "visual" },
-  { label: "Редактируемая презентация", value: "editable" },
-];
-
 type PreviewCardProps = {
+  copy: HomeCopy;
   format: ConversionFormat;
 };
 
-const PreviewCard = ({ format }: PreviewCardProps): ReactNode => {
+const PreviewCard = ({
+  copy,
+  format,
+}: PreviewCardProps): ReactNode => {
   const isPdf = format === "pdf";
   const filename = isPdf ? "article.pdf" : "article.pptx";
-  const meta = isPdf ? "12 страниц · готово" : "12 слайдов · готово";
+  const meta = isPdf
+    ? copy.preview.pdfMeta
+    : copy.preview.powerpointMeta;
 
   return (
     <aside
-      aria-label="Пример результата конвертации"
+      aria-label={copy.preview.accessibleLabel}
       className={styles.previewCard}
     >
       <div className={styles.previewHeader}>
-        <h2>{russianHomeCopy.preview.title}</h2>
+        <h2>{copy.preview.title}</h2>
         <FormatBadge format={format} style="subtle" />
       </div>
 
@@ -72,14 +69,14 @@ const PreviewCard = ({ format }: PreviewCardProps): ReactNode => {
           <span />
           <i />
         </div>
-        <strong>{russianHomeCopy.preview.sourceTitle}</strong>
+        <strong>{copy.preview.sourceTitle}</strong>
         <div aria-hidden="true" className={styles.textLines}>
           <span />
           <span />
           <span />
         </div>
         <div className={styles.imagePreview}>
-          <span>{russianHomeCopy.preview.imageNote}</span>
+          <span>{copy.preview.imageNote}</span>
           <div aria-hidden="true" className={styles.imageTiles}>
             <i />
             <i />
@@ -91,7 +88,7 @@ const PreviewCard = ({ format }: PreviewCardProps): ReactNode => {
 
       <div className={styles.pageBreak}>
         <span aria-hidden="true" />
-        <strong>{russianHomeCopy.preview.divider}</strong>
+        <strong>{copy.preview.divider}</strong>
         <span aria-hidden="true" />
       </div>
 
@@ -112,10 +109,15 @@ const PreviewCard = ({ format }: PreviewCardProps): ReactNode => {
   );
 };
 
-export const RussianHomeHero = (): ReactNode => {
+export const HomeHero = ({
+  locale,
+}: {
+  locale: Locale;
+}): ReactNode => {
   const router = useRouter();
-  const converterCopy = getConverterCopy("ru");
-  const runtimeCopy = getConversionRuntimeCopy("ru");
+  const copy = getHomeCopy(locale);
+  const converterCopy = getConverterCopy(locale);
+  const runtimeCopy = getConversionRuntimeCopy(locale);
   const [format, setFormat] = useState<ConversionFormat>("pdf");
   const [mode, setMode] = useState<ConversionMode>("visual");
   const [sourceUrl, setSourceUrl] = useState("");
@@ -123,16 +125,18 @@ export const RussianHomeHero = (): ReactNode => {
   const [submissionStatus, setSubmissionStatus] = useState<
     "idle" | "submitting"
   >("idle");
-  const modeOptions =
-    format === "pdf" ? pdfModeOptions : powerpointModeOptions;
+  const modeOptions: ReadonlyArray<SelectOption> =
+    format === "pdf"
+      ? copy.form.pdfModes
+      : copy.form.powerpointModes;
   const modeLabel =
     format === "pdf"
-      ? russianHomeCopy.form.pdfModeLabel
-      : russianHomeCopy.form.powerpointModeLabel;
+      ? copy.form.pdfModeLabel
+      : copy.form.powerpointModeLabel;
   const submitLabel =
     format === "pdf"
-      ? russianHomeCopy.form.submitPdf
-      : russianHomeCopy.form.submitPowerpoint;
+      ? copy.form.submitPdf
+      : copy.form.submitPowerpoint;
 
   const handleUrlChange = (value: string): void => {
     setSourceUrl(value);
@@ -178,7 +182,7 @@ export const RussianHomeHero = (): ReactNode => {
           scenario: "happy",
           sourceUrl: validation.normalizedUrl,
         });
-        router.push(`/ru/preview/${job.jobId}?mode=${job.mode}`);
+        router.push(`/${locale}/preview/${job.jobId}?mode=${job.mode}`);
         return;
       }
 
@@ -196,7 +200,7 @@ export const RussianHomeHero = (): ReactNode => {
           value: validation.normalizedUrl,
         },
       });
-      router.push(`/ru/preview/${job.jobId}`);
+      router.push(`/${locale}/preview/${job.jobId}`);
     } catch (requestError) {
       const code =
         requestError instanceof ConversionApiError
@@ -214,11 +218,11 @@ export const RussianHomeHero = (): ReactNode => {
   };
 
   return (
-    <div className={styles.heroLayout}>
+    <div className={styles.heroLayout} id="converter">
       <div className={styles.heroContent}>
-        <p className={styles.eyebrow}>{russianHomeCopy.eyebrow}</p>
-        <h1 className={styles.title}>{russianHomeCopy.title}</h1>
-        <p className={styles.lead}>{russianHomeCopy.lead}</p>
+        <p className={styles.eyebrow}>{copy.eyebrow}</p>
+        <h1 className={styles.title}>{copy.title}</h1>
+        <p className={styles.lead}>{copy.lead}</p>
 
         <form
           className={styles.converterForm}
@@ -228,19 +232,19 @@ export const RussianHomeHero = (): ReactNode => {
           <WebsiteUrlField
             emptyError={converterCopy.validation.empty}
             error={error}
-            helper={russianHomeCopy.form.urlHelper}
+            helper={copy.form.urlHelper}
             id="home-source-url"
             invalidError={converterCopy.validation.malformed}
-            label={russianHomeCopy.form.urlLabel}
+            label={copy.form.urlLabel}
             onValueChange={handleUrlChange}
-            placeholder={russianHomeCopy.form.urlPlaceholder}
+            placeholder={copy.form.urlPlaceholder}
             required
             value={sourceUrl}
           />
 
           <div className={styles.selectRow}>
             <Select
-              label={russianHomeCopy.form.formatLabel}
+              label={copy.form.formatLabel}
               onChange={handleFormatChange}
               options={formatOptions}
               showHelper={false}
@@ -256,7 +260,7 @@ export const RussianHomeHero = (): ReactNode => {
           </div>
 
           <div className={styles.formFooter}>
-            <span>{russianHomeCopy.form.meta}</span>
+            <span>{copy.form.meta}</span>
             <Button
               className={styles.submitButton}
               disabled={submissionStatus === "submitting"}
@@ -272,11 +276,11 @@ export const RussianHomeHero = (): ReactNode => {
         </form>
 
         <p className={styles.closingNote}>
-          {russianHomeCopy.closingNote}
+          {copy.closingNote}
         </p>
       </div>
 
-      <PreviewCard format={format} />
+      <PreviewCard copy={copy} format={format} />
     </div>
   );
 };

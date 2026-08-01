@@ -6,56 +6,54 @@ import featureThree from "@/app/assets/features/feat3.png";
 import featureFour from "@/app/assets/features/feat4.png";
 import featureFive from "@/app/assets/features/feat5.png";
 import featureSix from "@/app/assets/features/feat6.png";
+import type { Locale } from "@/shared/i18n/locales";
 import { Card } from "@/shared/ui/components/card/card";
-import { russianHomeCopy } from "./russian-home-copy";
-import styles from "./russian-home.module.css";
+import { getHomeCopy } from "./home-copy";
+import styles from "./home.module.css";
 
-type RussianFeatureCardData = {
+type FeatureCardData = {
   body: string;
   image: StaticImageData;
   title: string;
   visualClassName: string;
 };
 
-const featureCards: ReadonlyArray<RussianFeatureCardData> = [
+const featureVisuals: ReadonlyArray<{
+  image: StaticImageData;
+  visualClassName: string;
+}> = [
   {
-    ...russianHomeCopy.features.items[0],
     image: featureOne,
     visualClassName: styles.featureVisualOne,
   },
   {
-    ...russianHomeCopy.features.items[1],
     image: featureTwo,
     visualClassName: styles.featureVisualTwo,
   },
   {
-    ...russianHomeCopy.features.items[2],
     image: featureThree,
     visualClassName: styles.featureVisualThree,
   },
   {
-    ...russianHomeCopy.features.items[3],
     image: featureFour,
     visualClassName: styles.featureVisualFour,
   },
   {
-    ...russianHomeCopy.features.items[4],
     image: featureFive,
     visualClassName: styles.featureVisualFive,
   },
   {
-    ...russianHomeCopy.features.items[5],
     image: featureSix,
     visualClassName: styles.featureVisualSix,
   },
 ];
 
-const RussianFeatureCard = ({
+const FeatureCard = ({
   body,
   image,
   title,
   visualClassName,
-}: RussianFeatureCardData): ReactNode => (
+}: FeatureCardData): ReactNode => (
   <Card
     body={body}
     className={styles.featureCard}
@@ -73,32 +71,46 @@ const RussianFeatureCard = ({
   />
 );
 
-const featureToCard = (feature: RussianFeatureCardData): ReactNode => (
-  <RussianFeatureCard key={feature.title} {...feature} />
+const featureToCard = (feature: FeatureCardData): ReactNode => (
+  <FeatureCard key={feature.title} {...feature} />
 );
 
-export const RussianHomeFeatures = (): ReactNode => (
-  <section
-    aria-labelledby="features-title"
-    className={styles.featuresSection}
-    id="features"
-  >
-    <div className={styles.pageGutters}>
-      <div className={styles.featuresHeader}>
-        <p className={styles.featuresEyebrow}>
-          {russianHomeCopy.features.eyebrow}
-        </p>
-        <h2 className={styles.featuresTitle} id="features-title">
-          {russianHomeCopy.features.title}
-        </h2>
-        <p className={styles.featuresLead}>
-          {russianHomeCopy.features.body}
-        </p>
-      </div>
+export const HomeFeatures = ({
+  locale,
+}: {
+  locale: Locale;
+}): ReactNode => {
+  const copy = getHomeCopy(locale).features;
+  const featureCards = copy.items.map(
+    (item, index): FeatureCardData => ({
+      ...item,
+      ...featureVisuals[index],
+    }),
+  );
 
-      <div className={styles.featuresGrid}>
-        {featureCards.map(featureToCard)}
+  return (
+    <section
+      aria-labelledby="features-title"
+      className={styles.featuresSection}
+      id="features"
+    >
+      <div className={styles.pageGutters}>
+        <div className={styles.featuresHeader}>
+          <p className={styles.featuresEyebrow}>
+            {copy.eyebrow}
+          </p>
+          <h2 className={styles.featuresTitle} id="features-title">
+            {copy.title}
+          </h2>
+          <p className={styles.featuresLead}>
+            {copy.body}
+          </p>
+        </div>
+
+        <div className={styles.featuresGrid}>
+          {featureCards.map(featureToCard)}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
