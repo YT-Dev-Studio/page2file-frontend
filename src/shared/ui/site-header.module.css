@@ -91,15 +91,9 @@
 }
 
 .extensionButton {
+  flex: 0 0 auto;
   min-height: var(--p2f-control-size-default);
   padding-inline: var(--p2f-space-16);
-}
-
-.extensionButton > span:first-child {
-  display: inline-flex;
-  width: var(--p2f-icon-size-medium);
-  height: var(--p2f-icon-size-medium);
-  flex: 0 0 auto;
 }
 
 .mobileNavigation {
@@ -112,8 +106,7 @@
   width: var(--p2f-control-size-default);
   height: var(--p2f-control-size-default);
   place-items: center;
-  border: var(--p2f-border-width-default) solid
-    var(--p2f-color-border-default);
+  border: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
   border-radius: var(--p2f-radius-compact);
   background: var(--p2f-color-background-surface);
   cursor: pointer;
@@ -145,8 +138,7 @@
   width: min(320px, calc(100vw - var(--p2f-space-32)));
   padding: var(--p2f-space-12);
   gap: var(--p2f-space-12);
-  border: var(--p2f-border-width-default) solid
-    var(--p2f-color-border-default);
+  border: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
   border-radius: var(--p2f-radius-card);
   background: var(--p2f-color-background-surface);
   box-shadow: var(--p2f-shadow-card);

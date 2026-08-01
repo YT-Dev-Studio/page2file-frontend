@@ -43,7 +43,7 @@ const siteCopy: LocalizedPublished<SiteCopy> = {
   en: {
     header: {
       brandLabel: "Page2File — home",
-      extensionAction: "Download extension",
+      extensionAction: "Install now",
       menuLabel: "Open menu",
       mobileNavigationLabel: "Mobile navigation",
       navigationLabel: "Primary navigation",
@@ -78,7 +78,7 @@ const siteCopy: LocalizedPublished<SiteCopy> = {
   ru: {
     header: {
       brandLabel: "Page2File — главная",
-      extensionAction: "Скачать расширение",
+      extensionAction: "Установить сейчас",
       menuLabel: "Открыть меню",
       mobileNavigationLabel: "Мобильная навигация",
       navigationLabel: "Основная навигация",

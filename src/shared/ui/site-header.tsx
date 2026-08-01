@@ -6,7 +6,6 @@ import type { Locale } from "@/shared/i18n/locales";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { getExtensionLink } from "@/shared/routes/extension-link";
 import { ButtonLink } from "@/shared/ui/components/button/button";
-import { ChromeIcon } from "@/shared/ui/utilities/icons/glyphs/chrome-icon";
 import { LocaleSwitcher } from "./locale-switcher";
 import styles from "./site-header.module.css";
 
@@ -31,8 +30,6 @@ const ExtensionButton = ({
     <ButtonLink
       className={buttonClassName}
       href={extensionLink.href}
-      icon={<ChromeIcon />}
-      iconPosition="start"
       rel={extensionLink.external ? "noopener noreferrer" : undefined}
       target={extensionLink.external ? "_blank" : undefined}
     >
