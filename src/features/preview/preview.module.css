@@ -179,6 +179,9 @@
   background: var(--surface-subtle);
   font-size: 11px;
   font-weight: 680;
+  transition:
+    border-color 200ms ease,
+    color 200ms ease;
 }
 
 .smallButton:hover:not(:disabled) {
@@ -361,6 +364,7 @@
   color: #fff;
   background: var(--accent);
   font-weight: 750;
+  transition: background-color 200ms ease;
 }
 
 @media (max-width: 1080px) {
@@ -397,6 +401,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .smallButton,
+  .downloadLink {
+    transition: none;
+  }
+
   .progressValue {
     animation: none;
     width: 58%;

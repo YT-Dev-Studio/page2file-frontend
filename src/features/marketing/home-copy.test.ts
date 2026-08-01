@@ -1,5 +1,9 @@
 import { describe, expect, test } from "vitest";
-import { getHomeCopy } from "./home-copy";
+import { localeRegistry } from "@/shared/i18n/locales";
+import {
+  getChromeInstallLabel,
+  getHomeCopy,
+} from "./home-copy";
 
 const expectedBlogSlugs = [
   "why-print-to-pdf-breaks",
@@ -29,5 +33,21 @@ describe("homepage copy", () => {
     expect(
       getHomeCopy("ru").blog.items.map((item): string => item.slug),
     ).toEqual(expectedBlogSlugs);
+  });
+
+  test("provides a translated Chrome badge for every locale", () => {
+    const labels = localeRegistry.map(({ code }): string =>
+      getChromeInstallLabel(code),
+    );
+
+    expect(labels).toHaveLength(localeRegistry.length);
+    expect(labels.every((label): boolean => label.length > 0)).toBe(
+      true,
+    );
+    expect(getChromeInstallLabel("en")).toBe("Install on Chrome");
+    expect(getChromeInstallLabel("ru")).toBe("Установить в Chrome");
+    expect(getChromeInstallLabel("de")).toBe(
+      "In Chrome installieren",
+    );
   });
 });

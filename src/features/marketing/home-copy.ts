@@ -44,7 +44,6 @@ export type HomeCopy = {
     title: string;
   };
   promo: {
-    action: string;
     body: string;
     eyebrow: string;
     title: string;
@@ -125,7 +124,6 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
       title: "Page → accurate file",
     },
     promo: {
-      action: "Install extension",
       body:
         "The extension works with both links and the open browser tab. Private pages and AI chats are processed locally in your browser.",
       eyebrow: "CHROME EXTENSION",
@@ -325,7 +323,6 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
       title: "Страница → аккуратный файл",
     },
     promo: {
-      action: "Установить расширение",
       body:
         "Расширение работает и по ссылке, и с открытой вкладкой. Закрытые страницы и AI-чаты обрабатываются локально в браузере.",
       eyebrow: "РАСШИРЕНИЕ CHROME",
@@ -492,3 +489,25 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
 
 export const getHomeCopy = (locale: Locale): HomeCopy =>
   homeCopy[isPublishedLocale(locale) ? locale : "en"];
+
+const chromeInstallLabels: Record<Locale, string> = {
+  cs: "Nainstalovat do Chromu",
+  da: "Installer i Chrome",
+  de: "In Chrome installieren",
+  en: "Install on Chrome",
+  es: "Instalar en Chrome",
+  fi: "Asenna Chromeen",
+  fr: "Installer sur Chrome",
+  hu: "Telepítés a Chrome-ba",
+  it: "Installa su Chrome",
+  nl: "Installeren in Chrome",
+  no: "Installer i Chrome",
+  pl: "Zainstaluj w Chrome",
+  pt: "Instalar no Chrome",
+  ro: "Instalează în Chrome",
+  ru: "Установить в Chrome",
+  sv: "Installera i Chrome",
+};
+
+export const getChromeInstallLabel = (locale: Locale): string =>
+  chromeInstallLabels[locale];

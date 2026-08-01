@@ -92,6 +92,7 @@
   flex: 0 0 auto;
   color: var(--p2f-color-ink-navy-800);
   background: var(--p2f-color-format-pdf-default);
+  transition: background-color 200ms ease;
 }
 
 .submitButton:not(:disabled):hover {
@@ -307,7 +308,13 @@
 
 .promoSection {
   padding-block: var(--p2f-space-32);
-  background: var(--p2f-color-background-surface);
+  background: linear-gradient(
+    180deg,
+    var(--p2f-color-background-page) 0%,
+    var(--p2f-color-background-surface) 28%,
+    var(--p2f-color-background-surface) 72%,
+    var(--p2f-color-background-page) 100%
+  );
 }
 
 .promoCard {
@@ -319,11 +326,40 @@
   gap: var(--p2f-space-32);
   border-radius: var(--p2f-radius-card);
   color: var(--p2f-color-text-inverse);
-  background: var(--p2f-color-background-inverse);
+  background:
+    radial-gradient(
+      circle at 88% 14%,
+      color-mix(
+          in srgb,
+          var(--p2f-color-gel-blue-500) 48%,
+          transparent
+        )
+        0,
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 8% 110%,
+      color-mix(
+          in srgb,
+          var(--p2f-color-coral-ink-500) 34%,
+          transparent
+        )
+        0,
+      transparent 48%
+    ),
+    var(--p2f-color-background-inverse);
+  text-decoration: none;
+  transform: scale(1);
+  transform-origin: center;
+  transition:
+    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 220ms ease;
 }
 
 .promoCopy {
+  min-width: 0;
   max-width: 760px;
+  flex: 1;
 }
 
 .promoCopy p {
@@ -350,9 +386,82 @@
   line-height: var(--p2f-type-body-small-line-height);
 }
 
-.promoAction {
+.promoArrow {
+  display: inline-flex;
+  width: 48px;
+  height: var(--p2f-icon-size-large);
   flex: 0 0 auto;
-  min-width: 264px;
+  align-items: center;
+  justify-content: center;
+  color: var(--p2f-color-text-inverse);
+}
+
+.promoArrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.chromeBadge {
+  position: relative;
+  display: inline-flex;
+  box-sizing: border-box;
+  min-width: 250px;
+  min-height: 56px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding: var(--p2f-space-12) 44px var(--p2f-space-12)
+    var(--p2f-space-16);
+  gap: var(--p2f-space-8);
+  border: var(--p2f-border-width-default) solid
+    color-mix(
+      in srgb,
+      var(--p2f-color-coral-ink-500) 52%,
+      var(--p2f-color-border-default)
+    );
+  border-radius: var(--p2f-radius-control);
+  color: var(--p2f-color-text-primary);
+  background: var(--p2f-color-background-surface);
+  box-shadow: var(--p2f-shadow-card);
+  font-size: var(--p2f-type-label-large-font-size);
+  font-weight: var(--p2f-type-label-large-font-weight);
+  line-height: var(--p2f-type-label-large-line-height);
+  white-space: nowrap;
+}
+
+.chromeBadgeLogo {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+}
+
+.chromeBadgeLogo img {
+  width: 100%;
+  height: 100%;
+}
+
+.chromeBadgeCursor {
+  position: absolute;
+  right: 6px;
+  bottom: -10px;
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  color: var(--p2f-color-text-primary);
+}
+
+.promoCard:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--p2f-interaction-focus-ring-width)
+    var(--p2f-interaction-focus-ring-color);
+}
+
+@media (hover: hover) {
+  .promoCard:hover {
+    box-shadow: 0 18px 40px rgb(10 16 47 / 22%);
+    transform: scale(1.02);
+  }
 }
 
 .featuresSection {
@@ -576,6 +685,10 @@
   border-color: var(--p2f-color-ink-navy-300);
   color: var(--p2f-color-text-inverse);
   background: transparent;
+  transition:
+    border-color 200ms ease,
+    color 200ms ease,
+    background-color 200ms ease;
 }
 
 .finalSecondaryAction.finalSecondaryAction:hover {
@@ -604,6 +717,24 @@
 
   .previewCard {
     max-width: 620px;
+  }
+
+  .promoCard {
+    align-items: stretch;
+    flex-direction: column;
+    gap: var(--p2f-space-16);
+  }
+
+  .promoArrow {
+    width: var(--p2f-icon-size-large);
+    align-self: center;
+    transform: rotate(90deg);
+  }
+
+  .chromeBadge {
+    width: min(100%, 360px);
+    align-self: flex-end;
+    white-space: normal;
   }
 
   .featuresGrid,
@@ -669,8 +800,7 @@
     flex-direction: column;
   }
 
-  .submitButton,
-  .promoAction {
+  .submitButton {
     width: 100%;
   }
 
@@ -707,10 +837,14 @@
   .promoCard {
     min-height: 0;
     padding: var(--p2f-space-24);
+    gap: var(--p2f-space-16);
   }
 
-  .promoAction {
+  .chromeBadge {
+    width: 100%;
     min-width: 0;
+    align-self: stretch;
+    white-space: normal;
   }
 
   .featuresSection {
@@ -799,5 +933,15 @@
   .page *::before,
   .page *::after {
     scroll-behavior: auto;
+  }
+
+  .submitButton,
+  .promoCard,
+  .finalSecondaryAction.finalSecondaryAction {
+    transition: none;
+  }
+
+  .promoCard:hover {
+    transform: none;
   }
 }

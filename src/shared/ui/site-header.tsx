@@ -30,8 +30,8 @@ const ExtensionButton = ({
     <ButtonLink
       className={buttonClassName}
       href={extensionLink.href}
-      rel={extensionLink.external ? "noopener noreferrer" : undefined}
-      target={extensionLink.external ? "_blank" : undefined}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       {copy.extensionAction}
     </ButtonLink>

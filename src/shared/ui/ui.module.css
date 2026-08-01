@@ -20,6 +20,10 @@
   background: transparent;
   font-family: var(--p2f-font-family-primary);
   text-align: center;
+  transition:
+    color 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
 }
 
 .localeControl.localeControl:not(:disabled):hover,
@@ -110,6 +114,7 @@
   font-weight: var(--p2f-font-weight-extrabold);
   line-height: var(--p2f-type-body-large-line-height);
   letter-spacing: var(--p2f-letter-spacing-tight);
+  transition: opacity 200ms ease;
 }
 
 .footerLogo {
@@ -145,6 +150,7 @@
   color: var(--p2f-color-ink-navy-100);
   font-size: var(--p2f-type-body-small-font-size);
   line-height: var(--p2f-type-body-small-line-height);
+  transition: color 200ms ease;
 }
 
 .footerLinks a:hover,
@@ -176,6 +182,7 @@
 
 .footerMeta a {
   color: inherit;
+  transition: color 200ms ease;
 }
 
 .footerMeta a:hover,
@@ -290,7 +297,11 @@
 
 @media (prefers-reduced-motion: reduce) {
   .button,
-  .secondaryButton {
+  .secondaryButton,
+  .localeControl.localeControl,
+  .footerBrandLink,
+  .footerLinks a,
+  .footerMeta a {
     transition: none;
   }
 }

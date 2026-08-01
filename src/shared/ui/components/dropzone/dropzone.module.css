@@ -13,6 +13,10 @@
   border-radius: var(--p2f-radius-card);
   color: var(--p2f-color-text-primary);
   background: var(--p2f-color-background-surface);
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
 }
 
 .dropzone:not(.disabled):hover {
@@ -152,5 +156,11 @@
 @media (max-width: 375px) {
   .dropzone {
     padding: var(--p2f-space-24);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dropzone {
+    transition: none;
   }
 }

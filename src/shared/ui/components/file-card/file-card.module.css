@@ -117,6 +117,10 @@
   background: transparent;
   appearance: none;
   cursor: pointer;
+  transition:
+    color 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
 }
 
 .action:hover:not(:disabled) {
@@ -171,5 +175,11 @@
   .action {
     grid-column: 2;
     justify-self: end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .action {
+    transition: none;
   }
 }

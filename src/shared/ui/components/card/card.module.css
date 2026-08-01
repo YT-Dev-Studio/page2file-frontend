@@ -143,12 +143,14 @@
   font-weight: var(--p2f-type-label-medium-font-weight);
   line-height: var(--p2f-type-label-medium-line-height);
   letter-spacing: var(--p2f-type-label-medium-letter-spacing);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: var(--p2f-space-4);
+  transition: text-decoration-color 200ms ease;
 }
 
 .action:hover {
-  text-decoration: underline;
-  text-underline-offset: var(--p2f-space-4);
+  text-decoration-color: currentcolor;
 }
 
 .action:focus-visible {
@@ -233,6 +235,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .card,
+  .action,
   .rail {
     transition: none;
   }

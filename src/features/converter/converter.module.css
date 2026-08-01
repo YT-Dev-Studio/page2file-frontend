@@ -123,6 +123,7 @@
   color: #fff;
   background: var(--accent);
   font-weight: 760;
+  transition: background-color 200ms ease;
 }
 
 .submit:hover {
@@ -199,5 +200,11 @@
 
   .modes {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submit {
+    transition: none;
   }
 }

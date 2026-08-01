@@ -26,6 +26,10 @@
   letter-spacing: var(--p2f-type-body-small-letter-spacing);
   text-align: left;
   cursor: pointer;
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
 }
 
 .trigger:not(:disabled):hover,
@@ -131,6 +135,9 @@
   font: inherit;
   text-align: left;
   cursor: pointer;
+  transition:
+    color 200ms ease,
+    background-color 200ms ease;
 }
 
 .option:hover,
@@ -189,6 +196,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .trigger,
+  .option,
   .icon {
     transition: none;
   }

@@ -18,6 +18,10 @@
   cursor: pointer;
   user-select: none;
   touch-action: manipulation;
+  transition:
+    color 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
 }
 
 .small {
@@ -149,4 +153,10 @@
 
 .button:is(:disabled, .previewDisabled) .icon {
   opacity: var(--p2f-interaction-disabled-opacity);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
 }

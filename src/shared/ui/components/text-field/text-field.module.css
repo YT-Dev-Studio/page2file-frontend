@@ -18,6 +18,10 @@
   letter-spacing: var(--p2f-type-body-small-letter-spacing);
   text-overflow: ellipsis;
   appearance: none;
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
 }
 
 .input::placeholder {
@@ -49,4 +53,10 @@
 
 .input:disabled::placeholder {
   color: var(--p2f-color-ink-navy-300);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input {
+    transition: none;
+  }
 }
