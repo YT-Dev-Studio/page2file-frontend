@@ -33,4 +33,11 @@ describe("FormatBadge", () => {
     expect(badge.classList.contains(styles.subtle)).toBe(true);
     expect(badge.getAttribute("role")).toBeNull();
   });
+
+  test("supports custom badge content", () => {
+    render(<FormatBadge format="master">Custom label</FormatBadge>);
+
+    expect(screen.getByText("Custom label")).toBeTruthy();
+    expect(screen.queryByText("Master")).toBeNull();
+  });
 });

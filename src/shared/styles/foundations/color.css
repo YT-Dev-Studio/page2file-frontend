@@ -52,7 +52,7 @@
   --p2f-color-violet-ink-950: #241843;
 
   /* Semantic backgrounds */
-  --p2f-color-background-page: var(--p2f-color-neutral-warm-paper);
+  --p2f-color-background-page: var(--p2f-color-ink-navy-50);
   --p2f-color-background-surface: var(--p2f-color-neutral-pure-paper);
   --p2f-color-background-subtle: var(--p2f-color-ink-navy-50);
   --p2f-color-background-selected: var(--p2f-color-gel-blue-50);

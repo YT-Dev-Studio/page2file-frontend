@@ -19,6 +19,7 @@ import {
   type SelectOption,
 } from "@/shared/ui/components/select/select";
 import type { Locale } from "@/shared/i18n/locales";
+import { getMessages } from "@/shared/i18n/messages";
 import { DownloadIcon } from "@/shared/ui/utilities/icons/glyphs/download-icon";
 import { getConversionRuntimeCopy } from "@/features/converter/conversion-runtime-copy";
 import { createMockPreview } from "@/features/converter/mock-adapter";
@@ -40,17 +41,14 @@ const formatOptions: ReadonlyArray<SelectOption> = [
 type PreviewCardProps = {
   copy: HomeCopy;
   format: ConversionFormat;
+  locale: Locale;
 };
 
-const PreviewCard = ({
-  copy,
-  format,
-}: PreviewCardProps): ReactNode => {
+const PreviewCard = ({ copy, format, locale }: PreviewCardProps): ReactNode => {
   const isPdf = format === "pdf";
   const filename = isPdf ? "article.pdf" : "article.pptx";
-  const meta = isPdf
-    ? copy.preview.pdfMeta
-    : copy.preview.powerpointMeta;
+  const meta = isPdf ? copy.preview.pdfMeta : copy.preview.powerpointMeta;
+  const downloadLabel = getMessages(locale).actions.download;
 
   return (
     <aside
@@ -101,19 +99,19 @@ const PreviewCard = ({
           <span>{meta}</span>
           <FormatBadge format={format} style="subtle" />
         </div>
-        <span aria-hidden="true" className={styles.outputDownload}>
+        <button
+          aria-label={`${downloadLabel}: ${filename}`}
+          className={styles.outputDownload}
+          type="button"
+        >
           <DownloadIcon />
-        </span>
+        </button>
       </div>
     </aside>
   );
 };
 
-export const HomeHero = ({
-  locale,
-}: {
-  locale: Locale;
-}): ReactNode => {
+export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
   const router = useRouter();
   const copy = getHomeCopy(locale);
   const converterCopy = getConverterCopy(locale);
@@ -126,17 +124,11 @@ export const HomeHero = ({
     "idle" | "submitting"
   >("idle");
   const modeOptions: ReadonlyArray<SelectOption> =
-    format === "pdf"
-      ? copy.form.pdfModes
-      : copy.form.powerpointModes;
+    format === "pdf" ? copy.form.pdfModes : copy.form.powerpointModes;
   const modeLabel =
-    format === "pdf"
-      ? copy.form.pdfModeLabel
-      : copy.form.powerpointModeLabel;
+    format === "pdf" ? copy.form.pdfModeLabel : copy.form.powerpointModeLabel;
   const submitLabel =
-    format === "pdf"
-      ? copy.form.submitPdf
-      : copy.form.submitPowerpoint;
+    format === "pdf" ? copy.form.submitPdf : copy.form.submitPowerpoint;
 
   const handleUrlChange = (value: string): void => {
     setSourceUrl(value);
@@ -146,18 +138,12 @@ export const HomeHero = ({
     }
   };
 
-  const handleFormatChange = (
-    event: ChangeEvent<HTMLSelectElement>,
-  ): void => {
+  const handleFormatChange = (event: ChangeEvent<HTMLSelectElement>): void => {
     setFormat(event.currentTarget.value === "pptx" ? "pptx" : "pdf");
   };
 
-  const handleModeChange = (
-    event: ChangeEvent<HTMLSelectElement>,
-  ): void => {
-    setMode(
-      event.currentTarget.value === "editable" ? "editable" : "visual",
-    );
+  const handleModeChange = (event: ChangeEvent<HTMLSelectElement>): void => {
+    setMode(event.currentTarget.value === "editable" ? "editable" : "visual");
   };
 
   const handleSubmit = async (
@@ -220,7 +206,6 @@ export const HomeHero = ({
   return (
     <div className={styles.heroLayout} id="converter">
       <div className={styles.heroContent}>
-        <p className={styles.eyebrow}>{copy.eyebrow}</p>
         <h1 className={styles.title}>{copy.title}</h1>
         <p className={styles.lead}>{copy.lead}</p>
 
@@ -275,12 +260,10 @@ export const HomeHero = ({
           </div>
         </form>
 
-        <p className={styles.closingNote}>
-          {copy.closingNote}
-        </p>
+        <p className={styles.closingNote}>{copy.closingNote}</p>
       </div>
 
-      <PreviewCard copy={copy} format={format} />
+      <PreviewCard copy={copy} format={format} locale={locale} />
     </div>
   );
 };

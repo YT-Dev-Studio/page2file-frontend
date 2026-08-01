@@ -1,7 +1,4 @@
-import type {
-  Locale,
-  LocalizedPublished,
-} from "@/shared/i18n/locales";
+import type { Locale, LocalizedPublished } from "@/shared/i18n/locales";
 import { isPublishedLocale } from "@/shared/i18n/locales";
 
 type IndexCopy = {
@@ -11,8 +8,6 @@ type IndexCopy = {
 };
 
 type ContentCopy = {
-  prototypeSamples: string;
-  articleSample: string;
   fallbackArticle: string;
   blog: IndexCopy;
   updates: IndexCopy;
@@ -37,12 +32,7 @@ type ContentCopy = {
 
 const contentCopy: LocalizedPublished<ContentCopy> = {
   en: {
-    prototypeSamples:
-      "Prototype editorial samples — verify before the production release.",
-    articleSample:
-      "Prototype editorial sample — verify before the production release.",
-    fallbackArticle:
-      "English fallback article — this locale is not indexed.",
+    fallbackArticle: "English fallback article — this locale is not indexed.",
     blog: {
       eyebrow: "Conversion field notes",
       title: "Practical webpage export guides",
@@ -79,10 +69,6 @@ const contentCopy: LocalizedPublished<ContentCopy> = {
     updatesBreadcrumb: "Updates",
   },
   ru: {
-    prototypeSamples:
-      "Демонстрационные редакционные материалы — проверьте перед production-релизом.",
-    articleSample:
-      "Демонстрационный редакционный материал — проверьте перед production-релизом.",
     fallbackArticle:
       "Статья доступна на английском — эта черновая локаль не индексируется.",
     blog: {

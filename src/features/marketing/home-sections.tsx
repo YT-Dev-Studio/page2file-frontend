@@ -7,7 +7,10 @@ import {
   type ButtonLinkProps,
 } from "@/shared/ui/components/button/button";
 import { Card } from "@/shared/ui/components/card/card";
+import { FormatBadge } from "@/shared/ui/components/format-badge/format-badge";
+import { TimerIcon } from "@/shared/ui/utilities/icons/glyphs/timer-icon";
 import { getHomeCopy, type HomeCopy } from "./home-copy";
+import { HomeExtensionBanner } from "./home-extension-promo";
 import { HomeSectionHeader } from "./home-section-header";
 import styles from "./home.module.css";
 
@@ -31,11 +34,7 @@ export const ExtensionButtonLink = ({
   );
 };
 
-export const HomeHowItWorks = ({
-  locale,
-}: {
-  locale: Locale;
-}): ReactNode => {
+export const HomeHowItWorks = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getHomeCopy(locale).howItWorks;
   const extensionLink = getExtensionLink(locale);
 
@@ -68,13 +67,33 @@ export const HomeHowItWorks = ({
               body={item.body}
               className={styles.informationCard}
               key={item.title}
-              title={item.title}
+              title={
+                <span className={styles.howCardHeading}>
+                  <span className={styles.stepTitle}>
+                    {copy.stepLabels[index]}
+                  </span>
+                  <span className={styles.howCardTitle}>
+                    <span>{item.title}</span>
+                    {index === 0 ? (
+                      <FormatBadge
+                        className={styles.installTimeBadge}
+                        format="master"
+                        style="subtle"
+                      >
+                        <TimerIcon />
+                        {copy.installTime}
+                      </FormatBadge>
+                    ) : null}
+                  </span>
+                </span>
+              }
             />
           ))}
         </div>
 
         <div className={styles.howFooter}>
           <ButtonLink
+            className={styles.lightTextAction}
             href={`/${locale}/chrome-extension/how-to-use`}
             size="small"
           >
@@ -107,17 +126,14 @@ const renderBlogCard = (
       }}
       body={item.body}
       className={styles.informationCard}
+      interactive
       key={item.slug}
       title={item.title}
     />
   );
 };
 
-export const HomeBlog = ({
-  locale,
-}: {
-  locale: Locale;
-}): ReactNode => {
+export const HomeBlog = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getHomeCopy(locale).blog;
 
   return (
@@ -135,14 +151,17 @@ export const HomeBlog = ({
         />
 
         <div className={styles.blogGrid}>
-          {copy.items.map(
-            (item): ReactNode =>
-              renderBlogCard(item, locale, copy.action),
+          {copy.items.map((item): ReactNode =>
+            renderBlogCard(item, locale, copy.action),
           )}
         </div>
 
         <div className={styles.sectionAction}>
-          <ButtonLink href={`/${locale}/blog`} size="small">
+          <ButtonLink
+            className={styles.lightTextAction}
+            href={`/${locale}/blog`}
+            size="small"
+          >
             {copy.allAction}
           </ButtonLink>
         </div>
@@ -151,11 +170,7 @@ export const HomeBlog = ({
   );
 };
 
-export const HomeFinalCta = ({
-  locale,
-}: {
-  locale: Locale;
-}): ReactNode => {
+export const HomeFinalCta = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getHomeCopy(locale).finalCta;
 
   return (
@@ -164,30 +179,13 @@ export const HomeFinalCta = ({
       className={styles.finalCtaSection}
     >
       <div className={styles.pageGutters}>
-        <div className={styles.finalCtaCard}>
-          <div className={styles.finalCtaCopy}>
-            <p>{copy.eyebrow}</p>
-            <h2 id="home-final-cta-title">{copy.title}</h2>
-            <span>{copy.body}</span>
-          </div>
-          <div className={styles.finalCtaActions}>
-            <ButtonLink
-              className={styles.finalPrimaryAction}
-              href="#converter"
-              size="medium"
-            >
-              {copy.primaryAction}
-            </ButtonLink>
-            <ExtensionButtonLink
-              className={styles.finalSecondaryAction}
-              locale={locale}
-              size="medium"
-              variant="secondary"
-            >
-              {copy.extensionAction}
-            </ExtensionButtonLink>
-          </div>
-        </div>
+        <HomeExtensionBanner
+          body={copy.body}
+          eyebrow={copy.eyebrow}
+          headingId="home-final-cta-title"
+          locale={locale}
+          title={copy.title}
+        />
       </div>
     </section>
   );

@@ -21,7 +21,7 @@ export type CardAction = {
 
 export type CardProps = Omit<
   ComponentPropsWithoutRef<"article">,
-  "children"
+  "children" | "title"
 > & {
   action?: CardAction;
   body: ReactNode;

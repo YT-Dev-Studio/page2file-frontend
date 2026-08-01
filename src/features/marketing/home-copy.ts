@@ -14,7 +14,6 @@ type BlogCopyItem = CopyItem & {
 };
 
 export type HomeCopy = {
-  eyebrow: string;
   title: string;
   lead: string;
   form: {
@@ -59,8 +58,10 @@ export type HomeCopy = {
     body: string;
     eyebrow: string;
     extensionAction: string;
+    installTime: string;
     items: ReadonlyArray<CopyItem>;
     note: string;
+    stepLabels: ReadonlyArray<string>;
     title: string;
   };
   blog: {
@@ -80,15 +81,12 @@ export type HomeCopy = {
   finalCta: {
     body: string;
     eyebrow: string;
-    extensionAction: string;
-    primaryAction: string;
     title: string;
   };
 };
 
 const homeCopy: LocalizedPublished<HomeCopy> = {
   en: {
-    eyebrow: "WEBPAGE → PDF OR POWERPOINT",
     title: "Save any webpage as a useful file",
     lead:
       "Paste a link to a public page. Page2File carefully splits it into PDF pages or PowerPoint slides — with a preview before download.",
@@ -136,32 +134,32 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
         "Choose visual fidelity or an editable structure — and keep only what you actually need in the file.",
       items: [
         {
-          title: "01 · Clean AI chats",
+          title: "Clean AI chats",
           body:
             "Export long conversations from ChatGPT, Claude, Gemini, Grok, DeepSeek and other services into a clean, readable PDF.",
         },
         {
-          title: "02 · Two result types",
+          title: "Two result types",
           body:
             "A snapshot preserves the exact appearance. An editable PDF keeps text, links and structure available for work.",
         },
         {
-          title: "03 · Control file contents",
+          title: "Control file contents",
           body:
             "Independently include buttons, images and styles in editable PDF — or build a lightweight text-only version.",
         },
         {
-          title: "04 · From a link or a tab",
+          title: "From a link or a tab",
           body:
             "Use a public HTTPS link on the site. The extension can also save the current tab and private pages.",
         },
         {
-          title: "05 · Images stay whole",
+          title: "Images stay whole",
           body:
             "Smart breaks do not cut images or long sections — in PDF pages or PowerPoint slides.",
         },
         {
-          title: "06 · No account or history",
+          title: "No account or history",
           body:
             "Work without a required account. Private tabs stay local, and we do not keep your documents.",
         },
@@ -173,24 +171,26 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
         "The fastest route is to install the extension: it works with the current tab and does not require copying a link.",
       eyebrow: "HOW TO START",
       extensionAction: "Install extension",
+      installTime: "in 30 seconds",
       items: [
         {
-          title: "01 · Install the extension",
+          title: "Install the extension",
           body:
             "Add Page2File to Chrome. Installation takes less than a minute and registration is not required.",
         },
         {
-          title: "02 · Open the page",
+          title: "Open the page",
           body:
             "Go to the tab you need, open Page2File and choose PDF or PowerPoint.",
         },
         {
-          title: "03 · Review and download",
+          title: "Review and download",
           body:
             "Review the result, adjust sections if needed and download the finished file.",
         },
       ],
       note: "With examples for a public link, a private tab and an AI chat",
+      stepLabels: ["Step 1", "Step 2", "Step 3"],
       title: "Three steps to a finished file",
     },
     blog: {
@@ -281,13 +281,10 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
       body:
         "Paste a public link here or install the extension for the current tab.",
       eyebrow: "READY TO TRY IT ON YOUR PAGE?",
-      extensionAction: "Download extension",
-      primaryAction: "Try with a link",
       title: "Get a PDF or PowerPoint before opening an editor",
     },
   },
   ru: {
-    eyebrow: "ВЕБ-СТРАНИЦА → PDF ИЛИ POWERPOINT",
     title: "Сохраните любую веб-страницу в удобный файл",
     lead:
       "Вставьте ссылку на публичную страницу. Page2File аккуратно разделит её на страницы PDF или слайды PowerPoint — с предпросмотром перед скачиванием.",
@@ -335,32 +332,32 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
         "Выберите визуальную точность или редактируемую структуру — и сохраните только то, что действительно понадобится в файле.",
       items: [
         {
-          title: "01 · AI-чаты без мусора",
+          title: "AI-чаты без мусора",
           body:
             "Экспортируйте длинные диалоги ChatGPT, Claude, Gemini, Grok, DeepSeek и других сервисов в чистый, читаемый PDF.",
         },
         {
-          title: "02 · Два типа результата",
+          title: "Два типа результата",
           body:
             "Снимок сохраняет внешний вид один в один. Редактируемый PDF оставляет текст, ссылки и структуру доступными для работы.",
         },
         {
-          title: "03 · Настройте содержимое файла",
+          title: "Настройте содержимое файла",
           body:
             "В редактируемом PDF независимо включайте кнопки, изображения и стили — или соберите лёгкую текстовую версию.",
         },
         {
-          title: "04 · По ссылке и из вкладки",
+          title: "По ссылке и из вкладки",
           body:
             "На сайте работает публичная HTTPS-ссылка. Расширение дополнительно может сохранить текущую вкладку и закрытые страницы.",
         },
         {
-          title: "05 · Изображения остаются целыми",
+          title: "Изображения остаются целыми",
           body:
             "Умные разрывы не режут картинки и длинные секции — ни в PDF, ни в слайдах PowerPoint.",
         },
         {
-          title: "06 · Без регистрации и истории",
+          title: "Без регистрации и истории",
           body:
             "Работайте без обязательного аккаунта, а закрытые вкладки — локально. Мы не храним ваших документов.",
         },
@@ -372,24 +369,26 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
         "Самый быстрый путь — установить расширение: оно работает с текущей вкладкой и не требует копировать ссылку.",
       eyebrow: "КАК НАЧАТЬ",
       extensionAction: "Установить расширение",
+      installTime: "за 30 секунд",
       items: [
         {
-          title: "01 · Установите расширение",
+          title: "Установите расширение",
           body:
             "Добавьте Page2File в Chrome. Установка занимает меньше минуты, регистрация не нужна.",
         },
         {
-          title: "02 · Откройте страницу",
+          title: "Откройте страницу",
           body:
             "Перейдите на нужную вкладку, откройте Page2File и выберите PDF или PowerPoint.",
         },
         {
-          title: "03 · Проверьте и скачайте",
+          title: "Проверьте и скачайте",
           body:
             "Посмотрите результат, при необходимости скорректируйте секции и скачайте готовый файл.",
         },
       ],
       note: "С примерами для публичной ссылки, закрытой вкладки и AI-чата",
+      stepLabels: ["1 шаг", "2 шаг", "3 шаг"],
       title: "Три шага до готового файла",
     },
     blog: {
@@ -480,8 +479,6 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
       body:
         "Вставьте публичную ссылку здесь или установите расширение для текущей вкладки.",
       eyebrow: "ГОТОВЫ ПРОВЕРИТЬ НА СВОЕЙ СТРАНИЦЕ?",
-      extensionAction: "Скачать расширение",
-      primaryAction: "Попробовать по ссылке",
       title: "Получите PDF или PowerPoint до того, как откроете редактор",
     },
   },

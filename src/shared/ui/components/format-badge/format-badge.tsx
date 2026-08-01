@@ -1,8 +1,5 @@
 import { Manrope } from "next/font/google";
-import type {
-  ComponentPropsWithoutRef,
-  ReactNode,
-} from "react";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import type { ProductFormat } from "@/shared/ui/types/product-format";
 import styles from "./format-badge.module.css";
 
@@ -22,11 +19,13 @@ export type FormatBadgeProps = Omit<
   ComponentPropsWithoutRef<"span">,
   "children" | "style"
 > & {
+  children?: ReactNode;
   format?: ProductFormat;
   style?: "solid" | "subtle";
 };
 
 export const FormatBadge = ({
+  children,
   className,
   format = "master",
   style = "solid",
@@ -37,7 +36,7 @@ export const FormatBadge = ({
 
   return (
     <span {...spanProps} className={badgeClassName}>
-      {formatLabels[format]}
+      {children ?? formatLabels[format]}
     </span>
   );
 };

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import page2FileLogo from "@/app/assets/logo.png";
-import { ConsentBanner } from "@/features/consent/consent-banner";
+import { AnalyticsBootstrap } from "@/features/analytics/analytics-bootstrap";
 import type { Locale } from "@/shared/i18n/locales";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { SiteHeader } from "./site-header";
@@ -13,19 +13,11 @@ type SiteShellProps = {
   locale: Locale;
 };
 
-export const Container = ({
-  children,
-}: {
-  children: ReactNode;
-}): ReactNode => (
+export const Container = ({ children }: { children: ReactNode }): ReactNode => (
   <div className={styles.container}>{children}</div>
 );
 
-const SiteFooter = ({
-  locale,
-}: {
-  locale: Locale;
-}): ReactNode => {
+const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getSiteCopy(locale).footer;
 
   return (
@@ -51,10 +43,7 @@ const SiteFooter = ({
             <p>{copy.brandDescription}</p>
           </div>
 
-          <nav
-            aria-label={copy.servicesTitle}
-            className={styles.footerLinks}
-          >
+          <nav aria-label={copy.servicesTitle} className={styles.footerLinks}>
             <h2>{copy.servicesTitle}</h2>
             <Link href={`/${locale}/convert-webpage-to-pdf`}>
               {copy.links.webpageToPdf}
@@ -67,37 +56,19 @@ const SiteFooter = ({
             </Link>
           </nav>
 
-          <nav
-            aria-label={copy.gptsTitle}
-            className={styles.footerLinks}
-          >
+          <nav aria-label={copy.gptsTitle} className={styles.footerLinks}>
             <h2>{copy.gptsTitle}</h2>
-            <Link href={`/${locale}/page2pdf-gpt`}>
-              One Page 2 PDF
-            </Link>
-            <Link href={`/${locale}/web2pdf-gpt`}>
-              Web 2 PDF
-            </Link>
-            <Link href={`/${locale}/html2pdf-gpt`}>
-              HTML 2 PDF
-            </Link>
-            <Link href={`/${locale}/web2powerpoint-gpt`}>
-              Web 2 PowerPoint
-            </Link>
+            <Link href={`/${locale}/page2pdf-gpt`}>One Page 2 PDF</Link>
+            <Link href={`/${locale}/web2pdf-gpt`}>Web 2 PDF</Link>
+            <Link href={`/${locale}/html2pdf-gpt`}>HTML 2 PDF</Link>
+            <Link href={`/${locale}/web2powerpoint-gpt`}>Web 2 PowerPoint</Link>
           </nav>
 
-          <nav
-            aria-label={copy.companyTitle}
-            className={styles.footerLinks}
-          >
+          <nav aria-label={copy.companyTitle} className={styles.footerLinks}>
             <h2>{copy.companyTitle}</h2>
             <Link href={`/${locale}/blog`}>{copy.links.blog}</Link>
-            <Link href={`/${locale}/security`}>
-              {copy.links.security}
-            </Link>
-            <Link href={`/${locale}/privacy`}>
-              {copy.links.privacy}
-            </Link>
+            <Link href={`/${locale}/security`}>{copy.links.security}</Link>
+            <Link href={`/${locale}/privacy`}>{copy.links.privacy}</Link>
           </nav>
         </div>
 
@@ -118,14 +89,11 @@ const SiteFooter = ({
   );
 };
 
-export const SiteShell = ({
-  children,
-  locale,
-}: SiteShellProps): ReactNode => (
+export const SiteShell = ({ children, locale }: SiteShellProps): ReactNode => (
   <div className={styles.shell}>
     <SiteHeader locale={locale} />
     {children}
     <SiteFooter locale={locale} />
-    <ConsentBanner locale={locale} />
+    <AnalyticsBootstrap />
   </div>
 );

@@ -153,15 +153,6 @@
   color: var(--muted);
 }
 
-.note {
-  margin-top: 26px;
-  padding: 16px;
-  border: 1px solid var(--warning-line);
-  border-radius: 8px;
-  color: var(--warning);
-  background: var(--warning-soft);
-}
-
 @media (max-width: 820px) {
   .step,
   .videoGrid {
