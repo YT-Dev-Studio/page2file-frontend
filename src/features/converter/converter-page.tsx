@@ -20,39 +20,95 @@ export const ConverterPage = ({
   const copy = getConverterCopy(locale);
   const runtimeCopy = getConversionRuntimeCopy(locale);
   const formatCopy = copy.formats[format];
+  const pdfHref = `/${locale}/convert-webpage-to-pdf`;
+  const powerpointHref = `/${locale}/convert-webpage-to-powerpoint`;
   return (
     <PublicPage className={styles.page} family="converter">
       <Container>
-        <div className={styles.layout}>
-          <div>
-            <PublicHero
-              eyebrow={formatCopy.eyebrow}
-              lead={formatCopy.lead}
-              title={formatCopy.title}
-            />
+        <div className={styles.intro}>
+          <PublicHero
+            eyebrow={formatCopy.eyebrow}
+            lead={formatCopy.lead}
+            title={formatCopy.title}
+          />
+          <nav
+            aria-label={copy.formatNavigationLabel}
+            className={styles.formatNavigation}
+          >
+            <Link
+              aria-current={format === "pdf" ? "page" : undefined}
+              href={pdfHref}
+            >
+              Web 2 PDF
+            </Link>
+            <Link
+              aria-current={format === "pptx" ? "page" : undefined}
+              href={powerpointHref}
+            >
+              Web 2 PowerPoint
+            </Link>
+          </nav>
+        </div>
+
+        <section className={styles.workbench}>
+          <div className={styles.formPanel}>
+            <header className={styles.panelHeader}>
+              <span aria-hidden="true">01</span>
+              <div>
+                <h2>{copy.sourceTitle}</h2>
+                <p>{copy.sourceHint}</p>
+              </div>
+            </header>
             <ConverterForm format={format} locale={locale} />
           </div>
           <aside className={styles.aside}>
-            <h2>{formatCopy.asideTitle}</h2>
-            <p>
+            <header className={styles.panelHeader}>
+              <span aria-hidden="true">02</span>
+              <div>
+                <h2>{copy.reviewTitle}</h2>
+                <p>{formatCopy.asideTitle}</p>
+              </div>
+            </header>
+            <p className={styles.runtimeNotice}>
               {conversionAdapter === "mock"
                 ? copy.prototypeNotice
                 : runtimeCopy.runtimeNotice}
             </p>
-            <ul className={styles.asideList}>
-              <li><strong>{copy.visualTitle}</strong><span>{copy.visualText}</span></li>
-              <li><strong>{copy.editableTitle}</strong><span>{copy.editableText}</span></li>
-              <li><strong>{copy.warningsTitle}</strong><span>{copy.warningsText}</span></li>
-            </ul>
-            <p>
-              {copy.privateQuestion}{" "}
-              <Link href={`/${locale}/chrome-extension/how-to-use`}>
-                {copy.extensionLink}
-              </Link>
-              .
-            </p>
+            <ol className={styles.asideList}>
+              <li>
+                <span aria-hidden="true">A</span>
+                <div>
+                  <strong>{copy.visualTitle}</strong>
+                  <p>{copy.visualText}</p>
+                </div>
+              </li>
+              <li>
+                <span aria-hidden="true">B</span>
+                <div>
+                  <strong>{copy.editableTitle}</strong>
+                  <p>{copy.editableText}</p>
+                </div>
+              </li>
+              <li>
+                <span aria-hidden="true">C</span>
+                <div>
+                  <strong>{copy.warningsTitle}</strong>
+                  <p>{copy.warningsText}</p>
+                </div>
+              </li>
+            </ol>
           </aside>
-        </div>
+        </section>
+
+        <aside className={styles.extensionCallout}>
+          <div>
+            <p className={styles.calloutLabel}>{copy.privateQuestion}</p>
+            <h2>{copy.extensionTitle}</h2>
+          </div>
+          <Link href={`/${locale}/chrome-extension/how-to-use`}>
+            {copy.extensionLink}
+          </Link>
+        </aside>
       </Container>
     </PublicPage>
   );

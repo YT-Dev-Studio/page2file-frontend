@@ -18,6 +18,11 @@ type FormatPageCopy = {
 
 type ConverterCopy = {
   formats: Record<ConversionFormat, FormatPageCopy>;
+  formatNavigationLabel: string;
+  sourceTitle: string;
+  sourceHint: string;
+  reviewTitle: string;
+  extensionTitle: string;
   prototypeNotice: string;
   visualTitle: string;
   visualText: string;
@@ -53,6 +58,12 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
         asideTitle: "Preview before the deck",
       },
     },
+    formatNavigationLabel: "Choose conversion format",
+    sourceTitle: "Set the source and output",
+    sourceHint:
+      "Start with one public URL. Review the generated structure before final rendering.",
+    reviewTitle: "What you can verify",
+    extensionTitle: "Need the page as it appears after sign-in?",
     prototypeNotice:
       "This prototype never fetches the entered URL. It demonstrates the intended review flow with deterministic sample data.",
     visualTitle: "Visual mode",
@@ -110,6 +121,12 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
         asideTitle: "Предпросмотр до создания презентации",
       },
     },
+    formatNavigationLabel: "Выберите формат конвертации",
+    sourceTitle: "Укажите источник и формат",
+    sourceHint:
+      "Начните с одного общедоступного URL. Проверьте структуру результата до финального рендеринга.",
+    reviewTitle: "Что можно проверить",
+    extensionTitle: "Нужна страница в том виде, как она выглядит после входа?",
     prototypeNotice:
       "Прототип не загружает введённый URL. Он показывает будущий процесс проверки на детерминированных демонстрационных данных.",
     visualTitle: "Визуальный режим",

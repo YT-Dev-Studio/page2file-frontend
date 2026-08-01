@@ -13,11 +13,11 @@
 
 .eyebrow {
   margin: 0;
-  color: var(--p2f-color-action-primary);
+  color: var(--p2f-color-gel-blue-800);
   font-size: var(--p2f-type-label-medium-font-size);
   font-weight: var(--p2f-font-weight-bold);
   line-height: var(--p2f-type-label-medium-line-height);
-  letter-spacing: var(--p2f-letter-spacing-wide);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
