@@ -75,6 +75,12 @@
   background: var(--p2f-color-background-subtle);
 }
 
+.navigationLink[aria-current="page"] {
+  background: var(--p2f-color-background-subtle);
+  color: var(--p2f-color-text-brand);
+  box-shadow: inset 0 -2px 0 var(--p2f-color-action-primary);
+}
+
 .desktopActions {
   display: flex;
   align-items: center;

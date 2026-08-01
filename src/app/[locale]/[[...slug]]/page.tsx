@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { blogEntries, getBlogEntry, getUpdateEntry, updateEntries } from "@/content/content-registry";
 import { getLandingContent } from "@/content/landings";
-import { PageRouter } from "@/features/routing/page-router";
+import { resolvePublicPage } from "@/features/routing/public-page-resolver";
 import { isLocale, localeRegistry, type Locale } from "@/shared/i18n/locales";
 import { buildMetadata } from "@/shared/seo/metadata";
 import { getSeoCopy } from "@/shared/seo/seo-copy";
@@ -163,5 +163,5 @@ export default async function LocalizedPage({
   const query = await searchParams;
   const rawMode = query.mode;
   const mode = typeof rawMode === "string" ? rawMode : undefined;
-  return <PageRouter locale={locale} mode={mode} segments={slug} />;
+  return resolvePublicPage({ locale, mode, segments: slug });
 }

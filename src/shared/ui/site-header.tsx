@@ -7,12 +7,8 @@ import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { getExtensionLink } from "@/shared/routes/extension-link";
 import { ButtonLink } from "@/shared/ui/components/button/button";
 import { LocaleSwitcher } from "./locale-switcher";
+import { SiteNavigation } from "./site-navigation";
 import styles from "./site-header.module.css";
-
-type NavigationItem = {
-  href: string;
-  label: string;
-};
 
 const ExtensionButton = ({
   className,
@@ -44,32 +40,6 @@ export const SiteHeader = ({
   locale: Locale;
 }): ReactNode => {
   const copy = getSiteCopy(locale).header;
-  const navigationItems: ReadonlyArray<NavigationItem> = [
-    {
-      href: `/${locale}#features`,
-      label: copy.navigation.features,
-    },
-    {
-      href: `/${locale}#how-it-works`,
-      label: copy.navigation.howItWorks,
-    },
-    {
-      href: `/${locale}#blog`,
-      label: copy.navigation.blog,
-    },
-    {
-      href: `/${locale}#faq`,
-      label: copy.navigation.faq,
-    },
-  ];
-  const renderNavigationItem = ({
-    href,
-    label,
-  }: NavigationItem): ReactNode => (
-    <Link className={styles.navigationLink} href={href} key={href}>
-      {label}
-    </Link>
-  );
 
   return (
     <header className={styles.header}>
@@ -90,12 +60,12 @@ export const SiteHeader = ({
           <span className={styles.brandName}>PAGE2FILE</span>
         </Link>
 
-        <nav
-          aria-label={copy.navigationLabel}
+        <SiteNavigation
+          ariaLabel={copy.navigationLabel}
           className={styles.desktopNavigation}
-        >
-          {navigationItems.map(renderNavigationItem)}
-        </nav>
+          labels={copy.navigation}
+          locale={locale}
+        />
 
         <div className={styles.desktopActions}>
           <LocaleSwitcher
@@ -115,9 +85,11 @@ export const SiteHeader = ({
             </span>
           </summary>
           <div className={styles.mobilePanel}>
-            <nav aria-label={copy.mobileNavigationLabel}>
-              {navigationItems.map(renderNavigationItem)}
-            </nav>
+            <SiteNavigation
+              ariaLabel={copy.mobileNavigationLabel}
+              labels={copy.navigation}
+              locale={locale}
+            />
             <div className={styles.mobileActions}>
               <LocaleSwitcher
                 className={styles.localeSwitcher}
