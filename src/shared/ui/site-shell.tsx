@@ -3,8 +3,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import page2FileLogo from "@/app/assets/logo.png";
 import { ConsentBanner } from "@/features/consent/consent-banner";
-import { getLocaleDefinition, type Locale } from "@/shared/i18n/locales";
-import { getMessages } from "@/shared/i18n/messages";
+import type { Locale } from "@/shared/i18n/locales";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { SiteHeader } from "./site-header";
 import styles from "./ui.module.css";
@@ -21,30 +20,6 @@ export const Container = ({
 }): ReactNode => (
   <div className={styles.container}>{children}</div>
 );
-
-export const DraftTranslationNotice = ({
-  locale,
-}: {
-  locale: Locale;
-}): ReactNode => {
-  const definition = getLocaleDefinition(locale);
-
-  if (definition.reviewed) {
-    return null;
-  }
-
-  const messages = getMessages(locale);
-
-  return (
-    <div className={styles.draft} role="status">
-      <Container>
-        <div className={styles.draftInner}>
-          {messages.draftTranslation}
-        </div>
-      </Container>
-    </div>
-  );
-};
 
 const SiteFooter = ({
   locale,
@@ -149,7 +124,6 @@ export const SiteShell = ({
 }: SiteShellProps): ReactNode => (
   <div className={styles.shell}>
     <SiteHeader locale={locale} />
-    <DraftTranslationNotice locale={locale} />
     {children}
     <SiteFooter locale={locale} />
     <ConsentBanner locale={locale} />

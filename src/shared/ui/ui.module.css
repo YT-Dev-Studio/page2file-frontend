@@ -79,18 +79,6 @@
   background: var(--surface-subtle);
 }
 
-.draft {
-  border-bottom: 1px solid var(--warning-line);
-  background: var(--warning-soft);
-  color: var(--warning);
-}
-
-.draftInner {
-  padding-block: 9px;
-  font-size: 13px;
-  font-weight: 650;
-}
-
 .footer {
   border-top: var(--p2f-border-width-default) solid
     var(--p2f-color-ink-navy-600);
