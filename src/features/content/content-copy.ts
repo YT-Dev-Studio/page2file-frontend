@@ -9,6 +9,10 @@ type IndexCopy = {
 
 type ContentCopy = {
   fallbackArticle: string;
+  featuredLabel: string;
+  allEntriesLabel: string;
+  emptyTitle: string;
+  emptyBody: string;
   blog: IndexCopy;
   updates: IndexCopy;
   changelog: IndexCopy;
@@ -32,6 +36,11 @@ type ContentCopy = {
 const contentCopy: LocalizedPublished<ContentCopy> = {
   en: {
     fallbackArticle: "English fallback article — this locale is not indexed.",
+    featuredLabel: "Start here",
+    allEntriesLabel: "All field notes",
+    emptyTitle: "No published updates yet",
+    emptyBody:
+      "The technical changelog remains available while product updates are being prepared.",
     blog: {
       eyebrow: "Conversion field notes",
       title: "Practical webpage export guides",
@@ -69,6 +78,11 @@ const contentCopy: LocalizedPublished<ContentCopy> = {
   ru: {
     fallbackArticle:
       "Статья доступна на английском — эта черновая локаль не индексируется.",
+    featuredLabel: "Начните отсюда",
+    allEntriesLabel: "Все материалы",
+    emptyTitle: "Опубликованных обновлений пока нет",
+    emptyBody:
+      "Пока обновления продукта готовятся, доступна техническая история изменений.",
     blog: {
       eyebrow: "Практика конвертации",
       title: "Руководства по экспорту веб-страниц",

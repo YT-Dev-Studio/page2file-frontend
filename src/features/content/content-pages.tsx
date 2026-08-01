@@ -34,14 +34,41 @@ const EntryRow = ({
         {formatContentDate(locale, entry.publishedAt)}
       </time>
       <div>
-        <h2>
+        <h3>
           <Link href={`/${locale}/${base}/${entry.slug}`}>{entry.title}</Link>
-        </h2>
+        </h3>
         <p>{entry.description}</p>
       </div>
       <span className={styles.entryMeta}>
         {copy.minuteLabel(entry.readingMinutes)}
       </span>
+    </article>
+  );
+};
+
+const FeaturedEntry = ({
+  entry,
+  locale,
+}: {
+  entry: ContentEntry;
+  locale: Locale;
+}): ReactNode => {
+  const copy = getContentCopy(locale);
+  return (
+    <article className={styles.featuredEntry}>
+      <div className={styles.featuredMarker}>
+        <span>{copy.featuredLabel}</span>
+        <time dateTime={entry.publishedAt}>
+          {formatContentDate(locale, entry.publishedAt)}
+        </time>
+      </div>
+      <div>
+        <h2>
+          <Link href={`/${locale}/blog/${entry.slug}`}>{entry.title}</Link>
+        </h2>
+        <p>{entry.description}</p>
+        <span>{copy.readLabel(entry.readingMinutes)}</span>
+      </div>
     </article>
   );
 };
@@ -57,6 +84,8 @@ export const ContentIndexPage = ({
   const entries =
     kind === "blog" ? getBlogEntries(locale) : getUpdateEntries(locale);
   const indexCopy = kind === "blog" ? copy.blog : copy.updates;
+  const featuredEntry = kind === "blog" ? entries[0] : undefined;
+  const listedEntries = featuredEntry ? entries.slice(1) : entries;
   const entryRow = (entry: ContentEntry): ReactNode => (
     <EntryRow entry={entry} key={entry.slug} locale={locale} />
   );
@@ -75,7 +104,26 @@ export const ContentIndexPage = ({
             </p>
           ) : null}
         </PublicHero>
-        <div className={styles.list}>{entries.map(entryRow)}</div>
+        {featuredEntry ? (
+          <FeaturedEntry entry={featuredEntry} locale={locale} />
+        ) : null}
+        {listedEntries.length > 0 ? (
+          <section className={styles.indexSection}>
+            {kind === "blog" ? <h2>{copy.allEntriesLabel}</h2> : null}
+            <div className={styles.list}>{listedEntries.map(entryRow)}</div>
+          </section>
+        ) : (
+          <section className={styles.emptyState}>
+            <p aria-hidden="true">00</p>
+            <div>
+              <h2>{copy.emptyTitle}</h2>
+              <p>{copy.emptyBody}</p>
+              <Link href={`/${locale}/changelog`}>
+                {copy.changelogLink}
+              </Link>
+            </div>
+          </section>
+        )}
       </Container>
     </PublicPage>
   );
