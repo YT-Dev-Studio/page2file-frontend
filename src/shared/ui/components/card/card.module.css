@@ -4,8 +4,7 @@
   min-width: 0;
   min-height: 196px;
   padding: var(--p2f-space-24);
-  border: var(--p2f-border-width-default) solid
-    var(--p2f-color-border-default);
+  border: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
   border-radius: var(--p2f-radius-card);
   color: var(--p2f-color-text-primary);
   background: var(--p2f-color-background-surface);
@@ -67,16 +66,15 @@
 }
 
 .floatingMediaContent {
-  display: flow-root;
-}
-
-.floatingMediaContent .title {
-  padding-right: 136px;
+  position: relative;
+  display: block;
+  padding-right: 116px;
 }
 
 .floatingMediaContent .media {
-  float: right;
-  margin: -64px -8px var(--p2f-space-8) var(--p2f-space-16);
+  position: absolute;
+  top: -36px;
+  right: -36px;
 }
 
 .floatingMediaContent .body {
@@ -174,13 +172,13 @@
     grid-template-columns: minmax(0, 1fr) 120px;
   }
 
-  .floatingMediaContent .title {
-    padding-right: 120px;
+  .floatingMediaContent {
+    padding-right: 104px;
   }
 
   .floatingMediaContent .media {
-    margin-top: -56px;
-    margin-right: -6px;
+    top: -32px;
+    right: -32px;
   }
 
   .media {
@@ -194,14 +192,13 @@
     grid-template-columns: minmax(0, 1fr) 104px;
   }
 
-  .floatingMediaContent .title {
-    padding-right: 104px;
+  .floatingMediaContent {
+    padding-right: 88px;
   }
 
   .floatingMediaContent .media {
-    margin-top: -48px;
-    margin-right: -4px;
-    margin-left: var(--p2f-space-12);
+    top: -28px;
+    right: -28px;
   }
 
   .media {
