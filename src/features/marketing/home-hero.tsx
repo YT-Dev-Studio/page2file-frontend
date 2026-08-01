@@ -15,14 +15,11 @@ import type {
 } from "@/entities/conversion/model";
 import { conversionAdapter } from "@/shared/config/site";
 import { Button } from "@/shared/ui/components/button/button";
-import { FormatBadge } from "@/shared/ui/components/format-badge/format-badge";
-import { Progress } from "@/shared/ui/components/progress/progress";
 import {
   Select,
   type SelectOption,
 } from "@/shared/ui/components/select/select";
 import type { Locale } from "@/shared/i18n/locales";
-import { getMessages } from "@/shared/i18n/messages";
 import { DownloadIcon } from "@/shared/ui/utilities/icons/glyphs/download-icon";
 import { getConversionRuntimeCopy } from "@/features/converter/conversion-runtime-copy";
 import { createMockPreview } from "@/features/converter/mock-adapter";
@@ -35,7 +32,12 @@ import {
 import { getConverterCopy } from "@/features/converter/converter-copy";
 import { validatePublicUrl } from "@/features/converter/url-validation";
 import { WebsiteUrlField } from "@/features/converter/website-url-field";
-import { getHomeCopy, type HomeCopy } from "./home-copy";
+import { getHomeCopy } from "./home-copy";
+import {
+  HomeHeroPreview,
+  HomeHeroStatusPanel,
+  type ConverterFlow,
+} from "./home-hero-status";
 import styles from "./home.module.css";
 
 const formatOptions: ReadonlyArray<SelectOption> = [
@@ -60,186 +62,10 @@ const failedStatuses: ReadonlySet<BackendJob["status"]> = new Set([
 ]);
 const demoProgressSteps: ReadonlyArray<number> = [12, 28, 49, 73, 91, 100];
 
-type ConverterResult = {
-  downloadUrl?: string;
-  format: ConversionFormat;
-  mode: ConversionMode;
-};
-
-type ConverterFlow =
-  | { status: "form" }
-  | {
-      format: ConversionFormat;
-      mode: ConversionMode;
-      progress: number;
-      status: "processing";
-    }
-  | ({ status: "ready" } & ConverterResult);
-
 const wait = async (duration: number): Promise<void> =>
   new Promise((resolve): void => {
     window.setTimeout(resolve, duration);
   });
-
-type PreviewCardProps = {
-  copy: HomeCopy;
-  format: ConversionFormat;
-  locale: Locale;
-};
-
-const PreviewCard = ({ copy, format, locale }: PreviewCardProps): ReactNode => {
-  const isPdf = format === "pdf";
-  const filename = isPdf ? "article.pdf" : "article.pptx";
-  const meta = isPdf ? copy.preview.pdfMeta : copy.preview.powerpointMeta;
-  const downloadLabel = getMessages(locale).actions.download;
-
-  return (
-    <aside
-      aria-label={copy.preview.accessibleLabel}
-      className={styles.previewCard}
-    >
-      <div className={styles.previewHeader}>
-        <h2>{copy.preview.title}</h2>
-        <FormatBadge format={format} style="subtle" />
-      </div>
-
-      <div className={styles.sourcePreview}>
-        <div aria-hidden="true" className={styles.browserBar}>
-          <span />
-          <span />
-          <span />
-          <i />
-        </div>
-        <strong>{copy.preview.sourceTitle}</strong>
-        <div aria-hidden="true" className={styles.textLines}>
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className={styles.imagePreview}>
-          <span>{copy.preview.imageNote}</span>
-          <div aria-hidden="true" className={styles.imageTiles}>
-            <i />
-            <i />
-            <i className={styles.activeTile} />
-            <i />
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.pageBreak}>
-        <span aria-hidden="true" />
-        <strong>{copy.preview.divider}</strong>
-        <span aria-hidden="true" />
-      </div>
-
-      <div className={styles.outputFile}>
-        <div aria-hidden="true" className={styles.fileIcon}>
-          <DownloadIcon />
-        </div>
-        <div className={styles.outputFileCopy}>
-          <strong>{filename}</strong>
-          <span>{meta}</span>
-          <FormatBadge format={format} style="subtle" />
-        </div>
-        <button
-          aria-label={`${downloadLabel}: ${filename}`}
-          className={styles.outputDownload}
-          type="button"
-        >
-          <DownloadIcon />
-        </button>
-      </div>
-    </aside>
-  );
-};
-
-type ConverterStatusPanelProps = {
-  copy: HomeCopy;
-  flow: Exclude<ConverterFlow, { status: "form" }>;
-  locale: Locale;
-  onBack: () => void;
-  onDownload: () => void;
-};
-
-const ConverterStatusPanel = ({
-  copy,
-  flow,
-  locale,
-  onBack,
-  onDownload,
-}: ConverterStatusPanelProps): ReactNode => {
-  const downloadLabel = getMessages(locale).actions.download;
-
-  if (flow.status === "processing") {
-    return (
-      <section aria-live="polite" className={styles.converterStatePanel}>
-        <div className={styles.converterStateCopy}>
-          <h2>{copy.converterFlow.processingTitle}</h2>
-          <p>{copy.converterFlow.processingBody}</p>
-        </div>
-        <Progress
-          format={flow.format}
-          label={copy.converterFlow.processingTitle}
-          value={flow.progress}
-        />
-        <Button
-          className={styles.backButton}
-          onClick={onBack}
-          showIcon={false}
-          size="medium"
-          variant="secondary"
-        >
-          {copy.converterFlow.backAction}
-        </Button>
-      </section>
-    );
-  }
-
-  const isPdf = flow.format === "pdf";
-  const filename = isPdf ? "article.pdf" : "article.pptx";
-  const baseMeta = isPdf ? copy.preview.pdfMeta : copy.preview.powerpointMeta;
-  const modeOptions = isPdf ? copy.form.pdfModes : copy.form.powerpointModes;
-  const modeLabel =
-    modeOptions.find(({ value }): boolean => value === flow.mode)?.label ?? "";
-  const meta = modeLabel ? `${baseMeta} · ${modeLabel}` : baseMeta;
-
-  return (
-    <section aria-live="polite" className={styles.converterStatePanel}>
-      <div className={styles.converterStateCopy}>
-        <h2>{copy.converterFlow.readyTitle}</h2>
-        <p>{copy.converterFlow.readyBody}</p>
-      </div>
-      <button
-        aria-label={`${downloadLabel}: ${filename}`}
-        className={`${styles.outputFile} ${styles.readyFileButton}`}
-        onClick={onDownload}
-        type="button"
-      >
-        <span aria-hidden="true" className={styles.fileIcon}>
-          <DownloadIcon />
-        </span>
-        <span className={styles.outputFileCopy}>
-          <strong>{filename}</strong>
-          <span>{meta}</span>
-          <FormatBadge format={flow.format} style="subtle" />
-        </span>
-        <span aria-hidden="true" className={styles.outputDownload}>
-          <DownloadIcon />
-        </span>
-      </button>
-      <Button
-        className={styles.backButton}
-        onClick={onBack}
-        showIcon={false}
-        size="medium"
-        variant="secondary"
-      >
-        {copy.converterFlow.backAction}
-      </Button>
-    </section>
-  );
-};
 
 export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getHomeCopy(locale);
@@ -307,12 +133,14 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
-    createMockPreview({
+    const job = createMockPreview({
       format: selectedFormat,
       mode: selectedMode,
       scenario: "happy",
       sourceUrl: mockSourceUrl,
     });
+    const mockDownloadUrl =
+      `/${locale}/download/${job.jobId}?mode=${job.mode}`;
     setFlow({
       format: selectedFormat,
       mode: selectedMode,
@@ -334,6 +162,7 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
     await wait(reduceMotion ? 0 : 180);
     if (runId !== runIdRef.current) return;
     setFlow({
+      downloadUrl: mockDownloadUrl,
       format: selectedFormat,
       mode: selectedMode,
       status: "ready",
@@ -451,7 +280,7 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
   };
 
   const handleDownload = (): void => {
-    if (flow.status !== "ready" || !flow.downloadUrl) return;
+    if (flow.status !== "ready") return;
     window.location.assign(flow.downloadUrl);
   };
 
@@ -522,7 +351,7 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
             </div>
           </form>
         ) : (
-          <ConverterStatusPanel
+          <HomeHeroStatusPanel
             copy={copy}
             flow={flow}
             locale={locale}
@@ -534,7 +363,7 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
         <p className={styles.closingNote}>{copy.closingNote}</p>
       </div>
 
-      <PreviewCard copy={copy} format={format} locale={locale} />
+      <HomeHeroPreview copy={copy} format={format} />
     </div>
   );
 };
