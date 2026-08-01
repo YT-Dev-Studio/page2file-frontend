@@ -18,6 +18,7 @@ import { Container } from "@/shared/ui/site-shell";
 import uiStyles from "@/shared/ui/ui.module.css";
 import { getMarketingCopy } from "./marketing-copy";
 import styles from "./marketing.module.css";
+import { WorkflowLanding } from "./workflow-landing";
 
 const ContentBlock = ({ section }: { section: ContentSection }): ReactNode => {
   const pointItem = (point: string): ReactNode => <li key={point}>{point}</li>;
@@ -39,6 +40,12 @@ export const LandingPage = ({
 }): ReactNode => {
   const messages = getMessages(locale);
   const { landing } = getMarketingCopy(locale);
+  const family = getPublicPageFamily(content.route);
+  if (family === "gpt-workflow" || family === "chat-export") {
+    return (
+      <WorkflowLanding content={content} family={family} locale={locale} />
+    );
+  }
   const sectionBlock = (section: ContentSection): ReactNode => (
     <ContentBlock key={section.heading} section={section} />
   );
@@ -61,7 +68,7 @@ export const LandingPage = ({
   return (
     <PublicPage
       className={styles.main}
-      family={getPublicPageFamily(content.route)}
+      family={family}
     >
       <section className={styles.hero}>
         <Container>
