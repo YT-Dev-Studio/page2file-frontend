@@ -20,8 +20,6 @@ export const ConverterPage = ({
   const copy = getConverterCopy(locale);
   const runtimeCopy = getConversionRuntimeCopy(locale);
   const formatCopy = copy.formats[format];
-  const pdfHref = `/${locale}/convert-webpage-to-pdf`;
-  const powerpointHref = `/${locale}/convert-webpage-to-powerpoint`;
   return (
     <PublicPage className={styles.page} family="converter">
       <Container>
@@ -31,23 +29,6 @@ export const ConverterPage = ({
             lead={formatCopy.lead}
             title={formatCopy.title}
           />
-          <nav
-            aria-label={copy.formatNavigationLabel}
-            className={styles.formatNavigation}
-          >
-            <Link
-              aria-current={format === "pdf" ? "page" : undefined}
-              href={pdfHref}
-            >
-              Web 2 PDF
-            </Link>
-            <Link
-              aria-current={format === "pptx" ? "page" : undefined}
-              href={powerpointHref}
-            >
-              Web 2 PowerPoint
-            </Link>
-          </nav>
         </div>
 
         <section className={styles.workbench}>

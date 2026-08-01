@@ -3,44 +3,7 @@
 }
 
 .intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  gap: var(--p2f-space-40);
   padding-bottom: var(--p2f-space-48);
-}
-
-.formatNavigation {
-  display: inline-flex;
-  padding: var(--p2f-space-4);
-  gap: var(--p2f-space-4);
-  border: var(--p2f-border-width-default) solid
-    var(--p2f-color-border-default);
-  border-radius: var(--p2f-radius-card);
-  background: var(--p2f-color-background-surface);
-}
-
-.formatNavigation a {
-  display: inline-flex;
-  min-height: var(--p2f-control-size-default);
-  padding-inline: var(--p2f-space-16);
-  align-items: center;
-  border-radius: var(--p2f-radius-compact);
-  color: var(--p2f-color-text-secondary);
-  font-size: var(--p2f-type-label-medium-font-size);
-  font-weight: var(--p2f-type-label-medium-font-weight);
-  line-height: var(--p2f-type-label-medium-line-height);
-}
-
-.formatNavigation a:hover,
-.formatNavigation a:focus-visible {
-  color: var(--p2f-color-text-brand);
-  background: var(--p2f-color-background-subtle);
-}
-
-.formatNavigation a[aria-current="page"] {
-  color: var(--p2f-color-text-inverse);
-  background: var(--p2f-color-action-primary-background);
 }
 
 .workbench {
@@ -277,13 +240,8 @@
 }
 
 @media (max-width: 960px) {
-  .intro,
   .workbench {
     grid-template-columns: 1fr;
-  }
-
-  .formatNavigation {
-    justify-self: start;
   }
 
   .aside {
@@ -299,19 +257,7 @@
   }
 
   .intro {
-    gap: var(--p2f-space-24);
     padding-bottom: var(--p2f-space-32);
-  }
-
-  .formatNavigation {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .formatNavigation a {
-    justify-content: center;
-    text-align: center;
   }
 
   .formPanel,

@@ -18,7 +18,6 @@ type FormatPageCopy = {
 
 type ConverterCopy = {
   formats: Record<ConversionFormat, FormatPageCopy>;
-  formatNavigationLabel: string;
   sourceTitle: string;
   sourceHint: string;
   reviewTitle: string;
@@ -58,7 +57,6 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
         asideTitle: "Preview before the deck",
       },
     },
-    formatNavigationLabel: "Choose conversion format",
     sourceTitle: "Set the source and output",
     sourceHint:
       "Start with one public URL. Review the generated structure before final rendering.",
@@ -121,7 +119,6 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
         asideTitle: "Предпросмотр до создания презентации",
       },
     },
-    formatNavigationLabel: "Выберите формат конвертации",
     sourceTitle: "Укажите источник и формат",
     sourceHint:
       "Начните с одного общедоступного URL. Проверьте структуру результата до финального рендеринга.",
