@@ -8,6 +8,7 @@ import {
 } from "@/shared/ui/components/button/button";
 import { Card } from "@/shared/ui/components/card/card";
 import { getHomeCopy, type HomeCopy } from "./home-copy";
+import { HomeSectionHeader } from "./home-section-header";
 import styles from "./home.module.css";
 
 type ExtensionButtonProps = Omit<ButtonLinkProps, "href"> & {
@@ -30,26 +31,6 @@ export const ExtensionButtonLink = ({
   );
 };
 
-const SectionHeader = ({
-  body,
-  eyebrow,
-  id,
-  title,
-}: {
-  body: string;
-  eyebrow: string;
-  id: string;
-  title: string;
-}): ReactNode => (
-  <div className={styles.sectionHeader}>
-    <p className={styles.sectionEyebrow}>{eyebrow}</p>
-    <h2 className={styles.sectionTitle} id={id}>
-      {title}
-    </h2>
-    <p className={styles.sectionLead}>{body}</p>
-  </div>
-);
-
 export const HomeHowItWorks = ({
   locale,
 }: {
@@ -65,7 +46,7 @@ export const HomeHowItWorks = ({
       id="how-it-works"
     >
       <div className={styles.pageGutters}>
-        <SectionHeader
+        <HomeSectionHeader
           body={copy.body}
           eyebrow={copy.eyebrow}
           id="how-it-works-title"
@@ -146,7 +127,7 @@ export const HomeBlog = ({
       id="blog"
     >
       <div className={styles.pageGutters}>
-        <SectionHeader
+        <HomeSectionHeader
           body={copy.body}
           eyebrow={copy.eyebrow}
           id="home-blog-title"
@@ -164,42 +145,6 @@ export const HomeBlog = ({
           <ButtonLink href={`/${locale}/blog`} size="small">
             {copy.allAction}
           </ButtonLink>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export const HomeFaq = ({
-  locale,
-}: {
-  locale: Locale;
-}): ReactNode => {
-  const copy = getHomeCopy(locale).faq;
-
-  return (
-    <section
-      aria-labelledby="home-faq-title"
-      className={`${styles.contentSection} ${styles.faqSection}`}
-      id="faq"
-    >
-      <div className={styles.pageGutters}>
-        <SectionHeader
-          body={copy.body}
-          eyebrow={copy.eyebrow}
-          id="home-faq-title"
-          title={copy.title}
-        />
-
-        <div className={styles.faqGrid}>
-          {copy.items.map((item): ReactNode => (
-            <Card
-              body={item.body}
-              className={styles.faqCard}
-              key={item.title}
-              title={item.title}
-            />
-          ))}
         </div>
       </div>
     </section>
