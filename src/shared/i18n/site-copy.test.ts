@@ -9,7 +9,7 @@ describe("site shell copy", () => {
     expect(Object.values(russianNavigation)).not.toContain("Отзывы");
   });
 
-  test("uses English shell copy for draft locales", () => {
+  test("uses English shell copy for unreviewed locales", () => {
     expect(getSiteCopy("de")).toBe(getSiteCopy("en"));
   });
 });

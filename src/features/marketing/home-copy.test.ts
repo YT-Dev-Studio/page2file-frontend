@@ -22,7 +22,7 @@ describe("homepage copy", () => {
     );
   });
 
-  test("uses English homepage copy for draft locales", () => {
+  test("uses English homepage copy for unreviewed locales", () => {
     expect(getHomeCopy("de")).toBe(getHomeCopy("en"));
   });
 

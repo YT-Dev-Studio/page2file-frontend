@@ -68,17 +68,9 @@ const NOINDEX_SHORT_TITLES = new Set([
 
 const NOINDEX_SHORT_DESCRIPTIONS = new Set([
   "Post-install guide for the Page2File Chrome extension prototype.",
-  "Draft privacy policy for the Page2File frontend prototype.",
-  "Draft terms for the Page2File frontend prototype.",
-  "Draft explanation of essential storage, consent and optional GA4.",
   "Implemented frontend controls and future backend security boundaries.",
-  "Draft responsible-use rules for webpage and document conversion.",
   "Стартовая инструкция после установки прототипа расширения Page2File.",
-  "Черновая политика конфиденциальности для frontend-прототипа Page2File.",
-  "Черновые условия использования frontend-прототипа Page2File.",
-  "Черновое описание обязательного хранения, согласия и необязательной GA4.",
   "Реализованные frontend-контроли и будущие границы безопасности backend.",
-  "Черновые правила ответственного использования конвертации веб-страниц и документов.",
 ]);
 
 const extractStringFields = (source, field) => [

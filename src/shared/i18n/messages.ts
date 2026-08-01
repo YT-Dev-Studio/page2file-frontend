@@ -1,7 +1,6 @@
 import type { Locale } from "./locales";
 
 export type Messages = {
-  draftTranslation: string;
   navigation: {
     convert: string;
     extension: string;
@@ -46,8 +45,6 @@ export type Messages = {
 };
 
 const en: Messages = {
-  draftTranslation:
-    "Draft translation — some long-form sections remain in English.",
   navigation: {
     convert: "Convert",
     extension: "Extension",
@@ -93,8 +90,6 @@ const messages: Record<Locale, Messages> = {
   en,
   ru: {
     ...en,
-    draftTranslation:
-      "Черновой перевод — некоторые большие разделы пока доступны на английском.",
     navigation: {
       convert: "Конвертация",
       extension: "Расширение",
@@ -142,8 +137,6 @@ const messages: Record<Locale, Messages> = {
   },
   de: {
     ...en,
-    draftTranslation:
-      "Übersetzungsentwurf — längere Abschnitte sind teilweise auf Englisch.",
     navigation: {
       convert: "Konvertieren",
       extension: "Erweiterung",
@@ -171,8 +164,6 @@ const messages: Record<Locale, Messages> = {
   },
   fr: {
     ...en,
-    draftTranslation:
-      "Traduction provisoire — certaines sections longues restent en anglais.",
     navigation: {
       convert: "Convertir",
       extension: "Extension",
@@ -200,8 +191,6 @@ const messages: Record<Locale, Messages> = {
   },
   es: {
     ...en,
-    draftTranslation:
-      "Traducción provisional: algunas secciones largas siguen en inglés.",
     navigation: {
       convert: "Convertir",
       extension: "Extensión",
@@ -225,8 +214,6 @@ const messages: Record<Locale, Messages> = {
   },
   nl: {
     ...en,
-    draftTranslation:
-      "Conceptvertaling — sommige lange delen blijven in het Engels.",
     navigation: {
       convert: "Converteren",
       extension: "Extensie",
@@ -254,8 +241,6 @@ const messages: Record<Locale, Messages> = {
   },
   pt: {
     ...en,
-    draftTranslation:
-      "Tradução provisória — algumas secções longas permanecem em inglês.",
     navigation: {
       convert: "Converter",
       extension: "Extensão",
@@ -279,8 +264,6 @@ const messages: Record<Locale, Messages> = {
   },
   it: {
     ...en,
-    draftTranslation:
-      "Traduzione provvisoria — alcune sezioni lunghe restano in inglese.",
     navigation: {
       convert: "Converti",
       extension: "Estensione",
@@ -304,8 +287,6 @@ const messages: Record<Locale, Messages> = {
   },
   pl: {
     ...en,
-    draftTranslation:
-      "Wersja robocza — część dłuższych sekcji pozostaje po angielsku.",
     navigation: {
       convert: "Konwertuj",
       extension: "Rozszerzenie",
@@ -333,8 +314,6 @@ const messages: Record<Locale, Messages> = {
   },
   sv: {
     ...en,
-    draftTranslation:
-      "Utkast till översättning — vissa längre avsnitt är på engelska.",
     navigation: {
       convert: "Konvertera",
       extension: "Tillägg",
@@ -358,8 +337,6 @@ const messages: Record<Locale, Messages> = {
   },
   no: {
     ...en,
-    draftTranslation:
-      "Utkast til oversettelse — noen lange avsnitt er fortsatt på engelsk.",
     navigation: {
       convert: "Konverter",
       extension: "Utvidelse",
@@ -383,8 +360,6 @@ const messages: Record<Locale, Messages> = {
   },
   da: {
     ...en,
-    draftTranslation:
-      "Oversættelsesudkast — enkelte lange afsnit er stadig på engelsk.",
     navigation: {
       convert: "Konvertér",
       extension: "Udvidelse",
@@ -408,8 +383,6 @@ const messages: Record<Locale, Messages> = {
   },
   fi: {
     ...en,
-    draftTranslation:
-      "Käännösluonnos — osa pitkistä osioista on vielä englanniksi.",
     navigation: {
       convert: "Muunna",
       extension: "Laajennus",
@@ -433,8 +406,6 @@ const messages: Record<Locale, Messages> = {
   },
   cs: {
     ...en,
-    draftTranslation:
-      "Pracovní překlad — některé delší části zůstávají anglicky.",
     navigation: {
       convert: "Převést",
       extension: "Rozšíření",
@@ -458,8 +429,6 @@ const messages: Record<Locale, Messages> = {
   },
   ro: {
     ...en,
-    draftTranslation:
-      "Traducere provizorie — unele secțiuni lungi rămân în engleză.",
     navigation: {
       convert: "Convertește",
       extension: "Extensie",
@@ -487,7 +456,6 @@ const messages: Record<Locale, Messages> = {
   },
   hu: {
     ...en,
-    draftTranslation: "Fordítási vázlat — néhány hosszabb rész angol maradt.",
     navigation: {
       convert: "Konvertálás",
       extension: "Bővítmény",

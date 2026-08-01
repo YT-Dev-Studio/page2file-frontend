@@ -1,0 +1,20 @@
+.page {
+  padding-block: var(--p2f-space-80) var(--p2f-space-96);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--p2f-space-12);
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding-block: var(--p2f-space-64);
+  }
+
+  .actions,
+  .actions > a {
+    width: 100%;
+  }
+}

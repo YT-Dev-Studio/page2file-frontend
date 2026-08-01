@@ -9,9 +9,10 @@ import {
   type LocalizedPublished,
 } from "@/shared/i18n/locales";
 import { getSeoCopy } from "@/shared/seo/seo-copy";
+import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
 import uiStyles from "@/shared/ui/ui.module.css";
-import styles from "@/features/marketing/marketing.module.css";
+import styles from "./not-found-page.module.css";
 
 type NotFoundActions = {
   home: string;
@@ -37,12 +38,9 @@ export const NotFoundPage = (): ReactNode => {
   const copy = getSeoCopy(locale, "notFound");
   const actionCopy = actions[publishedLocale];
   return (
-    <main className={styles.main} id="main-content">
-      <section className={styles.hero}>
-        <Container>
-          <p className={styles.eyebrow}>404</p>
-          <h1 className={styles.landingTitle}>{copy.title}</h1>
-          <p className={styles.lead}>{copy.description}</p>
+    <PublicPage className={styles.page}>
+      <Container>
+        <PublicHero eyebrow="404" lead={copy.description} title={copy.title}>
           <div className={styles.actions}>
             <Link className={uiStyles.button} href={`/${locale}`}>
               {actionCopy.home}
@@ -54,8 +52,8 @@ export const NotFoundPage = (): ReactNode => {
               {actionCopy.converter}
             </Link>
           </div>
-        </Container>
-      </section>
-    </main>
+        </PublicHero>
+      </Container>
+    </PublicPage>
   );
 };
