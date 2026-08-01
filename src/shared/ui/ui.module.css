@@ -147,6 +147,10 @@
   color: #dce6f5;
 }
 
+.footerFlush {
+  margin-top: 0;
+}
+
 .footerGrid {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(140px, 1fr));

@@ -7,9 +7,14 @@ import { PageRail } from "@/shared/ui/page-rail";
 import { WebsiteJsonLd } from "@/shared/seo/structured-data";
 import uiStyles from "@/shared/ui/ui.module.css";
 import { getMarketingCopy } from "./marketing-copy";
+import { RussianHomePage } from "./russian-home-page";
 import styles from "./marketing.module.css";
 
 export const HomePage = ({ locale }: { locale: Locale }): ReactNode => {
+  if (locale === "ru") {
+    return <RussianHomePage />;
+  }
+
   const messages = getMessages(locale);
   const { home } = getMarketingCopy(locale);
   const trustItem = (

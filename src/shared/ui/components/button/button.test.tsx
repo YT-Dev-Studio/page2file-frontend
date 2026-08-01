@@ -105,10 +105,20 @@ const buttonTestSuite = (): void => {
   const rendersCustomIcon = (): void => {
     const customIcon: ReactNode = <span data-testid="custom-icon">+</span>;
 
-    render(<Button icon={customIcon}>Add</Button>);
+    const { rerender } = render(<Button icon={customIcon}>Add</Button>);
 
     expect(screen.getByTestId("custom-icon")).not.toBeNull();
     expect(getButton("Add").querySelector("svg")).toBeNull();
+
+    rerender(
+      <Button icon={customIcon} iconPosition="start">
+        Add
+      </Button>,
+    );
+    const buttonChildren = Array.from(getButton("Add").children);
+
+    expect(buttonChildren[0].getAttribute("data-button-icon")).not.toBeNull();
+    expect(buttonChildren[1].textContent).toBe("Add");
   };
 
   const removesHiddenOrNullIconWrappers = (): void => {

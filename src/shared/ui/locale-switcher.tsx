@@ -6,10 +6,22 @@ import { localeRegistry, replaceLocale, type Locale } from "@/shared/i18n/locale
 import { getMessages } from "@/shared/i18n/messages";
 import styles from "./ui.module.css";
 
-export const LocaleSwitcher = ({ locale }: { locale: Locale }): ReactNode => {
+type LocaleSwitcherProps = {
+  className?: string;
+  display?: "code" | "name";
+  locale: Locale;
+};
+
+export const LocaleSwitcher = ({
+  className,
+  display = "name",
+  locale,
+}: LocaleSwitcherProps): ReactNode => {
   const pathname = usePathname();
   const router = useRouter();
   const messages = getMessages(locale);
+  const controlClassName =
+    `${styles.localeControl} ${className ?? ""}`.trim();
 
   const handleLocaleChange = (event: ChangeEvent<HTMLSelectElement>): void => {
     const nextLocale = event.target.value as Locale;
@@ -20,7 +32,9 @@ export const LocaleSwitcher = ({ locale }: { locale: Locale }): ReactNode => {
     definition: (typeof localeRegistry)[number],
   ): ReactNode => (
     <option key={definition.code} value={definition.code}>
-      {definition.languageName}
+      {display === "code"
+        ? definition.code.toUpperCase()
+        : definition.languageName}
     </option>
   );
 
@@ -29,7 +43,7 @@ export const LocaleSwitcher = ({ locale }: { locale: Locale }): ReactNode => {
       <span className="srOnly">{messages.shell.language}</span>
       <select
         aria-label={messages.shell.language}
-        className={styles.localeControl}
+        className={controlClassName}
         onChange={handleLocaleChange}
         value={locale}
       >

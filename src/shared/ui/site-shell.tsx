@@ -5,6 +5,7 @@ import { getMessages } from "@/shared/i18n/messages";
 import { getLocaleDefinition, type Locale } from "@/shared/i18n/locales";
 import { ExternalCta } from "./external-cta";
 import { LocaleSwitcher } from "./locale-switcher";
+import { RussianSiteHeader } from "./russian-site-header";
 import styles from "./ui.module.css";
 
 type SiteShellProps = {
@@ -93,10 +94,18 @@ const SiteHeader = ({ locale }: { locale: Locale }): ReactNode => {
   );
 };
 
-const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
+const SiteFooter = ({
+  flushTop = false,
+  locale,
+}: {
+  flushTop?: boolean;
+  locale: Locale;
+}): ReactNode => {
   const messages = getMessages(locale);
+  const footerClassName =
+    `${styles.footer} ${flushTop ? styles.footerFlush : ""}`.trim();
   return (
-    <footer className={styles.footer}>
+    <footer className={footerClassName}>
       <Container>
         <div className={styles.footerGrid}>
           <div>
@@ -128,10 +137,10 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
 
 export const SiteShell = ({ children, locale }: SiteShellProps): ReactNode => (
   <div className={styles.shell}>
-    <SiteHeader locale={locale} />
+    {locale === "ru" ? <RussianSiteHeader /> : <SiteHeader locale={locale} />}
     <DraftTranslationNotice locale={locale} />
     {children}
-    <SiteFooter locale={locale} />
+    <SiteFooter flushTop={locale === "ru"} locale={locale} />
     <ConsentBanner locale={locale} />
   </div>
 );

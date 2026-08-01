@@ -19,6 +19,7 @@ export type WebsiteUrlFieldProps = {
   invalidError: string;
   label: string;
   onValueChange: (value: string) => void;
+  placeholder?: string;
   required?: boolean;
   value: string;
 };
@@ -57,6 +58,7 @@ export const WebsiteUrlField = ({
   invalidError,
   label,
   onValueChange,
+  placeholder,
   required,
   value,
 }: WebsiteUrlFieldProps): ReactNode => {
@@ -98,6 +100,7 @@ export const WebsiteUrlField = ({
       onBlur={handleBlur}
       onChange={handleChange}
       onPaste={handlePaste}
+      placeholder={placeholder}
       required={required}
       spellCheck={false}
       type="url"
