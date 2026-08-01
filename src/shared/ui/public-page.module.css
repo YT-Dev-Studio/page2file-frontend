@@ -7,6 +7,7 @@
 
 .hero {
   display: grid;
+  min-width: 0;
   max-width: 880px;
   gap: var(--p2f-space-16);
 }
@@ -19,6 +20,7 @@
   line-height: var(--p2f-type-label-medium-line-height);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .title {
@@ -30,6 +32,8 @@
   line-height: 1.04;
   letter-spacing: var(--p2f-letter-spacing-tight);
   text-wrap: balance;
+  hyphens: auto;
+  overflow-wrap: anywhere;
 }
 
 .lead {
@@ -39,6 +43,7 @@
   font-size: var(--p2f-type-body-large-font-size);
   line-height: var(--p2f-type-body-large-line-height);
   text-wrap: pretty;
+  overflow-wrap: anywhere;
 }
 
 .heroContent {
@@ -61,8 +66,8 @@
   }
 
   .title {
-    font-size: 36px;
-    line-height: var(--p2f-line-height-40);
+    font-size: 30px;
+    line-height: 1.08;
   }
 
   .lead {

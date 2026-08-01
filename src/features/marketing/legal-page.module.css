@@ -11,6 +11,11 @@
     var(--p2f-color-border-strong);
 }
 
+.documentHeader > *,
+.documentLayout > * {
+  min-width: 0;
+}
+
 .effectiveDate {
   margin: var(--p2f-space-16) 0 0;
   color: var(--p2f-color-text-secondary);
