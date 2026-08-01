@@ -277,6 +277,18 @@ export const ComponentShowcase = (): ReactNode => (
           }
           title="Card with media"
         />
+        <Card
+          body="Keep source fidelity while exporting a clean, editable file."
+          media={
+            <Image
+              alt=""
+              sizes="(max-width: 767px) 104px, (max-width: 1099px) 120px, 136px"
+              src={featurePreview}
+            />
+          }
+          mediaLayout="floating"
+          title="Card with floating media"
+        />
       </div>
     </section>
 

@@ -28,6 +28,7 @@ export type CardProps = Omit<
   emphasis?: "default" | "accent";
   interactive?: boolean;
   media?: ReactNode;
+  mediaLayout?: "floating" | "split";
   selected?: boolean;
   title: ReactNode;
 };
@@ -79,6 +80,7 @@ export const Card = ({
   emphasis = "default",
   interactive = false,
   media,
+  mediaLayout = "split",
   selected = false,
   title,
   ...articleProps
@@ -87,6 +89,12 @@ export const Card = ({
     `${styles.card} ${interactive ? styles.interactive : ""} ${selected ? styles.selected : ""} ${manrope.className} ${className ?? ""}`.trim();
   const hasAccent = emphasis === "accent";
   const hasMedia = media !== undefined && media !== null;
+  const hasFloatingMedia = hasMedia && mediaLayout === "floating";
+  const mediaContentClassName = hasFloatingMedia
+    ? styles.floatingMediaContent
+    : styles.mediaContent;
+  const contentClassName =
+    `${styles.content} ${hasMedia ? mediaContentClassName : ""}`.trim();
 
   return (
     <article
@@ -98,9 +106,7 @@ export const Card = ({
         className={`${styles.layout} ${hasAccent ? styles.accentLayout : ""}`.trim()}
       >
         {hasAccent ? <span aria-hidden="true" className={styles.rail} /> : null}
-        <div
-          className={`${styles.content} ${hasMedia ? styles.mediaContent : ""}`.trim()}
-        >
+        <div className={contentClassName}>
           <h3 className={styles.title}>{title}</h3>
           {hasMedia ? <div className={styles.media}>{media}</div> : null}
           <div className={styles.body}>{body}</div>

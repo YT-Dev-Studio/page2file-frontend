@@ -6,6 +6,8 @@
 
 .pageGutters {
   width: 100%;
+  max-width: 1360px;
+  margin-inline: auto;
   padding-inline: clamp(var(--p2f-space-16), 5.55vw, var(--p2f-space-80));
 }
 
@@ -405,6 +407,37 @@
   height: 100%;
 }
 
+.featureVisual {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+}
+
+.featureVisualOne {
+  transform: translate(11px, -18px) rotate(-7deg) scale(1.08);
+}
+
+.featureVisualTwo {
+  transform: translate(15px, -19px) rotate(6deg) scale(1.04);
+}
+
+.featureVisualThree {
+  transform: translate(14px, -18px) rotate(-4deg) scale(1.08);
+}
+
+.featureVisualFour {
+  transform: translate(13px, -17px) rotate(7deg) scale(1.05);
+}
+
+.featureVisualFive {
+  transform: translate(16px, -20px) rotate(-6deg) scale(1.03);
+}
+
+.featureVisualSix {
+  transform: translate(14px, -18px) rotate(5deg) scale(1.07);
+}
+
 @media (max-width: 1099px) {
   .heroSection {
     padding-block: var(--p2f-space-64);
@@ -425,6 +458,30 @@
 
   .featuresGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featureVisualOne {
+    transform: translate(11px, -20px) rotate(-7deg) scale(1.08);
+  }
+
+  .featureVisualTwo {
+    transform: translate(15px, -24px) rotate(6deg) scale(1.04);
+  }
+
+  .featureVisualThree {
+    transform: translate(14px, -51px) rotate(-4deg) scale(1.08);
+  }
+
+  .featureVisualFour {
+    transform: translate(13px, -22px) rotate(7deg) scale(1.05);
+  }
+
+  .featureVisualFive {
+    transform: translate(16px, -81px) rotate(-6deg) scale(1.03);
+  }
+
+  .featureVisualSix {
+    transform: translate(14px, -51px) rotate(5deg) scale(1.07);
   }
 }
 
@@ -531,6 +588,30 @@
 
   .featuresGrid {
     grid-template-columns: 1fr;
+  }
+
+  .featureVisualOne {
+    transform: translate(14px, -27px) rotate(-7deg) scale(1.08);
+  }
+
+  .featureVisualTwo {
+    transform: translate(18px, -30px) rotate(6deg) scale(1.04);
+  }
+
+  .featureVisualThree {
+    transform: translate(17px, -58px) rotate(-4deg) scale(1.08);
+  }
+
+  .featureVisualFour {
+    transform: translate(16px, -29px) rotate(7deg) scale(1.05);
+  }
+
+  .featureVisualFive {
+    transform: translate(19px, -31px) rotate(-6deg) scale(1.03);
+  }
+
+  .featureVisualSix {
+    transform: translate(17px, -57px) rotate(5deg) scale(1.07);
   }
 }
 

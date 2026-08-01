@@ -67,6 +67,10 @@
   margin: 0 auto 44px;
 }
 
+.blogArticleHeader {
+  max-width: 600px;
+}
+
 .articleMeta {
   display: flex;
   flex-wrap: wrap;
@@ -84,6 +88,10 @@
   border: 1px solid var(--line);
   border-radius: 10px;
   background: var(--surface);
+}
+
+.blogArticle {
+  max-width: 600px;
 }
 
 .article h2 {

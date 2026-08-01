@@ -14,32 +14,61 @@ type RussianFeatureCardData = {
   body: string;
   image: StaticImageData;
   title: string;
+  visualClassName: string;
 };
 
 const featureCards: ReadonlyArray<RussianFeatureCardData> = [
-  { ...russianHomeCopy.features.items[0], image: featureOne },
-  { ...russianHomeCopy.features.items[1], image: featureTwo },
-  { ...russianHomeCopy.features.items[2], image: featureThree },
-  { ...russianHomeCopy.features.items[3], image: featureFour },
-  { ...russianHomeCopy.features.items[4], image: featureFive },
-  { ...russianHomeCopy.features.items[5], image: featureSix },
+  {
+    ...russianHomeCopy.features.items[0],
+    image: featureOne,
+    visualClassName: styles.featureVisualOne,
+  },
+  {
+    ...russianHomeCopy.features.items[1],
+    image: featureTwo,
+    visualClassName: styles.featureVisualTwo,
+  },
+  {
+    ...russianHomeCopy.features.items[2],
+    image: featureThree,
+    visualClassName: styles.featureVisualThree,
+  },
+  {
+    ...russianHomeCopy.features.items[3],
+    image: featureFour,
+    visualClassName: styles.featureVisualFour,
+  },
+  {
+    ...russianHomeCopy.features.items[4],
+    image: featureFive,
+    visualClassName: styles.featureVisualFive,
+  },
+  {
+    ...russianHomeCopy.features.items[5],
+    image: featureSix,
+    visualClassName: styles.featureVisualSix,
+  },
 ];
 
 const RussianFeatureCard = ({
   body,
   image,
   title,
+  visualClassName,
 }: RussianFeatureCardData): ReactNode => (
   <Card
     body={body}
     className={styles.featureCard}
     media={
-      <Image
-        alt=""
-        sizes="(max-width: 767px) 104px, (max-width: 1099px) 120px, 136px"
-        src={image}
-      />
+      <span className={`${styles.featureVisual} ${visualClassName}`}>
+        <Image
+          alt=""
+          sizes="(max-width: 767px) 104px, (max-width: 1099px) 120px, 136px"
+          src={image}
+        />
+      </span>
     }
+    mediaLayout="floating"
     title={title}
   />
 );

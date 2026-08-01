@@ -79,6 +79,7 @@ describe("Card", () => {
     const { rerender } = render(
       <Card
         body="Keep source fidelity."
+        mediaLayout="floating"
         title="Convert with confidence"
       />,
     );
@@ -87,6 +88,7 @@ describe("Card", () => {
     expect(card.querySelector(`.${styles.rail}`)).toBeNull();
     expect(card.querySelector(`.${styles.action}`)).toBeNull();
     expect(card.querySelector(`.${styles.media}`)).toBeNull();
+    expect(card.querySelector(`.${styles.floatingMediaContent}`)).toBeNull();
 
     rerender(
       <Card
@@ -100,5 +102,19 @@ describe("Card", () => {
       "Card preview",
     );
     expect(card.querySelector(`.${styles.mediaContent}`)).not.toBeNull();
+
+    rerender(
+      <Card
+        body="Keep source fidelity."
+        media={<span>Floating card preview</span>}
+        mediaLayout="floating"
+        title="Convert with confidence"
+      />,
+    );
+
+    expect(card.querySelector(`.${styles.mediaContent}`)).toBeNull();
+    expect(
+      card.querySelector(`.${styles.floatingMediaContent}`),
+    ).not.toBeNull();
   });
 });

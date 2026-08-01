@@ -91,7 +91,14 @@ export const ContentArticlePage = ({
   const Article = entry.component;
   const definition = getLocaleDefinition(locale);
   const copy = getContentCopy(locale);
-  const base = entry.kind === "blog" ? "blog" : "updates";
+  const isBlog = entry.kind === "blog";
+  const base = isBlog ? "blog" : "updates";
+  const articleHeaderClassName = isBlog
+    ? `${styles.articleHeader} ${styles.blogArticleHeader}`
+    : styles.articleHeader;
+  const articleClassName = isBlog
+    ? `${styles.article} ${styles.blogArticle}`
+    : styles.article;
   const breadcrumbs: ReadonlyArray<BreadcrumbItem> = [
     { label: copy.homeLabel, href: `/${locale}` },
     {
@@ -112,12 +119,12 @@ export const ContentArticlePage = ({
           locale={locale}
         />
         <ArticleJsonLd entry={entry} locale={locale} />
-        <header className={styles.articleHeader}>
+        <header className={articleHeaderClassName}>
           <div className={styles.draft}>
             {copy.articleSample}
           </div>
           {!definition.reviewed ? <div className={styles.draft}>{copy.fallbackArticle}</div> : null}
-          <p className={styles.eyebrow}>{entry.kind === "blog" ? copy.guideLabel : copy.updateLabel}</p>
+          <p className={styles.eyebrow}>{isBlog ? copy.guideLabel : copy.updateLabel}</p>
           <h1 className={styles.title}>{entry.title}</h1>
           <p className={styles.description}>{entry.description}</p>
           <div className={styles.articleMeta}>
@@ -128,7 +135,7 @@ export const ContentArticlePage = ({
             <span>{copy.readLabel(entry.readingMinutes)}</span>
           </div>
         </header>
-        <article className={styles.article}>
+        <article className={articleClassName}>
           <Article />
           {entry.kind === "update" ? (
             <p><Link href={`/${locale}/changelog`}>{copy.seeChangelog}</Link></p>
