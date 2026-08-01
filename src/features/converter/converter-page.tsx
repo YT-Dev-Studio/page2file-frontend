@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import type { ConversionFormat } from "@/entities/conversion/model";
 import type { Locale } from "@/shared/i18n/locales";
 import { conversionAdapter } from "@/shared/config/site";
+import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
 import styles from "./converter.module.css";
 import { getConverterCopy } from "./converter-copy";
@@ -20,13 +21,15 @@ export const ConverterPage = ({
   const runtimeCopy = getConversionRuntimeCopy(locale);
   const formatCopy = copy.formats[format];
   return (
-    <main className={styles.page} id="main-content">
+    <PublicPage className={styles.page} family="converter">
       <Container>
         <div className={styles.layout}>
           <div>
-            <p className={styles.eyebrow}>{formatCopy.eyebrow}</p>
-            <h1 className={styles.title}>{formatCopy.title}</h1>
-            <p className={styles.lead}>{formatCopy.lead}</p>
+            <PublicHero
+              eyebrow={formatCopy.eyebrow}
+              lead={formatCopy.lead}
+              title={formatCopy.title}
+            />
             <ConverterForm format={format} locale={locale} />
           </div>
           <aside className={styles.aside}>
@@ -51,6 +54,6 @@ export const ConverterPage = ({
           </aside>
         </div>
       </Container>
-    </main>
+    </PublicPage>
   );
 };

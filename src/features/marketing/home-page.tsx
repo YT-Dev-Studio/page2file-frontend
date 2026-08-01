@@ -1,4 +1,3 @@
-import { Manrope } from "next/font/google";
 import type { ReactNode } from "react";
 import type { Locale } from "@/shared/i18n/locales";
 import { WebsiteJsonLd } from "@/shared/seo/structured-data";
@@ -13,11 +12,6 @@ import {
 } from "./home-sections";
 import styles from "./home.module.css";
 
-const manrope = Manrope({
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
-
 export const HomePage = ({
   locale,
 }: {
@@ -25,7 +19,7 @@ export const HomePage = ({
 }): ReactNode => {
   return (
     <main
-      className={`${styles.page} ${manrope.className}`}
+      className={styles.page}
       id="main-content"
     >
       <WebsiteJsonLd locale={locale} />

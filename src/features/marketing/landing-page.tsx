@@ -7,7 +7,13 @@ import type {
 } from "@/content/landings";
 import type { Locale } from "@/shared/i18n/locales";
 import { getMessages } from "@/shared/i18n/messages";
+import { getPublicPageFamily } from "@/shared/routes/routes";
 import { ExternalCta } from "@/shared/ui/external-cta";
+import {
+  PublicHero,
+  PublicPage,
+  PublicSection,
+} from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
 import uiStyles from "@/shared/ui/ui.module.css";
 import { getMarketingCopy } from "./marketing-copy";
@@ -53,7 +59,10 @@ export const LandingPage = ({
   );
 
   return (
-    <main className={styles.main} id="main-content">
+    <PublicPage
+      className={styles.main}
+      family={getPublicPageFamily(content.route)}
+    >
       <section className={styles.hero}>
         <Container>
           {content.legal ? (
@@ -61,31 +70,37 @@ export const LandingPage = ({
               {landing.legalDraft}
             </div>
           ) : null}
-          <p className={styles.eyebrow}>{content.eyebrow}</p>
-          <h1 className={styles.landingTitle}>{content.title}</h1>
-          <p className={styles.lead}>{content.lead}</p>
-          <div className={styles.actions}>
-            {content.externalLinkKey && content.primaryLabel ? (
-              <ExternalCta
-                comingSoonLabel={messages.actions.comingSoon}
-                externalLinkKey={content.externalLinkKey}
-                label={content.primaryLabel}
-              />
-            ) : null}
-            {internalHref && content.primaryLabel ? (
-              <Link className={uiStyles.button} href={internalHref}>
-                {content.primaryLabel}
-              </Link>
-            ) : null}
-            {!content.legal ? (
-              <Link className={uiStyles.secondaryButton} href={`/${locale}/convert-webpage-to-pdf`}>
-                {landing.tryPrototype}
-              </Link>
-            ) : null}
-          </div>
+          <PublicHero
+            eyebrow={content.eyebrow}
+            lead={content.lead}
+            title={content.title}
+          >
+            <div className={styles.actions}>
+              {content.externalLinkKey && content.primaryLabel ? (
+                <ExternalCta
+                  comingSoonLabel={messages.actions.comingSoon}
+                  externalLinkKey={content.externalLinkKey}
+                  label={content.primaryLabel}
+                />
+              ) : null}
+              {internalHref && content.primaryLabel ? (
+                <Link className={uiStyles.button} href={internalHref}>
+                  {content.primaryLabel}
+                </Link>
+              ) : null}
+              {!content.legal ? (
+                <Link
+                  className={uiStyles.secondaryButton}
+                  href={`/${locale}/convert-webpage-to-pdf`}
+                >
+                  {landing.tryPrototype}
+                </Link>
+              ) : null}
+            </div>
+          </PublicHero>
         </Container>
       </section>
-      <section className={`${styles.section} ${styles.sectionAlt}`}>
+      <PublicSection className={styles.section} tone="subtle">
         <Container>
           <div className={styles.contentGrid}>{content.sections.map(sectionBlock)}</div>
           {relatedRoutes && relatedRoutes.length > 0 ? (
@@ -95,7 +110,7 @@ export const LandingPage = ({
             </nav>
           ) : null}
         </Container>
-      </section>
-    </main>
+      </PublicSection>
+    </PublicPage>
   );
 };

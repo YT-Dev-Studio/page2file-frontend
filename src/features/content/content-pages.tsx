@@ -9,6 +9,7 @@ import {
 } from "@/content/content-registry";
 import type { Locale } from "@/shared/i18n/locales";
 import { getLocaleDefinition } from "@/shared/i18n/locales";
+import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
 import {
   ArticleJsonLd,
@@ -60,21 +61,23 @@ export const ContentIndexPage = ({
     <EntryRow entry={entry} key={entry.slug} locale={locale} />
   );
   return (
-    <main className={styles.page} id="main-content">
+    <PublicPage className={styles.page} family="content">
       <Container>
-        <header className={styles.hero}>
-          <p className={styles.eyebrow}>{indexCopy.eyebrow}</p>
-          <h1 className={styles.title}>{indexCopy.title}</h1>
-          <p className={styles.description}>{indexCopy.description}</p>
+        <PublicHero
+          className={styles.hero}
+          eyebrow={indexCopy.eyebrow}
+          lead={indexCopy.description}
+          title={indexCopy.title}
+        >
           {kind === "updates" ? (
             <p>
               <Link href={`/${locale}/changelog`}>{copy.changelogLink}</Link>
             </p>
           ) : null}
-        </header>
+        </PublicHero>
         <div className={styles.list}>{entries.map(entryRow)}</div>
       </Container>
-    </main>
+    </PublicPage>
   );
 };
 
@@ -106,7 +109,7 @@ export const ContentArticlePage = ({
     { label: entry.title, href: `/${locale}/${base}/${entry.slug}` },
   ];
   return (
-    <main className={styles.page} id="main-content">
+    <PublicPage className={styles.page} family="content">
       <Container>
         <SeoBreadcrumbs
           items={breadcrumbs}
@@ -114,15 +117,15 @@ export const ContentArticlePage = ({
           locale={locale}
         />
         <ArticleJsonLd entry={entry} locale={locale} />
-        <header className={articleHeaderClassName}>
+        <PublicHero
+          className={articleHeaderClassName}
+          eyebrow={isBlog ? copy.guideLabel : copy.updateLabel}
+          lead={entry.description}
+          title={entry.title}
+        >
           {!definition.reviewed ? (
             <div className={styles.draft}>{copy.fallbackArticle}</div>
           ) : null}
-          <p className={styles.eyebrow}>
-            {isBlog ? copy.guideLabel : copy.updateLabel}
-          </p>
-          <h1 className={styles.title}>{entry.title}</h1>
-          <p className={styles.description}>{entry.description}</p>
           <div className={styles.articleMeta}>
             <span>{entry.author}</span>
             <time dateTime={entry.updatedAt}>
@@ -130,7 +133,7 @@ export const ContentArticlePage = ({
             </time>
             <span>{copy.readLabel(entry.readingMinutes)}</span>
           </div>
-        </header>
+        </PublicHero>
         <article className={articleClassName}>
           <Article />
           {entry.kind === "update" ? (
@@ -146,7 +149,7 @@ export const ContentArticlePage = ({
           )}
         </article>
       </Container>
-    </main>
+    </PublicPage>
   );
 };
 
@@ -190,15 +193,16 @@ export const ChangelogPage = ({ locale }: { locale: Locale }): ReactNode => {
     <Release entry={entry} key={entry.version} locale={locale} />
   );
   return (
-    <main className={styles.page} id="main-content">
+    <PublicPage className={styles.page} family="content">
       <Container>
-        <header className={styles.hero}>
-          <p className={styles.eyebrow}>{copy.changelog.eyebrow}</p>
-          <h1 className={styles.title}>{copy.changelog.title}</h1>
-          <p className={styles.description}>{copy.changelog.description}</p>
-        </header>
+        <PublicHero
+          className={styles.hero}
+          eyebrow={copy.changelog.eyebrow}
+          lead={copy.changelog.description}
+          title={copy.changelog.title}
+        />
         <div className={styles.changelog}>{entries.map(release)}</div>
       </Container>
-    </main>
+    </PublicPage>
   );
 };

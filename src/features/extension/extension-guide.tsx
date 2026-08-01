@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { useState } from "react";
 import type { Locale } from "@/shared/i18n/locales";
+import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
 import {
   SeoBreadcrumbs,
@@ -51,20 +52,19 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
   );
 
   return (
-    <main className={styles.page} id="main-content">
+    <PublicPage className={styles.page} family="extension">
       <Container>
         <SeoBreadcrumbs
           items={breadcrumbs}
           label={copy.breadcrumbLabel}
           locale={locale}
         />
-        <header className={styles.hero}>
-          <p className={styles.eyebrow}>
-            {copy.eyebrow} · {locale.toUpperCase()}
-          </p>
-          <h1 className={styles.title}>{copy.title}</h1>
-          <p className={styles.lead}>{copy.lead}</p>
-        </header>
+        <PublicHero
+          className={styles.hero}
+          eyebrow={`${copy.eyebrow} · ${locale.toUpperCase()}`}
+          lead={copy.lead}
+          title={copy.title}
+        />
         <div
           aria-label={copy.formatLabel}
           className={styles.tabs}
@@ -128,6 +128,6 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
           </div>
         </section>
       </Container>
-    </main>
+    </PublicPage>
   );
 };
