@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { WebsiteJsonLd } from "@/shared/seo/structured-data";
 import { externalLinks } from "@/shared/config/site";
 import { ButtonLink } from "@/shared/ui/components/button/button";
+import { RussianHomeFeatures } from "./russian-home-features";
 import { RussianHomeHero } from "./russian-home-hero";
 import { russianHomeCopy } from "./russian-home-copy";
 import styles from "./russian-home.module.css";
@@ -70,5 +71,7 @@ export const RussianHomePage = (): ReactNode => (
         </div>
       </div>
     </section>
+
+    <RussianHomeFeatures />
   </main>
 );

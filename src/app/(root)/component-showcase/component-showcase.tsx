@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import type { ReactNode } from "react";
+import featurePreview from "@/app/assets/features/feat1.png";
 import { Button } from "@/shared/ui/components/button/button";
 import { Card } from "@/shared/ui/components/card/card";
 import { Dropzone } from "@/shared/ui/components/dropzone/dropzone";
@@ -263,6 +265,17 @@ export const ComponentShowcase = (): ReactNode => (
           emphasis="accent"
           selected
           title="Convert with confidence"
+        />
+        <Card
+          body="Keep source fidelity while exporting a clean, editable file."
+          media={
+            <Image
+              alt=""
+              sizes="(max-width: 767px) 104px, (max-width: 1099px) 120px, 136px"
+              src={featurePreview}
+            />
+          }
+          title="Card with media"
         />
       </div>
     </section>

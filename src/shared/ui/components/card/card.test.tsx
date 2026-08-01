@@ -75,8 +75,8 @@ describe("Card", () => {
     expect(card.dataset.selected).toBe("true");
   });
 
-  test("does not reserve an accent or action slot when absent", () => {
-    render(
+  test("renders media only when the optional slot is provided", () => {
+    const { rerender } = render(
       <Card
         body="Keep source fidelity."
         title="Convert with confidence"
@@ -86,5 +86,19 @@ describe("Card", () => {
 
     expect(card.querySelector(`.${styles.rail}`)).toBeNull();
     expect(card.querySelector(`.${styles.action}`)).toBeNull();
+    expect(card.querySelector(`.${styles.media}`)).toBeNull();
+
+    rerender(
+      <Card
+        body="Keep source fidelity."
+        media={<span>Card preview</span>}
+        title="Convert with confidence"
+      />,
+    );
+
+    expect(card.querySelector(`.${styles.media}`)?.textContent).toBe(
+      "Card preview",
+    );
+    expect(card.querySelector(`.${styles.mediaContent}`)).not.toBeNull();
   });
 });
