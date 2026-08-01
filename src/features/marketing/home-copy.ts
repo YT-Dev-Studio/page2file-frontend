@@ -17,6 +17,7 @@ export type HomeCopy = {
   title: string;
   lead: string;
   form: {
+    demoAction: string;
     formatLabel: string;
     meta: string;
     pdfModeLabel: string;
@@ -31,6 +32,13 @@ export type HomeCopy = {
     urlHelper: string;
     urlLabel: string;
     urlPlaceholder: string;
+  };
+  converterFlow: {
+    backAction: string;
+    processingBody: string;
+    processingTitle: string;
+    readyBody: string;
+    readyTitle: string;
   };
   closingNote: string;
   preview: {
@@ -91,6 +99,7 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
     lead:
       "Paste a link to a public page. Page2File carefully splits it into PDF pages or PowerPoint slides — with a preview before download.",
     form: {
+      demoAction: "DEMO",
       formatLabel: "Format",
       meta: "No registration · Preview · Temporary files",
       pdfModeLabel: "PDF mode",
@@ -109,6 +118,14 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
         "Public HTTPS pages only. Use the extension for signed-in browser tabs.",
       urlLabel: "Webpage link",
       urlPlaceholder: "https://example.com/article",
+    },
+    converterFlow: {
+      backAction: "Back to settings",
+      processingBody:
+        "We are analyzing the page and preparing the selected file format.",
+      processingTitle: "Preparing your file",
+      readyBody: "Click to download the file",
+      readyTitle: "Your file is ready",
     },
     closingNote:
       "The service works for articles, documentation, landing pages and public reports. Need the current private tab or an AI chat? The extension processes it locally in your browser.",
@@ -289,6 +306,7 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
     lead:
       "Вставьте ссылку на публичную страницу. Page2File аккуратно разделит её на страницы PDF или слайды PowerPoint — с предпросмотром перед скачиванием.",
     form: {
+      demoAction: "ДЕМО",
       formatLabel: "Формат",
       meta: "Без регистрации · Предпросмотр · Временные файлы",
       pdfModeLabel: "Режим PDF",
@@ -307,6 +325,14 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
         "Только публичные HTTPS-страницы. Для вкладок с авторизацией используйте расширение.",
       urlLabel: "Ссылка на веб-страницу",
       urlPlaceholder: "https://example.com/article",
+    },
+    converterFlow: {
+      backAction: "Вернуться к настройкам",
+      processingBody:
+        "Анализируем страницу и готовим файл в выбранном формате.",
+      processingTitle: "Готовим ваш файл",
+      readyBody: "Нажмите чтобы скачать файл",
+      readyTitle: "Ваш файл готов",
     },
     closingNote:
       "Сервис подходит для статей, документации, лендингов и публичных отчётов. Нужна текущая закрытая вкладка или AI-чат? Расширение обработает их локально в браузере.",
