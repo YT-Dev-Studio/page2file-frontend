@@ -9,10 +9,14 @@
   color: var(--p2f-color-text-primary);
   background: var(--p2f-color-background-surface);
   box-shadow: var(--p2f-shadow-card);
+  transition:
+    border-color 220ms ease,
+    background-color 220ms ease;
 }
 
-.interactive:hover {
-  border-color: var(--p2f-color-border-strong);
+.card:focus-within {
+  border-color: var(--p2f-color-border-focus);
+  background: var(--p2f-color-background-selected);
 }
 
 .selected {
@@ -21,20 +25,28 @@
 }
 
 .layout {
+  position: relative;
   min-width: 0;
 }
 
-.accentLayout {
-  display: grid;
-  grid-template-columns: var(--p2f-space-4) minmax(0, 1fr);
-  gap: var(--p2f-space-16);
-}
-
 .rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -12px;
   width: var(--p2f-space-4);
-  min-height: 100%;
+  pointer-events: none;
   border-radius: var(--p2f-radius-pill);
   background: var(--p2f-color-format-master-default);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 220ms ease;
+}
+
+.card:focus-within .rail,
+.selected .rail,
+.accentLayout .rail {
+  transform: scaleY(1);
 }
 
 .content {
@@ -167,6 +179,18 @@
   height: 100%;
 }
 
+@media (hover: hover) {
+  .card:hover,
+  .interactive:hover {
+    border-color: var(--p2f-color-border-focus);
+    background: var(--p2f-color-background-selected);
+  }
+
+  .card:hover .rail {
+    transform: scaleY(1);
+  }
+}
+
 @media (max-width: 1099px) {
   .mediaContent {
     grid-template-columns: minmax(0, 1fr) 120px;
@@ -204,5 +228,12 @@
   .media {
     width: 104px;
     height: 104px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .rail {
+    transition: none;
   }
 }

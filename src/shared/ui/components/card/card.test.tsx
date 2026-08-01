@@ -19,6 +19,15 @@ describe("Card", () => {
         name: "Convert with confidence",
       }),
     ).not.toBeNull();
+    expect(
+      screen.getByRole("article").querySelector(`.${styles.rail}`),
+    ).not.toBeNull();
+    expect(
+      screen
+        .getByRole("article")
+        .querySelector(`.${styles.rail}`)
+        ?.getAttribute("aria-hidden"),
+    ).toBe("true");
     expect(screen.queryByRole("button")).toBeNull();
     expect(screen.queryByRole("link")).toBeNull();
   });
@@ -85,7 +94,7 @@ describe("Card", () => {
     );
     const card = screen.getByRole("article");
 
-    expect(card.querySelector(`.${styles.rail}`)).toBeNull();
+    expect(card.querySelector(`.${styles.rail}`)).not.toBeNull();
     expect(card.querySelector(`.${styles.action}`)).toBeNull();
     expect(card.querySelector(`.${styles.media}`)).toBeNull();
     expect(card.querySelector(`.${styles.floatingMediaContent}`)).toBeNull();

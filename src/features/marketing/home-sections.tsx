@@ -86,9 +86,7 @@ export const HomeHowItWorks = ({
               }
               body={item.body}
               className={styles.informationCard}
-              emphasis={index === 0 ? "accent" : "default"}
               key={item.title}
-              selected={index === 0}
               title={item.title}
             />
           ))}
@@ -194,13 +192,11 @@ export const HomeFaq = ({
         />
 
         <div className={styles.faqGrid}>
-          {copy.items.map((item, index): ReactNode => (
+          {copy.items.map((item): ReactNode => (
             <Card
               body={item.body}
               className={styles.faqCard}
-              emphasis={index === 0 ? "accent" : "default"}
               key={item.title}
-              selected={index === 0}
               title={item.title}
             />
           ))}

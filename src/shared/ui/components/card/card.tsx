@@ -105,7 +105,7 @@ export const Card = ({
       <div
         className={`${styles.layout} ${hasAccent ? styles.accentLayout : ""}`.trim()}
       >
-        {hasAccent ? <span aria-hidden="true" className={styles.rail} /> : null}
+        <span aria-hidden="true" className={styles.rail} />
         <div className={contentClassName}>
           <h3 className={styles.title}>{title}</h3>
           {hasMedia ? <div className={styles.media}>{media}</div> : null}
