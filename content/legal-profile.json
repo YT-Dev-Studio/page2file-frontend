@@ -1,6 +1,7 @@
 {
-  "entityName": "",
-  "jurisdiction": "",
-  "contactEmail": "",
-  "processors": []
+  "entityName": "ИП YT DEV",
+  "address": "Казахстан, Алматы, Жетысу‑4",
+  "jurisdiction": "Казахстан",
+  "contactEmail": "info@page2file.com",
+  "processors": ["Google Analytics", "Cloudflare"]
 }

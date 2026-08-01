@@ -197,23 +197,23 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
   },
   privacy: {
     route: "privacy",
-    eyebrow: "Draft legal document",
+    eyebrow: "Privacy and data processing",
     title: "Privacy policy",
-    description: "Read the draft Page2File privacy policy covering temporary encrypted conversion jobs, short-lived artifacts, default analytics and no account history.",
-    lead: "This draft explains the implemented data boundaries. It is not production legal advice.",
+    description: "How Page2File handles temporary conversion jobs, short-lived artifacts, automatic analytics and requests sent through the service.",
+    lead: "This policy describes the current product boundaries and the service providers involved in operating Page2File.",
     sections: [
       { heading: "No accounts or history", body: "The service does not create user profiles or retain a user-visible list of past conversions." },
       { heading: "Analytics", body: "Google Analytics starts automatically when a valid Measurement ID is configured. UTM values are not kept in a custom attribution cookie." },
-      { heading: "Temporary server processing", body: "Public URL conversion uses encrypted temporary job data and short-lived artifacts. The exact processors and retention wording still require legal review." },
+      { heading: "Temporary server processing", body: "Public URL conversion uses temporary job data and short-lived output artifacts. Retention and deletion depend on the configured conversion infrastructure." },
     ],
     legal: true,
   },
   terms: {
     route: "terms",
-    eyebrow: "Draft legal document",
+    eyebrow: "Service agreement",
     title: "Terms of service",
-    description: "Read the draft terms for the self-hosted Page2File service, including permitted source use, temporary processing and editable-output limitations.",
-    lead: "These draft terms describe current product boundaries and require jurisdiction-specific review.",
+    description: "Terms for using Page2File, including permitted source use, temporary processing and limitations of editable output.",
+    lead: "By using the service, you agree to submit only material you may access and reproduce and to review generated files before relying on them.",
     sections: [
       { heading: "Self-hosted MVP status", body: "The current service performs webpage conversion through a separately deployed backend, but it is not a production deployment or a fidelity guarantee." },
       { heading: "Your responsibility", body: "Only convert material you are permitted to access and reproduce." },
@@ -223,9 +223,9 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
   },
   "cookie-policy": {
     route: "cookie-policy",
-    eyebrow: "Draft legal document",
+    eyebrow: "Analytics disclosure",
     title: "Cookie and analytics policy",
-    description: "Draft explanation of automatic GA4 loading, in-memory campaign attribution and analytics behavior on public Page2File pages.",
+    description: "How automatic Google Analytics loading, cookies and in-memory campaign attribution work on public Page2File pages.",
     lead: "Analytics starts automatically when a valid GA4 Measurement ID is configured.",
     sections: [
       { heading: "Analytics settings", body: "No first-party localStorage value is used to store an analytics preference." },
@@ -249,9 +249,9 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
   },
   "acceptable-use": {
     route: "acceptable-use",
-    eyebrow: "Draft policy",
+    eyebrow: "Responsible use",
     title: "Acceptable use",
-    description: "Draft responsible-use rules for webpage and document conversion.",
+    description: "Responsible-use rules for converting webpages and documents, including access controls, system abuse, intellectual property and lawful source handling.",
     lead: "Use Page2File only for sources you are allowed to access, process and reproduce.",
     sections: [
       { heading: "Do not bypass access controls", body: "The service must not be used to evade paywalls, authentication or technical restrictions." },

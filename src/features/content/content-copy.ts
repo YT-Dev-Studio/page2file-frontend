@@ -8,7 +8,6 @@ type IndexCopy = {
 };
 
 type ContentCopy = {
-  fallbackArticle: string;
   featuredLabel: string;
   allEntriesLabel: string;
   emptyTitle: string;
@@ -35,7 +34,6 @@ type ContentCopy = {
 
 const contentCopy: LocalizedPublished<ContentCopy> = {
   en: {
-    fallbackArticle: "English fallback article — this locale is not indexed.",
     featuredLabel: "Start here",
     allEntriesLabel: "All field notes",
     emptyTitle: "No published updates yet",
@@ -76,8 +74,6 @@ const contentCopy: LocalizedPublished<ContentCopy> = {
     updatesBreadcrumb: "Updates",
   },
   ru: {
-    fallbackArticle:
-      "Статья доступна на английском — эта черновая локаль не индексируется.",
     featuredLabel: "Начните отсюда",
     allEntriesLabel: "Все материалы",
     emptyTitle: "Опубликованных обновлений пока нет",

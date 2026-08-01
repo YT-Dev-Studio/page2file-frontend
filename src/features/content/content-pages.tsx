@@ -8,7 +8,6 @@ import {
   type ContentEntry,
 } from "@/content/content-registry";
 import type { Locale } from "@/shared/i18n/locales";
-import { getLocaleDefinition } from "@/shared/i18n/locales";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
 import {
@@ -137,7 +136,6 @@ export const ContentArticlePage = ({
   locale: Locale;
 }): ReactNode => {
   const Article = entry.component;
-  const definition = getLocaleDefinition(locale);
   const copy = getContentCopy(locale);
   const isBlog = entry.kind === "blog";
   const base = isBlog ? "blog" : "updates";
@@ -171,9 +169,6 @@ export const ContentArticlePage = ({
           lead={entry.description}
           title={entry.title}
         >
-          {!definition.reviewed ? (
-            <div className={styles.draft}>{copy.fallbackArticle}</div>
-          ) : null}
           <div className={styles.articleMeta}>
             <span>{entry.author}</span>
             <time dateTime={entry.updatedAt}>

@@ -5,7 +5,6 @@ import type {
 import { isPublishedLocale } from "@/shared/i18n/locales";
 
 export type LandingUiCopy = {
-  legalDraft: string;
   openGuide: string;
   relatedPages: string;
   stepsLabel: string;
@@ -31,8 +30,6 @@ type MarketingCopy = {
 const marketingCopy: LocalizedPublished<MarketingCopy> = {
   en: {
     landing: {
-      legalDraft:
-        "Draft content — legal owner, jurisdiction and processor review are required before indexing.",
       openGuide: "Open the extension guide",
       relatedPages: "Related workflows",
       stepsLabel: "Workflow details",
@@ -61,8 +58,6 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
   },
   ru: {
     landing: {
-      legalDraft:
-        "Черновой текст — до индексации требуется проверка юридического владельца, юрисдикции и списка обработчиков данных.",
       openGuide: "Открыть руководство по расширению",
       relatedPages: "Связанные сценарии",
       stepsLabel: "Детали сценария",

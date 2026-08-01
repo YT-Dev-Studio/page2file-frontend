@@ -42,8 +42,9 @@ const parseSafeExternalUrl = (value: string | undefined): string => {
   }
 };
 
-type LegalProfile = {
+export type LegalProfile = {
   entityName: string;
+  address: string;
   jurisdiction: string;
   contactEmail: string;
   processors: ReadonlyArray<string>;
@@ -63,6 +64,7 @@ export const indexingEnabled =
 export const legalProfile: LegalProfile = legalProfileData;
 export const legalDetailsComplete =
   legalProfile.entityName.trim().length > 0 &&
+  legalProfile.address.trim().length > 0 &&
   legalProfile.jurisdiction.trim().length > 0 &&
   legalProfile.contactEmail.trim().length > 0 &&
   legalProfile.processors.length > 0;

@@ -18,6 +18,7 @@ import { Container } from "@/shared/ui/site-shell";
 import uiStyles from "@/shared/ui/ui.module.css";
 import { getMarketingCopy } from "./marketing-copy";
 import styles from "./marketing.module.css";
+import { LegalPage } from "./legal-page";
 import { WorkflowLanding } from "./workflow-landing";
 
 const ContentBlock = ({ section }: { section: ContentSection }): ReactNode => {
@@ -46,6 +47,9 @@ export const LandingPage = ({
       <WorkflowLanding content={content} family={family} locale={locale} />
     );
   }
+  if (family === "legal" || family === "security") {
+    return <LegalPage content={content} family={family} locale={locale} />;
+  }
   const sectionBlock = (section: ContentSection): ReactNode => (
     <ContentBlock key={section.heading} section={section} />
   );
@@ -72,11 +76,6 @@ export const LandingPage = ({
     >
       <section className={styles.hero}>
         <Container>
-          {content.legal ? (
-            <div className={styles.draftLegal}>
-              {landing.legalDraft}
-            </div>
-          ) : null}
           <PublicHero
             eyebrow={content.eyebrow}
             lead={content.lead}

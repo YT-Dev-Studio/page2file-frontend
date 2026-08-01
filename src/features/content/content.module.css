@@ -252,15 +252,6 @@
   font-size: 0.9em;
 }
 
-.draft {
-  margin-bottom: var(--p2f-space-24);
-  padding: var(--p2f-space-12) var(--p2f-space-16);
-  border: var(--p2f-border-width-default) solid var(--warning-line);
-  border-radius: var(--p2f-radius-compact);
-  color: var(--warning);
-  background: var(--warning-soft);
-}
-
 .changelog {
   display: grid;
   border-top: var(--p2f-border-width-default) solid

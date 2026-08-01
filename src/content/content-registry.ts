@@ -289,7 +289,7 @@ export const changelogEntries: ReadonlyArray<ChangelogEntry> = [
     date: "2026-07-29",
     added: ["PDF and PowerPoint mock converters", "Section preview operations", "15 locale route shells"],
     improved: ["Consent-first analytics boundary", "Route and content validation"],
-    fixed: ["Draft locales are excluded from sitemap"],
+    fixed: ["Unreviewed locales are excluded from sitemap"],
   },
   {
     version: "0.2.0-prototype",
@@ -320,7 +320,7 @@ const russianChangelogEntries: ReadonlyArray<ChangelogEntry> = [
       "Граница аналитики с предварительным согласием",
       "Проверка маршрутов и контента",
     ],
-    fixed: ["Черновые локали исключены из sitemap"],
+    fixed: ["Непроверенные локали исключены из sitemap"],
   },
   {
     version: "0.2.0-prototype",
