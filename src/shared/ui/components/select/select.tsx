@@ -39,6 +39,7 @@ export type SelectProps = Omit<
   placeholder?: string;
   showHelper?: boolean;
   showLabel?: boolean;
+  showSelectedIcon?: boolean;
 };
 
 const joinDescriptionIds = (
@@ -100,6 +101,7 @@ export const Select = ({
   required,
   showHelper = true,
   showLabel = true,
+  showSelectedIcon = true,
   value,
   ...selectProps
 }: SelectProps): ReactNode => {
@@ -430,7 +432,7 @@ export const Select = ({
                   type="button"
                 >
                   <span className={styles.optionLabel}>{option.label}</span>
-                  {isSelected ? (
+                  {isSelected && showSelectedIcon ? (
                     <span aria-hidden="true" className={styles.check}>
                       <CheckIcon />
                     </span>

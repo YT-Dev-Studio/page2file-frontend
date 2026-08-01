@@ -7,6 +7,34 @@
   margin-inline: auto;
 }
 
+.localeSwitcher {
+  width: 100%;
+  min-width: 0;
+}
+
+.localeControl.localeControl {
+  min-height: var(--p2f-control-size-default);
+  padding-inline: var(--p2f-space-8);
+  border-color: transparent;
+  color: var(--p2f-color-text-secondary);
+  background: transparent;
+  font-family: var(--p2f-font-family-primary);
+  text-align: center;
+}
+
+.localeControl.localeControl:not(:disabled):hover,
+.localeControl.localeControl[aria-expanded="true"] {
+  border-color: transparent;
+  background: var(--p2f-color-background-subtle);
+  box-shadow: none;
+}
+
+.localeControl.localeControl:focus-visible {
+  border-color: transparent;
+  box-shadow: 0 0 0 var(--p2f-interaction-focus-ring-width)
+    var(--p2f-interaction-focus-ring-color);
+}
+
 .button,
 .secondaryButton {
   display: inline-flex;

@@ -80,14 +80,9 @@
 }
 
 .localeSwitcher {
-  min-width: 52px;
-  min-height: var(--p2f-control-size-default);
-  padding: var(--p2f-space-8);
-  border-color: transparent;
-  color: var(--p2f-color-text-secondary);
-  background: transparent;
-  font-family: var(--p2f-font-family-primary);
-  text-align: center;
+  width: 72px;
+  min-width: 72px;
+  flex: 0 0 auto;
 }
 
 .extensionButton {

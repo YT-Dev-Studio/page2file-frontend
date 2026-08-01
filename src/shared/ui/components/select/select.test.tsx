@@ -139,4 +139,33 @@ describe("Select", () => {
     );
     expect(document.querySelector("[data-select-icon]")).toBeNull();
   });
+
+  test("can hide the selected option icon", async () => {
+    const user = userEvent.setup();
+    const { rerender } = render(
+      <Select
+        label="Output format"
+        options={options}
+        value="pdf"
+      />,
+    );
+    const combobox = getCombobox("Output format");
+
+    await user.click(combobox);
+    expect(
+      screen.getByRole("option", { name: "PDF" }).querySelector("svg"),
+    ).not.toBeNull();
+
+    rerender(
+      <Select
+        label="Output format"
+        options={options}
+        showSelectedIcon={false}
+        value="pdf"
+      />,
+    );
+    expect(
+      screen.getByRole("option", { name: "PDF" }).querySelector("svg"),
+    ).toBeNull();
+  });
 });

@@ -4,6 +4,10 @@ import { usePathname, useRouter } from "next/navigation";
 import type { ChangeEvent, ReactNode } from "react";
 import { localeRegistry, replaceLocale, type Locale } from "@/shared/i18n/locales";
 import { getMessages } from "@/shared/i18n/messages";
+import {
+  Select,
+  type SelectOption,
+} from "@/shared/ui/components/select/select";
 import styles from "./ui.module.css";
 
 type LocaleSwitcherProps = {
@@ -20,8 +24,8 @@ export const LocaleSwitcher = ({
   const pathname = usePathname();
   const router = useRouter();
   const messages = getMessages(locale);
-  const controlClassName =
-    `${styles.localeControl} ${className ?? ""}`.trim();
+  const switcherClassName =
+    `${styles.localeSwitcher} ${className ?? ""}`.trim();
 
   const handleLocaleChange = (event: ChangeEvent<HTMLSelectElement>): void => {
     const nextLocale = event.target.value as Locale;
@@ -30,25 +34,27 @@ export const LocaleSwitcher = ({
 
   const localeOption = (
     definition: (typeof localeRegistry)[number],
-  ): ReactNode => (
-    <option key={definition.code} value={definition.code}>
-      {display === "code"
+  ): SelectOption => ({
+    label:
+      display === "code"
         ? definition.code.toUpperCase()
-        : definition.languageName}
-    </option>
-  );
+        : definition.languageName,
+    value: definition.code,
+  });
+  const localeOptions = localeRegistry.map(localeOption);
 
   return (
-    <label>
-      <span className="srOnly">{messages.shell.language}</span>
-      <select
-        aria-label={messages.shell.language}
-        className={controlClassName}
+    <div className={switcherClassName}>
+      <Select
+        className={styles.localeControl}
+        label={messages.shell.language}
         onChange={handleLocaleChange}
+        options={localeOptions}
+        showHelper={false}
+        showLabel={false}
+        showSelectedIcon={false}
         value={locale}
-      >
-        {localeRegistry.map(localeOption)}
-      </select>
-    </label>
+      />
+    </div>
   );
 };
