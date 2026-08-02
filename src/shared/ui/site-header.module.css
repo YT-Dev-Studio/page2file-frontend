@@ -88,7 +88,7 @@
   gap: var(--p2f-space-12);
 }
 
-.localeSwitcher {
+.localeSwitcher.localeSwitcher {
   width: 88px;
   min-width: 88px;
   flex: 0 0 auto;
