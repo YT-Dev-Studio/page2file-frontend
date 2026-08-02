@@ -1,7 +1,4 @@
-import type {
-  ConversionFormat,
-  MockScenario,
-} from "@/entities/conversion/model";
+import type { ConversionFormat } from "@/entities/conversion/model";
 import type {
   Locale,
   LocalizedPublished,
@@ -23,7 +20,6 @@ type ConverterCopy = {
   reviewTitle: string;
   extensionTitle: string;
   extensionBody: string;
-  prototypeNotice: string;
   visualTitle: string;
   visualText: string;
   editableTitle: string;
@@ -33,10 +29,7 @@ type ConverterCopy = {
   privateQuestion: string;
   extensionLink: string;
   modeLegend: string;
-  demoState: string;
-  demoHint: string;
   submit: Record<ConversionFormat, string>;
-  scenarios: Record<MockScenario, string>;
   validation: Record<UrlValidationCode, string>;
 };
 
@@ -65,8 +58,6 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
     extensionTitle: "Need the page as it appears after sign-in?",
     extensionBody:
       "Capture the current signed-in tab locally, then review the result before downloading.",
-    prototypeNotice:
-      "This prototype never fetches the entered URL. It demonstrates the intended review flow with deterministic sample data.",
     visualTitle: "Visual mode",
     visualText: "Highest layout fidelity through section images.",
     editableTitle: "Editable mode",
@@ -78,23 +69,9 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
     privateQuestion: "Signed-in or private page?",
     extensionLink: "Use the extension workflow",
     modeLegend: "Conversion mode",
-    demoState: "DEMO STATE",
-    demoHint:
-      "Select a deterministic state without contacting the entered URL.",
     submit: {
       pdf: "Generate PDF preview",
       pptx: "Generate PowerPoint preview",
-    },
-    scenarios: {
-      happy: "Happy path",
-      "partial-warning": "Partial fallback warning",
-      "human-verification": "Human verification",
-      "rate-limited": "Rate limited",
-      "source-blocked": "Source blocked / auth required",
-      "page-too-large": "Page too large",
-      timeout: "Timeout",
-      expired: "Expired",
-      failed: "Recoverable failure",
     },
     validation: {
       empty: "Enter a URL.",
@@ -129,8 +106,6 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
     extensionTitle: "Нужна страница в том виде, как она выглядит после входа?",
     extensionBody:
       "Сохраните текущую вкладку локально в Chrome и проверьте результат перед скачиванием.",
-    prototypeNotice:
-      "Прототип не загружает введённый URL. Он показывает будущий процесс проверки на детерминированных демонстрационных данных.",
     visualTitle: "Визуальный режим",
     visualText: "Максимальная точность макета благодаря изображениям секций.",
     editableTitle: "Редактируемый режим",
@@ -142,23 +117,9 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
     privateQuestion: "Страница закрыта или требует входа?",
     extensionLink: "Используйте расширение",
     modeLegend: "Режим конвертации",
-    demoState: "ДЕМО-СОСТОЯНИЕ",
-    demoHint:
-      "Выберите детерминированное состояние без обращения к введённому URL.",
     submit: {
       pdf: "Создать предпросмотр PDF",
       pptx: "Создать предпросмотр PowerPoint",
-    },
-    scenarios: {
-      happy: "Успешный сценарий",
-      "partial-warning": "Частичная визуальная замена",
-      "human-verification": "Проверка пользователя",
-      "rate-limited": "Превышен лимит",
-      "source-blocked": "Источник закрыт / требуется вход",
-      "page-too-large": "Страница слишком большая",
-      timeout: "Истекло время ожидания",
-      expired: "Предпросмотр истёк",
-      failed: "Восстанавливаемая ошибка",
     },
     validation: {
       empty: "Введите URL.",

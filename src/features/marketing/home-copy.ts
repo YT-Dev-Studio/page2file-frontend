@@ -17,7 +17,6 @@ export type HomeCopy = {
   title: string;
   lead: string;
   form: {
-    demoAction: string;
     formatLabel: string;
     meta: string;
     pdfModeLabel: string;
@@ -99,7 +98,6 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
     lead:
       "Paste a link to a public page. Page2File carefully splits it into PDF pages or PowerPoint slides — with a preview before download.",
     form: {
-      demoAction: "DEMO",
       formatLabel: "Format",
       meta: "No registration · Preview · Temporary files",
       pdfModeLabel: "PDF mode",
@@ -274,7 +272,6 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
     lead:
       "Вставьте ссылку на публичную страницу. Page2File аккуратно разделит её на страницы PDF или слайды PowerPoint — с предпросмотром перед скачиванием.",
     form: {
-      demoAction: "ДЕМО",
       formatLabel: "Формат",
       meta: "Без регистрации · Предпросмотр · Временные файлы",
       pdfModeLabel: "Режим PDF",
@@ -295,7 +292,7 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
       urlPlaceholder: "https://example.com/article",
     },
     converterFlow: {
-      backAction: "Вернуться к настройкам",
+      backAction: "Вернуться назад",
       processingBody:
         "Анализируем страницу и готовим файл в выбранном формате.",
       processingTitle: "Готовим ваш файл",

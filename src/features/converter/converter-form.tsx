@@ -3,20 +3,11 @@
 import { useRouter } from "next/navigation";
 import type { ChangeEvent, FormEvent, ReactNode } from "react";
 import { useState } from "react";
-import type {
-  ConversionFormat,
-  ConversionMode,
-  MockScenario,
-} from "@/entities/conversion/model";
+import type { ConversionFormat, ConversionMode } from "@/entities/conversion/model";
 import type { Locale } from "@/shared/i18n/locales";
 import { getMessages } from "@/shared/i18n/messages";
-import { Select } from "@/shared/ui/components/select/select";
-import {
-  conversionAdapter,
-  mockControlsEnabled,
-} from "@/shared/config/site";
+import { conversionEnabled } from "@/shared/config/site";
 import { getConversionRuntimeCopy } from "./conversion-runtime-copy";
-import { createMockPreview, mockScenarios } from "./mock-adapter";
 import {
   ConversionApiError,
   createRealPreview,
@@ -41,7 +32,6 @@ export const ConverterForm = ({
   const router = useRouter();
   const [sourceUrl, setSourceUrl] = useState("https://example.com/long-article");
   const [mode, setMode] = useState<ConversionMode>("visual");
-  const [scenario, setScenario] = useState<MockScenario>("happy");
   const [error, setError] = useState("");
   const [submissionStatus, setSubmissionStatus] = useState<
     "idle" | "submitting"
@@ -56,13 +46,13 @@ export const ConverterForm = ({
   const handleModeChange = (event: ChangeEvent<HTMLInputElement>): void => {
     setMode(event.target.value === "editable" ? "editable" : "visual");
   };
-  const handleScenarioChange = (event: ChangeEvent<HTMLSelectElement>): void => {
-    setScenario(event.target.value as MockScenario);
-  };
   const handleSubmit = async (
     event: FormEvent<HTMLFormElement>,
   ): Promise<void> => {
     event.preventDefault();
+
+    if (!conversionEnabled) return;
+
     const validation = validatePublicUrl(sourceUrl);
     if (!validation.valid) {
       setError(copy.validation[validation.code]);
@@ -71,16 +61,6 @@ export const ConverterForm = ({
     }
     setSubmissionStatus("submitting");
     try {
-      if (conversionAdapter === "mock") {
-        const job = createMockPreview({
-          sourceUrl: validation.normalizedUrl,
-          format,
-          mode,
-          scenario,
-        });
-        router.push(`/${locale}/preview/${job.jobId}?mode=${job.mode}`);
-        return;
-      }
       const job = await createRealPreview({
         source: { kind: "url", value: validation.normalizedUrl },
         output: format,
@@ -136,22 +116,9 @@ export const ConverterForm = ({
         </label>
       </fieldset>
 
-      {conversionAdapter === "mock" && mockControlsEnabled ? (
-        <Select
-          helper={copy.demoHint}
-          label={copy.demoState}
-          onChange={handleScenarioChange}
-          options={mockScenarios.map((item) => ({
-            label: copy.scenarios[item.value],
-            value: item.value,
-          }))}
-          value={scenario}
-        />
-      ) : null}
-
       <button
         className={styles.submit}
-        disabled={submissionStatus === "submitting"}
+        disabled={!conversionEnabled || submissionStatus === "submitting"}
         type="submit"
       >
         {submissionStatus === "submitting"

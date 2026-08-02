@@ -78,6 +78,7 @@ export const mockControlsEnabled =
   process.env.NODE_ENV === "development";
 
 export type ConversionAdapter = "mock" | "real";
+export const conversionEnabled = false;
 
 const requestedConversionAdapter =
   process.env.NEXT_PUBLIC_CONVERSION_ADAPTER === "mock" ? "mock" : "real";

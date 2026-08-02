@@ -13,7 +13,7 @@ import type {
   ConversionFormat,
   ConversionMode,
 } from "@/entities/conversion/model";
-import { conversionAdapter } from "@/shared/config/site";
+import { conversionEnabled } from "@/shared/config/site";
 import { Button } from "@/shared/ui/components/button/button";
 import {
   Select,
@@ -22,7 +22,6 @@ import {
 import type { Locale } from "@/shared/i18n/locales";
 import { DownloadIcon } from "@/shared/ui/utilities/icons/glyphs/download-icon";
 import { getConversionRuntimeCopy } from "@/features/converter/conversion-runtime-copy";
-import { createMockPreview } from "@/features/converter/mock-adapter";
 import {
   ConversionApiError,
   createRealPreview,
@@ -44,7 +43,6 @@ const formatOptions: ReadonlyArray<SelectOption> = [
   { label: "PDF", value: "pdf" },
   { label: "PowerPoint", value: "pptx" },
 ];
-const demoSourceUrl = "https://example.com/article";
 const processingStatuses: ReadonlySet<BackendJob["status"]> = new Set([
   "accepted",
   "queued",
@@ -60,7 +58,6 @@ const failedStatuses: ReadonlySet<BackendJob["status"]> = new Set([
   "cancelled",
   "expired",
 ]);
-const demoProgressSteps: ReadonlyArray<number> = [12, 28, 49, 73, 91, 100];
 
 const wait = async (duration: number): Promise<void> =>
   new Promise((resolve): void => {
@@ -121,52 +118,6 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
 
     setError(runtimeCopy.errors[localizedCode]);
     setFlow({ status: "form" });
-  };
-
-  const runDemoFlow = async (
-    selectedFormat: ConversionFormat,
-    selectedMode: ConversionMode,
-    mockSourceUrl: string = demoSourceUrl,
-  ): Promise<void> => {
-    const runId = ++runIdRef.current;
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    const job = createMockPreview({
-      format: selectedFormat,
-      mode: selectedMode,
-      scenario: "happy",
-      sourceUrl: mockSourceUrl,
-    });
-    const mockDownloadUrl =
-      `/${locale}/download/${job.jobId}?mode=${job.mode}`;
-    setFlow({
-      format: selectedFormat,
-      mode: selectedMode,
-      progress: 4,
-      status: "processing",
-    });
-
-    for (const progress of demoProgressSteps) {
-      await wait(reduceMotion ? 40 : 480);
-      if (runId !== runIdRef.current) return;
-      setFlow({
-        format: selectedFormat,
-        mode: selectedMode,
-        progress,
-        status: "processing",
-      });
-    }
-
-    await wait(reduceMotion ? 0 : 180);
-    if (runId !== runIdRef.current) return;
-    setFlow({
-      downloadUrl: mockDownloadUrl,
-      format: selectedFormat,
-      mode: selectedMode,
-      status: "ready",
-    });
   };
 
   const runRealFlow = async (
@@ -251,6 +202,9 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
     event: FormEvent<HTMLFormElement>,
   ): Promise<void> => {
     event.preventDefault();
+
+    if (!conversionEnabled) return;
+
     const validation = validatePublicUrl(sourceUrl);
 
     if (!validation.valid) {
@@ -259,18 +213,7 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
       return;
     }
 
-    if (conversionAdapter === "mock") {
-      void runDemoFlow(format, mode, validation.normalizedUrl);
-      return;
-    }
-
     await runRealFlow(validation.normalizedUrl, format, mode);
-  };
-
-  const handleDemo = (): void => {
-    setSourceUrl(demoSourceUrl);
-    setError("");
-    void runDemoFlow(format, mode);
   };
 
   const handleBack = (): void => {
@@ -330,17 +273,8 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
               <span>{copy.form.meta}</span>
               <div className={styles.formActions}>
                 <Button
-                  className={styles.demoButton}
-                  onClick={handleDemo}
-                  showIcon={false}
-                  size="medium"
-                  type="button"
-                  variant="secondary"
-                >
-                  {copy.form.demoAction}
-                </Button>
-                <Button
                   className={styles.submitButton}
+                  disabled={!conversionEnabled}
                   icon={<DownloadIcon />}
                   size="medium"
                   type="submit"

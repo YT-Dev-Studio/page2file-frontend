@@ -172,10 +172,6 @@
   gap: var(--p2f-space-12);
 }
 
-.demoButton.demoButton {
-  flex: 0 0 auto;
-}
-
 .submitButton.submitButton {
   flex: 0 0 auto;
   color: var(--p2f-color-text-inverse);
@@ -188,6 +184,11 @@
 .submitButton.submitButton:not(:disabled):hover {
   color: var(--p2f-color-text-primary);
   background: var(--p2f-color-coral-ink-300);
+}
+
+.submitButton.submitButton:disabled {
+  color: #98a2cd;
+  background: var(--p2f-color-background-disabled);
 }
 
 .closingNote {
@@ -584,11 +585,16 @@
 }
 
 .stepTitle {
+  display: inline-flex;
+  width: fit-content;
+  padding: var(--p2f-space-4) var(--p2f-space-12);
+  border-radius: var(--p2f-radius-compact);
   color: var(--p2f-color-text-brand);
-  font-size: var(--p2f-type-heading-h2-font-size);
-  font-weight: var(--p2f-type-heading-h2-font-weight);
-  line-height: var(--p2f-type-heading-h2-line-height);
-  letter-spacing: var(--p2f-type-heading-h2-letter-spacing);
+  background: var(--p2f-color-gel-blue-300);
+  font-size: var(--p2f-type-label-medium-font-size);
+  font-weight: var(--p2f-type-label-medium-font-weight);
+  line-height: var(--p2f-type-label-medium-line-height);
+  letter-spacing: var(--p2f-type-label-medium-letter-spacing);
 }
 
 .howCardTitle {
@@ -875,14 +881,12 @@
   }
 
   .formActions,
-  .demoButton,
   .submitButton {
     width: 100%;
   }
 
   .formActions {
-    display: grid;
-    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+    display: block;
   }
 
   .backButton.backButton {

@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import type { ConversionFormat } from "@/entities/conversion/model";
 import type { Locale } from "@/shared/i18n/locales";
-import { conversionAdapter } from "@/shared/config/site";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { ExtensionPromoBanner } from "@/shared/ui/extension-promo-banner";
 import { Container } from "@/shared/ui/site-shell";
@@ -51,9 +50,7 @@ export const ConverterPage = ({
               </div>
             </header>
             <p className={styles.runtimeNotice}>
-              {conversionAdapter === "mock"
-                ? copy.prototypeNotice
-                : runtimeCopy.runtimeNotice}
+              {runtimeCopy.runtimeNotice}
             </p>
             <ol className={styles.asideList}>
               <li>

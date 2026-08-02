@@ -63,13 +63,13 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
   };
   const step = (item: (typeof copy.steps)[number]): ReactNode => (
     <article className={styles.step} key={item.number}>
+      <span className={styles.stepNumber}>
+        {copy.stepLabel} {item.number}
+      </span>
       <div className={styles.media}>
         <Image alt={item.imageAlt} height={480} src={item.image} width={720} />
       </div>
-      <div>
-        <span className={styles.stepNumber}>
-          {copy.stepLabel} {item.number}
-        </span>
+      <div className={styles.stepContent}>
         <h2>{item.title}</h2>
         <p>{item.body}</p>
       </div>

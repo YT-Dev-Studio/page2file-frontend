@@ -92,6 +92,10 @@
   text-align: center;
 }
 
+.stepContent {
+  grid-column: 3;
+}
+
 .step h2,
 .step p {
   margin: 0;
@@ -188,6 +192,10 @@
     grid-column: 2;
   }
 
+  .stepContent {
+    grid-column: 2;
+  }
+
   .videoGrid {
     grid-template-columns: 1fr;
   }
@@ -232,5 +240,9 @@
   .media {
     grid-column: 1 / -1;
     margin-left: calc(var(--p2f-control-size-compact) + var(--p2f-space-16));
+  }
+
+  .stepContent {
+    grid-column: 2;
   }
 }

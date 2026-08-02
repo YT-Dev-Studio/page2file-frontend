@@ -148,8 +148,10 @@
 }
 
 .submit:disabled {
-  cursor: wait;
-  opacity: 0.72;
+  border-color: var(--p2f-color-border-default);
+  color: #98a2cd;
+  background: var(--p2f-color-background-disabled);
+  cursor: not-allowed;
 }
 
 .runtimeNotice {
