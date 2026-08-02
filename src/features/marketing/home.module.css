@@ -664,29 +664,29 @@
     background-color 220ms ease;
 }
 
-.faqSummary {
+.faqHeading {
+  margin: 0;
+}
+
+.faqButton {
   display: grid;
+  width: 100%;
   min-height: 72px;
   grid-template-columns: minmax(0, 1fr) var(--p2f-icon-size-large);
   align-items: center;
   padding: var(--p2f-space-24);
   gap: var(--p2f-space-16);
+  border: 0;
   border-radius: var(--p2f-radius-card);
+  color: inherit;
+  background: transparent;
   outline: none;
+  font: inherit;
+  text-align: left;
   cursor: pointer;
-  list-style: none;
 }
 
-.faqSummary::-webkit-details-marker {
-  display: none;
-}
-
-.faqSummary::marker {
-  content: "";
-}
-
-.faqSummary h3 {
-  margin: 0;
+.faqButton > span:first-child {
   color: var(--p2f-color-text-primary);
   font-size: var(--p2f-type-heading-h3-font-size);
   font-weight: var(--p2f-type-heading-h3-font-weight);
@@ -694,7 +694,7 @@
   letter-spacing: var(--p2f-type-heading-h3-letter-spacing);
 }
 
-.faqSummary:focus-visible {
+.faqButton:focus-visible {
   box-shadow: inset 0 0 0 var(--p2f-interaction-focus-ring-width)
     var(--p2f-interaction-focus-ring-color);
 }
@@ -727,9 +727,28 @@
   transform: rotate(90deg);
 }
 
-.faqItem[open] .faqToggleIcon {
+.faqItemOpen .faqToggleIcon {
   color: var(--p2f-color-text-brand);
   transform: rotate(45deg);
+}
+
+.faqAnswerGrid {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 270ms ease,
+    opacity 240ms ease;
+}
+
+.faqItemOpen .faqAnswerGrid {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.faqAnswerClip {
+  min-height: 0;
+  overflow: hidden;
 }
 
 .faqAnswer {
@@ -760,7 +779,8 @@
   transition: transform 220ms ease;
 }
 
-.faqSummary:focus-visible + .faqRail {
+.faqHeading:has(.faqButton:focus-visible) + .faqRail,
+.faqItemOpen .faqRail {
   transform: scaleY(1);
 }
 
@@ -915,7 +935,7 @@
     grid-template-columns: 1fr;
   }
 
-  .faqSummary {
+  .faqButton {
     min-height: 64px;
     padding: var(--p2f-space-16);
   }
@@ -990,6 +1010,7 @@
   }
 
   .faqItem,
+  .faqAnswerGrid,
   .faqToggleIcon,
   .faqRail {
     transition: none;
