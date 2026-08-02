@@ -8,7 +8,8 @@ export type LandingUiCopy = {
   openGuide: string;
   relatedPages: string;
   stepsLabel: string;
-  tryPrototype: string;
+  tryPdfConverter: string;
+  tryPowerPointConverter: string;
 };
 
 type MarketingCopy = {
@@ -33,7 +34,8 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
       openGuide: "Open the extension guide",
       relatedPages: "Related workflows",
       stepsLabel: "Workflow details",
-      tryPrototype: "Open the web converter",
+      tryPdfConverter: "Open the Web 2 PDF converter",
+      tryPowerPointConverter: "Open the Web 2 PowerPoint converter",
     },
     gptWorkflow: {
       detailsTitle: "A bounded path from instruction to file",
@@ -61,7 +63,8 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
       openGuide: "Открыть руководство по расширению",
       relatedPages: "Связанные сценарии",
       stepsLabel: "Детали сценария",
-      tryPrototype: "Открыть веб-конвертер",
+      tryPdfConverter: "Открыть конвертер Web 2 PDF",
+      tryPowerPointConverter: "Открыть конвертер Web 2 PowerPoint",
     },
     gptWorkflow: {
       detailsTitle: "Контролируемый путь от инструкции до файла",

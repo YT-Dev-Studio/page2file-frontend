@@ -51,14 +51,14 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     title: "Turn one public webpage into a reviewed PDF",
     description: "Use the Page2PDF GPT workflow to convert one public HTTPS webpage into a visual or editable PDF with mandatory preview and visible limitations.",
     lead:
-      "Give the GPT one public HTTPS URL, choose visual or editable output, and review the generated preview before downloading.",
+      "Bring one public link. Page2PDF helps you choose visual fidelity or editable structure, then pauses for a deliberate check of page breaks and clickable links before the PDF is created.",
     sections: [
       { heading: "One URL, one document", body: "This focused workflow avoids crawling and keeps the source boundary easy to understand." },
       { heading: "Preview stays mandatory", body: "Font substitutions, raster fallbacks and removed unsafe links must be visible before final render." },
       { heading: "Public pages only", body: "Paywalls, login pages and private tabs are not bypassed. Use the browser extension for those sources." },
     ],
     externalLinkKey: "page2pdfGpt",
-    primaryLabel: "Open Page2PDF GPT",
+    primaryLabel: "Open Page2PDF in ChatGPT",
     relatedRoutes: gptRelatedRoutes,
   },
   "web2pdf-gpt": {
@@ -67,14 +67,14 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     title: "Collect a small website into one organized PDF",
     description: "Use the Web2PDF GPT workflow for a bounded same-origin website crawl with explicit page limits, organized PDF output and reviewable failures.",
     lead:
-      "Start from one public URL and collect a bounded set of same-origin pages into a merged document with page titles and bookmarks.",
+      "Turn a small, clearly bounded website into one navigable document: choose the same-origin pages, preserve their intended order, and add page titles and bookmarks before export.",
     sections: [
       { heading: "A crawl with visible limits", body: "Depth, page count, redirects and duplicate URLs are constrained before work begins." },
       { heading: "Same-origin by default", body: "External links remain links; they do not silently expand the crawl boundary." },
       { heading: "Respectful collection", body: "Authenticated areas are excluded, and production policy will define robots and rate limits." },
     ],
     externalLinkKey: "web2pdfGpt",
-    primaryLabel: "Open Web2PDF GPT",
+    primaryLabel: "Open Web2PDF in ChatGPT",
     relatedRoutes: gptRelatedRoutes,
   },
   "html2pdf-gpt": {
@@ -83,14 +83,14 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     title: "Render supplied HTML without trusting its scripts",
     description: "Use the HTML2PDF GPT workflow for bounded HTML and inline CSS conversion in a planned sandbox with scripts and external network access disabled.",
     lead:
-      "Provide bounded HTML and inline CSS. Scripts and network access stay disabled in the planned backend sandbox.",
+      "Bring controlled HTML and inline CSS to a focused renderer where scripts and network requests stay off, while compatibility warnings remain visible before you commit to the PDF.",
     sections: [
       { heading: "Small, explicit input", body: "The first backend version accepts a document fragment, not a ZIP or arbitrary project." },
       { heading: "Network disabled", body: "The renderer must not use the supplied HTML to reach internal services or fetch unknown resources." },
       { heading: "Honest compatibility", body: "Unsupported fonts, media and complex graphics are surfaced as preview warnings." },
     ],
     externalLinkKey: "html2pdfGpt",
-    primaryLabel: "Open HTML2PDF GPT",
+    primaryLabel: "Open HTML2PDF in ChatGPT",
     relatedRoutes: gptRelatedRoutes,
   },
   "web2powerpoint-gpt": {
@@ -99,14 +99,14 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     title: "Translate webpage sections into presentation slides",
     description: "Use the Web2PowerPoint GPT workflow to turn meaningful public webpage sections into visual or editable 16:9 slides with preview warnings.",
     lead:
-      "Turn the meaningful sections of a public webpage into a 16:9 deck, then review slide boundaries before download.",
+      "Transform the story of a public webpage into a focused 16:9 deck: map meaningful sections to slides, choose visual or editable output, and review every slide boundary.",
     sections: [
       { heading: "Sections become slides", body: "Headings and visual breaks guide the initial deck structure instead of arbitrary viewport screenshots." },
       { heading: "Visual or editable", body: "Choose high-fidelity slide images or editable text and shapes with adaptive raster fallback." },
       { heading: "Presentation limits are visible", body: "Animations, video and unsupported fonts become posters, substitutions or warnings." },
     ],
     externalLinkKey: "web2powerpointGpt",
-    primaryLabel: "Open Web2PowerPoint GPT",
+    primaryLabel: "Open Web2PowerPoint in ChatGPT",
     relatedRoutes: gptRelatedRoutes,
   },
   "export-ai-chat-to-pdf": {

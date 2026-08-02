@@ -25,7 +25,7 @@ export const russianLandingContent: Partial<
     title: "Превратите одну открытую веб-страницу в проверенный PDF",
     description:
       "Используйте Page2PDF GPT для конвертации одного общедоступного HTTPS URL в визуальный или редактируемый PDF с обязательным предпросмотром.",
-    lead: "Передайте GPT один открытый HTTPS URL, выберите визуальный или редактируемый режим и проверьте результат до скачивания.",
+    lead: "Передайте одну публичную ссылку. Page2PDF поможет выбрать визуальную точность или редактируемую структуру, а перед созданием PDF предложит проверить разрывы страниц и кликабельные ссылки.",
     sections: [
       {
         heading: "Один URL — один документ",
@@ -41,7 +41,7 @@ export const russianLandingContent: Partial<
       },
     ],
     externalLinkKey: "page2pdfGpt",
-    primaryLabel: "Открыть Page2PDF GPT",
+    primaryLabel: "Открыть Page2PDF в ChatGPT",
     relatedRoutes: gptRelatedRoutes,
   },
   "web2pdf-gpt": {
@@ -50,7 +50,7 @@ export const russianLandingContent: Partial<
     title: "Соберите небольшой сайт в один структурированный PDF",
     description:
       "Используйте Web2PDF GPT для ограниченного same-origin обхода сайта с явным лимитом страниц, структурированным PDF и видимыми ошибками.",
-    lead: "Начните с одного открытого URL и соберите ограниченное число страниц того же origin в документ с заголовками и закладками.",
+    lead: "Соберите небольшой, чётко ограниченный сайт в один удобный документ: выберите страницы того же origin, задайте их порядок и добавьте заголовки с закладками.",
     sections: [
       {
         heading: "Обход с видимыми ограничениями",
@@ -66,7 +66,7 @@ export const russianLandingContent: Partial<
       },
     ],
     externalLinkKey: "web2pdfGpt",
-    primaryLabel: "Открыть Web2PDF GPT",
+    primaryLabel: "Открыть Web2PDF в ChatGPT",
     relatedRoutes: gptRelatedRoutes,
   },
   "html2pdf-gpt": {
@@ -75,7 +75,7 @@ export const russianLandingContent: Partial<
     title: "Рендеринг HTML без доверия к его скриптам",
     description:
       "Используйте HTML2PDF GPT для изолированной конвертации ограниченного HTML и встроенного CSS с отключёнными скриптами и сетевым доступом.",
-    lead: "Передайте ограниченный HTML и inline CSS. В планируемой backend-песочнице скрипты и сетевой доступ будут отключены.",
+    lead: "Передайте контролируемый HTML и inline CSS в изолированный сценарий без скриптов и сетевых запросов. Предупреждения о совместимости останутся видимыми до создания PDF.",
     sections: [
       {
         heading: "Небольшой и явный ввод",
@@ -91,7 +91,7 @@ export const russianLandingContent: Partial<
       },
     ],
     externalLinkKey: "html2pdfGpt",
-    primaryLabel: "Открыть HTML2PDF GPT",
+    primaryLabel: "Открыть HTML2PDF в ChatGPT",
     relatedRoutes: gptRelatedRoutes,
   },
   "web2powerpoint-gpt": {
@@ -100,7 +100,7 @@ export const russianLandingContent: Partial<
     title: "Перенесите секции веб-страницы на слайды",
     description:
       "Используйте Web2PowerPoint GPT для конвертации смысловых секций открытой веб-страницы в визуальные или редактируемые слайды 16:9.",
-    lead: "Превратите значимые секции открытой страницы в презентацию 16:9 и проверьте границы слайдов до скачивания.",
+    lead: "Превратите логику открытой страницы в собранную презентацию 16:9: распределите смысловые секции по слайдам, выберите визуальный или редактируемый режим и проверьте каждую границу.",
     sections: [
       {
         heading: "Секции становятся слайдами",
@@ -116,7 +116,7 @@ export const russianLandingContent: Partial<
       },
     ],
     externalLinkKey: "web2powerpointGpt",
-    primaryLabel: "Открыть Web2PowerPoint GPT",
+    primaryLabel: "Открыть Web2PowerPoint в ChatGPT",
     relatedRoutes: gptRelatedRoutes,
   },
   "export-ai-chat-to-pdf": {

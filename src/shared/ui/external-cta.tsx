@@ -17,8 +17,11 @@ export const ExternalCta = ({
   const href = externalLinks[externalLinkKey];
   if (!href) {
     return (
-      <span className={`${styles.secondaryButton} ${styles.disabledButton}`} aria-disabled="true">
-        {comingSoonLabel}
+      <span
+        aria-disabled="true"
+        className={`${styles.secondaryButton} ${styles.disabledButton}`}
+      >
+        {label} · {comingSoonLabel}
       </span>
     );
   }

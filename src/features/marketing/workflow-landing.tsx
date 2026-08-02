@@ -33,14 +33,19 @@ export const WorkflowLanding = ({
   const copy = getMarketingCopy(locale);
   const workflowCopy =
     family === "gpt-workflow" ? copy.gptWorkflow : copy.chatWorkflow;
+  const isPowerPointGpt = content.route === "web2powerpoint-gpt";
   const secondaryHref =
-    family === "gpt-workflow"
-      ? `/${locale}/convert-webpage-to-pdf`
-      : `/${locale}/chrome-extension/how-to-use`;
+    family === "chat-export"
+      ? `/${locale}/chrome-extension/how-to-use`
+      : isPowerPointGpt
+        ? `/${locale}/convert-webpage-to-powerpoint`
+        : `/${locale}/convert-webpage-to-pdf`;
   const secondaryLabel =
-    family === "gpt-workflow"
-      ? copy.landing.tryPrototype
-      : copy.landing.openGuide;
+    family === "chat-export"
+      ? copy.landing.openGuide
+      : isPowerPointGpt
+        ? copy.landing.tryPowerPointConverter
+        : copy.landing.tryPdfConverter;
   const relatedRoutes = content.relatedRoutes?.filter(
     (relatedRoute: RelatedRoute): boolean =>
       relatedRoute.route !== content.route,
