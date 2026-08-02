@@ -6,6 +6,8 @@ import { isPublishedLocale } from "@/shared/i18n/locales";
 
 export type LandingUiCopy = {
   openGuide: string;
+  previousScenario: string;
+  nextScenario: string;
   relatedPages: string;
   stepsLabel: string;
   tryPdfConverter: string;
@@ -32,6 +34,8 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
   en: {
     landing: {
       openGuide: "Open the extension guide",
+      previousScenario: "Previous related workflow",
+      nextScenario: "Next related workflow",
       relatedPages: "Related workflows",
       stepsLabel: "Workflow details",
       tryPdfConverter: "Open the Web 2 PDF converter",
@@ -61,6 +65,8 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
   ru: {
     landing: {
       openGuide: "Открыть руководство по расширению",
+      previousScenario: "Предыдущий связанный сценарий",
+      nextScenario: "Следующий связанный сценарий",
       relatedPages: "Связанные сценарии",
       stepsLabel: "Детали сценария",
       tryPdfConverter: "Открыть конвертер Web 2 PDF",

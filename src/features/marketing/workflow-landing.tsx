@@ -1,9 +1,10 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import type {
-  ContentSection,
-  LandingContent,
-  RelatedRoute,
+import {
+  getLandingContent,
+  type ContentSection,
+  type LandingContent,
+  type RelatedRoute,
 } from "@/content/landings";
 import type { Locale } from "@/shared/i18n/locales";
 import { getMessages } from "@/shared/i18n/messages";
@@ -13,6 +14,10 @@ import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
 import uiStyles from "@/shared/ui/ui.module.css";
 import { getMarketingCopy } from "./marketing-copy";
+import {
+  RelatedScenariosCarousel,
+  type RelatedScenarioItem,
+} from "./related-scenarios-carousel";
 import styles from "./workflow-landing.module.css";
 
 type WorkflowLandingProps = {
@@ -50,6 +55,24 @@ export const WorkflowLanding = ({
     (relatedRoute: RelatedRoute): boolean =>
       relatedRoute.route !== content.route,
   );
+  const relatedItems = relatedRoutes?.flatMap(
+    (relatedRoute: RelatedRoute): ReadonlyArray<RelatedScenarioItem> => {
+      const targetContent = getLandingContent(
+        locale,
+        relatedRoute.route,
+      );
+
+      return targetContent
+        ? [
+            {
+              description: targetContent.description,
+              href: `/${locale}/${relatedRoute.route}`,
+              title: relatedRoute.label,
+            },
+          ]
+        : [];
+    },
+  );
   const workflowStep = (
     label: string,
     index: number,
@@ -81,12 +104,6 @@ export const WorkflowLanding = ({
       </div>
     </li>
   );
-  const relatedLink = (relatedRoute: RelatedRoute): ReactNode => (
-    <Link href={`/${locale}/${relatedRoute.route}`} key={relatedRoute.route}>
-      {relatedRoute.label}
-    </Link>
-  );
-
   return (
     <PublicPage className={styles.page} family={family}>
       <Container>
@@ -131,14 +148,13 @@ export const WorkflowLanding = ({
           </div>
         </section>
 
-        {relatedRoutes && relatedRoutes.length > 0 ? (
-          <nav
-            aria-label={copy.landing.relatedPages}
-            className={styles.related}
-          >
-            <h2>{copy.landing.relatedPages}</h2>
-            <div>{relatedRoutes.map(relatedLink)}</div>
-          </nav>
+        {relatedItems && relatedItems.length > 0 ? (
+          <RelatedScenariosCarousel
+            heading={copy.landing.relatedPages}
+            items={relatedItems}
+            nextLabel={copy.landing.nextScenario}
+            previousLabel={copy.landing.previousScenario}
+          />
         ) : null}
       </Container>
     </PublicPage>

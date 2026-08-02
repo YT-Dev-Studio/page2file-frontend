@@ -171,34 +171,6 @@
   color: var(--p2f-color-text-secondary);
 }
 
-.related {
-  margin-top: var(--p2f-space-48);
-  padding-top: var(--p2f-space-24);
-  border-top: var(--p2f-border-width-default) solid
-    var(--p2f-color-border-default);
-}
-
-.related h2 {
-  margin: 0;
-  color: var(--p2f-color-text-brand);
-  font-size: var(--p2f-type-heading-h3-font-size);
-}
-
-.related div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--p2f-space-8) var(--p2f-space-16);
-  margin-top: var(--p2f-space-16);
-}
-
-.related a {
-  color: var(--p2f-color-text-link);
-  font-weight: var(--p2f-font-weight-semibold);
-  text-decoration: underline;
-  text-decoration-thickness: var(--p2f-border-width-default);
-  text-underline-offset: var(--p2f-space-4);
-}
-
 @media (max-width: 900px) {
   .heroLayout,
   .detailsLayout {
