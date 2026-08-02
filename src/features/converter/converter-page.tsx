@@ -1,9 +1,9 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 import type { ConversionFormat } from "@/entities/conversion/model";
 import type { Locale } from "@/shared/i18n/locales";
 import { conversionAdapter } from "@/shared/config/site";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
+import { ExtensionPromoBanner } from "@/shared/ui/extension-promo-banner";
 import { Container } from "@/shared/ui/site-shell";
 import styles from "./converter.module.css";
 import { getConverterCopy } from "./converter-copy";
@@ -81,15 +81,15 @@ export const ConverterPage = ({
           </aside>
         </section>
 
-        <aside className={styles.extensionCallout}>
-          <div>
-            <p className={styles.calloutLabel}>{copy.privateQuestion}</p>
-            <h2>{copy.extensionTitle}</h2>
-          </div>
-          <Link href={`/${locale}/chrome-extension/how-to-use`}>
-            {copy.extensionLink}
-          </Link>
-        </aside>
+        <ExtensionPromoBanner
+          actionLabel={copy.extensionLink}
+          body={copy.extensionBody}
+          eyebrow={copy.privateQuestion}
+          headingId={`${format}-extension-title`}
+          locale={locale}
+          title={copy.extensionTitle}
+          variant="compact"
+        />
       </Container>
     </PublicPage>
   );

@@ -1,10 +1,6 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Locale } from "@/shared/i18n/locales";
-import { getExtensionLink } from "@/shared/routes/extension-link";
-import { ArrowRightIcon } from "@/shared/ui/utilities/icons/glyphs/arrow-right-icon";
-import { ChromeIcon } from "@/shared/ui/utilities/icons/glyphs/chrome-icon";
-import { ClickCursorIcon } from "@/shared/ui/utilities/icons/glyphs/click-cursor-icon";
+import { ExtensionPromoBanner } from "@/shared/ui/extension-promo-banner";
 import { getChromeInstallLabel, getHomeCopy } from "./home-copy";
 import styles from "./home.module.css";
 
@@ -23,35 +19,17 @@ export const HomeExtensionBanner = ({
   locale,
   title,
 }: HomeExtensionBannerProps): ReactNode => {
-  const extensionLink = getExtensionLink(locale);
   const chromeInstallLabel = getChromeInstallLabel(locale);
 
   return (
-    <Link
-      aria-label={`${title}. ${chromeInstallLabel}`}
-      className={styles.promoCard}
-      href={extensionLink.href}
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <div className={styles.promoCopy}>
-        <p>{eyebrow}</p>
-        <h2 id={headingId}>{title}</h2>
-        <span>{body}</span>
-      </div>
-      <span aria-hidden="true" className={styles.promoArrow}>
-        <ArrowRightIcon />
-      </span>
-      <span className={styles.chromeBadge}>
-        <span aria-hidden="true" className={styles.chromeBadgeLogo}>
-          <ChromeIcon />
-        </span>
-        <span>{chromeInstallLabel}</span>
-        <span aria-hidden="true" className={styles.chromeBadgeCursor}>
-          <ClickCursorIcon />
-        </span>
-      </span>
-    </Link>
+    <ExtensionPromoBanner
+      actionLabel={chromeInstallLabel}
+      body={body}
+      eyebrow={eyebrow}
+      headingId={headingId}
+      locale={locale}
+      title={title}
+    />
   );
 };
 

@@ -13,8 +13,8 @@ describe("HomeExtensionPromo", () => {
     expect(promo.getAttribute("href")).toBe(
       "/de/chrome-extension/how-to-use",
     );
-    expect(promo.getAttribute("target")).toBe("_blank");
-    expect(promo.getAttribute("rel")).toBe("noopener noreferrer");
+    expect(promo.getAttribute("target")).toBeNull();
+    expect(promo.getAttribute("rel")).toBeNull();
     expect(promo.querySelector("button")).toBeNull();
     expect(screen.getByText("In Chrome installieren")).not.toBeNull();
   });

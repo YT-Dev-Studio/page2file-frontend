@@ -22,6 +22,7 @@ type ConverterCopy = {
   sourceHint: string;
   reviewTitle: string;
   extensionTitle: string;
+  extensionBody: string;
   prototypeNotice: string;
   visualTitle: string;
   visualText: string;
@@ -62,6 +63,8 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
       "Start with one public URL. Review the generated structure before final rendering.",
     reviewTitle: "What you can verify",
     extensionTitle: "Need the page as it appears after sign-in?",
+    extensionBody:
+      "Capture the current signed-in tab locally, then review the result before downloading.",
     prototypeNotice:
       "This prototype never fetches the entered URL. It demonstrates the intended review flow with deterministic sample data.",
     visualTitle: "Visual mode",
@@ -124,6 +127,8 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
       "Начните с одного общедоступного URL. Проверьте структуру результата до финального рендеринга.",
     reviewTitle: "Что можно проверить",
     extensionTitle: "Нужна страница в том виде, как она выглядит после входа?",
+    extensionBody:
+      "Сохраните текущую вкладку локально в Chrome и проверьте результат перед скачиванием.",
     prototypeNotice:
       "Прототип не загружает введённый URL. Он показывает будущий процесс проверки на детерминированных демонстрационных данных.",
     visualTitle: "Визуальный режим",

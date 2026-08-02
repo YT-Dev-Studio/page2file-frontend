@@ -196,49 +196,6 @@
   line-height: var(--p2f-type-body-small-line-height);
 }
 
-.extensionCallout {
-  display: flex;
-  margin-top: var(--p2f-space-24);
-  padding: var(--p2f-space-24) var(--p2f-space-32);
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--p2f-space-24);
-  border: var(--p2f-border-width-default) solid
-    var(--p2f-color-ink-navy-600);
-  border-radius: var(--p2f-radius-card);
-  color: var(--p2f-color-text-inverse);
-  background: var(--p2f-color-background-inverse);
-}
-
-.calloutLabel,
-.extensionCallout h2 {
-  margin: 0;
-}
-
-.calloutLabel {
-  color: var(--p2f-color-gel-blue-300);
-  font-size: var(--p2f-type-label-medium-font-size);
-  font-weight: var(--p2f-font-weight-bold);
-}
-
-.extensionCallout h2 {
-  margin-top: var(--p2f-space-4);
-  font-size: var(--p2f-type-heading-h3-font-size);
-  line-height: var(--p2f-type-heading-h3-line-height);
-}
-
-.extensionCallout a {
-  display: inline-flex;
-  min-height: var(--p2f-control-size-default);
-  padding-inline: 20px;
-  align-items: center;
-  border-radius: var(--p2f-radius-compact);
-  color: var(--p2f-color-text-brand);
-  background: var(--p2f-color-background-surface);
-  font-weight: var(--p2f-font-weight-bold);
-  white-space: nowrap;
-}
-
 @media (max-width: 960px) {
   .workbench {
     grid-template-columns: 1fr;
@@ -267,16 +224,6 @@
 
   .modes {
     grid-template-columns: 1fr;
-  }
-
-  .extensionCallout {
-    padding: var(--p2f-space-24);
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .extensionCallout a {
-    justify-content: center;
   }
 }
 

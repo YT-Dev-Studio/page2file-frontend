@@ -445,142 +445,6 @@
   padding-block: var(--p2f-space-32);
 }
 
-.promoCard {
-  display: flex;
-  min-height: 164px;
-  padding: var(--p2f-space-32);
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--p2f-space-32);
-  border-radius: var(--p2f-radius-card);
-  color: var(--p2f-color-text-inverse);
-  background:
-    radial-gradient(
-      circle at 88% 14%,
-      color-mix(in srgb, var(--p2f-color-gel-blue-500) 48%, transparent) 0,
-      transparent 42%
-    ),
-    radial-gradient(
-      circle at 8% 110%,
-      color-mix(in srgb, var(--p2f-color-coral-ink-500) 34%, transparent) 0,
-      transparent 48%
-    ),
-    var(--p2f-color-background-inverse);
-  text-decoration: none;
-  transform: scale(1);
-  transform-origin: center;
-  transition:
-    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 220ms ease;
-}
-
-.promoCopy {
-  min-width: 0;
-  max-width: 760px;
-  flex: 1;
-}
-
-.promoCopy p {
-  margin: 0 0 var(--p2f-space-8);
-  color: var(--p2f-color-gel-blue-300);
-  font-size: var(--p2f-type-label-small-font-size);
-  font-weight: var(--p2f-type-label-small-font-weight);
-  line-height: var(--p2f-type-label-small-line-height);
-}
-
-.promoCopy h2 {
-  margin: 0;
-  color: var(--p2f-color-text-inverse);
-  font-size: var(--p2f-type-heading-h2-font-size);
-  font-weight: var(--p2f-type-heading-h2-font-weight);
-  line-height: var(--p2f-type-heading-h2-line-height);
-}
-
-.promoCopy span {
-  display: block;
-  margin-top: var(--p2f-space-8);
-  color: var(--p2f-color-ink-navy-100);
-  font-size: var(--p2f-type-body-small-font-size);
-  line-height: var(--p2f-type-body-small-line-height);
-}
-
-.promoArrow {
-  display: inline-flex;
-  width: 48px;
-  height: var(--p2f-icon-size-large);
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  color: var(--p2f-color-text-inverse);
-}
-
-.promoArrow svg {
-  width: 100%;
-  height: 100%;
-}
-
-.chromeBadge {
-  position: relative;
-  display: inline-flex;
-  box-sizing: border-box;
-  min-width: 250px;
-  min-height: 56px;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  padding: var(--p2f-space-12) 44px var(--p2f-space-12) var(--p2f-space-16);
-  gap: var(--p2f-space-8);
-  border: var(--p2f-border-width-default) solid
-    color-mix(
-      in srgb,
-      var(--p2f-color-coral-ink-500) 52%,
-      var(--p2f-color-border-default)
-    );
-  border-radius: var(--p2f-radius-control);
-  color: var(--p2f-color-text-primary);
-  background: var(--p2f-color-background-surface);
-  box-shadow: var(--p2f-shadow-card);
-  font-size: var(--p2f-type-label-large-font-size);
-  font-weight: var(--p2f-type-label-large-font-weight);
-  line-height: var(--p2f-type-label-large-line-height);
-  white-space: nowrap;
-}
-
-.chromeBadgeLogo {
-  display: inline-flex;
-  width: 30px;
-  height: 30px;
-  flex: 0 0 auto;
-}
-
-.chromeBadgeLogo img {
-  width: 100%;
-  height: 100%;
-}
-
-.chromeBadgeCursor {
-  position: absolute;
-  right: 6px;
-  bottom: -10px;
-  display: inline-flex;
-  width: 38px;
-  height: 38px;
-  color: var(--p2f-color-text-primary);
-}
-
-.promoCard:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 var(--p2f-interaction-focus-ring-width)
-    var(--p2f-interaction-focus-ring-color);
-}
-
-@media (hover: hover) {
-  .promoCard:hover {
-    box-shadow: 0 18px 40px rgb(10 16 47 / 22%);
-    transform: scale(1.02);
-  }
-}
-
 .featuresSection {
   padding-block: var(--p2f-space-80);
   scroll-margin-top: var(--p2f-space-80);
@@ -925,24 +789,6 @@
     max-width: 620px;
   }
 
-  .promoCard {
-    align-items: stretch;
-    flex-direction: column;
-    gap: var(--p2f-space-16);
-  }
-
-  .promoArrow {
-    width: var(--p2f-icon-size-large);
-    align-self: center;
-    transform: rotate(90deg);
-  }
-
-  .chromeBadge {
-    width: min(100%, 360px);
-    align-self: flex-end;
-    white-space: normal;
-  }
-
   .featuresGrid,
   .howGrid,
   .blogGrid {
@@ -996,8 +842,7 @@
     grid-template-columns: 1fr;
   }
 
-  .formFooter,
-  .promoCard {
+  .formFooter {
     align-items: stretch;
     flex-direction: column;
   }
@@ -1041,23 +886,6 @@
   .pageBreak strong {
     max-width: 150px;
     text-align: center;
-  }
-
-  .promoSection {
-    display: none;
-  }
-
-  .promoCard {
-    min-height: 0;
-    padding: var(--p2f-space-24);
-    gap: var(--p2f-space-16);
-  }
-
-  .chromeBadge {
-    width: 100%;
-    min-width: 0;
-    align-self: stretch;
-    white-space: normal;
   }
 
   .featuresSection {
@@ -1118,10 +946,6 @@
   .sectionAction {
     margin-top: var(--p2f-space-24);
   }
-
-  .finalCtaSection {
-    display: none;
-  }
 }
 
 @media (max-width: 420px) {
@@ -1148,8 +972,7 @@
   }
 
   .submitButton,
-  .outputDownload,
-  .promoCard {
+  .outputDownload {
     transition: none;
   }
 
@@ -1157,10 +980,6 @@
   .outputDownload:hover,
   .outputDownload:active svg,
   .outputDownload:hover svg {
-    transform: none;
-  }
-
-  .promoCard:hover {
     transform: none;
   }
 
