@@ -10,8 +10,6 @@ const expectedBlogSlugs = [
   "visual-vs-editable",
   "preserve-clickable-links",
   "long-webpage-page-breaks",
-  "webpage-to-powerpoint",
-  "export-ai-chats-privately",
 ];
 
 describe("homepage copy", () => {
@@ -26,7 +24,7 @@ describe("homepage copy", () => {
     expect(getHomeCopy("de")).toBe(getHomeCopy("en"));
   });
 
-  test("keeps the six homepage articles in the approved order", () => {
+  test("keeps the four homepage articles in the approved order", () => {
     expect(
       getHomeCopy("en").blog.items.map((item): string => item.slug),
     ).toEqual(expectedBlogSlugs);

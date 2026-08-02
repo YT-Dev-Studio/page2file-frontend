@@ -563,10 +563,18 @@
   line-height: var(--p2f-type-body-medium-line-height);
 }
 
-.howGrid,
-.blogGrid {
+.howGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--p2f-space-24);
+}
+
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, 260px), 1fr)
+  );
   gap: var(--p2f-space-24);
 }
 
@@ -790,8 +798,7 @@
   }
 
   .featuresGrid,
-  .howGrid,
-  .blogGrid {
+  .howGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -904,8 +911,7 @@
   }
 
   .featuresGrid,
-  .howGrid,
-  .blogGrid {
+  .howGrid {
     grid-template-columns: 1fr;
   }
 

@@ -15,6 +15,7 @@ import {
   SeoBreadcrumbs,
   type BreadcrumbItem,
 } from "@/shared/seo/structured-data";
+import { BlogCard } from "./blog-card";
 import { formatContentDate, getContentCopy } from "./content-copy";
 import styles from "./content.module.css";
 
@@ -45,33 +46,6 @@ const EntryRow = ({
   );
 };
 
-const FeaturedEntry = ({
-  entry,
-  locale,
-}: {
-  entry: ContentEntry;
-  locale: Locale;
-}): ReactNode => {
-  const copy = getContentCopy(locale);
-  return (
-    <article className={styles.featuredEntry}>
-      <div className={styles.featuredMarker}>
-        <span>{copy.featuredLabel}</span>
-        <time dateTime={entry.publishedAt}>
-          {formatContentDate(locale, entry.publishedAt)}
-        </time>
-      </div>
-      <div>
-        <h2>
-          <Link href={`/${locale}/blog/${entry.slug}`}>{entry.title}</Link>
-        </h2>
-        <p>{entry.description}</p>
-        <span>{copy.readLabel(entry.readingMinutes)}</span>
-      </div>
-    </article>
-  );
-};
-
 export const ContentIndexPage = ({
   kind,
   locale,
@@ -83,11 +57,6 @@ export const ContentIndexPage = ({
   const entries =
     kind === "blog" ? getBlogEntries(locale) : getUpdateEntries(locale);
   const indexCopy = kind === "blog" ? copy.blog : copy.updates;
-  const featuredEntry = kind === "blog" ? entries[0] : undefined;
-  const listedEntries = featuredEntry ? entries.slice(1) : entries;
-  const entryRow = (entry: ContentEntry): ReactNode => (
-    <EntryRow entry={entry} key={entry.slug} locale={locale} />
-  );
   return (
     <PublicPage className={styles.page} family="content">
       <Container>
@@ -103,13 +72,27 @@ export const ContentIndexPage = ({
             </p>
           ) : null}
         </PublicHero>
-        {featuredEntry ? (
-          <FeaturedEntry entry={featuredEntry} locale={locale} />
-        ) : null}
-        {listedEntries.length > 0 ? (
+        {entries.length > 0 ? (
           <section className={styles.indexSection}>
             {kind === "blog" ? <h2>{copy.allEntriesLabel}</h2> : null}
-            <div className={styles.list}>{listedEntries.map(entryRow)}</div>
+            {kind === "blog" ? (
+              <div className={styles.blogGrid}>
+                {entries.map((entry): ReactNode => (
+                  <BlogCard
+                    actionLabel={copy.readArticleLabel}
+                    entry={entry}
+                    key={entry.slug}
+                    locale={locale}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className={styles.list}>
+                {entries.map((entry): ReactNode => (
+                  <EntryRow entry={entry} key={entry.slug} locale={locale} />
+                ))}
+              </div>
+            )}
           </section>
         ) : (
           <section className={styles.emptyState}>

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { getBlogEntry } from "@/content/content-registry";
+import { BlogCard } from "@/features/content/blog-card";
 import type { Locale } from "@/shared/i18n/locales";
 import { getExtensionLink } from "@/shared/routes/extension-link";
 import {
@@ -9,7 +10,7 @@ import {
 import { Card } from "@/shared/ui/components/card/card";
 import { FormatBadge } from "@/shared/ui/components/format-badge/format-badge";
 import { TimerIcon } from "@/shared/ui/utilities/icons/glyphs/timer-icon";
-import { getHomeCopy, type HomeCopy } from "./home-copy";
+import { getHomeCopy } from "./home-copy";
 import { HomeExtensionBanner } from "./home-extension-promo";
 import { HomeSectionHeader } from "./home-section-header";
 import styles from "./home.module.css";
@@ -106,30 +107,23 @@ export const HomeHowItWorks = ({ locale }: { locale: Locale }): ReactNode => {
   );
 };
 
-const renderBlogCard = (
-  item: HomeCopy["blog"]["items"][number],
-  locale: Locale,
-  actionLabel: string,
-): ReactNode => {
-  const entry = getBlogEntry(locale, item.slug);
+const HomeBlogCard = ({
+  actionLabel,
+  locale,
+  slug,
+}: {
+  actionLabel: string;
+  locale: Locale;
+  slug: string;
+}): ReactNode => {
+  const entry = getBlogEntry(locale, slug);
 
   if (!entry) {
-    throw new Error(`Missing homepage blog entry: ${item.slug}`);
+    throw new Error(`Missing homepage blog entry: ${slug}`);
   }
 
   return (
-    <Card
-      action={{
-        accessibleLabel: `${actionLabel}: ${item.title}`,
-        href: `/${locale}/blog/${entry.slug}`,
-        label: actionLabel,
-      }}
-      body={item.body}
-      className={styles.informationCard}
-      interactive
-      key={item.slug}
-      title={item.title}
-    />
+    <BlogCard actionLabel={actionLabel} entry={entry} locale={locale} />
   );
 };
 
@@ -151,9 +145,14 @@ export const HomeBlog = ({ locale }: { locale: Locale }): ReactNode => {
         />
 
         <div className={styles.blogGrid}>
-          {copy.items.map((item): ReactNode =>
-            renderBlogCard(item, locale, copy.action),
-          )}
+          {copy.items.map((item): ReactNode => (
+            <HomeBlogCard
+              actionLabel={copy.action}
+              key={item.slug}
+              locale={locale}
+              slug={item.slug}
+            />
+          ))}
         </div>
 
         <div className={styles.sectionAction}>

@@ -21,6 +21,7 @@ type ContentCopy = {
   updatedLabel: string;
   minuteLabel: (minutes: number) => string;
   readLabel: (minutes: number) => string;
+  readArticleLabel: string;
   openPdf: string;
   seeChangelog: string;
   added: string;
@@ -63,6 +64,7 @@ const contentCopy: LocalizedPublished<ContentCopy> = {
     updatedLabel: "Updated",
     minuteLabel: (minutes: number): string => `${minutes} min`,
     readLabel: (minutes: number): string => `${minutes} min read`,
+    readArticleLabel: "Read article",
     openPdf: "Open the PDF prototype →",
     seeChangelog: "See the technical changelog →",
     added: "Added",
@@ -115,6 +117,7 @@ const contentCopy: LocalizedPublished<ContentCopy> = {
             : "минут чтения";
       return `${minutes} ${noun}`;
     },
+    readArticleLabel: "Читать статью",
     openPdf: "Открыть прототип PDF →",
     seeChangelog: "Смотреть техническую историю изменений →",
     added: "Добавлено",

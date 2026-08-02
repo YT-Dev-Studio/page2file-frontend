@@ -9,7 +9,7 @@ type CopyItem = {
   title: string;
 };
 
-type BlogCopyItem = CopyItem & {
+type BlogCopyItem = {
   slug: string;
 };
 
@@ -217,42 +217,10 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
         "Practical guides to fidelity, editability, links, page breaks and safe work with AI chats.",
       eyebrow: "BLOG",
       items: [
-        {
-          slug: "why-print-to-pdf-breaks",
-          title: "Why Print to PDF breaks complex pages",
-          body:
-            "What happens to fixed blocks, long images and dynamic content — and how to avoid repairing everything by hand.",
-        },
-        {
-          slug: "visual-vs-editable",
-          title: "Visual or Editable PDF: which mode to choose",
-          body:
-            "Compare visual fidelity, text availability and further editing through concrete tasks.",
-        },
-        {
-          slug: "preserve-clickable-links",
-          title: "How to preserve clickable links",
-          body:
-            "When links are needed in the result, what limitations the page has and what to check in preview.",
-        },
-        {
-          slug: "long-webpage-page-breaks",
-          title: "A long page without broken breaks",
-          body:
-            "How Page2File finds safe boundaries and keeps images from being split between pages.",
-        },
-        {
-          slug: "webpage-to-powerpoint",
-          title: "How to turn a webpage into PowerPoint",
-          body:
-            "From web content to 16:9 slides: what carries over, what stays editable and where visual mode helps.",
-        },
-        {
-          slug: "export-ai-chats-privately",
-          title: "How to save an AI chat as a local PDF",
-          body:
-            "A step-by-step flow for ChatGPT, Claude, Gemini, Grok and DeepSeek without sending a private chat to the server.",
-        },
+        { slug: "why-print-to-pdf-breaks" },
+        { slug: "visual-vs-editable" },
+        { slug: "preserve-clickable-links" },
+        { slug: "long-webpage-page-breaks" },
       ],
       title: "Understand the modes before your first export",
     },
@@ -424,42 +392,10 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
         "Практические материалы о качестве, редактируемости, ссылках, разрывах и безопасной работе с AI-чатами.",
       eyebrow: "БЛОГ",
       items: [
-        {
-          slug: "why-print-to-pdf-breaks",
-          title: "Почему Print to PDF ломает сложные страницы",
-          body:
-            "Что происходит с фиксированными блоками, длинными изображениями и динамическим контентом — и как избежать ручной починки.",
-        },
-        {
-          slug: "visual-vs-editable",
-          title: "Visual или Editable PDF: какой режим выбрать",
-          body:
-            "Сравниваем визуальную точность, доступность текста и дальнейшее редактирование на конкретных задачах.",
-        },
-        {
-          slug: "preserve-clickable-links",
-          title: "Как сохранить кликабельные ссылки",
-          body:
-            "Когда ссылки нужны в результате, какие ограничения есть у страницы и что проверить в предпросмотре.",
-        },
-        {
-          slug: "long-webpage-page-breaks",
-          title: "Длинная страница без рваных разрывов",
-          body:
-            "Как Page2File находит безопасные границы и почему изображения не оказываются разрезаны между страницами.",
-        },
-        {
-          slug: "webpage-to-powerpoint",
-          title: "Как превратить веб-страницу в PowerPoint",
-          body:
-            "От веб-контента к слайдам 16:9: что переносится, что редактируется и где полезен визуальный режим.",
-        },
-        {
-          slug: "export-ai-chats-privately",
-          title: "Как сохранить AI-чат в PDF локально",
-          body:
-            "Пошаговый сценарий для ChatGPT, Claude, Gemini, Grok и DeepSeek без отправки закрытого чата на сервер.",
-        },
+        { slug: "why-print-to-pdf-breaks" },
+        { slug: "visual-vs-editable" },
+        { slug: "preserve-clickable-links" },
+        { slug: "long-webpage-page-breaks" },
       ],
       title: "Разберитесь в режимах до первого экспорта",
     },

@@ -26,6 +26,8 @@ export type ContentKind = "blog" | "update";
 export type ContentEntry = {
   kind: ContentKind;
   slug: string;
+  image: string;
+  imageAlt: string;
   title: string;
   description: string;
   author: string;
@@ -39,6 +41,8 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "save-webpage-as-pdf",
+    image: "/blog/mocks/save-webpage-as-pdf.webp",
+    imageAlt: "A browser page becoming a stack of clean PDF pages",
     title: "How to save a webpage as a PDF",
     description: "Choose the right webpage capture boundary, output mode and preview workflow before PDF page breaks become a document problem.",
     author: "Page2File editorial",
@@ -50,6 +54,8 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "preserve-clickable-links",
+    image: "/blog/mocks/preserve-clickable-links.webp",
+    imageAlt: "Clickable links preserved between a browser page and a PDF",
     title: "How to preserve clickable links in a webpage PDF",
     description: "Understand when webpage links remain clickable in PDF, when visual capture removes interaction and when unsafe targets must be rejected.",
     author: "Page2File editorial",
@@ -61,6 +67,8 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "visual-vs-editable",
+    image: "/blog/mocks/visual-vs-editable.webp",
+    imageAlt: "A visual webpage compared with editable content blocks",
     title: "Visual vs editable webpage conversion",
     description: "Compare visual fidelity with editable text and clickable links to choose an honest output mode for complex webpage conversion.",
     author: "Page2File editorial",
@@ -72,6 +80,8 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "long-webpage-page-breaks",
+    image: "/blog/mocks/long-webpage-page-breaks.webp",
+    imageAlt: "A long webpage flowing through safe PDF page boundaries",
     title: "How to convert a long webpage without broken page breaks",
     description: "Use semantic webpage sections, stable loading and preview controls instead of blind viewport cuts that break headings and tables.",
     author: "Page2File editorial",
@@ -83,6 +93,8 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "webpage-to-powerpoint",
+    image: "/blog/mocks/webpage-to-powerpoint.webp",
+    imageAlt: "Webpage sections reorganized into presentation slides",
     title: "How to convert a webpage into PowerPoint slides",
     description: "Translate webpage hierarchy into coherent PowerPoint slides with visible boundaries instead of producing an unstructured screenshot dump.",
     author: "Page2File editorial",
@@ -94,6 +106,8 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "export-ai-chats-privately",
+    image: "/blog/mocks/export-ai-chats-privately.webp",
+    imageAlt: "A private browser conversation exported through a shield",
     title: "How to export AI chats to PDF privately",
     description: "Learn why the active browser tab is the privacy-preserving boundary for exporting visible ChatGPT, Claude, Gemini and Grok conversations.",
     author: "Page2File editorial",
@@ -105,6 +119,8 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "html-to-pdf-safely",
+    image: "/blog/mocks/html-to-pdf-safely.webp",
+    imageAlt: "HTML blocks isolated in a secure rendering sandbox",
     title: "How to convert HTML to PDF safely",
     description: "Treat supplied HTML as untrusted code and isolate future PDF rendering from scripts, network access and internal service addresses.",
     author: "Page2File editorial",
@@ -116,6 +132,8 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "multi-page-website-to-pdf",
+    image: "/blog/mocks/multi-page-website-to-pdf.webp",
+    imageAlt: "A bounded website map collected into one organized document",
     title: "How to convert a multi-page website to PDF",
     description: "Bound page count, depth, origin and redirects before collecting a multi-page website into one organized and reviewable PDF document.",
     author: "Page2File editorial",
@@ -127,6 +145,8 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "why-print-to-pdf-breaks",
+    image: "/blog/mocks/why-print-to-pdf-breaks.webp",
+    imageAlt: "A print mechanism misaligning complex webpage elements",
     title: "Why browser Print to PDF breaks complex pages",
     description: "See how print CSS, lazy content, canvas and interactive layouts change what reaches a PDF and why section preview catches the losses.",
     author: "Page2File editorial",
@@ -138,6 +158,8 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "sections-to-slides",
+    image: "/blog/mocks/sections-to-slides.webp",
+    imageAlt: "Three webpage sections moving into separate slides",
     title: "How webpage sections become presentation slides",
     description: "Use webpage content hierarchy to create a coherent PowerPoint deck with reviewable slide boundaries and visible visual fallbacks.",
     author: "Page2File editorial",
@@ -154,6 +176,8 @@ const russianBlogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "save-webpage-as-pdf",
+    image: "/blog/mocks/save-webpage-as-pdf.webp",
+    imageAlt: "Веб-страница превращается в стопку аккуратных PDF-страниц",
     title: "Как сохранить веб-страницу в формате PDF",
     description:
       "Определите границы захвата веб-страницы, выберите режим и проверьте секции до того, как разрывы PDF превратятся в проблему документа.",
@@ -166,6 +190,8 @@ const russianBlogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "preserve-clickable-links",
+    image: "/blog/mocks/preserve-clickable-links.webp",
+    imageAlt: "Кликабельные ссылки сохраняются между веб-страницей и PDF",
     title: "Как сохранить кликабельные ссылки в PDF",
     description:
       "Разберитесь, когда ссылки веб-страницы остаются кликабельными в PDF, когда визуальный режим убирает интерактивность и какие адреса нужно отклонять.",
@@ -178,6 +204,8 @@ const russianBlogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "visual-vs-editable",
+    image: "/blog/mocks/visual-vs-editable.webp",
+    imageAlt: "Сравнение визуальной страницы и редактируемых блоков",
     title: "Визуальная и редактируемая конвертация",
     description:
       "Сравните точность внешнего вида, редактируемый текст, кликабельные ссылки и адаптивные визуальные замены для сложной веб-страницы.",
@@ -190,6 +218,8 @@ const russianBlogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "long-webpage-page-breaks",
+    image: "/blog/mocks/long-webpage-page-breaks.webp",
+    imageAlt: "Длинная веб-страница проходит через безопасные границы PDF-страниц",
     title: "Как конвертировать длинную веб-страницу",
     description:
       "Используйте смысловые секции, стабильную загрузку и предпросмотр вместо случайных разрывов по высоте окна, которые ломают заголовки и таблицы.",
@@ -202,6 +232,8 @@ const russianBlogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "webpage-to-powerpoint",
+    image: "/blog/mocks/webpage-to-powerpoint.webp",
+    imageAlt: "Секции веб-страницы перестраиваются в слайды презентации",
     title: "Как превратить веб-страницу в PowerPoint",
     description:
       "Перенесите иерархию веб-страницы на связные слайды PowerPoint с видимыми границами, не превращая презентацию в набор случайных скриншотов.",
@@ -214,6 +246,8 @@ const russianBlogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "export-ai-chats-privately",
+    image: "/blog/mocks/export-ai-chats-privately.webp",
+    imageAlt: "Закрытый диалог в браузере экспортируется через защитный экран",
     title: "Как конфиденциально экспортировать AI-чаты",
     description:
       "Узнайте, почему активная вкладка браузера — конфиденциальная граница для локального экспорта видимых разговоров ChatGPT, Claude, Gemini и Grok.",
@@ -226,6 +260,8 @@ const russianBlogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "html-to-pdf-safely",
+    image: "/blog/mocks/html-to-pdf-safely.webp",
+    imageAlt: "HTML-блоки изолированы в безопасной песочнице рендеринга",
     title: "Как безопасно конвертировать HTML в PDF",
     description:
       "Считайте предоставленный HTML недоверенным кодом и изолируйте будущий PDF-рендерер от скриптов, сети и внутренних служебных адресов.",
@@ -238,6 +274,8 @@ const russianBlogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "multi-page-website-to-pdf",
+    image: "/blog/mocks/multi-page-website-to-pdf.webp",
+    imageAlt: "Ограниченная карта сайта собирается в один упорядоченный документ",
     title: "Как собрать многостраничный сайт в PDF",
     description:
       "Ограничьте число страниц, глубину, origin и redirect до начала контролируемого обхода и сборки многостраничного сайта в структурированный PDF.",
@@ -250,6 +288,8 @@ const russianBlogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "why-print-to-pdf-breaks",
+    image: "/blog/mocks/why-print-to-pdf-breaks.webp",
+    imageAlt: "Печатный механизм смещает сложные элементы веб-страницы",
     title: "Почему браузерная печать в PDF ломается",
     description:
       "Узнайте, как печатные стили, ленивая загрузка, canvas и интерактивные макеты меняют PDF и почему предпросмотр секций выявляет потери.",
@@ -262,6 +302,8 @@ const russianBlogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog",
     slug: "sections-to-slides",
+    image: "/blog/mocks/sections-to-slides.webp",
+    imageAlt: "Три секции веб-страницы переходят в отдельные слайды",
     title: "Как секции веб-страницы становятся слайдами",
     description:
       "Используйте иерархию веб-контента для связной презентации PowerPoint с понятными границами слайдов и видимыми визуальными заменами.",

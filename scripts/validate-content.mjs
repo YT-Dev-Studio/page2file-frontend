@@ -157,6 +157,42 @@ const run = async () => {
     );
   }
   const expectedEntryCount = (blogFiles.length + updateFiles.length) * 2;
+  const imageMatches = [...registry.matchAll(/image: "([^"]+)"/g)];
+  const imageAltMatches = [...registry.matchAll(/imageAlt: "([^"]+)"/g)];
+  if (
+    imageMatches.length !== expectedEntryCount ||
+    imageAltMatches.length !== expectedEntryCount ||
+    imageAltMatches.some(function hasEmptyImageAlt(match) {
+      return match[1].trim().length === 0;
+    })
+  ) {
+    throw new Error(
+      "Every English and Russian content entry must have an image and non-empty imageAlt.",
+    );
+  }
+  const uniqueImages = new Set(
+    imageMatches.map(function selectImage(match) {
+      return match[1];
+    }),
+  );
+  if (uniqueImages.size !== blogFiles.length) {
+    throw new Error(
+      `Expected ${blogFiles.length} shared blog images, found ${uniqueImages.size}.`,
+    );
+  }
+  await Promise.all(
+    [...uniqueImages].map(async function validateImage(image) {
+      if (!image.startsWith("/blog/mocks/") || !image.endsWith(".webp")) {
+        throw new Error(`Invalid blog image path: ${image}`);
+      }
+      const imageFile = await readFile(
+        join(ROOT, "public", image.slice(1)),
+      );
+      if (imageFile.length === 0) {
+        throw new Error(`Empty blog image: ${image}`);
+      }
+    }),
+  );
   const authorMatches = [...registry.matchAll(/author: "([^"]+)"/g)];
   if (
     authorMatches.length !== expectedEntryCount ||
