@@ -1,0 +1,83 @@
+HTML-to-PowerPoint can mean two different jobs: turning a rendered webpage into slides or uploading a raw HTML file. Page 2 File currently serves the rendered-page job through the [PowerPoint converter](/en/convert-webpage-to-powerpoint) and extension. Raw uploaded HTML is supported by the HTML 2 PDF GPT App only, not by a separate HTML-to-PPTX upload tool.
+
+That boundary prevents a search phrase from becoming a false product promise. If the HTML can be opened as an allowed webpage, Page 2 File can convert its visible sections to a presentation.
+
+## Render the HTML before mapping slides
+
+A browser resolves CSS layout, fonts, images and responsive rules. The converter then works from the rendered structure rather than treating tags as slide instructions. Headings, sections and visible breaks provide stronger boundaries than arbitrary chunks of source code.
+
+Client-side components must finish rendering, and content hidden behind controls must be opened. Scripts or resources that are unavailable in the page cannot be reconstructed from markup alone.
+
+## Choose presentation objects or visual sections
+
+Editable mode maps supported text, images and shapes into PowerPoint objects. Visual mode records rendered sections and preserves more of the page's composition. Complex effects can become images in either workflow when PowerPoint has no equivalent.
+
+Use [screenshot slides vs editable PowerPoint](/en/blog/screenshot-vs-editable-powerpoint) to choose a mode before conversion.
+
+## Prepare content for 16:9
+
+A tall webpage needs multiple slides. Keep one topic per slide, avoid tiny text and let a large table continue across slides. Remove navigation and footer repetition unless it supplies necessary context.
+
+The article on webpage sections becoming slides gives a practical split-and-review sequence.
+
+## Use the correct Page 2 File surface
+
+For one public rendered page, use [One Page 2 PowerPoint](/en/one-page2powerpoint-gpt). For several accessible website pages, use [Web 2 PowerPoint](/en/web2powerpoint-gpt). For a private rendered tab, use the extension.
+
+If you only possess an HTML file and need PDF, use [HTML 2 PDF](/en/html2pdf-gpt). Direct upload from an HTML file to PPTX is not supported; PowerPoint conversion starts from rendered web content.
+
+## Publish the HTML in a controlled context
+
+If the source exists only as a file, decide whether it can be served at an accessible URL or opened as an authorized browser tab. Verify that styles, images and fonts load there. A local development path or private asset reference will not become portable because the page is visible on one computer.
+
+Remove application controls that do not belong in the deck and select the final responsive state. Set filters, expand panels and stop live updates when possible. Conversion can record what the browser rendered; it cannot infer content behind an unopened control.
+
+Keep the source version used for the deck. HTML changes easily, and a later build may produce different slides from the same URL. A capture date and release identifier can help when provenance matters.
+
+## Reshape sections for slides
+
+An HTML section can be much taller than a 16:9 slide. Identify natural breaks at headings, cards, rows or figures rather than shrinking the whole section until its text becomes unreadable. Keep captions with visuals and repeat context when a table spans slides.
+
+Navigation, cookie controls and sticky headers often repeat without helping the presentation. Hide or remove them from the prepared source where permitted. Preserve branding only when it belongs to the presentation and can be used lawfully.
+
+For editable output, keep text blocks concise and avoid relying on intricate CSS layering. Complex filters, canvases and animations will need visual fallbacks. For visual output, ensure the browser width produces text that remains legible on a slide.
+
+## Perform a deck acceptance pass
+
+Check slide order against the HTML outline. Confirm that no section is duplicated or omitted and that the deck ends at an intentional point. A website footer should not automatically become a conclusion.
+
+Open the PPTX in the target application and inspect font substitution, image cropping, link behavior and objects outside the slide boundary. If recipients need to edit the deck, change representative text and move a supported image.
+
+State the limitation accurately: Page 2 File converts a rendered webpage or active tab to PowerPoint. It does not accept a raw HTML upload for PPTX, execute an arbitrary project build or turn every CSS property into a native PowerPoint object.
+
+## Prepare responsive HTML for a fixed canvas
+
+A responsive page may change substantially between desktop widths. Choose the viewport that contains the intended navigation, chart layout and text measure before conversion. Do not assume that the widest view is best; a dense desktop grid can produce unreadable slides, while a compact layout may group information more clearly.
+
+Check overflow at the chosen width. Horizontally scrolling tables, code blocks and carousels can hide content outside the rendered area. Set the relevant state and decide whether the component should become one visual slide, several focused slides or an editable reconstruction with a fallback.
+
+Web fonts and delayed images can change dimensions after the first paint. Wait for the page to stabilize, then compare the beginning and end of long sections. If a client-side component never renders in the authorized browser state, conversion cannot infer it from unused source code.
+
+## Preserve semantics during restructuring
+
+The HTML outline helps establish order, but it is not a finished presentation plan. Keep heading levels meaningful, associate captions with figures and maintain list sequence when a long section spans slides. Decorative wrappers should not become empty slides merely because they occupy their own block.
+
+For tables, preserve column labels and units. For code, keep language or context labels with the sample and inspect wrapping. For a callout, retain the text that explains its status rather than relying only on color. These relationships matter more than copying every CSS detail.
+
+Editable conversion can make supported content easier to revise, but it should not be described as a source-code-to-PowerPoint compiler. Review reading order and object grouping. A complex web component may be more accurate as a single image than as dozens of difficult-to-maintain shapes.
+
+## Review provenance and private state
+
+If the rendered page comes from a development, staging or signed-in environment, inspect it for account names, test data, unpublished material and private URLs. Access to that tab does not imply permission to distribute its deck.
+
+Keep the source version, URL or release identifier with the approved PPTX when traceability matters. A later deployment can produce different slides even when the route is unchanged. Avoid storing session tokens or sensitive query parameters in filenames and source notes.
+
+The extension works from the active tab; its preview data is temporary and deleted when the preview tab closes, and Page 2 File has no conversion-history database. The downloaded PPTX remains under your control, so store and share it according to the source’s sensitivity.
+
+## Decide whether PowerPoint is the right endpoint
+
+Use PPTX when the recipient needs a presentation sequence, speaker-led explanation or supported elements they can revise. If the goal is a faithful reading archive, a PDF may preserve a long document more naturally. If the goal is to edit the web application itself, keep working in HTML rather than treating a deck as the source.
+
+Run the deck at presentation size and complete one intended edit before handoff. Confirm slide order, type legibility, image quality, links and fallbacks. If a required section is absent in preview, repair the rendered source state; a final file cannot recover HTML that the browser never displayed.
+
+Use the [website output guide](/en/blog/website-types-to-pdf-or-powerpoint) to compare HTML with other browser sources.

@@ -10,8 +10,6 @@ export type LandingUiCopy = {
   nextScenario: string;
   relatedPages: string;
   stepsLabel: string;
-  tryPdfConverter: string;
-  tryPowerPointConverter: string;
 };
 
 type MarketingCopy = {
@@ -34,62 +32,58 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
   en: {
     landing: {
       openGuide: "Open the extension guide",
-      previousScenario: "Previous related workflow",
-      nextScenario: "Next related workflow",
-      relatedPages: "Related workflows",
-      stepsLabel: "Workflow details",
-      tryPdfConverter: "Open the Web 2 PDF converter",
-      tryPowerPointConverter: "Open the Web 2 PowerPoint converter",
+      previousScenario: "Previous related page",
+      nextScenario: "Next related page",
+      relatedPages: "Related pages",
+      stepsLabel: "How it works",
     },
     gptWorkflow: {
-      detailsTitle: "A bounded path from instruction to file",
-      mapLabel: "Instruction → reviewed file",
-      stages: ["Provide the source", "Review the structure", "Create the file"],
+      detailsTitle: "Three steps from source to file",
+      mapLabel: "Source → review → file",
+      stages: ["Provide the source", "Review the result", "Download the file"],
       stageDescriptions: [
-        "One explicit input and output contract.",
-        "Warnings and boundaries stay visible.",
-        "Download only after the preview.",
+        "Give the GPT App the supported source.",
+        "Check the pages, slides, and visible limits.",
+        "Download the files returned for this request.",
       ],
     },
     chatWorkflow: {
-      detailsTitle: "Export only the conversation you can see",
-      mapLabel: "Current tab → local preview",
-      stages: ["Open the conversation", "Inspect locally", "Save the PDF"],
+      detailsTitle: "Export the conversation visible in your browser",
+      mapLabel: "Active tab → temporary preview",
+      stages: ["Open the conversation", "Review the preview", "Save the PDF"],
       stageDescriptions: [
-        "Use the supported active chat tab.",
-        "Check messages, code, links, and omissions.",
-        "Choose the clean or visual document.",
+        "Load the messages you want in the active tab.",
+        "Check text, media, links, and omissions.",
+        "Choose visual or editable PDF output.",
       ],
     },
   },
   ru: {
     landing: {
-      openGuide: "Открыть руководство по расширению",
-      previousScenario: "Предыдущий связанный сценарий",
-      nextScenario: "Следующий связанный сценарий",
-      relatedPages: "Связанные сценарии",
-      stepsLabel: "Детали сценария",
-      tryPdfConverter: "Открыть конвертер Web 2 PDF",
-      tryPowerPointConverter: "Открыть конвертер Web 2 PowerPoint",
+      openGuide: "Открыть инструкцию по расширению",
+      previousScenario: "Предыдущая связанная страница",
+      nextScenario: "Следующая связанная страница",
+      relatedPages: "Связанные страницы",
+      stepsLabel: "Как это работает",
     },
     gptWorkflow: {
-      detailsTitle: "Контролируемый путь от инструкции до файла",
-      mapLabel: "Инструкция → проверенный файл",
-      stages: ["Укажите источник", "Проверьте структуру", "Создайте файл"],
+      detailsTitle: "Три шага от источника до файла",
+      mapLabel: "Источник → проверка → файл",
+      stages: ["Передайте источник", "Проверьте результат", "Скачайте файл"],
       stageDescriptions: [
-        "Один явный источник и выбранный формат.",
-        "Предупреждения и ограничения остаются видимыми.",
-        "Скачивание доступно после предпросмотра.",
+        "Передайте GPT-приложению поддерживаемый источник.",
+        "Проверьте страницы, слайды и видимые ограничения.",
+        "Скачайте файлы, созданные для этого запроса.",
       ],
     },
     chatWorkflow: {
-      detailsTitle: "Экспортируйте только видимый разговор",
-      mapLabel: "Текущая вкладка → локальный предпросмотр",
-      stages: ["Откройте разговор", "Проверьте локально", "Сохраните PDF"],
+      detailsTitle: "Экспортируйте диалог, открытый в браузере",
+      mapLabel: "Активная вкладка → временный предпросмотр",
+      stages: ["Откройте диалог", "Проверьте предпросмотр", "Сохраните PDF"],
       stageDescriptions: [
-        "Используйте активную вкладку поддерживаемого чата.",
-        "Проверьте сообщения, код, ссылки и пропуски.",
-        "Выберите чистый или визуальный документ.",
+        "Загрузите нужные сообщения в активной вкладке.",
+        "Проверьте текст, медиа, ссылки и пропуски.",
+        "Выберите визуальный или редактируемый PDF.",
       ],
     },
   },

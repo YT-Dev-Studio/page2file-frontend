@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import { getBlogEntry, getUpdateEntry } from "@/content/content-registry";
 import { getLandingContent } from "@/content/landings";
 import { isRealJobId } from "@/shared/api/backend-contract";
-import { conversionAdapter } from "@/shared/config/site";
 import type { Locale } from "@/shared/i18n/locales";
 import { isStaticRoute } from "@/shared/routes/routes";
 import { Container } from "@/shared/ui/site-shell";
@@ -11,13 +10,11 @@ import { Container } from "@/shared/ui/site-shell";
 type PublicPageResolverProps = {
   locale: Locale;
   segments: ReadonlyArray<string>;
-  mode?: string;
 };
 
 export const resolvePublicPage = async ({
   locale,
   segments,
-  mode,
 }: PublicPageResolverProps): Promise<ReactNode> => {
   const route = segments.join("/");
 
@@ -76,47 +73,27 @@ export const resolvePublicPage = async ({
   }
 
   if (segments[0] === "preview" && segments.length === 2) {
-    if (isRealJobId(segments[1])) {
-      const { RealPreviewWorkspace } = await import(
-        "@/features/preview/real-preview-workspace"
-      );
-      return (
-        <Container>
-          <RealPreviewWorkspace jobId={segments[1]} locale={locale} />
-        </Container>
-      );
-    }
-    const { parseMockJob } = await import("@/features/converter/mock-adapter");
-    const job =
-      conversionAdapter === "mock" ? parseMockJob(segments[1], mode) : null;
-    if (!job) {
+    if (!isRealJobId(segments[1])) {
       notFound();
     }
-    const { PreviewWorkspace } = await import(
-      "@/features/preview/preview-workspace"
+    const { RealPreviewWorkspace } = await import(
+      "@/features/preview/real-preview-workspace"
     );
     return (
       <Container>
-        <PreviewWorkspace job={job} locale={locale} />
+        <RealPreviewWorkspace jobId={segments[1]} locale={locale} />
       </Container>
     );
   }
 
   if (segments[0] === "download" && segments.length === 2) {
-    if (isRealJobId(segments[1])) {
-      const { RealDownloadPage } = await import(
-        "@/features/preview/real-download-page"
-      );
-      return <RealDownloadPage jobId={segments[1]} locale={locale} />;
-    }
-    const { parseMockJob } = await import("@/features/converter/mock-adapter");
-    const job =
-      conversionAdapter === "mock" ? parseMockJob(segments[1], mode) : null;
-    if (!job) {
+    if (!isRealJobId(segments[1])) {
       notFound();
     }
-    const { DownloadPage } = await import("@/features/preview/download-page");
-    return <DownloadPage job={job} locale={locale} />;
+    const { RealDownloadPage } = await import(
+      "@/features/preview/real-download-page"
+    );
+    return <RealDownloadPage jobId={segments[1]} locale={locale} />;
   }
 
   if (isStaticRoute(route)) {

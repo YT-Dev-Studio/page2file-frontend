@@ -1,4 +1,4 @@
-import { Manrope } from "next/font/google";
+import { manrope } from "@/shared/ui/manrope-font";
 import {
   useId,
   type ComponentPropsWithoutRef,
@@ -6,11 +6,6 @@ import {
 } from "react";
 import type { ProductFormat } from "@/shared/ui/types/product-format";
 import styles from "./progress.module.css";
-
-const manrope = Manrope({
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
 
 export type ProgressProps = Omit<
   ComponentPropsWithoutRef<"progress">,

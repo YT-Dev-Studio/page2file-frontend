@@ -5,29 +5,25 @@ import styles from "./ui.module.css";
 type ExternalCtaProps = {
   externalLinkKey: ExternalLinkKey;
   label: string;
-  comingSoonLabel: string;
+  placeholderLabel: string;
   compact?: boolean;
 };
 
 export const ExternalCta = ({
   externalLinkKey,
   label,
-  comingSoonLabel,
+  placeholderLabel,
 }: ExternalCtaProps): ReactNode => {
-  const href = externalLinks[externalLinkKey];
-  if (!href) {
-    return (
-      <span
-        aria-disabled="true"
-        className={`${styles.secondaryButton} ${styles.disabledButton}`}
-      >
-        {label} · {comingSoonLabel}
-      </span>
-    );
-  }
+  const link = externalLinks[externalLinkKey];
+
   return (
-    <a className={styles.button} href={href} rel="noopener noreferrer" target="_blank">
-      {label}
+    <a
+      className={styles.button}
+      href={link.href}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      {link.status === "placeholder" ? placeholderLabel : label}
     </a>
   );
 };

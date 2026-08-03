@@ -3,49 +3,52 @@ import { afterEach, describe, expect, test } from "vitest";
 import { externalLinks } from "@/shared/config/site";
 import { ExternalCta } from "./external-cta";
 
-const originalPage2PdfUrl = externalLinks.page2pdfGpt;
+const originalPage2PdfLink = externalLinks.page2pdfGpt;
 
 afterEach(() => {
-  externalLinks.page2pdfGpt = originalPage2PdfUrl;
+  externalLinks.page2pdfGpt = originalPage2PdfLink;
 });
 
 describe("ExternalCta", () => {
-  test("shows an honest, service-specific unavailable state", () => {
-    externalLinks.page2pdfGpt = "";
+  test("links an honest placeholder label to the GPT catalog", () => {
+    externalLinks.page2pdfGpt = {
+      href: "https://chatgpt.com/gpts",
+      status: "placeholder",
+    };
 
     render(
       <ExternalCta
-        comingSoonLabel="Coming soon"
         externalLinkKey="page2pdfGpt"
-        label="Open Page2PDF in ChatGPT"
+        label="Open One Page 2 PDF GPT App"
+        placeholderLabel="Browse GPTs"
       />,
     );
 
-    const state = screen.getByText(
-      "Open Page2PDF in ChatGPT · Coming soon",
-    );
-    expect(state.getAttribute("aria-disabled")).toBe("true");
-    expect(screen.queryByRole("link")).toBeNull();
+    const link = screen.getByRole("link", { name: "Browse GPTs" });
+    expect(link.getAttribute("href")).toBe("https://chatgpt.com/gpts");
+    expect(link.getAttribute("target")).toBe("_blank");
+    expect(link.getAttribute("rel")).toBe("noopener noreferrer");
   });
 
-  test("opens a configured HTTPS URL in a new tab", () => {
-    externalLinks.page2pdfGpt = "https://chatgpt.com/g/example";
+  test("uses the product-specific label for a configured live URL", () => {
+    externalLinks.page2pdfGpt = {
+      href: "https://chatgpt.com/g/example",
+      status: "live",
+    };
 
     render(
       <ExternalCta
-        comingSoonLabel="Coming soon"
         externalLinkKey="page2pdfGpt"
-        label="Open Page2PDF in ChatGPT"
+        label="Open One Page 2 PDF GPT App"
+        placeholderLabel="Browse GPTs"
       />,
     );
 
     const link = screen.getByRole("link", {
-      name: "Open Page2PDF in ChatGPT",
+      name: "Open One Page 2 PDF GPT App",
     });
     expect(link.getAttribute("href")).toBe(
       "https://chatgpt.com/g/example",
     );
-    expect(link.getAttribute("target")).toBe("_blank");
-    expect(link.getAttribute("rel")).toBe("noopener noreferrer");
   });
 });

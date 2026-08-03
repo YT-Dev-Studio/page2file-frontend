@@ -1,6 +1,6 @@
 "use client";
 
-import { Manrope } from "next/font/google";
+import { manrope } from "@/shared/ui/manrope-font";
 import {
   useId,
   useRef,
@@ -15,11 +15,6 @@ import {
   type RejectedFile,
 } from "./file-validation";
 import styles from "./dropzone.module.css";
-
-const manrope = Manrope({
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
 
 const DEFAULT_MAX_BYTES = 25_000_000;
 

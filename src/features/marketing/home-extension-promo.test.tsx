@@ -3,19 +3,19 @@ import { describe, expect, test } from "vitest";
 import { HomeExtensionPromo } from "./home-extension-promo";
 
 describe("HomeExtensionPromo", () => {
-  test("uses one locale-aware extension link for the entire banner", () => {
+  test("uses the honest Chrome Web Store placeholder for the banner", () => {
     render(<HomeExtensionPromo locale="de" />);
 
     const promo = screen.getByRole("link", {
-      name: /save the current tab.*in chrome installieren/i,
+      name: /save the current tab.*browse chrome extensions/i,
     });
 
     expect(promo.getAttribute("href")).toBe(
-      "/de/chrome-extension/how-to-use",
+      "https://chromewebstore.google.com/",
     );
-    expect(promo.getAttribute("target")).toBeNull();
-    expect(promo.getAttribute("rel")).toBeNull();
+    expect(promo.getAttribute("target")).toBe("_blank");
+    expect(promo.getAttribute("rel")).toBe("noopener noreferrer");
     expect(promo.querySelector("button")).toBeNull();
-    expect(screen.getByText("In Chrome installieren")).not.toBeNull();
+    expect(screen.getByText("Browse Chrome extensions")).not.toBeNull();
   });
 });

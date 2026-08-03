@@ -13,38 +13,26 @@ const requireLanding = (
   return content;
 };
 
-describe("WorkflowLanding converter CTA", () => {
-  test("keeps PDF GPT workflows on the PDF converter", () => {
-    render(
-      <WorkflowLanding
-        content={requireLanding("page2pdf-gpt")}
-        family="gpt-workflow"
-        locale="en"
-      />,
-    );
+describe("WorkflowLanding calls to action", () => {
+  test.each(["page2pdf-gpt", "web2powerpoint-gpt"] as const)(
+    "links %s to the honest GPT catalog and extension guide",
+    (route) => {
+      render(
+        <WorkflowLanding
+          content={requireLanding(route)}
+          family="gpt-workflow"
+          locale="en"
+        />,
+      );
 
-    expect(
-      screen
-        .getByRole("link", { name: "Open the Web 2 PDF converter" })
-        .getAttribute("href"),
-    ).toBe("/en/convert-webpage-to-pdf");
-  });
-
-  test("keeps Web2PowerPoint on the PowerPoint converter", () => {
-    render(
-      <WorkflowLanding
-        content={requireLanding("web2powerpoint-gpt")}
-        family="gpt-workflow"
-        locale="en"
-      />,
-    );
-
-    expect(
-      screen
-        .getByRole("link", {
-          name: "Open the Web 2 PowerPoint converter",
-        })
-        .getAttribute("href"),
-    ).toBe("/en/convert-webpage-to-powerpoint");
-  });
+      expect(
+        screen.getByRole("link", { name: "Browse GPTs" }).getAttribute("href"),
+      ).toBe("https://chatgpt.com/gpts");
+      expect(
+        screen
+          .getByRole("link", { name: "Open the extension guide" })
+          .getAttribute("href"),
+      ).toBe("/en/chrome-extension/how-to-use");
+    },
+  );
 });

@@ -1,4 +1,4 @@
-import { Manrope } from "next/font/google";
+import { manrope } from "@/shared/ui/manrope-font";
 import Link from "next/link";
 import type {
   ComponentPropsWithoutRef,
@@ -6,11 +6,6 @@ import type {
 } from "react";
 import { ArrowRightIcon } from "@/shared/ui/utilities/icons/glyphs/arrow-right-icon";
 import styles from "./card.module.css";
-
-const manrope = Manrope({
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
 
 export type CardAction = {
   accessibleLabel?: string;

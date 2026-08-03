@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Page2File",
-    short_name: "Page2File",
+    name: "Page 2 File",
+    short_name: "Page 2 File",
     description: "Preview webpage sections as PDF pages or PowerPoint slides.",
     start_url: "/en",
     display: "standalone",

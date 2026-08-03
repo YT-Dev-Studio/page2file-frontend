@@ -7,7 +7,6 @@ import {
   type RelatedRoute,
 } from "@/content/landings";
 import type { Locale } from "@/shared/i18n/locales";
-import { getMessages } from "@/shared/i18n/messages";
 import type { PublicPageFamily } from "@/shared/routes/routes";
 import { ExternalCta } from "@/shared/ui/external-cta";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
@@ -34,23 +33,11 @@ export const WorkflowLanding = ({
   family,
   locale,
 }: WorkflowLandingProps): ReactNode => {
-  const messages = getMessages(locale);
   const copy = getMarketingCopy(locale);
   const workflowCopy =
     family === "gpt-workflow" ? copy.gptWorkflow : copy.chatWorkflow;
-  const isPowerPointGpt = content.route === "web2powerpoint-gpt";
-  const secondaryHref =
-    family === "chat-export"
-      ? `/${locale}/chrome-extension/how-to-use`
-      : isPowerPointGpt
-        ? `/${locale}/convert-webpage-to-powerpoint`
-        : `/${locale}/convert-webpage-to-pdf`;
-  const secondaryLabel =
-    family === "chat-export"
-      ? copy.landing.openGuide
-      : isPowerPointGpt
-        ? copy.landing.tryPowerPointConverter
-        : copy.landing.tryPdfConverter;
+  const secondaryHref = `/${locale}/chrome-extension/how-to-use`;
+  const secondaryLabel = copy.landing.openGuide;
   const relatedRoutes = content.relatedRoutes?.filter(
     (relatedRoute: RelatedRoute): boolean =>
       relatedRoute.route !== content.route,
@@ -116,9 +103,17 @@ export const WorkflowLanding = ({
             <div className={styles.actions}>
               {content.externalLinkKey && content.primaryLabel ? (
                 <ExternalCta
-                  comingSoonLabel={messages.actions.comingSoon}
                   externalLinkKey={content.externalLinkKey}
                   label={content.primaryLabel}
+                  placeholderLabel={
+                    family === "gpt-workflow"
+                      ? locale === "ru"
+                        ? "Каталог GPTs"
+                        : "Browse GPTs"
+                      : locale === "ru"
+                        ? "Каталог расширений Chrome"
+                        : "Browse Chrome extensions"
+                  }
                 />
               ) : null}
               <Link className={uiStyles.secondaryButton} href={secondaryHref}>
@@ -147,6 +142,28 @@ export const WorkflowLanding = ({
             </ol>
           </div>
         </section>
+
+        {content.articleLinks && content.articleLinks.length > 0 ? (
+          <nav
+            aria-label={
+              locale === "ru" ? "Статьи по теме" : "Related articles"
+            }
+            className={styles.articleLinks}
+          >
+            <strong>
+              {locale === "ru" ? "Статьи по теме" : "Related articles"}
+            </strong>
+            <ul>
+              {content.articleLinks.map((articleLink): ReactNode => (
+                <li key={articleLink.slug}>
+                  <Link href={`/${locale}/blog/${articleLink.slug}`}>
+                    {articleLink.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ) : null}
 
         {relatedItems && relatedItems.length > 0 ? (
           <RelatedScenariosCarousel

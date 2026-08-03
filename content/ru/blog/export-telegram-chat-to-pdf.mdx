@@ -1,0 +1,63 @@
+Чтобы экспортировать чат Telegram Web в PDF, откройте один разговор, загрузите нужную историю и захватите активную вкладку через [расширение Page 2 File](/ru/chrome-extension/how-to-use). Проверьте порядок, ответы, медиа и видимые ссылки.
+
+Page 2 File захватывает браузерное представление. Он не заменяет desktop export Telegram и не читает окно native-приложения вне Chrome. [Официальная инструкция Telegram](https://telegram.org/blog/export-and-more) описывает отдельный процесс Desktop для экспорта чатов в HTML или JSON.
+
+## Загрузите нужную историю
+
+Выберите начальную дату или сообщение и прокрутите до него. Длинные каналы и группы загружают историю частями. Убедитесь, что весь нужный диапазон остаётся отрисованным.
+
+Раскройте ответы и медиа, нужные читателю. Исключите sidebars, посторонние чаты и административные элементы.
+
+## Сохраните структуру чата
+
+Визуальный режим сохраняет bubbles, группировку авторов, время и видимые медиа. Редактируемый переносит поддерживаемые текст, изображения и безопасные ссылки, заменяя сложные posts визуально.
+
+Для Discord, Slack, Teams, Messenger и Instagram используйте [руководство по браузерным мессенджерам](/ru/blog/export-browser-messenger-chats-to-pdf).
+
+## Проверьте права и чувствительные данные
+
+В группе или канале может быть много авторов. Право читать чат не всегда означает право публиковать его. Удалите приватные данные и соблюдайте правила разговора и юрисдикции.
+
+Расширение не обнаруживает удалённые сообщения и скрытые записи аккаунта. Оно фиксирует только контент активной страницы.
+
+## Закройте предпросмотр после работы
+
+Проверьте первое и последнее сообщение, имена, даты, ссылки и предупреждения о медиа. Закрытие предпросмотра удаляет временные данные; базы истории у Page 2 File нет.
+
+Скачанный документ остаётся под вашим контролем. Page 2 File не связан и не одобрен Telegram. Для WhatsApp Web используйте [руководство по WhatsApp](/ru/blog/export-whatsapp-chat-to-pdf).
+
+## Подготовьте Telegram Web
+
+Проверьте account, chat и topic. В group или channel задайте диапазон, сохранив dates, senders и reply context. Загрузите старую историю и убедитесь, что она осталась rendered.
+
+Topics, pinned messages и side panels создают разные пути чтения. Выберите один нужный путь и отметьте referenced messages вне диапазона.
+
+Откройте media captions и link previews, несущие смысл. Displayed preview не гарантирует наличие исходного файла.
+
+## Точно представьте элементы Telegram
+
+Polls, reactions, voice messages, video, stickers и animation не сохранят поведение. Visual mode показывает результат или thumbnail, editable сохраняет supported text и links.
+
+Forwarded messages и replies нуждаются в attribution. Page break не должен отделять label от сообщения. Long code и text проверяйте на wrapping.
+
+Official desktop export Telegram подходит более широкому архиву; active-tab capture — выбранной web-беседе.
+
+## Безопасно передайте результат
+
+Проверьте usernames, phone numbers, membership details, private links и unrelated chats в navigation. Запишите chat identifier, range, date, mode и missing media.
+
+Закройте preview, чтобы удалить temporary data, и защитите локальные и shared copies.
+
+## Сравните с Telegram Desktop export
+
+Официальная инструкция Telegram описывает Desktop export в HTML или JSON. Он подходит для более широкого native archive. Active-tab capture решает другую задачу: создаёт проверенный readable PDF разрешённых messages, отрисованных в Telegram Web.
+
+Не называйте PDF полным account export. Web history может быть не загружена, media — показана только preview, а native-only controls находятся вне границы расширения.
+
+## Проверьте Telegram-контекст
+
+Различайте обычные messages, forwarded posts, replies, service notices и channel publications. Сохраняйте attribution и referenced message рядом, но не выдавайте forwarded label за подтверждение автора.
+
+Media albums, voice notes, video и polls остаются статичными. Проверьте captions, duration и poll state, удалите private invites и session-specific links. Сверьте first/last message, timestamps и representative media.
+
+Откройте PDF в обычном reader, проверьте boundaries и participant context. После закрытия preview временные данные удаляются, истории конвертаций нет.

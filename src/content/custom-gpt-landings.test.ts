@@ -11,28 +11,33 @@ const gptRoutes: ReadonlyArray<{
   {
     externalLinkKey: "page2pdfGpt",
     route: "page2pdf-gpt",
-    serviceName: "Page2PDF",
+    serviceName: "One Page 2 PDF",
   },
   {
     externalLinkKey: "web2pdfGpt",
     route: "web2pdf-gpt",
-    serviceName: "Web2PDF",
+    serviceName: "Web 2 PDF",
   },
   {
     externalLinkKey: "html2pdfGpt",
     route: "html2pdf-gpt",
-    serviceName: "HTML2PDF",
+    serviceName: "HTML 2 PDF",
+  },
+  {
+    externalLinkKey: "onePage2PowerpointGpt",
+    route: "one-page2powerpoint-gpt",
+    serviceName: "One Page 2 PowerPoint",
   },
   {
     externalLinkKey: "web2powerpointGpt",
     route: "web2powerpoint-gpt",
-    serviceName: "Web2PowerPoint",
+    serviceName: "Web 2 PowerPoint",
   },
 ];
 
-describe("Custom GPT landing content", () => {
+describe("GPT App landing content", () => {
   test.each(gptRoutes)(
-    "keeps $route bound to its own CTA and service copy",
+    "keeps $route bound to its own CTA and result contract",
     ({ externalLinkKey, route, serviceName }) => {
       const english = getLandingContent("en", route);
       const russian = getLandingContent("ru", route);
@@ -40,11 +45,13 @@ describe("Custom GPT landing content", () => {
       expect(english?.externalLinkKey).toBe(externalLinkKey);
       expect(russian?.externalLinkKey).toBe(externalLinkKey);
       expect(english?.primaryLabel).toBe(
-        `Open ${serviceName} in ChatGPT`,
+        `Open ${serviceName} GPT App`,
       );
       expect(russian?.primaryLabel).toBe(
-        `Открыть ${serviceName} в ChatGPT`,
+        `Открыть ${serviceName} GPT-приложение`,
       );
+      expect(english?.sections).toHaveLength(3);
+      expect(russian?.sections).toHaveLength(3);
       expect(english?.lead.length).toBeGreaterThan(120);
       expect(russian?.lead.length).toBeGreaterThan(120);
     },

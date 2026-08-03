@@ -6,6 +6,7 @@ export type StaticRoute =
   | "page2pdf-gpt"
   | "web2pdf-gpt"
   | "html2pdf-gpt"
+  | "one-page2powerpoint-gpt"
   | "web2powerpoint-gpt"
   | "export-ai-chat-to-pdf"
   | "export-chatgpt-to-pdf"
@@ -39,6 +40,7 @@ export const staticRoutes: ReadonlyArray<StaticRoute> = [
   "page2pdf-gpt",
   "web2pdf-gpt",
   "html2pdf-gpt",
+  "one-page2powerpoint-gpt",
   "web2powerpoint-gpt",
   "export-ai-chat-to-pdf",
   "export-chatgpt-to-pdf",
@@ -70,6 +72,7 @@ const publicPageFamilyByRoute: Record<StaticRoute, PublicPageFamily> = {
   "export-gemini-to-pdf": "chat-export",
   "export-grok-to-pdf": "chat-export",
   "html2pdf-gpt": "gpt-workflow",
+  "one-page2powerpoint-gpt": "gpt-workflow",
   "page2pdf-gpt": "gpt-workflow",
   "privacy": "legal",
   "security": "security",

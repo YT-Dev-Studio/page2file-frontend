@@ -96,7 +96,7 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
   en: {
     title: "Save any webpage as a useful file",
     lead:
-      "Paste a link to a public page. Page2File carefully splits it into PDF pages or PowerPoint slides — with a preview before download.",
+      "Paste a link to a public page. Page 2 File carefully splits it into PDF pages or PowerPoint slides — with a preview before download.",
     form: {
       formatLabel: "Format",
       meta: "No registration · Preview · Temporary files",
@@ -126,7 +126,7 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
       readyTitle: "Your file is ready",
     },
     closingNote:
-      "The service works for articles, documentation, landing pages and public reports. Need the current private tab or an AI chat? The extension processes it locally in your browser.",
+      "The service works for articles, documentation, landing pages and public reports. For a private page or AI chat, the extension works from the active browser tab and provides a temporary preview.",
     preview: {
       accessibleLabel: "Example conversion result",
       divider: "THE PAGE BREAK KEEPS THE IMAGE WHOLE",
@@ -138,7 +138,7 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
     },
     promo: {
       body:
-        "The extension works with both links and the open browser tab. Private pages and AI chats are processed locally in your browser.",
+        "The extension works with links and the active browser tab. Preview data is temporary and is deleted after the preview tab closes.",
       eyebrow: "CHROME EXTENSION",
       title: "Save the current tab — even when it requires sign-in",
     },
@@ -161,7 +161,7 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
         {
           title: "Control file contents",
           body:
-            "Independently include buttons, images and styles in editable PDF — or build a lightweight text-only version.",
+            "Editable mode keeps supported text, images, links and layout available for review before download.",
         },
         {
           title: "From a link or a tab",
@@ -169,14 +169,14 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
             "Use a public HTTPS link on the site. The extension can also save the current tab and private pages.",
         },
         {
-          title: "Images stay whole",
+          title: "Review page breaks",
           body:
-            "Smart breaks do not cut images or long sections — in PDF pages or PowerPoint slides.",
+            "Page-aware splitting is designed to reduce awkward cuts in PDF pages and PowerPoint slides. Check the preview before downloading.",
         },
         {
           title: "No account or history",
           body:
-            "Work without a required account. Private tabs stay local, and we do not keep your documents.",
+            "Work without a required account. Preview data is temporary, and Page 2 File has no conversion-history database.",
         },
       ],
     },
@@ -186,17 +186,17 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
         "The fastest route is to install the extension: it works with the current tab and does not require copying a link.",
       eyebrow: "HOW TO START",
       extensionAction: "Install extension",
-      installTime: "in 30 seconds",
+      installTime: "No account required",
       items: [
         {
           title: "Install the extension",
           body:
-            "Add Page2File to Chrome. Installation takes less than a minute and registration is not required.",
+            "Add Page 2 File to Chrome. No Page 2 File account is required.",
         },
         {
           title: "Open the page",
           body:
-            "Go to the tab you need, open Page2File and choose PDF or PowerPoint.",
+            "Go to the tab you need, open Page 2 File and choose PDF or PowerPoint.",
         },
         {
           title: "Review and download",
@@ -224,38 +224,58 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
     },
     faq: {
       body:
-        "Short answers about modes, privacy, the extension and repeated downloads.",
+        "Clear answers about webpage capture, output modes, private tabs, temporary previews, and chat export.",
       eyebrow: "FREQUENTLY ASKED QUESTIONS",
       items: [
         {
-          title: "Can I save a private page?",
+          title: "How do I convert a webpage to PDF or PowerPoint?",
           body:
-            "The site accepts only public HTTPS addresses. For a signed-in tab, install the extension: it reads the open page locally in the browser.",
+            "For a public page, paste its HTTPS URL, choose PDF or PowerPoint, select visual or editable mode, and review the sections before creating the file. For a signed-in page, use the Page 2 File Chrome extension with the active tab.",
         },
         {
-          title: "How do “Page snapshots” differ from editable PDF?",
+          title: "Can Page 2 File preserve the page design?",
           body:
-            "Snapshots preserve the appearance as accurately as possible. Editable PDF keeps text, links and selected elements available for further work.",
+            "Visual mode is intended to preserve the rendered appearance, including layout, colors, images, and visible charts. Browser-only behavior such as animation, video, and interactive controls becomes a static representation.",
         },
         {
-          title: "Why are there no extra PowerPoint settings?",
+          title: "Will text and links remain editable or clickable?",
           body:
-            "PPTX follows one 16:9 flow. Choose the format, review the slide split in preview and download the presentation.",
+            "Editable mode keeps supported text as document content and preserves safe link targets. Complex widgets, canvas graphics, and unsupported elements may be represented as images. Visual mode prioritizes appearance and does not turn every pixel into an editable object.",
         },
         {
-          title: "Can I keep links but remove images and CSS?",
+          title: "Can it capture full-length and dynamic pages?",
           body:
-            "Yes. Links, images and styles are independent options in editable PDF, so any combination is available.",
+            "The extension works with the rendered active tab, including long pages after you load the required sections. Expand collapsed content and scroll through lazy media first. Content that is hidden, unloaded, or removed from the page cannot be reconstructed.",
         },
         {
-          title: "Where are generated files stored?",
+          title: "Can it convert pages behind a login?",
           body:
-            "Public-link processing is temporary: files are removed after a short download window or attempt limit. Private tabs are processed locally.",
+            "Yes, through the Chrome extension after you open the page normally. The extension works from the active tab and does not ask you to send an account password to the public URL form. It does not bypass access controls.",
         },
         {
-          title: "What if the download did not start?",
+          title: "Can it convert one page or an entire website?",
           body:
-            "When the file is ready, the form becomes a repeat-download button. It remains available within the temporary window and attempt limit.",
+            "The webpage converters and One Page GPT Apps handle one URL. Web 2 PDF and Web 2 PowerPoint can find accessible pages on a public website and return a separate PDF or PPTX for each selected page, not one automatically merged file.",
+        },
+        {
+          title: "How do visual and editable modes differ?",
+          body:
+            "Visual mode favors fidelity to the rendered page. Editable mode favors selectable text, supported images, safe links, and reusable document structure. Review complex charts, typography, and layouts because either mode can require a deliberate fallback.",
+        },
+        {
+          title: "What happens to preview data after I close the tab?",
+          body:
+            "Preview data is temporary and is deleted after the preview tab closes. Page 2 File has no database for user conversion history and does not provide an account archive of previous previews.",
+        },
+        {
+          title: "Do I need an account?",
+          body:
+            "No Page 2 File account is required for the public URL flow or extension preview. You may still need to be signed in to the source website when capturing a private page you are permitted to access.",
+        },
+        {
+          title: "Can it export AI and messenger chats?",
+          body:
+            "The extension can export a conversation rendered in a Chrome tab, including supported AI chats and web messengers. Load the required message range first. Native-only apps and interfaces outside the browser, such as Signal desktop, are outside the capture boundary.",
         },
       ],
       title: "What to know before conversion",
@@ -270,7 +290,7 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
   ru: {
     title: "Сохраните любую веб-страницу в удобный файл",
     lead:
-      "Вставьте ссылку на публичную страницу. Page2File аккуратно разделит её на страницы PDF или слайды PowerPoint — с предпросмотром перед скачиванием.",
+      "Вставьте ссылку на публичную страницу. Page 2 File аккуратно разделит её на страницы PDF или слайды PowerPoint — с предпросмотром перед скачиванием.",
     form: {
       formatLabel: "Формат",
       meta: "Без регистрации · Предпросмотр · Временные файлы",
@@ -300,7 +320,7 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
       readyTitle: "Ваш файл готов",
     },
     closingNote:
-      "Сервис подходит для статей, документации, лендингов и публичных отчётов. Нужна текущая закрытая вкладка или AI-чат? Расширение обработает их локально в браузере.",
+      "Сервис подходит для статей, документации, лендингов и публичных отчётов. Для закрытой страницы или AI-чата расширение работает с активной вкладкой и показывает временный предпросмотр.",
     preview: {
       accessibleLabel: "Пример результата конвертации",
       divider: "РАЗРЫВ НЕ РЕЖЕТ КАРТИНКУ",
@@ -312,7 +332,7 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
     },
     promo: {
       body:
-        "Расширение работает и по ссылке, и с открытой вкладкой. Закрытые страницы и AI-чаты обрабатываются локально в браузере.",
+        "Расширение работает по ссылке и с активной вкладкой. Данные предпросмотра временные и удаляются после закрытия вкладки предпросмотра.",
       eyebrow: "РАСШИРЕНИЕ CHROME",
       title: "Сохраните текущую вкладку — даже если она требует входа",
     },
@@ -335,7 +355,7 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
         {
           title: "Настройте содержимое файла",
           body:
-            "В редактируемом PDF независимо включайте кнопки, изображения и стили — или соберите лёгкую текстовую версию.",
+            "Редактируемый режим сохраняет поддерживаемые текст, изображения, ссылки и структуру для проверки перед скачиванием.",
         },
         {
           title: "По ссылке и из вкладки",
@@ -343,14 +363,14 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
             "На сайте работает публичная HTTPS-ссылка. Расширение дополнительно может сохранить текущую вкладку и закрытые страницы.",
         },
         {
-          title: "Изображения остаются целыми",
+          title: "Проверяйте разрывы",
           body:
-            "Умные разрывы не режут картинки и длинные секции — ни в PDF, ни в слайдах PowerPoint.",
+            "Разбиение с учётом страниц помогает сократить неудачные разрывы в PDF и PowerPoint. Проверьте результат в предпросмотре.",
         },
         {
           title: "Без регистрации и истории",
           body:
-            "Работайте без обязательного аккаунта, а закрытые вкладки — локально. Мы не храним ваших документов.",
+            "Работайте без обязательного аккаунта. Данные предпросмотра временные, а базы истории конвертаций у Page 2 File нет.",
         },
       ],
     },
@@ -360,17 +380,17 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
         "Самый быстрый путь — установить расширение: оно работает с текущей вкладкой и не требует копировать ссылку.",
       eyebrow: "КАК НАЧАТЬ",
       extensionAction: "Установить расширение",
-      installTime: "за 30 секунд",
+      installTime: "Без регистрации",
       items: [
         {
           title: "Установите расширение",
           body:
-            "Добавьте Page2File в Chrome. Установка занимает меньше минуты, регистрация не нужна.",
+            "Добавьте Page 2 File в Chrome. Аккаунт Page 2 File не нужен.",
         },
         {
           title: "Откройте страницу",
           body:
-            "Перейдите на нужную вкладку, откройте Page2File и выберите PDF или PowerPoint.",
+            "Перейдите на нужную вкладку, откройте Page 2 File и выберите PDF или PowerPoint.",
         },
         {
           title: "Проверьте и скачайте",
@@ -398,38 +418,58 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
     },
     faq: {
       body:
-        "Короткие ответы о режимах, приватности, расширении и повторном скачивании.",
+        "Короткие ответы о захвате страниц, режимах, закрытых вкладках, временном предпросмотре и экспорте чатов.",
       eyebrow: "ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ",
       items: [
         {
-          title: "Можно сохранить закрытую страницу?",
+          title: "Как конвертировать веб-страницу в PDF или PowerPoint?",
           body:
-            "На сайте — только публичный HTTPS-адрес. Для вкладки с авторизацией установите расширение: оно читает открытую страницу локально в браузере.",
+            "Для публичной страницы вставьте HTTPS-адрес, выберите PDF или PowerPoint, визуальный или редактируемый режим и проверьте секции. Для страницы после входа используйте расширение Page 2 File с активной вкладкой.",
         },
         {
-          title: "Чем «Снимки страницы» отличаются от редактируемого PDF?",
+          title: "Может ли Page 2 File сохранить дизайн страницы?",
           body:
-            "Снимки максимально точно сохраняют внешний вид. Редактируемый PDF оставляет текст, ссылки и выбранные элементы доступными для дальнейшей работы.",
+            "Визуальный режим предназначен для сохранения отображаемого макета, цветов, изображений и видимых графиков. Анимация, видео и интерактивные элементы браузера переходят в статичное представление.",
         },
         {
-          title: "Почему у PowerPoint нет дополнительных настроек?",
+          title: "Останутся ли текст и ссылки редактируемыми и кликабельными?",
           body:
-            "PPTX создаётся по единому сценарию 16:9. Вы выбираете формат, проверяете разбиение в предпросмотре и скачиваете презентацию.",
+            "Редактируемый режим сохраняет поддерживаемый текст как содержимое документа и оставляет безопасные ссылки кликабельными. Сложные виджеты и canvas могут стать изображениями. Визуальный режим отдаёт приоритет внешнему виду.",
         },
         {
-          title: "Можно сохранить ссылки, но убрать картинки и CSS?",
+          title: "Можно ли захватить полную и динамическую страницу?",
           body:
-            "Да. В редактируемом PDF ссылки, изображения и стили — независимые параметры, поэтому доступны любые комбинации.",
+            "Расширение работает с отображаемой активной вкладкой, включая длинную страницу после загрузки нужных секций. Сначала раскройте блоки и прокрутите ленивые медиа. Скрытый или незагруженный контент восстановить нельзя.",
         },
         {
-          title: "Где хранятся созданные файлы?",
+          title: "Можно ли конвертировать страницу после входа?",
           body:
-            "Для публичной ссылки обработка временная: файл автоматически удаляется после короткого окна скачивания или лимита попыток. Закрытые вкладки обрабатываются локально.",
+            "Да, через расширение Chrome после обычного открытия страницы. Оно работает с активной вкладкой и не просит передавать пароль в форму публичного URL. Расширение не обходит контроль доступа.",
         },
         {
-          title: "Что делать, если скачивание не началось?",
+          title: "Можно конвертировать одну страницу или весь сайт?",
           body:
-            "После готовности форма заменяется кнопкой повторного скачивания. Она доступна в пределах временного окна и лимита попыток.",
+            "Конвертеры и GPT-приложения One Page обрабатывают один URL. Web 2 PDF и Web 2 PowerPoint находят доступные публичные страницы и возвращают отдельный PDF или PPTX для каждой выбранной страницы, а не один общий файл.",
+        },
+        {
+          title: "Чем отличаются визуальный и редактируемый режимы?",
+          body:
+            "Визуальный режим сохраняет внешний вид отрисованной страницы. Редактируемый сохраняет выделяемый текст, поддерживаемые изображения, безопасные ссылки и структуру. Сложные графики, шрифты и макеты требуют проверки.",
+        },
+        {
+          title: "Что происходит с данными после закрытия предпросмотра?",
+          body:
+            "Данные предпросмотра временные и удаляются после закрытия вкладки. У Page 2 File нет базы данных для истории пользовательских конвертаций и архива прошлых предпросмотров.",
+        },
+        {
+          title: "Нужна ли регистрация?",
+          body:
+            "Аккаунт Page 2 File не нужен ни для публичного URL, ни для предпросмотра расширения. Для захвата закрытой страницы может понадобиться обычный вход на исходный сайт.",
+        },
+        {
+          title: "Можно ли экспортировать AI-чаты и мессенджеры?",
+          body:
+            "Расширение экспортирует диалог, отображаемый во вкладке Chrome, включая поддерживаемые AI-чаты и веб-мессенджеры. Сначала загрузите нужные сообщения. Приложения вне браузера, например Signal desktop, не захватываются.",
         },
       ],
       title: "Что важно знать до конвертации",

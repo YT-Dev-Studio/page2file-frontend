@@ -8,6 +8,32 @@ const RUSSIAN_BLOG_DIRECTORY = join(ROOT, "content", "ru", "blog");
 const RUSSIAN_UPDATE_DIRECTORY = join(ROOT, "content", "ru", "updates");
 const FORBIDDEN_PATTERN =
   /<script|<iframe|dangerouslySetInnerHTML|javascript:/i;
+const EXPECTED_BLOG_SLUGS = [
+  "save-webpage-as-pdf",
+  "why-print-to-pdf-breaks",
+  "capture-full-webpage-as-pdf",
+  "long-webpage-page-breaks",
+  "preserve-clickable-links",
+  "visual-vs-editable",
+  "html-to-pdf-safely",
+  "multi-page-website-to-pdf",
+  "webpage-to-powerpoint",
+  "website-to-powerpoint",
+  "html-to-powerpoint",
+  "sections-to-slides",
+  "screenshot-vs-editable-powerpoint",
+  "save-authenticated-webpage-as-pdf",
+  "website-types-to-pdf-or-powerpoint",
+  "webpage-capture-vs-web-scraping",
+  "export-ai-chats-privately",
+  "export-chatgpt-conversation-to-pdf",
+  "export-claude-chat-to-pdf",
+  "export-gemini-chat-to-pdf",
+  "export-other-ai-chats-to-pdf",
+  "export-whatsapp-chat-to-pdf",
+  "export-telegram-chat-to-pdf",
+  "export-browser-messenger-chats-to-pdf",
+].sort();
 
 const readMdxFiles = async (directory) => {
   const names = await readdir(directory);
@@ -63,13 +89,10 @@ const NOINDEX_SHORT_TITLES = new Set([
   "Политика конфиденциальности",
   "Условия использования",
   "Политика cookies и аналитики",
-  "Страница Page2File не найдена",
 ]);
 
 const NOINDEX_SHORT_DESCRIPTIONS = new Set([
-  "Post-install guide for the Page2File Chrome extension prototype.",
   "Implemented frontend controls and future backend security boundaries.",
-  "Стартовая инструкция после установки прототипа расширения Page2File.",
   "Реализованные frontend-контроли и будущие границы безопасности backend.",
 ]);
 
@@ -119,17 +142,24 @@ const run = async () => {
   validateFiles(russianUpdateFiles, "Russian update");
   validateMatchingFiles(blogFiles, russianBlogFiles, "blog");
   validateMatchingFiles(updateFiles, russianUpdateFiles, "update");
-  if (blogFiles.length !== 10) {
-    throw new Error(`Expected exactly 10 blog entries, found ${blogFiles.length}`);
+  const blogSlugs = blogFiles
+    .map(function selectBlogSlug(file) {
+      return file.name.replace(/\.mdx$/, "");
+    })
+    .sort();
+  if (blogSlugs.join("|") !== EXPECTED_BLOG_SLUGS.join("|")) {
+    throw new Error(
+      "The English blog corpus must match the approved 24-cluster content map.",
+    );
   }
   if (updateFiles.length !== 0) {
     throw new Error(
       `Expected no update entries before the first release, found ${updateFiles.length}`,
     );
   }
-  if (russianBlogFiles.length !== 10 || russianUpdateFiles.length !== 0) {
+  if (russianUpdateFiles.length !== 0) {
     throw new Error(
-      "Russian content must contain exactly 10 blog entries and no pre-release updates.",
+      "Russian content must not contain pre-release update entries.",
     );
   }
 
@@ -258,6 +288,7 @@ const run = async () => {
     "page2pdf-gpt",
     "web2pdf-gpt",
     "html2pdf-gpt",
+    "one-page2powerpoint-gpt",
     "web2powerpoint-gpt",
     "export-ai-chat-to-pdf",
     "export-chatgpt-to-pdf",

@@ -16,7 +16,6 @@ type RouteParams = {
 
 type PageProps = {
   params: Promise<RouteParams>;
-  searchParams: Promise<Record<string, string | ReadonlyArray<string> | undefined>>;
 };
 
 const staticContentRoutes: ReadonlyArray<string> = [
@@ -154,14 +153,10 @@ export const generateMetadata = async ({
 
 export default async function LocalizedPage({
   params,
-  searchParams,
 }: PageProps): Promise<ReactNode> {
   const { locale, slug = [] } = await params;
   if (!isLocale(locale)) {
     notFound();
   }
-  const query = await searchParams;
-  const rawMode = query.mode;
-  const mode = typeof rawMode === "string" ? rawMode : undefined;
-  return resolvePublicPage({ locale, mode, segments: slug });
+  return resolvePublicPage({ locale, segments: slug });
 }

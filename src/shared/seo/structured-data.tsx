@@ -113,12 +113,14 @@ export const ArticleJsonLd = ({
     <JsonLd
       data={{
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
         headline: entry.title,
         description: entry.description,
+        image: absoluteUrl(entry.image),
         author: {
           "@type": "Organization",
           name: entry.author,
+          url: absoluteUrl(routePath(locale, "")),
         },
         datePublished: entry.publishedAt,
         dateModified: entry.updatedAt,
@@ -129,6 +131,7 @@ export const ArticleJsonLd = ({
         publisher: {
           "@type": "Organization",
           name: siteName,
+          url: absoluteUrl(routePath(locale, "")),
         },
       }}
     />

@@ -1,4 +1,4 @@
-import { Manrope } from "next/font/google";
+import { manrope } from "@/shared/ui/manrope-font";
 import type {
   ComponentPropsWithoutRef,
   ReactNode,
@@ -8,11 +8,6 @@ import type { ProductFormat } from "@/shared/ui/types/product-format";
 import { DownloadIcon } from "@/shared/ui/utilities/icons/glyphs/download-icon";
 import { FileIcon } from "@/shared/ui/utilities/icons/glyphs/file-icon";
 import styles from "./file-card.module.css";
-
-const manrope = Manrope({
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
 
 export type FileCardProps = Omit<
   ComponentPropsWithoutRef<"article">,

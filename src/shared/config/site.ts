@@ -5,7 +5,15 @@ export type ExternalLinkKey =
   | "page2pdfGpt"
   | "web2pdfGpt"
   | "html2pdfGpt"
+  | "onePage2PowerpointGpt"
   | "web2powerpointGpt";
+
+export type ExternalLinkStatus = "placeholder" | "live";
+
+export type ExternalLink = {
+  href: string;
+  status: ExternalLinkStatus;
+};
 
 const DEFAULT_SITE_URL = "http://localhost:3000";
 const LOCAL_HOSTNAMES: ReadonlySet<string> = new Set([
@@ -51,9 +59,9 @@ export type LegalProfile = {
 };
 
 export const siteUrl = parseSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
-export const siteName = "Page2File";
+export const siteName = "Page 2 File";
 export const siteDescription =
-  "Preview and export public webpages to PDF or PowerPoint without accounts or conversion history.";
+  "Preview and export webpages to PDF or PowerPoint without accounts or a stored conversion history.";
 
 export const indexingEnabled =
   parseBoolean(process.env.NEXT_PUBLIC_ENABLE_INDEXING) &&
@@ -73,23 +81,7 @@ export const legalReviewed =
   parseBoolean(process.env.NEXT_PUBLIC_LEGAL_REVIEWED) &&
   legalDetailsComplete;
 
-export const mockControlsEnabled =
-  parseBoolean(process.env.NEXT_PUBLIC_ENABLE_MOCK_CONTROLS) ||
-  process.env.NODE_ENV === "development";
-
-export type ConversionAdapter = "mock" | "real";
 export const conversionEnabled = false;
-
-const requestedConversionAdapter =
-  process.env.NEXT_PUBLIC_CONVERSION_ADAPTER === "mock" ? "mock" : "real";
-const localSite =
-  LOCAL_HOSTNAMES.has(siteUrl.hostname.toLowerCase()) ||
-  siteUrl.hostname.toLowerCase().endsWith(".localhost");
-export const conversionAdapter: ConversionAdapter =
-  requestedConversionAdapter === "mock" &&
-  (process.env.NODE_ENV !== "production" || localSite)
-    ? "mock"
-    : "real";
 
 const rawGaMeasurementId =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ?? "";
@@ -97,21 +89,43 @@ export const gaMeasurementId = /^G-[A-Z0-9]+$/.test(rawGaMeasurementId)
   ? rawGaMeasurementId
   : "";
 
-export const externalLinks: Record<ExternalLinkKey, string> = {
-  chromeExtension: parseSafeExternalUrl(
+const externalLink = (
+  value: string | undefined,
+  placeholderHref: string,
+): ExternalLink => {
+  const liveHref = parseSafeExternalUrl(value);
+  return liveHref
+    ? { href: liveHref, status: "live" }
+    : { href: placeholderHref, status: "placeholder" };
+};
+
+const GPT_CATALOG_URL = "https://chatgpt.com/gpts";
+const CHROME_WEB_STORE_URL = "https://chromewebstore.google.com/";
+
+export const externalLinks: Record<ExternalLinkKey, ExternalLink> = {
+  chromeExtension: externalLink(
     process.env.NEXT_PUBLIC_CHROME_EXTENSION_URL,
+    CHROME_WEB_STORE_URL,
   ),
-  page2pdfGpt: parseSafeExternalUrl(
+  page2pdfGpt: externalLink(
     process.env.NEXT_PUBLIC_PAGE2PDF_GPT_URL,
+    GPT_CATALOG_URL,
   ),
-  web2pdfGpt: parseSafeExternalUrl(
+  web2pdfGpt: externalLink(
     process.env.NEXT_PUBLIC_WEB2PDF_GPT_URL,
+    GPT_CATALOG_URL,
   ),
-  html2pdfGpt: parseSafeExternalUrl(
+  html2pdfGpt: externalLink(
     process.env.NEXT_PUBLIC_HTML2PDF_GPT_URL,
+    GPT_CATALOG_URL,
   ),
-  web2powerpointGpt: parseSafeExternalUrl(
+  onePage2PowerpointGpt: externalLink(
+    process.env.NEXT_PUBLIC_ONE_PAGE2POWERPOINT_GPT_URL,
+    GPT_CATALOG_URL,
+  ),
+  web2powerpointGpt: externalLink(
     process.env.NEXT_PUBLIC_WEB2POWERPOINT_GPT_URL,
+    GPT_CATALOG_URL,
   ),
 };
 

@@ -1,20 +1,89 @@
-## Find the page outline
+Webpage sections become useful PowerPoint slides when each slide communicates one idea at a readable scale. The [Page 2 File PowerPoint converter](/en/convert-webpage-to-powerpoint) uses headings and visible section boundaries as a starting point, then exposes the result in preview.
 
-Headings, landmarks and visual grouping reveal a webpage’s information
-hierarchy. Those signals can produce a first slide outline without relying on a
-language model.
+Automatic segmentation is a draft, not editorial judgment. Review the order, split overloaded sections and merge fragments that make sense only together.
 
-## Fit one idea to each slide
+## Find the real section boundaries
 
-A section may be too large for one 16:9 slide, while several short sections may
-belong together. Split and merge controls let the user correct the initial
-mapping.
+A semantic section often begins with a heading and ends before the next topic. Design changes can reinforce that boundary, but a background color alone does not always mean a new slide. Navigation, cookie notices and repeated calls to action are usually interface material rather than presentation content.
 
-## Preserve what matters
+Keep a chart with its title and legend, an image with its caption, and a code example with the explanation that makes it useful.
 
-Editable slides should keep supported text, images and safe links. Visual
-fallback is appropriate for charts, canvas and complex composition. The preview
-must identify those blocks before the deck is downloaded.
+## Split tall sections without shrinking them
 
-Good conversion creates a coherent presentation sequence, not a stack of
-arbitrary browser screenshots.
+A 16:9 slide cannot hold the same vertical density as a webpage. Continue a long list, table or article section across slides and repeat the minimum context a reader needs. Do not stretch screenshots or reduce body text until it cannot be presented.
+
+For visual sections, crop along meaningful boundaries. For editable sections, redistribute objects while preserving reading order.
+
+## Choose one output policy
+
+Visual slides preserve composition and make quick design references. Editable slides support revision but expose format substitutions and raster fallbacks. The [mode comparison](/en/blog/screenshot-vs-editable-powerpoint) gives concrete review points.
+
+If the source is a single URL, [One Page 2 PowerPoint](/en/one-page2powerpoint-gpt) keeps the boundary simple. For several pages, [Web 2 PowerPoint](/en/web2powerpoint-gpt) returns separate decks. When the source is rendered HTML, first review the [HTML-to-PowerPoint boundary](/en/blog/html-to-powerpoint).
+
+## Run a slide-by-slide check
+
+Read titles in sequence without the body: they should tell a coherent story. Then check image sharpness, source links, font substitutions, overlaps and elements outside the slide canvas.
+
+Delete a weak slide rather than keeping it to match a page count. A deck is successful when a reader can follow it, not when every webpage box has been copied.
+
+## Distinguish structural and visual boundaries
+
+HTML headings provide an outline, but visual sections do not always follow the heading tree. A hero may contain a heading, illustration and call to action that belong on one slide. A comparison may use several columns under one heading and need multiple slides to stay readable.
+
+Map both structures before conversion. Record the semantic hierarchy for order and the visual groups for composition. When they disagree, choose the boundary that preserves meaning and keep enough context to show where the material came from.
+
+Cards require judgment. A row of four short cards may work as one slide, while four dense product descriptions need separate slides or a summary. Avoid a deck whose only rule is “one browser block per slide.”
+
+## Control density and repetition
+
+Projected slides need larger text and fewer simultaneous ideas than most webpages. Use a consistent density target rather than scaling each section independently. If one slide has readable text and the next uses tiny labels, the deck will feel unstable even when both fit.
+
+Sticky navigation, cookie banners and repeated page headers should not consume slide space unless they provide required attribution. Remove duplication during preparation or review. When a repeated table heading helps comprehension, keep it deliberately.
+
+Section backgrounds can provide continuity, but a complex full-page background may make editable text hard to read. Preserve it as a visual layer when it carries design meaning, or simplify it while retaining attribution.
+
+## Preserve evidence and editing intent
+
+When a chart or diagram becomes an image, keep its title, legend and source together. Cropping decorative margins is acceptable; cropping an axis label changes the evidence. Do not describe a visual fallback as an editable chart.
+
+For editable slides, test ordinary editing tasks. Change a title, adjust a text box and replace one image. Confirm that object order remains correct and that grouped elements do not unexpectedly separate.
+
+Review links in slideshow mode and remove destinations containing private session data. Finish with source-to-slide reconciliation: every approved source section should map to known slides, and every slide should have a reason to exist.
+
+## Write a source-to-slide map
+
+List the approved webpage sections in order, then assign each to a slide, a range of slides or an explicit exclusion. This small map exposes two common failures: content that disappeared during segmentation and interface fragments that became slides without an editorial purpose.
+
+Use the map to preserve context when one source section becomes several slides. Repeat a short section label, table heading or chart title where the audience would otherwise lose orientation. Do not repeat whole navigation bars to achieve the same effect.
+
+Record source links or identifiers for claims that require traceability. If several slides come from one long section, they can share one source note as long as the relationship remains clear.
+
+## Handle difficult components
+
+A wide comparison can become several slides that keep the same criteria while showing fewer columns. A long table can continue with repeated headers and a clear continuation label. A timeline should preserve sequence; splitting it into unrelated crops can change the story.
+
+Charts need their title, axes, units and legend. If those elements cannot remain readable as separate objects, preserve the complete chart visually and place editable interpretation beside or after it. Never rebuild exact values from a screenshot when accuracy matters.
+
+Accordions, tabs and carousels require a selected state. Open only the panels that belong in the deck and explain their order. Hidden alternatives are not part of the rendered capture, and placing every possible state in one deck may create repetition rather than completeness.
+
+## Check pacing at presentation size
+
+Run the deck in slideshow mode and estimate what the audience can understand before the next slide. A slide with several browser paragraphs may be technically legible at a desk and still be impossible to present. Split it around ideas, not arbitrary height.
+
+Watch scale across consecutive slides. A tiny screenshot followed by oversized editable text makes the deck feel inconsistent and can hide which details matter. Set a readable floor and change the section plan when material cannot meet it.
+
+Check the opening and ending separately. The first slide should establish the source and subject; the final slide should close the intended narrative. A webpage hero and footer are not automatically suitable presentation bookends.
+
+## Finish with an editable-or-visual declaration
+
+For each slide, know whether recipients can revise its important content. Editable text may coexist with visual charts or grouped fallbacks. Include that distinction in handoff notes when later editing is part of the job.
+
+Test one real change in a representative editable slide, then test image sharpness and cropping in a representative visual slide. Confirm links in slideshow mode and inspect speaker notes or source records for private URLs.
+
+Preview data is temporary and deleted after its tab closes, and Page 2 File does not keep conversion history. Retain the approved deck and source-to-slide map in your own project storage.
+
+Repeat the mapping check after slides are reordered or removed. The edited deck should still preserve every required claim, qualifier and source relationship.
+
+Archive the approved source-to-slide map with the final deck.
+
+For source-specific preparation, consult the [website output guide](/en/blog/website-types-to-pdf-or-powerpoint).

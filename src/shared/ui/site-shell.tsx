@@ -26,19 +26,19 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
         <div className={styles.footerGrid}>
           <div className={styles.footerBrand}>
             <Link
-              aria-label="Page2File"
+              aria-label="Page 2 File"
               className={styles.footerBrandLink}
               href={`/${locale}`}
             >
               <Image
                 alt=""
                 className={styles.footerLogo}
-                height={52}
+                height={80}
                 loading="eager"
                 src={page2FileLogo}
-                width={52}
+                width={80}
               />
-              <span>PAGE2FILE</span>
+              <span>PAGE 2 FILE</span>
             </Link>
             <p>{copy.brandDescription}</p>
           </div>
@@ -61,6 +61,9 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
             <Link href={`/${locale}/page2pdf-gpt`}>One Page 2 PDF</Link>
             <Link href={`/${locale}/web2pdf-gpt`}>Web 2 PDF</Link>
             <Link href={`/${locale}/html2pdf-gpt`}>HTML 2 PDF</Link>
+            <Link href={`/${locale}/one-page2powerpoint-gpt`}>
+              One Page 2 PowerPoint
+            </Link>
             <Link href={`/${locale}/web2powerpoint-gpt`}>Web 2 PowerPoint</Link>
           </nav>
 

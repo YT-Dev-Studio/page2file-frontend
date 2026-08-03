@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import type { KeyboardEvent, ReactNode } from "react";
 import { useRef, useState } from "react";
 import type { Locale } from "@/shared/i18n/locales";
-import { getMessages } from "@/shared/i18n/messages";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { ExternalCta } from "@/shared/ui/external-cta";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
@@ -20,7 +20,6 @@ type GuideMode = "steps" | "video";
 
 export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getExtensionCopy(locale);
-  const messages = getMessages(locale);
   const siteCopy = getSiteCopy(locale);
   const breadcrumbs: ReadonlyArray<BreadcrumbItem> = [
     { label: copy.homeLabel, href: `/${locale}` },
@@ -100,9 +99,13 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
           title={copy.title}
         >
           <ExternalCta
-            comingSoonLabel={messages.actions.comingSoon}
             externalLinkKey="chromeExtension"
             label={siteCopy.header.extensionAction}
+            placeholderLabel={
+              locale === "ru"
+                ? "Каталог расширений Chrome"
+                : "Browse Chrome extensions"
+            }
           />
         </PublicHero>
         <div
@@ -177,6 +180,22 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
             </aside>
           </div>
         </section>
+
+        <nav
+          aria-label={copy.relatedArticlesLabel}
+          className={styles.articleLinks}
+        >
+          <strong>{copy.relatedArticlesLabel}</strong>
+          <ul>
+            {copy.relatedArticles.map((article) => (
+              <li key={article.slug}>
+                <Link href={`/${locale}/blog/${article.slug}`}>
+                  {article.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </Container>
     </PublicPage>
   );

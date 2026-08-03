@@ -1,20 +1,103 @@
-## The active tab already has the conversation
+To export an AI chat to PDF privately, capture the conversation from the active browser tab, review exactly what is included and close the temporary preview when finished. The [Page 2 File extension](/en/chrome-extension/how-to-use) does not require a Page 2 File account or keep a conversion-history database.
 
-Private AI chats often require an authenticated browser session. Sending
-cookies or chat HTML to a remote URL service creates an unnecessary trust
-boundary.
+This is different from a platform account-data export. ChatGPT, Claude and Gemini can provide broader archives through their own settings; active-tab capture creates a readable document from the conversation you have loaded.
 
-A browser extension can work after an explicit user click, read the visible
-conversation in the active tab and build a local preview.
+## Choose one conversation boundary
 
-## Preserve conversation structure
+Open the required chat, load older messages and expand code, citations or artifacts that belong in the document. Stop at a defined message rather than collecting an entire sidebar of unrelated chats.
 
-Useful export keeps speaker order, messages, code blocks, tables and visible
-citations. A clean-document option may reflow the presentation, but it should
-not erase authorship or source context.
+Virtualized interfaces may unload older content while you scroll. Page 2 File cannot recover messages that are not present in the rendered page, so confirm the range in preview.
 
-## Know what is not loaded
+## Use the platform archive for a different job
 
-Long chats may virtualize older messages. Collapsed branches, unloaded content
-and off-DOM artifacts cannot be captured until the user makes them available.
-The extension should explain this instead of claiming hidden access.
+OpenAI's [official export](https://help.openai.com/en/articles/7260999-how-do-i-export-my-chatgpt-history-and-data) delivers account data in an archive. Anthropic documents a [Claude data export](https://support.claude.com/en/articles/9450526-export-your-claude-data), and Google uses Takeout for [Gemini Apps data](https://support.google.com/gemini/answer/16920332?hl=en).
+
+Those exports are appropriate for backup or account access. A Page 2 File PDF is appropriate when you need one reviewed conversation in a readable layout.
+
+## Choose original look or editable reading
+
+Visual mode preserves message grouping, code colors and visible source cards. Editable mode keeps supported text, images and safe links easier to search and reuse, with complex blocks represented visually when needed.
+
+Use the specific guides for [ChatGPT](/en/blog/export-chatgpt-conversation-to-pdf), [Claude](/en/blog/export-claude-chat-to-pdf) or [Gemini](/en/blog/export-gemini-chat-to-pdf).
+
+## Review sensitive material
+
+AI chats may include names, internal code, client details and uploaded content. Remove unrelated sections before download and follow the data rules that apply to the conversation.
+
+Closing the preview tab deletes temporary preview data. The downloaded PDF or PPTX remains on your device and must be protected by you.
+
+## Separate a conversation copy from an account archive
+
+A selected conversation PDF is designed for reading, sharing or attaching to a case record. An official account export can contain many conversations plus account data in the platform's own archive format. These outputs serve different purposes and may follow different access rules.
+
+Use the platform's official export when you need the broader archive or must exercise an account-data right. Use active-tab capture when you need one visible thread with a controlled start and end. Do not describe a single-thread PDF as a complete account backup.
+
+Workspace administrators may have separate export or retention controls. A user's ability to see a conversation does not necessarily grant authority to remove it from a managed environment. Check the applicable policy before capture.
+
+## Prepare long and branching chats
+
+Load older messages deliberately and expand code, citations, tables and collapsed responses. Some chat interfaces virtualize history, so scroll back to confirm that early messages remain rendered after later content loads.
+
+Branching conversations need an explicit choice of branch. A PDF can record the visible path, but it cannot represent every hidden alternative as though they appeared in one continuous thread. Note omissions when the conversation's context depends on another branch.
+
+External sources can change after the chat was written. Preserve visible citation labels and destinations, then verify important claims independently. Exporting an answer does not establish that the answer or its sources are correct.
+
+## Redact before distribution
+
+Review prompts and responses for personal names, credentials, unpublished code, customer data and hidden instructions. Remove unrelated messages at the boundary rather than relying on a recipient to ignore them.
+
+Inspect images and attachments as well as text. Screenshots may contain account names or browser chrome, and generated files can carry their own metadata. Check link destinations for private workspace identifiers or signed tokens.
+
+After download, apply the storage and retention rules for the information, not merely for “a PDF.” Closing preview removes Page 2 File's temporary preview data, but copies on your device, email or cloud drive remain your responsibility.
+
+## Document what the file represents
+
+Keep the platform name, conversation title or safe identifier, visible date range, capture date and selected mode. State whether the file preserves the original appearance or uses editable document structure with visual fallbacks.
+
+Record known omissions such as unloaded history, hidden branches, unavailable attachments or native-only content. This prevents a convenient reading copy from being mistaken for a forensic or complete platform export.
+
+Page 2 File is independent of the chat platforms it captures. The product does not certify the conversation, verify model output or replace a platform's official compliance export.
+
+## Build a conversation inventory before capture
+
+Identify the chat account, thread, visible branch, required date or message range and the reason the document is needed. Note the components that carry evidence: prompts, responses, code, tables, citations, generated images, attached-file summaries or artifacts. This inventory becomes the acceptance check.
+
+Exclude the conversation sidebar, profile menu and unrelated workspace material unless they establish necessary context. A title and safe account or workspace label can help provenance; a list of other private chats usually cannot.
+
+For a long thread, mark several distinctive messages from the beginning, middle and end. After scrolling to load history, return to those points and confirm that the interface still renders them. If not, capture smaller ranges and label their sequence and omissions.
+
+## Review platform-specific structures
+
+ChatGPT conversations can contain alternative response branches, code blocks, tables and cited sources. Claude can place artifacts beside the main transcript. Gemini can show generated media and source panels. Grok, DeepSeek, Perplexity and Copilot each arrange history, citations and sharing controls differently.
+
+Capture only the visible branch and state. An artifact displayed in a side panel may need a separate visual section; a source panel may need to be opened before conversion. Do not describe a thumbnail as an included attachment or a source card as verification of the model’s claim.
+
+Visual mode is usually clearer when bubbles, artifacts and grouped citations matter. Editable mode is useful when supported text must be searched, quoted or reused. Inspect every complex fallback rather than assuming the mode applies uniformly to the whole chat.
+
+## Preserve evidence without asserting authenticity
+
+A PDF can document what the browser displayed at a chosen time. It does not prove who typed a prompt, whether the model response is accurate or whether a shared link was unchanged. Keep capture date, visible platform context and known omissions with the file when provenance matters.
+
+Verify consequential sources outside the generated response. Open a representative citation, compare its claim with the source and remove private or temporary destinations. Generated links and citations can be wrong, stale or unrelated even when they look authoritative.
+
+For formal evidence, follow the organization’s recordkeeping, legal hold and authentication process. Page 2 File is a document conversion tool, not a forensic certification service.
+
+## Apply a privacy-first handoff
+
+AI conversations can mix public research with confidential prompts, uploaded-document excerpts, names, credentials and internal instructions. Review both user and assistant messages, source previews, file names, code comments and image content. Redact at the source or remove whole unrelated sections where possible.
+
+Check the downloaded PDF outside preview. Search for sensitive terms in editable output and inspect visual sections at readable zoom. Test only the links that the recipient is meant to use, because a signed or workspace-specific URL may expose access details.
+
+Close the preview tab after approval so temporary preview data is deleted. Page 2 File has no conversion-history database, but the downloaded file, review notes and any emailed copies remain under the user’s control.
+
+## Decide when the native export is better
+
+Use an official platform export for a broad account archive, data-access request or administrator-controlled retention workflow. Use active-tab capture for one readable, bounded conversation. These methods can coexist, but neither should be described as the other.
+
+If the required messages never coexist in the rendered tab, the conversation is native-only, or policy forbids document capture, stop and use the platform’s authorized alternative. A precisely described partial record is more reliable than an export labeled complete without evidence.
+
+Before handoff, open the downloaded document in an ordinary reader and compare it with the inventory. Confirm the visible branch, message order, important sources, readable code and explicit limitations. Keep that reviewed file separate from later annotations or edits so recipients can distinguish the captured record from subsequent work.
+
+Use a filename that identifies the conversation safely without exposing a confidential prompt, participant or workspace in shared storage.
+
+Messenger conversations have a separate [browser chat export guide](/en/blog/export-browser-messenger-chats-to-pdf).

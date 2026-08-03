@@ -125,7 +125,7 @@ const renderIconSample = ({
 export const ComponentShowcase = (): ReactNode => (
   <main className={styles.page}>
     <header className={styles.header}>
-      <h1 className={styles.title}>Page2File components</h1>
+      <h1 className={styles.title}>Page 2 File components</h1>
       <p className={styles.lead}>
         Development-only reference for geometry, native states,
         accessibility, responsive behavior, and frozen-token usage.

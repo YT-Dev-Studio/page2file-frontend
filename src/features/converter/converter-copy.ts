@@ -57,7 +57,7 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
     reviewTitle: "What you can verify",
     extensionTitle: "Need the page as it appears after sign-in?",
     extensionBody:
-      "Capture the current signed-in tab locally, then review the result before downloading.",
+      "Capture the current signed-in tab with the extension, then review the result before downloading.",
     visualTitle: "Visual mode",
     visualText: "Highest layout fidelity through section images.",
     editableTitle: "Editable mode",
@@ -105,7 +105,7 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
     reviewTitle: "Что можно проверить",
     extensionTitle: "Нужна страница в том виде, как она выглядит после входа?",
     extensionBody:
-      "Сохраните текущую вкладку локально в Chrome и проверьте результат перед скачиванием.",
+      "Сохраните текущую вкладку через расширение Chrome и проверьте результат перед скачиванием.",
     visualTitle: "Визуальный режим",
     visualText: "Максимальная точность макета благодаря изображениям секций.",
     editableTitle: "Редактируемый режим",

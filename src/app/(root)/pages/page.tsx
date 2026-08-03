@@ -10,7 +10,7 @@ import {
 } from "@/shared/routes/routes";
 
 export const metadata: Metadata = {
-  title: "Все страницы Page2File",
+  title: "Все страницы Page 2 File",
   robots: {
     follow: false,
     index: false,

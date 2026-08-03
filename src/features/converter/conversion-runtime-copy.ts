@@ -28,7 +28,7 @@ const runtimeCopy: LocalizedPublished<RuntimeCopy> = {
       REDIRECT_BLOCKED:
         "The page redirected to a destination that is not allowed.",
       SOURCE_REQUIRES_AUTH:
-        "This page requires sign-in. Use the local extension workflow.",
+        "This page requires sign-in. Use the active-tab extension workflow.",
       SOURCE_BLOCKED_AUTOMATION:
         "The source does not allow automated access.",
       PAGE_TOO_LARGE:
@@ -76,7 +76,7 @@ const runtimeCopy: LocalizedPublished<RuntimeCopy> = {
       REDIRECT_BLOCKED:
         "Страница перенаправила запрос на запрещённый адрес.",
       SOURCE_REQUIRES_AUTH:
-        "Страница требует входа. Используйте локальный сценарий расширения.",
+        "Страница требует входа. Используйте расширение для активной вкладки.",
       SOURCE_BLOCKED_AUTOMATION:
         "Источник не разрешает автоматизированный доступ.",
       PAGE_TOO_LARGE:

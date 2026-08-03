@@ -1,12 +1,7 @@
-import { Manrope } from "next/font/google";
+import { manrope } from "@/shared/ui/manrope-font";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import type { ProductFormat } from "@/shared/ui/types/product-format";
 import styles from "./format-badge.module.css";
-
-const manrope = Manrope({
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
 
 const formatLabels: Record<ProductFormat, string> = {
   master: "Master",

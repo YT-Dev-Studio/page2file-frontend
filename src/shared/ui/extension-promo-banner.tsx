@@ -2,7 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Locale } from "@/shared/i18n/locales";
-import { getExtensionLink } from "@/shared/routes/extension-link";
+import {
+  getExtensionActionLabel,
+  getExtensionLink,
+} from "@/shared/routes/extension-link";
 import { ArrowRightIcon } from "@/shared/ui/utilities/icons/glyphs/arrow-right-icon";
 import { ChromeIcon } from "@/shared/ui/utilities/icons/glyphs/chrome-icon";
 import styles from "./extension-promo-banner.module.css";
@@ -124,11 +127,12 @@ export const ExtensionPromoBanner = ({
   variant = "wide",
 }: ExtensionPromoBannerProps): ReactNode => {
   const extensionLink = getExtensionLink(locale);
+  const resolvedActionLabel = getExtensionActionLabel(locale, actionLabel);
   const bannerClassName =
     `${styles.banner} ${styles[variant]} ${className ?? ""}`.trim();
   const content = (
     <BannerContent
-      actionLabel={actionLabel}
+      actionLabel={resolvedActionLabel}
       body={body}
       eyebrow={eyebrow}
       headingId={headingId}
@@ -138,7 +142,7 @@ export const ExtensionPromoBanner = ({
 
   return extensionLink.external ? (
     <a
-      aria-label={`${title}. ${actionLabel}`}
+      aria-label={`${title}. ${resolvedActionLabel}`}
       className={bannerClassName}
       href={extensionLink.href}
       rel="noopener noreferrer"
@@ -148,7 +152,7 @@ export const ExtensionPromoBanner = ({
     </a>
   ) : (
     <Link
-      aria-label={`${title}. ${actionLabel}`}
+      aria-label={`${title}. ${resolvedActionLabel}`}
       className={bannerClassName}
       href={extensionLink.href}
     >

@@ -8,6 +8,9 @@ export default defineConfig({
       "next/font/google": fileURLToPath(
         new URL("./test/mocks/next-font-google.ts", import.meta.url),
       ),
+      "next/font/local": fileURLToPath(
+        new URL("./test/mocks/next-font-local.ts", import.meta.url),
+      ),
     },
   },
   test: {

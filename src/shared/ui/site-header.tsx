@@ -4,7 +4,10 @@ import type { ReactNode } from "react";
 import page2FileLogo from "@/app/assets/logo.png";
 import type { Locale } from "@/shared/i18n/locales";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
-import { getExtensionLink } from "@/shared/routes/extension-link";
+import {
+  getExtensionActionLabel,
+  getExtensionLink,
+} from "@/shared/routes/extension-link";
 import { ButtonLink } from "@/shared/ui/components/button/button";
 import { LocaleSwitcher } from "./locale-switcher";
 import { SiteNavigation } from "./site-navigation";
@@ -29,7 +32,7 @@ const ExtensionButton = ({
       rel={extensionLink.external ? "noopener noreferrer" : undefined}
       target={extensionLink.external ? "_blank" : undefined}
     >
-      {copy.extensionAction}
+      {getExtensionActionLabel(locale, copy.extensionAction)}
     </ButtonLink>
   );
 };
@@ -57,7 +60,7 @@ export const SiteHeader = ({
             src={page2FileLogo}
             width={40}
           />
-          <span className={styles.brandName}>PAGE2FILE</span>
+          <span className={styles.brandName}>PAGE 2 FILE</span>
         </Link>
 
         <SiteNavigation

@@ -1,14 +1,9 @@
-import { Manrope } from "next/font/google";
+import { manrope } from "@/shared/ui/manrope-font";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { ProductFormat } from "@/shared/ui/types/product-format";
 import { DownloadIcon } from "@/shared/ui/utilities/icons/glyphs/download-icon";
 import styles from "./product-action.module.css";
-
-const manrope = Manrope({
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
 
 export type ProductActionProps = {
   accessibleLabel?: string;

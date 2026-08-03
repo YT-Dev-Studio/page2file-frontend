@@ -42,7 +42,7 @@ export type SiteCopy = {
 const siteCopy: LocalizedPublished<SiteCopy> = {
   en: {
     header: {
-      brandLabel: "Page2File — home",
+      brandLabel: "Page 2 File — home",
       extensionAction: "Install now",
       menuLabel: "Open menu",
       mobileNavigationLabel: "Mobile navigation",
@@ -58,7 +58,7 @@ const siteCopy: LocalizedPublished<SiteCopy> = {
       brandDescription:
         "A webpage in a clean PDF or PowerPoint — with preview and without manually repairing page breaks.",
       companyTitle: "Company and documents",
-      copyright: "© 2026 Page2File. All rights reserved.",
+      copyright: "© 2026 Page 2 File. All rights reserved.",
       gptsTitle: "GPTs",
       legalTitle: "Legal information",
       links: {
@@ -77,7 +77,7 @@ const siteCopy: LocalizedPublished<SiteCopy> = {
   },
   ru: {
     header: {
-      brandLabel: "Page2File — главная",
+      brandLabel: "Page 2 File — главная",
       extensionAction: "Установить сейчас",
       menuLabel: "Открыть меню",
       mobileNavigationLabel: "Мобильная навигация",
@@ -93,7 +93,7 @@ const siteCopy: LocalizedPublished<SiteCopy> = {
       brandDescription:
         "Веб-страница в чистый PDF или PowerPoint — с предпросмотром и без ручной починки разрывов.",
       companyTitle: "Компания и документы",
-      copyright: "© 2026 Page2File. Все права защищены.",
+      copyright: "© 2026 Page 2 File. Все права защищены.",
       gptsTitle: "GPTs",
       legalTitle: "Юридическая информация",
       links: {

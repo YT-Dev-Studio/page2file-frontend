@@ -1,22 +1,75 @@
-## Links need a semantic target
+Clickable links survive webpage-to-PDF conversion only when the output contains link annotations or editable document elements. A visual screenshot can preserve the appearance of a link without preserving its action.
 
-A screenshot can look exact while losing every link. A clickable PDF requires
-the converter to identify anchor elements, map their visible bounds and carry
-safe targets into the document.
+Choose editable mode in the [Page 2 File PDF converter](/en/convert-webpage-to-pdf) when link behavior matters. Choose visual mode when exact page appearance matters more, then assume links inside the captured image will not be interactive.
 
-Buttons are more complicated. Some are links styled as controls, while others
-run JavaScript and have no meaningful document destination. A converter should
-not invent a target for an interactive button.
+## A visible URL is not automatically a link
 
-## Remove unsafe destinations
+Blue underlined text in an image is still pixels. A PDF reader needs a target rectangle and a destination. Editable conversion can map supported anchor elements from the webpage to PDF link annotations while keeping the surrounding text selectable.
 
-Only normal web destinations such as `https:` links should survive by default.
-Targets using script schemes, embedded credentials or private network hosts
-need to be removed and reported in preview.
+Buttons and cards can also contain targets, but the exported document should not invent a URL for an element that only triggers script. If the destination cannot be identified safely, a warning or a non-clickable visual is more honest.
 
-## Test the exported document
+## Check the destination, not only the label
 
-Check representative text links, image links and call-to-action buttons in the
-actual PDF reader. A visible blue underline is not evidence that a PDF
-annotation exists. The preview should state when a link was removed rather than
-quietly flattening it.
+A page can display reassuring text while pointing elsewhere. Safe conversion should accept normal web destinations and reject dangerous schemes. Redirects and links that require a logged-in session may still fail for the PDF reader even when the annotation is valid.
+
+Test important links from the preview or final file in an environment where opening them is appropriate. Pay special attention to footnotes, citation numbers, product cards and source badges.
+
+## Know when visual mode is the right compromise
+
+A complex dashboard, campaign page or chat may lose meaning if rebuilt as plain text boxes. Visual mode keeps that composition but turns the section into a picture. If both appearance and links matter, a converter may add safe link overlays above a visual section, but only for targets it can locate.
+
+Read [visual vs editable conversion](/en/blog/visual-vs-editable) before deciding. For presentations, the same distinction appears in [screenshot slides vs editable PowerPoint](/en/blog/screenshot-vs-editable-powerpoint).
+
+## Use a short link audit
+
+Open one navigation link, one inline citation, one button and one long wrapped URL. Confirm that each clickable area matches its visible label and does not cover adjacent text. Check that mail, phone or custom application schemes are handled according to the document's safety policy.
+
+For a long source, repeat the audit after changing page breaks. Splitting a section can move its link rectangles, which is why the [long-page guide](/en/blog/long-webpage-page-breaks) treats links as part of preview review.
+
+## Identify which links carry meaning
+
+Not every anchor deserves equal attention. A citation, download, policy reference or next-step button may be essential to the document; a logo link, account menu or tracking pixel is not. Before conversion, list the destinations a reader must be able to follow and use that list for acceptance testing.
+
+Links hidden behind icons need visible context in a static document. If a button says only “Open” or uses an unlabeled arrow, the destination may be impossible to interpret after surrounding interface elements are removed. Keep enough nearby text to explain the action.
+
+In-page fragment links can also change meaning. A table of contents may point to headings within the source page, while the PDF has its own page navigation. Test whether those anchors remain useful; if they do not, the visible table of contents can still serve as a reading outline, but it should not be described as interactive.
+
+## Watch for unsafe or unstable destinations
+
+Authenticated pages sometimes place session identifiers, signed download tokens or personal query parameters in URLs. A clickable PDF can expose those values to anyone who receives it. Inspect the actual destination rather than only the visible label, and remove or replace sensitive links before sharing.
+
+Relative links depend on a base URL. A browser can resolve `/docs/start` because it knows the source origin, while an isolated HTML file may not. When converting uploaded HTML, provide a valid base or use complete HTTPS links for required destinations.
+
+Redirects and shorteners make review harder because the visible domain is not necessarily the final one. For important references, open the link in a safe browser context and verify the final destination. Link preservation is not an endorsement of the destination's accuracy or safety.
+
+## Verify after structural changes
+
+Splitting, merging or removing sections can change which anchors survive and where they appear. Repeat the audit after edits, not only after the initial conversion. A link that worked in the first preview may have been attached to a section that was later replaced by a visual fallback.
+
+Test keyboard focus or the PDF viewer's link list when accessibility matters. The visible page can appear correct while annotations are out of order. Also copy a linked sentence to confirm that the annotation does not cover unrelated text.
+
+Keep the final check proportional to risk. A personal reading copy may need representative tests. A research handout, compliance record or customer document should have every consequential destination checked and recorded.
+
+## Distinguish common link types
+
+Ordinary HTTPS links are the clearest candidates for preservation because the target can be represented as a PDF annotation. Email, telephone and application-specific links depend on the recipient’s device and configured software. A technically valid annotation may still be unusable in their environment, so do not treat every scheme as equivalent.
+
+Downloads require additional care. A link may expire, require a session or return a different file later. When the linked resource is part of the evidence, consider preserving its title, publisher and access date in visible text rather than relying only on the click target.
+
+Script-driven controls are not necessarily links at all. A card may open a modal, change a filter or call an application route without exposing a stable destination. Editable conversion should not invent one. Preserve the visible state and explain the limitation when the action is central to understanding the page.
+
+## Keep annotations aligned with reading order
+
+Link rectangles can become confusing when text wraps, columns move or a section is scaled. Check that the active area covers only the intended label and that overlapping annotations do not send neighboring text to the same destination. In a multi-column document, verify links column by column rather than following the visual scan line across the page.
+
+Meaningful labels are better than repeated “click here” text because they remain understandable when copied, searched or reviewed in a link list. Keep the surrounding sentence when it explains why the destination matters. For icon-only actions, preserve a visible label if the source provides one.
+
+If the PDF will be used with assistive technology, test more than mouse clicks. Inspect whether text remains selectable, whether the annotation order follows the document and whether link labels make sense without nearby decoration. Page 2 File can preserve supported document structure, but the source and the reviewed output determine whether that structure is useful.
+
+## Protect provenance and privacy
+
+A link can disclose more than its visible domain. Query strings may contain document identifiers, search terms, referral data or signed tokens. Before sharing, inspect targets from authenticated pages and remove anything the recipient should not receive. Opening a redacted PDF should not lead back to an unredacted private resource by accident.
+
+Record the source URL and capture date when citations need provenance, while avoiding session-specific parameters. The extension’s preview data is temporary and deleted after its tab closes, and Page 2 File does not maintain conversion history. The downloaded PDF can preserve its own links indefinitely, so its destinations need the same review as its visible content.
+
+See the [website output guide](/en/blog/website-types-to-pdf-or-powerpoint) for source-specific link risks.

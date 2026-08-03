@@ -1,15 +1,10 @@
 import { notFound } from "next/navigation";
-import { Manrope } from "next/font/google";
 import type { ReactNode } from "react";
 import "../globals.css";
 import { getLocaleDefinition, isLocale, localeRegistry } from "@/shared/i18n/locales";
 import { SiteShell } from "@/shared/ui/site-shell";
 import { getMessages } from "@/shared/i18n/messages";
-
-const manrope = Manrope({
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
+import { manrope } from "@/shared/ui/manrope-font";
 
 export const generateStaticParams = (): Array<{ locale: string }> => {
   const localeParam = (
@@ -32,7 +27,7 @@ export default async function LocaleLayout({
   const definition = getLocaleDefinition(locale);
   const messages = getMessages(locale);
   return (
-    <html lang={definition.htmlLang}>
+    <html data-scroll-behavior="smooth" lang={definition.htmlLang}>
       <body className={manrope.className}>
         <a className="skipLink" href="#main-content">
           {messages.shell.skipToContent}

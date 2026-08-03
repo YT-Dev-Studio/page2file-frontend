@@ -2,7 +2,10 @@ import type { ReactNode } from "react";
 import { getBlogEntry } from "@/content/content-registry";
 import { BlogCard } from "@/features/content/blog-card";
 import type { Locale } from "@/shared/i18n/locales";
-import { getExtensionLink } from "@/shared/routes/extension-link";
+import {
+  getExtensionActionLabel,
+  getExtensionLink,
+} from "@/shared/routes/extension-link";
 import {
   ButtonLink,
   type ButtonLinkProps,
@@ -61,7 +64,10 @@ export const HomeHowItWorks = ({ locale }: { locale: Locale }): ReactNode => {
                   ? {
                       external: extensionLink.external,
                       href: extensionLink.href,
-                      label: copy.extensionAction,
+                      label: getExtensionActionLabel(
+                        locale,
+                        copy.extensionAction,
+                      ),
                     }
                   : undefined
               }

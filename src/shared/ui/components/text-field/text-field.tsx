@@ -1,4 +1,4 @@
-import { Manrope } from "next/font/google";
+import { manrope } from "@/shared/ui/manrope-font";
 import {
   useId,
   type ComponentPropsWithRef,
@@ -6,11 +6,6 @@ import {
 } from "react";
 import { FieldFrame } from "@/shared/ui/internal/field-frame/field-frame";
 import styles from "./text-field.module.css";
-
-const manrope = Manrope({
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
 
 export type TextFieldProps = Omit<
   ComponentPropsWithRef<"input">,

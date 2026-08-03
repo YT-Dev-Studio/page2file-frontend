@@ -13,6 +13,7 @@ const REQUIRED_ROUTES = [
   "page2pdf-gpt",
   "web2pdf-gpt",
   "html2pdf-gpt",
+  "one-page2powerpoint-gpt",
   "web2powerpoint-gpt",
   "export-ai-chat-to-pdf",
   "export-chatgpt-to-pdf",
@@ -58,8 +59,8 @@ const run = async () => {
     join(ROOT, "src", "app", "sitemap.ts"),
     "utf8",
   );
-  const rootPageSource = await readFile(
-    join(ROOT, "src", "app", "(root)", "page.tsx"),
+  const rootRouteSource = await readFile(
+    join(ROOT, "src", "app", "(root)", "route.ts"),
     "utf8",
   );
   assertContains(locales, REQUIRED_LOCALES, "locale");
@@ -101,8 +102,16 @@ const run = async () => {
   ) {
     throw new Error("Localized sitemap alternates are required.");
   }
-  if (!rootPageSource.includes('permanentRedirect("/en")')) {
-    throw new Error("Root route must permanently redirect to /en.");
+  if (
+    !rootRouteSource.includes('dynamic = "force-dynamic"') ||
+    !rootRouteSource.includes('request.headers.get("cf-ipcountry")') ||
+    !rootRouteSource.includes('request.headers.get("accept-language")') ||
+    !rootRouteSource.includes("resolveInitialLocale") ||
+    !rootRouteSource.includes("NextResponse.redirect")
+  ) {
+    throw new Error(
+      "Dynamic root route must negotiate EN/RU from country and language headers.",
+    );
   }
   await access(join(ROOT, "src", "app", "[locale]", "[[...slug]]", "page.tsx"));
   await access(join(ROOT, "src", "app", "robots.ts"));

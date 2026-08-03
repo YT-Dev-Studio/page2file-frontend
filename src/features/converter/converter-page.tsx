@@ -1,4 +1,6 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
+import { getBlogEntry } from "@/content/content-registry";
 import type { ConversionFormat } from "@/entities/conversion/model";
 import type { Locale } from "@/shared/i18n/locales";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
@@ -19,6 +21,23 @@ export const ConverterPage = ({
   const copy = getConverterCopy(locale);
   const runtimeCopy = getConversionRuntimeCopy(locale);
   const formatCopy = copy.formats[format];
+  const relatedSlugs =
+    format === "pdf"
+      ? [
+          "save-webpage-as-pdf",
+          "visual-vs-editable",
+          "website-types-to-pdf-or-powerpoint",
+        ]
+      : [
+          "webpage-to-powerpoint",
+          "sections-to-slides",
+          "website-types-to-pdf-or-powerpoint",
+        ];
+  const relatedArticles = relatedSlugs.flatMap((slug) => {
+    const entry = getBlogEntry(locale, slug);
+
+    return entry ? [entry] : [];
+  });
   return (
     <PublicPage className={styles.page} family="converter">
       <Container>
@@ -77,6 +96,24 @@ export const ConverterPage = ({
             </ol>
           </aside>
         </section>
+
+        <nav
+          aria-label={locale === "ru" ? "Статьи по теме" : "Related articles"}
+          className={styles.articleLinks}
+        >
+          <strong>
+            {locale === "ru" ? "Статьи по теме" : "Related articles"}
+          </strong>
+          <ul>
+            {relatedArticles.map((entry) => (
+              <li key={entry.slug}>
+                <Link href={`/${locale}/blog/${entry.slug}`}>
+                  {entry.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         <ExtensionPromoBanner
           actionLabel={copy.extensionLink}

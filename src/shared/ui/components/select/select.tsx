@@ -1,6 +1,6 @@
 "use client";
 
-import { Manrope } from "next/font/google";
+import { manrope } from "@/shared/ui/manrope-font";
 import {
   useEffect,
   useId,
@@ -15,11 +15,6 @@ import { FieldFrame } from "@/shared/ui/internal/field-frame/field-frame";
 import { CheckIcon } from "@/shared/ui/utilities/icons/glyphs/check-icon";
 import { ChevronDownIcon } from "@/shared/ui/utilities/icons/glyphs/chevron-down-icon";
 import styles from "./select.module.css";
-
-const manrope = Manrope({
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
 
 export type SelectOption = {
   disabled?: boolean;

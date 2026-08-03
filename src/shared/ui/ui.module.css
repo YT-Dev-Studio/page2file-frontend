@@ -118,8 +118,8 @@
 }
 
 .footerLogo {
-  width: 52px;
-  height: 52px;
+  width: 80px;
+  height: 80px;
   border-radius: var(--p2f-space-4);
   object-fit: contain;
 }
@@ -210,57 +210,6 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: var(--p2f-space-8) var(--p2f-space-16);
-}
-
-.rail {
-  display: grid;
-  gap: 10px;
-  padding: 16px;
-  border: 1px solid var(--line-strong);
-  border-radius: 12px;
-  background: var(--surface);
-}
-
-.railItem {
-  display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 12px;
-  min-height: 72px;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface-subtle);
-}
-
-.railIndex {
-  display: grid;
-  width: 34px;
-  height: 42px;
-  place-items: center;
-  border: 1px solid var(--line-strong);
-  border-radius: 4px;
-  background: #fff;
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 12px;
-}
-
-.railTitle {
-  margin: 0 0 4px;
-  font-size: 14px;
-  font-weight: 750;
-}
-
-.railMeta {
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 11px;
-}
-
-.railArrow {
-  color: var(--accent);
-  font-size: 20px;
 }
 
 .breadcrumbs {
