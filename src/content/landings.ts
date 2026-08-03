@@ -121,7 +121,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
       "Give the GPT App one public HTTPS URL. One Page 2 PowerPoint sends that page for conversion and returns one downloadable PPTX presentation for the requested address.",
     sections: [
       { heading: "1. Send one public URL", body: "Paste the exact webpage address. The GPT App handles one page per request and does not discover the rest of the website." },
-      { heading: "2. Receive one PPTX", body: "The page is mapped to a presentation and returned as one PowerPoint file. Review slide boundaries and visual or editable fallbacks." },
+      { heading: "2. Receive one PPTX", body: "The page is mapped to a presentation and returned as one PowerPoint file. Review slide boundaries and screenshot or editable fallbacks." },
       { heading: "3. Keep private tabs in Chrome", body: "A public-URL GPT App cannot inherit your browser session. Use the Page 2 File extension when the source is open behind a login." },
     ],
     externalLinkKey: "onePage2PowerpointGpt",

@@ -47,7 +47,7 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
         eyebrow: "Public URL → 16:9 slides",
         title: "Convert a webpage to PowerPoint",
         lead:
-          "Map meaningful webpage sections to slides, choose visual or editable output and inspect every fallback.",
+          "Map meaningful webpage sections to slides, choose screenshot or editable output and inspect every fallback.",
         asideTitle: "Preview before the deck",
       },
     },
@@ -58,7 +58,7 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
     extensionTitle: "Need the page as it appears after sign-in?",
     extensionBody:
       "Capture the current signed-in tab with the extension, then review the result before downloading.",
-    visualTitle: "Visual mode",
+    visualTitle: "Screenshot mode",
     visualText: "Highest layout fidelity through section images.",
     editableTitle: "Editable mode",
     editableText:
@@ -95,7 +95,7 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
         eyebrow: "Открытый URL → слайды 16:9",
         title: "Конвертируйте веб-страницу в PowerPoint",
         lead:
-          "Превратите значимые секции веб-страницы в слайды, выберите визуальный или редактируемый результат и проверьте каждую замену.",
+          "Превратите значимые секции веб-страницы в слайды, выберите режим скриншотов или редактируемый результат и проверьте каждую замену.",
         asideTitle: "Предпросмотр до создания презентации",
       },
     },
@@ -106,7 +106,7 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
     extensionTitle: "Нужна страница в том виде, как она выглядит после входа?",
     extensionBody:
       "Сохраните текущую вкладку через расширение Chrome и проверьте результат перед скачиванием.",
-    visualTitle: "Визуальный режим",
+    visualTitle: "Режим скриншотов",
     visualText: "Максимальная точность макета благодаря изображениям секций.",
     editableTitle: "Редактируемый режим",
     editableText:

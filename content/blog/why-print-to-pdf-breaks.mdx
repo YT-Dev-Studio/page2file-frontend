@@ -1,6 +1,6 @@
 Browser Print to PDF and URL-to-PDF conversion start from different versions of a page. Print uses the site's print stylesheet when one exists. A converter can work from the rendered screen layout and divide it into reviewable sections. Neither method is automatically better; the page and the intended document decide.
 
-Use the [Page 2 File PDF converter](/en/convert-webpage-to-pdf) when you need a preview and a deliberate choice between visual and editable output. Use browser Print when the publisher has prepared a clean print view and you only need a quick copy.
+Use the [Page 2 File PDF converter](/en/convert-webpage-to-pdf) when you need a preview and a deliberate choice between screenshot and editable output. Use browser Print when the publisher has prepared a clean print view and you only need a quick copy.
 
 ## Why the print result can look unrelated to the screen
 
@@ -16,13 +16,13 @@ For a private tab, the [Page 2 File extension](/en/chrome-extension/how-to-use) 
 
 ## Compare the files, not the button labels
 
-Check whether text can be selected, links remain useful, backgrounds carry information and page breaks respect headings. A visual export usually preserves a difficult layout more faithfully. An editable export makes supported content easier to search and revise but may rasterize complex elements.
+Check whether text can be selected, links remain useful, backgrounds carry information and page breaks respect headings. A screenshot export usually preserves a difficult layout more faithfully. An editable export makes supported content easier to search and revise but may rasterize complex elements.
 
-The [visual versus editable guide](/en/blog/visual-vs-editable) explains this tradeoff. For very tall sources, also review the [full-page capture guide](/en/blog/capture-full-webpage-as-pdf) before choosing a method.
+The [screenshot versus editable guide](/en/blog/visual-vs-editable) explains this tradeoff. For very tall sources, also review the [full-page capture guide](/en/blog/capture-full-webpage-as-pdf) before choosing a method.
 
 ## A practical decision
 
-Choose browser Print for a simple article with a good print stylesheet. Choose visual URL conversion when appearance matters, or editable conversion when the content must remain searchable and linked. Choose active-tab capture when the source is private, personalized or available only after interaction.
+Choose browser Print for a simple article with a good print stylesheet. Choose screenshot URL conversion when appearance matters, or editable conversion when the content must remain searchable and linked. Choose active-tab capture when the source is private, personalized or available only after interaction.
 
 Preview remains the deciding evidence. If an important block is missing there, do not assume it will return in the final PDF.
 
@@ -32,15 +32,15 @@ Compare both methods from the same browser state. Set the same viewport, filters
 
 Start with browser Print Preview. Note which navigation, backgrounds, interactive panels and sticky elements disappear. That is not automatically a defect: a well-designed print stylesheet may remove clutter and produce the cleanest reading copy. The question is whether it removed something required for your purpose.
 
-Then inspect the Page 2 File preview in the mode that matches the task. Visual mode should be judged on resemblance and legibility. Editable mode should be judged on reading order, text selection, link behavior and the quality of fallbacks for complex components. Comparing file size alone says little about whether either document is usable.
+Then inspect the Page 2 File preview in the mode that matches the task. Screenshot mode should be judged on resemblance and legibility. Editable mode should be judged on reading order, text selection, link behavior and the quality of fallbacks for complex components. Comparing file size alone says little about whether either document is usable.
 
 ## Diagnose common differences
 
 Missing color or imagery often comes from print-specific CSS, browser settings for background graphics or a component that renders differently for print media. Truncated panels commonly appear when a scroll container has a fixed height or when virtualized content never entered the rendered page. Blank space can come from sticky headers, reserved ad slots or print rules that force a break.
 
-Tables expose another difference. A print stylesheet may repeat headings correctly, shrink the table until text is unreadable or clip columns outside the printable width. A visual capture can preserve the displayed table but cannot make a wide layout naturally fit a portrait page. Editable conversion may reconstruct standard rows and cells while using an image fallback for unusual grids.
+Tables expose another difference. A print stylesheet may repeat headings correctly, shrink the table until text is unreadable or clip columns outside the printable width. A screenshot capture can preserve the displayed table but cannot make a wide layout naturally fit a portrait page. Editable conversion may reconstruct standard rows and cells while using an image fallback for unusual grids.
 
-Links deserve their own check. Browser-generated PDFs may keep standard anchors, but a visible URL drawn inside canvas or supplied by a script may not become interactive. Page 2 File editable mode keeps supported anchors; visual mode prioritizes appearance. Test destinations instead of assuming that blue underlined text is clickable.
+Links deserve their own check. Browser-generated PDFs may keep standard anchors, but a visible URL drawn inside canvas or supplied by a script may not become interactive. Page 2 File editable mode keeps supported anchors; screenshot mode prioritizes appearance. Test destinations instead of assuming that blue underlined text is clickable.
 
 ## Choose by evidence and maintenance cost
 
@@ -60,7 +60,7 @@ Do not treat a larger page size as a universal fix. Landscape orientation may he
 
 ## Decide with a source-and-task matrix
 
-For a publisher-designed article, browser Print is a sensible first test because the print stylesheet may already remove navigation and format citations. For a marketing page or design reference, a visual conversion is usually a better candidate because the screen composition carries meaning. For documentation and research notes, editable conversion deserves the first test because search, selection and links matter.
+For a publisher-designed article, browser Print is a sensible first test because the print stylesheet may already remove navigation and format citations. For a marketing page or design reference, screenshot conversion is usually a better candidate because the screen composition carries meaning. For documentation and research notes, editable conversion deserves the first test because search, selection and links matter.
 
 Dashboards and chats require a different question: is the necessary state actually rendered? If the answer is no, neither Print nor URL conversion can reconstruct it. Load the authorized range, stabilize filters and use active-tab capture when the state depends on a signed-in browser session. A public URL job should never be expected to inherit that session.
 

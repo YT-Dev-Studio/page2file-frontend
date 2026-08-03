@@ -8,13 +8,13 @@ import featureFive from "@/app/assets/features/feat5.png";
 import featureSix from "@/app/assets/features/feat6.png";
 import type { Locale } from "@/shared/i18n/locales";
 import { Card } from "@/shared/ui/components/card/card";
+import { HomeCopyBody } from "./home-copy-body";
 import { getHomeCopy } from "./home-copy";
+import type { CopyItem } from "./home-copy";
 import styles from "./home.module.css";
 
-type FeatureCardData = {
-  body: string;
+type FeatureCardData = CopyItem & {
   image: StaticImageData;
-  title: string;
   visualClassName: string;
 };
 
@@ -51,11 +51,12 @@ const featureVisuals: ReadonlyArray<{
 const FeatureCard = ({
   body,
   image,
+  list,
   title,
   visualClassName,
 }: FeatureCardData): ReactNode => (
   <Card
-    body={body}
+    body={<HomeCopyBody body={body} list={list} />}
     className={styles.featureCard}
     media={
       <span className={`${styles.featureVisual} ${visualClassName}`}>

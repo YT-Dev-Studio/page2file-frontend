@@ -1,11 +1,57 @@
 "use client";
 
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { useState } from "react";
 import type { Locale } from "@/shared/i18n/locales";
+import { routePath } from "@/shared/routes/routes";
+import type { FaqBodySegment } from "./home-copy";
 import { getHomeCopy } from "./home-copy";
 import { HomeSectionHeader } from "./home-section-header";
 import styles from "./home.module.css";
+
+const FaqSegmentContent = ({
+  locale,
+  segment,
+}: {
+  locale: Locale;
+  segment: FaqBodySegment;
+}): ReactNode => {
+  if (segment.kind === "link") {
+    return (
+      <Link href={routePath(locale, segment.route)}>
+        {segment.label}
+      </Link>
+    );
+  }
+
+  return segment.text;
+};
+
+const FaqAnswerBody = ({
+  body,
+  locale,
+}: {
+  body: string | ReadonlyArray<FaqBodySegment>;
+  locale: Locale;
+}): ReactNode => {
+  if (typeof body === "string") {
+    return body;
+  }
+
+  const segmentToNode = (
+    segment: FaqBodySegment,
+    index: number,
+  ): ReactNode => (
+    <FaqSegmentContent
+      key={`${segment.kind}-${index}`}
+      locale={locale}
+      segment={segment}
+    />
+  );
+
+  return body.map(segmentToNode);
+};
 
 export const HomeFaq = ({
   locale,
@@ -73,7 +119,9 @@ export const HomeFaq = ({
                 >
                   <div className={styles.faqAnswerClip}>
                     <div className={styles.faqAnswer}>
-                      <p>{item.body}</p>
+                      <p>
+                        <FaqAnswerBody body={item.body} locale={locale} />
+                      </p>
                     </div>
                   </div>
                 </div>

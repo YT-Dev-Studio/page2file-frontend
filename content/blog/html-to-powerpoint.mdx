@@ -8,9 +8,9 @@ A browser resolves CSS layout, fonts, images and responsive rules. The converter
 
 Client-side components must finish rendering, and content hidden behind controls must be opened. Scripts or resources that are unavailable in the page cannot be reconstructed from markup alone.
 
-## Choose presentation objects or visual sections
+## Choose presentation objects or screenshot sections
 
-Editable mode maps supported text, images and shapes into PowerPoint objects. Visual mode records rendered sections and preserves more of the page's composition. Complex effects can become images in either workflow when PowerPoint has no equivalent.
+Editable mode maps supported text, images and shapes into PowerPoint objects. Screenshot mode records rendered sections and preserves more of the page's composition. Complex effects can become images in either workflow when PowerPoint has no equivalent.
 
 Use [screenshot slides vs editable PowerPoint](/en/blog/screenshot-vs-editable-powerpoint) to choose a mode before conversion.
 
@@ -40,7 +40,7 @@ An HTML section can be much taller than a 16:9 slide. Identify natural breaks at
 
 Navigation, cookie controls and sticky headers often repeat without helping the presentation. Hide or remove them from the prepared source where permitted. Preserve branding only when it belongs to the presentation and can be used lawfully.
 
-For editable output, keep text blocks concise and avoid relying on intricate CSS layering. Complex filters, canvases and animations will need visual fallbacks. For visual output, ensure the browser width produces text that remains legible on a slide.
+For editable output, keep text blocks concise and avoid relying on intricate CSS layering. Complex filters, canvases and animations will need screenshot fallbacks. For screenshot output, ensure the browser width produces text that remains legible on a slide.
 
 ## Perform a deck acceptance pass
 
@@ -54,7 +54,7 @@ State the limitation accurately: Page 2 File converts a rendered webpage or acti
 
 A responsive page may change substantially between desktop widths. Choose the viewport that contains the intended navigation, chart layout and text measure before conversion. Do not assume that the widest view is best; a dense desktop grid can produce unreadable slides, while a compact layout may group information more clearly.
 
-Check overflow at the chosen width. Horizontally scrolling tables, code blocks and carousels can hide content outside the rendered area. Set the relevant state and decide whether the component should become one visual slide, several focused slides or an editable reconstruction with a fallback.
+Check overflow at the chosen width. Horizontally scrolling tables, code blocks and carousels can hide content outside the rendered area. Set the relevant state and decide whether the component should become one screenshot slide, several focused slides or an editable reconstruction with a fallback.
 
 Web fonts and delayed images can change dimensions after the first paint. Wait for the page to stabilize, then compare the beginning and end of long sections. If a client-side component never renders in the authorized browser state, conversion cannot infer it from unused source code.
 

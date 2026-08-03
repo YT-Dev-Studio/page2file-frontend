@@ -8,7 +8,7 @@ HTML в PowerPoint может означать две разные задачи:
 
 Клиентские компоненты должны завершить рендеринг, а скрытые нужные блоки — быть открыты. Недоступные scripts и ресурсы нельзя восстановить из одной разметки.
 
-## Выберите объекты или визуальные секции
+## Выберите объекты или секции-скриншоты
 
 Редактируемый режим переносит поддерживаемые текст, изображения и фигуры в объекты PowerPoint. Визуальный фиксирует отрисованные секции и точнее сохраняет композицию. Эффекты без аналога в PowerPoint могут стать изображениями.
 
@@ -36,7 +36,7 @@ HTML в PowerPoint может означать две разные задачи:
 
 HTML-блок может быть выше 16:9. Делите его у headings, cards, rows или figures, не уменьшая текст до нечитаемого размера. Оставляйте captions рядом с visuals и повторяйте контекст длинной таблицы.
 
-Navigation, cookie controls и sticky headers обычно не нужны на каждом слайде. Сложные CSS layers, canvas и animations станут визуальными fallback-элементами. Для visual mode подберите browser width, при котором текст читается.
+Navigation, cookie controls и sticky headers обычно не нужны на каждом слайде. Сложные CSS layers, canvas и animations станут fallback-скриншотами. Для режима скриншотов подберите browser width, при котором текст читается.
 
 ## Выполните приёмку deck
 
@@ -54,7 +54,7 @@ Navigation, cookie controls и sticky headers обычно не нужны на 
 
 HTML-outline задаёт порядок, но не является готовым планом презентации. Оставляйте captions рядом с figures, порядок списков — последовательным, а decorative wrappers не превращайте в пустые slides.
 
-У tables сохраняйте labels и units, у code — контекст и отступы. Editable output не является компилятором source code в PowerPoint: проверьте reading order и grouping, а сложный component честно оставьте visual fallback.
+У tables сохраняйте labels и units, у code — контекст и отступы. Editable output не является компилятором source code в PowerPoint: проверьте reading order и grouping, а сложный component честно оставьте fallback-скриншотом.
 
 ## Проверьте происхождение и закрытое состояние
 

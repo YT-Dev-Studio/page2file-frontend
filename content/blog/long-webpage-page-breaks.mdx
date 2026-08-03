@@ -12,13 +12,13 @@ Remove or dismiss floating overlays when permitted. Sticky navigation can be use
 
 A heading and its first paragraph, a figure and its caption, a table header and its first rows, or a code label and its block form one reading unit. Review boundaries around these units rather than trying to fill every page to its last line.
 
-Very tall tables and code listings may still need a split. Prefer a visible continuation over shrinking the material until it is unreadable. If exact layout matters more than text flow, compare the options in [visual vs editable conversion](/en/blog/visual-vs-editable).
+Very tall tables and code listings may still need a split. Prefer a visible continuation over shrinking the material until it is unreadable. If exact layout matters more than text flow, compare the options in [screenshot vs editable conversion](/en/blog/visual-vs-editable).
 
 ## Watch for browser-specific failures
 
 Print CSS can change widths and hide elements just before printing. Canvas, video and animated content may not have a printable representation. The comparison of [URL conversion and browser Print](/en/blog/why-print-to-pdf-breaks) explains why a page that looks correct on screen can fail in the print dialog.
 
-In visual mode, complex sections remain images. In editable mode, supported text and links are reconstructed while difficult graphics can fall back to raster. Neither mode should claim that every browser feature becomes editable.
+In screenshot mode, complex sections remain images. In editable mode, supported text and links are reconstructed while difficult graphics can fall back to raster. Neither mode should claim that every browser feature becomes editable.
 
 ## Use preview as the approval step
 
@@ -32,13 +32,13 @@ Different blocks tolerate page breaks differently. Ordinary paragraphs can flow 
 
 Create a quick outline of the long page and mark the indivisible units. This does not require editing the source site. It means knowing which transitions to inspect in preview: before and after tables, between chat messages, around product cards, and at the start of major sections.
 
-For visual output, the captured section may behave as one image. If it is taller than a PDF page, decide whether to split at a natural visual boundary or scale the whole section. Scaling is acceptable only while body text and labels remain readable at normal zoom.
+For screenshot output, the captured section may behave as one image. If it is taller than a PDF page, decide whether to split at a natural visual boundary or scale the whole section. Scaling is acceptable only while body text and labels remain readable at normal zoom.
 
 ## Account for repeated context
 
 A browser page often keeps navigation fixed because scrolling readers can always see it. In a PDF, that element can cover content or repeat without adding value. Collapse it where possible before capture. When repeated context is necessary, keep it compact and verify that it does not consume most of a short page.
 
-Tables and long lists may need their own repeated labels. A reader who opens the document halfway through should be able to understand column meanings without returning several pages. If the source does not provide repeatable headers, preserve the table as a visual section or split it into smaller labeled groups.
+Tables and long lists may need their own repeated labels. A reader who opens the document halfway through should be able to understand column meanings without returning several pages. If the source does not provide repeatable headers, preserve the table as a screenshot section or split it into smaller labeled groups.
 
 Footnotes and references should remain discoverable. Keep citation markers with the sentence they qualify and avoid placing a short reference heading alone at the bottom of a page. A slightly uneven page is preferable to a formally balanced layout that separates evidence from its explanation.
 
@@ -46,7 +46,7 @@ Footnotes and references should remain discoverable. Keep citation markers with 
 
 Desktop preview can hide legibility problems because the canvas is large. Inspect the PDF at approximately the size a reader will use, including a laptop window and a mobile PDF viewer if mobile distribution matters. Text that requires constant zooming is a layout failure even when no characters are clipped.
 
-Search for a distinctive phrase near several page boundaries. In editable output, this confirms that text remains in the expected reading order. In visual output, zoom into the same locations to check for seams, duplicated pixels or missing lines.
+Search for a distinctive phrase near several page boundaries. In editable output, this confirms that text remains in the expected reading order. In screenshot output, zoom into the same locations to check for seams, duplicated pixels or missing lines.
 
 Compare page count and section count with the source outline. An unexpected increase may indicate repeated sticky content; an unexpected decrease may signal omitted lazy-loaded material. Resolve the discrepancy before sharing.
 
@@ -56,7 +56,7 @@ Page boundaries are easier to manage when the document dimensions match the domi
 
 Margins protect text from printer limits and give headings visual separation, but very large margins can force avoidable breaks. Scaling has a similar tradeoff. Reducing a section slightly may keep a figure with its caption; shrinking a whole dashboard until labels cannot be read merely hides the original problem.
 
-When a source contains one exceptionally wide component, consider capturing that component as a separate visual section while keeping the surrounding explanation editable. Preview should make the compromise obvious. The goal is not a uniform implementation at any cost; it is a usable document.
+When a source contains one exceptionally wide component, consider capturing that component as a separate screenshot section while keeping the surrounding explanation editable. Preview should make the compromise obvious. The goal is not a uniform implementation at any cost; it is a usable document.
 
 ## Diagnose the shape of a bad break
 

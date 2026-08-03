@@ -91,7 +91,7 @@ const siteCopy: LocalizedPublished<SiteCopy> = {
     },
     footer: {
       brandDescription:
-        "Веб-страница в чистый PDF или PowerPoint — с предпросмотром и без ручной починки разрывов.",
+        "Веб-страница в редактируемый PDF или PowerPoint с настраиваемым предпросмотром.",
       companyTitle: "Компания и документы",
       copyright: "© 2026 Page 2 File. Все права защищены.",
       gptsTitle: "GPTs",

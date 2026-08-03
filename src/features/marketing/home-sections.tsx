@@ -13,6 +13,7 @@ import {
 import { Card } from "@/shared/ui/components/card/card";
 import { FormatBadge } from "@/shared/ui/components/format-badge/format-badge";
 import { TimerIcon } from "@/shared/ui/utilities/icons/glyphs/timer-icon";
+import { HomeCopyBody } from "./home-copy-body";
 import { getHomeCopy } from "./home-copy";
 import { HomeExtensionBanner } from "./home-extension-promo";
 import { HomeSectionHeader } from "./home-section-header";
@@ -71,7 +72,7 @@ export const HomeHowItWorks = ({ locale }: { locale: Locale }): ReactNode => {
                     }
                   : undefined
               }
-              body={item.body}
+              body={<HomeCopyBody body={item.body} list={item.list} />}
               className={styles.informationCard}
               key={item.title}
               title={

@@ -26,17 +26,17 @@ const seoCopy: LocalizedPublished<Record<SeoCopyKey, SeoCopy>> = {
     home: {
       title: "Convert webpages to PDF or PowerPoint",
       description:
-        "Preview meaningful webpage sections, choose visual or editable output, and export a reviewed PDF or PowerPoint sample without creating an account.",
+        "Preview meaningful webpage sections, choose screenshot or editable output, and export a reviewed PDF or PowerPoint sample without creating an account.",
     },
     pdf: {
       title: "Convert one webpage to a reviewed PDF",
       description:
-        "Enter a public HTTPS URL, choose visual or editable PDF output, and inspect page sections and conversion warnings before downloading a sample.",
+        "Enter a public HTTPS URL, choose screenshot or editable PDF output, and inspect page sections and conversion warnings before downloading a sample.",
     },
     powerpoint: {
       title: "Convert a webpage to PowerPoint slides",
       description:
-        "Turn meaningful webpage sections into visual or editable 16:9 PowerPoint slides and review every fallback before downloading the sample deck.",
+        "Turn meaningful webpage sections into screenshot or editable 16:9 PowerPoint slides and review every fallback before downloading the sample deck.",
     },
     guide: {
       title: "How to use the Page 2 File Chrome extension",
@@ -78,17 +78,17 @@ const seoCopy: LocalizedPublished<Record<SeoCopyKey, SeoCopy>> = {
     home: {
       title: "Конвертация веб-страниц в PDF и PowerPoint",
       description:
-        "Проверяйте смысловые секции веб-страницы, выбирайте визуальный или редактируемый режим и экспортируйте PDF либо PowerPoint без регистрации.",
+        "Проверяйте смысловые секции веб-страницы, выбирайте режим скриншотов или редактируемый режим и экспортируйте PDF либо PowerPoint без регистрации.",
     },
     pdf: {
       title: "Конвертация одной веб-страницы в PDF",
       description:
-        "Введите общедоступный HTTPS URL, выберите визуальный или редактируемый PDF и проверьте секции и предупреждения до скачивания примера.",
+        "Введите общедоступный HTTPS URL, выберите PDF в режиме скриншотов или редактируемом режиме и проверьте секции и предупреждения до скачивания примера.",
     },
     powerpoint: {
       title: "Конвертация веб-страницы в PowerPoint",
       description:
-        "Превратите смысловые секции веб-страницы в визуальные или редактируемые слайды 16:9 и проверьте каждую замену до скачивания презентации.",
+        "Превратите смысловые секции веб-страницы в слайды-скриншоты или редактируемые слайды 16:9 и проверьте каждую замену до скачивания презентации.",
     },
     guide: {
       title: "Как использовать расширение Page 2 File для Chrome",

@@ -60,7 +60,7 @@ const extensionCopy: LocalizedPublished<ExtensionCopy> = {
       {
         number: "02",
         title: "Choose PDF or PowerPoint",
-        body: "The output format is a direct choice in the extension panel. Then select Visual or Editable & clickable for the fidelity contract.",
+        body: "The output format is a direct choice in the extension panel. Then select Screenshot or Editable & clickable for the fidelity contract.",
         image: "/demos/extension-step-mode.svg",
         imageAlt: "The extension panel with format and mode controls",
       },
@@ -83,7 +83,7 @@ const extensionCopy: LocalizedPublished<ExtensionCopy> = {
     transcriptTitle: "Transcript",
     transcript: [
       "Open the page or conversation you want to export and make sure every required section is loaded.",
-      "Activate Page 2 File from the toolbar. Choose PDF or PowerPoint, then choose Visual for fidelity or Editable for supported document objects.",
+      "Activate Page 2 File from the toolbar. Choose PDF or PowerPoint, then choose Screenshot for fidelity or Editable for supported document objects.",
       "Review the temporary section rail. Move, split, merge or remove sections and read the warnings before downloading.",
     ],
     breadcrumbLabel: "Breadcrumbs",
@@ -125,7 +125,7 @@ const extensionCopy: LocalizedPublished<ExtensionCopy> = {
       {
         number: "02",
         title: "Выберите PDF или PowerPoint",
-        body: "Формат результата выбирается прямо в панели расширения. Затем укажите визуальный или редактируемый и кликабельный режим.",
+        body: "Формат результата выбирается прямо в панели расширения. Затем укажите режим скриншотов или редактируемый и кликабельный режим.",
         image: "/demos/extension-step-mode.svg",
         imageAlt: "Панель расширения с выбором формата и режима",
       },
@@ -148,7 +148,7 @@ const extensionCopy: LocalizedPublished<ExtensionCopy> = {
     transcriptTitle: "Расшифровка",
     transcript: [
       "Откройте страницу или диалог для экспорта и убедитесь, что все нужные секции загружены.",
-      "Запустите Page 2 File с панели инструментов. Выберите PDF или PowerPoint, затем визуальный режим для точного вида либо редактируемый режим для поддерживаемых объектов документа.",
+      "Запустите Page 2 File с панели инструментов. Выберите PDF или PowerPoint, затем режим скриншотов для точного вида либо редактируемый режим для поддерживаемых объектов документа.",
       "Проверьте временную ленту секций. Перемещайте, разделяйте, объединяйте или удаляйте блоки и прочитайте предупреждения перед скачиванием.",
     ],
     breadcrumbLabel: "Хлебные крошки",

@@ -1,4 +1,4 @@
-To convert one webpage to PowerPoint, give the One Page 2 PowerPoint GPT App one public URL or use the [webpage PowerPoint converter](/en/convert-webpage-to-powerpoint). The result is one PPTX based on that page, with visual or editable output chosen before rendering.
+To convert one webpage to PowerPoint, give the One Page 2 PowerPoint GPT App one public URL or use the [webpage PowerPoint converter](/en/convert-webpage-to-powerpoint). The result is one PPTX based on that page, with screenshot or editable output chosen before rendering.
 
 The goal is not to squeeze a scrolling page onto one slide. Useful conversion identifies sections, assigns readable 16:9 boundaries and lets you inspect the deck.
 
@@ -8,9 +8,9 @@ A webpage can contain navigation, repeated calls to action and supporting materi
 
 A short landing page may produce only a few slides. A long report can produce many. Slide count should follow the material rather than a fixed promise.
 
-## Select visual or editable slides
+## Select screenshot or editable slides
 
-Visual mode preserves the appearance of page sections and works well for design review, campaign reference and dashboards. Editable mode maps supported text, images and shapes into PowerPoint objects so a presenter can revise them.
+Screenshot mode preserves the appearance of page sections and works well for design review, campaign reference and dashboards. Editable mode maps supported text, images and shapes into PowerPoint objects so a presenter can revise them.
 
 Complex CSS, canvas, video and animation may require raster fallback. Compare the two outcomes in [screenshot slides vs editable PowerPoint](/en/blog/screenshot-vs-editable-powerpoint).
 
@@ -22,7 +22,7 @@ The guide to [turning webpage sections into slides](/en/blog/sections-to-slides)
 
 ## Check the deck as a presentation
 
-Open the PPTX and test reading order, font substitutions, links and image quality. Make sure visual slides are not stretched and editable elements remain inside the 16:9 canvas.
+Open the PPTX and test reading order, font substitutions, links and image quality. Make sure screenshot slides are not stretched and editable elements remain inside the 16:9 canvas.
 
 If the source spans several pages on the same site, use [Web 2 PowerPoint](/en/web2powerpoint-gpt) instead; it returns separate PPTX files for the accessible pages you select. The [website-to-PowerPoint guide](/en/blog/website-to-powerpoint) explains how to keep that collection bounded.
 
@@ -38,7 +38,7 @@ Decide what belongs in speaker notes or a handout. Long qualifications, full cit
 
 Web typography assumes that a reader can scroll or zoom. Presentation text must be readable from a distance. Inspect every slide at fit-to-window size and avoid shrinking an entire webpage section merely to keep it on one slide.
 
-Wide layouts often suit a 16:9 deck, but aspect ratio alone does not solve density. Split wide comparisons into focused views, keep chart legends readable and crop unused browser chrome. A visual slide should look intentional rather than like a browser screenshot dropped on a canvas.
+Wide layouts often suit a 16:9 deck, but aspect ratio alone does not solve density. Split wide comparisons into focused views, keep chart legends readable and crop unused browser chrome. A screenshot slide should look intentional rather than like a browser screenshot dropped on a canvas.
 
 For editable output, check object boundaries and stacking order. Text should not sit behind image fallbacks, and grouped components should move without losing alignment. Font substitution can change line breaks, so review the deck on the target system.
 
@@ -48,7 +48,7 @@ Click important links in slideshow mode, not only in the editor. Confirm that li
 
 Run through the deck and look for repeated navigation, abrupt scale changes and orphaned captions. Check that the final slide is intentional; a captured footer should not become the closing message by accident.
 
-When recipients need to edit the material, test a real revision: change one heading, move an image and update a link. That reveals whether editable mode produced useful objects or whether the important section is a visual fallback.
+When recipients need to edit the material, test a real revision: change one heading, move an image and update a link. That reveals whether editable mode produced useful objects or whether the important section is a screenshot fallback.
 
 ## Preserve claims and source context
 
@@ -62,7 +62,7 @@ Record the source URL and capture date in speaker notes, an approved source slid
 
 For an article or report, use headings as the outline and reserve detailed methodology or citations for supporting slides. For a landing page, remove repeated calls to action and keep the evidence behind the core proposition. For a dashboard, set filters first and preserve complex charts visually when rebuilding them would alter the displayed state.
 
-Documentation often works best with editable headings, steps and code plus visual fallbacks for complex diagrams. Ecommerce pages need a strict boundary around the product being discussed; recommendations, reviews and account controls can distract or expose unrelated details.
+Documentation often works best with editable headings, steps and code plus screenshot fallbacks for complex diagrams. Ecommerce pages need a strict boundary around the product being discussed; recommendations, reviews and account controls can distract or expose unrelated details.
 
 Chats and community threads require the intended message range to be loaded in the active tab. Preserve participant and time context only when it belongs in the deck, and review the result for personal information before download.
 
@@ -70,7 +70,7 @@ Chats and community threads require the intended message range to be loaded in t
 
 Read the deck in slideshow order without referring to the webpage. Every slide should have a purpose, legible content and a clear relationship to the next. Inspect transitions where one webpage section was split across several slides and remove fragments that make sense only in the scrolling interface.
 
-Then review the file as an editor. Confirm which text, images and shapes are actually editable, identify visual fallbacks and check that no object extends outside the canvas. If the deck is intended for a shared template, apply a representative theme or font change before promising easy restyling.
+Then review the file as an editor. Confirm which text, images and shapes are actually editable, identify screenshot fallbacks and check that no object extends outside the canvas. If the deck is intended for a shared template, apply a representative theme or font change before promising easy restyling.
 
 Page 2 File’s preview data is temporary and deleted after the preview tab closes, and there is no conversion-history database. Keep the approved PPTX and source record in your own storage. If a required element is missing in preview, return to the source state rather than assuming the downloaded deck will restore it.
 

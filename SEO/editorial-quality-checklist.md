@@ -7,7 +7,7 @@ the factual, locale and link checks on the Russian version.
 
 - Answer the query in the opening paragraph without a generic preamble.
 - Explain the exact Page 2 File surface: public URL converter, active-tab
-  extension or GPT App.
+  extension or GPT App. 
 - Distinguish a visual snapshot from editable text, images and links.
 - Distinguish one-page output from one file per accessible website page.
 - Distinguish a rendered conversation from a platform account-data archive.

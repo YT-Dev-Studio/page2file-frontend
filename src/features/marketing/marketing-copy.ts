@@ -54,7 +54,7 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
       stageDescriptions: [
         "Load the messages you want in the active tab.",
         "Check text, media, links, and omissions.",
-        "Choose visual or editable PDF output.",
+        "Choose screenshot or editable PDF output.",
       ],
     },
   },
@@ -83,7 +83,7 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
       stageDescriptions: [
         "Загрузите нужные сообщения в активной вкладке.",
         "Проверьте текст, медиа, ссылки и пропуски.",
-        "Выберите визуальный или редактируемый PDF.",
+        "Выберите PDF в режиме скриншотов или редактируемом режиме.",
       ],
     },
   },

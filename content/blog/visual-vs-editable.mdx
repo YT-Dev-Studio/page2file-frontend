@@ -1,10 +1,10 @@
-Visual webpage conversion preserves rendered appearance; editable conversion preserves supported content as document objects. The right choice depends on what the recipient must do after download.
+Screenshot conversion preserves the rendered appearance of a webpage; editable conversion preserves supported content as document objects. The right choice depends on what the recipient must do after download.
 
 Both modes are available from Page 2 File's [PDF converter](/en/convert-webpage-to-pdf) and [PowerPoint converter](/en/convert-webpage-to-powerpoint). Preview makes the tradeoff visible before the final file is rendered.
 
-## Visual mode keeps composition
+## Screenshot mode keeps composition
 
-Visual output records sections as they appear in the browser. It is suitable for campaign pages, dashboards, design references, receipts and conversations where spacing, color and grouping carry information.
+Screenshot output records sections as they appear in the browser. It is suitable for campaign pages, dashboards, design references, receipts and conversations where spacing, color and grouping carry information.
 
 The cost is editability. Text inside a captured section behaves like image content unless separate text or link overlays are added. A video becomes a still representation, and animation cannot remain animated in an ordinary PDF.
 
@@ -16,7 +16,7 @@ A browser layout is more expressive than a document format. Complex CSS, canvas,
 
 ## Match the mode to the source
 
-Use visual mode for a portfolio, product page, dashboard snapshot or original-look chat archive. Use editable mode for an article, documentation page, research note or slide deck that a colleague must update.
+Use screenshot mode for a portfolio, product page, dashboard snapshot or original-look chat archive. Use editable mode for an article, documentation page, research note or slide deck that a colleague must update.
 
 For PDF links, read [how clickable links are preserved](/en/blog/preserve-clickable-links). For slides, compare [screenshot and editable PowerPoint](/en/blog/screenshot-vs-editable-powerpoint).
 
@@ -28,21 +28,21 @@ For long sources, mode selection and pagination interact. The [long webpage guid
 
 ## A simple rule
 
-Choose visual when the page itself is the record. Choose editable when the information must continue to work outside the browser. If neither can satisfy the requirement, keep the original page or use a purpose-built export from the source platform.
+Choose screenshot mode when the page itself is the record. Choose editable mode when the information must continue to work outside the browser. If neither can satisfy the requirement, keep the original page or use a purpose-built export from the source platform.
 
 ## Evaluate the source by component type
 
 Start with the elements that would be most expensive to lose. Standard headings, paragraphs, images and links usually favor editable output. Complex charts, maps, canvases, custom diagrams and heavily layered layouts favor a visual representation. A page containing both may need editable structure with image fallbacks for difficult components.
 
-Tables sit between those categories. A conventional table can remain searchable and useful as document content. A virtualized grid with pinned columns, embedded controls and conditional formatting may be clearer as a visual section. Decide whether the reader needs to analyze values, preserve the displayed state or both.
+Tables sit between those categories. A conventional table can remain searchable and useful as document content. A virtualized grid with pinned columns, embedded controls and conditional formatting may be clearer as a screenshot section. Decide whether the reader needs to analyze values, preserve the displayed state or both.
 
 Interactive controls cannot stay interactive in an ordinary PDF or slide deck. A selected filter can be recorded, but the recipient cannot change it and regenerate the chart. Preserve labels that explain the chosen state so the static result is not mistaken for a live dashboard.
 
 ## Consider the destination format
 
-PDF readers usually expect stable pagination, searchable text and dependable links. Editable mode supports those goals for document-like sources, while visual mode provides a stronger record of layout. A mixed report can use visual sections for charts and editable sections for narrative material.
+PDF readers usually expect stable pagination, searchable text and dependable links. Editable mode supports those goals for document-like sources, while screenshot mode provides a stronger record of layout. A mixed report can use screenshot sections for charts and editable sections for narrative material.
 
-PowerPoint changes the priority. A visual slide can preserve a webpage section quickly, but it is harder to restyle and may contain small browser text. Editable slides allow text and supported objects to be revised, yet complex design details can become grouped or image-based fallbacks. The best deck is not necessarily the most literal copy of the page.
+PowerPoint changes the priority. A screenshot slide can preserve a webpage section quickly, but it is harder to restyle and may contain small browser text. Editable slides allow text and supported objects to be revised, yet complex design details can become grouped or image-based fallbacks. The best deck is not necessarily the most literal copy of the page.
 
 Distribution matters as well. If recipients only review or archive the result, visual fidelity may be sufficient. If they must quote, translate, update branding or reuse individual elements, editable structure has more value. Decide this before conversion.
 
@@ -50,9 +50,9 @@ Distribution matters as well. If recipients only review or archive the result, v
 
 Editable conversion does not turn every pixel into a native object. Unsupported or ambiguous elements may remain images so their appearance is not destroyed. Inspect these fallbacks and confirm that they do not contain text the recipient must edit.
 
-Visual mode also has limits. Small text can become difficult to read after scaling, and links inside a captured image are not automatically interactive annotations. Check important destinations and choose section boundaries that preserve legibility.
+Screenshot mode also has limits. Small text can become difficult to read after scaling, and links inside a captured image are not automatically interactive annotations. Check important destinations and choose section boundaries that preserve legibility.
 
-Document the chosen mode when the file enters a shared workflow. A note such as “layout preserved; chart is a static image” or “text is editable; complex widgets are visual fallbacks” prevents later users from assuming capabilities the file does not have.
+Document the chosen mode when the file enters a shared workflow. A note such as “layout preserved; chart is a static image” or “text is editable; complex widgets are screenshot fallbacks” prevents later users from assuming capabilities the file does not have.
 
 ## Decide from the recipient’s next action
 
@@ -60,15 +60,15 @@ Start with the task after conversion. If the recipient needs to archive evidence
 
 Ask what must remain exact. For a receipt, amounts, dates and visual grouping may be the record. For a research article, quotations, citations and reading order matter. For a presentation, editable headings may be essential while a complex chart can remain a static visual. This component-level decision is more useful than choosing a mode from the source category alone.
 
-Also decide what may change. Editable output makes supported elements easier to revise, which can be helpful for a working deck but inappropriate for an archival record. Visual output preserves an appearance but does not prove authenticity or prevent image editing. Use organizational controls and provenance records for those concerns rather than assigning them to a file mode.
+Also decide what may change. Editable output makes supported elements easier to revise, which can be helpful for a working deck but inappropriate for an archival record. Screenshot output preserves an appearance but does not prove authenticity or prevent image editing. Use organizational controls and provenance records for those concerns rather than assigning them to a file mode.
 
 ## Apply a mixed-content review
 
-Begin with a page outline and mark each important component as text, link, image, table, chart or interactive state. In editable preview, verify reading order, text selection and link targets, then identify every raster fallback. In visual preview, check scale, sharpness and whether important actions need separate context.
+Begin with a page outline and mark each important component as text, link, image, table, chart or interactive state. In editable preview, verify reading order, text selection and link targets, then identify every raster fallback. In screenshot preview, check scale, sharpness and whether important actions need separate context.
 
 For a mixed report, keep narrative and conventional tables editable where the result remains coherent. Preserve complex dashboards, maps or heavily layered cards visually when rebuilding would distort them. Review the transition between the two kinds of section so headings and captions still explain what follows.
 
-Do not assume that a mixed result combines every advantage without cost. A visual fallback may contain text that cannot be searched, while an editable section may simplify spacing or typography. State those boundaries in the handoff when they affect how recipients should use the file.
+Do not assume that a mixed result combines every advantage without cost. A screenshot fallback may contain text that cannot be searched, while an editable section may simplify spacing or typography. State those boundaries in the handoff when they affect how recipients should use the file.
 
 ## Check PDF and PowerPoint differently
 

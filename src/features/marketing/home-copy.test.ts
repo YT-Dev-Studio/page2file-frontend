@@ -14,9 +14,11 @@ const expectedBlogSlugs = [
 
 describe("homepage copy", () => {
   test("provides reviewed Russian and English variants", () => {
-    expect(getHomeCopy("ru").title).toContain("веб-страницу");
+    expect(getHomeCopy("ru").title).toBe(
+      "Экспортируйте любую веб-страницу в PDF/PPTX",
+    );
     expect(getHomeCopy("en").title).toBe(
-      "Save any webpage as a useful file",
+      "Export any webpage to PDF/PPTX",
     );
   });
 
