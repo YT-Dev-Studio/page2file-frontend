@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { getBlogEntry } from "@/content/content-registry";
 import type { ConversionFormat } from "@/entities/conversion/model";
+import { getMessages } from "@/shared/i18n/messages";
 import type { Locale } from "@/shared/i18n/locales";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { ExtensionPromoBanner } from "@/shared/ui/extension-promo-banner";
@@ -19,6 +20,7 @@ export const ConverterPage = ({
   locale: Locale;
 }): ReactNode => {
   const copy = getConverterCopy(locale);
+  const messages = getMessages(locale);
   const runtimeCopy = getConversionRuntimeCopy(locale);
   const formatCopy = copy.formats[format];
   const relatedSlugs =
@@ -75,7 +77,7 @@ export const ConverterPage = ({
               <li>
                 <span aria-hidden="true">A</span>
                 <div>
-                  <strong>{copy.visualTitle}</strong>
+                  <strong>{messages.converter.visual}</strong>
                   <p>{copy.visualText}</p>
                 </div>
               </li>
@@ -89,7 +91,7 @@ export const ConverterPage = ({
               <li>
                 <span aria-hidden="true">C</span>
                 <div>
-                  <strong>{copy.warningsTitle}</strong>
+                  <strong>{messages.converter.warnings}</strong>
                   <p>{copy.warningsText}</p>
                 </div>
               </li>

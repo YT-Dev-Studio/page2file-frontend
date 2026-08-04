@@ -107,11 +107,13 @@ describe("homepage content lists", () => {
   test("renders feature points and extension steps as semantic lists", () => {
     const featureList = getHomeCopy("en").features.items[1]?.list;
     const stepList = getHomeCopy("en").howItWorks.items[1]?.list;
+    const russianStepList = getHomeCopy("ru").howItWorks.items[1]?.list;
 
     render(
       <>
         <HomeCopyBody list={featureList} />
         <HomeCopyBody list={stepList} />
+        <HomeCopyBody list={russianStepList} />
       </>,
     );
 
@@ -121,7 +123,11 @@ describe("homepage content lists", () => {
         .closest("ul"),
     ).not.toBeNull();
     expect(
-      screen.getByText("Click EXPORT.").closest("ol"),
+      screen.getByText("Click Preview.").closest("ol"),
     ).not.toBeNull();
+    expect(
+      screen.getByText("Нажмите кнопку Preview.").closest("ol"),
+    ).not.toBeNull();
+    expect(screen.queryByText(/EXPORT/)).toBeNull();
   });
 });

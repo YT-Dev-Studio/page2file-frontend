@@ -20,11 +20,9 @@ type ConverterCopy = {
   reviewTitle: string;
   extensionTitle: string;
   extensionBody: string;
-  visualTitle: string;
   visualText: string;
   editableTitle: string;
   editableText: string;
-  warningsTitle: string;
   warningsText: string;
   privateQuestion: string;
   extensionLink: string;
@@ -58,12 +56,10 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
     extensionTitle: "Need the page as it appears after sign-in?",
     extensionBody:
       "Capture the current signed-in tab with the extension, then review the result before downloading.",
-    visualTitle: "Screenshot mode",
     visualText: "Highest layout fidelity through section images.",
     editableTitle: "Editable mode",
     editableText:
       "Supported text and links remain editable and clickable.",
-    warningsTitle: "Honest warnings",
     warningsText:
       "Fonts, canvas, media and unsafe links show their fallback before download.",
     privateQuestion: "Signed-in or private page?",
@@ -106,12 +102,10 @@ const converterCopy: LocalizedPublished<ConverterCopy> = {
     extensionTitle: "Нужна страница в том виде, как она выглядит после входа?",
     extensionBody:
       "Сохраните текущую вкладку через расширение Chrome и проверьте результат перед скачиванием.",
-    visualTitle: "Режим скриншотов",
     visualText: "Максимальная точность макета благодаря изображениям секций.",
     editableTitle: "Редактируемый режим",
     editableText:
       "Поддерживаемые текст и ссылки остаются редактируемыми и кликабельными.",
-    warningsTitle: "Честные предупреждения",
     warningsText:
       "Замены шрифтов, canvas, медиа и небезопасных ссылок видны до скачивания.",
     privateQuestion: "Страница закрыта или требует входа?",

@@ -227,7 +227,7 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
             items: [
               "Go to the tab you need.",
               "Open Page 2 File.",
-              "Click EXPORT.",
+              "Click Preview.",
             ],
             style: "ordered",
           },
@@ -472,7 +472,7 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
             items: [
               "Перейдите на нужную вкладку.",
               "Откройте Page 2 File.",
-              "Нажмите кнопку EXPORT.",
+              "Нажмите кнопку Preview.",
             ],
             style: "ordered",
           },
