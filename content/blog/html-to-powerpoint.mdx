@@ -1,5 +1,14 @@
 HTML-to-PowerPoint can mean two different jobs: turning a rendered webpage into slides or uploading a raw HTML file. Page 2 File currently serves the rendered-page job through the [PowerPoint converter](/en/convert-webpage-to-powerpoint) and extension. Raw uploaded HTML is supported by the HTML 2 PDF GPT App only, not by a separate HTML-to-PPTX upload tool.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Render and stabilize the HTML before mapping it to slides."}
+  caption={"Render and stabilize the HTML before mapping it to slides."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Render and stabilize the HTML before mapping it to slides."}
+  src="/blog/instructions/html-to-powerpoint/01.svg"
+  step={1}
+/>
+
 That boundary prevents a search phrase from becoming a false product promise. If the HTML can be opened as an allowed webpage, Page 2 File can convert its visible sections to a presentation.
 
 ## Render the HTML before mapping slides
@@ -10,7 +19,7 @@ Client-side components must finish rendering, and content hidden behind controls
 
 ## Choose presentation objects or screenshot sections
 
-Editable mode maps supported text, images and shapes into PowerPoint objects. Screenshot mode records rendered sections and preserves more of the page's composition. Complex effects can become images in either workflow when PowerPoint has no equivalent.
+Editable document (editable output) maps supported text, images and shapes into PowerPoint objects. Accurate copy (screenshot-style output) records rendered sections and preserves more of the page's composition. Complex effects can become images in either workflow when PowerPoint has no equivalent.
 
 Use [screenshot slides vs editable PowerPoint](/en/blog/screenshot-vs-editable-powerpoint) to choose a mode before conversion.
 
@@ -23,6 +32,15 @@ The article on webpage sections becoming slides gives a practical split-and-revi
 ## Use the correct Page 2 File surface
 
 For one public rendered page, use [One Page 2 PowerPoint](/en/one-page2powerpoint-gpt). For several accessible website pages, use [Web 2 PowerPoint](/en/web2powerpoint-gpt). For a private rendered tab, use the extension.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Use the open tab or a public URL as the supported source surface."}
+  caption={"Use the open tab or a public URL as the supported source surface."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Use the open tab or a public URL as the supported source surface."}
+  src="/blog/instructions/html-to-powerpoint/02.svg"
+  step={2}
+/>
 
 If you only possess an HTML file and need PDF, use [HTML 2 PDF](/en/html2pdf-gpt). Direct upload from an HTML file to PPTX is not supported; PowerPoint conversion starts from rendered web content.
 
@@ -50,6 +68,15 @@ Open the PPTX in the target application and inspect font substitution, image cro
 
 State the limitation accurately: Page 2 File converts a rendered webpage or active tab to PowerPoint. It does not accept a raw HTML upload for PPTX, execute an arbitrary project build or turn every CSS property into a native PowerPoint object.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose PowerPoint."}
+  caption={"Choose PowerPoint."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose PowerPoint."}
+  src="/blog/instructions/html-to-powerpoint/03.svg"
+  step={3}
+/>
+
 ## Prepare responsive HTML for a fixed canvas
 
 A responsive page may change substantially between desktop widths. Choose the viewport that contains the intended navigation, chart layout and text measure before conversion. Do not assume that the widest view is best; a dense desktop grid can produce unreadable slides, while a compact layout may group information more clearly.
@@ -66,6 +93,15 @@ For tables, preserve column labels and units. For code, keep language or context
 
 Editable conversion can make supported content easier to revise, but it should not be described as a source-code-to-PowerPoint compiler. Review reading order and object grouping. A complex web component may be more accurate as a single image than as dozens of difficult-to-maintain shapes.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose Editable document for supported objects or Accurate copy for composition."}
+  caption={"Choose Editable document for supported objects or Accurate copy for composition."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose Editable document for supported objects or Accurate copy for composition."}
+  src="/blog/instructions/html-to-powerpoint/04.svg"
+  step={4}
+/>
+
 ## Review provenance and private state
 
 If the rendered page comes from a development, staging or signed-in environment, inspect it for account names, test data, unpublished material and private URLs. Access to that tab does not imply permission to distribute its deck.
@@ -79,5 +115,14 @@ The extension works from the active tab; its preview data is temporary and delet
 Use PPTX when the recipient needs a presentation sequence, speaker-led explanation or supported elements they can revise. If the goal is a faithful reading archive, a PDF may preserve a long document more naturally. If the goal is to edit the web application itself, keep working in HTML rather than treating a deck as the source.
 
 Run the deck at presentation size and complete one intended edit before handoff. Confirm slide order, type legibility, image quality, links and fallbacks. If a required section is absent in preview, repair the rendered source state; a final file cannot recover HTML that the browser never displayed.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Review 16:9 slides and inspect complex HTML fallbacks."}
+  caption={"Review 16:9 slides and inspect complex HTML fallbacks."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Review 16:9 slides and inspect complex HTML fallbacks."}
+  src="/blog/instructions/html-to-powerpoint/05.svg"
+  step={5}
+/>
 
 Use the [website output guide](/en/blog/website-types-to-pdf-or-powerpoint) to compare HTML with other browser sources.

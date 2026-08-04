@@ -12,6 +12,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "audit:content": "node scripts/audit-blog-content.mjs",
+    "generate:blog-instructions": "node scripts/generate-blog-instructions.mjs",
     "validate:content": "node scripts/validate-content.mjs",
     "validate:routes": "node scripts/validate-routes.mjs",
     "validate:backend-contract": "node scripts/validate-backend-contract.mjs",

@@ -1,5 +1,14 @@
 A Chrome extension can export chats only from messenger interfaces rendered in Chrome. Page 2 File supports the active-tab boundary for Discord Web, Slack Web, Microsoft Teams on the web, Messenger and Instagram DMs, as well as the dedicated WhatsApp Web and Telegram Web flows.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: For a community thread, load posts, replies, embeds, and attribution."}
+  caption={"For a community thread, load posts, replies, embeds, and attribution."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: For a community thread, load posts, replies, embeds, and attribution."}
+  src="/blog/instructions/export-browser-messenger-chats-to-pdf/01.svg"
+  step={1}
+/>
+
 Open the exact conversation, load the message range and use the [Page 2 File extension](/en/chrome-extension/how-to-use). It cannot capture Signal or another native-only desktop or mobile interface outside the browser.
 
 ## Discord Web and community threads
@@ -22,7 +31,7 @@ Page 2 File is not an account backup. Use the platform's own data-download proce
 
 ## Review format and privacy
 
-Screenshot mode keeps bubbles, reactions, timestamps and visible attachments. Editable mode keeps supported text, images and safe links easier to search. Complex embeds can remain visual.
+Accurate copy (screenshot-style output) keeps bubbles, reactions, timestamps and visible attachments. Editable document (editable output) keeps supported text, images and safe links easier to search. Complex embeds can remain visual.
 
 Remove unrelated personal or workplace data before download. Closing preview deletes temporary preview data, and Page 2 File does not keep a conversion-history database.
 
@@ -44,7 +53,25 @@ Threads, replies and channels create branching structures. Decide whether replie
 
 Discord Web can combine channels, threads, reactions, embeds and voice-related interface. Preserve channel and sender context while excluding unrelated server navigation. Slack Web and Teams Web may separate channel posts, threads and direct messages; verify which view is active before capture.
 
-Messenger and Instagram DMs can include reactions, shared posts, disappearing media and account context. Screenshot mode records the displayed state, while editable mode retains supported text and links. Neither recreates interactive or expired content.
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: For Slack or Teams, isolate one authorized channel or conversation."}
+  caption={"For Slack or Teams, isolate one authorized channel or conversation."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: For Slack or Teams, isolate one authorized channel or conversation."}
+  src="/blog/instructions/export-browser-messenger-chats-to-pdf/02.svg"
+  step={2}
+/>
+
+Messenger and Instagram DMs can include reactions, shared posts, disappearing media and account context. Accurate copy records the displayed state, while Editable document retains supported text and links. Neither recreates interactive or expired content.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: For browser DMs, load reactions, shared posts, and the intended range."}
+  caption={"For browser DMs, load reactions, shared posts, and the intended range."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: For browser DMs, load reactions, shared posts, and the intended range."}
+  src="/blog/instructions/export-browser-messenger-chats-to-pdf/03.svg"
+  step={3}
+/>
 
 For Slack and Teams, official workspace or account exports may address a broader administrative job and have their own eligibility rules. A selected PDF from a web tab is a reading copy, not a substitute for those tools.
 
@@ -64,6 +91,15 @@ Closing the preview tab deletes temporary preview data and Page 2 File keeps no 
 
 Signal and other native-only applications remain outside this workflow unless the required conversation is presented in a supported Chrome tab. Use a platform's own export for content that exists only in a desktop or mobile application.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose Current tab and verify the exact open browser conversation."}
+  caption={"Choose Current tab and verify the exact open browser conversation."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose Current tab and verify the exact open browser conversation."}
+  src="/blog/instructions/export-browser-messenger-chats-to-pdf/04.svg"
+  step={4}
+/>
+
 ## Compare active-tab capture with platform archives
 
 Discord documents an official [data package](https://support.discord.com/hc/en-us/articles/360004957991-Your-Discord-Data-Package) containing account data in JSON files. Slack, Teams and Meta provide their own exports with platform-specific eligibility and scope. Those options address broader account, workspace or administrative jobs.
@@ -82,7 +118,16 @@ Decide how branches will appear. Slack and Teams threads, Discord replies and Me
 
 ## Apply a consistent document standard
 
-Screenshot mode is appropriate when bubbles, reactions, embeds and grouping carry meaning. Editable mode helps with search, quotation and supported links. Complex message components may remain visual in otherwise editable output.
+Accurate copy is appropriate when bubbles, reactions, embeds and grouping carry meaning. Editable document helps with search, quotation and supported links. Complex message components may remain visual in otherwise editable output.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose the output style for visual grouping or supported reusable content."}
+  caption={"Choose the output style for visual grouping or supported reusable content."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose the output style for visual grouping or supported reusable content."}
+  src="/blog/instructions/export-browser-messenger-chats-to-pdf/05.svg"
+  step={5}
+/>
 
 Check sender and timestamp context at every page boundary. Keep a quoted message with its reply where possible, and retain captions with media previews. Do not describe a thumbnail as the original attachment or a playable control as preserved interaction.
 
@@ -99,6 +144,15 @@ Close the preview tab after approval so temporary preview data is deleted. Page 
 ## Finish with source-to-file reconciliation
 
 Compare the PDF with the message inventory: correct account, exact thread, declared start and end, required branches, representative rich content and no prohibited side context. Open the downloaded file in an ordinary reader and inspect the first, last and several boundary pages.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Preview rich content, sender context, page boundaries, private links, and side panels."}
+  caption={"Preview rich content, sender context, page boundaries, private links, and side panels."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Preview rich content, sender context, page boundaries, private links, and side panels."}
+  src="/blog/instructions/export-browser-messenger-chats-to-pdf/06.svg"
+  step={6}
+/>
 
 Record unavailable history, expired media, omitted threads and native-only content. If a required conversation cannot be presented in Chrome, use the platform’s own authorized export. Signal remains an explicit example of a native-only interface outside this extension workflow.
 

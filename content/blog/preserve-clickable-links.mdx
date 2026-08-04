@@ -1,6 +1,24 @@
 Clickable links survive webpage-to-PDF conversion only when the output contains link annotations or editable document elements. A visual screenshot can preserve the appearance of a link without preserving its action.
 
-Choose editable mode in the [Page 2 File PDF converter](/en/convert-webpage-to-pdf) when link behavior matters. Choose screenshot mode when exact page appearance matters more, then assume links inside the captured image will not be interactive.
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Open documentation with meaningful visible links and known destinations."}
+  caption={"Open documentation with meaningful visible links and known destinations."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Open documentation with meaningful visible links and known destinations."}
+  src="/blog/instructions/preserve-clickable-links/01.svg"
+  step={1}
+/>
+
+Choose Editable document (editable output) in the [Page 2 File PDF converter](/en/convert-webpage-to-pdf) when link behavior matters. Choose Accurate copy (screenshot-style output) when exact page appearance matters more, then assume links inside the captured image will not be interactive.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose PDF for a stable reading document."}
+  caption={"Choose PDF for a stable reading document."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose PDF for a stable reading document."}
+  src="/blog/instructions/preserve-clickable-links/02.svg"
+  step={2}
+/>
 
 ## A visible URL is not automatically a link
 
@@ -16,7 +34,7 @@ Test important links from the preview or final file in an environment where open
 
 ## Know when screenshot mode is the right compromise
 
-A complex dashboard, campaign page or chat may lose meaning if rebuilt as plain text boxes. Screenshot mode keeps that composition but turns the section into a picture. If both appearance and links matter, a converter may add safe link overlays above a screenshot section, but only for targets it can locate.
+A complex dashboard, campaign page or chat may lose meaning if rebuilt as plain text boxes. Accurate copy keeps that composition but turns the section into a picture. If both appearance and links matter, a converter may add safe link overlays above a screenshot section, but only for targets it can locate.
 
 Read [screenshot vs editable conversion](/en/blog/visual-vs-editable) before deciding. For presentations, the same distinction appears in [screenshot slides vs editable PowerPoint](/en/blog/screenshot-vs-editable-powerpoint).
 
@@ -66,10 +84,37 @@ Meaningful labels are better than repeated “click here” text because they re
 
 If the PDF will be used with assistive technology, test more than mouse clicks. Inspect whether text remains selectable, whether the annotation order follows the document and whether link labels make sense without nearby decoration. Page 2 File can preserve supported document structure, but the source and the reviewed output determine whether that structure is useful.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose Editable document to preserve supported safe link targets."}
+  caption={"Choose Editable document to preserve supported safe link targets."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose Editable document to preserve supported safe link targets."}
+  src="/blog/instructions/preserve-clickable-links/03.svg"
+  step={3}
+/>
+
 ## Protect provenance and privacy
 
 A link can disclose more than its visible domain. Query strings may contain document identifiers, search terms, referral data or signed tokens. Before sharing, inspect targets from authenticated pages and remove anything the recipient should not receive. Opening a redacted PDF should not lead back to an unredacted private resource by accident.
 
 Record the source URL and capture date when citations need provenance, while avoiding session-specific parameters. The extension’s preview data is temporary and deleted after its tab closes, and Page 2 File does not maintain conversion history. The downloaded PDF can preserve its own links indefinitely, so its destinations need the same review as its visible content.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Keep Remove links unchecked when destinations must remain available."}
+  caption={"Keep Remove links unchecked when destinations must remain available."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Keep Remove links unchecked when destinations must remain available."}
+  src="/blog/instructions/preserve-clickable-links/04.svg"
+  step={4}
+/>
+
 See the [website output guide](/en/blog/website-types-to-pdf-or-powerpoint) for source-specific link risks.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Preview the PDF and test representative saved and intentionally removed links."}
+  caption={"Preview the PDF and test representative saved and intentionally removed links."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Preview the PDF and test representative saved and intentionally removed links."}
+  src="/blog/instructions/preserve-clickable-links/05.svg"
+  step={5}
+/>

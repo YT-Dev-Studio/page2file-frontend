@@ -1,5 +1,14 @@
 Website-to-PowerPoint conversion starts by finding the accessible pages that belong to a bounded site section. The [Web 2 PowerPoint GPT App](/en/web2powerpoint-gpt) converts each selected public page and returns separate PPTX files rather than pretending the whole site is one coherent deck.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Inventory only the accessible website pages needed for the presentation collection."}
+  caption={"Inventory only the accessible website pages needed for the presentation collection."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Inventory only the accessible website pages needed for the presentation collection."}
+  src="/blog/instructions/website-to-powerpoint/01.svg"
+  step={1}
+/>
+
 This distinction matters. A product page, help article and company story have different audiences and slide structures. Keeping one presentation per source page preserves those boundaries.
 
 ## Select pages with a reason
@@ -16,7 +25,7 @@ If the job is only one page, use [One Page 2 PowerPoint](/en/one-page2powerpoint
 
 ## Choose a mode for the collection
 
-Screenshot mode is appropriate when the site's design is itself evidence. Editable mode is better when teams must revise headings, body text and supported images. Mixing modes inside an uncontrolled crawl would make the output unpredictable, so choose a consistent policy and inspect exceptions.
+Accurate copy (screenshot-style output) is appropriate when the site's design is itself evidence. Editable document (editable output) is better when teams must revise headings, body text and supported images. Mixing modes inside an uncontrolled crawl would make the output unpredictable, so choose a consistent policy and inspect exceptions.
 
 Read [how one webpage becomes PowerPoint](/en/blog/webpage-to-powerpoint) for section and slide-boundary guidance.
 
@@ -32,6 +41,15 @@ A website may contain product pages, documentation, legal notices, search result
 
 Create an inventory with one row per public URL, its page type and the reason it belongs. Remove tracking variants, duplicates and languages the audience does not need. Mark pages that require authentication; the public multi-page workflow does not inherit a signed-in browser session.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Use By URL for each selected public page."}
+  caption={"Use By URL for each selected public page."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Use By URL for each selected public page."}
+  src="/blog/instructions/website-to-powerpoint/02.svg"
+  step={2}
+/>
+
 Page discovery can miss content that has no crawlable link or is created only after interaction. Treat the returned set as discovered accessible pages, then reconcile it against the inventory. Do not claim a complete site export without that comparison.
 
 ## Keep separate decks understandable
@@ -39,6 +57,15 @@ Page discovery can miss content that has no crawlable link or is created only af
 Web 2 PowerPoint returns one PPTX per page. Use filenames that reflect the page title or path and keep a source index beside the downloads. File order in a folder is not a narrative.
 
 Apply a consistent review standard across the collection: slide ratio, minimum readable type, link policy, source attribution and treatment of screenshot fallbacks. A shared standard makes it easier to combine selected slides later without hiding differences between sources.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose PowerPoint and apply one consistent output policy."}
+  caption={"Choose PowerPoint and apply one consistent output policy."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose PowerPoint and apply one consistent output policy."}
+  src="/blog/instructions/website-to-powerpoint/03.svg"
+  step={3}
+/>
 
 If pages repeat the same header, navigation or call to action, decide whether those elements belong in every deck. Removing repetition is an editorial decision made after capture; original outputs should remain traceable to their source pages.
 
@@ -74,6 +101,15 @@ The manifest distinguishes missing files from intentional exclusions and makes l
 
 When several accepted decks need to become one presentation, create that combined deck as a separate editorial artifact. Select and reorder slides for the audience, normalize source notes and review transitions. Do not imply that Web 2 PowerPoint automatically turns an entire site into one coherent narrative.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Review one separate PPTX for every accepted source page."}
+  caption={"Review one separate PPTX for every accepted source page."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Review one separate PPTX for every accepted source page."}
+  src="/blog/instructions/website-to-powerpoint/04.svg"
+  step={4}
+/>
+
 ## Review failures and updates
 
 Open any output that contains a warning, unusually small slide count or generic error title. A PPTX can be downloadable while containing only a consent wall, redirect notice or partially rendered component. Match the accepted-file count to the manifest, not to the number of files in the download folder.
@@ -81,6 +117,15 @@ Open any output that contains a warning, unusually small slide count or generic 
 Retry only after changing a relevant condition, such as page state, mode or template preparation. Authentication and permission failures require a different authorized workflow, not repeated public requests. Keep blocked pages visible with their reasons.
 
 A later collection is a new snapshot. Sites change page by page, so preserve the earlier manifest and compare additions, removals and updated sources. The decks do not synchronize with their URLs, and Page 2 File does not maintain a conversion-history database.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Maintain a source manifest beside the downloaded decks."}
+  caption={"Maintain a source manifest beside the downloaded decks."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Maintain a source manifest beside the downloaded decks."}
+  src="/blog/instructions/website-to-powerpoint/05.svg"
+  step={5}
+/>
 
 ## Deliver for the recipient’s actual task
 
@@ -93,6 +138,15 @@ If recipients must edit the decks, identify screenshot fallbacks and test a repr
 Keep the downloaded collection in controlled project storage and close each preview tab after review so its temporary preview data is deleted. Page 2 File has no conversion-history database, so the manifest is also the durable record of which outputs were accepted.
 
 When delivery uses an archive, open the archive after packaging and compare its filenames with the manifest. Verify that drafts, failed decks and private source notes were not included accidentally. The final package should contain only reviewed files and a clear scope statement.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Combine selected slides later as a separate editorial task, not an extension button."}
+  caption={"Combine selected slides later as a separate editorial task, not an extension button."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Combine selected slides later as a separate editorial task, not an extension button."}
+  src="/blog/instructions/website-to-powerpoint/06.svg"
+  step={6}
+/>
 
 Retain the approved manifest beside the delivered collection.
 

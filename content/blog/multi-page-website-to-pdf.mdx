@@ -1,5 +1,14 @@
 A multi-page website should be converted as a bounded collection, not as an unlimited crawl. The [Web 2 PDF GPT App](/en/web2pdf-gpt) finds accessible pages on the target site, sends each selected public URL for conversion and returns several PDF files for download.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Build a bounded inventory of the website pages that belong to the job."}
+  caption={"Build a bounded inventory of the website pages that belong to the job."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Build a bounded inventory of the website pages that belong to the job."}
+  src="/blog/instructions/multi-page-website-to-pdf/01.svg"
+  step={1}
+/>
+
 It does not silently merge the whole web into one document. Each page keeps its own source boundary and output file, which makes failures and permissions easier to review.
 
 ## Define the website boundary
@@ -24,6 +33,15 @@ Authenticated areas cannot be discovered by a public crawl. Capture an allowed s
 
 Check the URL list, titles, duplicate pages, redirects and the first and last page of every PDF. For individual long sources, apply the [page-break review](/en/blog/long-webpage-page-breaks).
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Open the first approved page with By URL."}
+  caption={"Open the first approved page with By URL."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Open the first approved page with By URL."}
+  src="/blog/instructions/multi-page-website-to-pdf/02.svg"
+  step={2}
+/>
+
 A site-wide export is a copy of published material. Respect robots guidance, source terms, copyright and rate limits, and do not use it to bypass access controls.
 
 ## Build an explicit page inventory
@@ -38,6 +56,15 @@ Record pages that require login, consent or a user action. Web 2 PDF works with 
 
 Because the result is one PDF per page, filenames and a simple index matter. Use a stable naming pattern that identifies the source section and page title. Avoid relying on download order, which can change when pages finish at different times.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose PDF and one consistent output policy."}
+  caption={"Choose PDF and one consistent output policy."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose PDF and one consistent output policy."}
+  src="/blog/instructions/multi-page-website-to-pdf/03.svg"
+  step={3}
+/>
+
 An index can contain the original URL, capture date, output filename and review status. That gives a recipient a map without pretending that separate files are one merged book. If a combined publication is required, merge only after the individual PDFs have passed review and document the new reading order.
 
 Keep page-level provenance. A website can update one page without changing the others, so a collection assembled on different dates should say so. Re-running the whole site may be unnecessary when only a small subset changed.
@@ -45,6 +72,15 @@ Keep page-level provenance. A website can update one page without changing the o
 ## Review patterns and exceptions
 
 Check representative pages from each template: the homepage, article, documentation page, product page and any unusual layout. Template-level defects such as clipped navigation or missing fonts are likely to repeat and should be fixed before reviewing every file.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Repeat the same one-page conversion for each approved address."}
+  caption={"Repeat the same one-page conversion for each approved address."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Repeat the same one-page conversion for each approved address."}
+  src="/blog/instructions/multi-page-website-to-pdf/04.svg"
+  step={4}
+/>
 
 Then inspect page-specific risks. Long tables, image galleries, embedded charts and short redirect pages can fail even when the template looks correct. Verify that each PDF has the expected title, begins at the intended content and contains no authentication error or cookie wall.
 
@@ -78,6 +114,15 @@ For signed-in material, leave the public collection workflow. Open each permitte
 
 Use filenames that remain unique when page titles repeat. A short path-derived identifier can distinguish two “Overview” pages without exposing sensitive query parameters. Keep a separate manifest with source URL, title, capture date, selected mode, output filename and review result.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Keep the resulting PDFs separate and name them from their source paths."}
+  caption={"Keep the resulting PDFs separate and name them from their source paths."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Keep the resulting PDFs separate and name them from their source paths."}
+  src="/blog/instructions/multi-page-website-to-pdf/05.svg"
+  step={5}
+/>
+
 Organize the PDFs in the intended reading order only after every page has been reconciled. If recipients need one combined PDF, merge the accepted files with a suitable tool and verify the combined bookmarks, page order and boundaries. That merged artifact is a separate editorial result; Web 2 PDF itself returns one PDF per discovered page.
 
 Before delivery, sample links and page breaks from each template and open every file that had a warning. State the scope and exclusions alongside the collection. “Documentation section captured on this date, excluding private account pages and duplicate language variants” is more useful than “entire website” when the boundary was narrower.
@@ -85,5 +130,14 @@ Before delivery, sample links and page breaks from each template and open every 
 ## Maintain the collection over time
 
 Websites change unevenly. A new navigation item may add a page, an old URL may redirect and a single article may be revised while the rest stay stable. Preserve the earlier manifest so a later run can identify additions, removals and changed sources rather than rebuilding an unexplained folder.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Reconcile the files with a manifest and record exclusions or failures."}
+  caption={"Reconcile the files with a manifest and record exclusions or failures."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Reconcile the files with a manifest and record exclusions or failures."}
+  src="/blog/instructions/multi-page-website-to-pdf/06.svg"
+  step={6}
+/>
 
 Do not imply continuous synchronization. Each PDF records the rendered page state at its capture time. When freshness matters, define a review date and repeat discovery under the same boundary rules, then keep the two manifests separate for comparison.

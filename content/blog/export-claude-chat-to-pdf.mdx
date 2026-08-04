@@ -1,5 +1,14 @@
 To export a Claude chat to PDF, open the required conversation in Claude's web app, load the full range you need and capture the active tab with the [Page 2 File extension](/en/chrome-extension/how-to-use). The preview shows messages, code, citations and visible artifact context before download.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Load the full response range and open the artifact view that belongs in the record."}
+  caption={"Load the full response range and open the artifact view that belongs in the record."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Load the full response range and open the artifact view that belongs in the record."}
+  src="/blog/instructions/export-claude-chat-to-pdf/01.svg"
+  step={1}
+/>
+
 Page 2 File creates one readable document from rendered content. It does not request the Claude password or claim access to hidden conversations.
 
 ## Load long responses and artifacts
@@ -8,9 +17,18 @@ Scroll to the earliest message you need and wait for the interface to load it. E
 
 Check the preview against the conversation. If a response or artifact is missing, return to Claude, expose it and capture again.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose Current tab and confirm the Claude conversation card."}
+  caption={"Choose Current tab and confirm the Claude conversation card."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose Current tab and confirm the Claude conversation card."}
+  src="/blog/instructions/export-claude-chat-to-pdf/02.svg"
+  step={2}
+/>
+
 ## Choose screenshot or editable mode
 
-Screenshot mode preserves the message rhythm, code colors and layout. Editable mode rebuilds supported headings, Markdown, lists, code, images and links for search and reuse. Complex artifact views can remain screenshots.
+Accurate copy (screenshot-style output) preserves the message rhythm, code colors and layout. Editable document (editable output) rebuilds supported headings, Markdown, lists, code, images and links for search and reuse. Complex artifact views can remain screenshots.
 
 The [AI chat export hub](/en/blog/export-ai-chats-privately) explains the privacy boundary and the difference from an account archive.
 
@@ -36,6 +54,15 @@ Confirm the conversation and account or workspace before capture. Select the fir
 
 Claude can present long responses, code, tables and artifacts beside the conversation. Open the exact view that belongs in the PDF and make sure the relevant material is rendered. An artifact shown in a side panel may need its own screenshot section; it should not be described as a native attachment if only its displayed state was captured.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose PDF."}
+  caption={"Choose PDF."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose PDF."}
+  src="/blog/instructions/export-claude-chat-to-pdf/03.svg"
+  step={3}
+/>
+
 When a conversation has been edited or retried, record the visible path. Page 2 File does not reconstruct alternatives that are not shown in the active tab.
 
 ## Inspect citations and attachments
@@ -44,7 +71,16 @@ Expand sources and test important destinations after conversion. Preserve enough
 
 Review uploaded content, generated files and images separately. The conversation can mention a file without embedding its complete contents in the page. Note that limitation instead of implying that the PDF contains the original attachment.
 
-Wide code and tables need a legibility check at normal zoom. Use editable mode when supported text must be copied, or screenshot mode when Claude's displayed composition is the primary record.
+Wide code and tables need a legibility check at normal zoom. Use Editable document when supported text must be copied, or Accurate copy when Claude's displayed composition is the primary record.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose Accurate copy for artifact context or Editable document for supported text."}
+  caption={"Choose Accurate copy for artifact context or Editable document for supported text."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose Accurate copy for artifact context or Editable document for supported text."}
+  src="/blog/instructions/export-claude-chat-to-pdf/04.svg"
+  step={4}
+/>
 
 ## Complete a privacy and scope review
 
@@ -58,7 +94,16 @@ Label the result as one visible Claude conversation captured on a date. Anthropi
 
 Create a short checklist containing the first prompt, last required response and any artifact, code block or citation that must appear. Compare it with preview in order. If Claude’s interface unloads an earlier part while a later part is opened, use smaller labeled ranges rather than describing one PDF as complete.
 
-Inspect the downloaded file at normal zoom. Search for representative phrases in editable mode and confirm artifact labels and message grouping in screenshot mode. Record any unavailable file, hidden branch or side-panel content that was intentionally excluded.
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Preview messages, citations, code, and the visible artifact boundary."}
+  caption={"Preview messages, citations, code, and the visible artifact boundary."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Preview messages, citations, code, and the visible artifact boundary."}
+  src="/blog/instructions/export-claude-chat-to-pdf/05.svg"
+  step={5}
+/>
+
+Inspect the downloaded file at normal zoom. Search for representative phrases in Editable document and confirm artifact labels and message grouping in Accurate copy. Record any unavailable file, hidden branch or side-panel content that was intentionally excluded.
 
 The preview is temporary and deleted when its tab closes, while Page 2 File has no conversion-history database. Keep the approved PDF and its scope note in storage appropriate for the conversation’s sensitivity.
 

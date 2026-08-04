@@ -1,5 +1,14 @@
 Разговоры Grok, DeepSeek, Perplexity и Copilot можно экспортировать из браузерных вкладок, когда нужные сообщения отрисованы. Откройте один разговор, загрузите видимые источники и захватите его через [расширение Page 2 File](/ru/chrome-extension/how-to-use).
 
+<ArticleFigure
+  alt={"Браузер и расширение Page 2 File: Откройте один разговор Grok, DeepSeek, Perplexity или Copilot в браузере."}
+  caption={"Откройте один разговор Grok, DeepSeek, Perplexity или Copilot в браузере."}
+  closeLabel={"Закрыть просмотр изображения"}
+  openLabel={"Открыть изображение в полном размере: Откройте один разговор Grok, DeepSeek, Perplexity или Copilot в браузере."}
+  src="/blog/instructions/export-other-ai-chats-to-pdf/01.svg"
+  step={1}
+/>
+
 Page 2 File ограничивается содержимым браузерной страницы. Он не заявляет доступ к скрытым threads, памяти модели, архивам аккаунта и native-приложениям.
 
 ## Подготовьте видимый контент платформы
@@ -10,13 +19,22 @@ Grok и Perplexity часто показывают ссылки и карточ�
 
 ## Сохраняйте полезные ссылки
 
-Редактируемый режим переносит поддерживаемые видимые ссылки с безопасными адресами. Режим скриншотов сохраняет макет карточек, но подписи могут остаться пикселями без link overlays.
+Editable document — режим редактируемого документа переносит поддерживаемые видимые ссылки с безопасными адресами. Accurate copy — режим точной визуальной копии сохраняет макет карточек, но подписи могут остаться пикселями без link overlays.
+
+<ArticleFigure
+  alt={"Браузер и расширение Page 2 File: Загрузите видимые источники, код, таблицы, формулы и созданные медиа."}
+  caption={"Загрузите видимые источники, код, таблицы, формулы и созданные медиа."}
+  closeLabel={"Закрыть просмотр изображения"}
+  openLabel={"Открыть изображение в полном размере: Загрузите видимые источники, код, таблицы, формулы и созданные медиа."}
+  src="/blog/instructions/export-other-ai-chats-to-pdf/02.svg"
+  step={2}
+/>
 
 Проверяйте важные утверждения по исходным ссылкам. Сохранение ответа AI не подтверждает его точность.
 
 ## Выберите режим
 
-Режим скриншотов нужен для исходного layout и карточек. Редактируемый режим — для поиска по тексту, кода и повторного использования ссылок. Сложные widgets могут остаться изображениями.
+Accurate copy нужен для исходного layout и карточек. Editable document — для поиска по тексту, кода и повторного использования ссылок. Сложные widgets могут остаться изображениями.
 
 [Хаб экспорта AI-чатов](/ru/blog/export-ai-chats-privately) описывает приватность и отличие от архива. Сравните инструкции по [ChatGPT](/ru/blog/export-chatgpt-conversation-to-pdf) и [Claude](/ru/blog/export-claude-chat-to-pdf).
 
@@ -38,9 +56,18 @@ Grok, DeepSeek, Perplexity и Copilot показывают chats по-разно
 
 Оставьте labels и проверьте links. Source cards помогают понять ответ, но не гарантируют его точность.
 
-Code, tables и formulas проверьте при обычном размере. Editable mode поддерживает повторное использование текста, режим скриншотов — styling. Complex cards и media могут остаться изображениями.
+Code, tables и formulas проверьте при обычном размере. Editable document поддерживает повторное использование текста, Accurate copy — styling. Complex cards и media могут остаться изображениями.
 
 Отличайте разговор об uploaded file от самого attachment: PDF чата не становится копией всех связанных файлов.
+
+<ArticleFigure
+  alt={"Браузер и расширение Page 2 File: Выберите Current tab и проверьте выбранный разговор."}
+  caption={"Выберите Current tab и проверьте выбранный разговор."}
+  closeLabel={"Закрыть просмотр изображения"}
+  openLabel={"Открыть изображение в полном размере: Выберите Current tab и проверьте выбранный разговор."}
+  src="/blog/instructions/export-other-ai-chats-to-pdf/03.svg"
+  step={3}
+/>
 
 ## Применяйте единый privacy standard
 
@@ -54,9 +81,18 @@ Code, tables и formulas проверьте при обычном размере
 
 Для DeepSeek проверьте текущую [официальную privacy policy](https://chat.deepseek.com/downloads/DeepSeek%20Privacy%20Policy.pdf), interface и account settings. Нельзя переносить обещания native export с другой AI-платформы.
 
+<ArticleFigure
+  alt={"Браузер и расширение Page 2 File: Выберите PDF и output style, подходящий структуре платформы."}
+  caption={"Выберите PDF и output style, подходящий структуре платформы."}
+  closeLabel={"Закрыть просмотр изображения"}
+  openLabel={"Открыть изображение в полном размере: Выберите PDF и output style, подходящий структуре платформы."}
+  src="/blog/instructions/export-other-ai-chats-to-pdf/04.svg"
+  step={4}
+/>
+
 ## Сверяйте один чат за раз
 
-Отметьте first/last message, citations, media, code и side panels. Если old content исчезает, используйте меньшие labeled ranges. В режиме скриншотов проверьте grouping и cards, в editable — поиск, links и raster fallbacks.
+Отметьте first/last message, citations, media, code и side panels. Если old content исчезает, используйте меньшие labeled ranges. В Accurate copy проверьте grouping и cards, в editable — поиск, links и raster fallbacks.
 
 Source label не доказывает правильность ответа, поэтому важные claims проверяйте отдельно. В handoff укажите assistant, visible range, capture date и omissions.
 
@@ -65,3 +101,12 @@ Source label не доказывает правильность ответа, п
 Расширение работает с active tab; preview временный, удаляется после закрытия вкладки и не сохраняется в conversion-history database. Это не описание хранения исходной беседы у Grok, DeepSeek, Perplexity или Copilot.
 
 Изучите текущие settings каждой платформы. После скачивания PDF остаётся у пользователя. Page 2 File независим от перечисленных сервисов; их названия не означают endorsement.
+
+<ArticleFigure
+  alt={"Браузер и расширение Page 2 File: Проверьте сложные карточки, ссылки, медиа и точную границу разговора."}
+  caption={"Проверьте сложные карточки, ссылки, медиа и точную границу разговора."}
+  closeLabel={"Закрыть просмотр изображения"}
+  openLabel={"Открыть изображение в полном размере: Проверьте сложные карточки, ссылки, медиа и точную границу разговора."}
+  src="/blog/instructions/export-other-ai-chats-to-pdf/05.svg"
+  step={5}
+/>

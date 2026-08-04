@@ -1,5 +1,14 @@
 HTML-to-PDF conversion turns a supplied HTML file into a fixed document. With the [HTML 2 PDF GPT App](/en/html2pdf-gpt), the input is the file you provide, not a URL crawl and not the authenticated state of a browser tab.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Render the HTML as a browser page before treating it as a document source."}
+  caption={"Render the HTML as a browser page before treating it as a document source."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Render the HTML as a browser page before treating it as a document source."}
+  src="/blog/instructions/html-to-pdf-safely/01.svg"
+  step={1}
+/>
+
 Treat every HTML file as active code until a renderer proves otherwise. A defensible conversion design restricts scripts and unexpected network access, blocks local-file and internal-service requests, and makes unsupported content visible for review. Do not infer those controls from a polished PDF; verify the converter’s documented boundary before supplying sensitive input.
 
 ## Prepare a self-contained file
@@ -50,6 +59,15 @@ A renderer should restrict network and local-system access, but technical isolat
 
 Compare the result against a dependency checklist. Confirm fonts, images, page order, headings, links and the final page. If a resource is missing, fix the HTML package or use a public URL that can load the complete page.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Use Current tab for rendered local content or By URL for an allowed public page."}
+  caption={"Use Current tab for rendered local content or By URL for an allowed public page."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Use Current tab for rendered local content or By URL for an allowed public page."}
+  src="/blog/instructions/html-to-pdf-safely/02.svg"
+  step={2}
+/>
+
 ## Separate authoring risks from rendering risks
 
 Authoring risks are already present in the file: embedded secrets, hidden personal data, misleading links and content you do not have permission to distribute. Rendering risks arise when active HTML can request network resources, access an unintended location or consume excessive processing time. A trustworthy workflow needs controls for both categories.
@@ -66,14 +84,41 @@ Print CSS can define margins, paper size and break preferences, but those rules 
 
 Fonts deserve a fallback stack. A remotely loaded typeface may be unavailable inside a restricted rendering environment. Choose a fallback with similar metrics, then check headings, tables and code for changed wrapping. The exact font matters less than a stable, readable result unless typography itself is the subject of the document.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose PDF and an output style after the page is visibly stable."}
+  caption={"Choose PDF and an output style after the page is visibly stable."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose PDF and an output style after the page is visibly stable."}
+  src="/blog/instructions/html-to-pdf-safely/03.svg"
+  step={3}
+/>
+
 ## Review the output as a new artifact
 
 Compare the PDF against a content inventory, not just the browser view of the HTML. Confirm every required section appears once, page order is correct, images are current and links point to approved destinations. Search for a phrase near the beginning, middle and end when selectable text is expected.
 
 Look for evidence of blocked dependencies: blank image frames, fallback fonts, empty charts or layout gaps where a script-generated component should have appeared. Repair the source package or accept a clearly documented screenshot fallback. Do not hide a missing element because the surrounding pages rendered successfully.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Treat script, network, and file access as a separate renderer security boundary."}
+  caption={"Treat script, network, and file access as a separate renderer security boundary."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Treat script, network, and file access as a separate renderer security boundary."}
+  src="/blog/instructions/html-to-pdf-safely/04.svg"
+  step={4}
+/>
+
 HTML 2 PDF is presented as a GPT App for one uploaded HTML file and one PDF result. It is not a general website crawler or an execution environment for application code. Use the public URL converter for a public webpage and the Chrome extension for an authorized active tab.
 
 Before distribution, check file metadata, visible identifiers and clickable targets. The safest render can still contain information that the author placed in the document. Keep the approved final PDF in your own storage because Page 2 File does not provide a conversion-history database.
 
 Compare other source categories in the [PDF and PowerPoint website guide](/en/blog/website-types-to-pdf-or-powerpoint).
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Review the fixed PDF pages and record missing or blocked dependencies."}
+  caption={"Review the fixed PDF pages and record missing or blocked dependencies."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Review the fixed PDF pages and record missing or blocked dependencies."}
+  src="/blog/instructions/html-to-pdf-safely/05.svg"
+  step={5}
+/>

@@ -1,5 +1,14 @@
 To export one ChatGPT conversation to PDF, open that chat in the browser, load the messages you need and use the [Page 2 File extension](/en/chrome-extension/how-to-use) on the active tab. Review the captured range, page breaks, code blocks and links before download.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Load the required messages and expand code, tables, and source panels."}
+  caption={"Load the required messages and expand code, tables, and source panels."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Load the required messages and expand code, tables, and source panels."}
+  src="/blog/instructions/export-chatgpt-conversation-to-pdf/01.svg"
+  step={1}
+/>
+
 This produces a readable document from one visible conversation. It is not the same as OpenAI's account-level data export and does not recreate hidden or unloaded branches.
 
 ## Prepare the conversation
@@ -10,7 +19,7 @@ If a long chat virtualizes messages, check that earlier content remains in the r
 
 ## Choose the document style
 
-Screenshot mode keeps the conversation's message cards, spacing and code styling. Editable mode maps supported text, code, tables, images and links into a cleaner document, with complex elements falling back to images.
+Accurate copy (screenshot-style output) keeps the conversation's message cards, spacing and code styling. Editable document (editable output) maps supported text, code, tables, images and links into a cleaner document, with complex elements falling back to images.
 
 The general [AI chat privacy guide](/en/blog/export-ai-chats-privately) explains the difference and the temporary preview boundary.
 
@@ -34,13 +43,31 @@ For another assistant, use the [Claude](/en/blog/export-claude-chat-to-pdf), [Ge
 
 Confirm the conversation title and account or workspace before capture. If the chat has alternative branches, select the path that belongs in the document. Page 2 File records the visible path; it does not merge hidden alternatives into one transcript.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose Current tab and confirm the ChatGPT conversation card."}
+  caption={"Choose Current tab and confirm the ChatGPT conversation card."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose Current tab and confirm the ChatGPT conversation card."}
+  src="/blog/instructions/export-chatgpt-conversation-to-pdf/02.svg"
+  step={2}
+/>
+
 Choose the first and last message. A useful boundary might contain the prompt that establishes the task, the relevant responses and their cited sources. Remove unrelated setup, personal material and later experiments that do not help the reader.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose PDF."}
+  caption={"Choose PDF."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose PDF."}
+  src="/blog/instructions/export-chatgpt-conversation-to-pdf/03.svg"
+  step={3}
+/>
 
 For shared GPTs or workspace conversations, check whether the visible material can be exported under the applicable rules. Access to a thread is not automatic permission to distribute it outside the workspace.
 
 ## Handle code, tables and sources
 
-Expand code blocks and verify that horizontal content is readable. Screenshot mode preserves the displayed styling, while editable mode is better suited to copying supported text. Very wide tables or long lines may need their own section or screenshot fallback.
+Expand code blocks and verify that horizontal content is readable. Accurate copy preserves the displayed styling, while Editable document is better suited to copying supported text. Very wide tables or long lines may need their own section or screenshot fallback.
 
 Open citation panels and source lists that are necessary for interpretation. Test a sample of links in the PDF and remove private or temporary destinations. A linked source can change, and its presence does not prove the model's claim.
 
@@ -68,6 +95,24 @@ Match the first prompt, final required response and every essential code block, 
 
 Open the downloaded PDF in an ordinary reader. Test a consequential source link, inspect code wrapping and search for representative text when editable output was selected. Closing the preview tab deletes temporary preview data; the approved PDF then remains under your control.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose the output style based on layout fidelity or supported reusable text."}
+  caption={"Choose the output style based on layout fidelity or supported reusable text."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose the output style based on layout fidelity or supported reusable text."}
+  src="/blog/instructions/export-chatgpt-conversation-to-pdf/04.svg"
+  step={4}
+/>
+
 Keep a safe conversation identifier and capture date with the file when provenance matters. If the thread contains confidential prompts or uploaded-file content, store it under the same access rules as the source material rather than treating it as an ordinary public PDF.
 
 Review any later annotations as a separate revision.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Preview message order, code wrapping, tables, citations, and the selected branch."}
+  caption={"Preview message order, code wrapping, tables, citations, and the selected branch."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Preview message order, code wrapping, tables, citations, and the selected branch."}
+  src="/blog/instructions/export-chatgpt-conversation-to-pdf/05.svg"
+  step={5}
+/>

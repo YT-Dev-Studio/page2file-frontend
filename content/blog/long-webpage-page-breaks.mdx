@@ -1,5 +1,14 @@
 To convert a long webpage without broken PDF pages, treat the source as a sequence of meaningful sections rather than one enormous screenshot. Page 2 File creates a preview where those sections can be checked before final rendering.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Map the long article into headings, figures, tables, and protected content units."}
+  caption={"Map the long article into headings, figures, tables, and protected content units."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Map the long article into headings, figures, tables, and protected content units."}
+  src="/blog/instructions/long-webpage-page-breaks/01.svg"
+  step={1}
+/>
+
 Start with the [webpage to PDF converter](/en/convert-webpage-to-pdf) for a public URL. Use the [Chrome extension](/en/chrome-extension/how-to-use) when the long page is private or depends on your current tab state.
 
 ## Stabilize the source first
@@ -18,7 +27,16 @@ Very tall tables and code listings may still need a split. Prefer a visible cont
 
 Print CSS can change widths and hide elements just before printing. Canvas, video and animated content may not have a printable representation. The comparison of [URL conversion and browser Print](/en/blog/why-print-to-pdf-breaks) explains why a page that looks correct on screen can fail in the print dialog.
 
-In screenshot mode, complex sections remain images. In editable mode, supported text and links are reconstructed while difficult graphics can fall back to raster. Neither mode should claim that every browser feature becomes editable.
+In Accurate copy (screenshot-style output), complex sections remain images. In Editable document (editable output), supported text and links are reconstructed while difficult graphics can fall back to raster. Neither mode should claim that every browser feature becomes editable.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Scroll deliberately until lazy sections remain loaded."}
+  caption={"Scroll deliberately until lazy sections remain loaded."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Scroll deliberately until lazy sections remain loaded."}
+  src="/blog/instructions/long-webpage-page-breaks/02.svg"
+  step={2}
+/>
 
 ## Use preview as the approval step
 
@@ -42,6 +60,15 @@ Tables and long lists may need their own repeated labels. A reader who opens the
 
 Footnotes and references should remain discoverable. Keep citation markers with the sentence they qualify and avoid placing a short reference heading alone at the bottom of a page. A slightly uneven page is preferable to a formally balanced layout that separates evidence from its explanation.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose PDF with Accurate copy when the original layout must remain intact."}
+  caption={"Choose PDF with Accurate copy when the original layout must remain intact."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose PDF with Accurate copy when the original layout must remain intact."}
+  src="/blog/instructions/long-webpage-page-breaks/03.svg"
+  step={3}
+/>
+
 ## Test at realistic viewing sizes
 
 Desktop preview can hide legibility problems because the canvas is large. Inspect the PDF at approximately the size a reader will use, including a laptop window and a mobile PDF viewer if mobile distribution matters. Text that requires constant zooming is a layout failure even when no characters are clipped.
@@ -53,6 +80,15 @@ Compare page count and section count with the source outline. An unexpected incr
 ## Choose page size and orientation for the content
 
 Page boundaries are easier to manage when the document dimensions match the dominant material. Portrait is natural for articles and messages; landscape can give wide tables and timelines enough room. Mixing many orientations may be technically possible in some workflows, but it can make screen reading and printing awkward. Prefer one clear reading model unless a specific section cannot work within it.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Open Preview PDF and inspect headings, tables, and captions at page boundaries."}
+  caption={"Open Preview PDF and inspect headings, tables, and captions at page boundaries."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Open Preview PDF and inspect headings, tables, and captions at page boundaries."}
+  src="/blog/instructions/long-webpage-page-breaks/04.svg"
+  step={4}
+/>
 
 Margins protect text from printer limits and give headings visual separation, but very large margins can force avoidable breaks. Scaling has a similar tradeoff. Reducing a section slightly may keep a figure with its caption; shrinking a whole dashboard until labels cannot be read merely hides the original problem.
 
@@ -75,3 +111,12 @@ Check the final downloaded file in an ordinary PDF reader, not only inside previ
 If the document cannot pass after a changed page state, a narrower capture and a different mode, stop and record the limitation. A clearly bounded partial record is more reliable than a file described as complete when its source could not be rendered continuously.
 
 The [website source guide](/en/blog/website-types-to-pdf-or-powerpoint) covers page-specific preparation.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Return to the source, adjust one condition, and confirm corrected page breaks."}
+  caption={"Return to the source, adjust one condition, and confirm corrected page breaks."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Return to the source, adjust one condition, and confirm corrected page breaks."}
+  src="/blog/instructions/long-webpage-page-breaks/05.svg"
+  step={5}
+/>

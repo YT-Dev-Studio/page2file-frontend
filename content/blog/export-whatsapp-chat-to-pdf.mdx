@@ -1,5 +1,14 @@
 To export a WhatsApp chat to PDF from a browser, open the conversation in WhatsApp Web, load the required message range and capture the active tab with the [Page 2 File extension](/en/chrome-extension/how-to-use). Preview the participants, dates, media and page breaks before download.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Open WhatsApp Web and load the exact message range, replies, and media."}
+  caption={"Open WhatsApp Web and load the exact message range, replies, and media."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Open WhatsApp Web and load the exact message range, replies, and media."}
+  src="/blog/instructions/export-whatsapp-chat-to-pdf/01.svg"
+  step={1}
+/>
+
 This creates a readable copy of what WhatsApp Web renders. It is separate from WhatsApp's own chat-export features and cannot capture the native mobile application.
 
 ## Define the message range
@@ -10,7 +19,7 @@ Open quoted messages, images or document previews only when they belong in the P
 
 ## Choose original look or clean reading
 
-Screenshot mode preserves bubbles, timestamps, reply grouping and visible media. Editable mode maps supported message text, dates, images and safe links into a quieter document, with difficult content represented as screenshots.
+Accurate copy (screenshot-style output) preserves bubbles, timestamps, reply grouping and visible media. Editable document (editable output) maps supported message text, dates, images and safe links into a quieter document, with difficult content represented as screenshots.
 
 For preparation shared by other web messengers, read the [browser messenger guide](/en/blog/export-browser-messenger-chats-to-pdf).
 
@@ -36,7 +45,7 @@ Group chats need clear sender names and dates. Keep enough date separators to sh
 
 ## Handle message-specific elements
 
-Voice notes, video, stickers, reactions, disappearing content and live locations do not become equivalent interactive objects in a PDF. Screenshot mode can record their displayed state; editable mode can retain supported text and links while using screenshot fallbacks.
+Voice notes, video, stickers, reactions, disappearing content and live locations do not become equivalent interactive objects in a PDF. Accurate copy can record their displayed state; Editable document can retain supported text and links while using screenshot fallbacks.
 
 Check long URLs and shared documents. A link may expose a private resource or expire after capture. Test only the destinations needed for the document and remove links the recipient should not receive.
 
@@ -60,9 +69,27 @@ The workflows are not interchangeable. A browser PDF does not claim to include h
 
 Mark the first and last required message and sample several points in between. Confirm quoted replies, dates, sender context, media captions and visible service messages in preview. If earlier messages disappear after loading later history, capture smaller labeled ranges.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Confirm the first and last required messages and visible participant context."}
+  caption={"Confirm the first and last required messages and visible participant context."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Confirm the first and last required messages and visible participant context."}
+  src="/blog/instructions/export-whatsapp-chat-to-pdf/02.svg"
+  step={2}
+/>
+
 Inspect important links for private or temporary destinations and treat thumbnails as displayed previews, not proof that a source file was embedded. Open the downloaded PDF outside preview and check page breaks between sender labels and messages.
 
 Close the preview tab after approval so temporary preview data is deleted. Page 2 File keeps no conversion-history database; the downloaded PDF and any distributed copies remain under the user’s control.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose Current tab and confirm the WhatsApp Web conversation card."}
+  caption={"Choose Current tab and confirm the WhatsApp Web conversation card."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose Current tab and confirm the WhatsApp Web conversation card."}
+  src="/blog/instructions/export-whatsapp-chat-to-pdf/03.svg"
+  step={3}
+/>
 
 ## Check WhatsApp-specific context
 
@@ -70,4 +97,22 @@ Keep date separators, sender names and quoted-message context when they are nece
 
 Voice notes, video, live location, polls and documents become static interface representations in a PDF. Verify captions and visible status, but do not claim that playback, live updates or original attachments are embedded. Use an authorized native export when its package is the required artifact.
 
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Choose PDF and the output style for bubbles or supported searchable text."}
+  caption={"Choose PDF and the output style for bubbles or supported searchable text."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Choose PDF and the output style for bubbles or supported searchable text."}
+  src="/blog/instructions/export-whatsapp-chat-to-pdf/04.svg"
+  step={4}
+/>
+
 Inspect phone numbers, profile images, group names and forwarded content before sharing. A narrowly defined range is easier to review and less likely to expose unrelated participant data.
+
+<ArticleFigure
+  alt={"Browser and Page 2 File extension: Preview participants, dates, replies, media thumbnails, and page boundaries."}
+  caption={"Preview participants, dates, replies, media thumbnails, and page boundaries."}
+  closeLabel={"Close image preview"}
+  openLabel={"Open full-size image: Preview participants, dates, replies, media thumbnails, and page boundaries."}
+  src="/blog/instructions/export-whatsapp-chat-to-pdf/05.svg"
+  step={5}
+/>

@@ -153,11 +153,13 @@ const validBlogPaths = new Set(
     return [`/en/blog/${slug}`, `/ru/blog/${slug}`];
   }),
 );
+const stripArticleFigures = (content) =>
+  content.replace(/<ArticleFigure[\s\S]*?\/>/g, "");
 const englishWordCounts = new Map();
 for (const filename of filesByLocale.en) {
   const slug = filename.replace(/\.mdx$/, "");
   const content = contentByLocaleAndSlug.get(`en/${slug}`);
-  const plainText = content
+  const plainText = stripArticleFigures(content)
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
     .replace(/[#*_`>~-]/g, " ");
   englishWordCounts.set(
@@ -207,7 +209,8 @@ for (const locale of locales) {
       incomingLinks.set(href, (incomingLinks.get(href) ?? 0) + 1);
     }
 
-    const paragraphs = content
+    const contentWithoutFigures = stripArticleFigures(content);
+    const paragraphs = contentWithoutFigures
       .split(/\n{2,}/)
       .map((value) => value.trim())
       .filter(
@@ -227,7 +230,7 @@ for (const locale of locales) {
       }
     }
 
-    const plainText = content
+    const plainText = contentWithoutFigures
       .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
       .replace(/[#*_`>~-]/g, " ");
     const wordCount = plainText.split(/\s+/).filter(Boolean).length;

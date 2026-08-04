@@ -1,10 +1,28 @@
 Захват веб-страницы создаёт документ для чтения человеком. Web scraping извлекает структурированные данные для программной обработки. Page 2 File занимается захватом и конвертацией; это не scraper API, crawler мониторинга и не data pipeline.
 
+<ArticleFigure
+  alt={"Браузер и расширение Page 2 File: Откройте типичную исходную страницу и определите контракт результата."}
+  caption={"Откройте типичную исходную страницу и определите контракт результата."}
+  closeLabel={"Закрыть просмотр изображения"}
+  openLabel={"Открыть изображение в полном размере: Откройте типичную исходную страницу и определите контракт результата."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/01.svg"
+  step={1}
+/>
+
 Используйте Page 2 File, когда нужен PDF или PowerPoint с видимым контентом и, где возможно, текстом, изображениями и ссылками. Scraping-инструмент нужен для строк, полей, регулярного сбора и machine-readable output.
 
 ## Что сохраняет захват
 
-Захват скриншотами фиксирует композицию, цвет, расположение графиков и группировку сообщений. Редактируемый режим переносит поддерживаемые элементы документа. Оба метода начинают с отрисованной браузерной страницы и создают файл для человека.
+Захват скриншотами фиксирует композицию, цвет, расположение графиков и группировку сообщений. Editable document — режим редактируемого документа переносит поддерживаемые элементы документа. Оба метода начинают с отрисованной браузерной страницы и создают файл для человека.
+
+<ArticleFigure
+  alt={"Браузер и расширение Page 2 File: Используйте Current tab или By URL для читаемого человеком документа."}
+  caption={"Используйте Current tab или By URL для читаемого человеком документа."}
+  closeLabel={"Закрыть просмотр изображения"}
+  openLabel={"Открыть изображение в полном размере: Используйте Current tab или By URL для читаемого человеком документа."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/02.svg"
+  step={2}
+/>
 
 [Руководство по типам сайтов](/ru/blog/website-types-to-pdf-or-powerpoint) перечисляет подходящие источники. Открытые страницы используют конвертер, закрытые активные вкладки — [расширение](/ru/chrome-extension/how-to-use).
 
@@ -32,6 +50,15 @@ Capture создаёт документ или deck для человека. К�
 
 Красивый PDF — плохой API response, а JSON dataset — не визуальная запись. Формулировка «показать состояние dashboard на дату» ведёт к capture; «собирать prices всех products ежедневно» — к extraction и monitoring.
 
+<ArticleFigure
+  alt={"Браузер и расширение Page 2 File: Выберите output style по требованиям к точности, поиску и ссылкам."}
+  caption={"Выберите output style по требованиям к точности, поиску и ссылкам."}
+  closeLabel={"Закрыть просмотр изображения"}
+  openLabel={"Открыть изображение в полном размере: Выберите output style по требованиям к точности, поиску и ссылкам."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/03.svg"
+  step={3}
+/>
+
 ## Учтите динамические страницы
 
 Оба подхода сталкиваются с lazy loading, virtualization и authentication. Capture требует видимого rendered state. Scraper может использовать разрешённый API или source data без воспроизведения интерфейса.
@@ -42,11 +69,20 @@ Capture создаёт документ или deck для человека. К�
 
 Capture меняется с layout и pagination. Scraping — с markup, API, schema, rate limits и anti-automation controls. Массовый scraping требует throttling, retry policy и legal review.
 
-Ручной capture тоже требует permission, copyright judgment и защиты personal data. Браузер не превращает scraper в converter, а editable mode не делает Page 2 File сервисом structured data.
+Ручной capture тоже требует permission, copyright judgment и защиты personal data. Браузер не превращает scraper в converter, а Editable document не делает Page 2 File сервисом structured data.
 
 ## Выберите метод проверки
 
 Capture проверяют сравнением PDF/PPTX с видимым источником: полнота, читаемость, links, privacy. Scraping — schema validation, sampling records и monitoring errors.
+
+<ArticleFigure
+  alt={"Браузер и расширение Page 2 File: Проверьте PDF или PPTX как визуальный документ для передачи."}
+  caption={"Проверьте PDF или PPTX как визуальный документ для передачи."}
+  closeLabel={"Закрыть просмотр изображения"}
+  openLabel={"Открыть изображение в полном размере: Проверьте PDF или PPTX как визуальный документ для передачи."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/04.svg"
+  step={4}
+/>
 
 Если нужны оба результата, храните их отдельно: authorized data source для анализа и capture для визуального подтверждения. Выбор определяется получателем: человек читает документ, software потребляет records.
 
@@ -63,6 +99,15 @@ AI и messenger chats подчиняются той же границе: Page 2 
 Определите permission, volume, rate limits, authentication, schema ownership, retention и обработку failures. Предпочитайте official API или поддерживаемый export, если он даёт нужные данные.
 
 Capture требует другой подготовки: стабилизировать visible state, задать boundary, выбрать mode и проверить preview. Copyright, personal data и права распространения применимы к обоим подходам.
+
+<ArticleFigure
+  alt={"Браузер и расширение Page 2 File: Используйте разрешённую data-систему для структурированных записей."}
+  caption={"Используйте разрешённую data-систему для структурированных записей."}
+  closeLabel={"Закрыть просмотр изображения"}
+  openLabel={"Открыть изображение в полном размере: Используйте разрешённую data-систему для структурированных записей."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/05.svg"
+  step={5}
+/>
 
 ## Не смешивайте контракты
 
@@ -81,3 +126,12 @@ Capture сверяют с visible outline: boundaries, order, legibility, links,
 Фраза «проверяющему нужен PDF этого разрешённого dashboard state» указывает на capture. «Приложению ежедневно нужны цены как records» — на authorized data source. «Докладчику нужны editable slides» — на webpage-to-PowerPoint.
 
 Page 2 File не предоставляет crawling API, monitoring schedule, structured extraction или hidden-data access. Capture и scraping могут сосуществовать, но остаются разными системами с отдельными рисками и поддержкой.
+
+<ArticleFigure
+  alt={"Браузер и расширение Page 2 File: Не считайте Page 2 File crawler, monitoring-сервисом или API скрытых данных."}
+  caption={"Не считайте Page 2 File crawler, monitoring-сервисом или API скрытых данных."}
+  closeLabel={"Закрыть просмотр изображения"}
+  openLabel={"Открыть изображение в полном размере: Не считайте Page 2 File crawler, monitoring-сервисом или API скрытых данных."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/06.svg"
+  step={6}
+/>
