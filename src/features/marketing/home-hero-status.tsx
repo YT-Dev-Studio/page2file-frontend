@@ -47,7 +47,19 @@ export const HomeHeroPreview = ({
     >
       <div className={styles.previewHeader}>
         <h2>{copy.preview.title}</h2>
-        <FormatBadge format={format} style="subtle" />
+        <FormatBadge
+          aria-label="PDF and PPTX"
+          className={styles.rotatingFormatBadge}
+          format="pdf"
+          style="subtle"
+        >
+          <span aria-hidden="true" className={styles.rotatingFormatPdf}>
+            PDF
+          </span>
+          <span aria-hidden="true" className={styles.rotatingFormatPptx}>
+            PPTX
+          </span>
+        </FormatBadge>
       </div>
 
       <div className={styles.sourcePreview}>

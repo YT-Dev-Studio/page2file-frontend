@@ -227,6 +227,92 @@
   line-height: var(--p2f-type-heading-h3-line-height);
 }
 
+.rotatingFormatBadge {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 auto;
+  animation: rotating-format-colors 6s ease-in-out infinite;
+}
+
+.rotatingFormatPdf,
+.rotatingFormatPptx {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.rotatingFormatPdf {
+  animation: rotating-format-pdf 6s ease-in-out infinite;
+}
+
+.rotatingFormatPptx {
+  color: var(--p2f-color-orange-ink-800);
+  animation: rotating-format-pptx 6s ease-in-out infinite;
+}
+
+@keyframes rotating-format-colors {
+  0%,
+  44% {
+    color: var(--p2f-color-coral-ink-800);
+    background: var(--p2f-color-format-pdf-subtle);
+  }
+
+  50%,
+  94% {
+    color: var(--p2f-color-orange-ink-800);
+    background: var(--p2f-color-format-pptx-subtle);
+  }
+
+  100% {
+    color: var(--p2f-color-coral-ink-800);
+    background: var(--p2f-color-format-pdf-subtle);
+  }
+}
+
+@keyframes rotating-format-pdf {
+  0%,
+  44% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  50%,
+  94% {
+    opacity: 0;
+    transform: translateY(110%);
+  }
+
+  94.01% {
+    opacity: 0;
+    transform: translateY(-110%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotating-format-pptx {
+  0%,
+  44% {
+    opacity: 0;
+    transform: translateY(-110%);
+  }
+
+  50%,
+  94% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(110%);
+  }
+}
+
 .sourcePreview {
   display: grid;
   padding: var(--p2f-space-16);
@@ -1087,6 +1173,21 @@
 
   .installCard a::before {
     animation: none;
+  }
+
+  .rotatingFormatBadge,
+  .rotatingFormatPdf,
+  .rotatingFormatPptx {
+    animation: none;
+  }
+
+  .rotatingFormatPdf {
+    opacity: 1;
+    transform: none;
+  }
+
+  .rotatingFormatPptx {
+    opacity: 0;
   }
 
   .outputDownload:active,
