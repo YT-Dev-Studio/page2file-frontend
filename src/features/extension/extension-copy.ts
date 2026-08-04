@@ -7,6 +7,10 @@ export type GuideStep = {
   body: string;
   image: string;
   imageAlt: string;
+  imageCaption?: string;
+  imageHeight?: number;
+  imageWidth?: number;
+  points?: ReadonlyArray<string>;
 };
 
 type GuideChapter = {
@@ -59,10 +63,21 @@ const extensionCopy: LocalizedPublished<ExtensionCopy> = {
       },
       {
         number: "02",
-        title: "Choose PDF or PowerPoint",
-        body: "The output format is a direct choice in the extension panel. Then select Accurate copy for visual fidelity or Editable document for supported text and links.",
+        title: "Configure the export and create a preview",
+        body: "Use the Page 2 File panel in this order:",
         image: "/demos/extension-step-mode.svg",
-        imageAlt: "The extension panel with format and mode controls",
+        imageAlt:
+          "The original Page 2 File panel with numbered callouts for format, output style, customization, and preview",
+        imageCaption:
+          "The Notion card identifies the webpage open in the current tab; it is not a separate Page 2 File integration.",
+        imageHeight: 900,
+        imageWidth: 900,
+        points: [
+          "Choose PDF for sharing and archiving or PowerPoint for presenting and editing.",
+          "Choose Accurate copy to preserve the page appearance or Editable document for supported text and links.",
+          "Optionally remove images, links, or styling in Customize.",
+          "Select Preview PDF or Preview PowerPoint to open the temporary preview.",
+        ],
       },
       {
         number: "03",
@@ -124,10 +139,21 @@ const extensionCopy: LocalizedPublished<ExtensionCopy> = {
       },
       {
         number: "02",
-        title: "Выберите PDF или PowerPoint",
-        body: "Формат результата выбирается прямо в панели расширения. Затем укажите Accurate copy для точного вида или Editable document для поддерживаемого текста и ссылок.",
+        title: "Настройте экспорт и создайте предпросмотр",
+        body: "Настройте Page 2 File по порядку:",
         image: "/demos/extension-step-mode.svg",
-        imageAlt: "Панель расширения с выбором формата и режима",
+        imageAlt:
+          "Оригинальная панель Page 2 File с пронумерованными указателями на формат, стиль результата, настройки и предпросмотр",
+        imageCaption:
+          "Карточка Notion обозначает страницу, открытую в текущей вкладке, а не отдельную интеграцию Page 2 File.",
+        imageHeight: 900,
+        imageWidth: 900,
+        points: [
+          "Выберите PDF для передачи и архивирования или PowerPoint для презентации и редактирования.",
+          "Выберите Accurate copy для сохранения внешнего вида либо Editable document для поддерживаемого текста и ссылок.",
+          "При необходимости удалите изображения, ссылки или стили через Customize.",
+          "Нажмите Preview PDF или Preview PowerPoint, чтобы открыть временный предпросмотр.",
+        ],
       },
       {
         number: "03",

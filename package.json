@@ -13,6 +13,7 @@
     "test:watch": "vitest",
     "audit:content": "node scripts/audit-blog-content.mjs",
     "generate:blog-instructions": "node scripts/generate-blog-instructions.mjs",
+    "generate:extension-demo": "node scripts/generate-blog-instructions.mjs --extension-demo-only",
     "validate:content": "node scripts/validate-content.mjs",
     "validate:routes": "node scripts/validate-routes.mjs",
     "validate:backend-contract": "node scripts/validate-backend-contract.mjs",

@@ -85,7 +85,7 @@
 
       <rect x="21" y="131" width="410" height="59" rx="10" fill="#fff" stroke="#c9ced8"/>
              <rect x="31" y="140" width="42" height="42" rx="8" fill="#0d8f72" opacity=".14" stroke="#0d8f72"/>
-             <circle cx="52" cy="161" r="12" fill="#0d8f72"/>
+                    <circle cx="52" cy="161" r="12" fill="#0d8f72"/>
              <text data-source-title="true" data-source-title-truncated="true" data-safe-zone="91,139,214,21" clip-path="url(#sourceTitleClip)" x="91" y="155" font-size="15" font-weight="700" fill="#17284d">Annual Sustainability Rev…</text>
              <text x="91" y="177" font-size="12" fill="#8a93a2">reports.example</text>
              <g data-popup-role="capture-status" data-bounds="317,149,114,22">

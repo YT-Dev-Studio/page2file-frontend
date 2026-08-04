@@ -120,7 +120,25 @@
   color: var(--p2f-color-text-secondary);
 }
 
+.stepPoints {
+  display: grid;
+  margin: var(--p2f-space-16) 0 0;
+  padding-inline-start: var(--p2f-space-24);
+  gap: var(--p2f-space-8);
+  color: var(--p2f-color-text-secondary);
+}
+
+.stepPoints li {
+  padding-inline-start: var(--p2f-space-4);
+}
+
+.stepPoints li::marker {
+  color: var(--p2f-color-coral-ink-600);
+  font-weight: var(--p2f-font-weight-bold);
+}
+
 .media {
+  margin: 0;
   overflow: hidden;
   border: var(--p2f-border-width-default) solid
     var(--p2f-color-border-default);
@@ -132,6 +150,16 @@
 .media img {
   width: 100%;
   height: auto;
+}
+
+.media figcaption {
+  padding: var(--p2f-space-16);
+  border-top: var(--p2f-border-width-default) solid
+    var(--p2f-color-border-default);
+  color: var(--p2f-color-text-secondary);
+  background: var(--p2f-color-background-surface);
+  font-size: var(--p2f-type-caption-regular-font-size);
+  line-height: var(--p2f-type-caption-regular-line-height);
 }
 
 .videoGrid {

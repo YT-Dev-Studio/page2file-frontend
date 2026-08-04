@@ -7,7 +7,16 @@ import {
 
 const ROOT = process.cwd();
 const OUTPUT_DIRECTORY = join(ROOT, "public", "blog", "instructions");
+const EXTENSION_DEMO_PATH = join(
+  ROOT,
+  "public",
+  "demos",
+  "extension-step-mode.svg",
+);
 const CONTACT_SHEET_DIRECTORY = join(ROOT, ".artifacts");
+const EXTENSION_DEMO_ONLY = process.argv.includes(
+  "--extension-demo-only",
+);
 const POPUP_X = 1118;
 const POPUP_Y = 112;
 const CORAL = "#f0523d";
@@ -417,7 +426,19 @@ const formatIcon = (type) => {
   `;
 };
 
-const popup = ({ entry, step }) => {
+const notionSourceFavicon = (source) =>
+  `<g data-popup-role="source-favicon" data-bounds="${source.favicon.x},${source.favicon.y},${source.favicon.width},${source.favicon.height}">
+     <rect x="${source.favicon.x}" y="${source.favicon.y}" width="${source.favicon.width}" height="${source.favicon.height}" rx="8" fill="#fff" stroke="#c9ced8"/>
+     <path d="M${source.favicon.x + 9} ${source.favicon.y + 8}h22l4 4v22H${source.favicon.x + 9}z" fill="#fff" stroke="#111" stroke-width="2.4"/>
+     <text x="${source.favicon.x + 21}" y="${source.favicon.y + 31}" text-anchor="middle" font-family="Georgia, serif" font-size="23" font-weight="800" fill="#111">N</text>
+   </g>`;
+
+const popup = ({
+  entry,
+  step,
+  x = POPUP_X,
+  y = POPUP_Y,
+}) => {
   const isUrl = step.sourceMode === "url";
   const isPdf = step.format === "pdf";
   const isAccurate = step.style === "accurate";
@@ -426,7 +447,7 @@ const popup = ({ entry, step }) => {
   const previewIcon = isPdf ? cta.pdfIcon : cta.powerpointIcon;
   const previewText = isPdf ? cta.pdfText : cta.powerpointText;
   return `
-    <g data-popup-master="${POPUP_MASTER_VERSION}" data-popup-geometry="${canvas.width}x${canvas.height}" transform="translate(${POPUP_X} ${POPUP_Y})">
+    <g data-popup-master="${POPUP_MASTER_VERSION}" data-popup-geometry="${canvas.width}x${canvas.height}" transform="translate(${x} ${y})">
       <defs>
         <clipPath id="sourceTitleClip">
           <rect x="${source.title.x}" y="${source.title.y}" width="${source.title.width}" height="${source.title.height}"/>
@@ -460,8 +481,12 @@ const popup = ({ entry, step }) => {
              <circle cx="48" cy="160" r="10" fill="${entry.accent}"/>
              <text data-source-url="true" clip-path="url(#sourceUrlClip)" x="${source.url.x}" y="${source.url.baseline}" font-size="14" fill="#727d8e">https://${escapeXml(entry.domain)}</text>`
           : `<rect x="${source.card.x}" y="${source.card.y}" width="${source.card.width}" height="${source.card.height}" rx="10" fill="#fff" stroke="#c9ced8"/>
-             <rect x="${source.favicon.x}" y="${source.favicon.y}" width="${source.favicon.width}" height="${source.favicon.height}" rx="8" fill="${entry.accent}" opacity=".14" stroke="${entry.accent}"/>
-             <circle cx="52" cy="161" r="12" fill="${entry.accent}"/>
+             ${
+               entry.favicon === "notion"
+                 ? notionSourceFavicon(source)
+                 : `<rect x="${source.favicon.x}" y="${source.favicon.y}" width="${source.favicon.width}" height="${source.favicon.height}" rx="8" fill="${entry.accent}" opacity=".14" stroke="${entry.accent}"/>
+                    <circle cx="52" cy="161" r="12" fill="${entry.accent}"/>`
+             }
              <text data-source-title="true" data-source-title-truncated="${popupTitle !== entry.title}" data-safe-zone="${source.title.x},${source.title.y},${source.title.width},${source.title.height}" clip-path="url(#sourceTitleClip)" x="${source.title.x}" y="${source.title.baseline}" font-size="15" font-weight="700" fill="#17284d">${escapeXml(popupTitle)}</text>
              <text x="${source.domain.x}" y="${source.domain.baseline}" font-size="12" fill="#8a93a2">${escapeXml(entry.domain)}</text>
              <g data-popup-role="capture-status" data-bounds="${source.ready.x},${source.ready.y},${source.ready.width},${source.ready.height}">
@@ -665,6 +690,75 @@ const renderScene = (entry, step) => `<?xml version="1.0" encoding="UTF-8"?>
 </svg>
 `;
 
+const EXTENSION_DEMO_POPUP_X = 365;
+const EXTENSION_DEMO_POPUP_Y = 74;
+const EXTENSION_DEMO_CALLOUTS = [
+  { number: 1, targetX: 390, targetY: 329 },
+  { number: 2, targetX: 390, targetY: 552 },
+  { number: 3, targetX: 400, targetY: 702 },
+  { number: 4, targetX: 390, targetY: 754 },
+];
+
+const renderExtensionDemoCallout = ({
+  number,
+  targetX,
+  targetY,
+}) => `
+  <g data-callout="step-${number}" data-callout-surface="popup">
+    <path d="M103 ${targetY} C190 ${targetY}, 280 ${targetY}, ${targetX} ${targetY}" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round"/>
+    <path d="M103 ${targetY} C190 ${targetY}, 280 ${targetY}, ${targetX} ${targetY}" fill="none" stroke="${CORAL}" stroke-width="7" stroke-linecap="round" marker-end="url(#arrowHead)"/>
+    <circle cx="72" cy="${targetY}" r="25" fill="${CORAL}" stroke="#fff" stroke-width="4"/>
+    <text x="72" y="${targetY + 8}" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">${number}</text>
+  </g>
+`;
+
+const renderExtensionModeDemo = () => {
+  const entry = {
+    accent: "#111111",
+    domain: "notion.so",
+    favicon: "notion",
+    title: "Product research notes",
+  };
+  const step = {
+    format: "pdf",
+    sourceMode: "tab",
+    style: "accurate",
+  };
+  const callouts = EXTENSION_DEMO_CALLOUTS.map(
+    renderExtensionDemoCallout,
+  ).join("");
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title description">
+  <title id="title">Configure Page 2 File and create a preview</title>
+  <desc id="description">The original Page 2 File extension interface with four numbered callouts for format, output style, customization, and preview.</desc>
+  <defs>
+    <filter id="popupShadow" x="-30%" y="-20%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#1d2f50" flood-opacity=".18"/>
+    </filter>
+    <marker id="arrowHead" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 18 9 0 18Z" fill="${CORAL}"/>
+    </marker>
+  </defs>
+  <rect width="900" height="900" fill="#edf3fa"/>
+  <g font-family="Inter, Arial, sans-serif">
+    ${popup({
+      entry,
+      step,
+      x: EXTENSION_DEMO_POPUP_X,
+      y: EXTENSION_DEMO_POPUP_Y,
+    })}
+    ${callouts}
+  </g>
+</svg>
+`;
+};
+
+const writeExtensionModeDemo = async () => {
+  const svg = renderExtensionModeDemo().replace(/[ \t]+$/gm, "");
+  await writeFile(EXTENSION_DEMO_PATH, svg, "utf8");
+};
+
 const createContactSheet = () => {
   const figures = instructionArticles
     .flatMap((entry) =>
@@ -697,6 +791,11 @@ const run = async () => {
     throw new Error(`Expected 127 scenes, received ${expectedSceneCount}.`);
   }
   assertPopupGeometry();
+  await writeExtensionModeDemo();
+  if (EXTENSION_DEMO_ONLY) {
+    console.log("Generated the extension mode instruction SVG.");
+    return;
+  }
   await mkdir(OUTPUT_DIRECTORY, { recursive: true });
   await Promise.all(
     instructionArticles.map(async (entry) => {

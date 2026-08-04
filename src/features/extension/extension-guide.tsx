@@ -18,6 +18,10 @@ import styles from "./guide.module.css";
 
 type GuideMode = "steps" | "video";
 
+const guidePoint = (point: string): ReactNode => (
+  <li key={point}>{point}</li>
+);
+
 export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getExtensionCopy(locale);
   const siteCopy = getSiteCopy(locale);
@@ -65,13 +69,26 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
       <span className={styles.stepNumber}>
         {copy.stepLabel} {item.number}
       </span>
-      <div className={styles.media}>
-        <Image alt={item.imageAlt} height={480} src={item.image} width={720} />
-      </div>
       <div className={styles.stepContent}>
         <h2>{item.title}</h2>
         <p>{item.body}</p>
+        {item.points ? (
+          <ol className={styles.stepPoints}>
+            {item.points.map(guidePoint)}
+          </ol>
+        ) : null}
       </div>
+      <figure className={styles.media}>
+        <Image
+          alt={item.imageAlt}
+          height={item.imageHeight ?? 480}
+          src={item.image}
+          width={item.imageWidth ?? 720}
+        />
+        {item.imageCaption ? (
+          <figcaption>{item.imageCaption}</figcaption>
+        ) : null}
+      </figure>
     </article>
   );
   const chapterItem = (chapter: (typeof copy.chapters)[number]): ReactNode => (
