@@ -1,0 +1,120 @@
+Les liens cliquables ne survivent à la conversion d’une page web en PDF que lorsque la sortie contient des annotations de liens ou des éléments de document modifiables. Une capture visuelle peut préserver l’apparence d’un lien sans conserver son action.
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : ouvrez une documentation comportant des liens visibles explicites et des destinations connues."}
+  caption={"Ouvrez une documentation comportant des liens visibles explicites et des destinations connues."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : ouvrez une documentation comportant des liens visibles explicites et des destinations connues."}
+  src="/blog/instructions/preserve-clickable-links/01.svg"
+  step={1}
+/>
+
+Choisissez Editable document (sortie modifiable) dans le [convertisseur PDF Page 2 File](/fr/convert-webpage-to-pdf) lorsque le comportement des liens compte. Choisissez Accurate copy (sortie de type capture) lorsque l’apparence exacte compte davantage, puis considérez que les liens intégrés à l’image capturée ne seront pas interactifs.
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : choisissez PDF pour obtenir un document de lecture stable."}
+  caption={"Choisissez PDF pour obtenir un document de lecture stable."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : choisissez PDF pour obtenir un document de lecture stable."}
+  src="/blog/instructions/preserve-clickable-links/02.svg"
+  step={2}
+/>
+
+## Une URL visible n’est pas automatiquement un lien
+
+Un texte bleu souligné dans une image reste composé de pixels. Un lecteur PDF a besoin d’un rectangle actif et d’une destination. Une conversion modifiable peut associer les éléments d’ancre pris en charge de la page à des annotations de lien PDF, tout en gardant le texte environnant sélectionnable.
+
+Les boutons et les cartes peuvent également contenir des destinations, mais le document exporté ne doit pas inventer une URL pour un élément qui ne fait que déclencher un script. Si la destination ne peut pas être déterminée de manière sûre, un avertissement ou un visuel non cliquable est plus honnête.
+
+## Vérifiez la destination, pas seulement le libellé
+
+Une page peut afficher un texte rassurant tout en pointant ailleurs. Une conversion sûre doit accepter les destinations web ordinaires et rejeter les schémas dangereux. Les redirections et liens nécessitant une session connectée peuvent encore échouer dans le lecteur PDF même lorsque l’annotation est valide.
+
+Testez les liens importants depuis l’aperçu ou le fichier final, dans un environnement où leur ouverture est appropriée. Accordez une attention particulière aux notes, numéros de citation, fiches produit et badges de source.
+
+## Sachez quand la capture est le bon compromis
+
+Un tableau de bord complexe, une page de campagne ou une conversation peut perdre son sens s’il est reconstruit sous forme de simples zones de texte. Accurate copy conserve cette composition, mais transforme la section en image. Si l’apparence et les liens comptent, un convertisseur peut ajouter des zones de lien sûres au-dessus d’une capture, uniquement pour les destinations qu’il parvient à localiser.
+
+Consultez le guide [captures ou conversion modifiable](/fr/blog/visual-vs-editable) avant de choisir. Pour les présentations, la même distinction apparaît dans [captures de diapositives ou PowerPoint modifiable](/fr/blog/screenshot-vs-editable-powerpoint).
+
+## Effectuez un audit rapide des liens
+
+Ouvrez un lien de navigation, une citation intégrée, un bouton et une longue URL répartie sur plusieurs lignes. Confirmez que chaque zone cliquable correspond à son libellé visible et ne couvre pas le texte voisin. Vérifiez que les schémas de messagerie, de téléphone ou d’application sont traités selon la politique de sécurité du document.
+
+Pour une longue source, répétez l’audit après avoir modifié les sauts de page. La division d’une section peut déplacer ses rectangles de lien ; c’est pourquoi le [guide des longues pages](/fr/blog/long-webpage-page-breaks) considère les liens comme une partie de la vérification de l’aperçu.
+
+## Identifiez les liens porteurs de sens
+
+Toutes les ancres ne méritent pas la même attention. Une citation, un téléchargement, une référence à une politique ou un bouton d’étape suivante peut être essentiel ; un lien sur un logo, un menu de compte ou un pixel de suivi ne l’est pas. Avant la conversion, listez les destinations que le lecteur doit pouvoir suivre et utilisez cette liste pour les tests d’acceptation.
+
+Les liens masqués derrière des icônes ont besoin d’un contexte visible dans un document statique. Si un bouton indique seulement « Ouvrir » ou utilise une flèche sans libellé, la destination peut devenir impossible à interpréter après le retrait des éléments d’interface voisins. Conservez assez de texte à proximité pour expliquer l’action.
+
+Les liens vers des fragments de la page peuvent eux aussi changer de sens. Une table des matières peut pointer vers les titres de la page source, tandis que le PDF possède sa propre navigation. Testez si ces ancres restent utiles ; sinon, la table des matières visible peut toujours servir de plan de lecture, mais ne doit pas être présentée comme interactive.
+
+## Surveillez les destinations dangereuses ou instables
+
+Les pages authentifiées placent parfois dans leurs URL des identifiants de session, jetons de téléchargement signés ou paramètres personnels. Un PDF cliquable peut révéler ces valeurs à tous ses destinataires. Examinez la destination réelle et pas seulement le libellé, puis retirez ou remplacez les liens sensibles avant le partage.
+
+Les liens relatifs dépendent d’une URL de base. Un navigateur peut résoudre `/docs/start` parce qu’il connaît l’origine, contrairement à un fichier HTML isolé. Lors de la conversion d’un HTML importé, fournissez une base valide ou utilisez des liens HTTPS complets pour les destinations nécessaires.
+
+Les redirections et raccourcisseurs compliquent la vérification, car le domaine visible n’est pas forcément le domaine final. Pour les références importantes, ouvrez le lien dans un contexte de navigation sûr et confirmez sa destination finale. La préservation d’un lien ne constitue pas une approbation de son exactitude ou de sa sécurité.
+
+## Vérifiez à nouveau après les changements structurels
+
+Scinder, fusionner ou supprimer des sections peut modifier les ancres qui subsistent et leur position. Répétez l’audit après les modifications, pas seulement après la conversion initiale. Un lien fonctionnant dans le premier aperçu peut appartenir à une section remplacée ensuite par une capture.
+
+Testez le focus au clavier ou la liste des liens du lecteur PDF lorsque l’accessibilité compte. La page visible peut sembler correcte alors que les annotations sont dans le mauvais ordre. Copiez également une phrase liée pour confirmer que l’annotation ne couvre pas du texte sans rapport.
+
+Adaptez le contrôle final au niveau de risque. Une copie personnelle peut nécessiter quelques tests représentatifs. Pour un document de recherche, de conformité ou destiné à un client, chaque destination importante doit être vérifiée et consignée.
+
+## Distinguez les types de liens courants
+
+Les liens HTTPS ordinaires sont les meilleurs candidats, car leur destination peut être représentée par une annotation PDF. Les liens d’e-mail, de téléphone ou propres à une application dépendent de l’appareil et des logiciels configurés chez le destinataire. Une annotation techniquement valide peut rester inutilisable dans son environnement ; ne considérez donc pas tous les schémas comme équivalents.
+
+Les téléchargements exigent davantage de précautions. Un lien peut expirer, nécessiter une session ou renvoyer un fichier différent plus tard. Lorsque la ressource liée fait partie de la preuve, conservez son titre, son éditeur et sa date d’accès dans le texte visible au lieu de dépendre uniquement de la cible cliquable.
+
+Les commandes pilotées par script ne sont pas nécessairement des liens. Une carte peut ouvrir une fenêtre, modifier un filtre ou appeler une route d’application sans exposer de destination stable. Une conversion modifiable ne doit pas en inventer. Préservez l’état visible et expliquez la limite lorsque l’action est essentielle à la compréhension de la page.
+
+## Alignez les annotations sur l’ordre de lecture
+
+Les rectangles de lien peuvent devenir déroutants lorsque le texte passe à la ligne, que les colonnes se déplacent ou qu’une section est redimensionnée. Vérifiez que la zone active ne couvre que le libellé prévu et que des annotations qui se chevauchent n’envoient pas le texte voisin vers la même destination. Dans un document en plusieurs colonnes, contrôlez les liens colonne par colonne plutôt qu’en suivant une ligne visuelle à travers la page.
+
+Les libellés explicites sont préférables à la répétition de « cliquez ici », car ils restent compréhensibles lorsqu’ils sont copiés, recherchés ou examinés dans une liste de liens. Conservez la phrase environnante lorsqu’elle explique l’importance de la destination. Pour les actions représentées uniquement par une icône, préservez un libellé visible si la source en fournit un.
+
+Si le PDF doit être utilisé avec une technologie d’assistance, testez plus que les clics de souris. Examinez si le texte reste sélectionnable, si l’ordre des annotations suit le document et si les libellés ont du sens sans décoration voisine. Page 2 File peut préserver la structure prise en charge, mais la source et la sortie vérifiée déterminent si cette structure est utile.
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : choisissez Editable document pour préserver les destinations sûres prises en charge."}
+  caption={"Choisissez Editable document pour préserver les destinations sûres prises en charge."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : choisissez Editable document pour préserver les destinations sûres prises en charge."}
+  src="/blog/instructions/preserve-clickable-links/03.svg"
+  step={3}
+/>
+
+## Protégez la provenance et la confidentialité
+
+Un lien peut révéler plus que son domaine visible. Les chaînes de requête peuvent contenir des identifiants de document, termes de recherche, données de recommandation ou jetons signés. Avant le partage, inspectez les destinations issues de pages authentifiées et retirez tout ce que le destinataire ne doit pas recevoir. L’ouverture d’un PDF expurgé ne doit pas conduire par erreur à une ressource privée non expurgée.
+
+Consignez l’URL source et la date de capture lorsque les citations nécessitent une provenance, tout en évitant les paramètres propres à la session. Les données d’aperçu de l’extension sont temporaires et supprimées à la fermeture de l’onglet ; Page 2 File ne conserve aucun historique. Le PDF téléchargé peut préserver ses liens indéfiniment, et leurs destinations exigent donc le même contrôle que le contenu visible.
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : laissez Remove links décoché lorsque les destinations doivent rester disponibles."}
+  caption={"Laissez Remove links décoché lorsque les destinations doivent rester disponibles."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : laissez Remove links décoché lorsque les destinations doivent rester disponibles."}
+  src="/blog/instructions/preserve-clickable-links/04.svg"
+  step={4}
+/>
+
+Consultez le [guide des formats de sortie par type de site](/fr/blog/website-types-to-pdf-or-powerpoint) pour connaître les risques propres à chaque source.
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : prévisualisez le PDF et testez des liens représentatifs, conservés ou volontairement supprimés."}
+  caption={"Prévisualisez le PDF et testez des liens représentatifs, conservés ou volontairement supprimés."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : prévisualisez le PDF et testez des liens représentatifs, conservés ou volontairement supprimés."}
+  src="/blog/instructions/preserve-clickable-links/05.svg"
+  step={5}
+/>

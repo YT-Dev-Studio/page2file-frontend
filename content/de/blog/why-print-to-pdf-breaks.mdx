@@ -1,0 +1,143 @@
+Browserdruck als PDF und URL-zu-PDF-Konvertierung beginnen mit unterschiedlichen Versionen einer Seite. Der Druck verwendet die Druck-Stylesheets der Website, sofern vorhanden. Ein Konverter kann mit dem gerenderten Bildschirmlayout arbeiten und es in prüfbare Abschnitte teilen. Keine Methode ist automatisch besser; entscheidend sind die Seite und das gewünschte Dokument.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Öffnen Sie die Druckvorschau des Browsers und notieren Sie, welche Dashboard-Bereiche verschwinden."}
+  caption={"Öffnen Sie die Druckvorschau des Browsers und notieren Sie, welche Dashboard-Bereiche verschwinden."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Öffnen Sie die Druckvorschau des Browsers und notieren Sie, welche Dashboard-Bereiche verschwinden."}
+  src="/blog/instructions/why-print-to-pdf-breaks/01.svg"
+  step={1}
+/>
+
+Verwenden Sie den [Page 2 File PDF-Konverter](/de/convert-webpage-to-pdf), wenn Sie eine Vorschau und eine bewusste Wahl zwischen Seitenaufnahmen und bearbeitbarer Ausgabe benötigen. Nutzen Sie den Browserdruck, wenn der Herausgeber eine gute Druckansicht vorbereitet hat und Sie nur schnell eine Kopie brauchen.
+
+## Warum das Druckergebnis anders als der Bildschirm aussehen kann
+
+CSS kann Bildschirm und Druck unterschiedliche Regeln zuweisen. Ein Druck-Stylesheet kann Navigation und Anzeigen entfernen, aber auch Hintergründe unterdrücken, Spalten verändern, Schriften ersetzen oder interaktive Bereiche ausblenden. Fixierte und angeheftete Elemente können auf mehreren Seiten wiederholt werden. Ein auf Canvas gezeichnetes Diagramm kann als leere Fläche erscheinen, wenn der Druckprozess seine Pixel nicht erfasst.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Vergleichen Sie das Druckergebnis mit dem Bildschirm und erkennen Sie fehlende Diagramme und Hintergründe."}
+  caption={"Vergleichen Sie das Druckergebnis mit dem Bildschirm und erkennen Sie fehlende Diagramme und Hintergründe."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Vergleichen Sie das Druckergebnis mit dem Bildschirm und erkennen Sie fehlende Diagramme und Hintergründe."}
+  src="/blog/instructions/why-print-to-pdf-breaks/02.svg"
+  step={2}
+/>
+
+Verzögert geladene Medien erzeugen eine weitere Lücke. Der Druck beginnt mit dem aktuellen Dokumentzustand; Inhalte, die nie im sichtbaren Bereich waren, existieren darin möglicherweise nicht. Virtualisierte Chat- und Dashboard-Oberflächen können ältere Zeilen beim Scrollen aus dem DOM entfernen. Ein Druckbefehl kann sie dann nicht wiederherstellen.
+
+## Was sich durch eine URL-Konvertierung ändert
+
+Ein Konverter für öffentliche URLs lädt die Adresse in einem kontrollierten Browser und bereitet das gerenderte Ergebnis als PDF vor. Er übernimmt Ihre persönliche Sitzung nicht und kann daher weder ein privates Dashboard noch eine Seite hinter einer Anmeldung sehen. Diese Grenze schützt Anmeldedaten, macht die Methode aber für authentifizierte Inhalte ungeeignet.
+
+Für einen privaten Tab erfasst die [Page 2 File Erweiterung](/de/chrome-extension/how-to-use) nach einer ausdrücklichen Aktion die von Ihnen geöffnete Seite. Sie fragt nicht nach dem Kontopasswort. Stellen Sie vor der Erfassung sicher, dass alle benötigten Bereiche und Nachrichten sichtbar sind.
+
+## Vergleichen Sie die Dateien, nicht die Schaltflächen
+
+Prüfen Sie, ob Text auswählbar ist, Links nützlich bleiben, Hintergründe Informationen tragen und Seitenumbrüche Überschriften respektieren. Eine Ausgabe als Seitenaufnahme erhält ein schwieriges Layout meist genauer. Eine bearbeitbare Ausgabe erleichtert Suche und Überarbeitung unterstützter Inhalte, kann komplexe Elemente jedoch rastern.
+
+Die Anleitung [Seitenaufnahmen oder bearbeitbare Ausgabe](/de/blog/visual-vs-editable) erklärt diesen Kompromiss. Prüfen Sie bei sehr hohen Quellen außerdem die [Anleitung zur vollständigen Seitenerfassung](/de/blog/capture-full-webpage-as-pdf), bevor Sie eine Methode wählen.
+
+## Eine praktische Entscheidung
+
+Wählen Sie Browserdruck für einen einfachen Artikel mit gutem Druck-Stylesheet. Wählen Sie eine URL-Konvertierung als Seitenaufnahme, wenn das Erscheinungsbild zählt, oder eine bearbeitbare Konvertierung, wenn Inhalte durchsuchbar und verlinkt bleiben müssen. Verwenden Sie die Erfassung des aktiven Tabs, wenn die Quelle privat, personalisiert oder erst nach einer Interaktion verfügbar ist.
+
+Die Vorschau bleibt der entscheidende Nachweis. Fehlt dort ein wichtiger Block, dürfen Sie nicht davon ausgehen, dass er im finalen PDF zurückkehrt.
+
+## Führen Sie einen kontrollierten Vergleich durch
+
+Vergleichen Sie beide Methoden aus demselben Browserzustand. Stellen Sie vor beiden Dateien denselben sichtbaren Bereich, dieselben Filter, geöffneten Bereiche und dieselbe Scrollposition ein. Andernfalls vergleichen Sie zwei verschiedene Quellen statt zweier Konvertierungsmethoden. Notieren Sie, ob Bilder, Webschriften und Diagramme vollständig geladen waren.
+
+Beginnen Sie mit der Druckvorschau des Browsers. Notieren Sie, welche Navigation, Hintergründe, interaktiven Bereiche und angehefteten Elemente verschwinden. Das ist nicht automatisch ein Fehler: Ein gutes Druck-Stylesheet kann Ballast entfernen und die beste Lesekopie erzeugen. Entscheidend ist, ob etwas für Ihren Zweck Erforderliches entfernt wurde.
+
+Prüfen Sie anschließend die Page 2 File Vorschau in dem zur Aufgabe passenden Modus. Accurate copy (Ausgabe im Stil einer Seitenaufnahme) wird nach Ähnlichkeit und Lesbarkeit beurteilt. Editable document (bearbeitbare Ausgabe) wird nach Lesereihenfolge, Textauswahl, Linkverhalten und Qualität der Ersetzungen komplexer Komponenten beurteilt. Die Dateigröße allein sagt wenig über die Nutzbarkeit aus.
+
+## Diagnostizieren Sie häufige Unterschiede
+
+Fehlende Farben oder Bilder entstehen häufig durch druckspezifisches CSS, Browsereinstellungen für Hintergrundgrafiken oder Komponenten, die sich für Druckmedien anders darstellen. Abgeschnittene Bereiche treten oft auf, wenn ein Scrollcontainer eine feste Höhe besitzt oder virtualisierte Inhalte nie gerendert wurden. Leerräume können von angehefteten Kopfzeilen, reservierten Anzeigenflächen oder erzwungenen Druckumbrüchen stammen.
+
+Tabellen zeigen einen weiteren Unterschied. Ein Druck-Stylesheet kann Kopfzeilen korrekt wiederholen, die Tabelle bis zur Unlesbarkeit verkleinern oder Spalten außerhalb der druckbaren Breite abschneiden. Eine Seitenaufnahme kann die dargestellte Tabelle erhalten, lässt ein breites Layout aber nicht automatisch auf eine Hochformatseite passen. Eine bearbeitbare Konvertierung kann normale Zeilen und Zellen rekonstruieren und ungewöhnliche Raster durch ein Bild ersetzen.
+
+Links benötigen eine eigene Prüfung. Browser-PDFs können normale Anker erhalten, doch eine in Canvas gezeichnete oder per Skript bereitgestellte sichtbare URL wird möglicherweise nicht interaktiv. Page 2 File Editable document erhält unterstützte Anker; Accurate copy priorisiert das Erscheinungsbild. Testen Sie Ziele, statt bei blau unterstrichenem Text automatisch einen Link anzunehmen.
+
+## Entscheiden Sie nach Nachweisen und Wartungsaufwand
+
+Für einen einmaligen Artikel mit guter Druckansicht reicht der Browserdruck oft aus. Bei Dashboard, authentifizierter Anwendung, langer dynamischer Seite oder präsentationsbezogenem Ablauf können Erfassungs- und Vorschaukontrollen wichtiger sein als die Druckkonventionen des Browsers. Keine Methode ist universell überlegen.
+
+Wenn dieselbe Quelle regelmäßig exportiert wird, dokumentieren Sie Vorbereitung und Abnahmekontrollen. Ein stabiler Ablauf ist wertvoller als eine wiederholte Werkzeugwahl nach Gefühl. Prüfen Sie ihn erneut, wenn die Website Layout, Authentifizierung oder Virtualisierung ändert.
+
+Video, Animation, Hover-Zustände und Live-Steuerungen können in einem gewöhnlichen PDF nicht interaktiv bleiben. Ein vertretbares Ergebnis ist eine lesbare Aufzeichnung eines definierten Seitenzustands mit bekannten Kompromissen.
+
+## Trennen Sie Druckeinstellungen von Problemen der Quelle
+
+Manche Fehler lassen sich im Druckdialog des Browsers korrigieren. Papierformat, Ausrichtung, Ränder, Skalierung und Hintergrundgrafiken können das Ergebnis stark verändern. Verwenden Sie diese Einstellungen, wenn der Inhalt vorhanden, aber schlecht eingepasst ist. Sie können keinen vom Druck-Stylesheet entfernten Bereich und keine von einer virtualisierten Oberfläche nie gerenderten Nachrichten wiederherstellen.
+
+Vom Browser hinzugefügte Kopf- und Fußzeilen sind eine weitere druckspezifische Entscheidung. Sie können URL und Datum liefern, aber auch eine private Adresse offenlegen oder Inhalte auf eine zusätzliche Seite verschieben. Prüfen Sie sie bewusst. Ein URL-Konverter verwendet ein anderes Vorschau- und Abschnittsmodell; vergleichen Sie daher die tatsächlichen Metadaten beider Dateien.
+
+Eine größere Seitengröße ist keine allgemeine Lösung. Querformat kann einer breiten Tabelle helfen und zugleich einen schmalen Artikel schwerer lesbar machen. Starke Verkleinerung verhindert möglicherweise Abschneiden, verwandelt Beschriftungen und Fußnoten aber in unlesbaren Text. Die vorgesehenen Lesebedingungen sind wichtiger als möglichst wenige Blätter.
+
+## Entscheiden Sie mit einer Matrix aus Quelle und Aufgabe
+
+Bei einem vom Herausgeber gestalteten Artikel ist der Browserdruck ein sinnvoller erster Test, weil das Druck-Stylesheet Navigation bereits entfernen und Quellen formatieren kann. Bei einer Marketingseite oder Designreferenz ist eine Seitenaufnahme meist geeigneter, da die Bildschirmkomposition Bedeutung trägt. Bei Dokumentation und Forschungsnotizen verdient die bearbeitbare Konvertierung den ersten Test, weil Suche, Auswahl und Links zählen.
+
+Dashboards und Chats erfordern eine andere Frage: Ist der benötigte Zustand tatsächlich gerendert? Falls nicht, können weder Druck noch URL-Konvertierung ihn rekonstruieren. Laden Sie den erlaubten Bereich, stabilisieren Sie Filter und verwenden Sie die aktive Tab-Erfassung, wenn der Zustand von einer angemeldeten Browsersitzung abhängt. Ein Auftrag mit öffentlicher URL darf diese Sitzung nie übernehmen.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Verwenden Sie By URL für dieselbe öffentliche Seite, wenn keine angemeldete Sitzung erforderlich ist."}
+  caption={"Verwenden Sie By URL für dieselbe öffentliche Seite, wenn keine angemeldete Sitzung erforderlich ist."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Verwenden Sie By URL für dieselbe öffentliche Seite, wenn keine angemeldete Sitzung erforderlich ist."}
+  src="/blog/instructions/why-print-to-pdf-breaks/03.svg"
+  step={3}
+/>
+
+Wenn die Ausgabe zu einer Präsentation wird, ist PDF möglicherweise nicht das richtige Endformat. Ein [Webseite-zu-PowerPoint-Ablauf](/de/blog/webpage-to-powerpoint) lässt Sie zwischen darstellungsorientierten Folien und unterstützten bearbeitbaren Elementen wählen, statt ein PDF erneut zu konvertieren.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wählen Sie Accurate copy, wenn die dargestellte Komposition als Nachweis dient."}
+  caption={"Wählen Sie Accurate copy, wenn die dargestellte Komposition als Nachweis dient."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wählen Sie Accurate copy, wenn die dargestellte Komposition als Nachweis dient."}
+  src="/blog/instructions/why-print-to-pdf-breaks/04.svg"
+  step={4}
+/>
+
+## Dokumentieren Sie einen nachvollziehbaren Vergleich
+
+Bewahren Sie bei wiederkehrenden Exporten einen kurzen Testnachweis auf: Quell-URL, Browserzustand, Datum, Druckeinstellungen, Page 2 File Modus und die in jedem Ergebnis gefundenen Fehler. Screenshots der Vorschauen können die Auswahl erklären, ersetzen aber nicht die Prüfung des finalen PDFs.
+
+Beurteilen Sie beide Dateien anhand derselben Kriterien:
+
+- alle erforderlichen Inhalte erscheinen einmal und in der richtigen Reihenfolge;
+- Fließtext, Diagrammbeschriftungen und Code sind bei normaler Vergrößerung lesbar;
+- wichtige Links funktionieren und legen keine vertraulichen Ziele offen;
+- Überschriften, Bildunterschriften und Tabellenkontext überstehen Seitengrenzen;
+- private Konto- oder Arbeitsbereichsdaten fehlen, sofern sie nicht erforderlich sind.
+
+Eine Methode besteht, wenn sie das für diese Quelle und Aufgabe benötigte Dokument erzeugt. Wenn beide scheitern, verkleinern Sie den Erfassungsbereich, ändern Sie den Seitenzustand oder nutzen Sie den dafür vorgesehenen Export der Quellplattform. Die Wiederholung desselben Befehls auf einer instabilen Seite ist keine Reparaturstrategie.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wählen Sie Editable document, wenn Lesereihenfolge, Auswahl und Links wichtig sind."}
+  caption={"Wählen Sie Editable document, wenn Lesereihenfolge, Auswahl und Links wichtig sind."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wählen Sie Editable document, wenn Lesereihenfolge, Auswahl und Links wichtig sind."}
+  src="/blog/instructions/why-print-to-pdf-breaks/05.svg"
+  step={5}
+/>
+
+## Prüfen Sie nach Änderungen der Website erneut
+
+Druck- und Erfassungsverhalten können sich ändern, wenn eine Website CSS, Diagrammbibliothek, Einwilligungsebene oder Virtualisierungsregeln aktualisiert. Ein Ablauf, der letzten Monat funktionierte, ist ein Nachweis für diese Seitenversion und keine dauerhafte Garantie. Wiederholen Sie repräsentative Kontrollen nach einem Redesign und vor einer folgenreichen Verteilung.
+
+Dieser Wartungspunkt ist für scheinbar automatisierte Routinen besonders wichtig. Page 2 File stellt eine Vorschau bereit, weil der Seitenzustand weiterhin menschlich geprüft werden muss. Die Vorschau kann fehlende Abschnitte und ungünstige Grenzen zeigen; sie kann nicht entscheiden, ob das Dokument für Ihren rechtlichen, archivischen oder betrieblichen Zweck vollständig ist.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Vergleichen Sie beide Page 2 File Vorschauen mit dem Browserdruck, bevor Sie entscheiden."}
+  caption={"Vergleichen Sie beide Page 2 File Vorschauen mit dem Browserdruck, bevor Sie entscheiden."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Vergleichen Sie beide Page 2 File Vorschauen mit dem Browserdruck, bevor Sie entscheiden."}
+  src="/blog/instructions/why-print-to-pdf-breaks/06.svg"
+  step={6}
+/>
+
+Verwenden Sie die [Anleitung zu Website-Ausgaben](/de/blog/website-types-to-pdf-or-powerpoint), wenn vor allem der Quellentyp und nicht allein das Druckverhalten die Entscheidung bestimmen soll.

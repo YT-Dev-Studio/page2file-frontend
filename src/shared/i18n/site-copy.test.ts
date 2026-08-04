@@ -9,7 +9,13 @@ describe("site shell copy", () => {
     expect(Object.values(russianNavigation)).not.toContain("Отзывы");
   });
 
-  test("uses English shell copy for unreviewed locales", () => {
-    expect(getSiteCopy("de")).toBe(getSiteCopy("en"));
+  test("localizes shell copy independently from indexing review state", () => {
+    expect(getSiteCopy("de").header.extensionAction).toBe(
+      "Jetzt installieren",
+    );
+    expect(getSiteCopy("fr").footer.links.privacy).toBe(
+      "Confidentialité",
+    );
+    expect(getSiteCopy("es")).toBe(getSiteCopy("en"));
   });
 });

@@ -4,6 +4,8 @@ import type {
 } from "@/shared/i18n/locales";
 import { isPublishedLocale } from "@/shared/i18n/locales";
 import type { StaticRoute } from "@/shared/routes/routes";
+import { homeCopyDe } from "./home-copy.de";
+import { homeCopyFr } from "./home-copy.fr";
 
 export type CopyList = {
   items: ReadonlyArray<string>;
@@ -609,7 +611,11 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
 };
 
 export const getHomeCopy = (locale: Locale): HomeCopy =>
-  homeCopy[isPublishedLocale(locale) ? locale : "en"];
+  locale === "de"
+    ? homeCopyDe
+    : locale === "fr"
+      ? homeCopyFr
+      : homeCopy[isPublishedLocale(locale) ? locale : "en"];
 
 const chromeInstallLabels: Record<Locale, string> = {
   cs: "Nainstalovat do Chromu",

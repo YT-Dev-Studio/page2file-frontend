@@ -1,0 +1,124 @@
+La conversion HTML en PDF transforme un fichier HTML fourni en document fixe. Avec l’[application GPT HTML 2 PDF](/fr/html2pdf-gpt), l’entrée est le fichier que vous fournissez, et non l’exploration d’une URL ni l’état authentifié d’un onglet du navigateur.
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : affichez le HTML comme une page dans le navigateur avant de le traiter comme source du document."}
+  caption={"Affichez le HTML comme une page dans le navigateur avant de le traiter comme source du document."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : affichez le HTML comme une page dans le navigateur avant de le traiter comme source du document."}
+  src="/blog/instructions/html-to-pdf-safely/01.svg"
+  step={1}
+/>
+
+Considérez chaque fichier HTML comme du code actif tant qu’un moteur de rendu ne prouve pas le contraire. Une conception de conversion défendable restreint les scripts et les accès réseau inattendus, bloque les requêtes vers des fichiers locaux et des services internes, et rend le contenu non pris en charge visible pour vérification. Ne déduisez pas l’existence de ces protections d’un PDF soigné : vérifiez les limites documentées du convertisseur avant de fournir des données sensibles.
+
+## Préparer un fichier autonome
+
+Utilisez des titres, paragraphes, listes et tableaux sémantiques. Incluez le CSS nécessaire à la mise en page et regroupez les images sous une forme que l’entrée autorisée peut résoudre. Un fichier dépendant d’un serveur de build privé ou d’une API authentifiée ne se reproduira pas de façon fiable dans un moteur de rendu isolé.
+
+Supprimez les outils d’analyse, l’envoi de formulaires, la lecture automatique des médias et le code qui modifie le document après le chargement. Le PDF est une destination statique ; conserver ces comportements augmente le risque sans améliorer le document.
+
+## Maintenir l’isolation du moteur de rendu
+
+Un HTML non fiable peut tenter de lire des fichiers locaux, d’appeler des adresses internes ou de consommer trop de ressources. La conversion doit s’exécuter dans un processus restreint distinct, avec les scripts, WebSockets et requêtes réseau arbitraires désactivés.
+
+L’isolation peut modifier l’apparence d’un contenu dépendant de polices distantes, d’images ou de composants côté client. Considérez les ressources absentes comme des éléments à examiner plutôt que de supposer qu’un rendu terminé est complet.
+
+## Concevoir pour des pages fixes
+
+Définissez des largeurs d’impression raisonnables, autorisez le retour à la ligne des mots longs et du code, et évitez les éléments qui nécessitent un survol. Les tableaux ont besoin d’en-têtes répétables et de cellules pouvant être fractionnées ou redimensionnées sans devenir illisibles.
+
+Si votre source réelle est déjà une page web publique, utilisez plutôt le [convertisseur de page web en PDF](/fr/convert-webpage-to-pdf). S’il s’agit d’une page privée visible dans Chrome, utilisez l’[extension](/fr/chrome-extension/how-to-use).
+
+## Vérifier le document, pas seulement le HTML
+
+Contrôlez les substitutions de polices, les images absentes, les éléments positionnés et rognés, les sauts de page et les liens. Comparez les sections complexes avec le guide sur la [capture et la sortie modifiable](/fr/blog/visual-vs-editable).
+
+HTML 2 PDF est utile lorsque vous contrôlez le fichier d’entrée et souhaitez un rendu de document isolé. Ce n’est ni un point d’accès d’automatisation du navigateur, ni un outil d’extraction de site, ni un moyen d’exécuter les scripts fournis.
+
+## Inventorier chaque dépendance
+
+Un fichier HTML raconte rarement toute l’histoire. Sa mise en page peut dépendre de feuilles de style locales, de polices web, d’images, de fichiers SVG, de scripts ou de ressources distantes. Identifiez les ressources essentielles et la manière dont chacune est référencée. Un fichier qui semble complet dans son projet d’origine peut devenir une colonne de texte sans style lorsqu’il est ouvert seul.
+
+Privilégiez les styles et ressources autonomes que le document est autorisé à utiliser. Remplacez les chemins réservés au développement et les références à des réseaux privés. Si une image distante est nécessaire, vérifiez qu’elle reste disponible sans session de navigateur authentifiée. Un convertisseur ne doit pas être supposé hériter des cookies ou de l’organisation du système de fichiers d’un poste de travail.
+
+Supprimez les scripts qui récupèrent des données utilisateur, des informations d’analyse ou un état applicatif sans rapport avec le document. Un HTML statique destiné à un PDF nécessite généralement moins d’exécution que le site d’origine. Ne conservez que le comportement nécessaire pour révéler le document et confirmez que le contenu final ne dépend ni d’un minuteur ni d’un geste de l’utilisateur.
+
+## Rendre les dimensions d’impression explicites
+
+Les mises en page du navigateur s’adaptent à une fenêtre d’affichage, tandis que les PDF utilisent des dimensions de page fixes. Définissez une largeur de contenu, des marges et une typographie adaptées au format de papier visé. Évitez de positionner le document principal selon la hauteur de la fenêtre ou de laisser du texte important dans des conteneurs à défilement horizontal.
+
+Utilisez les règles de saut comme des indications autour des titres, illustrations, tableaux et blocs de code, puis inspectez le résultat. Les règles peuvent entrer en conflit lorsqu’un élément est plus haut qu’une page. Un grand tableau peut nécessiter des en-têtes répétés ou une orientation paysage ; un visuel haut peut devoir rester une seule image redimensionnée.
+
+Un texte très clair, des calques translucides et des variables réservées au mode sombre peuvent être difficiles à lire à l’impression. Vérifiez le PDF lui-même au lieu de supposer que l’aperçu du navigateur représente tous les lecteurs et toutes les imprimantes.
+
+## Traiter le HTML importé comme une entrée non fiable
+
+Importez uniquement des fichiers que vous êtes autorisé à traiter et supprimez les secrets intégrés au balisage, aux commentaires, aux attributs de données ou aux scripts en ligne. Le contenu masqué peut encore accompagner la source même s’il n’est pas visible sur la page finale.
+
+Un moteur de rendu doit restreindre les accès au réseau et au système local, mais l’isolation technique ne corrige pas des choix de contenu dangereux. Vérifiez les liens externes, formulaires intégrés et codes QR générés avant la diffusion. Le PDF est statique, mais ses liens peuvent toujours conduire le destinataire hors du document.
+
+Comparez le résultat à une liste de dépendances. Confirmez les polices, images, l’ordre des pages, les titres, les liens et la dernière page. Si une ressource manque, corrigez le paquet HTML ou utilisez une URL publique capable de charger la page complète.
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : utilisez Current tab pour un contenu local affiché ou By URL pour une page publique autorisée."}
+  caption={"Utilisez Current tab pour un contenu local affiché ou By URL pour une page publique autorisée."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : utilisez Current tab pour un contenu local affiché ou By URL pour une page publique autorisée."}
+  src="/blog/instructions/html-to-pdf-safely/02.svg"
+  step={2}
+/>
+
+## Séparer les risques de création des risques de rendu
+
+Les risques de création sont déjà présents dans le fichier : secrets intégrés, données personnelles masquées, liens trompeurs et contenu que vous n’avez pas le droit de diffuser. Les risques de rendu apparaissent lorsqu’un HTML actif peut demander des ressources réseau, accéder à un emplacement non prévu ou consommer trop de temps de traitement. Un flux fiable doit contrôler ces deux catégories.
+
+Inspectez si possible la source avant l’importation. Recherchez les scripts en ligne, gestionnaires d’événements, formulaires, URL externes, chemins locaux et grandes ressources intégrées. Supprimez tout ce qui ne concerne pas le document. Cela réduit l’ambiguïté même lorsque le moteur de rendu applique ses propres restrictions.
+
+N’utilisez pas la conversion pour déterminer si un HTML inconnu est sûr. Si le fichier provient d’un expéditeur non fiable, suivez d’abord la procédure de votre organisation relative aux logiciels malveillants et aux documents. Un résultat PDF ne rend pas rétroactivement l’entrée inoffensive.
+
+## Construire un HTML prévisible pour la pagination
+
+Utilisez une hiérarchie logique de titres et conservez l’ordre de lecture principal dans le flux du document. Le positionnement absolu peut être utile pour une couverture ou une étiquette, mais son utilisation dans tout le rapport rend difficile le diagnostic des débordements sur pages fixes. Définissez des largeurs explicites pour les tableaux et médias, ajoutez des dimensions maximales raisonnables et autorisez le retour à la ligne des textes longs.
+
+Le CSS d’impression peut définir les marges, le format du papier et les préférences de saut, mais ces règles sont des demandes et non des garanties. Un élément plus haut qu’une page doit tout de même être redimensionné ou fractionné. Gardez les légendes près des illustrations, répétez le contexte des tableaux lorsque le moteur le permet et évitez de placer les explications essentielles uniquement dans des états de survol ou des pseudo-éléments.
+
+Les polices ont besoin d’une pile de secours. Une police chargée à distance peut être indisponible dans un environnement de rendu restreint. Choisissez une police de secours aux métriques proches, puis vérifiez les titres, tableaux et blocs de code dont les retours à la ligne ont changé. La police exacte compte moins qu’un résultat stable et lisible, sauf si la typographie est elle-même le sujet du document.
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : choisissez PDF et un Output style une fois la page visiblement stable."}
+  caption={"Choisissez PDF et un Output style une fois la page visiblement stable."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : choisissez PDF et un Output style une fois la page visiblement stable."}
+  src="/blog/instructions/html-to-pdf-safely/03.svg"
+  step={3}
+/>
+
+## Vérifier la sortie comme un nouvel artefact
+
+Comparez le PDF à un inventaire du contenu, et pas seulement à l’affichage du HTML dans le navigateur. Confirmez que chaque section requise apparaît une seule fois, que l’ordre des pages est correct, que les images sont à jour et que les liens pointent vers des destinations approuvées. Recherchez une expression près du début, du milieu et de la fin lorsqu’un texte sélectionnable est attendu.
+
+Repérez les signes de dépendances bloquées : cadres d’image vides, polices de secours, graphiques vides ou espaces dans la mise en page là où un composant généré par script aurait dû apparaître. Réparez le paquet source ou acceptez une capture de secours clairement documentée. Ne masquez pas un élément absent simplement parce que les pages voisines ont été correctement rendues.
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : traitez les accès aux scripts, au réseau et aux fichiers comme une limite de sécurité distincte du moteur de rendu."}
+  caption={"Traitez les accès aux scripts, au réseau et aux fichiers comme une limite de sécurité distincte du moteur de rendu."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : traitez les accès aux scripts, au réseau et aux fichiers comme une limite de sécurité distincte du moteur de rendu."}
+  src="/blog/instructions/html-to-pdf-safely/04.svg"
+  step={4}
+/>
+
+HTML 2 PDF est présenté comme une application GPT pour un fichier HTML importé et un résultat PDF. Ce n’est ni un outil d’exploration général de sites ni un environnement d’exécution de code applicatif. Utilisez le convertisseur d’URL publique pour une page web publique et l’extension Chrome pour un onglet actif autorisé.
+
+Avant la diffusion, vérifiez les métadonnées du fichier, les identifiants visibles et les cibles cliquables. Même le rendu le plus sûr peut contenir des informations placées dans le document par l’auteur. Conservez le PDF final approuvé dans votre propre espace de stockage, car Page 2 File ne fournit pas de base de données d’historique des conversions.
+
+Comparez les autres catégories de sources dans le [guide des sites web en PDF et PowerPoint](/fr/blog/website-types-to-pdf-or-powerpoint).
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : vérifiez les pages PDF fixes et consignez les dépendances absentes ou bloquées."}
+  caption={"Vérifiez les pages PDF fixes et consignez les dépendances absentes ou bloquées."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : vérifiez les pages PDF fixes et consignez les dépendances absentes ou bloquées."}
+  src="/blog/instructions/html-to-pdf-safely/05.svg"
+  step={5}
+/>

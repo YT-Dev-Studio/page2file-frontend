@@ -2,6 +2,10 @@ import type { ExternalLinkKey } from "@/shared/config/site";
 import type { StaticRoute } from "@/shared/routes/routes";
 import type { Locale } from "@/shared/i18n/locales";
 import { russianLandingContent } from "./russian-landings";
+import { germanLandingContent } from "./german-landings";
+import { frenchLandingContent } from "./french-landings";
+import { germanLegalLandingContent } from "./german-legal-landings";
+import { frenchLegalLandingContent } from "./french-legal-landings";
 
 export type ContentSection = {
   id?: string;
@@ -488,5 +492,14 @@ export const getLandingContent = (
   locale: Locale,
   route: StaticRoute,
 ): LandingContent | null =>
-  (locale === "ru" ? russianLandingContent[route] : landingContent[route]) ??
-  null;
+  (locale === "ru"
+    ? russianLandingContent[route]
+    : locale === "de"
+      ? germanLandingContent[route] ??
+        germanLegalLandingContent[route] ??
+        landingContent[route]
+      : locale === "fr"
+        ? frenchLandingContent[route] ??
+          frenchLegalLandingContent[route] ??
+          landingContent[route]
+        : landingContent[route]) ?? null;

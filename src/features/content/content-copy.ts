@@ -1,5 +1,5 @@
-import type { Locale, LocalizedPublished } from "@/shared/i18n/locales";
-import { isPublishedLocale } from "@/shared/i18n/locales";
+import type { Locale } from "@/shared/i18n/locales";
+import { getLocaleDefinition } from "@/shared/i18n/locales";
 
 type IndexCopy = {
   eyebrow: string;
@@ -33,7 +33,7 @@ type ContentCopy = {
   updatesBreadcrumb: string;
 };
 
-const contentCopy: LocalizedPublished<ContentCopy> = {
+const contentCopy: Record<"en" | "ru" | "de" | "fr", ContentCopy> = {
   en: {
     featuredLabel: "Start here",
     allEntriesLabel: "All field notes",
@@ -128,13 +128,99 @@ const contentCopy: LocalizedPublished<ContentCopy> = {
     blogBreadcrumb: "Блог",
     updatesBreadcrumb: "Обновления",
   },
+  de: {
+    featuredLabel: "Hier beginnen",
+    allEntriesLabel: "Alle Praxisartikel",
+    emptyTitle: "Noch keine veröffentlichten Updates",
+    emptyBody:
+      "Der technische Changelog bleibt verfügbar, während Produktupdates vorbereitet werden.",
+    blog: {
+      eyebrow: "Praxiswissen zur Konvertierung",
+      title: "Praktische Anleitungen zum Export von Webseiten",
+      description:
+        "Praxisnahe Artikel über Darstellungsgenauigkeit, Links, Seitenumbrüche, Folien, private Chats und sicheres HTML.",
+    },
+    updates: {
+      eyebrow: "Produktupdates",
+      title: "Was sich geändert hat und warum",
+      description:
+        "Produktupdates erscheinen hier nach der ersten Veröffentlichung.",
+    },
+    changelog: {
+      eyebrow: "Technischer Verlauf",
+      title: "Changelog",
+      description:
+        "Versionierte Änderungen am Prototyp mit klar gekennzeichneten Beispieleinträgen.",
+    },
+    changelogLink: "Technischen Changelog öffnen →",
+    guideLabel: "Anleitung",
+    updateLabel: "Produktupdate",
+    updatedLabel: "Aktualisiert",
+    minuteLabel: (minutes: number): string => `${minutes} Min.`,
+    readLabel: (minutes: number): string => `${minutes} Min. Lesezeit`,
+    readArticleLabel: "Artikel lesen",
+    openPdf: "PDF-Prototyp öffnen →",
+    seeChangelog: "Technischen Changelog ansehen →",
+    added: "Hinzugefügt",
+    improved: "Verbessert",
+    fixed: "Behoben",
+    breadcrumbLabel: "Brotkrümelnavigation",
+    homeLabel: "Startseite",
+    blogBreadcrumb: "Blog",
+    updatesBreadcrumb: "Updates",
+  },
+  fr: {
+    featuredLabel: "Commencer ici",
+    allEntriesLabel: "Tous les guides pratiques",
+    emptyTitle: "Aucune mise à jour publiée pour le moment",
+    emptyBody:
+      "Le journal des modifications techniques reste disponible pendant la préparation des mises à jour du produit.",
+    blog: {
+      eyebrow: "Conseils pratiques de conversion",
+      title: "Guides pratiques pour exporter des pages web",
+      description:
+        "Des articles pratiques sur la fidélité, les liens, les sauts de page, les diapositives, les conversations privées et le HTML sécurisé.",
+    },
+    updates: {
+      eyebrow: "Mises à jour du produit",
+      title: "Ce qui a changé et pourquoi",
+      description:
+        "Les mises à jour du produit apparaîtront ici après la première version.",
+    },
+    changelog: {
+      eyebrow: "Historique technique",
+      title: "Journal des modifications",
+      description:
+        "Modifications versionnées du prototype avec des entrées d’exemple clairement identifiées.",
+    },
+    changelogLink: "Ouvrir le journal des modifications techniques →",
+    guideLabel: "Guide",
+    updateLabel: "Mise à jour du produit",
+    updatedLabel: "Mis à jour",
+    minuteLabel: (minutes: number): string => `${minutes} min`,
+    readLabel: (minutes: number): string => `${minutes} min de lecture`,
+    readArticleLabel: "Lire l’article",
+    openPdf: "Ouvrir le prototype PDF →",
+    seeChangelog: "Voir le journal des modifications techniques →",
+    added: "Ajouté",
+    improved: "Amélioré",
+    fixed: "Corrigé",
+    breadcrumbLabel: "Fil d’Ariane",
+    homeLabel: "Accueil",
+    blogBreadcrumb: "Blog",
+    updatesBreadcrumb: "Mises à jour",
+  },
 };
 
+const hasContentCopy = (
+  locale: Locale,
+): locale is keyof typeof contentCopy => locale in contentCopy;
+
 export const getContentCopy = (locale: Locale): ContentCopy =>
-  contentCopy[isPublishedLocale(locale) ? locale : "en"];
+  contentCopy[hasContentCopy(locale) ? locale : "en"];
 
 export const formatContentDate = (locale: Locale, value: string): string => {
-  const languageTag = locale === "ru" ? "ru-RU" : "en-US";
+  const languageTag = getLocaleDefinition(locale).htmlLang;
   return new Intl.DateTimeFormat(languageTag, {
     day: "numeric",
     month: "long",

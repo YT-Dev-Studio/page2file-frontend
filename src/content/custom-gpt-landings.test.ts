@@ -41,19 +41,29 @@ describe("GPT App landing content", () => {
     ({ externalLinkKey, route, serviceName }) => {
       const english = getLandingContent("en", route);
       const russian = getLandingContent("ru", route);
+      const german = getLandingContent("de", route);
+      const french = getLandingContent("fr", route);
 
       expect(english?.externalLinkKey).toBe(externalLinkKey);
       expect(russian?.externalLinkKey).toBe(externalLinkKey);
+      expect(german?.externalLinkKey).toBe(externalLinkKey);
+      expect(french?.externalLinkKey).toBe(externalLinkKey);
       expect(english?.primaryLabel).toBe(
         `Open ${serviceName} GPT App`,
       );
       expect(russian?.primaryLabel).toBe(
         `Открыть ${serviceName} GPT-приложение`,
       );
+      expect(german?.primaryLabel).toContain(serviceName);
+      expect(french?.primaryLabel).toContain(serviceName);
       expect(english?.sections).toHaveLength(3);
       expect(russian?.sections).toHaveLength(3);
+      expect(german?.sections).toHaveLength(3);
+      expect(french?.sections).toHaveLength(3);
       expect(english?.lead.length).toBeGreaterThan(120);
       expect(russian?.lead.length).toBeGreaterThan(120);
+      expect(german?.lead.length).toBeGreaterThan(120);
+      expect(french?.lead.length).toBeGreaterThan(120);
     },
   );
 });

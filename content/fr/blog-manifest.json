@@ -1,0 +1,56 @@
+{
+  "save-webpage-as-pdf": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment enregistrer une page web en PDF",
+    "description": "Enregistrez une page publique ou connectée en PDF, choisissez des captures de page ou une sortie modifiable et vérifiez les sauts de page.",
+    "imageAlt": "Une longue page de navigateur devient une pile ordonnée de pages PDF"
+  },
+  "capture-full-webpage-as-pdf": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment capturer une page web complète en PDF",
+    "description": "Capturez une page web défilante complète en PDF en définissant sa limite, en chargeant les sections dynamiques et en vérifiant les sauts de page.",
+    "imageAlt": "Une page complète et défilante du navigateur devient un document PDF"
+  },
+  "html-to-pdf-safely": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment convertir du HTML en PDF en toute sécurité",
+    "description": "Convertissez un fichier HTML importé en PDF en traitant les scripts, ressources distantes, accès aux fichiers et réseaux privés comme des limites de sécurité.",
+    "imageAlt": "Le contenu HTML est isolé avant de devenir un PDF propre"
+  },
+  "long-webpage-page-breaks": {
+    "author": "Rédaction Page 2 File",
+    "title": "Convertir une longue page web sans mauvais sauts de page",
+    "description": "Préparez les longues pages pour le PDF, gardez les titres et tableaux groupés, chargez le contenu dynamique et corrigez les limites dans l’aperçu.",
+    "imageAlt": "Une longue page web est divisée à des limites de pages PDF lisibles"
+  },
+  "multi-page-website-to-pdf": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment convertir un site de plusieurs pages en PDF",
+    "description": "Transformez les pages accessibles d’un site en PDF séparés, délimitez l’exploration, vérifiez les échecs et évitez de promettre un document fusionné.",
+    "imageAlt": "Une carte de site devient plusieurs documents PDF distincts"
+  },
+  "preserve-clickable-links": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment préserver les liens cliquables dans un PDF web",
+    "description": "Découvrez quand les liens restent cliquables dans un PDF, pourquoi les captures aplatissent l’interaction et comment Editable document traite les destinations sûres.",
+    "imageAlt": "Les liens du navigateur sont conservés dans un document PDF modifiable"
+  },
+  "visual-vs-editable": {
+    "author": "Rédaction Page 2 File",
+    "title": "Capture ou conversion modifiable d’une page web",
+    "description": "Choisissez entre capture fidèle et conversion modifiable en comparant le texte, les liens, les images, les graphiques, les mises en page et PowerPoint.",
+    "imageAlt": "Une page web capturée est comparée à des blocs de document modifiables"
+  },
+  "webpage-to-powerpoint": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment convertir une page web en PowerPoint",
+    "description": "Convertissez une page web publique en présentation PPTX, choisissez des captures ou des diapositives modifiables et vérifiez les limites 16:9.",
+    "imageAlt": "Les sections d’une page web deviennent une présentation PowerPoint structurée"
+  },
+  "why-print-to-pdf-breaks": {
+    "author": "Rédaction Page 2 File",
+    "title": "URL en PDF ou impression du navigateur : que choisir ?",
+    "description": "Comparez la conversion d’URL en PDF et l’impression du navigateur pour les styles, contenus différés, onglets privés et sorties modifiables.",
+    "imageAlt": "Le parcours d’impression du navigateur est comparé à la capture de page web"
+  }
+}

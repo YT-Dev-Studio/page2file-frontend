@@ -1,8 +1,7 @@
 import type { ReactNode } from "react";
 import type { ContentSection, LandingContent } from "@/content/landings";
 import { legalProfile } from "@/shared/config/site";
-import type { Locale, LocalizedPublished } from "@/shared/i18n/locales";
-import { isPublishedLocale } from "@/shared/i18n/locales";
+import type { Locale } from "@/shared/i18n/locales";
 import { PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
 import styles from "./legal-page.module.css";
@@ -22,14 +21,24 @@ type LegalSectionProps = {
   section: ContentSection;
 };
 
-const legalPageCopy: LocalizedPublished<LegalPageCopy> = {
+const legalPageCopy: Record<"en" | "ru" | "de" | "fr", LegalPageCopy> = {
   en: {
     updatedAt: "Updated 4 August 2026",
   },
   ru: {
     updatedAt: "Обновлено 4 августа 2026 года",
   },
+  de: {
+    updatedAt: "Aktualisiert am 4. August 2026",
+  },
+  fr: {
+    updatedAt: "Mis à jour le 4 août 2026",
+  },
 };
+
+const hasLegalPageCopy = (
+  locale: Locale,
+): locale is keyof typeof legalPageCopy => locale in legalPageCopy;
 
 const interpolateLegalText = (value: string, locale: Locale): string =>
   value
@@ -70,7 +79,7 @@ export const LegalPage = ({
   content,
   locale,
 }: LegalPageProps): ReactNode => {
-  const copy = legalPageCopy[isPublishedLocale(locale) ? locale : "en"];
+  const copy = legalPageCopy[hasLegalPageCopy(locale) ? locale : "en"];
 
   return (
     <PublicPage className={styles.page} family="legal">

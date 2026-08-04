@@ -1,8 +1,4 @@
-import type {
-  Locale,
-  LocalizedPublished,
-} from "@/shared/i18n/locales";
-import { isPublishedLocale } from "@/shared/i18n/locales";
+import type { Locale } from "@/shared/i18n/locales";
 
 export type LandingUiCopy = {
   openGuide: string;
@@ -28,7 +24,7 @@ type MarketingCopy = {
   landing: LandingUiCopy;
 };
 
-const marketingCopy: LocalizedPublished<MarketingCopy> = {
+const marketingCopy: Record<"en" | "ru" | "de" | "fr", MarketingCopy> = {
   en: {
     landing: {
       openGuide: "Open the extension guide",
@@ -87,7 +83,69 @@ const marketingCopy: LocalizedPublished<MarketingCopy> = {
       ],
     },
   },
+  de: {
+    landing: {
+      openGuide: "Anleitung zur Erweiterung öffnen",
+      previousScenario: "Vorherige verwandte Seite",
+      nextScenario: "Nächste verwandte Seite",
+      relatedPages: "Verwandte Seiten",
+      stepsLabel: "So funktioniert es",
+    },
+    gptWorkflow: {
+      detailsTitle: "In drei Schritten von der Quelle zur Datei",
+      mapLabel: "Quelle → Prüfung → Datei",
+      stages: ["Quelle angeben", "Ergebnis prüfen", "Datei herunterladen"],
+      stageDescriptions: [
+        "Übergeben Sie der GPT-App eine unterstützte Quelle.",
+        "Prüfen Sie Seiten, Folien und sichtbare Einschränkungen.",
+        "Laden Sie die für diese Anfrage erstellten Dateien herunter.",
+      ],
+    },
+    chatWorkflow: {
+      detailsTitle: "Im Browser sichtbare Unterhaltung exportieren",
+      mapLabel: "Aktiver Tab → temporäre Vorschau",
+      stages: ["Unterhaltung öffnen", "Vorschau prüfen", "PDF speichern"],
+      stageDescriptions: [
+        "Laden Sie die gewünschten Nachrichten im aktiven Tab.",
+        "Prüfen Sie Text, Medien, Links und Auslassungen.",
+        "Wählen Sie eine PDF-Ausgabe als Seitenaufnahme oder bearbeitbares Dokument.",
+      ],
+    },
+  },
+  fr: {
+    landing: {
+      openGuide: "Ouvrir le guide de l’extension",
+      previousScenario: "Page associée précédente",
+      nextScenario: "Page associée suivante",
+      relatedPages: "Pages associées",
+      stepsLabel: "Fonctionnement",
+    },
+    gptWorkflow: {
+      detailsTitle: "Trois étapes de la source au fichier",
+      mapLabel: "Source → vérification → fichier",
+      stages: ["Fournir la source", "Vérifier le résultat", "Télécharger le fichier"],
+      stageDescriptions: [
+        "Fournissez à l’application GPT une source prise en charge.",
+        "Vérifiez les pages, les diapositives et les limites visibles.",
+        "Téléchargez les fichiers créés pour cette demande.",
+      ],
+    },
+    chatWorkflow: {
+      detailsTitle: "Exporter la conversation visible dans votre navigateur",
+      mapLabel: "Onglet actif → aperçu temporaire",
+      stages: ["Ouvrir la conversation", "Vérifier l’aperçu", "Enregistrer le PDF"],
+      stageDescriptions: [
+        "Chargez les messages souhaités dans l’onglet actif.",
+        "Vérifiez le texte, les médias, les liens et les omissions.",
+        "Choisissez une sortie PDF en captures de page ou en document modifiable.",
+      ],
+    },
+  },
 };
 
+const hasMarketingCopy = (
+  locale: Locale,
+): locale is keyof typeof marketingCopy => locale in marketingCopy;
+
 export const getMarketingCopy = (locale: Locale): MarketingCopy =>
-  marketingCopy[isPublishedLocale(locale) ? locale : "en"];
+  marketingCopy[hasMarketingCopy(locale) ? locale : "en"];

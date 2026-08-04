@@ -1,0 +1,120 @@
+Anklickbare Links überstehen die Konvertierung einer Webseite in PDF nur, wenn die Ausgabe Link-Annotationen oder bearbeitbare Dokumentelemente enthält. Eine visuelle Seitenaufnahme kann das Aussehen eines Links erhalten, ohne seine Aktion zu bewahren.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Öffnen Sie eine Dokumentation mit aussagekräftigen sichtbaren Links und bekannten Zielen."}
+  caption={"Öffnen Sie eine Dokumentation mit aussagekräftigen sichtbaren Links und bekannten Zielen."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Öffnen Sie eine Dokumentation mit aussagekräftigen sichtbaren Links und bekannten Zielen."}
+  src="/blog/instructions/preserve-clickable-links/01.svg"
+  step={1}
+/>
+
+Wählen Sie Editable document (bearbeitbare Ausgabe) im [Page 2 File PDF-Konverter](/de/convert-webpage-to-pdf), wenn das Linkverhalten wichtig ist. Wählen Sie Accurate copy (Ausgabe im Stil einer Seitenaufnahme), wenn das genaue Erscheinungsbild stärker zählt, und gehen Sie dann davon aus, dass Links innerhalb des aufgenommenen Bildes nicht interaktiv sind.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wählen Sie PDF für ein stabiles Lesedokument."}
+  caption={"Wählen Sie PDF für ein stabiles Lesedokument."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wählen Sie PDF für ein stabiles Lesedokument."}
+  src="/blog/instructions/preserve-clickable-links/02.svg"
+  step={2}
+/>
+
+## Eine sichtbare URL ist nicht automatisch ein Link
+
+Blau unterstrichener Text in einem Bild besteht weiterhin nur aus Pixeln. Ein PDF-Reader benötigt ein Zielrechteck und eine Adresse. Eine bearbeitbare Konvertierung kann unterstützte Ankerelemente der Webseite als PDF-Link-Annotationen abbilden und den umgebenden Text auswählbar halten.
+
+Auch Schaltflächen und Karten können Ziele enthalten. Das exportierte Dokument darf jedoch keine URL für ein Element erfinden, das nur ein Skript auslöst. Kann das Ziel nicht sicher bestimmt werden, ist eine Warnung oder eine nicht anklickbare Darstellung ehrlicher.
+
+## Prüfen Sie das Ziel, nicht nur die Bezeichnung
+
+Eine Seite kann vertrauenswürdig klingenden Text zeigen und gleichzeitig auf ein anderes Ziel verweisen. Eine sichere Konvertierung sollte gewöhnliche Webziele annehmen und gefährliche Schemas ablehnen. Weiterleitungen und Links, die eine angemeldete Sitzung erfordern, können im PDF-Reader dennoch fehlschlagen, obwohl die Annotation gültig ist.
+
+Testen Sie wichtige Links aus der Vorschau oder finalen Datei in einer Umgebung, in der das Öffnen angemessen ist. Achten Sie besonders auf Fußnoten, Quellenziffern, Produktkarten und Quellenabzeichen.
+
+## Wissen Sie, wann eine Seitenaufnahme der richtige Kompromiss ist
+
+Ein komplexes Dashboard, eine Kampagnenseite oder ein Chat kann seine Bedeutung verlieren, wenn er als einfache Textfelder rekonstruiert wird. Accurate copy erhält diese Komposition, macht den Abschnitt aber zu einem Bild. Wenn Erscheinungsbild und Links wichtig sind, kann ein Konverter sichere Link-Overlays über einer Seitenaufnahme anlegen, jedoch nur für auffindbare Ziele.
+
+Lesen Sie vor der Entscheidung den Vergleich [Seitenaufnahme oder bearbeitbare Konvertierung](/de/blog/visual-vs-editable). Bei Präsentationen erscheint dieselbe Unterscheidung unter [Screenshot-Folien oder bearbeitbares PowerPoint](/de/blog/screenshot-vs-editable-powerpoint).
+
+## Verwenden Sie einen kurzen Link-Audit
+
+Öffnen Sie einen Navigationslink, eine Inline-Quelle, eine Schaltfläche und eine lange umbrochene URL. Bestätigen Sie, dass jeder anklickbare Bereich seiner sichtbaren Bezeichnung entspricht und keinen benachbarten Text überdeckt. Prüfen Sie, ob E-Mail-, Telefon- und anwendungsspezifische Schemas nach der Sicherheitsrichtlinie des Dokuments behandelt werden.
+
+Wiederholen Sie bei einer langen Quelle den Audit nach Änderungen an den Seitenumbrüchen. Die Teilung eines Abschnitts kann seine Linkrechtecke verschieben. Deshalb behandelt die [Anleitung zu langen Seiten](/de/blog/long-webpage-page-breaks) Links als Teil der Vorschauprüfung.
+
+## Ermitteln Sie, welche Links Bedeutung tragen
+
+Nicht jeder Anker verdient dieselbe Aufmerksamkeit. Eine Quelle, ein Download, ein Richtlinienverweis oder eine Schaltfläche für den nächsten Schritt kann für das Dokument wesentlich sein; ein Logolink, Kontomenü oder Trackingpixel ist es nicht. Listen Sie vor der Konvertierung die Ziele auf, denen Leser folgen können müssen, und verwenden Sie diese Liste für die Abnahme.
+
+Hinter Symbolen verborgene Links benötigen in einem statischen Dokument sichtbaren Kontext. Wenn eine Schaltfläche nur „Öffnen“ sagt oder einen unbeschrifteten Pfeil verwendet, lässt sich das Ziel nach dem Entfernen umgebender Oberflächenelemente möglicherweise nicht deuten. Behalten Sie genug Text in der Nähe, um die Aktion zu erklären.
+
+Auch Fragmentlinks innerhalb der Seite können ihre Bedeutung ändern. Ein Inhaltsverzeichnis kann auf Überschriften der Quellseite zeigen, während das PDF eine eigene Seitennavigation besitzt. Prüfen Sie, ob diese Anker nützlich bleiben. Andernfalls kann das sichtbare Inhaltsverzeichnis weiterhin als Lesegliederung dienen, sollte aber nicht als interaktiv bezeichnet werden.
+
+## Achten Sie auf unsichere oder instabile Ziele
+
+Authentifizierte Seiten enthalten manchmal Sitzungskennungen, signierte Download-Token oder persönliche Abfrageparameter in URLs. Ein anklickbares PDF kann diese Werte jedem Empfänger offenlegen. Prüfen Sie das tatsächliche Ziel und nicht nur die sichtbare Bezeichnung, und entfernen oder ersetzen Sie vertrauliche Links vor der Weitergabe.
+
+Relative Links hängen von einer Basis-URL ab. Ein Browser kann `/docs/start` auflösen, weil er den Ursprung kennt; eine isolierte HTML-Datei kann dies nicht. Geben Sie bei hochgeladenem HTML eine gültige Basis an oder verwenden Sie vollständige HTTPS-Links für erforderliche Ziele.
+
+Weiterleitungen und Kurzlinks erschweren die Prüfung, weil die sichtbare Domain nicht zwingend die endgültige ist. Öffnen Sie wichtige Verweise in einem sicheren Browserkontext und bestätigen Sie das Endziel. Die Erhaltung eines Links ist keine Bestätigung seiner Richtigkeit oder Sicherheit.
+
+## Prüfen Sie nach strukturellen Änderungen erneut
+
+Das Teilen, Verbinden oder Entfernen von Abschnitten kann verändern, welche Anker überleben und wo sie erscheinen. Wiederholen Sie den Audit nach Bearbeitungen und nicht nur nach der ersten Konvertierung. Ein Link, der in der ersten Vorschau funktionierte, kann an einem später durch ein Screenshot-Fallback ersetzten Abschnitt gehangen haben.
+
+Testen Sie Tastaturfokus oder die Linkliste des PDF-Readers, wenn Barrierefreiheit wichtig ist. Die sichtbare Seite kann korrekt aussehen, während Annotationen falsch sortiert sind. Kopieren Sie außerdem einen verlinkten Satz, um zu bestätigen, dass die Annotation keinen fremden Text überdeckt.
+
+Passen Sie die Abschlussprüfung dem Risiko an. Für eine persönliche Lesekopie reichen möglicherweise repräsentative Tests. Bei einer Forschungsunterlage, einem Compliance-Datensatz oder Kundendokument sollten alle folgenreichen Ziele geprüft und dokumentiert werden.
+
+## Unterscheiden Sie häufige Linktypen
+
+Gewöhnliche HTTPS-Links sind die klarsten Kandidaten, da das Ziel als PDF-Annotation dargestellt werden kann. E-Mail-, Telefon- und anwendungsspezifische Links hängen vom Gerät und der installierten Software des Empfängers ab. Eine technisch gültige Annotation kann in dessen Umgebung trotzdem unbrauchbar sein; behandeln Sie daher nicht jedes Schema gleich.
+
+Downloads erfordern zusätzliche Sorgfalt. Ein Link kann ablaufen, eine Sitzung verlangen oder später eine andere Datei liefern. Wenn die verlinkte Ressource Teil des Nachweises ist, halten Sie Titel, Herausgeber und Zugriffsdatum im sichtbaren Text fest, statt sich nur auf das Klickziel zu verlassen.
+
+Skriptgesteuerte Steuerungen sind nicht unbedingt Links. Eine Karte kann einen Dialog öffnen, einen Filter ändern oder eine Anwendungsroute aufrufen, ohne ein stabiles Ziel offenzulegen. Eine bearbeitbare Konvertierung darf keines erfinden. Bewahren Sie den sichtbaren Zustand und erklären Sie die Einschränkung, wenn die Aktion für das Verständnis der Seite wesentlich ist.
+
+## Richten Sie Annotationen an der Lesereihenfolge aus
+
+Linkrechtecke können verwirrend werden, wenn Text umbricht, Spalten sich verschieben oder ein Abschnitt skaliert wird. Prüfen Sie, dass der aktive Bereich nur die vorgesehene Bezeichnung abdeckt und überlappende Annotationen nicht benachbarten Text zum selben Ziel schicken. Prüfen Sie Links in einem mehrspaltigen Dokument spaltenweise, statt der visuellen Scanlinie quer über die Seite zu folgen.
+
+Aussagekräftige Bezeichnungen sind besser als wiederholtes „hier klicken“, da sie beim Kopieren, Suchen oder Prüfen in einer Linkliste verständlich bleiben. Behalten Sie den umgebenden Satz, wenn er die Bedeutung des Ziels erklärt. Bewahren Sie bei reinen Symbolaktionen eine sichtbare Bezeichnung, falls die Quelle eine bietet.
+
+Wenn das PDF mit assistiven Technologien verwendet wird, testen Sie mehr als Mausklicks. Prüfen Sie, ob Text auswählbar bleibt, die Reihenfolge der Annotationen dem Dokument folgt und Linkbezeichnungen ohne umgebende Dekoration verständlich sind. Page 2 File kann unterstützte Dokumentstruktur erhalten, doch Quelle und geprüfte Ausgabe bestimmen ihren Nutzen.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wählen Sie Editable document, um unterstützte sichere Linkziele zu erhalten."}
+  caption={"Wählen Sie Editable document, um unterstützte sichere Linkziele zu erhalten."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wählen Sie Editable document, um unterstützte sichere Linkziele zu erhalten."}
+  src="/blog/instructions/preserve-clickable-links/03.svg"
+  step={3}
+/>
+
+## Schützen Sie Herkunft und Privatsphäre
+
+Ein Link kann mehr als seine sichtbare Domain offenlegen. Abfragezeichenfolgen können Dokumentkennungen, Suchbegriffe, Empfehlungsdaten oder signierte Token enthalten. Prüfen Sie vor der Weitergabe Ziele aus authentifizierten Seiten und entfernen Sie alles, was der Empfänger nicht erhalten soll. Das Öffnen eines geschwärzten PDFs darf nicht versehentlich zu einer ungeschwärzten privaten Ressource führen.
+
+Notieren Sie Quell-URL und Erfassungsdatum, wenn Quellen eine Herkunft benötigen, und vermeiden Sie sitzungsspezifische Parameter. Die Vorschaudaten der Erweiterung sind temporär und werden nach dem Schließen des Tabs gelöscht; Page 2 File führt keinen Konvertierungsverlauf. Das heruntergeladene PDF kann seine Links dauerhaft erhalten, deshalb benötigen seine Ziele dieselbe Prüfung wie der sichtbare Inhalt.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Lassen Sie Remove links deaktiviert, wenn Ziele verfügbar bleiben müssen."}
+  caption={"Lassen Sie Remove links deaktiviert, wenn Ziele verfügbar bleiben müssen."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Lassen Sie Remove links deaktiviert, wenn Ziele verfügbar bleiben müssen."}
+  src="/blog/instructions/preserve-clickable-links/04.svg"
+  step={4}
+/>
+
+Quellspezifische Linkrisiken behandelt die [Anleitung zu Website-Ausgaben](/de/blog/website-types-to-pdf-or-powerpoint).
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Prüfen Sie im PDF repräsentative gespeicherte und absichtlich entfernte Links."}
+  caption={"Prüfen Sie im PDF repräsentative gespeicherte und absichtlich entfernte Links."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Prüfen Sie im PDF repräsentative gespeicherte und absichtlich entfernte Links."}
+  src="/blog/instructions/preserve-clickable-links/05.svg"
+  step={5}
+/>

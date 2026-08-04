@@ -1,0 +1,124 @@
+Bei der HTML-zu-PDF-Konvertierung wird eine bereitgestellte HTML-Datei in ein festes Dokument umgewandelt. In der [HTML 2 PDF GPT App](/de/html2pdf-gpt) ist die Eingabe die von Ihnen bereitgestellte Datei – kein URL-Crawl und nicht der angemeldete Zustand eines Browser-Tabs.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Rendern Sie das HTML zuerst als Browserseite, bevor Sie es als Dokumentquelle behandeln."}
+  caption={"Rendern Sie das HTML zuerst als Browserseite, bevor Sie es als Dokumentquelle behandeln."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Rendern Sie das HTML zuerst als Browserseite, bevor Sie es als Dokumentquelle behandeln."}
+  src="/blog/instructions/html-to-pdf-safely/01.svg"
+  step={1}
+/>
+
+Behandeln Sie jede HTML-Datei als aktiven Code, bis ein Renderer das Gegenteil belegt. Ein vertretbares Konvertierungsverfahren beschränkt Skripte und unerwartete Netzwerkzugriffe, blockiert Anfragen an lokale Dateien und interne Dienste und macht nicht unterstützte Inhalte für die Prüfung sichtbar. Leiten Sie solche Schutzmaßnahmen nicht aus einem gelungenen PDF ab, sondern prüfen Sie die dokumentierten Grenzen des Konverters, bevor Sie sensible Eingaben bereitstellen.
+
+## Bereiten Sie eine eigenständige Datei vor
+
+Verwenden Sie semantische Überschriften, Absätze, Listen und Tabellen. Binden Sie das für das Layout erforderliche CSS ein und verpacken Sie Bilder so, dass die zugelassene Eingabe sie auflösen kann. Eine Datei, die von einem privaten Build-Server oder einer angemeldeten API abhängt, lässt sich in einem isolierten Renderer nicht zuverlässig reproduzieren.
+
+Entfernen Sie Analytics, Formularübermittlung, automatisch abgespielte Medien und Code, der das Dokument nach dem Laden verändert. PDF ist ein statisches Ziel; solche Verhaltensweisen erhöhen das Risiko, ohne das Dokument zu verbessern.
+
+## Halten Sie den Renderer isoliert
+
+Nicht vertrauenswürdiges HTML kann versuchen, lokale Dateien zu lesen, interne Adressen aufzurufen oder übermäßig viele Ressourcen zu verbrauchen. Die Konvertierung sollte in einem getrennten, eingeschränkten Prozess laufen, in dem Skripte, WebSockets und beliebige Netzwerkanfragen deaktiviert sind.
+
+Die Isolation kann das Erscheinungsbild von Inhalten verändern, die auf externe Schriften, Bilder oder clientseitige Komponenten angewiesen sind. Behandeln Sie fehlende Ressourcen als Prüfbefund, statt eine abgeschlossene Darstellung automatisch für vollständig zu halten.
+
+## Gestalten Sie für feste Seiten
+
+Legen Sie sinnvolle Druckbreiten fest, erlauben Sie den Umbruch langer Wörter und Codezeilen und vermeiden Sie Elemente, die Hover erfordern. Tabellen benötigen wiederholbare Kopfzeilen und Zellen, die geteilt oder skaliert werden können, ohne unleserlich zu werden.
+
+Wenn Ihre eigentliche Quelle bereits eine öffentliche Webseite ist, verwenden Sie stattdessen den [Webseiten-PDF-Konverter](/de/convert-webpage-to-pdf). Für eine private, in Chrome sichtbare Seite verwenden Sie die [Erweiterung](/de/chrome-extension/how-to-use).
+
+## Prüfen Sie das Dokument, nicht nur das HTML
+
+Kontrollieren Sie ersetzte Schriften, fehlende Bilder, abgeschnittene positionierte Elemente, Seitenumbrüche und Links. Vergleichen Sie komplexe Abschnitte mit dem Leitfaden zu [Seitenaufnahme und bearbeitbarer Ausgabe](/de/blog/visual-vs-editable).
+
+HTML 2 PDF ist sinnvoll, wenn Sie die Eingabedatei kontrollieren und eine isolierte Dokumentdarstellung benötigen. Es ist weder ein Endpunkt für Browserautomatisierung noch ein Website-Scraper oder eine Möglichkeit, bereitgestellte Skripte auszuführen.
+
+## Erfassen Sie jede Abhängigkeit
+
+Eine HTML-Datei erzählt selten die ganze Geschichte. Ihr Layout kann von lokalen Stylesheets, Webschriften, Bildern, SVG-Dateien, Skripten oder externen Assets abhängen. Ermitteln Sie, welche Ressourcen erforderlich sind und wie sie referenziert werden. Eine Datei, die im ursprünglichen Projekt vollständig wirkt, kann allein geöffnet zu einer unformatierten Textspalte werden.
+
+Bevorzugen Sie eigenständige Styles und Assets, die das Dokument verwenden darf. Ersetzen Sie reine Entwicklungspfade und Verweise auf private Netzwerke. Wenn ein externes Bild erforderlich ist, prüfen Sie, ob es ohne angemeldete Browsersitzung verfügbar ist. Ein Konverter sollte weder Cookies des Arbeitsplatzes noch dessen Dateisystemstruktur übernehmen müssen.
+
+Entfernen Sie Skripte, die Nutzerdaten, Analytics oder nicht benötigten Anwendungszustand laden. Statisches HTML für ein PDF benötigt meist weniger Ausführung als die ursprüngliche Website. Behalten Sie nur das Verhalten bei, das den Dokumentinhalt sichtbar macht, und stellen Sie sicher, dass der endgültige Inhalt weder von einem Timer noch von einer Nutzereingabe abhängt.
+
+## Legen Sie Druckabmessungen ausdrücklich fest
+
+Browserlayouts reagieren auf einen Viewport, PDFs verwenden dagegen feste Seitenmaße. Definieren Sie eine sinnvolle Inhaltsbreite, Ränder und Typografie für das vorgesehene Papierformat. Positionieren Sie das Hauptdokument nicht anhand der Viewport-Höhe und lassen Sie wichtigen Text nicht in horizontal scrollenden Containern zurück.
+
+Verwenden Sie Umbruchregeln als Hinweise für Überschriften, Abbildungen, Tabellen und Codeblöcke und prüfen Sie anschließend das Ergebnis. Regeln können miteinander kollidieren, wenn ein Element höher als eine Seite ist. Eine große Tabelle braucht möglicherweise wiederholte Kopfzeilen oder Querformat; eine hohe Grafik muss eventuell als einzelnes skaliertes Bild erhalten bleiben.
+
+Sehr heller Text, transparente Ebenen und ausschließlich für den Dunkelmodus definierte Werte können im Druck schwer lesbar sein. Prüfen Sie das PDF selbst, statt anzunehmen, dass die Browservorschau jeden Viewer und Drucker repräsentiert.
+
+## Behandeln Sie hochgeladenes HTML als nicht vertrauenswürdige Eingabe
+
+Laden Sie nur Dateien hoch, die Sie verarbeiten dürfen, und entfernen Sie Geheimnisse aus Markup, Kommentaren, Datenattributen oder Inline-Skripten. Verborgene Inhalte können in der Quelle enthalten bleiben, auch wenn sie auf der fertigen Seite nicht sichtbar sind.
+
+Ein Renderer sollte den Zugriff auf Netzwerk und lokales System einschränken, doch technische Isolation korrigiert keine unsichere Inhaltsauswahl. Prüfen Sie externe Links, eingebettete Formulare und erzeugte QR-Codes vor der Verteilung. Das PDF ist statisch, seine Links können Empfänger jedoch weiterhin aus dem Dokument herausführen.
+
+Vergleichen Sie das Ergebnis mit einer Abhängigkeits-Checkliste. Bestätigen Sie Schriften, Bilder, Seitenreihenfolge, Überschriften, Links und die letzte Seite. Fehlt eine Ressource, korrigieren Sie das HTML-Paket oder verwenden Sie eine öffentliche URL, über die die vollständige Seite geladen werden kann.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Verwenden Sie Current tab für gerenderte lokale Inhalte oder By URL für eine zulässige öffentliche Seite."}
+  caption={"Verwenden Sie Current tab für gerenderte lokale Inhalte oder By URL für eine zulässige öffentliche Seite."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Verwenden Sie Current tab für gerenderte lokale Inhalte oder By URL für eine zulässige öffentliche Seite."}
+  src="/blog/instructions/html-to-pdf-safely/02.svg"
+  step={2}
+/>
+
+## Trennen Sie Autorenrisiken von Darstellungsrisiken
+
+Autorenrisiken sind bereits in der Datei vorhanden: eingebettete Geheimnisse, verborgene personenbezogene Daten, irreführende Links und Inhalte, die Sie nicht verbreiten dürfen. Darstellungsrisiken entstehen, wenn aktives HTML Netzwerkressourcen anfordern, auf einen unbeabsichtigten Ort zugreifen oder übermäßig viel Verarbeitungszeit verbrauchen kann. Ein vertrauenswürdiger Ablauf benötigt Kontrollen für beide Kategorien.
+
+Prüfen Sie nach Möglichkeit den Quelltext vor dem Hochladen. Suchen Sie nach Inline-Skripten, Event-Handlern, Formularen, externen URLs, lokalen Pfaden und großen eingebetteten Assets. Entfernen Sie alles, was nicht zum Dokument gehört. Das reduziert Unklarheiten, selbst wenn der Renderer eigene Beschränkungen anwendet.
+
+Verwenden Sie die Konvertierung nicht, um festzustellen, ob unbekanntes HTML sicher ist. Stammt die Datei von einem nicht vertrauenswürdigen Absender, befolgen Sie zuerst den Malware- und Dokumentenprozess Ihrer Organisation. Ein PDF-Ergebnis macht die Eingabe nicht nachträglich harmlos.
+
+## Erstellen Sie vorhersehbares HTML für die Seiteneinteilung
+
+Verwenden Sie eine logische Überschriftenhierarchie und belassen Sie die Hauptlesereihenfolge im Dokumentfluss. Absolute Positionierung kann für ein Titelblatt oder Etikett sinnvoll sein, erschwert aber bei einem ganzen Bericht die Diagnose von Überläufen auf festen Seiten. Legen Sie explizite Breiten für Tabellen und Medien fest, setzen Sie sinnvolle Maximalmaße und erlauben Sie den Umbruch langer Texte.
+
+Druck-CSS kann Ränder, Papierformat und bevorzugte Umbrüche definieren, doch diese Regeln sind Hinweise und keine Garantien. Ein Element, das höher als eine Seite ist, muss weiterhin skaliert oder geteilt werden. Halten Sie Bildunterschriften bei ihren Abbildungen, wiederholen Sie Tabellenkontext, sofern der Renderer dies unterstützt, und platzieren Sie wesentliche Erklärungen nicht ausschließlich in Hover-Zuständen oder Pseudoelementen.
+
+Schriften benötigen einen Fallback-Stack. Eine extern geladene Schrift kann in einer eingeschränkten Darstellungsumgebung fehlen. Wählen Sie einen Fallback mit ähnlichen Metriken und prüfen Sie dann Überschriften, Tabellen und Code auf veränderte Umbrüche. Die exakte Schrift ist weniger wichtig als ein stabiles, lesbares Ergebnis – außer die Typografie selbst ist Gegenstand des Dokuments.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wählen Sie PDF und einen Output style, nachdem die Seite sichtbar stabil ist."}
+  caption={"Wählen Sie PDF und einen Output style, nachdem die Seite sichtbar stabil ist."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wählen Sie PDF und einen Output style, nachdem die Seite sichtbar stabil ist."}
+  src="/blog/instructions/html-to-pdf-safely/03.svg"
+  step={3}
+/>
+
+## Prüfen Sie die Ausgabe als neues Artefakt
+
+Vergleichen Sie das PDF mit einem Inhaltsverzeichnis der erwarteten Bestandteile, nicht nur mit der Browseransicht des HTML. Bestätigen Sie, dass jeder erforderliche Abschnitt genau einmal erscheint, die Seitenreihenfolge stimmt, Bilder aktuell sind und Links zu genehmigten Zielen führen. Suchen Sie nach einem Ausdruck am Anfang, in der Mitte und am Ende, wenn auswählbarer Text erwartet wird.
+
+Achten Sie auf Hinweise auf blockierte Abhängigkeiten: leere Bildrahmen, Ersatzschriften, leere Diagramme oder Layoutlücken, an denen eine skriptgenerierte Komponente hätte erscheinen sollen. Korrigieren Sie das Quellpaket oder akzeptieren Sie einen klar dokumentierten Fallback als Seitenaufnahme. Verbergen Sie ein fehlendes Element nicht nur deshalb, weil die umliegenden Seiten erfolgreich dargestellt wurden.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Behandeln Sie Skript-, Netzwerk- und Dateizugriff als getrennte Sicherheitsgrenze des Renderers."}
+  caption={"Behandeln Sie Skript-, Netzwerk- und Dateizugriff als getrennte Sicherheitsgrenze des Renderers."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Behandeln Sie Skript-, Netzwerk- und Dateizugriff als getrennte Sicherheitsgrenze des Renderers."}
+  src="/blog/instructions/html-to-pdf-safely/04.svg"
+  step={4}
+/>
+
+HTML 2 PDF wird als GPT App für eine hochgeladene HTML-Datei und ein PDF-Ergebnis angeboten. Es ist weder ein allgemeiner Website-Crawler noch eine Ausführungsumgebung für Anwendungscode. Verwenden Sie den Konverter für öffentliche URLs bei einer öffentlichen Webseite und die Chrome-Erweiterung für einen autorisierten aktiven Tab.
+
+Prüfen Sie vor der Verteilung Dateimetadaten, sichtbare Kennungen und anklickbare Ziele. Selbst die sicherste Darstellung kann Informationen enthalten, die der Autor in das Dokument eingefügt hat. Bewahren Sie das freigegebene endgültige PDF in Ihrem eigenen Speicher auf, da Page 2 File keine Datenbank mit dem Konvertierungsverlauf bereitstellt.
+
+Vergleichen Sie weitere Quellkategorien im [Leitfaden für Websites als PDF und PowerPoint](/de/blog/website-types-to-pdf-or-powerpoint).
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Prüfen Sie die festen PDF-Seiten und erfassen Sie fehlende oder blockierte Abhängigkeiten."}
+  caption={"Prüfen Sie die festen PDF-Seiten und erfassen Sie fehlende oder blockierte Abhängigkeiten."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Prüfen Sie die festen PDF-Seiten und erfassen Sie fehlende oder blockierte Abhängigkeiten."}
+  src="/blog/instructions/html-to-pdf-safely/05.svg"
+  step={5}
+/>

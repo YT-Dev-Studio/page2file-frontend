@@ -1,8 +1,4 @@
-import type {
-  Locale,
-  LocalizedPublished,
-} from "./locales";
-import { isPublishedLocale } from "./locales";
+import type { Locale } from "./locales";
 
 export type SiteCopy = {
   footer: {
@@ -37,7 +33,7 @@ export type SiteCopy = {
   };
 };
 
-const siteCopy: LocalizedPublished<SiteCopy> = {
+const siteCopy: Record<"en" | "ru" | "de" | "fr", SiteCopy> = {
   en: {
     header: {
       brandLabel: "Page 2 File — home",
@@ -104,7 +100,77 @@ const siteCopy: LocalizedPublished<SiteCopy> = {
       servicesTitle: "Сервисы",
     },
   },
+  de: {
+    header: {
+      brandLabel: "Page 2 File — Startseite",
+      extensionAction: "Jetzt installieren",
+      menuLabel: "Menü öffnen",
+      mobileNavigationLabel: "Mobile Navigation",
+      navigationLabel: "Hauptnavigation",
+      navigation: {
+        blog: "Blog",
+        faq: "FAQ",
+        features: "Funktionen",
+        howItWorks: "So funktioniert es",
+      },
+    },
+    footer: {
+      brandDescription:
+        "Eine Webseite als übersichtliche PDF- oder PowerPoint-Datei — mit Vorschau und ohne manuelle Korrektur von Seitenumbrüchen.",
+      companyTitle: "Unternehmen und Dokumente",
+      copyright: "© 2026 Page 2 File. Alle Rechte vorbehalten.",
+      gptsTitle: "GPTs",
+      legalTitle: "Rechtliche Informationen",
+      links: {
+        blog: "Blog",
+        cookiePolicy: "Cookies",
+        extension: "Chrome-Erweiterung",
+        privacy: "Datenschutz",
+        terms: "Nutzungsbedingungen",
+        webpageToPdf: "Webseite als PDF",
+        webpageToPowerpoint: "Webseite als PowerPoint",
+      },
+      servicesTitle: "Dienste",
+    },
+  },
+  fr: {
+    header: {
+      brandLabel: "Page 2 File — accueil",
+      extensionAction: "Installer maintenant",
+      menuLabel: "Ouvrir le menu",
+      mobileNavigationLabel: "Navigation mobile",
+      navigationLabel: "Navigation principale",
+      navigation: {
+        blog: "Blog",
+        faq: "FAQ",
+        features: "Fonctionnalités",
+        howItWorks: "Fonctionnement",
+      },
+    },
+    footer: {
+      brandDescription:
+        "Une page web dans un PDF ou PowerPoint clair — avec aperçu et sans correction manuelle des sauts de page.",
+      companyTitle: "Entreprise et documents",
+      copyright: "© 2026 Page 2 File. Tous droits réservés.",
+      gptsTitle: "GPTs",
+      legalTitle: "Informations juridiques",
+      links: {
+        blog: "Blog",
+        cookiePolicy: "Cookies",
+        extension: "Extension Chrome",
+        privacy: "Confidentialité",
+        terms: "Conditions d’utilisation",
+        webpageToPdf: "Page web en PDF",
+        webpageToPowerpoint: "Page web en PowerPoint",
+      },
+      servicesTitle: "Services",
+    },
+  },
 };
 
+const hasSiteCopy = (
+  locale: Locale,
+): locale is keyof typeof siteCopy => locale in siteCopy;
+
 export const getSiteCopy = (locale: Locale): SiteCopy =>
-  siteCopy[isPublishedLocale(locale) ? locale : "en"];
+  siteCopy[hasSiteCopy(locale) ? locale : "en"];

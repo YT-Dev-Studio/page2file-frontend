@@ -1,0 +1,56 @@
+{
+  "save-webpage-as-pdf": {
+    "author": "Page 2 File Redaktion",
+    "title": "So speichern Sie eine Webseite als PDF",
+    "description": "Speichern Sie eine öffentliche oder angemeldete Webseite als PDF, wählen Sie Seitenaufnahmen oder eine bearbeitbare Ausgabe und prüfen Sie Seitenumbrüche.",
+    "imageAlt": "Eine lange Browserseite wird zu einem übersichtlichen Stapel von PDF-Seiten"
+  },
+  "capture-full-webpage-as-pdf": {
+    "author": "Page 2 File Redaktion",
+    "title": "So erfassen Sie eine vollständige Webseite als PDF",
+    "description": "Erfassen Sie eine vollständig scrollbare Webseite als PDF, indem Sie ihre Grenze festlegen, dynamische Abschnitte laden und Seitenumbrüche prüfen.",
+    "imageAlt": "Eine vollständig scrollbare Browserseite fließt in ein PDF-Dokument"
+  },
+  "html-to-pdf-safely": {
+    "author": "Page 2 File Redaktion",
+    "title": "HTML sicher in PDF umwandeln",
+    "description": "Konvertieren Sie eine hochgeladene HTML-Datei in PDF und behandeln Sie Skripte, externe Ressourcen, Dateizugriff und private Netzwerkziele als Sicherheitsgrenzen.",
+    "imageAlt": "HTML-Inhalte werden isoliert, bevor daraus ein übersichtliches PDF entsteht"
+  },
+  "long-webpage-page-breaks": {
+    "author": "Page 2 File Redaktion",
+    "title": "Lange Webseiten ohne fehlerhafte Seitenumbrüche umwandeln",
+    "description": "Bereiten Sie lange Webseiten für PDF vor, halten Sie Überschriften und Tabellen zusammen, laden Sie dynamische Inhalte und korrigieren Sie Grenzen in der Vorschau.",
+    "imageAlt": "Eine lange Webseite wird an lesbaren PDF-Seitengrenzen aufgeteilt"
+  },
+  "multi-page-website-to-pdf": {
+    "author": "Page 2 File Redaktion",
+    "title": "So wandeln Sie eine mehrseitige Website in PDF um",
+    "description": "Wandeln Sie erreichbare Seiten einer Website in getrennte PDFs um, definieren Sie Crawl-Grenzen, prüfen Sie Fehler und versprechen Sie kein zusammengeführtes Dokument.",
+    "imageAlt": "Eine Website-Karte wird zu mehreren getrennten PDF-Dokumenten"
+  },
+  "preserve-clickable-links": {
+    "author": "Page 2 File Redaktion",
+    "title": "So erhalten Sie anklickbare Links in einem Webseiten-PDF",
+    "description": "Erfahren Sie, wann Webseitenlinks im PDF anklickbar bleiben, warum Seitenaufnahmen Interaktion abflachen und wie Editable document sichere Ziele behandelt.",
+    "imageAlt": "Browserlinks werden in ein bearbeitbares PDF-Dokument übernommen"
+  },
+  "visual-vs-editable": {
+    "author": "Page 2 File Redaktion",
+    "title": "Seitenaufnahme oder bearbeitbare Webseitenkonvertierung",
+    "description": "Wählen Sie zwischen genauer Seitenaufnahme und bearbeitbarer Konvertierung anhand von Text, Links, Bildern, Diagrammen, Layouts und PowerPoint-Ausgabe.",
+    "imageAlt": "Eine aufgenommene Webseite wird mit bearbeitbaren Dokumentblöcken verglichen"
+  },
+  "webpage-to-powerpoint": {
+    "author": "Page 2 File Redaktion",
+    "title": "So wandeln Sie eine Webseite in PowerPoint um",
+    "description": "Wandeln Sie eine öffentliche Webseite in eine PPTX-Präsentation um, wählen Sie Seitenaufnahmen oder bearbeitbare Folien und prüfen Sie die 16:9-Foliengrenzen.",
+    "imageAlt": "Abschnitte einer Webseite werden zu einer übersichtlichen PowerPoint-Präsentation"
+  },
+  "why-print-to-pdf-breaks": {
+    "author": "Page 2 File Redaktion",
+    "title": "URL als PDF oder Browserdruck: Was erfasst mehr?",
+    "description": "Vergleichen Sie die URL-zu-PDF-Konvertierung mit dem Browserdruck bei Druckstilen, verzögerten Inhalten, privaten Tabs und bearbeitbarer Ausgabe.",
+    "imageAlt": "Browserdruck und Webseitenerfassung werden miteinander verglichen"
+  }
+}

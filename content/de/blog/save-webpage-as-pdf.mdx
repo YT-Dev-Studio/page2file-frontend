@@ -1,0 +1,110 @@
+Um eine Webseite als PDF zu speichern, entscheiden Sie zuerst, ob Sie die Seite so benötigen, wie sie aussieht, oder als durchsuchbares und wiederverwendbares Dokument. Page 2 File unterstützt beides: Accurate copy (Ausgabe im Stil einer Seitenaufnahme) erfasst gerenderte Abschnitte, während Editable document (bearbeitbare Ausgabe) unterstützten Text, Bilder und Links als Dokumentelemente rekonstruiert.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Öffnen Sie die Webseite und laden Sie den benötigten Artikel, die Bilder und Verweise."}
+  caption={"Öffnen Sie die Webseite und laden Sie den benötigten Artikel, die Bilder und Verweise."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Öffnen Sie die Webseite und laden Sie den benötigten Artikel, die Bilder und Verweise."}
+  src="/blog/instructions/save-webpage-as-pdf/01.svg"
+  step={1}
+/>
+
+Fügen Sie für eine öffentliche Seite deren HTTPS-Adresse in den [Webseite-zu-PDF-Konverter](/de/convert-webpage-to-pdf) ein. Öffnen Sie eine angemeldete Seite in Chrome und verwenden Sie die [Anleitung zur Erweiterung](/de/chrome-extension/how-to-use), statt Anmeldedaten mit einem URL-Formular zu teilen. Die separate Anleitung zum [Speichern einer angemeldeten Webseite](/de/blog/save-authenticated-webpage-as-pdf) erklärt diese Grenze.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wählen Sie für eine öffentliche Seite By URL und fügen Sie die vollständige HTTPS-Adresse ein."}
+  caption={"Wählen Sie für eine öffentliche Seite By URL und fügen Sie die vollständige HTTPS-Adresse ein."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wählen Sie für eine öffentliche Seite By URL und fügen Sie die vollständige HTTPS-Adresse ein."}
+  src="/blog/instructions/save-webpage-as-pdf/02.svg"
+  step={2}
+/>
+
+## Legen Sie fest, was in das PDF gehört
+
+Ein Browser-Tab kann viel mehr enthalten als das Dokument, das Sie behalten möchten. Cookie-Banner, angeheftete Navigation, verwandte Artikel, Kommentare und ein endloser Feed können neben dem wichtigen Material stehen. Laden Sie den benötigten Teil, öffnen Sie eingeklappte Abschnitte und beenden Sie das Scrollen, sobald die Grenze der Quelle eindeutig ist.
+
+Lange Seiten benötigen außerdem Zeit, um Bilder und Diagramme verzögert zu laden. Wenn Inhalte erst beim Scrollen erscheinen, bringen Sie sie vor der Erfassung in die gerenderte Seite. Page 2 File behauptet keinen Zugriff auf Nachrichten, Bereiche oder Zweige, die von der Seite nicht geladen wurden.
+
+## Wählen Sie Seitenaufnahmen oder eine bearbeitbare Ausgabe
+
+Accurate copy eignet sich besser für Landingpages, Portfolios, Belege oder Dashboards, bei denen Position und Erscheinungsbild Bedeutung tragen. Dafür besteht ein aufgenommener Abschnitt nicht aus bearbeitbaren Textfeldern.
+
+Editable document ist für Artikel, Dokumentationen und Berichte gedacht, bei denen auswählbarer Text, Bilder und anklickbare Links wichtig sind. Browserfunktionen wie Videos, Canvas-Zeichnungen und Animationen können durch ein Standbild dargestellt werden. Der ausführliche Vergleich von [Seitenaufnahmen und bearbeitbarer Konvertierung](/de/blog/visual-vs-editable) zeigt, wo jeder Modus an seine Grenzen kommt.
+
+## Prüfen Sie Seitenumbrüche vor dem Download
+
+Ein PDF führt feste Seitengrenzen in eine Quelle ein, die zum Scrollen entwickelt wurde. Prüfen Sie Überschriften, Tabellen, Codeblöcke und Bildunterschriften in der Vorschau. Verschieben, teilen oder entfernen Sie einen Abschnitt vor der finalen Ausgabe, statt eine Überschrift am Ende einer Seite und ihren Absatz auf der nächsten zu akzeptieren.
+
+Die Anleitung zu [Seitenumbrüchen auf langen Webseiten](/de/blog/long-webpage-page-breaks) behandelt schwierige Layouts. Eine breitere Entscheidung nach Quellentyp bietet die [Anleitung zu Website-Ausgaben](/de/blog/website-types-to-pdf-or-powerpoint).
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wählen Sie PDF als Ausgabeformat."}
+  caption={"Wählen Sie PDF als Ausgabeformat."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wählen Sie PDF als Ausgabeformat."}
+  src="/blog/instructions/save-webpage-as-pdf/03.svg"
+  step={3}
+/>
+
+## Wissen Sie, wohin temporäre Daten gelangen
+
+Eine Konvertierung per öffentlicher URL erstellt nach Ihrem ausdrücklichen Start einen temporären Backend-Auftrag. Die Erweiterung arbeitet mit dem aktiven Tab und öffnet eine Vorschau, ohne ein Page 2 File Konto oder einen Konvertierungsverlauf anzulegen. Vorschaudaten werden nach dem Schließen des Vorschau-Tabs gelöscht; Page 2 File besitzt keine Datenbank für einen Verlauf der Benutzerkonvertierungen.
+
+Sie bleiben für die Erlaubnis zur Vervielfältigung der Quelle verantwortlich. Ein PDF ist eine portable Kopie und kein Mittel, um eine Anmeldung, Bezahlschranke oder Veröffentlichungsbeschränkung zu umgehen.
+
+## Bereiten Sie die Quelle vor der Konvertierung vor
+
+Behandeln Sie die Browserseite als Quelldokument. Wählen Sie vor der Erfassung die endgültige Sprache, den Datumsbereich, Filter und geöffneten Abschnitte. Schließen Sie Overlays nur, wenn sie nicht zum Datensatz gehören. Behalten Sie bei einem Beleg oder Dashboard den sichtbaren Zustand bei, der die Darstellung belegt; entfernen Sie bei einem Artikel Navigation, die vom Lesen ablenkt.
+
+Prüfen Sie, ob sich die Seite beim Scrollen verändert. Manche Websites ersetzen ältere Elemente, laden Bilder später oder zeichnen Diagramme neu, wenn sie in den sichtbaren Bereich gelangen. Scrollen Sie einmal durch den benötigten Bereich, kehren Sie zum Anfang zurück und bestätigen Sie, dass frühe Inhalte noch vorhanden sind. Wenn die Website sie entladen hat, erfassen Sie einen kleineren, klar definierten Bereich, statt anzunehmen, „vollständige Seite“ umfasse nicht mehr gerendertes Material.
+
+Schriften und eingebettete Medien können erst nach dem gemeldeten Laden des Hauptdokuments fertig werden. Eine fehlende Schrift ist meist kosmetisch, doch ein verspätetes Diagramm oder Bild kann die Bedeutung der Datei ändern. Warten Sie, bis sich die Seite nicht mehr bewegt, und prüfen Sie wichtige visuelle Elemente vor dem Start.
+
+## Prüfen Sie die Vorschau aus Sicht der Leser
+
+Lesen Sie die Vorschau der Reihe nach, statt nur die erste und letzte Seite zu prüfen. Ein brauchbares PDF hält jede Überschrift nahe bei ihrem ersten Absatz, teilt kurze Tabellen nicht unnötig und gibt Abbildungen genug Kontext. Eine perfekte Kopie eines schlecht vorbereiteten Browserzustands bleibt ein schlechtes Dokument.
+
+Testen Sie in Editable document eine Auswahl von Text und Links. Bestätigen Sie besonders bei allgemeinen Linkbezeichnungen das erwartete Ziel. Vergrößern Sie in Accurate copy kleine Beschriftungen, Code und Diagrammlegenden. Sind sie bei normaler PDF-Vergrößerung unlesbar, ändern Sie vor dem Download die Abschnittsskalierung oder Erfassungsgrenze.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wählen Sie Accurate copy für das Erscheinungsbild oder Editable document für unterstützten Text und Links."}
+  caption={"Wählen Sie Accurate copy für das Erscheinungsbild oder Editable document für unterstützten Text und Links."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wählen Sie Accurate copy für das Erscheinungsbild oder Editable document für unterstützten Text und Links."}
+  src="/blog/instructions/save-webpage-as-pdf/04.svg"
+  step={4}
+/>
+
+Prüfen Sie bei Material, das weitergegeben wird, die innerhalb der Seite sichtbaren Metadaten: Kontonamen, Arbeitsbereichstitel, E-Mail-Adressen, Kundenkennungen und Abfrageparameter können in Kopfbereichen oder Links erscheinen. Eine Schwärzung muss vor der Verteilung erfolgen, nicht nachdem ein Empfänger die Originaldatei erhalten hat.
+
+## Verwenden Sie eine wiederholbare Abnahmekontrolle
+
+Bestätigen Sie, dass das PDF an den vorgesehenen Stellen beginnt und endet, jeder erforderliche Abschnitt genau einmal vorhanden ist, die Lesereihenfolge stimmt, Seitenumbrüche keine Inhalte verbergen und der gewählte Modus die nächste Aufgabe unterstützt. Öffnen Sie anschließend mindestens einen wichtigen Link und prüfen Sie eine Seite in üblicher Lesegröße.
+
+Bewahren Sie Quell-URL und Erfassungsdatum mit dem Dokument auf, wenn die Herkunft wichtig ist. Dynamische Seiten können sich nach der Konvertierung ändern; ein PDF zeichnet daher einen gerenderten Zustand auf und garantiert keine dauerhaft identische Live-Seite. Verwenden Sie bei häufig geänderten Quellen eine einheitliche Benennung für spätere Erfassungen, statt frühere Dateien stillschweigend zu überschreiben.
+
+Wenn ein Ergebnis die Prüfung nicht besteht, ändern Sie jeweils nur eine Variable: Seitenzustand, Erfassungsbereich, Ausgabemodus oder Abschnittsgrenze. So bleibt die Ursache erkennbar und Sie vermeiden wiederholte Exporte mit demselben Fehler.
+
+## Bewahren Sie Kontext ohne unnötigen Ballast
+
+Ein nützliches PDF benötigt genug Kontext, damit Leser die Darstellung verstehen. Behalten Sie Seitentitel, relevante Abschnittsüberschrift und ausgewählte Filter, die das Ergebnis verändern. Fügen Sie bei Transaktionen oder Dashboards sichtbares Datum und Status ein. Bewahren Sie bei Dokumentationen Produktversion oder Brotkrümelnavigation, wenn sie Anleitungen voneinander unterscheiden.
+
+Das bedeutet nicht, jede Browsersteuerung zu behalten. Kontomenüs, unpassende Empfehlungen und schwebende Support-Widgets können das Thema verdecken oder unnötige Informationen offenlegen. Entscheiden Sie, was die Herkunft belegt, was die Interpretation unterstützt und was nur Oberfläche ist. Bereiten Sie die Seite entsprechend vor.
+
+Auch die Barrierefreiheit verändert sich zwischen Web und fester Datei. Hover-Beschriftungen, nur per Tastatur erreichbare Bereiche und eingeklappte Beschreibungen fehlen möglicherweise im erfassten Zustand. Blenden Sie wichtige Beschriftungen vor der Konvertierung ein und prüfen Sie anschließend Lesereihenfolge und Kontrast. Bearbeitbarer Text unterstützt Suche und assistive Abläufe, benötigt aber weiterhin schlüssige Überschriften und aussagekräftige Linkbezeichnungen.
+
+## Wählen Sie eine Speicher- und Freigabepraxis
+
+Page 2 File führt keinen Konvertierungsverlauf. Daher bilden die heruntergeladene Datei und Ihre begleitenden Unterlagen das Archiv. Verwenden Sie einen Dateinamen, der Thema und Datum erkennen lässt, ohne vertrauliche Daten offenzulegen. Wenn sich die Live-Quelle ändern kann, notieren Sie Quell-URL und Erfassungsdatum in einer Begleitnotiz oder einem genehmigten Dokumentfeld.
+
+Öffnen Sie das PDF vor der Freigabe außerhalb der Konvertierungsvorschau. Bestätigen Sie, dass es in einem gewöhnlichen Reader geöffnet wird, die vorgesehenen Seiten enthält und kein privater Browserzustand in Kopfbereichen, Links oder Bildern erscheint. Senden Sie nur das kleinste für den Zweck ausreichende Dokument und verwenden Sie bei vertraulichen Inhalten einen genehmigten Übertragungskanal.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wählen Sie Preview PDF und prüfen Sie die erzeugten Seiten vor dem Download."}
+  caption={"Wählen Sie Preview PDF und prüfen Sie die erzeugten Seiten vor dem Download."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wählen Sie Preview PDF und prüfen Sie die erzeugten Seiten vor dem Download."}
+  src="/blog/instructions/save-webpage-as-pdf/05.svg"
+  step={5}
+/>

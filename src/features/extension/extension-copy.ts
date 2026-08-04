@@ -1,5 +1,4 @@
-import type { Locale, LocalizedPublished } from "@/shared/i18n/locales";
-import { isPublishedLocale } from "@/shared/i18n/locales";
+import type { Locale } from "@/shared/i18n/locales";
 
 export type GuideStep = {
   number: string;
@@ -44,7 +43,7 @@ type ExtensionCopy = {
   relatedArticles: ReadonlyArray<GuideArticleLink>;
 };
 
-const extensionCopy: LocalizedPublished<ExtensionCopy> = {
+const extensionCopy: Record<"en" | "ru" | "de" | "fr", ExtensionCopy> = {
   en: {
     eyebrow: "Extension guide",
     title: "From active tab to reviewed document",
@@ -197,7 +196,145 @@ const extensionCopy: LocalizedPublished<ExtensionCopy> = {
       },
     ],
   },
+  de: {
+    eyebrow: "Anleitung zur Erweiterung",
+    title: "Vom aktiven Tab zum geprüften Dokument",
+    lead: "Wählen Sie eine Schritt-für-Schritt-Anleitung oder eine barrierefreie Videoübersicht. Beide Anleitungen sind in der serverseitig gerenderten Seite enthalten.",
+    formatLabel: "Anleitungsformat",
+    stepsTab: "Schritt für Schritt",
+    videoTab: "Video",
+    stepLabel: "SCHRITT",
+    steps: [
+      {
+        number: "01",
+        title: "Quelle im aktuellen Tab öffnen",
+        body: "Laden Sie die vollständige Webseite oder AI-Unterhaltung. Öffnen Sie eingeklappte Inhalte und scrollen Sie durch lange virtualisierte Chats, damit alle Inhalte vorhanden sind.",
+        image: "/demos/extension-step-source.svg",
+        imageAlt: "Ein für den Export mit der Erweiterung vorbereiteter Browser-Tab",
+      },
+      {
+        number: "02",
+        title: "Export konfigurieren und Vorschau erstellen",
+        body: "Verwenden Sie das Page 2 File Panel in dieser Reihenfolge:",
+        image: "/demos/extension-step-mode.svg",
+        imageAlt:
+          "Das originale Page 2 File Panel mit nummerierten Hinweisen zu Format, Ausgabestil, Anpassungen und Vorschau",
+        imageCaption:
+          "Die Notion-Karte bezeichnet die im aktuellen Tab geöffnete Webseite und ist keine separate Page 2 File Integration.",
+        imageHeight: 900,
+        imageWidth: 900,
+        points: [
+          "Wählen Sie PDF zum Teilen und Archivieren oder PowerPoint zum Präsentieren und Bearbeiten.",
+          "Wählen Sie Accurate copy für das ursprüngliche Erscheinungsbild oder Editable document für unterstützten Text und Links.",
+          "Entfernen Sie bei Bedarf Bilder, Links oder Formatierungen unter Customize.",
+          "Wählen Sie Preview PDF oder Preview PowerPoint, um die temporäre Vorschau zu öffnen.",
+        ],
+      },
+      {
+        number: "03",
+        title: "Abschnitte vor dem Download prüfen",
+        body: "Prüfen Sie die temporären Vorschaubilder, ordnen Sie Abschnitte per Ziehen oder Schaltflächen neu, entfernen Sie unerwünschte Inhalte und lesen Sie alle Warnungen zu Ersetzungen.",
+        image: "/demos/extension-step-preview.svg",
+        imageAlt: "Temporäre Abschnittsvorschau mit Steuerelementen zum Sortieren",
+      },
+    ],
+    videoPosterAlt:
+      "Videovorschau, in der Webseitenabschnitte zu Dokumentseiten werden",
+    chapters: [
+      { title: "Quelle vorbereiten", time: "00:00" },
+      { title: "Format und Modus wählen", time: "00:42" },
+      { title: "Temporäre Vorschau bearbeiten", time: "01:28" },
+      { title: "Herunterladen und prüfen", time: "02:14" },
+    ],
+    transcriptTitle: "Transkript",
+    transcript: [
+      "Öffnen Sie die zu exportierende Seite oder Unterhaltung und stellen Sie sicher, dass alle benötigten Abschnitte geladen sind.",
+      "Aktivieren Sie Page 2 File über die Symbolleiste. Wählen Sie PDF oder PowerPoint und dann Accurate copy für visuelle Treue oder Editable document für unterstützten Text und Links.",
+      "Prüfen Sie die temporäre Abschnittsleiste. Verschieben, teilen, verbinden oder entfernen Sie Abschnitte und lesen Sie vor dem Download die Warnungen.",
+    ],
+    breadcrumbLabel: "Brotkrümelnavigation",
+    homeLabel: "Startseite",
+    extensionLabel: "Chrome-Erweiterung",
+    guideLabel: "Anleitung",
+    relatedArticlesLabel: "Verwandte Artikel",
+    relatedArticles: [
+      { slug: "capture-full-webpage-as-pdf", label: "Eine vollständige Webseite als PDF erfassen" },
+      { slug: "save-authenticated-webpage-as-pdf", label: "Eine Webseite hinter einer Anmeldung speichern" },
+      { slug: "export-ai-chats-privately", label: "AI-Chats privat exportieren" },
+    ],
+  },
+  fr: {
+    eyebrow: "Guide de l’extension",
+    title: "De l’onglet actif au document vérifié",
+    lead: "Choisissez un guide pas à pas ou un aperçu vidéo accessible. Les deux séries d’instructions figurent dans la page rendue côté serveur.",
+    formatLabel: "Format des instructions",
+    stepsTab: "Pas à pas",
+    videoTab: "Vidéo",
+    stepLabel: "ÉTAPE",
+    steps: [
+      {
+        number: "01",
+        title: "Ouvrez la source dans l’onglet actuel",
+        body: "Chargez toute la page web ou la conversation AI. Dépliez les contenus masqués et faites défiler les longues conversations virtualisées afin que leur contenu soit présent.",
+        image: "/demos/extension-step-source.svg",
+        imageAlt: "Un onglet de navigateur préparé pour l’export avec l’extension",
+      },
+      {
+        number: "02",
+        title: "Configurez l’export et créez un aperçu",
+        body: "Utilisez le panneau Page 2 File dans cet ordre :",
+        image: "/demos/extension-step-mode.svg",
+        imageAlt:
+          "Le panneau Page 2 File original avec des repères numérotés pour le format, le style de sortie, les options et l’aperçu",
+        imageCaption:
+          "La carte Notion indique la page web ouverte dans l’onglet actuel ; il ne s’agit pas d’une intégration Page 2 File distincte.",
+        imageHeight: 900,
+        imageWidth: 900,
+        points: [
+          "Choisissez PDF pour le partage et l’archivage, ou PowerPoint pour la présentation et la modification.",
+          "Choisissez Accurate copy pour préserver l’apparence de la page ou Editable document pour le texte et les liens pris en charge.",
+          "Vous pouvez supprimer les images, les liens ou les styles dans Customize.",
+          "Sélectionnez Preview PDF ou Preview PowerPoint pour ouvrir l’aperçu temporaire.",
+        ],
+      },
+      {
+        number: "03",
+        title: "Vérifiez les sections avant le téléchargement",
+        body: "Examinez les miniatures temporaires, réorganisez les sections par glisser-déposer ou avec les boutons, supprimez le contenu inutile et lisez chaque avertissement de remplacement.",
+        image: "/demos/extension-step-preview.svg",
+        imageAlt: "Un aperçu temporaire des sections avec des commandes de réorganisation",
+      },
+    ],
+    videoPosterAlt:
+      "Affiche vidéo montrant des sections de page web transformées en pages de document",
+    chapters: [
+      { title: "Préparer la source", time: "00:00" },
+      { title: "Choisir le format et le mode", time: "00:42" },
+      { title: "Modifier l’aperçu temporaire", time: "01:28" },
+      { title: "Télécharger et vérifier", time: "02:14" },
+    ],
+    transcriptTitle: "Transcription",
+    transcript: [
+      "Ouvrez la page ou la conversation à exporter et vérifiez que toutes les sections nécessaires sont chargées.",
+      "Activez Page 2 File depuis la barre d’outils. Choisissez PDF ou PowerPoint, puis Accurate copy pour la fidélité visuelle ou Editable document pour le texte et les liens pris en charge.",
+      "Vérifiez la liste temporaire des sections. Déplacez, scindez, fusionnez ou supprimez des sections, puis lisez les avertissements avant le téléchargement.",
+    ],
+    breadcrumbLabel: "Fil d’Ariane",
+    homeLabel: "Accueil",
+    extensionLabel: "Extension Chrome",
+    guideLabel: "Guide d’utilisation",
+    relatedArticlesLabel: "Articles associés",
+    relatedArticles: [
+      { slug: "capture-full-webpage-as-pdf", label: "Capturer une page web complète en PDF" },
+      { slug: "save-authenticated-webpage-as-pdf", label: "Enregistrer une page web après connexion" },
+      { slug: "export-ai-chats-privately", label: "Exporter des conversations AI en toute confidentialité" },
+    ],
+  },
 };
 
+const hasExtensionCopy = (
+  locale: Locale,
+): locale is keyof typeof extensionCopy => locale in extensionCopy;
+
 export const getExtensionCopy = (locale: Locale): ExtensionCopy =>
-  extensionCopy[isPublishedLocale(locale) ? locale : "en"];
+  extensionCopy[hasExtensionCopy(locale) ? locale : "en"];

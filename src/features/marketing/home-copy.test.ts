@@ -22,8 +22,14 @@ describe("homepage copy", () => {
     );
   });
 
-  test("uses English homepage copy for unreviewed locales", () => {
-    expect(getHomeCopy("de")).toBe(getHomeCopy("en"));
+  test("provides manual German and French variants", () => {
+    expect(getHomeCopy("de").title).toBe(
+      "Jede Webseite als PDF/PPTX exportieren",
+    );
+    expect(getHomeCopy("fr").title).toBe(
+      "Exportez n’importe quelle page web en PDF/PPTX",
+    );
+    expect(getHomeCopy("es")).toBe(getHomeCopy("en"));
   });
 
   test("keeps the four homepage articles in the approved order", () => {
@@ -32,6 +38,12 @@ describe("homepage copy", () => {
     ).toEqual(expectedBlogSlugs);
     expect(
       getHomeCopy("ru").blog.items.map((item): string => item.slug),
+    ).toEqual(expectedBlogSlugs);
+    expect(
+      getHomeCopy("de").blog.items.map((item): string => item.slug),
+    ).toEqual(expectedBlogSlugs);
+    expect(
+      getHomeCopy("fr").blog.items.map((item): string => item.slug),
     ).toEqual(expectedBlogSlugs);
   });
 

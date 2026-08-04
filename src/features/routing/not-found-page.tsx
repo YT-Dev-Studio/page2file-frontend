@@ -5,8 +5,7 @@ import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import {
   isLocale,
-  isPublishedLocale,
-  type LocalizedPublished,
+  type Locale,
 } from "@/shared/i18n/locales";
 import { getSeoCopy } from "@/shared/seo/seo-copy";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
@@ -19,7 +18,7 @@ type NotFoundActions = {
   converter: string;
 };
 
-const actions: LocalizedPublished<NotFoundActions> = {
+const actions: Record<"en" | "ru" | "de" | "fr", NotFoundActions> = {
   en: {
     home: "Return home",
     converter: "Open the PDF converter",
@@ -28,15 +27,26 @@ const actions: LocalizedPublished<NotFoundActions> = {
     home: "Вернуться на главную",
     converter: "Открыть конвертер PDF",
   },
+  de: {
+    home: "Zur Startseite",
+    converter: "PDF-Konverter öffnen",
+  },
+  fr: {
+    home: "Retour à l’accueil",
+    converter: "Ouvrir le convertisseur PDF",
+  },
 };
+
+const hasLocalizedActions = (
+  locale: Locale,
+): locale is keyof typeof actions => locale in actions;
 
 export const NotFoundPage = (): ReactNode => {
   const pathname = usePathname();
   const firstSegment = pathname.split("/").filter(Boolean)[0] ?? "en";
   const locale = isLocale(firstSegment) ? firstSegment : "en";
-  const publishedLocale = isPublishedLocale(locale) ? locale : "en";
   const copy = getSeoCopy(locale, "notFound");
-  const actionCopy = actions[publishedLocale];
+  const actionCopy = actions[hasLocalizedActions(locale) ? locale : "en"];
   return (
     <PublicPage className={styles.page}>
       <Container>

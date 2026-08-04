@@ -48,6 +48,8 @@ import RuArticle23 from "../../content/ru/blog/export-telegram-chat-to-pdf.mdx";
 import Article24 from "../../content/blog/export-browser-messenger-chats-to-pdf.mdx";
 import RuArticle24 from "../../content/ru/blog/export-browser-messenger-chats-to-pdf.mdx";
 import type { Locale } from "@/shared/i18n/locales";
+import { localizedBlogComponents } from "./generated/localized-blog-components";
+import { localizedBlogMetadata } from "./localized-blog-metadata";
 
 export type ContentKind = "blog" | "update";
 
@@ -770,6 +772,84 @@ const russianChangelogEntries: ReadonlyArray<ChangelogEntry> = [
   },
 ];
 
+const germanChangelogEntries: ReadonlyArray<ChangelogEntry> = [
+  {
+    version: "0.3.0-prototype",
+    date: "2026-07-29",
+    added: [
+      "PDF- und PowerPoint-Demokonverter",
+      "Aktionen in der Abschnittsvorschau",
+      "Routen für 16 Sprachen",
+    ],
+    improved: [
+      "Analyse erst nach Einwilligung",
+      "Validierung von Routen und Inhalten",
+    ],
+    fixed: ["Nicht geprüfte Sprachen sind von der Sitemap ausgeschlossen"],
+  },
+  {
+    version: "0.2.0-prototype",
+    date: "2026-07-24",
+    added: [
+      "Anleitungsmodi für die Erweiterung",
+      "Landingpage-Gruppe für den Export von AI-Chats",
+    ],
+    improved: [
+      "Datenschutzhinweise zum aktiven Tab und Plattformhinweise",
+    ],
+    fixed: ["Indexierungsrichtlinie der Willkommensseite"],
+  },
+  {
+    version: "0.1.0-prototype",
+    date: "2026-07-18",
+    added: [
+      "Erste Karte der Produktrouten",
+      "Datenschutzorientierte Grundlage ohne Konto",
+    ],
+    improved: ["Bezeichnungen für Seitenaufnahmen und bearbeitbare Modi"],
+    fixed: [],
+  },
+];
+
+const frenchChangelogEntries: ReadonlyArray<ChangelogEntry> = [
+  {
+    version: "0.3.0-prototype",
+    date: "2026-07-29",
+    added: [
+      "Convertisseurs de démonstration PDF et PowerPoint",
+      "Opérations dans l’aperçu des sections",
+      "Routes pour 16 langues",
+    ],
+    improved: [
+      "Analyse après consentement",
+      "Validation des routes et du contenu",
+    ],
+    fixed: ["Les langues non vérifiées sont exclues du sitemap"],
+  },
+  {
+    version: "0.2.0-prototype",
+    date: "2026-07-24",
+    added: [
+      "Modes d’instructions de l’extension",
+      "Ensemble de pages pour l’export des conversations AI",
+    ],
+    improved: [
+      "Texte de confidentialité de l’onglet actif et mentions des plateformes",
+    ],
+    fixed: ["Politique d’indexation de la page d’accueil"],
+  },
+  {
+    version: "0.1.0-prototype",
+    date: "2026-07-18",
+    added: [
+      "Première carte des routes du produit",
+      "Base sans compte axée sur la confidentialité",
+    ],
+    improved: ["Libellés des captures de page et des modes modifiables"],
+    fixed: [],
+  },
+];
+
 const findEntry = (
   entries: ReadonlyArray<ContentEntry>,
   slug: string,
@@ -778,8 +858,31 @@ const findEntry = (
   return entries.find(matchesSlug) ?? null;
 };
 
+const getTranslatedBlogEntries = (
+  locale: Locale,
+): ReadonlyArray<ContentEntry> => {
+  const components = localizedBlogComponents[locale];
+  const metadata = localizedBlogMetadata[locale];
+  if (!components || !metadata) {
+    return blogEntries;
+  }
+
+  return blogEntries.map((entry: ContentEntry): ContentEntry => {
+    const component = components[entry.slug];
+    const localizedMetadata = metadata[entry.slug];
+    if (!component || !localizedMetadata) {
+      return entry;
+    }
+    return {
+      ...entry,
+      ...localizedMetadata,
+      component,
+    };
+  });
+};
+
 export const getBlogEntries = (locale: Locale): ReadonlyArray<ContentEntry> =>
-  locale === "ru" ? russianBlogEntries : blogEntries;
+  locale === "ru" ? russianBlogEntries : getTranslatedBlogEntries(locale);
 
 export const getUpdateEntries = (locale: Locale): ReadonlyArray<ContentEntry> =>
   locale === "ru" ? russianUpdateEntries : updateEntries;
@@ -787,7 +890,13 @@ export const getUpdateEntries = (locale: Locale): ReadonlyArray<ContentEntry> =>
 export const getChangelogEntries = (
   locale: Locale,
 ): ReadonlyArray<ChangelogEntry> =>
-  locale === "ru" ? russianChangelogEntries : changelogEntries;
+  locale === "ru"
+    ? russianChangelogEntries
+    : locale === "de"
+      ? germanChangelogEntries
+      : locale === "fr"
+        ? frenchChangelogEntries
+        : changelogEntries;
 
 export const getBlogEntry = (
   locale: Locale,

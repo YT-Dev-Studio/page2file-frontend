@@ -1,0 +1,122 @@
+Pour convertir une longue page web sans casser les pages PDF, considérez la source comme une suite de sections significatives plutôt que comme une immense capture. Page 2 File crée un aperçu où ces sections peuvent être vérifiées avant le rendu final.
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : structurez le long article en titres, figures, tableaux et unités de contenu à protéger."}
+  caption={"Structurez le long article en titres, figures, tableaux et unités de contenu à protéger."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : structurez le long article en titres, figures, tableaux et unités de contenu à protéger."}
+  src="/blog/instructions/long-webpage-page-breaks/01.svg"
+  step={1}
+/>
+
+Commencez par le [convertisseur de page web en PDF](/fr/convert-webpage-to-pdf) pour une URL publique. Utilisez l’[extension Chrome](/fr/chrome-extension/how-to-use) lorsque la longue page est privée ou dépend de l’état de l’onglet actuel.
+
+## Stabilisez d’abord la source
+
+Faites défiler assez loin pour charger les images, commentaires ou lignes de rapport nécessaires. Ouvrez uniquement les commandes qui appartiennent au document. Une mise en page qui bouge encore pendant le chargement des polices et médias ne peut pas produire des limites fiables.
+
+Retirez ou fermez les superpositions flottantes lorsque cela est permis. Une navigation fixe peut être utile une fois, mais répétée dans chaque section capturée, elle gaspille de l’espace et peut couvrir le texte.
+
+## Protégez les unités qui doivent rester groupées
+
+Un titre et son premier paragraphe, une figure et sa légende, un en-tête de tableau et ses premières lignes, ou un libellé de code et son bloc forment une unité de lecture. Vérifiez les limites autour de ces unités au lieu de remplir chaque page jusqu’à sa dernière ligne.
+
+Les tableaux très hauts et longues listes de code peuvent malgré tout nécessiter une division. Préférez une continuation visible à une réduction qui rend le contenu illisible. Si la mise en page exacte compte davantage que le flux du texte, comparez les options du guide [captures ou conversion modifiable](/fr/blog/visual-vs-editable).
+
+## Surveillez les échecs propres au navigateur
+
+Le CSS d’impression peut modifier les largeurs et masquer des éléments juste avant l’impression. Le canvas, la vidéo et le contenu animé peuvent ne pas avoir de représentation imprimable. La comparaison entre [conversion d’URL et impression du navigateur](/fr/blog/why-print-to-pdf-breaks) explique pourquoi une page correcte à l’écran peut échouer dans la boîte de dialogue d’impression.
+
+Dans Accurate copy (sortie de type capture), les sections complexes restent des images. Dans Editable document (sortie modifiable), le texte et les liens pris en charge sont reconstruits, tandis que les graphiques difficiles peuvent devenir des images pixellisées. Aucun mode ne doit prétendre rendre modifiable chaque fonction du navigateur.
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : faites défiler volontairement jusqu’à ce que les sections chargées à la demande restent présentes."}
+  caption={"Faites défiler volontairement jusqu’à ce que les sections chargées à la demande restent présentes."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : faites défiler volontairement jusqu’à ce que les sections chargées à la demande restent présentes."}
+  src="/blog/instructions/long-webpage-page-breaks/02.svg"
+  step={2}
+/>
+
+## Utilisez l’aperçu comme étape d’approbation
+
+Vérifiez la première et la dernière ligne de chaque page, puis les tableaux, le code, les légendes et les encadrés. Supprimez la navigation répétée, scindez une section trop grande ou modifiez son ordre avant le rendu. Vérifiez aussi les liens à l’aide du [guide des PDF cliquables](/fr/blog/preserve-clickable-links).
+
+Le fichier final ne doit pas être le premier endroit où vous découvrez les sauts de page. Si l’aperçu est incomplet, revenez à la source, chargez le contenu manquant et recommencez.
+
+## Classez le contenu avant de le diviser
+
+Les différents blocs ne tolèrent pas les sauts de la même manière. Les paragraphes ordinaires peuvent se poursuivre sur plusieurs pages, mais un titre doit rester avec les premières lignes qui l’expliquent. Une figure doit rester près de sa légende, un exemple de code doit conserver son indentation et une ligne de tableau ne doit être divisée qu’en l’absence d’alternative raisonnable.
+
+Créez un plan rapide de la longue page et marquez les unités indivisibles. Cela ne nécessite pas de modifier le site source. Il s’agit de connaître les transitions à examiner dans l’aperçu : avant et après les tableaux, entre les messages, autour des fiches produit et au début des grandes sections.
+
+Pour une sortie sous forme de captures, la section capturée peut se comporter comme une seule image. Si elle est plus haute qu’une page PDF, choisissez entre une division à une limite visuelle naturelle et la réduction de toute la section. La réduction n’est acceptable que si le corps du texte et les libellés restent lisibles au zoom normal.
+
+## Tenez compte du contexte répété
+
+Une page de navigateur garde souvent la navigation fixe afin qu’elle reste visible pendant le défilement. Dans un PDF, cet élément peut couvrir du contenu ou se répéter sans apporter de valeur. Repliez-le si possible avant la capture. Lorsque le contexte répété est nécessaire, gardez-le compact et vérifiez qu’il n’occupe pas la majeure partie d’une courte page.
+
+Les tableaux et longues listes peuvent nécessiter leurs propres libellés répétés. Un lecteur qui ouvre le document en son milieu doit comprendre les colonnes sans revenir plusieurs pages en arrière. Si la source ne fournit pas d’en-têtes répétables, préservez le tableau sous forme de capture ou divisez-le en groupes plus petits et nommés.
+
+Les notes et références doivent rester faciles à trouver. Conservez les marqueurs de citation avec la phrase concernée et évitez de laisser un court titre de références seul au bas d’une page. Une page légèrement irrégulière vaut mieux qu’une mise en page formellement équilibrée qui sépare la preuve de son explication.
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : choisissez PDF avec Accurate copy lorsque la mise en page d’origine doit rester intacte."}
+  caption={"Choisissez PDF avec Accurate copy lorsque la mise en page d’origine doit rester intacte."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : choisissez PDF avec Accurate copy lorsque la mise en page d’origine doit rester intacte."}
+  src="/blog/instructions/long-webpage-page-breaks/03.svg"
+  step={3}
+/>
+
+## Testez à des tailles d’affichage réalistes
+
+L’aperçu sur ordinateur peut masquer les problèmes de lisibilité parce que la zone de travail est grande. Examinez le PDF approximativement à la taille utilisée par le lecteur, notamment dans une fenêtre d’ordinateur portable et un lecteur PDF mobile si la diffusion mobile compte. Un texte qui exige un zoom constant représente un échec de mise en page, même si aucun caractère n’est coupé.
+
+Recherchez une expression distinctive près de plusieurs limites de page. Dans une sortie modifiable, cela confirme que le texte conserve l’ordre de lecture attendu. Dans une sortie en captures, agrandissez les mêmes emplacements pour repérer les raccords, pixels dupliqués ou lignes manquantes.
+
+Comparez le nombre de pages et de sections au plan de la source. Une hausse inattendue peut signaler un contenu fixe répété ; une baisse inattendue peut indiquer l’omission d’un contenu chargé à la demande. Résolvez l’écart avant le partage.
+
+## Choisissez le format et l’orientation selon le contenu
+
+Les limites sont plus faciles à gérer lorsque les dimensions du document correspondent au contenu dominant. Le portrait convient naturellement aux articles et messages ; le paysage peut donner assez de place aux tableaux larges et chronologies. Mélanger de nombreuses orientations est parfois possible, mais peut gêner la lecture à l’écran et l’impression. Préférez un modèle de lecture clair, sauf si une section précise ne peut pas y fonctionner.
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : ouvrez Preview PDF et examinez les titres, tableaux et légendes aux limites des pages."}
+  caption={"Ouvrez Preview PDF et examinez les titres, tableaux et légendes aux limites des pages."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : ouvrez Preview PDF et examinez les titres, tableaux et légendes aux limites des pages."}
+  src="/blog/instructions/long-webpage-page-breaks/04.svg"
+  step={4}
+/>
+
+Les marges protègent le texte des limites d’impression et séparent visuellement les titres, mais des marges très larges peuvent provoquer des coupures évitables. La réduction présente un compromis similaire. Réduire légèrement une section peut garder une figure avec sa légende ; réduire tout un tableau de bord jusqu’à rendre ses libellés illisibles ne fait que masquer le problème initial.
+
+Lorsqu’une source contient un composant exceptionnellement large, envisagez de capturer ce composant dans une section séparée tout en gardant l’explication environnante modifiable. L’aperçu doit rendre ce compromis évident. L’objectif n’est pas une mise en œuvre uniforme à tout prix, mais un document utilisable.
+
+## Diagnostiquez la forme d’un mauvais saut
+
+Un titre seul au bas d’une page signifie généralement que le titre et son paragraphe d’introduction n’ont pas été traités comme une unité. Une bande répétée à chaque limite indique souvent une interface fixe. Une ligne manquante entre deux pages peut révéler une division visuelle dangereuse, tandis que des lignes dupliquées suggèrent des limites de section qui se chevauchent.
+
+Les tableaux nécessitent un diagnostic distinct. Si les colonnes sont coupées, le problème vient de la largeur ou de l’orientation. Si le lecteur perd la signification des colonnes sur les pages suivantes, il manque du contexte répété. Si des lignes disparaissent, confirmez que le tableau était entièrement rendu et non virtualisé avant de modifier la pagination.
+
+Pour le code et le texte préformaté, préservez volontairement l’indentation et les retours à la ligne. Un retour forcé peut réduire la lisibilité, tandis qu’une coupure horizontale peut masquer des caractères importants. Examinez plusieurs des lignes les plus longues, pas seulement le premier bloc.
+
+## Approuvez systématiquement le PDF final
+
+Commencez par un échantillonnage structurel : première page, dernière page et toute page qui commence ou se termine près d’un tableau, d’une figure, d’un bloc de code ou d’une limite de conversation. Recherchez ensuite les titres du plan source dans la sortie modifiable, ou faites-les correspondre visuellement dans une sortie en images. Cela révèle les omissions qu’un nombre de pages cohérent peut masquer.
+
+Vérifiez le fichier téléchargé dans un lecteur PDF ordinaire, pas uniquement dans l’aperçu. Confirmez la lisibilité au zoom normal, la sélection du texte attendue et le fonctionnement des liens importants. Les données d’aperçu sont temporaires et supprimées à la fermeture de l’onglet ; Page 2 File ne conserve aucun historique. Gardez donc votre fichier approuvé et vos notes lorsque la traçabilité compte.
+
+Si le document échoue encore après avoir changé l’état de la page, réduit la capture et essayé un autre mode, arrêtez-vous et consignez la limite. Une archive partielle clairement délimitée est plus fiable qu’un fichier qualifié de complet lorsque sa source n’a pas pu être rendue sans interruption.
+
+Le [guide des sources de sites web](/fr/blog/website-types-to-pdf-or-powerpoint) traite la préparation propre à chaque page.
+
+<ArticleFigure
+  alt={"Navigateur et extension Page 2 File : revenez à la source, modifiez une seule condition et confirmez la correction des sauts de page."}
+  caption={"Revenez à la source, modifiez une seule condition et confirmez la correction des sauts de page."}
+  closeLabel={"Fermer l’aperçu de l’image"}
+  openLabel={"Ouvrir l’image en taille réelle : revenez à la source, modifiez une seule condition et confirmez la correction des sauts de page."}
+  src="/blog/instructions/long-webpage-page-breaks/05.svg"
+  step={5}
+/>

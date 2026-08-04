@@ -1,9 +1,5 @@
 import type { BackendPublicError } from "@/shared/api/backend-contract";
-import type {
-  Locale,
-  LocalizedPublished,
-} from "@/shared/i18n/locales";
-import { isPublishedLocale } from "@/shared/i18n/locales";
+import type { Locale } from "@/shared/i18n/locales";
 
 type RuntimeCopy = {
   submitPending: string;
@@ -11,7 +7,7 @@ type RuntimeCopy = {
   errors: Record<BackendPublicError["code"], string>;
 };
 
-const runtimeCopy: LocalizedPublished<RuntimeCopy> = {
+const runtimeCopy: Record<"en" | "ru" | "de" | "fr", RuntimeCopy> = {
   en: {
     submitPending: "Starting secure preview…",
     runtimeNotice:
@@ -108,7 +104,115 @@ const runtimeCopy: LocalizedPublished<RuntimeCopy> = {
         "Сервис конвертации временно недоступен. Повторите попытку.",
     },
   },
+  de: {
+    submitPending: "Sichere Vorschau wird gestartet…",
+    runtimeNotice:
+      "Der Dienst lädt die öffentliche URL in einem isolierten Browser. Quelldaten und Dateien sind temporär und werden nicht als Konvertierungsverlauf gespeichert.",
+    errors: {
+      INVALID_REQUEST:
+        "Die Anfrage ist unvollständig oder enthält einen nicht unterstützten Wert.",
+      INVALID_URL:
+        "Geben Sie eine gültige öffentliche URL ein und versuchen Sie es erneut.",
+      UNSUPPORTED_SCHEME: "Es werden nur HTTPS-URLs akzeptiert.",
+      PRIVATE_NETWORK_TARGET:
+        "Private, lokale und interne Infrastrukturadressen sind gesperrt.",
+      DNS_VALIDATION_FAILED:
+        "Das Ziel konnte nicht sicher überprüft werden.",
+      REDIRECT_BLOCKED:
+        "Die Seite hat zu einem nicht zulässigen Ziel weitergeleitet.",
+      SOURCE_REQUIRES_AUTH:
+        "Diese Seite erfordert eine Anmeldung. Verwenden Sie die Erweiterung für den aktiven Tab.",
+      SOURCE_BLOCKED_AUTOMATION:
+        "Die Quelle erlaubt keinen automatisierten Zugriff.",
+      PAGE_TOO_LARGE:
+        "Die Seite überschreitet die unterstützte Größe. Verwenden Sie eine kleinere Quelle.",
+      RESOURCE_LIMIT_EXCEEDED:
+        "Die Seite hat das sichere Ressourcenlimit überschritten.",
+      LOAD_TIMEOUT:
+        "Die Seite wurde vor Ablauf der Verarbeitungszeit nicht stabil.",
+      UNSUPPORTED_HTML:
+        "Der bereitgestellte HTML-Inhalt kann nicht sicher verarbeitet werden.",
+      PREVIEW_EXPIRED:
+        "Diese temporäre Vorschau ist abgelaufen. Starten Sie eine neue Konvertierung.",
+      REVISION_CONFLICT:
+        "Die Vorschau wurde in einer anderen Anfrage geändert. Laden Sie sie neu und versuchen Sie es erneut.",
+      RATE_LIMITED:
+        "Der Dienst ist ausgelastet oder das temporäre Limit wurde erreicht. Versuchen Sie es später erneut.",
+      HUMAN_VERIFICATION_REQUIRED:
+        "Schließen Sie die Überprüfung ab, bevor Sie fortfahren.",
+      RENDER_FAILED:
+        "Das Dokument konnte nicht erstellt werden. Sie können die Konvertierung erneut versuchen.",
+      DOWNLOAD_EXPIRED:
+        "Der temporäre Download ist abgelaufen. Starten Sie eine neue Konvertierung.",
+      UNAUTHORIZED:
+        "Ihre anonyme Sitzung ist abgelaufen. Aktualisieren Sie die Seite und versuchen Sie es erneut.",
+      FORBIDDEN:
+        "Dieser Vorgang ist für die aktuelle Sitzung nicht verfügbar.",
+      NOT_FOUND:
+        "Die temporäre Konvertierung wurde nicht gefunden oder ist abgelaufen.",
+      CONFLICT:
+        "Die Konvertierung ist für diesen Vorgang noch nicht bereit.",
+      INTERNAL_ERROR:
+        "Der Konvertierungsdienst ist vorübergehend nicht verfügbar. Versuchen Sie es erneut.",
+    },
+  },
+  fr: {
+    submitPending: "Démarrage de l’aperçu sécurisé…",
+    runtimeNotice:
+      "Le service charge l’URL publique dans un navigateur isolé. Les données source et les fichiers sont temporaires et ne sont pas conservés comme historique de conversion.",
+    errors: {
+      INVALID_REQUEST:
+        "La demande est incomplète ou contient une valeur non prise en charge.",
+      INVALID_URL:
+        "Saisissez une URL publique valide et réessayez.",
+      UNSUPPORTED_SCHEME: "Seules les URL HTTPS sont acceptées.",
+      PRIVATE_NETWORK_TARGET:
+        "Les adresses privées, locales et d’infrastructure sont bloquées.",
+      DNS_VALIDATION_FAILED:
+        "La destination n’a pas pu être validée de manière sûre.",
+      REDIRECT_BLOCKED:
+        "La page a redirigé la demande vers une destination non autorisée.",
+      SOURCE_REQUIRES_AUTH:
+        "Cette page nécessite une connexion. Utilisez l’extension pour l’onglet actif.",
+      SOURCE_BLOCKED_AUTOMATION:
+        "La source n’autorise pas l’accès automatisé.",
+      PAGE_TOO_LARGE:
+        "La page dépasse la taille prise en charge. Essayez une source plus petite.",
+      RESOURCE_LIMIT_EXCEEDED:
+        "La page a dépassé la limite de ressources autorisée.",
+      LOAD_TIMEOUT:
+        "La page ne s’est pas stabilisée avant la fin du délai de traitement.",
+      UNSUPPORTED_HTML:
+        "Le contenu HTML fourni ne peut pas être traité de manière sûre.",
+      PREVIEW_EXPIRED:
+        "Cet aperçu temporaire a expiré. Lancez une nouvelle conversion.",
+      REVISION_CONFLICT:
+        "L’aperçu a été modifié par une autre demande. Rechargez-le et réessayez.",
+      RATE_LIMITED:
+        "Le service est occupé ou votre limite temporaire a été atteinte. Réessayez plus tard.",
+      HUMAN_VERIFICATION_REQUIRED:
+        "Terminez l’étape de vérification avant de continuer.",
+      RENDER_FAILED:
+        "Le document n’a pas pu être généré. Vous pouvez relancer la conversion.",
+      DOWNLOAD_EXPIRED:
+        "Le téléchargement temporaire a expiré. Lancez une nouvelle conversion.",
+      UNAUTHORIZED:
+        "Votre session anonyme a expiré. Actualisez la page et réessayez.",
+      FORBIDDEN:
+        "Cette opération n’est pas disponible pour la session actuelle.",
+      NOT_FOUND:
+        "La conversion temporaire est introuvable ou a expiré.",
+      CONFLICT:
+        "La conversion n’est pas encore prête pour cette opération.",
+      INTERNAL_ERROR:
+        "Le service de conversion est temporairement indisponible. Réessayez.",
+    },
+  },
 };
 
+const hasRuntimeCopy = (
+  locale: Locale,
+): locale is keyof typeof runtimeCopy => locale in runtimeCopy;
+
 export const getConversionRuntimeCopy = (locale: Locale): RuntimeCopy =>
-  runtimeCopy[isPublishedLocale(locale) ? locale : "en"];
+  runtimeCopy[hasRuntimeCopy(locale) ? locale : "en"];

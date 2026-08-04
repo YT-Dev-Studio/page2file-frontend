@@ -1,0 +1,143 @@
+Eine mehrseitige Website sollte als begrenzte Sammlung und nicht als unbegrenzter Crawl konvertiert werden. Die [Web 2 PDF GPT-App](/de/web2pdf-gpt) findet erreichbare Seiten der Zielwebsite, sendet jede ausgewählte öffentliche URL zur Konvertierung und stellt mehrere PDF-Dateien zum Download bereit.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Erstellen Sie ein begrenztes Verzeichnis der Webseiten, die zum Auftrag gehören."}
+  caption={"Erstellen Sie ein begrenztes Verzeichnis der Webseiten, die zum Auftrag gehören."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Erstellen Sie ein begrenztes Verzeichnis der Webseiten, die zum Auftrag gehören."}
+  src="/blog/instructions/multi-page-website-to-pdf/01.svg"
+  step={1}
+/>
+
+Die App führt nicht unbemerkt das gesamte Web in einem Dokument zusammen. Jede Seite behält ihre eigene Quellgrenze und Ausgabedatei, sodass Fehler und Berechtigungen leichter geprüft werden können.
+
+## Grenzen Sie die Website ein
+
+Beginnen Sie mit dem Host und dem Abschnitt, der zur Sammlung gehören soll. Entscheiden Sie, ob Sprachvarianten, Archive, Suchergebnisse, Tag-Seiten und Duplikate mit Query-Strings aufgenommen werden. Externe Domains bleiben Links, statt zu neuen Crawl-Zielen zu werden.
+
+Eine Sitemap kann Seiten vorschlagen, beweist aber nicht, dass jede URL in den Export gehört. Entfernen Sie Administrationsrouten, Kontoseiten, doppelte Filter und alles, was Sie nicht vervielfältigen dürfen.
+
+## Behalten Sie eine Seite pro Ausgabeauftrag bei
+
+Getrennte PDF-Dateien bewahren die Seitentitel und zeigen eindeutig, welche URL fehlgeschlagen ist oder weitergeleitet wurde. Außerdem verhindert dies, dass eine fehlerhafte Seite einen ansonsten brauchbaren Website-Export ungültig macht.
+
+Benötigt ein Empfänger ein einzelnes Paket, laden Sie die geprüften PDFs herunter und führen Sie sie mit einem geeigneten Dokumentwerkzeug zusammen oder archivieren Sie sie. Web 2 PDF selbst gibt mehrere Dateien zurück, statt ein vermeintlich perfektes zusammengeführtes Website-Dokument zu versprechen.
+
+## Rechnen Sie mit Unterschieden zwischen Seiten
+
+Eine Website kann Artikelvorlagen, Produktraster, Dashboards und eingebettete Medien kombinieren. Wählen Sie Seitenaufnahme oder bearbeitbare Ausgabe passend zum Ziel der jeweiligen Sammlung und prüfen Sie Warnungen zu Schriften, Bildern und Links. Der [Leitfaden zu Website-Typen](/de/blog/website-types-to-pdf-or-powerpoint) hilft bei der Einordnung dieser Quellen.
+
+Authentifizierte Bereiche lassen sich durch öffentliche Ermittlung nicht finden. Erfassen Sie eine erlaubte angemeldete Seite mit der [Erweiterung](/de/chrome-extension/how-to-use), jeweils einen aktiven Tab.
+
+## Prüfen Sie vor der Weitergabe
+
+Kontrollieren Sie URL-Liste, Titel, doppelte Seiten, Weiterleitungen sowie die erste und letzte Seite jedes PDFs. Wenden Sie bei einzelnen langen Quellen die [Prüfung der Seitenumbrüche](/de/blog/long-webpage-page-breaks) an.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Öffnen Sie die erste freigegebene Seite mit By URL."}
+  caption={"Öffnen Sie die erste freigegebene Seite mit By URL."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Öffnen Sie die erste freigegebene Seite mit By URL."}
+  src="/blog/instructions/multi-page-website-to-pdf/02.svg"
+  step={2}
+/>
+
+Ein websiteweiter Export ist eine Kopie veröffentlichter Inhalte. Beachten Sie Robots-Hinweise, Bedingungen der Quelle, Urheberrecht und Ratenbegrenzungen und verwenden Sie ihn nicht zur Umgehung von Zugriffskontrollen.
+
+## Erstellen Sie ein ausdrückliches Seitenverzeichnis
+
+Beginnen Sie mit einer Liste möglicher URLs und dem Grund, warum jede Seite dazugehört. Navigation, Sitemaps und interne Links können beim Auffinden öffentlicher Seiten helfen, doch die Entdeckung beweist nicht, dass jede URL exportiert werden sollte. Schließen Sie doppelte Druckansichten, Tracking-Varianten, Suchergebnisse und Seiten außerhalb des vorgesehenen Bereichs aus.
+
+Normalisieren Sie offensichtliche Varianten vor der Konvertierung. Ein abschließender Schrägstrich, Fragment oder Kampagnenparameter kann auf denselben Inhalt verweisen und dennoch wie eine eigene Seite erscheinen. Behalten Sie Sprach- und Regionalvarianten nur bei, wenn sie bewusst Teil der Sammlung sind.
+
+Erfassen Sie Seiten, die eine Anmeldung, Zustimmung oder Nutzeraktion erfordern. Web 2 PDF arbeitet mit erreichbaren öffentlichen Seiten und umgeht keine Zugriffskontrollen. Erfassen Sie autorisierte private Seiten aus ihren aktiven Browser-Tabs in einem getrennten Ablauf.
+
+## Halten Sie die Sammlung navigierbar
+
+Da das Ergebnis aus einem PDF pro Seite besteht, sind Dateinamen und ein einfacher Index wichtig. Verwenden Sie ein stabiles Namensschema, das Quellabschnitt und Seitentitel erkennen lässt. Verlassen Sie sich nicht auf die Download-Reihenfolge, da Seiten zu unterschiedlichen Zeitpunkten fertig werden können.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wählen Sie PDF und eine einheitliche Ausgaberichtlinie."}
+  caption={"Wählen Sie PDF und eine einheitliche Ausgaberichtlinie."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wählen Sie PDF und eine einheitliche Ausgaberichtlinie."}
+  src="/blog/instructions/multi-page-website-to-pdf/03.svg"
+  step={3}
+/>
+
+Ein Index kann die ursprüngliche URL, das Erfassungsdatum, den Ausgabedateinamen und den Prüfstatus enthalten. So erhält der Empfänger eine Übersicht, ohne dass getrennte Dateien als ein zusammengeführtes Buch ausgegeben werden. Ist eine gemeinsame Publikation erforderlich, führen Sie nur bereits geprüfte PDFs zusammen und dokumentieren Sie die neue Lesereihenfolge.
+
+Bewahren Sie die Herkunft auf Seitenebene. Eine Website kann eine Seite aktualisieren, ohne die übrigen zu ändern; eine an verschiedenen Tagen zusammengestellte Sammlung sollte dies ausweisen. Ein erneuter Lauf über die gesamte Website ist möglicherweise unnötig, wenn sich nur eine kleine Teilmenge geändert hat.
+
+## Prüfen Sie Muster und Ausnahmen
+
+Kontrollieren Sie repräsentative Seiten jeder Vorlage: Startseite, Artikel, Dokumentationsseite, Produktseite und jedes ungewöhnliche Layout. Vorlagenfehler wie abgeschnittene Navigation oder fehlende Schriften wiederholen sich wahrscheinlich und sollten behoben werden, bevor jede Datei einzeln geprüft wird.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wiederholen Sie dieselbe Einzelseiten-Konvertierung für jede freigegebene Adresse."}
+  caption={"Wiederholen Sie dieselbe Einzelseiten-Konvertierung für jede freigegebene Adresse."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wiederholen Sie dieselbe Einzelseiten-Konvertierung für jede freigegebene Adresse."}
+  src="/blog/instructions/multi-page-website-to-pdf/04.svg"
+  step={4}
+/>
+
+Prüfen Sie anschließend seitenspezifische Risiken. Lange Tabellen, Bildergalerien, eingebettete Diagramme und kurze Weiterleitungsseiten können fehlschlagen, selbst wenn die Vorlage korrekt aussieht. Stellen Sie sicher, dass jedes PDF den erwarteten Titel trägt, mit dem vorgesehenen Inhalt beginnt und weder einen Authentifizierungsfehler noch eine Cookie-Wand enthält.
+
+Schließen Sie mit einem Abgleich ab: Die Anzahl akzeptierter Dateien muss mit dem geprüften URL-Verzeichnis übereinstimmen, und jeder Ausschluss benötigt einen Grund. So wird verhindert, dass ein praktischer Download-Ordner für ein vollständiges Website-Archiv gehalten wird.
+
+## Wählen Sie eine Ermittlungsmethode, ohne einen Crawl zu versprechen
+
+Beginnen Sie mit der sichtbaren Navigation der Website, ihrer angegebenen Sitemap und internen Links, die zum gewünschten Abschnitt gehören. Dies sind Ermittlungssignale und keine Aufforderung, jeder URL unbegrenzt zu folgen. Kalender, Facettenfilter und erzeugte Suchseiten können praktisch unbegrenzte Adressräume hervorbringen.
+
+Legen Sie vor der Ermittlung ausdrückliche Regeln fest: erlaubter Host, Pfadpräfix, Sprache, vereinbarter Maximalumfang und Umgang mit Query-Parametern. Stoppen Sie, sobald ein Kandidat außerhalb dieser Regeln liegt. Web 2 PDF wird als Werkzeug beschrieben, das erreichbare Seiten findet und getrennte Dateien erzeugt; es darf nicht als Crawling-API oder Scraper für strukturierte Daten dargestellt werden.
+
+Manche Seiten sind nur über JavaScript-Navigation erreichbar, und einige Sitemap-Einträge funktionieren möglicherweise nicht mehr. Erfassen Sie diese als Funde mit einem Status und entscheiden Sie anschließend, ob sie dazugehören. Ersetzen Sie ein Weiterleitungsziel nicht stillschweigend, wenn sich dadurch das Thema ändert oder die freigegebene Grenze überschritten wird.
+
+## Wählen Sie den Ausgabemodus für eine Sammlung
+
+Ein einheitlicher Modus erleichtert die Verwendung einer Sammlung, doch eine Website kann mehrere Dokumenttypen enthalten. Eine bearbeitbare Ausgabe ist ein guter Standard für Artikel und Dokumentation, da unterstützter Text und Links nutzbar bleiben. Eine Seitenaufnahme eignet sich besser für Designreferenzen, Dashboards und Seiten, deren Komposition Bedeutung trägt.
+
+Kombiniert die Sammlung diese Typen, gruppieren Sie Seiten nach Vorlage oder Zweck und dokumentieren Sie den gewählten Modus für jede Gruppe. Wechseln Sie nicht ohne Regel von Seite zu Seite; Empfänger sollten verstehen können, warum eine Datei durchsuchbar und eine andere bildbasiert ist.
+
+Prüfen Sie repräsentative Seiten in der Vorschau, bevor Sie das gesamte Verzeichnis verarbeiten. Kontrollieren Sie eine gewöhnliche Seite und jede ungewöhnliche Vorlage. Ein wiederkehrender Navigationsfehler oder eine fehlende Schrift sollte auf Musterebene behoben werden, bevor er in Dutzenden Dateien erscheint.
+
+## Behandeln Sie Fehler, ohne das Verzeichnis zu verlieren
+
+Eine nicht erreichbare URL, Weiterleitungsschleife, entfernte Seite oder Darstellungswarnung sollte im Prüfprotokoll sichtbar bleiben. Eine Wiederholung kann helfen, wenn eine Ressource vorübergehend fehlgeschlagen ist, aber sie kann weder eine private Route korrigieren noch eine Seite zugänglich machen, für die Ihnen die Berechtigung fehlt. Kennzeichnen Sie die Seite nach einem geänderten Versuch mit Begründung als akzeptiert, ausgeschlossen oder blockiert.
+
+Die Zahl der Dateien allein beweist keine Vollständigkeit. Gleichen Sie jede mögliche URL mit einem Ausgabedateinamen und Status ab. Suchen Sie nach doppelten Titeln, leeren Fehlerseiten und PDFs, die nur einen Cookie- oder Zugriffshinweis enthalten. Eine technisch herunterladbare Datei kann dennoch eine fehlgeschlagene Konvertierung sein.
+
+Verlassen Sie für angemeldete Inhalte den öffentlichen Sammlungsablauf. Öffnen Sie jede erlaubte Seite in Chrome und verwenden Sie die Erfassung des aktiven Tabs. Die Vorschau ist temporär, wird beim Schließen ihres Tabs gelöscht und nicht in einer Page 2 File Datenbank mit dem Konvertierungsverlauf gespeichert. Private Seiten gehören nicht in eine öffentliche Ermittlungsliste.
+
+## Verpacken Sie das geprüfte Ergebnis
+
+Verwenden Sie Dateinamen, die eindeutig bleiben, wenn sich Seitentitel wiederholen. Eine kurze, vom Pfad abgeleitete Kennung kann zwei „Übersicht“-Seiten unterscheiden, ohne sensible Query-Parameter offenzulegen. Führen Sie ein getrenntes Manifest mit Quell-URL, Titel, Erfassungsdatum, gewähltem Modus, Ausgabedateinamen und Prüfergebnis.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Halten Sie die resultierenden PDFs getrennt und benennen Sie sie anhand ihrer Quellpfade."}
+  caption={"Halten Sie die resultierenden PDFs getrennt und benennen Sie sie anhand ihrer Quellpfade."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Halten Sie die resultierenden PDFs getrennt und benennen Sie sie anhand ihrer Quellpfade."}
+  src="/blog/instructions/multi-page-website-to-pdf/05.svg"
+  step={5}
+/>
+
+Ordnen Sie die PDFs erst in der gewünschten Lesereihenfolge an, nachdem jede Seite abgeglichen wurde. Benötigen Empfänger ein kombiniertes PDF, führen Sie die akzeptierten Dateien mit einem geeigneten Werkzeug zusammen und prüfen Sie Lesezeichen, Seitenfolge und Grenzen der kombinierten Datei. Dieses zusammengeführte Artefakt ist ein getrenntes redaktionelles Ergebnis; Web 2 PDF selbst liefert ein PDF pro gefundener Seite.
+
+Prüfen Sie vor der Übergabe stichprobenartig Links und Seitenumbrüche jeder Vorlage und öffnen Sie jede Datei mit einer Warnung. Geben Sie Umfang und Ausschlüsse zusammen mit der Sammlung an. „Dokumentationsbereich an diesem Datum erfasst, ohne private Kontoseiten und doppelte Sprachvarianten“ ist hilfreicher als „gesamte Website“, wenn die Grenze enger war.
+
+## Pflegen Sie die Sammlung im Zeitverlauf
+
+Websites ändern sich ungleichmäßig. Ein neuer Navigationseintrag kann eine Seite hinzufügen, eine alte URL kann weiterleiten und ein einzelner Artikel kann überarbeitet werden, während der Rest unverändert bleibt. Bewahren Sie das frühere Manifest auf, damit ein späterer Lauf Ergänzungen, Entfernungen und geänderte Quellen erkennen kann, statt einen unerklärten Ordner neu aufzubauen.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Gleichen Sie die Dateien mit einem Manifest ab und erfassen Sie Ausschlüsse oder Fehler."}
+  caption={"Gleichen Sie die Dateien mit einem Manifest ab und erfassen Sie Ausschlüsse oder Fehler."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Gleichen Sie die Dateien mit einem Manifest ab und erfassen Sie Ausschlüsse oder Fehler."}
+  src="/blog/instructions/multi-page-website-to-pdf/06.svg"
+  step={6}
+/>
+
+Versprechen Sie keine kontinuierliche Synchronisierung. Jedes PDF hält den dargestellten Seitenzustand zum Zeitpunkt seiner Erfassung fest. Ist Aktualität wichtig, definieren Sie ein Prüfdatum, wiederholen Sie die Ermittlung mit denselben Grenzregeln und bewahren Sie die beiden Manifeste für den Vergleich getrennt auf.
