@@ -36,8 +36,7 @@ export const WorkflowLanding = ({
   const copy = getMarketingCopy(locale);
   const workflowCopy =
     family === "gpt-workflow" ? copy.gptWorkflow : copy.chatWorkflow;
-  const secondaryHref = `/${locale}/chrome-extension/how-to-use`;
-  const secondaryLabel = copy.landing.openGuide;
+  const showGuideAction = family === "chat-export";
   const relatedRoutes = content.relatedRoutes?.filter(
     (relatedRoute: RelatedRoute): boolean =>
       relatedRoute.route !== content.route,
@@ -116,9 +115,14 @@ export const WorkflowLanding = ({
                   }
                 />
               ) : null}
-              <Link className={uiStyles.secondaryButton} href={secondaryHref}>
-                {secondaryLabel}
-              </Link>
+              {showGuideAction ? (
+                <Link
+                  className={uiStyles.secondaryButton}
+                  href={`/${locale}/chrome-extension/how-to-use`}
+                >
+                  {copy.landing.openGuide}
+                </Link>
+              ) : null}
             </div>
           </PublicHero>
 

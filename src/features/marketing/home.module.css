@@ -652,6 +652,10 @@
   height: 100%;
 }
 
+.informationCard .copyList:where(ol) {
+  padding-inline-start: var(--p2f-space-32);
+}
+
 .howFooter {
   display: flex;
   margin-top: var(--p2f-space-32);
