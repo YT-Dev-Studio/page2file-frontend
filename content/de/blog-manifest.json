@@ -35,6 +35,12 @@
     "description": "Exportieren Sie sichtbare KI-Unterhaltungen aus dem aktiven Browser-Tab, definieren Sie den Nachrichtenbereich, wählen Sie einen PDF-Modus und verstehen Sie temporäre Vorschaudaten.",
     "imageAlt": "Eine private KI-Unterhaltung wird durch ein Schutzschild in PDF übertragen"
   },
+  "export-browser-messenger-chats-to-pdf": {
+    "author": "Page 2 File Redaktion",
+    "title": "Browser-Messenger-Chats als PDF exportieren",
+    "description": "Exportieren Sie sichtbare Chats aus Discord Web, Slack Web, Teams, Messenger oder Instagram-Direktnachrichten und beachten Sie die Grenze ausschließlich nativer Apps.",
+    "imageAlt": "Mehrere Browser-Messenger-Bereiche laufen in PDF-Dokumenten zusammen"
+  },
   "export-chatgpt-conversation-to-pdf": {
     "author": "Page 2 File Redaktion",
     "title": "Eine ChatGPT-Unterhaltung als PDF exportieren",
@@ -52,6 +58,24 @@
     "title": "Einen Gemini-Chat als PDF exportieren",
     "description": "Speichern Sie eine sichtbare Gemini-Unterhaltung mit Quellenangaben und Bildern als PDF, laden Sie die erforderlichen Inhalte und unterscheiden Sie die Erfassung von Google Takeout.",
     "imageAlt": "Ein KI-Chat mit Quellenkarten und Bildern wird zu einem PDF"
+  },
+  "export-other-ai-chats-to-pdf": {
+    "author": "Page 2 File Redaktion",
+    "title": "Grok-, DeepSeek-, Perplexity- oder Copilot-Chats exportieren",
+    "description": "Exportieren Sie sichtbare Grok-, DeepSeek-, Perplexity- oder Copilot-Chats aus einem Browser-Tab und beachten Sie geladene Inhalte, Privatsphäre und Plattformgrenzen.",
+    "imageAlt": "Mehrere generische KI-Chat-Tabs laufen in einem PDF zusammen"
+  },
+  "export-telegram-chat-to-pdf": {
+    "author": "Page 2 File Redaktion",
+    "title": "Einen Telegram-Chat als PDF exportieren",
+    "description": "Bereiten Sie einen Telegram-Web-Chat oder -Kanal vor, laden Sie Antworten und Medien, wählen Sie Seitenaufnahme oder bearbeitbares PDF und prüfen Sie die Nachrichtenbegrenzung.",
+    "imageAlt": "Eine generische Kanalunterhaltung fließt durch ein Schutzschild in ein PDF"
+  },
+  "export-whatsapp-chat-to-pdf": {
+    "author": "Page 2 File Redaktion",
+    "title": "Einen WhatsApp-Chat als PDF exportieren",
+    "description": "Bereiten Sie eine Unterhaltung in WhatsApp Web vor, laden Sie Nachrichten und Medien, wählen Sie einen PDF-Modus und verstehen Sie die Grenze des aktiven Tabs.",
+    "imageAlt": "Eine generische persönliche Web-Messenger-Unterhaltung wird zu einem PDF"
   },
   "html-to-pdf-safely": {
     "author": "Page 2 File Redaktion",

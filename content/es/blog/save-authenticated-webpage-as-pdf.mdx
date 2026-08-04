@@ -1,0 +1,128 @@
+Para guardar como PDF una página web protegida por inicio de sesión, capture la página desde la pestaña autenticada de Chrome. No pegue una URL privada en un conversor público ni proporcione a un servicio de conversión su contraseña o cookie de sesión.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: abra en la pestaña autenticada del navegador el estado exacto del dashboard autorizado."}
+  caption={"Abra en la pestaña autenticada del navegador el estado exacto del dashboard autorizado."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: abra en la pestaña autenticada del navegador el estado exacto del dashboard autorizado."}
+  src="/blog/instructions/save-authenticated-webpage-as-pdf/01.svg"
+  step={1}
+/>
+
+La [extensión Page 2 File](/es/chrome-extension/how-to-use) funciona después de que usted abra explícitamente la página permitida. Prepara una vista previa a partir del contenido renderizado de la pestaña sin crear una cuenta de Page 2 File ni un historial de conversiones.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: elija Current tab; la tarjeta identifica la página que ya está abierta en Chrome."}
+  caption={"Elija Current tab; la tarjeta identifica la página que ya está abierta en Chrome."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: elija Current tab; la tarjeta identifica la página que ya está abierta en Chrome."}
+  src="/blog/instructions/save-authenticated-webpage-as-pdf/02.svg"
+  step={2}
+/>
+
+## Abra el estado exacto que necesita
+
+Seleccione el intervalo del informe, la conversación, el pedido, la lección o la vista del dashboard antes de capturar. Expanda los paneles que deban aparecer en el documento y oculte controles sensibles o registros no relacionados cuando la aplicación de origen lo permita.
+
+El contenido que no se haya cargado no puede capturarse. Desplácese con cuidado por tablas virtualizadas y conversaciones largas, comprobando si las filas anteriores siguen disponibles en la página.
+
+## Mantenga las credenciales fuera del proceso
+
+La extensión utiliza la página que usted ya abrió; nunca debería pedirle que copie una contraseña, una cookie o un encabezado de autorización. Un backend de URL pública no puede reproducir una sesión personal y debe mostrar una advertencia de acceso en lugar de intentar eludirla.
+
+Para fuentes realmente públicas, utilice el [conversor de páginas web a PDF](/es/convert-webpage-to-pdf). La diferencia está en el límite de la fuente, no en la promesa de que un método pueda superar los controles de acceso.
+
+## Elija qué debe conservar el PDF
+
+Accurate copy (salida como capturas) es apropiado cuando importan la interfaz autenticada, la disposición de los gráficos o la agrupación de mensajes. Editable document (salida editable) resulta mejor para texto, tablas, imágenes y enlaces compatibles del informe. Los controles complejos pueden sustituirse por una representación estática.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: elija PDF y el estilo de salida adecuado para el informe."}
+  caption={"Elija PDF y el estilo de salida adecuado para el informe."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: elija PDF y el estilo de salida adecuado para el informe."}
+  src="/blog/instructions/save-authenticated-webpage-as-pdf/03.svg"
+  step={3}
+/>
+
+Revise la decisión en [capturas frente a conversión editable](/es/blog/visual-vs-editable) y después aplique los [pasos de captura de página completa](/es/blog/capture-full-webpage-as-pdf) si la fuente es larga.
+
+## Respete la privacidad después de la captura
+
+Antes de descargar, inspeccione la vista previa en busca de nombres, direcciones de correo, números de cuenta y registros no relacionados. Almacene y comparta el PDF conforme a las reglas de la organización de origen.
+
+Cerrar la pestaña de vista previa de Page 2 File elimina sus datos temporales. Page 2 File no mantiene una base de datos con el historial de conversiones, pero el archivo descargado queda bajo su control.
+
+## Prepare el estado autorizado del navegador
+
+Abra la cuenta, el espacio de trabajo y el registro exactos que quiere capturar. Verifique los nombres de la organización, filtros e intervalos de fechas antes de empezar. Las aplicaciones con sesión iniciada pueden parecerse entre distintos entornos, y un PDF del espacio de trabajo equivocado puede exponer datos aunque el diseño sea correcto.
+
+Cargue el contenido deliberadamente. Expanda los paneles necesarios, desplácese por las listas virtualizadas y espere a que aparezcan gráficos o adjuntos. Cierre notificaciones y barras laterales no relacionadas, pero mantenga los indicadores de estado que demuestren el estado del registro. La extensión captura lo que renderiza la pestaña activa; no recupera filas ocultas de la base de datos.
+
+Evite capturar durante una edición o transacción activa. Guarde primero los cambios cuando la aplicación lo permita y elija un momento estable para dashboards en vivo. Un PDF registra el estado mostrado, no las actualizaciones posteriores de la aplicación.
+
+## Separe las credenciales del contenido capturado
+
+El flujo de pestaña activa significa que no pega contraseñas ni cookies de sesión en un campo de URL pública. No significa que la propia página carezca de identificadores sensibles. Encabezados, menús de perfil, parámetros de consulta y descargas enlazadas pueden revelar más que el documento central.
+
+Inspeccione los destinos de los enlaces para detectar tokens firmados o rutas de recursos privados. Si el destinatario no necesita un enlace, elimine la sección enlazada o distribuya una copia redactada. Cerrar sesión después de la captura no revoca todos los enlaces incrustados en un PDF ya descargado.
+
+Siga las reglas de la aplicación de origen y la política de conservación de su organización. Tener acceso a una página no implica automáticamente permiso para exportarla o compartirla. Para material regulado o confidencial, conserve un registro de aprobación fuera de Page 2 File.
+
+## Valide el límite del documento privado
+
+Compare la vista previa con una lista breve de campos obligatorios y prohibidos. Confirme que el registro necesario esté completo y que no aparezcan clientes adyacentes, mensajes o detalles de navegación. Busque en el PDF editable nombres sensibles que puedan quedar fuera de las primeras páginas visibles.
+
+Después de descargar, cierre la pestaña de vista previa para eliminar sus datos temporales. Guarde entonces el archivo local en la ubicación aprobada y elimine las copias de trabajo que ya no necesite. Page 2 File no tiene una base de datos de historial de conversiones, pero no puede controlar los archivos guardados en su dispositivo o almacenamiento compartido.
+
+Si la aplicación impide una renderización completa o descarga contenido anterior, reduzca el alcance de la captura. Un documento explícitamente parcial y revisado es más seguro que un archivo presentado como completo cuando la vista previa no puede demostrarlo.
+
+## Gestione interfaces virtualizadas y en vivo
+
+Los dashboards, bandejas de entrada y chats con sesión iniciada suelen renderizar solo una ventana de los datos disponibles. Una barra de desplazamiento larga no demuestra que todas las filas o mensajes existan a la vez en la página. Desplácese hasta el límite necesario, vuelva atrás y confirme que el contenido anterior sigue presente.
+
+Cuando la aplicación sustituya material fuera de pantalla, capture intervalos definidos más pequeños o utilice su propia exportación autorizada. Etiquete los registros parciales con inicio, fin y hora de captura. No combine intervalos de forma que oculte huecos o altere su orden.
+
+Los dashboards en vivo pueden actualizarse mientras prepara la captura. Pause la actualización cuando la aplicación ofrezca ese control o registre un momento de captura claro. Mantenga visibles los filtros y la zona horaria seleccionados cuando afecten al significado de un gráfico o total.
+
+## Revise enlaces y adjuntos
+
+Las páginas autenticadas pueden contener URL de descarga firmadas, rutas específicas de la sesión y adjuntos que requieran la misma cuenta. Un enlace PDF puede seguir siendo clicable después de redactar la página visible. Inspeccione el destino de cada enlace relevante antes de compartir el archivo fuera del grupo de acceso original.
+
+Una miniatura o etiqueta de adjunto no demuestra que el archivo subyacente esté incluido. Page 2 File captura el contenido renderizado de la pestaña; no afirma empaquetar adjuntos ocultos ni registros de la aplicación. Abra solo el material que tenga permitido capturar y verifique lo que aparece en la vista previa.
+
+Cuando un enlace vaya a caducar, conserve suficiente información visible de la referencia para que el documento siga siendo comprensible. No copie cookies, encabezados de autorización ni tokens privados en notas para intentar hacer portátil el enlace.
+
+## Use una lista de aprobación para contenido privado
+
+Confirme la cuenta, el espacio de trabajo, el registro, los filtros y el intervalo de tiempo correctos. Compruebe el primer y el último elemento necesarios, todos los paneles expandidos y componentes complejos representativos. Busque nombres, correos, identificadores de cuenta y términos privados en la salida editable; inspeccione visualmente las mismas áreas cuando la sección sea una imagen.
+
+Compruebe después lo que no debe aparecer: registros de navegación no relacionados, vistas previas de notificaciones, clientes vecinos, parámetros de consulta ocultos y datos del perfil. Abra el PDF descargado en un lector corriente y verifique los enlaces importantes con una cuenta que tenga el nivel de acceso previsto.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: inspeccione menús de perfil, vistas previas de notificaciones, registros adyacentes y enlaces firmados."}
+  caption={"Inspeccione menús de perfil, vistas previas de notificaciones, registros adyacentes y enlaces firmados."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: inspeccione menús de perfil, vistas previas de notificaciones, registros adyacentes y enlaces firmados."}
+  src="/blog/instructions/save-authenticated-webpage-as-pdf/04.svg"
+  step={4}
+/>
+
+Documente quién aprobó la captura y dónde puede almacenarse cuando la política de la organización requiera esa evidencia. El límite de privacidad de Page 2 File cubre los datos temporales de la vista previa y la ausencia de una base de datos con historial de conversiones; no sustituye las reglas de acceso del sistema de origen ni su proceso de conservación.
+
+## Sepa cuándo no debe capturar
+
+No utilice la conversión de la pestaña activa para eludir un muro de pago, un control técnico o una política que prohíba la reproducción. No capture datos solo porque su cuenta del navegador pueda mostrarlos. El acceso, la exportación y la redistribución son permisos diferentes.
+
+Si la página no puede estabilizarse, el intervalo necesario no puede permanecer renderizado o la redacción eliminaría contexto esencial, deténgase y elija otro método autorizado. El informe o la exportación de datos propios de la plataforma de origen pueden ser más completos para registros que nunca se diseñaron para coexistir en un único estado del navegador.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: previsualice el PDF, elimine el contexto privado no relacionado y verifique el archivo final."}
+  caption={"Previsualice el PDF, elimine el contexto privado no relacionado y verifique el archivo final."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: previsualice el PDF, elimine el contexto privado no relacionado y verifique el archivo final."}
+  src="/blog/instructions/save-authenticated-webpage-as-pdf/05.svg"
+  step={5}
+/>
+
+La [guía de categorías de sitios web](/es/blog/website-types-to-pdf-or-powerpoint) compara las páginas autenticadas con otras fuentes.

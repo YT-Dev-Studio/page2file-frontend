@@ -7,7 +7,7 @@ describe("HomeExtensionPromo", () => {
     render(<HomeExtensionPromo locale="de" />);
 
     const promo = screen.getByRole("link", {
-      name: /save the current tab.*browse chrome extensions/i,
+      name: /aktuellen tab exportieren.*browse chrome extensions/i,
     });
 
     expect(promo.getAttribute("href")).toBe(

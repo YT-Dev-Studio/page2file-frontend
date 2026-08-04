@@ -1,0 +1,120 @@
+Un PDF de página completa debe contener el documento íntegro que usted pretendía capturar, no solo una pantalla ni todas las recomendaciones infinitas que el sitio sea capaz de cargar. Abra la página, cargue las secciones necesarias, elija un punto final claro y capture desde la pestaña activa con la [extensión Page 2 File](/es/chrome-extension/how-to-use).
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: cargue toda la página desplazable y defina un inicio y un final claros."}
+  caption={"Cargue toda la página desplazable y defina un inicio y un final claros."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: cargue toda la página desplazable y defina un inicio y un final claros."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/01.svg"
+  step={1}
+/>
+
+Para una dirección pública sencilla, basta con el [conversor de página web a PDF](/es/convert-webpage-to-pdf). La extensión establece un límite mejor para páginas con sesión iniciada, conversaciones de IA largas y aplicaciones web cuyo estado solo existe en su navegador.
+
+## Página completa no significa página infinita
+
+Muchos feeds añaden contenido al desplazarse. Decida si el documento termina en una fecha, mensaje, encabezado o sección cargada. Esta decisión evita que la exportación recopile recomendaciones sin relación o active peticiones de red repetidamente.
+
+Una página también puede contener encabezados fijos, botones flotantes de chat y capas de consentimiento. Cierre las capas que tenga permitido descartar. Conserve la navegación solo cuando ayude al lector a entender la fuente.
+
+## Cargue deliberadamente el material dinámico
+
+Desplácese por las imágenes con carga diferida y despliegue los acordeones que desea incluir. En un chat virtualizado, los mensajes antiguos pueden desaparecer del DOM mientras se cargan los nuevos; use los controles propios de la plataforma para mostrar el intervalo necesario antes de la captura. Page 2 File puede capturar contenido renderizado, no registros ocultos de la cuenta.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: despliegue las secciones necesarias y active el contenido con carga diferida antes de capturar."}
+  caption={"Despliegue las secciones necesarias y active el contenido con carga diferida antes de capturar."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: despliegue las secciones necesarias y active el contenido con carga diferida antes de capturar."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/02.svg"
+  step={2}
+/>
+
+Espere a que los gráficos y las fuentes personalizadas se estabilicen. Si la página cambia continuamente, capture un estado estable y anote la fecha de captura en el documento resultante o en el nombre del archivo.
+
+## Convierta la altura en páginas legibles
+
+Una exportación mediante capturas puede conservar cada sección renderizada mientras la vista previa establece los límites del PDF. Evite separar una fila de tabla, una muestra de código o un pie de su imagen. El artículo sobre [saltos en páginas largas](/es/blog/long-webpage-page-breaks) ofrece una secuencia de revisión más detallada.
+
+Si los enlaces y el texto seleccionable importan más que los píxeles exactos, use Editable document (salida editable) e inspeccione cada solución alternativa compleja. La [guía de enlaces clicables](/es/blog/preserve-clickable-links) explica por qué una captura y un documento editable se comportan de forma distinta.
+
+## Una captura privada también exige criterio
+
+Capture únicamente material que tenga permiso para conservar. La extensión no elimina controles de acceso; funciona después de que usted haya abierto legítimamente una página. Tampoco puede capturar una aplicación nativa de escritorio o móvil fuera de Chrome.
+
+La vista previa es temporal. Al cerrar su pestaña se eliminan sus datos, y Page 2 File no mantiene una base de datos con el historial de conversiones.
+
+## Trace un mapa de la página antes de capturarla
+
+Las páginas largas son más fáciles de controlar cuando primero se identifica su estructura. Marque el punto inicial, la última sección necesaria y cualquier componente que solo se cargue después de interactuar. Decida si los comentarios, elementos relacionados, navegación y pies forman parte del registro. «Todo lo que el sitio pueda llegar a cargar» no es un límite útil para un feed infinito.
+
+Preste atención a las zonas de desplazamiento anidadas. Un dashboard puede tener la barra de la página, una tabla con su propia barra y un panel de chat que carga el historial por separado. Una operación de página completa solo puede trabajar con contenido que la pestaña haya renderizado. Abra las filas o mensajes necesarios y confirme que estén presentes antes de la conversión.
+
+Los encabezados adhesivos y controles flotantes pueden repetirse cuando una página larga se divide en secciones. Consérvelos si aportan contexto esencial, como etiquetas de columnas; quítelos o contráigalos si tapan contenido. El objetivo es la continuidad para el lector, no repetir literalmente cada capa del navegador.
+
+## Gestione la carga diferida y la virtualización
+
+La carga diferida retrasa imágenes o paneles hasta que se acercan al área visible. Un recorrido deliberado de arriba abajo suele revelar si la fuente se carga correctamente. Después vuelva al principio. Si las primeras tarjetas han desaparecido, probablemente el sitio esté virtualizando la lista al sustituir nodos fuera de pantalla.
+
+En fuentes virtualizadas, capture un intervalo menor o varias secciones lógicas y verifique cada una. No deduzca que una parte no visible de la página existe en el resultado porque una barra indique más contenido. La vista previa debe mostrar el inicio, el final y el orden reales de cada sección capturada.
+
+Los contadores dinámicos, feeds en vivo y animaciones pueden cambiar durante el recorrido. Pause las actualizaciones si el sitio ofrece un control o elija un momento de captura claro y regístrelo. Un PDF es una instantánea estática; no puede conservar el comportamiento en vivo que produjo el estado mostrado.
+
+## Compruebe la continuidad entre páginas PDF
+
+Inspeccione las transiciones entre páginas para detectar elementos adhesivos repetidos, encabezados recortados, filas duplicadas y contenido oculto tras capas. Una sección legible por sí sola puede seguir siendo confusa si su título aparece dos páginas antes.
+
+Los gráficos y tablas anchos requieren una decisión consciente. Mantener todo el ancho visual puede hacer pequeñas las etiquetas, mientras que dividir el elemento puede eliminar contexto. Si la fuente ofrece una vista compacta, selecciónela antes de capturar. En caso contrario, conserve el elemento visual como una sección y elija una escala que mantenga las etiquetas legibles.
+
+Termine comparando la vista previa con un esquema de la fuente. Cada encabezado necesario debe aparecer una vez y en orden. Si la página es demasiado inestable para superar esta prueba, documente la limitación y capture una parte más estrecha y repetible.
+
+## Diagnostique un resultado de página completa incompleto
+
+Si la vista previa termina demasiado pronto, vuelva a la fuente y localice la primera sección ausente. Un control «cargar más», un panel contraído o una barra anidada suelen necesitar interacción directa. Cuando la página muestre un indicador de carga, espere a que termine y compruebe que el nuevo contenido sigue presente después de alejarse.
+
+Si la vista previa repite contenido, inspeccione los encabezados adhesivos, las filas fijadas de tablas y los componentes que se vuelven a renderizar en límites de sección. Contraiga los elementos fijos no esenciales y repita una captura más pequeña. Cambie una condición cada vez para distinguir si el defecto procede del estado de la página, del intervalo o de la división en secciones.
+
+Si el contenido inicial desaparece tras cargar contenido posterior, probablemente la fuente esté virtualizada. Puede que no exista un único estado del navegador con todo el historial. Defina varios intervalos con un solapamiento claro, captúrelos por separado y etiquete su orden. No presente un registro continuo de página completa cuando la fuente nunca lo renderizó.
+
+## Revise la privacidad antes de descargar
+
+La captura completa puede revelar detalles muy alejados del área visible inicial: menús de cuenta, nombres de participantes, vistas previas de notificaciones, parámetros de consulta y contenido de paneles adyacentes. Recorra toda la vista previa en lugar de suponer que lo que estaba fuera de pantalla es inocuo. Quite secciones innecesarias en la fuente o en la vista previa antes de crear el archivo final.
+
+La extensión trabaja con la pestaña activa del navegador. Los datos de la vista previa son temporales, se eliminan al cerrar su pestaña y no se almacenan en una base de datos de historial de Page 2 File. El PDF descargado queda bajo su control, por lo que debe elegir el nombre, el lugar de almacenamiento y el canal de entrega según la sensibilidad del contenido.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: elija Current tab para que el popup use la página ya abierta en el navegador."}
+  caption={"Elija Current tab para que el popup use la página ya abierta en el navegador."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: elija Current tab para que el popup use la página ya abierta en el navegador."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/03.svg"
+  step={3}
+/>
+
+## Use una lista de comprobación final
+
+Un PDF de página completa está listo cuando su inicio y final coinciden con el límite declarado, cada sección necesaria aparece en orden, ningún bloque se duplica silenciosamente y el texto o detalle visual sigue siendo legible con un zoom normal. Compruebe al menos una transición entre secciones, un componente complejo y un enlace importante.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: elija PDF y el estilo de salida que corresponda al objetivo de revisión."}
+  caption={"Elija PDF y el estilo de salida que corresponda al objetivo de revisión."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: elija PDF y el estilo de salida que corresponda al objetivo de revisión."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/04.svg"
+  step={4}
+/>
+
+Registre la URL de origen y la fecha de captura cuando la página pueda cambiar. Para material autenticado, evite incluir secretos o identificadores de sesión en el nombre del archivo o en notas adjuntas. Si falta contenido necesario en la vista previa, la captura está incompleta aunque el PDF resultante se abra sin errores.
+
+Conserve el esquema de la fuente junto al archivo aprobado cuando otra persona deba verificar más adelante el límite de captura.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: abra Preview y verifique la primera sección, la última y las que cruzan límites."}
+  caption={"Abra Preview y verifique la primera sección, la última y las que cruzan límites."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: abra Preview y verifique la primera sección, la última y las que cruzan límites."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/05.svg"
+  step={5}
+/>
+
+Para preparar cada tipo de fuente, consulte la [guía de exportación de sitios web](/es/blog/website-types-to-pdf-or-powerpoint).

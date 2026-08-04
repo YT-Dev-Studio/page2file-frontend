@@ -1,0 +1,155 @@
+Webpagina-opname maakt een document dat een persoon kan lezen. Webscraping extraheert gestructureerde gegevens die software kan verwerken. Page 2 File is een opname- en conversieproduct; het is geen scraping-API, monitoringcrawler of datapijplijn.
+
+<ArticleFigure
+  alt={"Browser en Page 2 File-extensie: open een representatieve bronpagina en definieer het vereiste uitvoercontract."}
+  caption={"Open een representatieve bronpagina en definieer het vereiste uitvoercontract."}
+  closeLabel={"Afbeeldingsvoorbeeld sluiten"}
+  openLabel={"Afbeelding op volledig formaat openen: open een representatieve bronpagina en definieer het vereiste uitvoercontract."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/01.svg"
+  step={1}
+/>
+
+Gebruik Page 2 File wanneer het vereiste resultaat een PDF of PowerPoint is die zichtbare inhoud en, waar ondersteund, tekst, afbeeldingen en links behoudt. Gebruik een scrapingtool wanneer u rijen, velden, terugkerende verzameling of machineleesbare uitvoer nodig hebt.
+
+## Wat opname behoudt
+
+Opname als pagina-afbeelding legt compositie, kleur, grafiekplaatsing en berichtgroepering vast. Bewerkbare conversie reconstrueert ondersteunde documentelementen. Beide beginnen met een gerenderde browserpagina en richten zich op een menselijk leesbaar bestand.
+
+<ArticleFigure
+  alt={"Browser en Page 2 File-extensie: gebruik Current tab of By URL wanneer het eindproduct een menselijk leesbaar document is."}
+  caption={"Gebruik Current tab of By URL wanneer het eindproduct een menselijk leesbaar document is."}
+  closeLabel={"Afbeeldingsvoorbeeld sluiten"}
+  openLabel={"Afbeelding op volledig formaat openen: gebruik Current tab of By URL wanneer het eindproduct een menselijk leesbaar document is."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/02.svg"
+  step={2}
+/>
+
+De [handleiding voor websitetypen](/nl/blog/website-types-to-pdf-or-powerpoint) noemt geschikte bronnen. Openbare pagina's gebruiken een converter; privé actieve tabbladen gebruiken de [extensie](/nl/chrome-extension/how-to-use).
+
+## Waarvoor scraping is ontworpen
+
+Scrapers identificeren selectors of data-endpoints, normaliseren velden en draaien vaak herhaaldelijk. Ze kunnen catalogi pagineren, prijzen volgen of een database voeden. Zulke taken vereisen expliciete frequentielimieten, wijzigingsafhandeling, deduplicatie en een rechtsgrond.
+
+Een PDF van een productraster is geen prijsdataset. Een visuele kopie van een dashboard is niet de onderliggende metriek-API. Documentopname scraping noemen zou de verkeerde verwachting wekken.
+
+## Kies vanuit het uitvoercontract
+
+Als een collega de bron moet lezen, citeren, afdrukken of presenteren, past opname. Als software de bron automatisch moet sorteren, aggregeren of bijwerken, past gestructureerde extractie.
+
+Begin voor één leesbare pagina bij [webpagina naar PDF](/nl/blog/save-webpage-as-pdf). Bekijk voor een begrensde websiteverzameling [website met meerdere pagina's naar PDF](/nl/blog/multi-page-website-to-pdf).
+
+## Respecteer de bron bij beide methoden
+
+Toegangsrechten, auteursrecht, persoonsgegevens en platformvoorwaarden gelden voor beide methoden. Een login geeft geen toestemming om alles wat na aanmelding zichtbaar is te verspreiden. Geautomatiseerde verzameling heeft bovendien operationele gevolgen voor de bronservice.
+
+Page 2 File omzeilt geen authenticatie en legt geen verborgen paginagegevens bloot. Het converteert toegestane gerenderde inhoud na een expliciete gebruikershandeling.
+
+## Vergelijk de uitvoercontracten
+
+Opname produceert een op mensen gericht document of slide deck. Succescriteria zijn onder meer visuele continuïteit, leesvolgorde, paginagrenzen, links en broncontext. Het resultaat is bedoeld voor lezen, presenteren of archiveren.
+
+Scraping produceert velden, records of ruwe inhoud voor software. Succescriteria zijn onder meer schemastabiliteit, identificatoren, deduplicatie, pagineringsafhandeling en machineleesbare fouten. Een prachtige PDF is een slechte API-respons, en een JSON-dataset is geen trouw visueel verslag.
+
+Schrijf de gewenste uitvoer op voordat u een methode kiest. Als de eis luidt ‘toon exact wat het dashboard op deze datum weergaf’, past opname. Als de eis luidt ‘verzamel elke dag de prijs van ieder product’, is dat een probleem van gegevensextractie en monitoring.
+
+## Begrijp de grenzen van dynamische pagina's
+
+Beide methoden krijgen te maken met lazy loading, virtualisatie en authenticatie, maar behandelen deze anders. Opname vereist dat de benodigde toestand zichtbaar wordt gerenderd. Een scraper kan een geautoriseerde API aanroepen of brongegevens verwerken zonder de visuele interface te reproduceren.
+
+Een Chrome-extensie kan een actief aangemeld tabblad vastleggen nadat de gebruiker het opent. Dat legt geen verborgen toepassingsrecords bloot en creëert geen algemene crawlreferentie. Geautomatiseerd scrapen van geauthenticeerde systemen vereist expliciete toestemming, veilige verwerking van aanmeldgegevens en een afzonderlijk operationeel ontwerp.
+
+Interactieve grafieken illustreren het verschil. Opname kan de geselecteerde grafiektoestand visueel registreren. Scraping vereist toegang tot de onderliggende waarden en een schema dat ze verklaart. Page 2 File belooft die extractie niet.
+
+## Schat onderhoud en risico in
+
+Een opnameworkflow verandert wanneer lay-out, paginering of renderinggedrag verandert. Een scrapingworkflow verandert wanneer markup, API's, schema's, frequentielimieten of anti-automatiseringsmaatregelen veranderen. Geen van beide is onderhoudsvrij, maar de foutmodi verschillen.
+
+Scraping op schaal kan de broninfrastructuur beïnvloeden en kan begrenzing, een retrybeleid, robotsafhandeling en juridische controle vereisen. Handmatige of expliciete opname vereist nog steeds toestemming, een auteursrechtafweging en bescherming van persoonsgegevens.
+
+Vermijd hybride claims die verantwoordelijkheid verhullen. Een browser gebruiken maakt een scraper geen documentconverter, en bewerkbare conversie selecteren maakt Page 2 File geen service voor gestructureerde gegevens.
+
+## Kies een beoordelingsmethode
+
+Beoordeel opname door de PDF of PPTX met de zichtbare brontoestand te vergelijken. Controleer volledigheid, leesbaarheid, links en privacy. Beoordeel scraping door velden tegen een schema te valideren, bronrecords te bemonsteren en extractiefouten te volgen.
+
+Als een project beide nodig heeft, houdt u de eindproducten gescheiden. Gebruik een geautoriseerde gegevensbron voor analyse en een opname als visueel bewijs en leg vast hoe elk is gemaakt. Leid geen machinegegevens af uit afbeeldingen wanneer exacte waarden belangrijk zijn.
+
+De keuze wordt duidelijk wanneer acceptatiecriteria vanuit de ontvanger worden geschreven: een persoon leest of presenteert het vastgelegde document; software gebruikt de gescrapete records.
+
+## Vergelijk representatieve taken
+
+Een analist die een visueel verslag van een geselecteerde dashboardtoestand nodig heeft, heeft opname nodig. De PDF moet filters, labels, grafiekcontext en opnametijd behouden. Een analist die iedere onderliggende waarde voor berekeningen nodig heeft, heeft een geautoriseerde API of extractieworkflow met een gedefinieerd schema nodig.
+
+Een onderzoeker die één artikel archiveert, kan doorzoekbare tekst, citaten en paginaherkomst nodig hebben. Een team dat duizenden artikeltitels volgt, heeft gestructureerde records, deduplicatie en updatelogica nodig. Een salesteam dat een openbare productpagina presenteert, kan PPTX-dia's nodig hebben; een prijsmonitor heeft genormaliseerde velden en geplande verzameling nodig.
+
+AI-chats en gesprekken in browsermessengers volgen hetzelfde onderscheid. Page 2 File kan een leesbaar document maken van geautoriseerde berichten die in het actieve tabblad zijn gerenderd. Het ontsluit geen verborgen accountgeschiedenis, bericht-API's of gestructureerde gespreksdataset.
+
+## Stel operationele vragen voordat u scraping kiest
+
+Gestructureerde extractie vereist meer dan selectors kiezen. Definieer toestemming, aanvraagvolume, frequentielimieten, authenticatie, schema-eigenaarschap, bewaring en foutdetectie. Bepaal wat er gebeurt wanneer een veld verdwijnt, een pagina van taal verandert of de bron meerdere varianten teruggeeft.
+
+Geef de voorkeur aan een officiële API of ondersteunde export wanneer die de vereiste gegevens levert. Als scraping is toegestaan en nodig is, gebruikt u een systeem dat is ontworpen voor machineleesbare uitvoer en operationele bediening. Page 2 File mag niet als snelkoppeling van afbeelding naar gegevens worden ingevoegd.
+
+Opname heeft een eigen voorbereiding: stabiliseer de zichtbare toestand, definieer de grens, kies pagina-opnamen of bewerkbare uitvoer en inspecteer het voorbeeld. De operationele reikwijdte is kleiner omdat het resultaat een document is, maar auteursrecht, persoonsgegevens en verspreidingsrechten blijven gelden.
+
+<ArticleFigure
+  alt={"Browser en Page 2 File-extensie: kies de uitvoerstijl volgens vereisten voor nauwkeurigheid, zoeken en links."}
+  caption={"Kies de uitvoerstijl volgens vereisten voor nauwkeurigheid, zoeken en links."}
+  closeLabel={"Afbeeldingsvoorbeeld sluiten"}
+  openLabel={"Afbeelding op volledig formaat openen: kies de uitvoerstijl volgens vereisten voor nauwkeurigheid, zoeken en links."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/03.svg"
+  step={3}
+/>
+
+## Vermijd misleidende hybride workflows
+
+Optische tekenherkenning of tekst uit een PDF kopiëren kan nuttig zijn voor toegankelijkheid of citaten, maar maakt het bestand geen betrouwbare brondatabase. Lay-out, herhaalde headers en alternatieve pagina-afbeeldingen kunnen ontbrekende of dubbele waarden veroorzaken.
+
+Een scraper kan eveneens screenshots voor foutopsporing bewaren zonder een redactioneel beoordeeld document te produceren. Als een project gestructureerde gegevens plus visueel bewijs nodig heeft, genereert en valideert u ieder artefact via de passende workflow en verbindt u ze daarna met bronidentificatoren en opnamedatums.
+
+Beschrijf bewerkbare webpaginaconversie niet als scraping. Ondersteunde tekst, afbeeldingen en links worden documentelementen voor lezen en bewerken, geen genormaliseerde velden met een stabiel schema of terugkerend verzamelcontract.
+
+## Gebruik verschillende acceptatiecriteria
+
+Stem voor opname het document af op de zichtbare bronomtrek. Controleer begin- en eindgrenzen, leesvolgorde, leesbaarheid, links, alternatieven en privé-informatie. Leg brontoestand en datum vast wanneer herkomst belangrijk is.
+
+Valideer voor scraping vereiste velden, gegevenstypen, unieke identificatoren, pagineringsdekking, dubbele verwerking en fouten tegen een specificatie. Controleer steekproefrecords bij de gezaghebbende bron en volg wijzigingen in de tijd. Alleen een aantal rijen bewijst geen juistheid.
+
+Als beide eindproducten worden gemaakt, neemt u niet aan dat het ene het andere automatisch valideert. Een screenshot kan context van een steekproefrecord tonen, maar kan een ander tijdstip, filter of andere sessie weerspiegelen. Behoud deze grenzen in het beoordelingsrecord.
+
+## Beslis met een geschreven uitvoercontract
+
+Schrijf één zin met ontvanger en artefact. ‘Een reviewer heeft een PDF nodig die deze geautoriseerde dashboardtoestand toont’ wijst op opname. ‘Onze toepassing heeft dagelijkse productprijzen als records nodig’ wijst op een geautoriseerde gegevensbron of scrapesysteem. ‘Een presentator heeft bewerkbare dia's uit dit rapport nodig’ wijst op webpagina-naar-PowerPoint-conversie.
+
+<ArticleFigure
+  alt={"Browser en Page 2 File-extensie: beoordeel de PDF of PPTX als gerenderd communicatie-artefact."}
+  caption={"Beoordeel de PDF of PPTX als gerenderd communicatie-artefact."}
+  closeLabel={"Afbeeldingsvoorbeeld sluiten"}
+  openLabel={"Afbeelding op volledig formaat openen: beoordeel de PDF of PPTX als gerenderd communicatie-artefact."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/04.svg"
+  step={4}
+/>
+
+Noem vervolgens uitsluitingen. Page 2 File biedt geen crawling-API, monitoringsschema, gestructureerde extractie of toegang tot verborgen gegevens. Een scraper levert niet automatisch een leesbare, gepagineerde of presentatieklare weergave van de bron.
+
+<ArticleFigure
+  alt={"Browser en Page 2 File-extensie: gebruik een geautoriseerd datasysteem wanneer gestructureerde records het eindproduct zijn."}
+  caption={"Gebruik een geautoriseerd datasysteem wanneer gestructureerde records het eindproduct zijn."}
+  closeLabel={"Afbeeldingsvoorbeeld sluiten"}
+  openLabel={"Afbeelding op volledig formaat openen: gebruik een geautoriseerd datasysteem wanneer gestructureerde records het eindproduct zijn."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/05.svg"
+  step={5}
+/>
+
+Dit expliciete contract maakt ook gemengde projecten eenvoudiger af te bakenen. Opname en scraping kunnen naast elkaar bestaan, maar blijven aparte systemen met verschillende risico's, onderhoud en bewijs.
+
+Beoordeel het contract opnieuw wanneer het eindproduct verandert. Een aanvraag die als presentatie begint, kan later een terugkerende dataset worden; daarvoor is een nieuwe geautoriseerde dataworkflow nodig in plaats van herhaalde documentconversie.
+
+<ArticleFigure
+  alt={"Browser en Page 2 File-extensie: behandel Page 2 File niet als crawler, monitoringservice of API voor verborgen gegevens."}
+  caption={"Behandel Page 2 File niet als crawler, monitoringservice of API voor verborgen gegevens."}
+  closeLabel={"Afbeeldingsvoorbeeld sluiten"}
+  openLabel={"Afbeelding op volledig formaat openen: behandel Page 2 File niet als crawler, monitoringservice of API voor verborgen gegevens."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/06.svg"
+  step={6}
+/>

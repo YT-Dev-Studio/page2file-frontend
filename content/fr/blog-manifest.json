@@ -35,6 +35,12 @@
     "description": "Exportez les conversations IA visibles depuis l’onglet actif, définissez la plage de messages, choisissez un mode PDF et comprenez les données temporaires de l’aperçu.",
     "imageAlt": "Une conversation IA privée passe à travers un bouclier vers un PDF"
   },
+  "export-browser-messenger-chats-to-pdf": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment exporter les chats des messageries Web en PDF",
+    "description": "Exportez les chats visibles de Discord Web, Slack Web, Teams, Messenger ou Instagram et comprenez pourquoi les applications uniquement natives sont exclues.",
+    "imageAlt": "Plusieurs panneaux de messageries Web convergent vers des documents PDF"
+  },
   "export-chatgpt-conversation-to-pdf": {
     "author": "Rédaction Page 2 File",
     "title": "Comment exporter une conversation ChatGPT en PDF",
@@ -52,6 +58,24 @@
     "title": "Comment exporter un chat Gemini en PDF",
     "description": "Enregistrez une conversation Gemini visible avec citations et images en PDF, chargez le contenu requis et distinguez la capture de Google Takeout.",
     "imageAlt": "Un chat IA avec des cartes source et des images devient un PDF"
+  },
+  "export-other-ai-chats-to-pdf": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment exporter des chats Grok, DeepSeek, Perplexity ou Copilot",
+    "description": "Exportez les chats Grok, DeepSeek, Perplexity ou Copilot visibles depuis un onglet tout en respectant le contenu chargé, la confidentialité et les limites.",
+    "imageAlt": "Plusieurs onglets génériques de chats IA convergent vers un PDF"
+  },
+  "export-telegram-chat-to-pdf": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment exporter un chat Telegram en PDF",
+    "description": "Préparez un chat ou canal Telegram Web, chargez les réponses et médias, choisissez une capture ou un PDF modifiable et vérifiez la limite des messages.",
+    "imageAlt": "Une conversation générique de canal traverse un bouclier vers un PDF"
+  },
+  "export-whatsapp-chat-to-pdf": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment exporter un chat WhatsApp en PDF",
+    "description": "Préparez une conversation dans WhatsApp Web, chargez les messages et médias requis, choisissez un mode PDF et comprenez la limite de l’onglet actif.",
+    "imageAlt": "Une conversation personnelle générique dans une messagerie web devient un PDF"
   },
   "html-to-pdf-safely": {
     "author": "Rédaction Page 2 File",

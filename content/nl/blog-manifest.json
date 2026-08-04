@@ -1,0 +1,110 @@
+{
+  "capture-full-webpage-as-pdf": {
+    "author": "Redactie Page 2 File",
+    "title": "Een volledige webpagina als PDF vastleggen",
+    "description": "Leg een volledig scrollbare webpagina vast als PDF door de grens te bepalen, dynamische secties te laden en pagina-einden te controleren.",
+    "imageAlt": "Een volledige scrollbare browserpagina stroomt over in een PDF-document"
+  },
+  "export-ai-chats-privately": {
+    "author": "Redactie Page 2 File",
+    "title": "AI-chats privé naar PDF exporteren",
+    "description": "Exporteer zichtbare AI-gesprekken vanuit een actief browsertabblad, definieer het berichtbereik, kies een PDF-modus en begrijp tijdelijke voorbeeldgegevens.",
+    "imageAlt": "Een privé-AI-gesprek gaat via een schild naar PDF"
+  },
+  "export-chatgpt-conversation-to-pdf": {
+    "author": "Redactie Page 2 File",
+    "title": "Een ChatGPT-gesprek naar PDF exporteren",
+    "description": "Bereid een zichtbaar ChatGPT-gesprek voor, laad het benodigde bereik, kies pagina-opnamen of bewerkbare PDF en onderscheid tabbladopname van accountexport.",
+    "imageAlt": "Een algemeen AI-gesprek in de browser wordt een PDF-document"
+  },
+  "html-to-pdf-safely": {
+    "author": "Redactie Page 2 File",
+    "title": "HTML veilig naar PDF converteren",
+    "description": "Converteer een geüpload HTML-bestand naar PDF en behandel scripts, externe bronnen, bestandstoegang en privénetwerkdoelen als beveiligingsgrenzen.",
+    "imageAlt": "HTML-inhoud wordt geïsoleerd voordat er een nette PDF van wordt gemaakt"
+  },
+  "html-to-powerpoint": {
+    "author": "Redactie Page 2 File",
+    "title": "HTML-webinhoud naar PowerPoint converteren",
+    "description": "Zet gerenderde HTML-webinhoud om in PowerPoint door bruikbare secties, pagina-opnamen of bewerkbare dia’s te kiezen en complexe alternatieven te controleren.",
+    "imageAlt": "Gerenderde HTML-blokken gaan vanuit de browser naar dia’s"
+  },
+  "long-webpage-page-breaks": {
+    "author": "Redactie Page 2 File",
+    "title": "Een lange webpagina converteren zonder slechte pagina-einden",
+    "description": "Bereid lange webpagina’s voor als PDF, houd koppen en tabellen bijeen, laad dynamische inhoud en corrigeer lastige grenzen in het sectievoorbeeld.",
+    "imageAlt": "Een lange webpagina wordt bij leesbare PDF-paginagrenzen verdeeld"
+  },
+  "multi-page-website-to-pdf": {
+    "author": "Redactie Page 2 File",
+    "title": "Een website met meerdere pagina’s naar PDF converteren",
+    "description": "Zet toegankelijke pagina’s van één website om in afzonderlijke PDF’s, bepaal de ontdekkingsgrens, controleer fouten en beloof geen samengevoegd document.",
+    "imageAlt": "Een websitekaart wordt omgezet in meerdere afzonderlijke PDF-documenten"
+  },
+  "preserve-clickable-links": {
+    "author": "Redactie Page 2 File",
+    "title": "Klikbare links in een webpagina-PDF behouden",
+    "description": "Ontdek wanneer webpaginalinks klikbaar blijven in PDF, waarom pagina-opnamen interactie afvlakken en hoe bewerkbare uitvoer veilige doelen behandelt.",
+    "imageAlt": "Browserlinks worden in een bewerkbaar PDF-document overgenomen"
+  },
+  "save-authenticated-webpage-as-pdf": {
+    "author": "Redactie Page 2 File",
+    "title": "Een webpagina achter een login als PDF opslaan",
+    "description": "Sla een aangemelde webpagina op vanuit het actieve Chrome-tabblad zonder uw aanmeldgegevens aan een URL-converter te geven en controleer privacy- en opnamegrenzen.",
+    "imageAlt": "Een beschermd browsertabblad wordt een privé-PDF-kopie"
+  },
+  "save-webpage-as-pdf": {
+    "author": "Redactie Page 2 File",
+    "title": "Een webpagina opslaan als PDF",
+    "description": "Sla een openbare of aangemelde webpagina op als PDF, kies pagina-opnamen of bewerkbare uitvoer en controleer de pagina-einden.",
+    "imageAlt": "Een lange browserpagina verandert in een geordende stapel PDF-pagina’s"
+  },
+  "sections-to-slides": {
+    "author": "Redactie Page 2 File",
+    "title": "Hoe webpaginasecties PowerPoint-dia’s worden",
+    "description": "Gebruik de webhiërarchie voor diagrenzen, behoud context, splits dichte secties en controleer pagina-opnamen of bewerkbare PowerPoint-uitvoer.",
+    "imageAlt": "Webpaginasecties worden als afzonderlijke PowerPoint-dia’s geordend"
+  },
+  "screenshot-vs-editable-powerpoint": {
+    "author": "Redactie Page 2 File",
+    "title": "Opgenomen dia’s tegenover bewerkbare PowerPoint",
+    "description": "Vergelijk pagina-opnamen met bewerkbare PowerPoint-uitvoer voor lay-outnauwkeurigheid, selecteerbare tekst, links, grafieken, onderhoud en toegankelijkheid.",
+    "imageAlt": "Opgenomen dia’s worden vergeleken met bewerkbare PowerPoint-elementen"
+  },
+  "why-print-to-pdf-breaks": {
+    "author": "Redactie Page 2 File",
+    "title": "URL naar PDF of afdrukken in de browser: wat legt meer vast?",
+    "description": "Vergelijk URL-naar-PDF-conversie met Afdrukken in de browser voor afdrukstijlen, uitgestelde inhoud, privétabbladen, visuele nauwkeurigheid en bewerkbare uitvoer.",
+    "imageAlt": "Een afdrukroute in de browser wordt vergeleken met een route voor webpagina-opname"
+  },
+  "visual-vs-editable": {
+    "author": "Redactie Page 2 File",
+    "title": "Pagina-opnamen tegenover bewerkbare webpaginaconversie",
+    "description": "Kies tussen nauwkeurige pagina-opnamen en bewerkbare conversie door tekst, links, afbeeldingen, grafieken, lay-outs en PowerPoint-uitvoer te vergelijken.",
+    "imageAlt": "Een opgenomen webpagina wordt vergeleken met bewerkbare documentblokken"
+  },
+  "webpage-capture-vs-web-scraping": {
+    "author": "Redactie Page 2 File",
+    "title": "Webpagina-opname tegenover webscraping: wat hebt u nodig?",
+    "description": "Kies webpagina-opname voor een leesbaar afbeeldingsdocument of webscraping voor gestructureerde gegevens en behandel Page 2 File niet als crawler-API.",
+    "imageAlt": "Een browserpagina vertakt naar een document en een gegevenstabel"
+  },
+  "webpage-to-powerpoint": {
+    "author": "Redactie Page 2 File",
+    "title": "Een webpagina naar PowerPoint converteren",
+    "description": "Converteer één webpagina naar PowerPoint, kies pagina-opnamen of bewerkbare dia’s, definieer bruikbare secties en controleer de PPTX vóór download.",
+    "imageAlt": "Eén webpagina wordt herschikt tot een PowerPoint-presentatie"
+  },
+  "website-to-powerpoint": {
+    "author": "Redactie Page 2 File",
+    "title": "Een website naar PowerPoint converteren",
+    "description": "Converteer toegankelijke websitepagina’s naar afzonderlijke PowerPoint-bestanden, houd de paginagrens expliciet en controleer opgenomen of bewerkbare dia’s.",
+    "imageAlt": "Een websitekaart stroomt over in afzonderlijke PowerPoint-presentaties"
+  },
+  "website-types-to-pdf-or-powerpoint": {
+    "author": "Redactie Page 2 File",
+    "title": "Welke soorten websites kunt u naar PDF of PowerPoint exporteren?",
+    "description": "Bekijk hoe artikelen, documentatie, dashboards, winkels, leerpagina’s, webapps, AI-chats en browsermessengers bij PDF- of PowerPoint-export passen.",
+    "imageAlt": "Verschillende soorten websites komen samen in PDF-documenten en presentaties"
+  }
+}

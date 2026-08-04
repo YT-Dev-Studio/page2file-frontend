@@ -1,0 +1,110 @@
+{
+  "capture-full-webpage-as-pdf": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo capturar una página web completa como PDF",
+    "description": "Capture una página web desplazable completa como PDF definiendo su límite, cargando las secciones dinámicas y revisando los saltos de página.",
+    "imageAlt": "Una página completa y desplazable del navegador fluye hacia un documento PDF"
+  },
+  "export-ai-chats-privately": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo exportar chats de IA a PDF de forma privada",
+    "description": "Exporte conversaciones de IA visibles desde una pestaña activa, defina el intervalo de mensajes, elija un modo PDF y comprenda los datos temporales de la vista previa.",
+    "imageAlt": "Una conversación privada de IA pasa por un escudo hacia PDF"
+  },
+  "export-chatgpt-conversation-to-pdf": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo exportar una conversación de ChatGPT a PDF",
+    "description": "Prepare una conversación visible de ChatGPT, cargue el intervalo necesario, elija capturas o PDF editable y distinga la captura de pestaña de la exportación de cuenta.",
+    "imageAlt": "Una conversación genérica de IA en el navegador se convierte en un documento PDF"
+  },
+  "html-to-pdf-safely": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo convertir HTML a PDF de forma segura",
+    "description": "Convierta un archivo HTML cargado a PDF tratando scripts, recursos remotos, acceso a archivos y destinos de red privada como límites de seguridad.",
+    "imageAlt": "El contenido HTML se aísla antes de convertirse en un PDF limpio"
+  },
+  "html-to-powerpoint": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo convertir contenido web HTML a PowerPoint",
+    "description": "Lleve contenido HTML renderizado a PowerPoint seleccionando secciones útiles, capturas o diapositivas editables y revisando alternativas complejas.",
+    "imageAlt": "Bloques HTML renderizados pasan del navegador a diapositivas"
+  },
+  "long-webpage-page-breaks": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo convertir una página web larga sin saltos defectuosos",
+    "description": "Prepare páginas web largas para PDF, mantenga juntos encabezados y tablas, cargue contenido dinámico y corrija límites incómodos en la vista previa.",
+    "imageAlt": "Una página web larga se divide en límites de página PDF legibles"
+  },
+  "multi-page-website-to-pdf": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo convertir un sitio web de varias páginas a PDF",
+    "description": "Convierta páginas accesibles de un sitio en PDF separados, defina el límite de descubrimiento, revise fallos y no prometa un documento combinado.",
+    "imageAlt": "El mapa de un sitio se convierte en varios documentos PDF separados"
+  },
+  "preserve-clickable-links": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo conservar enlaces clicables en el PDF de una página web",
+    "description": "Descubra cuándo los enlaces siguen siendo clicables en PDF, por qué las capturas aplanan la interacción y cómo la salida editable gestiona destinos seguros.",
+    "imageAlt": "Los enlaces del navegador pasan a un documento PDF editable"
+  },
+  "save-authenticated-webpage-as-pdf": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo guardar como PDF una página web protegida por inicio de sesión",
+    "description": "Guarde una página con sesión iniciada desde la pestaña activa de Chrome sin entregar sus credenciales a un conversor de URL y revise los límites de privacidad y captura.",
+    "imageAlt": "Una pestaña protegida del navegador se convierte en una copia PDF privada"
+  },
+  "save-webpage-as-pdf": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo guardar una página web como PDF",
+    "description": "Guarde una página web pública o autenticada como PDF, elija capturas de página o una salida editable y revise los saltos de página.",
+    "imageAlt": "Una página larga del navegador se convierte en una pila ordenada de páginas PDF"
+  },
+  "sections-to-slides": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo las secciones web se convierten en diapositivas PowerPoint",
+    "description": "Use la jerarquía web para definir límites, conservar contexto, dividir secciones densas y revisar capturas o salida PowerPoint editable.",
+    "imageAlt": "Las secciones de una página se organizan como diapositivas PowerPoint separadas"
+  },
+  "screenshot-vs-editable-powerpoint": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Diapositivas capturadas frente a PowerPoint editable",
+    "description": "Compare capturas con salida PowerPoint editable por fidelidad, texto seleccionable, enlaces, gráficos, mantenimiento y accesibilidad.",
+    "imageAlt": "Diapositivas capturadas se comparan con elementos PowerPoint editables"
+  },
+  "why-print-to-pdf-breaks": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "URL a PDF o impresión del navegador: ¿qué captura más?",
+    "description": "Compare la conversión de URL a PDF con Imprimir del navegador, incluidos estilos de impresión, contenido diferido, pestañas privadas, fidelidad visual y salida editable.",
+    "imageAlt": "La ruta de impresión del navegador se compara con la captura de una página web"
+  },
+  "visual-vs-editable": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Capturas frente a conversión editable de páginas web",
+    "description": "Elija entre capturas fieles y conversión editable comparando texto, enlaces, imágenes, gráficos, diseños y salida PowerPoint.",
+    "imageAlt": "Una página web capturada se compara con bloques de documento editables"
+  },
+  "webpage-capture-vs-web-scraping": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Captura de páginas web frente a web scraping: ¿qué necesita?",
+    "description": "Elija captura para un documento legible con imágenes o web scraping para datos estructurados, y no trate Page 2 File como una API de rastreo.",
+    "imageAlt": "Una página del navegador se divide entre un documento y una tabla de datos"
+  },
+  "webpage-to-powerpoint": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo convertir una página web a PowerPoint",
+    "description": "Convierta una página web a PowerPoint, elija capturas o diapositivas editables, defina secciones útiles y revise el PPTX antes de descargar.",
+    "imageAlt": "Una página web se reorganiza como una presentación PowerPoint"
+  },
+  "website-to-powerpoint": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo convertir un sitio web a PowerPoint",
+    "description": "Convierta páginas accesibles de un sitio en PowerPoint separados, mantenga explícito el límite y revise diapositivas capturadas o editables.",
+    "imageAlt": "El mapa de un sitio fluye hacia varias presentaciones PowerPoint separadas"
+  },
+  "website-types-to-pdf-or-powerpoint": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "¿Qué tipos de sitios web se pueden exportar a PDF o PowerPoint?",
+    "description": "Descubra cómo encajan en la exportación a PDF o PowerPoint los artículos, documentación, dashboards, tiendas, páginas de aprendizaje, aplicaciones web, chats de IA y mensajeros.",
+    "imageAlt": "Distintos tipos de sitios web convergen en documentos PDF y presentaciones"
+  }
+}

@@ -3,9 +3,13 @@ import type { ComponentType } from "react";
 import type { Locale } from "@/shared/i18n/locales";
 import de_capture_full_webpage_as_pdf from "../../../content/de/blog/capture-full-webpage-as-pdf.mdx";
 import de_export_ai_chats_privately from "../../../content/de/blog/export-ai-chats-privately.mdx";
+import de_export_browser_messenger_chats_to_pdf from "../../../content/de/blog/export-browser-messenger-chats-to-pdf.mdx";
 import de_export_chatgpt_conversation_to_pdf from "../../../content/de/blog/export-chatgpt-conversation-to-pdf.mdx";
 import de_export_claude_chat_to_pdf from "../../../content/de/blog/export-claude-chat-to-pdf.mdx";
 import de_export_gemini_chat_to_pdf from "../../../content/de/blog/export-gemini-chat-to-pdf.mdx";
+import de_export_other_ai_chats_to_pdf from "../../../content/de/blog/export-other-ai-chats-to-pdf.mdx";
+import de_export_telegram_chat_to_pdf from "../../../content/de/blog/export-telegram-chat-to-pdf.mdx";
+import de_export_whatsapp_chat_to_pdf from "../../../content/de/blog/export-whatsapp-chat-to-pdf.mdx";
 import de_html_to_pdf_safely from "../../../content/de/blog/html-to-pdf-safely.mdx";
 import de_html_to_powerpoint from "../../../content/de/blog/html-to-powerpoint.mdx";
 import de_long_webpage_page_breaks from "../../../content/de/blog/long-webpage-page-breaks.mdx";
@@ -23,9 +27,13 @@ import de_website_types_to_pdf_or_powerpoint from "../../../content/de/blog/webs
 import de_why_print_to_pdf_breaks from "../../../content/de/blog/why-print-to-pdf-breaks.mdx";
 import fr_capture_full_webpage_as_pdf from "../../../content/fr/blog/capture-full-webpage-as-pdf.mdx";
 import fr_export_ai_chats_privately from "../../../content/fr/blog/export-ai-chats-privately.mdx";
+import fr_export_browser_messenger_chats_to_pdf from "../../../content/fr/blog/export-browser-messenger-chats-to-pdf.mdx";
 import fr_export_chatgpt_conversation_to_pdf from "../../../content/fr/blog/export-chatgpt-conversation-to-pdf.mdx";
 import fr_export_claude_chat_to_pdf from "../../../content/fr/blog/export-claude-chat-to-pdf.mdx";
 import fr_export_gemini_chat_to_pdf from "../../../content/fr/blog/export-gemini-chat-to-pdf.mdx";
+import fr_export_other_ai_chats_to_pdf from "../../../content/fr/blog/export-other-ai-chats-to-pdf.mdx";
+import fr_export_telegram_chat_to_pdf from "../../../content/fr/blog/export-telegram-chat-to-pdf.mdx";
+import fr_export_whatsapp_chat_to_pdf from "../../../content/fr/blog/export-whatsapp-chat-to-pdf.mdx";
 import fr_html_to_pdf_safely from "../../../content/fr/blog/html-to-pdf-safely.mdx";
 import fr_html_to_powerpoint from "../../../content/fr/blog/html-to-powerpoint.mdx";
 import fr_long_webpage_page_breaks from "../../../content/fr/blog/long-webpage-page-breaks.mdx";
@@ -41,6 +49,42 @@ import fr_webpage_to_powerpoint from "../../../content/fr/blog/webpage-to-powerp
 import fr_website_to_powerpoint from "../../../content/fr/blog/website-to-powerpoint.mdx";
 import fr_website_types_to_pdf_or_powerpoint from "../../../content/fr/blog/website-types-to-pdf-or-powerpoint.mdx";
 import fr_why_print_to_pdf_breaks from "../../../content/fr/blog/why-print-to-pdf-breaks.mdx";
+import es_capture_full_webpage_as_pdf from "../../../content/es/blog/capture-full-webpage-as-pdf.mdx";
+import es_export_ai_chats_privately from "../../../content/es/blog/export-ai-chats-privately.mdx";
+import es_export_chatgpt_conversation_to_pdf from "../../../content/es/blog/export-chatgpt-conversation-to-pdf.mdx";
+import es_html_to_pdf_safely from "../../../content/es/blog/html-to-pdf-safely.mdx";
+import es_html_to_powerpoint from "../../../content/es/blog/html-to-powerpoint.mdx";
+import es_long_webpage_page_breaks from "../../../content/es/blog/long-webpage-page-breaks.mdx";
+import es_multi_page_website_to_pdf from "../../../content/es/blog/multi-page-website-to-pdf.mdx";
+import es_preserve_clickable_links from "../../../content/es/blog/preserve-clickable-links.mdx";
+import es_save_authenticated_webpage_as_pdf from "../../../content/es/blog/save-authenticated-webpage-as-pdf.mdx";
+import es_save_webpage_as_pdf from "../../../content/es/blog/save-webpage-as-pdf.mdx";
+import es_screenshot_vs_editable_powerpoint from "../../../content/es/blog/screenshot-vs-editable-powerpoint.mdx";
+import es_sections_to_slides from "../../../content/es/blog/sections-to-slides.mdx";
+import es_visual_vs_editable from "../../../content/es/blog/visual-vs-editable.mdx";
+import es_webpage_capture_vs_web_scraping from "../../../content/es/blog/webpage-capture-vs-web-scraping.mdx";
+import es_webpage_to_powerpoint from "../../../content/es/blog/webpage-to-powerpoint.mdx";
+import es_website_to_powerpoint from "../../../content/es/blog/website-to-powerpoint.mdx";
+import es_website_types_to_pdf_or_powerpoint from "../../../content/es/blog/website-types-to-pdf-or-powerpoint.mdx";
+import es_why_print_to_pdf_breaks from "../../../content/es/blog/why-print-to-pdf-breaks.mdx";
+import nl_capture_full_webpage_as_pdf from "../../../content/nl/blog/capture-full-webpage-as-pdf.mdx";
+import nl_export_ai_chats_privately from "../../../content/nl/blog/export-ai-chats-privately.mdx";
+import nl_export_chatgpt_conversation_to_pdf from "../../../content/nl/blog/export-chatgpt-conversation-to-pdf.mdx";
+import nl_html_to_pdf_safely from "../../../content/nl/blog/html-to-pdf-safely.mdx";
+import nl_html_to_powerpoint from "../../../content/nl/blog/html-to-powerpoint.mdx";
+import nl_long_webpage_page_breaks from "../../../content/nl/blog/long-webpage-page-breaks.mdx";
+import nl_multi_page_website_to_pdf from "../../../content/nl/blog/multi-page-website-to-pdf.mdx";
+import nl_preserve_clickable_links from "../../../content/nl/blog/preserve-clickable-links.mdx";
+import nl_save_authenticated_webpage_as_pdf from "../../../content/nl/blog/save-authenticated-webpage-as-pdf.mdx";
+import nl_save_webpage_as_pdf from "../../../content/nl/blog/save-webpage-as-pdf.mdx";
+import nl_screenshot_vs_editable_powerpoint from "../../../content/nl/blog/screenshot-vs-editable-powerpoint.mdx";
+import nl_sections_to_slides from "../../../content/nl/blog/sections-to-slides.mdx";
+import nl_visual_vs_editable from "../../../content/nl/blog/visual-vs-editable.mdx";
+import nl_webpage_capture_vs_web_scraping from "../../../content/nl/blog/webpage-capture-vs-web-scraping.mdx";
+import nl_webpage_to_powerpoint from "../../../content/nl/blog/webpage-to-powerpoint.mdx";
+import nl_website_to_powerpoint from "../../../content/nl/blog/website-to-powerpoint.mdx";
+import nl_website_types_to_pdf_or_powerpoint from "../../../content/nl/blog/website-types-to-pdf-or-powerpoint.mdx";
+import nl_why_print_to_pdf_breaks from "../../../content/nl/blog/why-print-to-pdf-breaks.mdx";
 
 export const localizedBlogComponents: Partial<
   Record<Locale, Record<string, ComponentType>>
@@ -48,9 +92,13 @@ export const localizedBlogComponents: Partial<
   de: {
     "capture-full-webpage-as-pdf": de_capture_full_webpage_as_pdf,
     "export-ai-chats-privately": de_export_ai_chats_privately,
+    "export-browser-messenger-chats-to-pdf": de_export_browser_messenger_chats_to_pdf,
     "export-chatgpt-conversation-to-pdf": de_export_chatgpt_conversation_to_pdf,
     "export-claude-chat-to-pdf": de_export_claude_chat_to_pdf,
     "export-gemini-chat-to-pdf": de_export_gemini_chat_to_pdf,
+    "export-other-ai-chats-to-pdf": de_export_other_ai_chats_to_pdf,
+    "export-telegram-chat-to-pdf": de_export_telegram_chat_to_pdf,
+    "export-whatsapp-chat-to-pdf": de_export_whatsapp_chat_to_pdf,
     "html-to-pdf-safely": de_html_to_pdf_safely,
     "html-to-powerpoint": de_html_to_powerpoint,
     "long-webpage-page-breaks": de_long_webpage_page_breaks,
@@ -70,9 +118,13 @@ export const localizedBlogComponents: Partial<
   fr: {
     "capture-full-webpage-as-pdf": fr_capture_full_webpage_as_pdf,
     "export-ai-chats-privately": fr_export_ai_chats_privately,
+    "export-browser-messenger-chats-to-pdf": fr_export_browser_messenger_chats_to_pdf,
     "export-chatgpt-conversation-to-pdf": fr_export_chatgpt_conversation_to_pdf,
     "export-claude-chat-to-pdf": fr_export_claude_chat_to_pdf,
     "export-gemini-chat-to-pdf": fr_export_gemini_chat_to_pdf,
+    "export-other-ai-chats-to-pdf": fr_export_other_ai_chats_to_pdf,
+    "export-telegram-chat-to-pdf": fr_export_telegram_chat_to_pdf,
+    "export-whatsapp-chat-to-pdf": fr_export_whatsapp_chat_to_pdf,
     "html-to-pdf-safely": fr_html_to_pdf_safely,
     "html-to-powerpoint": fr_html_to_powerpoint,
     "long-webpage-page-breaks": fr_long_webpage_page_breaks,
@@ -88,5 +140,45 @@ export const localizedBlogComponents: Partial<
     "website-to-powerpoint": fr_website_to_powerpoint,
     "website-types-to-pdf-or-powerpoint": fr_website_types_to_pdf_or_powerpoint,
     "why-print-to-pdf-breaks": fr_why_print_to_pdf_breaks,
+  },
+  es: {
+    "capture-full-webpage-as-pdf": es_capture_full_webpage_as_pdf,
+    "export-ai-chats-privately": es_export_ai_chats_privately,
+    "export-chatgpt-conversation-to-pdf": es_export_chatgpt_conversation_to_pdf,
+    "html-to-pdf-safely": es_html_to_pdf_safely,
+    "html-to-powerpoint": es_html_to_powerpoint,
+    "long-webpage-page-breaks": es_long_webpage_page_breaks,
+    "multi-page-website-to-pdf": es_multi_page_website_to_pdf,
+    "preserve-clickable-links": es_preserve_clickable_links,
+    "save-authenticated-webpage-as-pdf": es_save_authenticated_webpage_as_pdf,
+    "save-webpage-as-pdf": es_save_webpage_as_pdf,
+    "screenshot-vs-editable-powerpoint": es_screenshot_vs_editable_powerpoint,
+    "sections-to-slides": es_sections_to_slides,
+    "visual-vs-editable": es_visual_vs_editable,
+    "webpage-capture-vs-web-scraping": es_webpage_capture_vs_web_scraping,
+    "webpage-to-powerpoint": es_webpage_to_powerpoint,
+    "website-to-powerpoint": es_website_to_powerpoint,
+    "website-types-to-pdf-or-powerpoint": es_website_types_to_pdf_or_powerpoint,
+    "why-print-to-pdf-breaks": es_why_print_to_pdf_breaks,
+  },
+  nl: {
+    "capture-full-webpage-as-pdf": nl_capture_full_webpage_as_pdf,
+    "export-ai-chats-privately": nl_export_ai_chats_privately,
+    "export-chatgpt-conversation-to-pdf": nl_export_chatgpt_conversation_to_pdf,
+    "html-to-pdf-safely": nl_html_to_pdf_safely,
+    "html-to-powerpoint": nl_html_to_powerpoint,
+    "long-webpage-page-breaks": nl_long_webpage_page_breaks,
+    "multi-page-website-to-pdf": nl_multi_page_website_to_pdf,
+    "preserve-clickable-links": nl_preserve_clickable_links,
+    "save-authenticated-webpage-as-pdf": nl_save_authenticated_webpage_as_pdf,
+    "save-webpage-as-pdf": nl_save_webpage_as_pdf,
+    "screenshot-vs-editable-powerpoint": nl_screenshot_vs_editable_powerpoint,
+    "sections-to-slides": nl_sections_to_slides,
+    "visual-vs-editable": nl_visual_vs_editable,
+    "webpage-capture-vs-web-scraping": nl_webpage_capture_vs_web_scraping,
+    "webpage-to-powerpoint": nl_webpage_to_powerpoint,
+    "website-to-powerpoint": nl_website_to_powerpoint,
+    "website-types-to-pdf-or-powerpoint": nl_website_types_to_pdf_or_powerpoint,
+    "why-print-to-pdf-breaks": nl_why_print_to_pdf_breaks,
   },
 };

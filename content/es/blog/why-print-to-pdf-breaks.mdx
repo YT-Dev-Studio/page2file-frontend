@@ -1,0 +1,143 @@
+La función Imprimir como PDF del navegador y la conversión de URL a PDF parten de versiones diferentes de una página. La impresión usa la hoja de estilos de impresión del sitio cuando existe. Un conversor puede trabajar con el diseño renderizado en pantalla y dividirlo en secciones revisables. Ningún método es mejor de forma automática; la página y el documento que se pretende crear determinan la elección.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: abra la vista previa de impresión del navegador y anote qué zonas del dashboard desaparecen."}
+  caption={"Abra la vista previa de impresión del navegador y anote qué zonas del dashboard desaparecen."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: abra la vista previa de impresión del navegador y anote qué zonas del dashboard desaparecen."}
+  src="/blog/instructions/why-print-to-pdf-breaks/01.svg"
+  step={1}
+/>
+
+Use el [conversor PDF de Page 2 File](/es/convert-webpage-to-pdf) cuando necesite una vista previa y elegir de forma deliberada entre capturas de página y salida editable. Use Imprimir del navegador cuando el editor haya preparado una vista de impresión limpia y solo necesite una copia rápida.
+
+## Por qué el resultado impreso puede no parecerse a la pantalla
+
+CSS puede asignar reglas distintas para pantalla e impresión. Una hoja de estilos de impresión puede quitar navegación y anuncios, pero también suprimir fondos, cambiar columnas, sustituir fuentes u ocultar paneles interactivos. Los elementos fijos o adhesivos pueden repetirse en varias páginas. Un gráfico dibujado en canvas puede convertirse en un espacio vacío si el proceso de impresión no captura sus píxeles.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: compare el resultado impreso con la pantalla e identifique gráficos y fondos ausentes."}
+  caption={"Compare el resultado impreso con la pantalla e identifique gráficos y fondos ausentes."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: compare el resultado impreso con la pantalla e identifique gráficos y fondos ausentes."}
+  src="/blog/instructions/why-print-to-pdf-breaks/02.svg"
+  step={2}
+/>
+
+Los medios con carga diferida crean otra diferencia. La impresión empieza desde el estado actual del documento; un contenido que nunca entró en el área visible puede no existir en ese estado. Las interfaces virtualizadas de chats y dashboards pueden descartar del DOM filas antiguas al desplazarse, y la orden de impresión no puede recuperarlas.
+
+## Qué cambia la conversión por URL
+
+Un conversor de URL pública carga la dirección en un navegador controlado y prepara el resultado renderizado para el PDF. No hereda su sesión personal, por lo que no puede ver un dashboard privado ni una página protegida por inicio de sesión. Ese límite protege las credenciales, pero hace que el método no sea adecuado para material autenticado.
+
+Para una pestaña privada, la [extensión Page 2 File](/es/chrome-extension/how-to-use) captura la página que usted abrió después de una acción explícita. No solicita la contraseña de la cuenta. Asegúrese de que los paneles y mensajes necesarios estén visibles antes de la captura.
+
+## Compare los archivos, no las etiquetas de los botones
+
+Compruebe si el texto se puede seleccionar, si los enlaces siguen siendo útiles, si los fondos aportan información y si los saltos respetan los encabezados. Una exportación mediante capturas suele conservar un diseño complejo con más fidelidad. Una exportación editable facilita la búsqueda y revisión del contenido compatible, pero puede rasterizar elementos complejos.
+
+La guía de [capturas frente a salida editable](/es/blog/visual-vs-editable) explica esta compensación. Para fuentes muy altas, consulte también la [guía de captura de página completa](/es/blog/capture-full-webpage-as-pdf) antes de elegir el método.
+
+## Una decisión práctica
+
+Elija Imprimir del navegador para un artículo sencillo con una buena hoja de estilos de impresión. Elija la conversión de URL mediante capturas cuando importe el aspecto, o la conversión editable cuando el contenido deba conservar búsquedas y enlaces. Elija la captura de la pestaña activa cuando la fuente sea privada, personalizada o solo esté disponible después de interactuar.
+
+La vista previa sigue siendo la prueba decisiva. Si falta un bloque importante, no suponga que reaparecerá en el PDF final.
+
+## Realice una comparación controlada
+
+Compare ambos métodos desde el mismo estado del navegador. Establezca la misma ventana gráfica, los mismos filtros, paneles desplegados y posición de desplazamiento antes de crear cada archivo. De lo contrario, estará comparando dos fuentes distintas en lugar de dos métodos de conversión. Anote si la página había terminado de cargar imágenes, fuentes web y gráficos.
+
+Empiece con la vista previa de impresión del navegador. Observe qué navegación, fondos, paneles interactivos y elementos fijos desaparecen. Esto no es necesariamente un defecto: una hoja de estilos de impresión bien diseñada puede quitar elementos innecesarios y producir la copia de lectura más limpia. La pregunta es si ha eliminado algo necesario para su objetivo.
+
+Después inspeccione la vista previa de Page 2 File en el modo que corresponda a la tarea. Accurate copy (salida con capturas de página) debe evaluarse por su semejanza y legibilidad. Editable document (salida editable) debe evaluarse por el orden de lectura, la selección de texto, el comportamiento de los enlaces y la calidad de las soluciones alternativas para componentes complejos. Comparar solo el tamaño del archivo dice poco sobre la utilidad de cada documento.
+
+## Diagnostique las diferencias habituales
+
+La ausencia de color o imágenes suele deberse a CSS específico de impresión, a la configuración del navegador para gráficos de fondo o a un componente que se renderiza de forma distinta en medios impresos. Los paneles truncados suelen aparecer cuando un contenedor desplazable tiene una altura fija o cuando el contenido virtualizado nunca entró en la página renderizada. Los espacios vacíos pueden proceder de encabezados adhesivos, espacios reservados para anuncios o reglas de impresión que fuerzan un salto.
+
+Las tablas exponen otra diferencia. Una hoja de estilos de impresión puede repetir correctamente los encabezados, reducir la tabla hasta volver ilegible el texto o recortar columnas fuera del ancho imprimible. Una captura puede conservar la tabla mostrada, pero no puede hacer que un diseño ancho encaje de forma natural en una página vertical. La conversión editable puede reconstruir filas y celdas estándar y usar una imagen como alternativa para cuadrículas poco habituales.
+
+Los enlaces merecen su propia comprobación. Los PDF generados por el navegador pueden conservar anclas estándar, pero una URL visible dibujada dentro de canvas o proporcionada por un script puede no volverse interactiva. Editable document de Page 2 File conserva las anclas compatibles; Accurate copy prioriza la apariencia. Pruebe los destinos en vez de suponer que un texto azul y subrayado es clicable.
+
+## Elija según las pruebas y el coste de mantenimiento
+
+Para un artículo puntual con una buena vista de impresión, Imprimir del navegador suele ser suficiente. Para un dashboard, una aplicación autenticada, una página dinámica larga o un flujo orientado a presentaciones, los controles de captura y vista previa pueden ser más importantes que las convenciones de impresión del navegador. Ningún método debe considerarse universalmente superior.
+
+Si la misma fuente se exporta con regularidad, documente los pasos de preparación y las comprobaciones de aceptación. Un procedimiento estable vale más que elegir repetidamente una herramienta por intuición. Vuelva a comprobarlo cuando el sitio cambie su diseño, autenticación o comportamiento de virtualización.
+
+El vídeo, la animación, los estados al pasar el cursor y los controles en vivo no pueden seguir siendo interactivos en un PDF corriente. El resultado defendible es un registro legible de un estado de página definido con compensaciones conocidas.
+
+## Separe la configuración de impresión de los problemas de la fuente
+
+Algunos defectos se pueden corregir en el diálogo de impresión del navegador. El tamaño del papel, la orientación, los márgenes, la escala y la configuración de gráficos de fondo pueden cambiar mucho el resultado. Pruebe estos controles cuando el contenido esté presente pero encaje mal. No pueden restaurar un panel que la hoja de estilos de impresión haya eliminado ni mensajes que una interfaz virtualizada nunca haya renderizado.
+
+Los encabezados y pies añadidos por el navegador son otra elección específica de la impresión. Pueden aportar una URL y una fecha, pero también revelar una dirección privada o desplazar contenido a una página adicional. Revíselos deliberadamente en lugar de aceptar la opción predeterminada. Un conversor de URL usa un modelo distinto de vista previa y secciones, por lo que debe comparar los metadatos reales de cada archivo.
+
+No trate un tamaño de página mayor como una solución universal. La orientación horizontal puede ayudar con una tabla ancha, pero dificulta la lectura de un artículo estrecho. Una reducción agresiva puede evitar recortes, pero convertir etiquetas y notas al pie en texto ilegible. Las condiciones de visualización previstas importan más que encajar todo en el menor número de hojas.
+
+## Decida con una matriz de fuente y tarea
+
+Para un artículo preparado por su editor, Imprimir del navegador es una primera prueba razonable porque la hoja de estilos de impresión puede haber quitado la navegación y formateado las citas. Para una página de marketing o una referencia de diseño, la conversión mediante capturas suele ser mejor candidata porque la composición de pantalla transmite significado. Para documentación y notas de investigación, la conversión editable merece la primera prueba porque importan la búsqueda, la selección y los enlaces.
+
+Los dashboards y chats exigen otra pregunta: ¿está realmente renderizado el estado necesario? Si la respuesta es no, ni Imprimir ni la conversión por URL pueden reconstruirlo. Cargue el intervalo autorizado, estabilice los filtros y use la captura de la pestaña activa cuando el estado dependa de una sesión iniciada en el navegador. Nunca debe esperarse que una tarea de URL pública herede esa sesión.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: use By URL para la misma página pública cuando no se necesite una sesión iniciada."}
+  caption={"Use By URL para la misma página pública cuando no se necesite una sesión iniciada."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: use By URL para la misma página pública cuando no se necesite una sesión iniciada."}
+  src="/blog/instructions/why-print-to-pdf-breaks/03.svg"
+  step={3}
+/>
+
+Si el resultado se convertirá en una presentación, quizá PDF no sea el punto final adecuado. Un [flujo de página web a PowerPoint](/es/blog/webpage-to-powerpoint) permite elegir entre diapositivas orientadas a la apariencia y elementos editables compatibles, sin volver a convertir un PDF.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: elija Accurate copy cuando la composición mostrada sea la prueba."}
+  caption={"Elija Accurate copy cuando la composición mostrada sea la prueba."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: elija Accurate copy cuando la composición mostrada sea la prueba."}
+  src="/blog/instructions/why-print-to-pdf-breaks/04.svg"
+  step={4}
+/>
+
+## Registre una comparación defendible
+
+Para exportaciones periódicas, conserve un registro de prueba breve: URL de origen, estado del navegador, fecha, configuración de impresión, modo de Page 2 File y defectos encontrados en cada resultado. Las capturas de ambas vistas previas pueden ayudar a explicar por qué se eligió un método, pero no deben sustituir la comprobación del PDF final.
+
+Evalúe ambos archivos con los mismos criterios de aceptación:
+
+- todo el contenido necesario aparece una vez y en el orden correcto;
+- el cuerpo del texto, las etiquetas de gráficos y el código son legibles con un zoom normal;
+- los enlaces importantes funcionan y no exponen destinos sensibles;
+- los encabezados, pies y contexto de las tablas sobreviven a los límites de página;
+- los datos privados de la cuenta o el espacio de trabajo no aparecen, salvo que sean necesarios.
+
+Un método supera la prueba cuando produce el documento necesario para esta fuente y esta tarea. Si ambos fallan, reduzca la captura, cambie el estado de la página o use la exportación específica de la plataforma de origen. Repetir la misma orden sobre una página inestable no es una estrategia de reparación.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: elija Editable document cuando importen el orden de lectura, la selección y los enlaces."}
+  caption={"Elija Editable document cuando importen el orden de lectura, la selección y los enlaces."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: elija Editable document cuando importen el orden de lectura, la selección y los enlaces."}
+  src="/blog/instructions/why-print-to-pdf-breaks/05.svg"
+  step={5}
+/>
+
+## Vuelva a comprobar después de cambios en el sitio
+
+El comportamiento de impresión y captura puede cambiar cuando un sitio actualiza su CSS, biblioteca de gráficos, capa de consentimiento o reglas de virtualización. Un procedimiento que funcionó el mes pasado es una prueba sobre aquella versión de la página, no una garantía permanente. Repita comprobaciones representativas después de un rediseño y antes de una distribución importante.
+
+Este mantenimiento es especialmente importante en rutinas que parecen automatizadas. Page 2 File proporciona una vista previa porque el estado de la página todavía necesita una revisión humana. La vista previa puede revelar secciones ausentes y límites incómodos; no puede decidir si el documento está completo para su objetivo legal, de archivo u operativo.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: compare ambas vistas previas de Page 2 File con Imprimir del navegador antes de decidir."}
+  caption={"Compare ambas vistas previas de Page 2 File con Imprimir del navegador antes de decidir."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: compare ambas vistas previas de Page 2 File con Imprimir del navegador antes de decidir."}
+  src="/blog/instructions/why-print-to-pdf-breaks/06.svg"
+  step={6}
+/>
+
+Use la [guía de formatos para sitios web](/es/blog/website-types-to-pdf-or-powerpoint) cuando el tipo de fuente, y no solo el comportamiento de impresión, deba dirigir la decisión.

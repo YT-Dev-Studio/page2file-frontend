@@ -1,0 +1,155 @@
+La captura de una página web crea un documento que una persona puede leer. El web scraping extrae datos estructurados que puede procesar el software. Page 2 File es un producto de captura y conversión; no es una API de scraping, un rastreador de supervisión ni un flujo de datos.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: abra una página de origen representativa y defina el contrato de salida necesario."}
+  caption={"Abra una página de origen representativa y defina el contrato de salida necesario."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: abra una página de origen representativa y defina el contrato de salida necesario."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/01.svg"
+  step={1}
+/>
+
+Use Page 2 File cuando el resultado necesario sea un PDF o PowerPoint que conserve el contenido visible y, cuando sea compatible, texto, imágenes y enlaces. Use una herramienta de scraping cuando necesite filas, campos, recopilación periódica o una salida legible por máquinas.
+
+## Qué conserva la captura
+
+La captura como imagen registra composición, color, posición de los gráficos y agrupación de mensajes. La conversión editable reconstruye elementos compatibles del documento. Ambas parten de una página renderizada en el navegador y buscan un archivo legible por personas.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: use Current tab o By URL cuando la entrega sea un documento legible por personas."}
+  caption={"Use Current tab o By URL cuando la entrega sea un documento legible por personas."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: use Current tab o By URL cuando la entrega sea un documento legible por personas."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/02.svg"
+  step={2}
+/>
+
+La [guía de tipos de sitios web](/es/blog/website-types-to-pdf-or-powerpoint) enumera fuentes adecuadas. Las páginas públicas utilizan un conversor; las pestañas activas privadas usan la [extensión](/es/chrome-extension/how-to-use).
+
+## Para qué está diseñado el scraping
+
+Los scrapers identifican selectores o endpoints de datos, normalizan campos y suelen ejecutarse repetidamente. Pueden paginar catálogos, supervisar precios o alimentar una base de datos. Estas tareas requieren límites de frecuencia explícitos, gestión de cambios, deduplicación y una base legal.
+
+Un PDF de una cuadrícula de productos no es un conjunto de datos de precios. Una copia visual de un dashboard no es su API de métricas subyacente. Llamar scraping a la captura de documentos generaría expectativas equivocadas.
+
+## Elija según el contrato de salida
+
+Si un compañero necesita leer, citar, imprimir o presentar la fuente, la captura encaja. Si el software debe ordenar, agregar o actualizar la fuente automáticamente, encaja la extracción estructurada.
+
+Para una página legible, empiece por [página web a PDF](/es/blog/save-webpage-as-pdf). Para una colección delimitada de un sitio, consulte [sitio web de varias páginas a PDF](/es/blog/multi-page-website-to-pdf).
+
+## Respete la fuente con ambos métodos
+
+Los permisos de acceso, derechos de autor, datos personales y condiciones de la plataforma se aplican a ambos métodos. Iniciar sesión no concede permiso para redistribuir todo lo que resulte visible. La recopilación automatizada también tiene efectos operativos sobre el servicio de origen.
+
+Page 2 File no elude la autenticación ni expone datos ocultos de la página. Convierte contenido renderizado permitido después de una acción explícita del usuario.
+
+## Compare los contratos de salida
+
+La captura produce un documento o presentación dirigido a personas. Sus criterios de éxito incluyen continuidad visual, orden de lectura, límites de página, enlaces y contexto de origen. El resultado se destina a lectura, presentación o conservación de registros.
+
+El scraping produce campos, registros o contenido sin procesar para software. Sus criterios de éxito incluyen estabilidad del esquema, identificadores, deduplicación, gestión de paginación y errores legibles por máquinas. Un PDF bonito es una respuesta API deficiente, y un conjunto JSON no es un registro visual fiel.
+
+Escriba la salida deseada antes de elegir el método. Si el requisito dice «mostrar exactamente lo que mostraba el dashboard en esta fecha», corresponde la captura. Si dice «recopilar cada día el precio de todos los productos», es un problema de extracción y supervisión de datos.
+
+## Comprenda los límites de las páginas dinámicas
+
+Ambos métodos se enfrentan a carga diferida, virtualización y autenticación, pero los gestionan de forma distinta. La captura exige que el estado necesario esté visiblemente renderizado. Un scraper puede llamar a una API autorizada o analizar datos de origen sin reproducir la interfaz visual.
+
+Una extensión de Chrome puede capturar una pestaña activa autenticada después de que el usuario la abra. Esto no expone registros ocultos de la aplicación ni crea una credencial de rastreo general. El scraping automatizado de sistemas autenticados requiere autorización explícita, gestión segura de credenciales y un diseño operativo separado.
+
+Los gráficos interactivos ilustran la diferencia. La captura puede registrar visualmente el estado seleccionado del gráfico. El scraping necesitaría acceso a los valores subyacentes y un esquema que los explique. Page 2 File no promete esa extracción.
+
+## Calcule el mantenimiento y el riesgo
+
+Un flujo de captura cambia cuando cambian el diseño, la paginación o el comportamiento de renderización. Un flujo de scraping cambia cuando cambian el marcado, las API, los esquemas, los límites de frecuencia o los controles contra automatización. Ninguno carece de mantenimiento, pero sus fallos son diferentes.
+
+El scraping a gran escala puede afectar a la infraestructura de origen y puede requerir limitación, política de reintentos, gestión de robots y revisión legal. La captura manual o explícita sigue requiriendo permiso, criterio sobre derechos de autor y protección de datos personales.
+
+Evite afirmaciones híbridas que oculten responsabilidades. Usar un navegador no convierte un scraper en un conversor de documentos, y seleccionar conversión editable no transforma Page 2 File en un servicio de datos estructurados.
+
+## Elija un método de revisión
+
+Revise la captura comparando el PDF o PPTX con el estado visible de la fuente. Compruebe integridad, legibilidad, enlaces y privacidad. Revise el scraping validando campos frente a un esquema, muestreando registros de origen y supervisando errores de extracción.
+
+Si un proyecto necesita ambos, mantenga las entregas separadas. Use una fuente de datos autorizada para el análisis y una captura como prueba visual, y registre cómo se produjo cada una. No deduzca datos para máquinas de capturas cuando importen valores exactos.
+
+La elección queda clara cuando los criterios de aceptación se expresan según el destinatario: una persona lee o presenta el documento capturado; el software consume los registros extraídos.
+
+## Compare tareas representativas
+
+Un analista que necesita un registro visual del estado seleccionado de un dashboard necesita captura. El PDF debe conservar filtros, etiquetas, contexto del gráfico y hora de captura. Un analista que necesita todos los valores subyacentes para calcular necesita una API autorizada o un flujo de extracción con esquema definido.
+
+Un investigador que archive un artículo puede necesitar texto buscable, citas y procedencia de la página. Un equipo que siga miles de títulos necesita registros estructurados, deduplicación y lógica de actualización. Un equipo comercial que presente una página pública de producto puede necesitar diapositivas PPTX; un supervisor de precios necesita campos normalizados y recopilación programada.
+
+Los chats de IA y conversaciones de mensajería en el navegador siguen la misma distinción. Page 2 File puede crear un documento legible a partir de mensajes autorizados renderizados en la pestaña activa. No expone historial oculto de la cuenta, API de mensajes ni un conjunto estructurado de conversaciones.
+
+## Haga preguntas operativas antes de elegir scraping
+
+La extracción estructurada exige más que elegir selectores. Defina permiso, volumen de solicitudes, límites de frecuencia, autenticación, propiedad del esquema, conservación y cómo se detectarán los fallos. Decida qué sucede cuando desaparece un campo, la página cambia de idioma o la fuente devuelve varias variantes.
+
+Prefiera una API oficial o una exportación compatible cuando proporcione los datos necesarios. Si el scraping está autorizado y es necesario, use un sistema diseñado para salida legible por máquinas y controles operativos. Page 2 File no debe introducirse como atajo de imagen a datos.
+
+La captura tiene su propia preparación: estabilice el estado visible, defina el límite, elija capturas o salida editable e inspeccione la vista previa. Su alcance operativo es menor porque el resultado es un documento, pero siguen aplicándose los derechos de autor, los datos personales y los permisos de distribución.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: elija el estilo de salida según los requisitos de fidelidad, búsqueda y enlaces."}
+  caption={"Elija el estilo de salida según los requisitos de fidelidad, búsqueda y enlaces."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: elija el estilo de salida según los requisitos de fidelidad, búsqueda y enlaces."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/03.svg"
+  step={3}
+/>
+
+## Evite flujos híbridos engañosos
+
+El reconocimiento óptico de caracteres o copiar texto de un PDF puede ser útil para accesibilidad o citas, pero no convierte el archivo en una base de datos fiable. El diseño, los encabezados repetidos y las imágenes alternativas pueden introducir valores ausentes o duplicados.
+
+Del mismo modo, un scraper puede guardar capturas para depurar sin producir un documento revisado editorialmente. Si un proyecto necesita datos estructurados y prueba visual, genere y valide cada artefacto mediante su flujo adecuado y conéctelos después con identificadores de fuente y fechas de captura.
+
+No describa la conversión editable de páginas como scraping. El texto, las imágenes y los enlaces compatibles se convierten en elementos de documento para leer y editar, no en campos normalizados con esquema estable ni contrato de recopilación periódica.
+
+## Use criterios de aceptación diferentes
+
+Para la captura, concilie el documento con el esquema visible de la fuente. Compruebe límites inicial y final, orden de lectura, legibilidad, enlaces, alternativas e información privada. Registre el estado y la fecha de la fuente cuando importe la procedencia.
+
+Para el scraping, valide campos obligatorios, tipos de datos, identificadores únicos, cobertura de paginación, gestión de duplicados y errores frente a una especificación. Contraste muestras con la fuente autorizada y supervise los cambios con el tiempo. Un recuento de filas por sí solo no demuestra corrección.
+
+Si se producen ambas entregas, no suponga que una valida automáticamente la otra. Una captura puede mostrar el contexto de un registro muestreado, pero podría reflejar otro momento, filtro o sesión. Conserve estos límites en el registro de revisión.
+
+## Decida con un contrato de salida escrito
+
+Escriba una frase que nombre al destinatario y al artefacto. «Un revisor necesita un PDF que muestre este estado autorizado del dashboard» apunta a captura. «Nuestra aplicación necesita precios diarios de productos como registros» apunta a una fuente de datos autorizada o sistema de scraping. «Un presentador necesita diapositivas editables de este informe» apunta a conversión de página web a PowerPoint.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: revise el PDF o PPTX como un artefacto de comunicación renderizado."}
+  caption={"Revise el PDF o PPTX como un artefacto de comunicación renderizado."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: revise el PDF o PPTX como un artefacto de comunicación renderizado."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/04.svg"
+  step={4}
+/>
+
+Enumere después las exclusiones. Page 2 File no proporciona una API de rastreo, programación de supervisión, extracción estructurada ni acceso a datos ocultos. Un scraper no proporciona por naturaleza una representación de la fuente legible, paginada o lista para presentar.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: use un sistema de datos autorizado cuando la entrega sean registros estructurados."}
+  caption={"Use un sistema de datos autorizado cuando la entrega sean registros estructurados."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: use un sistema de datos autorizado cuando la entrega sean registros estructurados."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/05.svg"
+  step={5}
+/>
+
+Este contrato explícito también facilita delimitar proyectos mixtos. Captura y scraping pueden coexistir, pero siguen siendo sistemas separados con riesgos, mantenimiento y pruebas diferentes.
+
+Reevalúe el contrato cuando cambie la entrega. Una solicitud que empieza como presentación puede convertirse después en un conjunto periódico de datos, lo que requiere un nuevo flujo de datos autorizado en lugar de conversiones repetidas de documentos.
+
+<ArticleFigure
+  alt={"Navegador y extensión Page 2 File: no trate Page 2 File como rastreador, servicio de supervisión o API de datos ocultos."}
+  caption={"No trate Page 2 File como rastreador, servicio de supervisión o API de datos ocultos."}
+  closeLabel={"Cerrar la vista previa de la imagen"}
+  openLabel={"Abrir la imagen a tamaño completo: no trate Page 2 File como rastreador, servicio de supervisión o API de datos ocultos."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/06.svg"
+  step={6}
+/>

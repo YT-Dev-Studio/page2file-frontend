@@ -1,0 +1,118 @@
+Um einen Telegram-Chat aus Telegram Web als PDF zu exportieren, öffnen Sie eine Unterhaltung, laden Sie den benötigten Verlauf und erfassen Sie den aktiven Tab mit der [Page 2 File Erweiterung](/de/chrome-extension/how-to-use). Prüfen Sie vor dem Download Nachrichtenreihenfolge, Antworten, Medien und sichtbare Links.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Öffnen Sie einen Telegram-Web-Chat oder -Kanal und laden Sie den erforderlichen Verlauf."}
+  caption={"Öffnen Sie einen Telegram-Web-Chat oder -Kanal und laden Sie den erforderlichen Verlauf."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Öffnen Sie einen Telegram-Web-Chat oder -Kanal und laden Sie den erforderlichen Verlauf."}
+  src="/blog/instructions/export-telegram-chat-to-pdf/01.svg"
+  step={1}
+/>
+
+Page 2 File erfasst die Browseransicht. Es ersetzt nicht Telegrams Desktop-Exportwerkzeuge und kann kein natives Anwendungsfenster außerhalb von Chrome lesen. Telegrams [offizieller Exportleitfaden](https://telegram.org/blog/export-and-more) beschreibt einen getrennten Desktop-Ablauf zum Export von Chats als HTML oder JSON.
+
+## Laden Sie den vorgesehenen Verlauf
+
+Wählen Sie ein Startdatum oder eine Nachricht und scrollen Sie, bis dieser Punkt sichtbar ist. Lange Kanäle und Gruppen können Verlauf in Partien laden. Stellen Sie vor der Erfassung sicher, dass der vollständige erforderliche Bereich gerendert bleibt.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Öffnen Sie erforderliche Antworten und laden Sie sichtbare Medien und Linkvorschauen."}
+  caption={"Öffnen Sie erforderliche Antworten und laden Sie sichtbare Medien und Linkvorschauen."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Öffnen Sie erforderliche Antworten und laden Sie sichtbare Medien und Linkvorschauen."}
+  src="/blog/instructions/export-telegram-chat-to-pdf/02.svg"
+  step={2}
+/>
+
+Öffnen Sie Antwortkontext und Medien, die ein Leser benötigt. Schließen Sie Seitenleisten, nicht zugehörige Chats und Administrationssteuerungen aus.
+
+## Bewahren Sie die Chatstruktur
+
+Accurate copy (Ausgabe im Stil einer Seitenaufnahme) bewahrt Nachrichtenblasen, Autorengruppierung, Zeitstempel und sichtbare Medien. Editable document (bearbeitbare Ausgabe) überträgt unterstützten Text, Bilder und sichere Links in Dokumentelemente und verwendet Bild-Fallbacks für komplexe Beiträge.
+
+Verwenden Sie für Discord, Slack, Teams, Messenger und Instagram den umfassenderen [Leitfaden zu Browser-Messengern](/de/blog/export-browser-messenger-chats-to-pdf).
+
+## Prüfen Sie Rechte und sensible Inhalte
+
+Gruppen- und Kanalinhalte können viele Autoren betreffen. Die Berechtigung, einen Chat anzusehen, erlaubt nicht automatisch seine erneute Veröffentlichung. Entfernen Sie private Daten und befolgen Sie Regeln der Unterhaltung und Ihrer Rechtsordnung.
+
+Die Erweiterung findet weder gelöschte Nachrichten noch verborgene Kontodatensätze. Sie zeichnet nur Inhalte auf, die der aktiven Seite zur Verfügung stehen.
+
+## Schließen Sie die Vorschau nach Abschluss
+
+Prüfen Sie erste und letzte Nachricht, Absenderbeschriftungen, Daten, Links und Medienwarnungen. Das Schließen der Vorschau löscht temporäre Daten, und Page 2 File hat keine Konvertierungsverlaufsdatenbank.
+
+Das heruntergeladene Dokument bleibt unter Ihrer Kontrolle. Page 2 File ist unabhängig und weder mit Telegram verbunden noch von Telegram empfohlen. Verwenden Sie für WhatsApp Web den [WhatsApp-Leitfaden](/de/blog/export-whatsapp-chat-to-pdf).
+
+## Bereiten Sie den Telegram-Web-Thread vor
+
+Prüfen Sie vor der Erfassung Konto, Chat und Thema. Wählen Sie in einer Gruppe oder einem Kanal den exakten Nachrichtenbereich und bewahren Sie Datumstrenner, Absenderbeschriftungen und Antwortkontext. Laden Sie älteren Verlauf bewusst und bestätigen Sie seine Darstellung nach der Rückkehr zum Anfang.
+
+Telegram-Themen, angeheftete Nachrichten und Seitenbereiche können mehrere Lesepfade erzeugen. Erfassen Sie den vom Leser benötigten Pfad, statt nicht zugehörige Oberflächenbereiche zu kombinieren. Notieren Sie, wenn eine referenzierte Nachricht außerhalb des ausgewählten Bereichs liegt.
+
+Öffnen Sie Medienbeschriftungen oder Linkvorschauen, die Bedeutung tragen. Eine dargestellte Vorschau ist ein Datensatz des Oberflächenzustands und keine garantierte Kopie der Originaldatei oder des Ziels.
+
+## Stellen Sie Telegram-Elemente korrekt dar
+
+Umfragen, Reaktionen, Sprachnachrichten, Video, Sticker und animierte Medien können ihr vollständiges Verhalten in einem gewöhnlichen PDF nicht bewahren. Accurate copy kann dargestelltes Ergebnis oder Vorschaubild erhalten. Editable document kann unterstützten Text und Links mit Bild-Fallbacks bewahren.
+
+Weitergeleitete Nachrichten und Antworten benötigen sichtbare Quellenangabe. Stellen Sie sicher, dass eine Seitentrennung die Beschriftung nicht von der zugehörigen Nachricht trennt. Prüfen Sie bei langem Code oder Text Umbruch und Auswahl bei Normalzoom.
+
+Telegrams offizieller Desktop-Export kann einem umfassenderen Archiv dienen. Verwenden Sie ihn, wenn Umfang und Plattformanforderungen passen. Die Erfassung des aktiven Tabs ist für eine ausgewählte sichtbare Web-Unterhaltung.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wählen Sie Current tab und bestätigen Sie die Telegram-Web-Karte."}
+  caption={"Wählen Sie Current tab und bestätigen Sie die Telegram-Web-Karte."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wählen Sie Current tab und bestätigen Sie die Telegram-Web-Karte."}
+  src="/blog/instructions/export-telegram-chat-to-pdf/03.svg"
+  step={3}
+/>
+
+## Schließen Sie die Übergabe sicher ab
+
+Prüfen Sie Nutzernamen, Telefonnummern, Gruppenmitgliedschaft, private Links und nicht zugehörige Chats in der Navigation. Entfernen Sie Material, das Empfänger nicht benötigen, und respektieren Sie Teilnehmerrechte und Quellenbedingungen.
+
+Erfassen Sie Chat oder sichere Kennung, sichtbaren Bereich, Erfassungsdatum und gewählten Modus. Nennen Sie nicht geladenen Verlauf, nicht verfügbare Medien oder ausgelassene Themen. So wird das PDF nicht mit einem vollständigen Telegram-Archiv verwechselt.
+
+Schließen Sie nach dem Download die Vorschau, um temporäre Daten zu löschen. Schützen Sie lokale und geteilte Kopien passend zur Sensibilität der Unterhaltung.
+
+## Vergleichen Sie Browsererfassung und Telegram-Desktop-Export
+
+Telegrams offizieller Leitfaden beschreibt einen Desktop-Export als HTML oder JSON. Dieser Weg eignet sich für ein umfassenderes natives Archiv. Die Erfassung des aktiven Tabs löst eine andere Aufgabe: ein geprüftes lesbares PDF der autorisierten Telegram-Web-Nachrichten, die aktuell in Chrome gerendert sind.
+
+Bezeichnen Sie das PDF nicht als vollständigen Kontoexport. Webverlauf kann entladen sein, Medien nur als Vorschau erscheinen und ausschließlich native Details liegen außerhalb der Erweiterungsgrenze. Wählen Sie die Methode nach benötigtem Artefakt und dokumentiertem Umfang.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wählen Sie PDF und den Output style für Nachrichtengruppierung oder unterstützten Text."}
+  caption={"Wählen Sie PDF und den Output style für Nachrichtengruppierung oder unterstützten Text."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wählen Sie PDF und den Output style für Nachrichtengruppierung oder unterstützten Text."}
+  src="/blog/instructions/export-telegram-chat-to-pdf/04.svg"
+  step={4}
+/>
+
+## Gleichen Sie den Thread vor der Weitergabe ab
+
+Vergleichen Sie erste und letzte erforderliche Nachricht, Teilnehmerkontext, Zeitstempel, Antworten und repräsentative Medien mit der Vorschau. Stellen Sie sicher, dass Dienstnachrichten und Quellenangaben weitergeleiteter Inhalte verständlich bleiben. Testen Sie wichtige Links und entfernen Sie Ziele mit privaten Token oder nicht zugehörigen Kontopfaden.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Prüfen Sie Reihenfolge, Antworten, Medien, sichtbare Links und erklärte Grenze in der Vorschau."}
+  caption={"Prüfen Sie Reihenfolge, Antworten, Medien, sichtbare Links und erklärte Grenze in der Vorschau."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Prüfen Sie Reihenfolge, Antworten, Medien, sichtbare Links und erklärte Grenze in der Vorschau."}
+  src="/blog/instructions/export-telegram-chat-to-pdf/05.svg"
+  step={5}
+/>
+
+Öffnen Sie das heruntergeladene PDF in einem gewöhnlichen Reader und prüfen Sie Seitengrenzen zwischen Absenderkontext und Nachrichten. Schließen Sie den Vorschau-Tab, um temporäre Daten zu löschen. Page 2 File führt keine Konvertierungsverlaufsdatenbank; bewahren Sie die freigegebene Datei und Einschränkungshinweise in kontrolliertem Speicher auf.
+
+## Prüfen Sie Telegram-spezifischen Kontext
+
+Unterscheiden Sie gewöhnliche Nachrichten von weitergeleiteten Beiträgen, Antworten, Diensthinweisen und Kanalpublikationen. Halten Sie sichtbare Quellenangabe und referenzierte Nachricht möglichst zusammen. Eine Weiterleitungsbeschriftung ist Teil des dargestellten Kontexts, bestätigt aber nicht unabhängig Originalautor oder spätere Änderungen.
+
+Medienalben, Sprachnachrichten, Video und Umfragen werden in einem gewöhnlichen PDF zu statischen Darstellungen. Prüfen Sie Beschriftungen, Dauer und Umfragestatus, sofern wichtig, und behaupten Sie nicht, Wiedergabe oder Abstimmung bleibe möglich. Testen Sie öffentliche Links und entfernen Sie private Einladungen oder sitzungsspezifische Ziele.
+
+Prüfen Sie Gruppen- oder Kanalnamen, Nutzernamen, Telefonnummern und Mitgliederkontext vor der Weitergabe. Der kleinste nützliche Bereich reduziert Paginierungsprobleme und unnötige Teilnehmerdaten.
+
+Halten Sie spätere Anmerkungen als getrennt geprüfte Version.
