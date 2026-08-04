@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import page2FileLogo from "@/app/assets/logo.png";
 import { AnalyticsBootstrap } from "@/features/analytics/analytics-bootstrap";
 import type { Locale } from "@/shared/i18n/locales";
+import { getMessages } from "@/shared/i18n/messages";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { SiteHeader } from "./site-header";
 import styles from "./ui.module.css";
@@ -15,6 +16,13 @@ type SiteShellProps = {
 
 export const Container = ({ children }: { children: ReactNode }): ReactNode => (
   <div className={styles.container}>{children}</div>
+);
+
+const DevelopmentNotice = ({ locale }: { locale: Locale }): ReactNode => (
+  <div className={styles.developmentNotice}>
+    <span aria-hidden="true" className={styles.developmentNoticeDot} />
+    <p>{getMessages(locale).developmentNotice}</p>
+  </div>
 );
 
 const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
@@ -91,6 +99,7 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
 export const SiteShell = ({ children, locale }: SiteShellProps): ReactNode => (
   <div className={styles.shell}>
     <SiteHeader locale={locale} />
+    <DevelopmentNotice locale={locale} />
     {children}
     <SiteFooter locale={locale} />
     <AnalyticsBootstrap />

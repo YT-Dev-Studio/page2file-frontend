@@ -1,6 +1,7 @@
 import type { Locale } from "./locales";
 
 export type Messages = {
+  developmentNotice: string;
   navigation: {
     convert: string;
     extension: string;
@@ -44,6 +45,7 @@ export type Messages = {
 };
 
 const en: Messages = {
+  developmentNotice: "This project is currently under development.",
   navigation: {
     convert: "Convert",
     extension: "Extension",
@@ -89,6 +91,7 @@ const messages: Record<Locale, Messages> = {
   en,
   ru: {
     ...en,
+    developmentNotice: "Проект находится на стадии разработки.",
     navigation: {
       convert: "Конвертация",
       extension: "Расширение",
@@ -135,6 +138,7 @@ const messages: Record<Locale, Messages> = {
   },
   de: {
     ...en,
+    developmentNotice: "Dieses Projekt befindet sich derzeit in Entwicklung.",
     navigation: {
       convert: "Konvertieren",
       extension: "Erweiterung",
@@ -162,6 +166,8 @@ const messages: Record<Locale, Messages> = {
   },
   fr: {
     ...en,
+    developmentNotice:
+      "Ce projet est actuellement en cours de développement.",
     navigation: {
       convert: "Convertir",
       extension: "Extension",
@@ -189,6 +195,8 @@ const messages: Record<Locale, Messages> = {
   },
   es: {
     ...en,
+    developmentNotice:
+      "Este proyecto se encuentra actualmente en desarrollo.",
     navigation: {
       convert: "Convertir",
       extension: "Extensión",
@@ -213,6 +221,7 @@ const messages: Record<Locale, Messages> = {
   },
   nl: {
     ...en,
+    developmentNotice: "Dit project is momenteel in ontwikkeling.",
     navigation: {
       convert: "Converteren",
       extension: "Extensie",
@@ -240,6 +249,8 @@ const messages: Record<Locale, Messages> = {
   },
   pt: {
     ...en,
+    developmentNotice:
+      "Este projeto está atualmente em desenvolvimento.",
     navigation: {
       convert: "Converter",
       extension: "Extensão",
@@ -264,6 +275,8 @@ const messages: Record<Locale, Messages> = {
   },
   it: {
     ...en,
+    developmentNotice:
+      "Questo progetto è attualmente in fase di sviluppo.",
     navigation: {
       convert: "Converti",
       extension: "Estensione",
@@ -288,6 +301,7 @@ const messages: Record<Locale, Messages> = {
   },
   pl: {
     ...en,
+    developmentNotice: "Ten projekt jest obecnie w fazie rozwoju.",
     navigation: {
       convert: "Konwertuj",
       extension: "Rozszerzenie",
@@ -315,6 +329,8 @@ const messages: Record<Locale, Messages> = {
   },
   sv: {
     ...en,
+    developmentNotice:
+      "Det här projektet är för närvarande under utveckling.",
     navigation: {
       convert: "Konvertera",
       extension: "Tillägg",
@@ -339,6 +355,8 @@ const messages: Record<Locale, Messages> = {
   },
   no: {
     ...en,
+    developmentNotice:
+      "Dette prosjektet er for tiden under utvikling.",
     navigation: {
       convert: "Konverter",
       extension: "Utvidelse",
@@ -363,6 +381,8 @@ const messages: Record<Locale, Messages> = {
   },
   da: {
     ...en,
+    developmentNotice:
+      "Dette projekt er i øjeblikket under udvikling.",
     navigation: {
       convert: "Konvertér",
       extension: "Udvidelse",
@@ -387,6 +407,7 @@ const messages: Record<Locale, Messages> = {
   },
   fi: {
     ...en,
+    developmentNotice: "Tämä projekti on parhaillaan kehitteillä.",
     navigation: {
       convert: "Muunna",
       extension: "Laajennus",
@@ -411,6 +432,8 @@ const messages: Record<Locale, Messages> = {
   },
   cs: {
     ...en,
+    developmentNotice:
+      "Tento projekt je v současné době ve vývoji.",
     navigation: {
       convert: "Převést",
       extension: "Rozšíření",
@@ -435,6 +458,8 @@ const messages: Record<Locale, Messages> = {
   },
   ro: {
     ...en,
+    developmentNotice:
+      "Acest proiect este în prezent în curs de dezvoltare.",
     navigation: {
       convert: "Convertește",
       extension: "Extensie",
@@ -462,6 +487,8 @@ const messages: Record<Locale, Messages> = {
   },
   hu: {
     ...en,
+    developmentNotice:
+      "Ez a projekt jelenleg fejlesztés alatt áll.",
     navigation: {
       convert: "Konvertálás",
       extension: "Bővítmény",

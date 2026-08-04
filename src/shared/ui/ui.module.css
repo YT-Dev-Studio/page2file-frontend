@@ -7,6 +7,36 @@
   margin-inline: auto;
 }
 
+.developmentNotice {
+  display: flex;
+  width: 100%;
+  min-height: 42px;
+  padding: var(--p2f-space-8) var(--p2f-space-16);
+  align-items: center;
+  justify-content: center;
+  gap: var(--p2f-space-8);
+  border-bottom: var(--p2f-border-width-default) solid var(--warning-line);
+  color: var(--warning);
+  background: var(--warning-soft);
+  font-family: var(--p2f-font-family-primary);
+  font-size: var(--p2f-type-body-small-font-size);
+  font-weight: var(--p2f-font-weight-bold);
+  line-height: var(--p2f-type-body-small-line-height);
+  text-align: center;
+}
+
+.developmentNotice p {
+  margin: 0;
+}
+
+.developmentNoticeDot {
+  width: var(--p2f-space-8);
+  height: var(--p2f-space-8);
+  flex: 0 0 auto;
+  border-radius: var(--p2f-radius-pill);
+  background: currentColor;
+}
+
 .localeSwitcher {
   width: 100%;
   min-width: 0;
