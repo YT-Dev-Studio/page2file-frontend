@@ -652,8 +652,52 @@
   height: 100%;
 }
 
+.installCard a {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.installCard a::before {
+  position: absolute;
+  z-index: 2;
+  top: -25%;
+  bottom: -25%;
+  left: -42%;
+  width: 34%;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgb(70 163 255 / 0.08) 30%,
+    rgb(255 255 255 / 0.9) 50%,
+    rgb(70 163 255 / 0.18) 70%,
+    transparent 100%
+  );
+  content: "";
+  transform: skewX(-18deg);
+  animation: install-action-shine 4.8s ease-in-out infinite;
+}
+
+.installCard a > span {
+  position: relative;
+  z-index: 1;
+}
+
 .informationCard .copyList:where(ol) {
   padding-inline-start: var(--p2f-space-32);
+}
+
+@keyframes install-action-shine {
+  0%,
+  16% {
+    left: -42%;
+  }
+
+  40%,
+  100% {
+    left: 112%;
+  }
 }
 
 .howFooter {
@@ -1039,6 +1083,10 @@
   .submitButton,
   .outputDownload {
     transition: none;
+  }
+
+  .installCard a::before {
+    animation: none;
   }
 
   .outputDownload:active,

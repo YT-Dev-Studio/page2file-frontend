@@ -73,7 +73,7 @@ export const HomeHowItWorks = ({ locale }: { locale: Locale }): ReactNode => {
                   : undefined
               }
               body={<HomeCopyBody body={item.body} list={item.list} />}
-              className={styles.informationCard}
+              className={`${styles.informationCard} ${index === 0 ? styles.installCard : ""}`.trim()}
               key={item.title}
               title={
                 <span className={styles.howCardHeading}>
