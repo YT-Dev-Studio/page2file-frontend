@@ -4,6 +4,7 @@ import type { Locale } from "@/shared/i18n/locales";
 import { russianLandingContent } from "./russian-landings";
 
 export type ContentSection = {
+  id?: string;
   heading: string;
   body: string;
   points?: ReadonlyArray<string>;
@@ -262,12 +263,101 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     route: "privacy",
     eyebrow: "Privacy and data processing",
     title: "Privacy policy",
-    description: "How Page 2 File handles temporary conversion jobs, short-lived artifacts, automatic analytics and requests sent through the service.",
-    lead: "This policy describes the current product boundaries and the service providers involved in operating Page 2 File.",
+    description: "How Page 2 File processes webpage content, temporary conversion files, service cookies, analytics data and privacy requests.",
+    lead:
+      "This Privacy Policy explains what Page 2 File processes when you visit the website, use the Chrome extension or convert a webpage to PDF or PowerPoint.",
     sections: [
-      { heading: "No accounts or history", body: "The service does not create user profiles or retain a user-visible list of past conversions." },
-      { heading: "Analytics", body: "Google Analytics starts automatically when a valid Measurement ID is configured. UTM values are not kept in a custom attribution cookie." },
-      { heading: "Temporary server processing", body: "Public URL conversion uses temporary job data and short-lived output artifacts. Retention and deletion depend on the configured conversion infrastructure." },
+      {
+        heading: "Operator and scope",
+        body:
+          "{{entityName}}, located at {{address}}, operates Page 2 File and is responsible for the processing described in this policy. This policy applies to the Page 2 File website, browser extension and related webpage-to-file conversion services.",
+      },
+      {
+        heading: "Definitions",
+        body:
+          "“Service” means Page 2 File and its conversion features. “Conversion content” means the URL, visible webpage content, selected options and generated PDF or PowerPoint file involved in a conversion. “Personal data” means information that identifies or can reasonably be linked to a person.",
+      },
+      {
+        heading: "Information we process",
+        body:
+          "Depending on how you use the Service, we may process technical request data, IP address, browser and device information, visited Page 2 File pages, permitted campaign parameters, a public URL or content visible in an active browser tab, conversion settings, temporary job identifiers and generated files.",
+      },
+      {
+        heading: "Information we do not request",
+        body:
+          "Page 2 File does not require a Page 2 File account and does not ask for payment-card details, billing addresses or passwords for the source website. The extension uses the page already open in your browser and does not receive the password you used to access that website.",
+      },
+      {
+        heading: "How we use information",
+        body:
+          "We process information to provide previews and files, protect the Service against abuse, diagnose failures, maintain reliability, understand aggregate use of public pages, respond to requests and comply with applicable law. We do not sell personal data.",
+      },
+      {
+        heading: "Conversion content and temporary processing",
+        body:
+          "A public-URL conversion or an extension preview requires temporary processing of the submitted page and selected options. Page 2 File does not provide an account-based conversion history. Preview data and generated artifacts are short-lived and are deleted after the preview closes or when the configured technical expiry is reached.",
+      },
+      {
+        heading: "Analytics and attribution",
+        body:
+          "When a valid Google Analytics Measurement ID is configured, Google Analytics loads automatically on public marketing pages. It may receive page, device, browser, approximate-location and campaign information. Allowed UTM values are normalized in memory and sent with the analytics event; Page 2 File does not keep them in a custom attribution cookie.",
+      },
+      {
+        heading: "Service providers and disclosures",
+        body:
+          "Page 2 File uses {{processors}} to deliver, protect and measure the Service. These providers may process technical data only as needed for their services and under their own privacy terms. We may also disclose information when required by law, to protect rights or safety, or as part of a lawful business transfer.",
+      },
+      {
+        heading: "Retention and deletion",
+        body:
+          "Conversion content is kept only for the temporary processing and download workflow and is not retained as a user-visible history. Security logs, infrastructure records, analytics data and correspondence may be retained for the period reasonably required for security, operations, legal obligations or resolving a request.",
+      },
+      {
+        heading: "Security",
+        body:
+          "Page 2 File uses same-origin conversion routes, anonymous session controls, Origin and CSRF checks, signed backend requests, URL validation, isolated rendering and temporary artifacts. No technical or organizational measure can guarantee absolute security, so you should avoid converting material you are not permitted to disclose.",
+      },
+      {
+        heading: "International processing",
+        body:
+          "Our providers may process technical or analytics data in countries other than your own. Where applicable, we rely on provider safeguards and lawful transfer mechanisms. The operator is established in {{jurisdiction}}.",
+      },
+      {
+        heading: "Your privacy rights",
+        body:
+          "Depending on applicable law, you may request access to, correction of, deletion of or restriction on personal data associated with you, or object to certain processing. Because Page 2 File has no user accounts or conversion-history archive, we may need information from you to identify any relevant operational record.",
+      },
+      {
+        heading: "Third-party websites",
+        body:
+          "Page 2 File can open or convert content from websites operated by others and may link to external services. Their content, security and privacy practices are controlled by those third parties, and their own terms apply when you use them.",
+      },
+      {
+        heading: "Children",
+        body:
+          "The Service is not directed to children under 13, and we do not knowingly collect personal data from children under 13. A parent or guardian who believes a child has provided personal data may contact us to request its deletion.",
+      },
+      {
+        id: "cookies",
+        heading: "Cookies",
+        body:
+          "Page 2 File uses the short-lived p2f_session and p2f_csrf cookies to maintain an anonymous conversion session and protect requests. They use Strict SameSite settings and expire after one hour. Google Analytics may set analytics cookies on public pages when analytics is configured. We do not place conversion content or directly identifying profile data in these cookies.",
+      },
+      {
+        heading: "Blocking and deleting cookies",
+        body:
+          "You can block or delete cookies through your browser settings. Blocking the Page 2 File session or CSRF cookies may prevent conversion requests from working. Blocking Google Analytics may limit measurement but does not prevent the core public pages from loading. Removing a cookie requires using your browser’s cookie controls.",
+      },
+      {
+        heading: "Changes to this policy",
+        body:
+          "We may update this policy when the Service, providers or legal requirements change. The updated version will be published on this page with a revised date. Material changes apply from the stated effective date.",
+      },
+      {
+        heading: "Contact",
+        body:
+          "Questions and privacy requests can be sent to {{contactEmail}}. The operator is {{entityName}}, {{address}}, under the laws of {{jurisdiction}}.",
+      },
     ],
     legal: true,
   },
@@ -275,51 +365,120 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     route: "terms",
     eyebrow: "Service agreement",
     title: "Terms of service",
-    description: "Terms for using Page 2 File, including permitted source use, temporary processing and limitations of editable output.",
-    lead: "By using the service, you agree to submit only material you may access and reproduce and to review generated files before relying on them.",
+    description: "Terms for using Page 2 File, including permitted webpage sources, conversion limits, user responsibilities and service availability.",
+    lead:
+      "These Terms govern your use of the Page 2 File website, Chrome extension and webpage-to-PDF or PowerPoint conversion services.",
     sections: [
-      { heading: "Self-hosted MVP status", body: "The current service performs webpage conversion through a separately deployed backend, but it is not a production deployment or a fidelity guarantee." },
-      { heading: "Your responsibility", body: "Only convert material you are permitted to access and reproduce." },
-      { heading: "No fidelity guarantee", body: "Editable output cannot preserve every browser feature. Preview warnings define the expected degradation." },
-    ],
-    legal: true,
-  },
-  "cookie-policy": {
-    route: "cookie-policy",
-    eyebrow: "Analytics disclosure",
-    title: "Cookie and analytics policy",
-    description: "How automatic Google Analytics loading, cookies and in-memory campaign attribution work on public Page 2 File pages.",
-    lead: "Analytics starts automatically when a valid GA4 Measurement ID is configured.",
-    sections: [
-      { heading: "Analytics settings", body: "No first-party localStorage value is used to store an analytics preference." },
-      { heading: "Analytics by default", body: "The Google tag is requested automatically on public pages when a valid Measurement ID is configured." },
-      { heading: "Attribution", body: "Allowed UTM values are normalized in memory and sent with the analytics event." },
-    ],
-    legal: true,
-  },
-  security: {
-    route: "security",
-    eyebrow: "Self-hosted security boundary",
-    title: "What Page 2 File protects — and what remains an operational gate",
-    description: "Review the implemented frontend, BFF and conversion-backend controls for the self-hosted Page 2 File MVP and its remaining production launch gates.",
-    lead: "This page describes controls present in the codebase. Production deployment, external penetration testing and infrastructure hardening remain separate launch gates.",
-    sections: [
-      { heading: "Frontend and BFF", body: "The browser uses same-origin conversion routes, anonymous HttpOnly sessions, Origin and CSRF checks, trusted repository MDX, safe external links and security headers." },
-      { heading: "Conversion backend", body: "The separate backend implements signed BFF requests, replay protection, SSRF-resistant URL checks, redirect revalidation, isolated Chromium, queue limits and encrypted temporary artifacts." },
-      { heading: "Remaining launch gates", body: "Production secrets, network policy, monitoring, backups, legal review and an independent penetration test must be completed for the chosen hosting environment." },
-    ],
-    legal: true,
-  },
-  "acceptable-use": {
-    route: "acceptable-use",
-    eyebrow: "Responsible use",
-    title: "Acceptable use",
-    description: "Responsible-use rules for converting webpages and documents, including access controls, system abuse, intellectual property and lawful source handling.",
-    lead: "Use Page 2 File only for sources you are allowed to access, process and reproduce.",
-    sections: [
-      { heading: "Do not bypass access controls", body: "The service must not be used to evade paywalls, authentication or technical restrictions." },
-      { heading: "Respect people and systems", body: "Do not submit malware, abusive content or workloads intended to exhaust another service." },
-      { heading: "Respect intellectual property", body: "You remain responsible for permissions, attribution and distribution of generated documents." },
+      {
+        heading: "Agreement and operator",
+        body:
+          "By accessing or using Page 2 File, you agree to these Terms. The Service is operated by {{entityName}}, located at {{address}}. If you use the Service for an organization, you confirm that you have authority to accept these Terms for that organization.",
+      },
+      {
+        heading: "Definitions",
+        body:
+          "“Service” means the Page 2 File website, Chrome extension and conversion features. “Source content” means a webpage, active-tab content or other material submitted for conversion. “Output” means a PDF, PowerPoint file, preview or other generated result.",
+      },
+      {
+        heading: "Limited license",
+        body:
+          "We grant you a revocable, non-exclusive, non-transferable and limited right to access and use the Service in accordance with these Terms. No ownership in Page 2 File software, branding or other protected material is transferred to you.",
+      },
+      {
+        heading: "Permitted sources and your responsibility",
+        body:
+          "You may convert only source content that you are legally permitted to access, process, reproduce and download. You are responsible for the URLs and active-tab content you submit, the conversion settings you choose, and how you use or distribute every Output.",
+      },
+      {
+        heading: "Prohibited use",
+        body:
+          "You must not use the Service to break the law, infringe another person’s rights, bypass paywalls or access controls, distribute malware, submit abusive or unlawful content, probe private networks, interfere with security controls, overload systems, automate excessive requests, reverse engineer protected parts of the Service or misrepresent generated files.",
+      },
+      {
+        heading: "Source content and third-party rights",
+        body:
+          "You retain any rights you already have in source content. Page 2 File does not grant rights to material owned by another person. You represent that processing the submitted material and creating the requested Output does not violate copyright, privacy, confidentiality, contract or other applicable rights.",
+      },
+      {
+        heading: "Temporary processing",
+        body:
+          "The Service may temporarily process source content, conversion settings and generated artifacts to provide a preview and download. Page 2 File does not provide an account-based conversion history. Details about temporary data, cookies and providers are set out in the Privacy Policy.",
+      },
+      {
+        heading: "Output and fidelity limitations",
+        body:
+          "Webpages can contain scripts, animations, video, protected media, custom fonts, canvas graphics, dynamic data and complex layouts that cannot be reproduced exactly in a static PDF or PowerPoint file. Accurate copy prioritizes appearance; Editable document rebuilds supported text, images and links. You must review the preview and final Output before relying on it.",
+      },
+      {
+        heading: "Third-party services and links",
+        body:
+          "The Service may convert or link to websites and services controlled by third parties. Page 2 File is not responsible for their availability, content, accuracy, legality, security or privacy practices. Your use of a third-party service remains subject to that provider’s terms.",
+      },
+      {
+        heading: "Privacy and cookies",
+        body:
+          "Our Privacy Policy explains temporary conversion processing, analytics, service providers and cookies. By using the Service, you acknowledge that processing necessary to provide the requested conversion will occur as described there.",
+      },
+      {
+        heading: "Page 2 File intellectual property",
+        body:
+          "The Service, software, design, text, logos and other Page 2 File materials are owned by or licensed to {{entityName}} and are protected by applicable intellectual-property laws. You may not remove proprietary notices or copy, sell, sublicense or commercially exploit the Service except where law expressly permits it.",
+      },
+      {
+        heading: "Feedback",
+        body:
+          "If you voluntarily provide suggestions or feedback, you grant us a worldwide, perpetual and royalty-free right to use that feedback to improve or develop the Service without an obligation to compensate you. This does not transfer ownership of your source content.",
+      },
+      {
+        heading: "Changes, updates and availability",
+        body:
+          "We may update, limit, suspend or discontinue the Service or any feature, and we do not promise that every feature will remain available. We may apply technical limits needed for security, reliability or fair use. Where practical, material service changes will be reflected on the website.",
+      },
+      {
+        heading: "Suspension and termination",
+        body:
+          "You may stop using the Service at any time. We may block or suspend access when we reasonably believe these Terms have been violated, use threatens the Service or another system, or action is required by law. Provisions intended to survive termination remain effective.",
+      },
+      {
+        heading: "Copyright and rights complaints",
+        body:
+          "If you believe material available through Page 2 File infringes your rights, contact {{contactEmail}} with identification of the protected work, the relevant material or URL, your contact details and a statement explaining the claimed infringement.",
+      },
+      {
+        heading: "No warranties",
+        body:
+          "To the maximum extent permitted by law, the Service and every Output are provided “as is” and “as available”. We do not guarantee uninterrupted operation, error-free conversion, complete fidelity, availability of a third-party page, fitness for a particular purpose or that every Output will meet your requirements.",
+      },
+      {
+        heading: "Limitation of liability",
+        body:
+          "To the maximum extent permitted by applicable law, {{entityName}} is not liable for indirect, incidental, special, consequential or punitive loss, loss of profits, data, business or privacy, or costs caused by use of or inability to use the Service. Rights that cannot legally be excluded remain unaffected.",
+      },
+      {
+        heading: "Indemnity",
+        body:
+          "To the extent permitted by law, you agree to defend and indemnify {{entityName}} against third-party claims arising from source content you submit, your use or distribution of an Output, your violation of these Terms or your infringement of another person’s rights.",
+      },
+      {
+        heading: "Severability, waiver and entire agreement",
+        body:
+          "If any provision is held invalid or unenforceable, the remaining provisions continue in effect and the affected provision will be interpreted as closely as legally possible to its intended purpose. A failure to enforce a provision is not a waiver. These Terms and the Privacy Policy form the agreement governing the Service.",
+      },
+      {
+        heading: "Governing law and disputes",
+        body:
+          "These Terms are governed by the laws of {{jurisdiction}}, without regard to conflict-of-law rules. Before starting formal proceedings, you and {{entityName}} will try in good faith to resolve a dispute through written notice. Unresolved disputes may be submitted to the competent courts of {{jurisdiction}}, unless mandatory law requires another forum.",
+      },
+      {
+        heading: "Changes to these terms",
+        body:
+          "We may revise these Terms to reflect changes to the Service, providers or legal requirements. The revised Terms will be published with an updated date. Continuing to use the Service after the effective date means you accept the revised Terms; otherwise, you must stop using the Service.",
+      },
+      {
+        heading: "Contact",
+        body:
+          "Questions or notices about these Terms may be sent to {{contactEmail}} or to {{entityName}}, {{address}}.",
+      },
     ],
     legal: true,
   },

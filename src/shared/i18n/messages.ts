@@ -34,13 +34,11 @@ export type Messages = {
     powerpointLink: string;
     extensionLink: string;
     changelogLink: string;
-    acceptableUse: string;
     footerMeta: string;
   };
   footer: {
     privacy: string;
     terms: string;
-    security: string;
   };
 };
 
@@ -80,10 +78,9 @@ const en: Messages = {
     powerpointLink: "Webpage to PowerPoint",
     extensionLink: "Chrome extension",
     changelogLink: "Changelog",
-    acceptableUse: "Acceptable use",
     footerMeta: "No accounts · No conversion history · Temporary processing",
   },
-  footer: { privacy: "Privacy", terms: "Terms", security: "Security" },
+  footer: { privacy: "Privacy", terms: "Terms" },
 };
 
 const messages: Record<Locale, Messages> = {
@@ -125,14 +122,12 @@ const messages: Record<Locale, Messages> = {
       powerpointLink: "Веб-страница в PowerPoint",
       extensionLink: "Расширение Chrome",
       changelogLink: "История изменений",
-      acceptableUse: "Допустимое использование",
       footerMeta:
         "Без аккаунтов · Без истории конвертаций · Временная обработка",
     },
     footer: {
       privacy: "Конфиденциальность",
       terms: "Условия",
-      security: "Безопасность",
     },
   },
   de: {
@@ -159,7 +154,6 @@ const messages: Record<Locale, Messages> = {
     footer: {
       privacy: "Datenschutz",
       terms: "Bedingungen",
-      security: "Sicherheit",
     },
   },
   fr: {
@@ -186,7 +180,6 @@ const messages: Record<Locale, Messages> = {
     footer: {
       privacy: "Confidentialité",
       terms: "Conditions",
-      security: "Sécurité",
     },
   },
   es: {
@@ -210,7 +203,7 @@ const messages: Record<Locale, Messages> = {
       visual: "Visual",
       editable: "Editable y con enlaces",
     },
-    footer: { privacy: "Privacidad", terms: "Términos", security: "Seguridad" },
+    footer: { privacy: "Privacidad", terms: "Términos" },
   },
   nl: {
     ...en,
@@ -236,7 +229,6 @@ const messages: Record<Locale, Messages> = {
     footer: {
       privacy: "Privacy",
       terms: "Voorwaarden",
-      security: "Beveiliging",
     },
   },
   pt: {
@@ -260,7 +252,7 @@ const messages: Record<Locale, Messages> = {
       visual: "Visual",
       editable: "Editável e clicável",
     },
-    footer: { privacy: "Privacidade", terms: "Termos", security: "Segurança" },
+    footer: { privacy: "Privacidade", terms: "Termos" },
   },
   it: {
     ...en,
@@ -283,7 +275,7 @@ const messages: Record<Locale, Messages> = {
       visual: "Visuale",
       editable: "Modificabile e cliccabile",
     },
-    footer: { privacy: "Privacy", terms: "Termini", security: "Sicurezza" },
+    footer: { privacy: "Privacy", terms: "Termini" },
   },
   pl: {
     ...en,
@@ -309,7 +301,6 @@ const messages: Record<Locale, Messages> = {
     footer: {
       privacy: "Prywatność",
       terms: "Warunki",
-      security: "Bezpieczeństwo",
     },
   },
   sv: {
@@ -333,7 +324,7 @@ const messages: Record<Locale, Messages> = {
       visual: "Visuell",
       editable: "Redigerbar och klickbar",
     },
-    footer: { privacy: "Integritet", terms: "Villkor", security: "Säkerhet" },
+    footer: { privacy: "Integritet", terms: "Villkor" },
   },
   no: {
     ...en,
@@ -356,7 +347,7 @@ const messages: Record<Locale, Messages> = {
       visual: "Visuell",
       editable: "Redigerbar og klikkbar",
     },
-    footer: { privacy: "Personvern", terms: "Vilkår", security: "Sikkerhet" },
+    footer: { privacy: "Personvern", terms: "Vilkår" },
   },
   da: {
     ...en,
@@ -379,7 +370,7 @@ const messages: Record<Locale, Messages> = {
       visual: "Visuel",
       editable: "Redigerbar og klikbar",
     },
-    footer: { privacy: "Privatliv", terms: "Vilkår", security: "Sikkerhed" },
+    footer: { privacy: "Privatliv", terms: "Vilkår" },
   },
   fi: {
     ...en,
@@ -402,7 +393,7 @@ const messages: Record<Locale, Messages> = {
       visual: "Visuaalinen",
       editable: "Muokattava ja klikattava",
     },
-    footer: { privacy: "Tietosuoja", terms: "Ehdot", security: "Turvallisuus" },
+    footer: { privacy: "Tietosuoja", terms: "Ehdot" },
   },
   cs: {
     ...en,
@@ -425,7 +416,7 @@ const messages: Record<Locale, Messages> = {
       visual: "Vizuální",
       editable: "Upravitelný a klikatelný",
     },
-    footer: { privacy: "Soukromí", terms: "Podmínky", security: "Zabezpečení" },
+    footer: { privacy: "Soukromí", terms: "Podmínky" },
   },
   ro: {
     ...en,
@@ -451,7 +442,6 @@ const messages: Record<Locale, Messages> = {
     footer: {
       privacy: "Confidențialitate",
       terms: "Termeni",
-      security: "Securitate",
     },
   },
   hu: {
@@ -478,7 +468,6 @@ const messages: Record<Locale, Messages> = {
     footer: {
       privacy: "Adatvédelem",
       terms: "Feltételek",
-      security: "Biztonság",
     },
   },
 };

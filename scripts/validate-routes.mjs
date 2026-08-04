@@ -25,6 +25,8 @@ const REQUIRED_ROUTES = [
   "changelog",
   "privacy",
   "terms",
+];
+const REMOVED_ROUTES = [
   "cookie-policy",
   "security",
   "acceptable-use",
@@ -34,6 +36,14 @@ const assertContains = (source, values, label) => {
   values.forEach(function assertValue(value) {
     if (!source.includes(`"${value}"`)) {
       throw new Error(`Missing ${label}: ${value}`);
+    }
+  });
+};
+
+const assertRemovedRoutesAbsent = (source, label) => {
+  REMOVED_ROUTES.forEach(function assertRemovedRoute(route) {
+    if (source.includes(`route: "${route}"`)) {
+      throw new Error(`Removed route remains in ${label}: ${route}`);
     }
   });
 };
@@ -51,6 +61,14 @@ const run = async () => {
     join(ROOT, "src", "content", "landings.ts"),
     "utf8",
   );
+  const russianLandings = await readFile(
+    join(ROOT, "src", "content", "russian-landings.ts"),
+    "utf8",
+  );
+  const siteShell = await readFile(
+    join(ROOT, "src", "shared", "ui", "site-shell.tsx"),
+    "utf8",
+  );
   const metadataSource = await readFile(
     join(ROOT, "src", "shared", "seo", "metadata.ts"),
     "utf8",
@@ -65,6 +83,18 @@ const run = async () => {
   );
   assertContains(locales, REQUIRED_LOCALES, "locale");
   assertContains(routes, REQUIRED_ROUTES, "route");
+  assertRemovedRoutesAbsent(routes, "route registry");
+  assertRemovedRoutesAbsent(landings, "English landing content");
+  assertRemovedRoutesAbsent(russianLandings, "Russian landing content");
+  if (
+    !landings.includes('id: "cookies"') ||
+    !russianLandings.includes('id: "cookies"') ||
+    !siteShell.includes('/privacy#cookies')
+  ) {
+    throw new Error(
+      "Privacy content and the footer must share the cookies anchor.",
+    );
+  }
   REQUIRED_LOCALES.forEach(function validateLocaleIndexing(locale) {
     const expectedReviewState =
       locale === "en" || locale === "ru"

@@ -12,12 +12,10 @@ export type SiteCopy = {
     gptsTitle: string;
     legalTitle: string;
     links: {
-      acceptableUse: string;
       blog: string;
       cookiePolicy: string;
       extension: string;
       privacy: string;
-      security: string;
       terms: string;
       webpageToPdf: string;
       webpageToPowerpoint: string;
@@ -62,12 +60,10 @@ const siteCopy: LocalizedPublished<SiteCopy> = {
       gptsTitle: "GPTs",
       legalTitle: "Legal information",
       links: {
-        acceptableUse: "Acceptable use",
         blog: "Blog",
-        cookiePolicy: "Cookie policy",
+        cookiePolicy: "Cookies",
         extension: "Chrome extension",
         privacy: "Privacy",
-        security: "Security",
         terms: "Terms",
         webpageToPdf: "Webpage to PDF",
         webpageToPowerpoint: "Webpage to PowerPoint",
@@ -97,12 +93,10 @@ const siteCopy: LocalizedPublished<SiteCopy> = {
       gptsTitle: "GPTs",
       legalTitle: "Юридическая информация",
       links: {
-        acceptableUse: "Допустимое использование",
         blog: "Блог",
-        cookiePolicy: "Cookie",
+        cookiePolicy: "Cookies",
         extension: "Расширение Chrome",
         privacy: "Политика конфиденциальности",
-        security: "Безопасность",
         terms: "Условия использования",
         webpageToPdf: "Веб-страница в PDF",
         webpageToPowerpoint: "Веб-страница в PowerPoint",

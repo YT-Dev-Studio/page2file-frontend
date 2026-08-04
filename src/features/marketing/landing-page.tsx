@@ -19,8 +19,8 @@ export const LandingPage = ({
       <WorkflowLanding content={content} family={family} locale={locale} />
     );
   }
-  if (family === "legal" || family === "security") {
-    return <LegalPage content={content} family={family} locale={locale} />;
+  if (family === "legal") {
+    return <LegalPage content={content} locale={locale} />;
   }
   notFound();
 };

@@ -1,4 +1,5 @@
 import legalProfileData from "../../../content/legal-profile.json";
+import type { Locale } from "@/shared/i18n/locales";
 
 export type ExternalLinkKey =
   | "chromeExtension"
@@ -52,8 +53,8 @@ const parseSafeExternalUrl = (value: string | undefined): string => {
 
 export type LegalProfile = {
   entityName: string;
-  address: string;
-  jurisdiction: string;
+  addresses: Record<Locale, string>;
+  jurisdictions: Record<Locale, string>;
   contactEmail: string;
   processors: ReadonlyArray<string>;
 };
@@ -72,8 +73,12 @@ export const indexingEnabled =
 export const legalProfile: LegalProfile = legalProfileData;
 export const legalDetailsComplete =
   legalProfile.entityName.trim().length > 0 &&
-  legalProfile.address.trim().length > 0 &&
-  legalProfile.jurisdiction.trim().length > 0 &&
+  Object.values(legalProfile.addresses).every(
+    (address: string): boolean => address.trim().length > 0,
+  ) &&
+  Object.values(legalProfile.jurisdictions).every(
+    (jurisdiction: string): boolean => jurisdiction.trim().length > 0,
+  ) &&
   legalProfile.contactEmail.trim().length > 0 &&
   legalProfile.processors.length > 0;
 

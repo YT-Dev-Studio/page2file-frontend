@@ -354,17 +354,11 @@ const validateInstructionFigures = async (englishFiles, russianFiles) => {
 const NOINDEX_SHORT_TITLES = new Set([
   "Privacy policy",
   "Terms of service",
-  "Cookie and analytics policy",
-  "Acceptable use",
   "Политика конфиденциальности",
   "Условия использования",
-  "Политика cookies и аналитики",
 ]);
 
-const NOINDEX_SHORT_DESCRIPTIONS = new Set([
-  "Implemented frontend controls and future backend security boundaries.",
-  "Реализованные frontend-контроли и будущие границы безопасности backend.",
-]);
+const NOINDEX_SHORT_DESCRIPTIONS = new Set();
 
 const extractStringFields = (source, field) => [
   ...source.matchAll(new RegExp(`${field}:\\s*"([^"]+)"`, "g")),
@@ -525,8 +519,20 @@ const run = async () => {
   const legalFieldsComplete =
     typeof legalProfile.entityName === "string" &&
     legalProfile.entityName.trim().length > 0 &&
-    typeof legalProfile.jurisdiction === "string" &&
-    legalProfile.jurisdiction.trim().length > 0 &&
+    typeof legalProfile.addresses === "object" &&
+    legalProfile.addresses !== null &&
+    Object.values(legalProfile.addresses).length === 16 &&
+    Object.values(legalProfile.addresses).every(
+      (address) => typeof address === "string" && address.trim().length > 0,
+    ) &&
+    typeof legalProfile.jurisdictions === "object" &&
+    legalProfile.jurisdictions !== null &&
+    Object.values(legalProfile.jurisdictions).length === 16 &&
+    Object.values(legalProfile.jurisdictions).every(
+      (jurisdiction) =>
+        typeof jurisdiction === "string" &&
+        jurisdiction.trim().length > 0,
+    ) &&
     typeof legalProfile.contactEmail === "string" &&
     legalProfile.contactEmail.trim().length > 0 &&
     Array.isArray(legalProfile.processors) &&
@@ -568,9 +574,6 @@ const run = async () => {
     "export-grok-to-pdf",
     "privacy",
     "terms",
-    "cookie-policy",
-    "security",
-    "acceptable-use",
   ];
   requiredRussianLandingRoutes.forEach(function validateRussianLanding(route) {
     if (!landingSource.includes(`"${route}"`) && !landingSource.includes(`${route}:`)) {

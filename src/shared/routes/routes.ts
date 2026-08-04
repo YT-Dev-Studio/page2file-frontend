@@ -17,10 +17,7 @@ export type StaticRoute =
   | "updates"
   | "changelog"
   | "privacy"
-  | "terms"
-  | "cookie-policy"
-  | "security"
-  | "acceptable-use";
+  | "terms";
 
 export type PublicPageFamily =
   | "home"
@@ -29,8 +26,7 @@ export type PublicPageFamily =
   | "gpt-workflow"
   | "chat-export"
   | "content"
-  | "legal"
-  | "security";
+  | "legal";
 
 export const staticRoutes: ReadonlyArray<StaticRoute> = [
   "",
@@ -52,20 +48,15 @@ export const staticRoutes: ReadonlyArray<StaticRoute> = [
   "changelog",
   "privacy",
   "terms",
-  "cookie-policy",
-  "security",
-  "acceptable-use",
 ];
 
 const publicPageFamilyByRoute: Record<StaticRoute, PublicPageFamily> = {
   "": "home",
-  "acceptable-use": "legal",
   "blog": "content",
   "changelog": "content",
   "chrome-extension/how-to-use": "extension",
   "convert-webpage-to-pdf": "converter",
   "convert-webpage-to-powerpoint": "converter",
-  "cookie-policy": "legal",
   "export-ai-chat-to-pdf": "chat-export",
   "export-chatgpt-to-pdf": "chat-export",
   "export-claude-to-pdf": "chat-export",
@@ -75,7 +66,6 @@ const publicPageFamilyByRoute: Record<StaticRoute, PublicPageFamily> = {
   "one-page2powerpoint-gpt": "gpt-workflow",
   "page2pdf-gpt": "gpt-workflow",
   "privacy": "legal",
-  "security": "security",
   "terms": "legal",
   "updates": "content",
   "web2pdf-gpt": "gpt-workflow",

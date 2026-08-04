@@ -2,203 +2,71 @@
   padding-block: var(--p2f-space-64) var(--p2f-space-96);
 }
 
-.documentHeader {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.46fr);
-  gap: clamp(var(--p2f-space-40), 7vw, var(--p2f-space-96));
-  padding-bottom: var(--p2f-space-48);
+.document {
+  width: min(100%, 800px);
+  margin-inline: auto;
+}
+
+.header {
+  padding-bottom: var(--p2f-space-40);
   border-bottom: var(--p2f-border-width-default) solid
     var(--p2f-color-border-strong);
 }
 
-.documentHeader > *,
-.documentLayout > * {
-  min-width: 0;
-}
-
-.effectiveDate {
-  margin: var(--p2f-space-16) 0 0;
-  color: var(--p2f-color-text-secondary);
-  font-size: var(--p2f-type-label-medium-font-size);
-}
-
-.operatorCard {
-  align-self: start;
-  padding: var(--p2f-space-24);
-  border: var(--p2f-border-width-default) solid
-    var(--p2f-color-border-default);
-  border-radius: var(--p2f-radius-card);
-  background: var(--p2f-color-background-surface);
-  box-shadow: var(--p2f-shadow-card);
-}
-
-.operatorCard h2 {
-  margin: 0 0 20px;
-  color: var(--p2f-color-text-brand);
-  font-size: var(--p2f-type-heading-h3-font-size);
-  line-height: var(--p2f-type-heading-h3-line-height);
-}
-
-.operatorCard dl {
-  display: grid;
+.title {
   margin: 0;
-}
-
-.operatorCard div {
-  padding-block: var(--p2f-space-12);
-  border-top: var(--p2f-border-width-default) solid
-    var(--p2f-color-border-default);
-}
-
-.operatorCard dt {
-  color: var(--p2f-color-text-secondary);
-  font-size: var(--p2f-type-caption-regular-font-size);
-}
-
-.operatorCard dd {
-  margin: var(--p2f-space-4) 0 0;
   color: var(--p2f-color-text-brand);
-  font-weight: var(--p2f-font-weight-semibold);
-}
-
-.operatorCard a {
-  color: var(--p2f-color-text-link);
-  text-decoration: underline;
-  text-underline-offset: var(--p2f-space-4);
-}
-
-.documentLayout {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.28fr) minmax(0, 0.72fr);
-  gap: clamp(var(--p2f-space-40), 7vw, var(--p2f-space-96));
-  padding-top: var(--p2f-space-48);
-}
-
-.contents {
-  position: sticky;
-  top: 112px;
-  align-self: start;
-}
-
-.contents h2 {
-  margin: 0 0 var(--p2f-space-16);
-  color: var(--p2f-color-text-brand);
-  font-size: var(--p2f-type-heading-h3-font-size);
-}
-
-.contents ol {
-  display: grid;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.contents a {
-  display: grid;
-  grid-template-columns: var(--p2f-control-size-compact) minmax(0, 1fr);
-  gap: var(--p2f-space-12);
-  padding-block: var(--p2f-space-12);
-  align-items: start;
-  border-bottom: var(--p2f-border-width-default) solid
-    var(--p2f-color-border-default);
-  color: var(--p2f-color-text-secondary);
-  font-size: var(--p2f-type-body-small-font-size);
-  line-height: var(--p2f-type-body-small-line-height);
-}
-
-.contents a:hover,
-.contents a:focus-visible {
-  color: var(--p2f-color-text-link);
-}
-
-.contents span {
-  color: var(--p2f-color-gel-blue-800);
-  font-weight: var(--p2f-font-weight-bold);
-}
-
-.document {
-  max-width: 760px;
-}
-
-.clause {
-  scroll-margin-top: 120px;
-  padding-bottom: var(--p2f-space-40);
-}
-
-.clause + .clause {
-  padding-top: var(--p2f-space-40);
-  border-top: var(--p2f-border-width-default) solid
-    var(--p2f-color-border-default);
-}
-
-.clause > span {
-  color: var(--p2f-color-gel-blue-800);
-  font-size: var(--p2f-type-label-medium-font-size);
-  font-weight: var(--p2f-font-weight-bold);
-}
-
-.clause h2,
-.clause p {
-  margin: 0;
-}
-
-.clause h2 {
-  margin-top: var(--p2f-space-8);
-  color: var(--p2f-color-text-brand);
-  font-size: var(--p2f-type-heading-h1-font-size);
-  line-height: var(--p2f-type-heading-h1-line-height);
+  font-size: var(--p2f-type-display-medium-font-size);
+  font-weight: var(--p2f-type-display-medium-font-weight);
+  line-height: var(--p2f-type-display-medium-line-height);
   letter-spacing: var(--p2f-letter-spacing-tight);
 }
 
-.clause p {
-  margin-top: var(--p2f-space-16);
+.updatedAt {
+  margin: var(--p2f-space-12) 0 0;
+  color: var(--p2f-color-text-secondary);
+  font-size: var(--p2f-type-label-medium-font-size);
+}
+
+.lead {
+  margin: var(--p2f-space-24) 0 0;
+  color: var(--p2f-color-text-primary);
+  font-size: var(--p2f-type-body-large-font-size);
+  line-height: var(--p2f-type-body-large-line-height);
+}
+
+.sections {
+  padding-top: var(--p2f-space-48);
+}
+
+.section + .section {
+  margin-top: var(--p2f-space-40);
+}
+
+.sectionTitle {
+  scroll-margin-top: 120px;
+  margin: 0;
+  color: var(--p2f-color-text-brand);
+  font-size: var(--p2f-type-heading-h2-font-size);
+  font-weight: var(--p2f-type-heading-h2-font-weight);
+  line-height: var(--p2f-type-heading-h2-line-height);
+  letter-spacing: var(--p2f-letter-spacing-tight);
+}
+
+.sectionBody {
+  margin: var(--p2f-space-16) 0 0;
   color: var(--p2f-color-text-primary);
   font-size: var(--p2f-type-body-medium-font-size);
   line-height: 1.75;
+  overflow-wrap: anywhere;
 }
 
-.clause ul {
+.points {
   margin: var(--p2f-space-16) 0 0;
   padding-left: var(--p2f-space-24);
   color: var(--p2f-color-text-primary);
-}
-
-.related {
-  margin-top: var(--p2f-space-48);
-  padding-top: var(--p2f-space-24);
-  border-top: var(--p2f-border-width-default) solid
-    var(--p2f-color-border-strong);
-}
-
-.related h2 {
-  margin: 0;
-  color: var(--p2f-color-text-brand);
-  font-size: var(--p2f-type-heading-h3-font-size);
-}
-
-.related div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--p2f-space-8) var(--p2f-space-16);
-  margin-top: var(--p2f-space-16);
-}
-
-.related a {
-  color: var(--p2f-color-text-link);
-  font-weight: var(--p2f-font-weight-semibold);
-  text-decoration: underline;
-  text-underline-offset: var(--p2f-space-4);
-}
-
-@media (max-width: 900px) {
-  .documentHeader,
-  .documentLayout {
-    grid-template-columns: 1fr;
-  }
-
-  .contents {
-    position: static;
-  }
+  font-size: var(--p2f-type-body-medium-font-size);
+  line-height: 1.75;
 }
 
 @media (max-width: 767px) {
@@ -206,12 +74,26 @@
     padding-block: var(--p2f-space-48) var(--p2f-space-64);
   }
 
-  .documentHeader {
-    gap: var(--p2f-space-32);
+  .header {
     padding-bottom: var(--p2f-space-32);
   }
 
-  .documentLayout {
-    padding-top: var(--p2f-space-32);
+  .title {
+    font-size: var(--p2f-type-heading-h1-font-size);
+    font-weight: var(--p2f-type-heading-h1-font-weight);
+    line-height: var(--p2f-type-heading-h1-line-height);
+  }
+
+  .lead {
+    font-size: var(--p2f-type-body-medium-font-size);
+    line-height: 1.65;
+  }
+
+  .sections {
+    padding-top: var(--p2f-space-40);
+  }
+
+  .section + .section {
+    margin-top: var(--p2f-space-32);
   }
 }

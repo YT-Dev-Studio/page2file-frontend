@@ -70,7 +70,6 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
           <nav aria-label={copy.companyTitle} className={styles.footerLinks}>
             <h2>{copy.companyTitle}</h2>
             <Link href={`/${locale}/blog`}>{copy.links.blog}</Link>
-            <Link href={`/${locale}/security`}>{copy.links.security}</Link>
             <Link href={`/${locale}/privacy`}>{copy.links.privacy}</Link>
           </nav>
         </div>
@@ -79,11 +78,8 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
           <span>{copy.copyright}</span>
           <nav aria-label={copy.legalTitle}>
             <Link href={`/${locale}/terms`}>{copy.links.terms}</Link>
-            <Link href={`/${locale}/cookie-policy`}>
+            <Link href={`/${locale}/privacy#cookies`}>
               {copy.links.cookiePolicy}
-            </Link>
-            <Link href={`/${locale}/acceptable-use`}>
-              {copy.links.acceptableUse}
             </Link>
           </nav>
         </div>
