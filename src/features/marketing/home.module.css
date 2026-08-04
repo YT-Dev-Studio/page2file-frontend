@@ -509,6 +509,21 @@
   padding-inline-start: var(--p2f-space-20);
 }
 
+.copyList:where(ul) {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+.copyList:where(ul) li {
+  display: grid;
+  grid-template-columns: var(--p2f-space-12) minmax(0, 1fr);
+  gap: var(--p2f-space-4);
+}
+
+.copyList:where(ul) li::before {
+  content: "\2022";
+}
+
 .featureVisual {
   display: block;
   width: 100%;
