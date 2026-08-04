@@ -1,0 +1,128 @@
+HTML zu PowerPoint kann zwei verschiedene Aufgaben bedeuten: eine gerenderte Webseite in Folien umzuwandeln oder eine rohe HTML-Datei hochzuladen. Page 2 File unterstützt derzeit die Aufgabe mit gerenderten Seiten über den [PowerPoint-Konverter](/de/convert-webpage-to-powerpoint) und die Erweiterung. Hochgeladenes rohes HTML wird nur von der HTML 2 PDF GPT-App unterstützt, nicht von einem getrennten HTML-zu-PPTX-Uploadwerkzeug.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Rendern und stabilisieren Sie das HTML, bevor Sie es Folien zuordnen."}
+  caption={"Rendern und stabilisieren Sie das HTML, bevor Sie es Folien zuordnen."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Rendern und stabilisieren Sie das HTML, bevor Sie es Folien zuordnen."}
+  src="/blog/instructions/html-to-powerpoint/01.svg"
+  step={1}
+/>
+
+Diese Grenze verhindert, dass aus einem Suchbegriff ein falsches Produktversprechen wird. Wenn das HTML als zulässige Webseite geöffnet werden kann, kann Page 2 File seine sichtbaren Abschnitte in eine Präsentation umwandeln.
+
+## Rendern Sie das HTML vor der Folienzuordnung
+
+Ein Browser löst CSS-Layout, Schriften, Bilder und responsive Regeln auf. Der Konverter arbeitet anschließend mit der gerenderten Struktur, statt Tags als Folienanweisungen zu behandeln. Überschriften, Abschnitte und sichtbare Grenzen liefern stärkere Trennlinien als beliebige Quellcodeblöcke.
+
+Clientseitige Komponenten müssen vollständig dargestellt und hinter Steuerelementen verborgene Inhalte geöffnet sein. Skripte oder Ressourcen, die auf der Seite nicht verfügbar sind, können nicht allein aus dem Markup rekonstruiert werden.
+
+## Wählen Sie Präsentationsobjekte oder Seitenaufnahmen
+
+Editable document (bearbeitbare Ausgabe) überträgt unterstützten Text, Bilder und Formen in PowerPoint-Objekte. Accurate copy (Ausgabe im Stil einer Seitenaufnahme) zeichnet gerenderte Abschnitte auf und erhält mehr von der Komposition der Seite. Komplexe Effekte können in beiden Abläufen zu Bildern werden, wenn PowerPoint kein Gegenstück besitzt.
+
+Verwenden Sie [Seitenaufnahmen oder bearbeitbares PowerPoint](/de/blog/screenshot-vs-editable-powerpoint), um vor der Konvertierung einen Modus zu wählen.
+
+## Bereiten Sie Inhalte für 16:9 vor
+
+Eine hohe Webseite benötigt mehrere Folien. Behalten Sie ein Thema pro Folie bei, vermeiden Sie winzigen Text und lassen Sie große Tabellen über mehrere Folien weiterlaufen. Entfernen Sie wiederholte Navigation und Footer, sofern sie keinen notwendigen Kontext liefern.
+
+Der Artikel zum [Umwandeln von Webseitenabschnitten in Folien](/de/blog/sections-to-slides) bietet eine praktische Reihenfolge zum Teilen und Prüfen.
+
+## Verwenden Sie die richtige Page 2 File Oberfläche
+
+Für eine einzelne öffentliche gerenderte Seite verwenden Sie [One Page 2 PowerPoint](/de/one-page2powerpoint-gpt). Für mehrere erreichbare Webseiten verwenden Sie [Web 2 PowerPoint](/de/web2powerpoint-gpt). Für einen privaten gerenderten Tab verwenden Sie die Erweiterung.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Verwenden Sie den geöffneten Tab oder eine öffentliche URL als unterstützte Quelloberfläche."}
+  caption={"Verwenden Sie den geöffneten Tab oder eine öffentliche URL als unterstützte Quelloberfläche."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Verwenden Sie den geöffneten Tab oder eine öffentliche URL als unterstützte Quelloberfläche."}
+  src="/blog/instructions/html-to-powerpoint/02.svg"
+  step={2}
+/>
+
+Besitzen Sie nur eine HTML-Datei und benötigen PDF, verwenden Sie [HTML 2 PDF](/de/html2pdf-gpt). Der direkte Upload einer HTML-Datei als PPTX wird nicht unterstützt; die PowerPoint-Konvertierung beginnt mit gerendertem Webinhalt.
+
+## Veröffentlichen Sie das HTML in einem kontrollierten Kontext
+
+Existiert die Quelle nur als Datei, entscheiden Sie, ob sie über eine erreichbare URL bereitgestellt oder als autorisierter Browser-Tab geöffnet werden kann. Prüfen Sie dort das Laden von Styles, Bildern und Schriften. Ein lokaler Entwicklungspfad oder privater Asset-Verweis wird nicht portabel, nur weil die Seite auf einem Computer sichtbar ist.
+
+Entfernen Sie Anwendungssteuerungen, die nicht in die Präsentation gehören, und wählen Sie den endgültigen responsiven Zustand. Stellen Sie Filter ein, öffnen Sie Bereiche und beenden Sie möglichst Live-Aktualisierungen. Die Konvertierung kann aufzeichnen, was der Browser darstellt; Inhalte hinter einer ungeöffneten Steuerung kann sie nicht erschließen.
+
+Bewahren Sie die für die Präsentation verwendete Quellversion auf. HTML ändert sich leicht, und ein späterer Build kann unter derselben URL andere Folien erzeugen. Erfassungsdatum und Release-Kennung helfen, wenn die Herkunft wichtig ist.
+
+## Formen Sie Abschnitte für Folien um
+
+Ein HTML-Abschnitt kann deutlich höher als eine 16:9-Folie sein. Ermitteln Sie natürliche Trennungen an Überschriften, Karten, Zeilen oder Abbildungen, statt den gesamten Abschnitt zu verkleinern, bis der Text unlesbar wird. Halten Sie Bildunterschriften bei Grafiken und wiederholen Sie Kontext, wenn eine Tabelle über mehrere Folien reicht.
+
+Navigation, Cookie-Steuerungen und fixierte Header wiederholen sich oft, ohne der Präsentation zu helfen. Blenden Sie sie in der vorbereiteten Quelle aus oder entfernen Sie sie, sofern zulässig. Bewahren Sie Branding nur, wenn es zur Präsentation gehört und rechtmäßig verwendet werden darf.
+
+Halten Sie Textblöcke für bearbeitbare Ausgabe kurz und verlassen Sie sich nicht auf komplizierte CSS-Ebenen. Komplexe Filter, Canvas und Animationen benötigen Bild-Fallbacks. Stellen Sie bei Seitenaufnahmen sicher, dass die Browserbreite Text erzeugt, der auf einer Folie lesbar bleibt.
+
+## Führen Sie eine Abnahme der Präsentation durch
+
+Vergleichen Sie die Folienreihenfolge mit der HTML-Gliederung. Stellen Sie sicher, dass kein Abschnitt doppelt oder gar nicht erscheint und die Präsentation bewusst endet. Ein Website-Footer sollte nicht automatisch zum Abschluss werden.
+
+Öffnen Sie die PPTX-Datei in der Zielanwendung und prüfen Sie Schrift-Ersetzungen, Bildzuschnitte, Linkverhalten und Objekte außerhalb der Foliengrenze. Müssen Empfänger die Präsentation bearbeiten, ändern Sie repräsentativen Text und verschieben Sie ein unterstütztes Bild.
+
+Benennen Sie die Einschränkung korrekt: Page 2 File konvertiert eine gerenderte Webseite oder einen aktiven Tab in PowerPoint. Es akzeptiert keinen Upload von rohem HTML als PPTX, führt keinen beliebigen Projekt-Build aus und verwandelt nicht jede CSS-Eigenschaft in ein natives PowerPoint-Objekt.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wählen Sie PowerPoint."}
+  caption={"Wählen Sie PowerPoint."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wählen Sie PowerPoint."}
+  src="/blog/instructions/html-to-powerpoint/03.svg"
+  step={3}
+/>
+
+## Bereiten Sie responsives HTML für eine feste Fläche vor
+
+Eine responsive Seite kann sich zwischen Desktopbreiten stark verändern. Wählen Sie vor der Konvertierung den Viewport, der die vorgesehene Navigation, Diagrammanordnung und Textbreite enthält. Gehen Sie nicht davon aus, dass die breiteste Ansicht die beste ist: Ein dichtes Desktop-Raster kann unlesbare Folien erzeugen, während ein kompakteres Layout Informationen klarer gruppiert.
+
+Prüfen Sie Überläufe bei der gewählten Breite. Horizontal scrollende Tabellen, Codeblöcke und Karussells können Inhalte außerhalb des gerenderten Bereichs verbergen. Legen Sie den relevanten Zustand fest und entscheiden Sie, ob die Komponente eine Folie als Seitenaufnahme, mehrere fokussierte Folien oder eine bearbeitbare Rekonstruktion mit Fallback werden soll.
+
+Webschriften und verzögert geladene Bilder können Abmessungen nach dem ersten Zeichnen ändern. Warten Sie, bis die Seite stabil ist, und vergleichen Sie dann Anfang und Ende langer Abschnitte. Wird eine clientseitige Komponente im autorisierten Browserzustand nie dargestellt, kann die Konvertierung sie nicht aus ungenutztem Quellcode ableiten.
+
+## Bewahren Sie die Semantik bei der Umformung
+
+Die HTML-Gliederung hilft bei der Reihenfolge, ist aber noch kein fertiger Präsentationsplan. Halten Sie Überschriftenebenen sinnvoll, ordnen Sie Bildunterschriften ihren Abbildungen zu und bewahren Sie die Listenreihenfolge, wenn ein langer Abschnitt mehrere Folien umfasst. Dekorative Wrapper sollten keine leeren Folien werden, nur weil sie einen eigenen Block einnehmen.
+
+Bewahren Sie bei Tabellen Spaltenbeschriftungen und Einheiten. Halten Sie bei Code Sprach- oder Kontextbezeichnungen beim Beispiel und prüfen Sie den Umbruch. Behalten Sie bei einem Hinweis den Text, der seinen Status erklärt, statt sich nur auf Farbe zu verlassen. Diese Beziehungen sind wichtiger als jede CSS-Einzelheit.
+
+Die bearbeitbare Konvertierung kann unterstützte Inhalte leichter änderbar machen, darf aber nicht als Quellcode-zu-PowerPoint-Compiler beschrieben werden. Prüfen Sie Lesereihenfolge und Objektgruppierung. Eine komplexe Webkomponente kann als einzelnes Bild genauer sein als als Dutzende schwer zu pflegende Formen.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Wählen Sie Editable document für unterstützte Objekte oder Accurate copy für die Komposition."}
+  caption={"Wählen Sie Editable document für unterstützte Objekte oder Accurate copy für die Komposition."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Wählen Sie Editable document für unterstützte Objekte oder Accurate copy für die Komposition."}
+  src="/blog/instructions/html-to-powerpoint/04.svg"
+  step={4}
+/>
+
+## Prüfen Sie Herkunft und privaten Zustand
+
+Stammt die gerenderte Seite aus einer Entwicklungs-, Staging- oder angemeldeten Umgebung, prüfen Sie sie auf Kontonamen, Testdaten, unveröffentlichte Inhalte und private URLs. Zugriff auf diesen Tab bedeutet keine Berechtigung zur Weitergabe seiner Präsentation.
+
+Bewahren Sie Quellversion, URL oder Release-Kennung zusammen mit der freigegebenen PPTX-Datei auf, wenn Nachvollziehbarkeit wichtig ist. Eine spätere Bereitstellung kann andere Folien erzeugen, auch wenn die Route unverändert bleibt. Speichern Sie keine Sitzungstoken oder sensiblen Query-Parameter in Dateinamen und Quellnotizen.
+
+Die Erweiterung arbeitet mit dem aktiven Tab. Ihre Vorschaudaten sind temporär und werden beim Schließen des Vorschau-Tabs gelöscht; Page 2 File führt keine Datenbank mit dem Konvertierungsverlauf. Die heruntergeladene PPTX-Datei bleibt unter Ihrer Kontrolle und sollte entsprechend der Sensibilität der Quelle gespeichert und geteilt werden.
+
+## Entscheiden Sie, ob PowerPoint das richtige Ziel ist
+
+Verwenden Sie PPTX, wenn der Empfänger eine Präsentationsabfolge, eine vortragsgeführte Erklärung oder unterstützte bearbeitbare Elemente benötigt. Ist das Ziel ein originalgetreues Lese-Archiv, kann PDF ein langes Dokument natürlicher bewahren. Soll die Webanwendung selbst bearbeitet werden, arbeiten Sie weiter in HTML, statt die Präsentation zur Quelle zu machen.
+
+Führen Sie die Präsentation in Präsentationsgröße aus und nehmen Sie vor der Übergabe eine beabsichtigte Änderung vor. Prüfen Sie Folienreihenfolge, Lesbarkeit, Bildqualität, Links und Fallbacks. Fehlt ein erforderlicher Abschnitt in der Vorschau, korrigieren Sie den gerenderten Quellzustand; eine fertige Datei kann HTML nicht wiederherstellen, das der Browser nie angezeigt hat.
+
+<ArticleFigure
+  alt={"Browser und Page 2 File Erweiterung: Prüfen Sie die 16:9-Folien und untersuchen Sie Fallbacks komplexer HTML-Inhalte."}
+  caption={"Prüfen Sie die 16:9-Folien und untersuchen Sie Fallbacks komplexer HTML-Inhalte."}
+  closeLabel={"Bildvorschau schließen"}
+  openLabel={"Bild in voller Größe öffnen: Prüfen Sie die 16:9-Folien und untersuchen Sie Fallbacks komplexer HTML-Inhalte."}
+  src="/blog/instructions/html-to-powerpoint/05.svg"
+  step={5}
+/>
+
+Vergleichen Sie HTML mit anderen Browserquellen im [Leitfaden zu Website-Ausgaben](/de/blog/website-types-to-pdf-or-powerpoint).

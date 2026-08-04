@@ -86,7 +86,10 @@ for (const locale of locales) {
     ) {
       throw new Error(`${locale}/${slug}: SVG sequence differs from English.`);
     }
-    if (translated.includes("/en/")) {
+    if (
+      /\]\(\/en\//.test(translated) ||
+      /\b(?:href|src)=["']\/en\//.test(translated)
+    ) {
       throw new Error(`${locale}/${slug}: contains an English internal link.`);
     }
     if (

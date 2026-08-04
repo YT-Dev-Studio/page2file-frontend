@@ -5,17 +5,65 @@
     "description": "Enregistrez une page publique ou connectée en PDF, choisissez des captures de page ou une sortie modifiable et vérifiez les sauts de page.",
     "imageAlt": "Une longue page de navigateur devient une pile ordonnée de pages PDF"
   },
+  "save-authenticated-webpage-as-pdf": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment enregistrer en PDF une page protégée par connexion",
+    "description": "Enregistrez une page connectée depuis l’onglet Chrome actif sans transmettre vos identifiants à un convertisseur d’URL, puis vérifiez confidentialité et limites.",
+    "imageAlt": "Un onglet protégé du navigateur devient une copie PDF privée"
+  },
+  "sections-to-slides": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment les sections web deviennent des diapositives PowerPoint",
+    "description": "Utilisez la hiérarchie web pour définir les limites, préserver le contexte, fractionner les sections denses et vérifier les captures ou sorties modifiables.",
+    "imageAlt": "Les sections d’une page web sont organisées en diapositives PowerPoint séparées"
+  },
+  "screenshot-vs-editable-powerpoint": {
+    "author": "Rédaction Page 2 File",
+    "title": "Captures ou PowerPoint modifiable depuis une page web",
+    "description": "Comparez les captures et la sortie PowerPoint modifiable pour la fidélité, le texte sélectionnable, les liens, graphiques, la maintenance et l’accessibilité.",
+    "imageAlt": "Des diapositives de capture sont comparées à des éléments PowerPoint modifiables"
+  },
   "capture-full-webpage-as-pdf": {
     "author": "Rédaction Page 2 File",
     "title": "Comment capturer une page web complète en PDF",
     "description": "Capturez une page web défilante complète en PDF en définissant sa limite, en chargeant les sections dynamiques et en vérifiant les sauts de page.",
     "imageAlt": "Une page complète et défilante du navigateur devient un document PDF"
   },
+  "export-ai-chats-privately": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment exporter des chats IA en PDF de manière privée",
+    "description": "Exportez les conversations IA visibles depuis l’onglet actif, définissez la plage de messages, choisissez un mode PDF et comprenez les données temporaires de l’aperçu.",
+    "imageAlt": "Une conversation IA privée passe à travers un bouclier vers un PDF"
+  },
+  "export-chatgpt-conversation-to-pdf": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment exporter une conversation ChatGPT en PDF",
+    "description": "Préparez une conversation ChatGPT visible, chargez la plage requise, choisissez une capture ou un PDF modifiable et distinguez la capture de l’export du compte.",
+    "imageAlt": "Une conversation IA générique dans le navigateur devient un document PDF"
+  },
+  "export-claude-chat-to-pdf": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment exporter un chat Claude en PDF",
+    "description": "Capturez une conversation Claude visible et sa zone d’artefact en PDF, choisissez une limite lisible et comparez-la à l’export des données du compte Claude.",
+    "imageAlt": "Un chat IA générique et son panneau d’artefact deviennent un PDF"
+  },
+  "export-gemini-chat-to-pdf": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment exporter un chat Gemini en PDF",
+    "description": "Enregistrez une conversation Gemini visible avec citations et images en PDF, chargez le contenu requis et distinguez la capture de Google Takeout.",
+    "imageAlt": "Un chat IA avec des cartes source et des images devient un PDF"
+  },
   "html-to-pdf-safely": {
     "author": "Rédaction Page 2 File",
     "title": "Comment convertir du HTML en PDF en toute sécurité",
     "description": "Convertissez un fichier HTML importé en PDF en traitant les scripts, ressources distantes, accès aux fichiers et réseaux privés comme des limites de sécurité.",
     "imageAlt": "Le contenu HTML est isolé avant de devenir un PDF propre"
+  },
+  "html-to-powerpoint": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment convertir du contenu HTML web en PowerPoint",
+    "description": "Transformez du contenu HTML rendu en PowerPoint en sélectionnant les sections utiles, des captures ou des diapositives modifiables, puis vérifiez les solutions de secours.",
+    "imageAlt": "Des blocs HTML rendus passent du navigateur aux diapositives"
   },
   "long-webpage-page-breaks": {
     "author": "Rédaction Page 2 File",
@@ -46,6 +94,24 @@
     "title": "Comment convertir une page web en PowerPoint",
     "description": "Convertissez une page web publique en présentation PPTX, choisissez des captures ou des diapositives modifiables et vérifiez les limites 16:9.",
     "imageAlt": "Les sections d’une page web deviennent une présentation PowerPoint structurée"
+  },
+  "webpage-capture-vs-web-scraping": {
+    "author": "Rédaction Page 2 File",
+    "title": "Capture de page ou web scraping : lequel choisir ?",
+    "description": "Choisissez la capture pour un document lisible ou le web scraping pour des données structurées, sans traiter Page 2 File comme une API de crawling.",
+    "imageAlt": "Une page de navigateur se divise en un document et un tableau de données"
+  },
+  "website-to-powerpoint": {
+    "author": "Rédaction Page 2 File",
+    "title": "Comment convertir un site web en PowerPoint",
+    "description": "Convertissez les pages publiques sélectionnées d’un site en PPTX séparés, définissez le périmètre, vérifiez les sorties et créez un manifeste.",
+    "imageAlt": "Une carte de site devient plusieurs présentations PowerPoint distinctes"
+  },
+  "website-types-to-pdf-or-powerpoint": {
+    "author": "Rédaction Page 2 File",
+    "title": "Quels types de sites exporter en PDF ou PowerPoint ?",
+    "description": "Découvrez comment articles, documentation, tableaux de bord, boutiques, pages éducatives, applications web, chats IA et messageries s’adaptent au PDF ou PowerPoint.",
+    "imageAlt": "Différents types de sites convergent vers des PDF et des présentations"
   },
   "why-print-to-pdf-breaks": {
     "author": "Rédaction Page 2 File",

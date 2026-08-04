@@ -5,17 +5,65 @@
     "description": "Speichern Sie eine öffentliche oder angemeldete Webseite als PDF, wählen Sie Seitenaufnahmen oder eine bearbeitbare Ausgabe und prüfen Sie Seitenumbrüche.",
     "imageAlt": "Eine lange Browserseite wird zu einem übersichtlichen Stapel von PDF-Seiten"
   },
+  "save-authenticated-webpage-as-pdf": {
+    "author": "Page 2 File Redaktion",
+    "title": "So speichern Sie eine Webseite hinter einer Anmeldung als PDF",
+    "description": "Speichern Sie eine angemeldete Webseite aus dem aktiven Chrome-Tab, ohne einem URL-Konverter Zugangsdaten zu geben, und prüfen Sie Privatsphäre und Erfassungsgrenzen.",
+    "imageAlt": "Ein geschützter Browser-Tab wird zu einer privaten PDF-Kopie"
+  },
+  "sections-to-slides": {
+    "author": "Page 2 File Redaktion",
+    "title": "So werden Webseitenabschnitte zu PowerPoint-Folien",
+    "description": "Nutzen Sie die Hierarchie einer Webseite für Foliengrenzen, bewahren Sie Kontext, teilen Sie dichte Abschnitte und prüfen Sie Seitenaufnahmen oder bearbeitbare Ausgaben.",
+    "imageAlt": "Webseitenabschnitte werden als getrennte PowerPoint-Folien angeordnet"
+  },
+  "screenshot-vs-editable-powerpoint": {
+    "author": "Page 2 File Redaktion",
+    "title": "Folien als Seitenaufnahme oder bearbeitbares PowerPoint",
+    "description": "Vergleichen Sie Seitenaufnahmen mit bearbeitbarer PowerPoint-Ausgabe bei Layouttreue, auswählbarem Text, Links, Diagrammen, Pflege und Barrierefreiheit.",
+    "imageAlt": "Folien als Seitenaufnahmen werden mit bearbeitbaren PowerPoint-Elementen verglichen"
+  },
   "capture-full-webpage-as-pdf": {
     "author": "Page 2 File Redaktion",
     "title": "So erfassen Sie eine vollständige Webseite als PDF",
     "description": "Erfassen Sie eine vollständig scrollbare Webseite als PDF, indem Sie ihre Grenze festlegen, dynamische Abschnitte laden und Seitenumbrüche prüfen.",
     "imageAlt": "Eine vollständig scrollbare Browserseite fließt in ein PDF-Dokument"
   },
+  "export-ai-chats-privately": {
+    "author": "Page 2 File Redaktion",
+    "title": "KI-Chats privat als PDF exportieren",
+    "description": "Exportieren Sie sichtbare KI-Unterhaltungen aus dem aktiven Browser-Tab, definieren Sie den Nachrichtenbereich, wählen Sie einen PDF-Modus und verstehen Sie temporäre Vorschaudaten.",
+    "imageAlt": "Eine private KI-Unterhaltung wird durch ein Schutzschild in PDF übertragen"
+  },
+  "export-chatgpt-conversation-to-pdf": {
+    "author": "Page 2 File Redaktion",
+    "title": "Eine ChatGPT-Unterhaltung als PDF exportieren",
+    "description": "Bereiten Sie eine sichtbare ChatGPT-Unterhaltung vor, laden Sie den benötigten Bereich, wählen Sie Seitenaufnahme oder bearbeitbares PDF und unterscheiden Sie Tab-Erfassung vom Kontoexport.",
+    "imageAlt": "Eine generische KI-Unterhaltung im Browser wird zu einem PDF-Dokument"
+  },
+  "export-claude-chat-to-pdf": {
+    "author": "Page 2 File Redaktion",
+    "title": "Einen Claude-Chat als PDF exportieren",
+    "description": "Erfassen Sie eine sichtbare Claude-Unterhaltung und ihren Artefaktbereich als PDF, wählen Sie eine lesbare Grenze und vergleichen Sie sie mit dem Claude-Kontodatenexport.",
+    "imageAlt": "Ein generischer KI-Chat und Artefaktbereich werden zu einem PDF"
+  },
+  "export-gemini-chat-to-pdf": {
+    "author": "Page 2 File Redaktion",
+    "title": "Einen Gemini-Chat als PDF exportieren",
+    "description": "Speichern Sie eine sichtbare Gemini-Unterhaltung mit Quellenangaben und Bildern als PDF, laden Sie die erforderlichen Inhalte und unterscheiden Sie die Erfassung von Google Takeout.",
+    "imageAlt": "Ein KI-Chat mit Quellenkarten und Bildern wird zu einem PDF"
+  },
   "html-to-pdf-safely": {
     "author": "Page 2 File Redaktion",
     "title": "HTML sicher in PDF umwandeln",
     "description": "Konvertieren Sie eine hochgeladene HTML-Datei in PDF und behandeln Sie Skripte, externe Ressourcen, Dateizugriff und private Netzwerkziele als Sicherheitsgrenzen.",
     "imageAlt": "HTML-Inhalte werden isoliert, bevor daraus ein übersichtliches PDF entsteht"
+  },
+  "html-to-powerpoint": {
+    "author": "Page 2 File Redaktion",
+    "title": "HTML-Webinhalte in PowerPoint umwandeln",
+    "description": "Übertragen Sie gerenderte HTML-Webinhalte in PowerPoint, wählen Sie geeignete Abschnitte, Seitenaufnahmen oder bearbeitbare Folien und prüfen Sie komplexe Fallbacks.",
+    "imageAlt": "Gerenderte HTML-Blöcke werden vom Browser in Folien übertragen"
   },
   "long-webpage-page-breaks": {
     "author": "Page 2 File Redaktion",
@@ -46,6 +94,24 @@
     "title": "So wandeln Sie eine Webseite in PowerPoint um",
     "description": "Wandeln Sie eine öffentliche Webseite in eine PPTX-Präsentation um, wählen Sie Seitenaufnahmen oder bearbeitbare Folien und prüfen Sie die 16:9-Foliengrenzen.",
     "imageAlt": "Abschnitte einer Webseite werden zu einer übersichtlichen PowerPoint-Präsentation"
+  },
+  "webpage-capture-vs-web-scraping": {
+    "author": "Page 2 File Redaktion",
+    "title": "Webseitenerfassung oder Web Scraping: Was benötigen Sie?",
+    "description": "Wählen Sie Webseitenerfassung für ein lesbares Dokument oder Web Scraping für strukturierte Daten und behandeln Sie Page 2 File nicht als Crawler-API.",
+    "imageAlt": "Eine Browserseite verzweigt sich in ein Dokument und eine Datentabelle"
+  },
+  "website-to-powerpoint": {
+    "author": "Page 2 File Redaktion",
+    "title": "So wandeln Sie eine Website in PowerPoint um",
+    "description": "Konvertieren Sie ausgewählte öffentliche Seiten einer Website in getrennte PPTX-Dateien, definieren Sie die Grenze, prüfen Sie die Ausgaben und erstellen Sie ein Manifest.",
+    "imageAlt": "Eine Website-Karte wird zu mehreren getrennten PowerPoint-Präsentationen"
+  },
+  "website-types-to-pdf-or-powerpoint": {
+    "author": "Page 2 File Redaktion",
+    "title": "Welche Websites können Sie als PDF oder PowerPoint exportieren?",
+    "description": "Erfahren Sie, wie Artikel, Dokumentation, Dashboards, Shops, Lernseiten, Web-Apps, KI-Chats und Browser-Messenger zu PDF- oder PowerPoint-Exporten passen.",
+    "imageAlt": "Verschiedene Website-Typen laufen in PDFs und Präsentationen zusammen"
   },
   "why-print-to-pdf-breaks": {
     "author": "Page 2 File Redaktion",

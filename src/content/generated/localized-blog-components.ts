@@ -2,22 +2,44 @@
 import type { ComponentType } from "react";
 import type { Locale } from "@/shared/i18n/locales";
 import de_capture_full_webpage_as_pdf from "../../../content/de/blog/capture-full-webpage-as-pdf.mdx";
+import de_export_ai_chats_privately from "../../../content/de/blog/export-ai-chats-privately.mdx";
+import de_export_chatgpt_conversation_to_pdf from "../../../content/de/blog/export-chatgpt-conversation-to-pdf.mdx";
+import de_export_claude_chat_to_pdf from "../../../content/de/blog/export-claude-chat-to-pdf.mdx";
+import de_export_gemini_chat_to_pdf from "../../../content/de/blog/export-gemini-chat-to-pdf.mdx";
 import de_html_to_pdf_safely from "../../../content/de/blog/html-to-pdf-safely.mdx";
+import de_html_to_powerpoint from "../../../content/de/blog/html-to-powerpoint.mdx";
 import de_long_webpage_page_breaks from "../../../content/de/blog/long-webpage-page-breaks.mdx";
 import de_multi_page_website_to_pdf from "../../../content/de/blog/multi-page-website-to-pdf.mdx";
 import de_preserve_clickable_links from "../../../content/de/blog/preserve-clickable-links.mdx";
+import de_save_authenticated_webpage_as_pdf from "../../../content/de/blog/save-authenticated-webpage-as-pdf.mdx";
 import de_save_webpage_as_pdf from "../../../content/de/blog/save-webpage-as-pdf.mdx";
+import de_screenshot_vs_editable_powerpoint from "../../../content/de/blog/screenshot-vs-editable-powerpoint.mdx";
+import de_sections_to_slides from "../../../content/de/blog/sections-to-slides.mdx";
 import de_visual_vs_editable from "../../../content/de/blog/visual-vs-editable.mdx";
+import de_webpage_capture_vs_web_scraping from "../../../content/de/blog/webpage-capture-vs-web-scraping.mdx";
 import de_webpage_to_powerpoint from "../../../content/de/blog/webpage-to-powerpoint.mdx";
+import de_website_to_powerpoint from "../../../content/de/blog/website-to-powerpoint.mdx";
+import de_website_types_to_pdf_or_powerpoint from "../../../content/de/blog/website-types-to-pdf-or-powerpoint.mdx";
 import de_why_print_to_pdf_breaks from "../../../content/de/blog/why-print-to-pdf-breaks.mdx";
 import fr_capture_full_webpage_as_pdf from "../../../content/fr/blog/capture-full-webpage-as-pdf.mdx";
+import fr_export_ai_chats_privately from "../../../content/fr/blog/export-ai-chats-privately.mdx";
+import fr_export_chatgpt_conversation_to_pdf from "../../../content/fr/blog/export-chatgpt-conversation-to-pdf.mdx";
+import fr_export_claude_chat_to_pdf from "../../../content/fr/blog/export-claude-chat-to-pdf.mdx";
+import fr_export_gemini_chat_to_pdf from "../../../content/fr/blog/export-gemini-chat-to-pdf.mdx";
 import fr_html_to_pdf_safely from "../../../content/fr/blog/html-to-pdf-safely.mdx";
+import fr_html_to_powerpoint from "../../../content/fr/blog/html-to-powerpoint.mdx";
 import fr_long_webpage_page_breaks from "../../../content/fr/blog/long-webpage-page-breaks.mdx";
 import fr_multi_page_website_to_pdf from "../../../content/fr/blog/multi-page-website-to-pdf.mdx";
 import fr_preserve_clickable_links from "../../../content/fr/blog/preserve-clickable-links.mdx";
+import fr_save_authenticated_webpage_as_pdf from "../../../content/fr/blog/save-authenticated-webpage-as-pdf.mdx";
 import fr_save_webpage_as_pdf from "../../../content/fr/blog/save-webpage-as-pdf.mdx";
+import fr_screenshot_vs_editable_powerpoint from "../../../content/fr/blog/screenshot-vs-editable-powerpoint.mdx";
+import fr_sections_to_slides from "../../../content/fr/blog/sections-to-slides.mdx";
 import fr_visual_vs_editable from "../../../content/fr/blog/visual-vs-editable.mdx";
+import fr_webpage_capture_vs_web_scraping from "../../../content/fr/blog/webpage-capture-vs-web-scraping.mdx";
 import fr_webpage_to_powerpoint from "../../../content/fr/blog/webpage-to-powerpoint.mdx";
+import fr_website_to_powerpoint from "../../../content/fr/blog/website-to-powerpoint.mdx";
+import fr_website_types_to_pdf_or_powerpoint from "../../../content/fr/blog/website-types-to-pdf-or-powerpoint.mdx";
 import fr_why_print_to_pdf_breaks from "../../../content/fr/blog/why-print-to-pdf-breaks.mdx";
 
 export const localizedBlogComponents: Partial<
@@ -25,24 +47,46 @@ export const localizedBlogComponents: Partial<
 > = {
   de: {
     "capture-full-webpage-as-pdf": de_capture_full_webpage_as_pdf,
+    "export-ai-chats-privately": de_export_ai_chats_privately,
+    "export-chatgpt-conversation-to-pdf": de_export_chatgpt_conversation_to_pdf,
+    "export-claude-chat-to-pdf": de_export_claude_chat_to_pdf,
+    "export-gemini-chat-to-pdf": de_export_gemini_chat_to_pdf,
     "html-to-pdf-safely": de_html_to_pdf_safely,
+    "html-to-powerpoint": de_html_to_powerpoint,
     "long-webpage-page-breaks": de_long_webpage_page_breaks,
     "multi-page-website-to-pdf": de_multi_page_website_to_pdf,
     "preserve-clickable-links": de_preserve_clickable_links,
+    "save-authenticated-webpage-as-pdf": de_save_authenticated_webpage_as_pdf,
     "save-webpage-as-pdf": de_save_webpage_as_pdf,
+    "screenshot-vs-editable-powerpoint": de_screenshot_vs_editable_powerpoint,
+    "sections-to-slides": de_sections_to_slides,
     "visual-vs-editable": de_visual_vs_editable,
+    "webpage-capture-vs-web-scraping": de_webpage_capture_vs_web_scraping,
     "webpage-to-powerpoint": de_webpage_to_powerpoint,
+    "website-to-powerpoint": de_website_to_powerpoint,
+    "website-types-to-pdf-or-powerpoint": de_website_types_to_pdf_or_powerpoint,
     "why-print-to-pdf-breaks": de_why_print_to_pdf_breaks,
   },
   fr: {
     "capture-full-webpage-as-pdf": fr_capture_full_webpage_as_pdf,
+    "export-ai-chats-privately": fr_export_ai_chats_privately,
+    "export-chatgpt-conversation-to-pdf": fr_export_chatgpt_conversation_to_pdf,
+    "export-claude-chat-to-pdf": fr_export_claude_chat_to_pdf,
+    "export-gemini-chat-to-pdf": fr_export_gemini_chat_to_pdf,
     "html-to-pdf-safely": fr_html_to_pdf_safely,
+    "html-to-powerpoint": fr_html_to_powerpoint,
     "long-webpage-page-breaks": fr_long_webpage_page_breaks,
     "multi-page-website-to-pdf": fr_multi_page_website_to_pdf,
     "preserve-clickable-links": fr_preserve_clickable_links,
+    "save-authenticated-webpage-as-pdf": fr_save_authenticated_webpage_as_pdf,
     "save-webpage-as-pdf": fr_save_webpage_as_pdf,
+    "screenshot-vs-editable-powerpoint": fr_screenshot_vs_editable_powerpoint,
+    "sections-to-slides": fr_sections_to_slides,
     "visual-vs-editable": fr_visual_vs_editable,
+    "webpage-capture-vs-web-scraping": fr_webpage_capture_vs_web_scraping,
     "webpage-to-powerpoint": fr_webpage_to_powerpoint,
+    "website-to-powerpoint": fr_website_to_powerpoint,
+    "website-types-to-pdf-or-powerpoint": fr_website_types_to_pdf_or_powerpoint,
     "why-print-to-pdf-breaks": fr_why_print_to_pdf_breaks,
   },
 };
