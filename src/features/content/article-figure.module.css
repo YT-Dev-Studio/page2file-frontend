@@ -64,7 +64,7 @@
 .caption {
   display: grid;
   grid-template-columns: var(--p2f-control-size-compact) minmax(0, 1fr);
-  align-items: start;
+  align-items: center;
   gap: var(--p2f-space-12);
   margin-top: var(--p2f-space-12);
   color: var(--p2f-color-text-secondary);
