@@ -850,6 +850,356 @@ const frenchChangelogEntries: ReadonlyArray<ChangelogEntry> = [
   },
 ];
 
+const spanishChangelogEntries: ReadonlyArray<ChangelogEntry> = [
+  {
+    version: "0.3.0-prototype",
+    date: "2026-07-29",
+    added: [
+      "Convertidores de demostración para PDF y PowerPoint",
+      "Operaciones de secciones en la vista previa",
+      "Rutas para 16 idiomas",
+    ],
+    improved: [
+      "Analítica solo después del consentimiento",
+      "Validación de rutas y contenido",
+    ],
+    fixed: ["Los idiomas no revisados quedan excluidos del sitemap"],
+  },
+  {
+    version: "0.2.0-prototype",
+    date: "2026-07-24",
+    added: [
+      "Modos de instrucciones de la extensión",
+      "Grupo de páginas para exportar chats de IA",
+    ],
+    improved: [
+      "Texto de privacidad de la pestaña activa y avisos de las plataformas",
+    ],
+    fixed: ["Política de indexación de la página de bienvenida"],
+  },
+  {
+    version: "0.1.0-prototype",
+    date: "2026-07-18",
+    added: [
+      "Mapa inicial de rutas del producto",
+      "Base sin cuenta y centrada en la privacidad",
+    ],
+    improved: [
+      "Nombres de los modos de capturas de página y documento editable",
+    ],
+    fixed: [],
+  },
+];
+
+const dutchChangelogEntries: ReadonlyArray<ChangelogEntry> = [
+  {
+    version: "0.3.0-prototype",
+    date: "2026-07-29",
+    added: [
+      "Democonverters voor PDF en PowerPoint",
+      "Bewerkingen voor secties in het voorbeeld",
+      "Routes voor 16 talen",
+    ],
+    improved: [
+      "Analytics pas na toestemming",
+      "Validatie van routes en inhoud",
+    ],
+    fixed: ["Niet-beoordeelde talen zijn uitgesloten van de sitemap"],
+  },
+  {
+    version: "0.2.0-prototype",
+    date: "2026-07-24",
+    added: [
+      "Instructiemodi voor de extensie",
+      "Groep pagina’s voor het exporteren van AI-chats",
+    ],
+    improved: [
+      "Privacytekst voor het actieve tabblad en platformmeldingen",
+    ],
+    fixed: ["Indexeringsbeleid van de welkomstpagina"],
+  },
+  {
+    version: "0.1.0-prototype",
+    date: "2026-07-18",
+    added: [
+      "Eerste kaart van productroutes",
+      "Privacygerichte basis zonder account",
+    ],
+    improved: [
+      "Benamingen voor pagina-opnamen en bewerkbare documenten",
+    ],
+    fixed: [],
+  },
+];
+
+const portugueseChangelogEntries: ReadonlyArray<ChangelogEntry> = [
+  {
+    version: "0.3.0-prototype",
+    date: "2026-07-29",
+    added: [
+      "Conversores de demonstração para PDF e PowerPoint",
+      "Operações de secções na pré-visualização",
+      "Rotas para 16 idiomas",
+    ],
+    improved: [
+      "Analítica apenas após consentimento",
+      "Validação de rotas e conteúdo",
+    ],
+    fixed: ["Os idiomas não revistos são excluídos do sitemap"],
+  },
+  {
+    version: "0.2.0-prototype",
+    date: "2026-07-24",
+    added: [
+      "Modos de instruções da extensão",
+      "Grupo de páginas para exportar conversas AI",
+    ],
+    improved: [
+      "Texto de privacidade do separador ativo e avisos das plataformas",
+    ],
+    fixed: ["Política de indexação da página de boas-vindas"],
+  },
+  {
+    version: "0.1.0-prototype",
+    date: "2026-07-18",
+    added: [
+      "Mapa inicial das rotas do produto",
+      "Base sem conta e centrada na privacidade",
+    ],
+    improved: [
+      "Nomes dos modos de capturas de página e documento editável",
+    ],
+    fixed: [],
+  },
+];
+
+const italianChangelogEntries: ReadonlyArray<ChangelogEntry> = [
+  {
+    version: "0.3.0-prototype",
+    date: "2026-07-29",
+    added: [
+      "Convertitori demo per PDF e PowerPoint",
+      "Operazioni sulle sezioni nell’anteprima",
+      "Percorsi per 16 lingue",
+    ],
+    improved: [
+      "Analytics solo dopo il consenso",
+      "Convalida di percorsi e contenuti",
+    ],
+    fixed: ["Le lingue non verificate sono escluse dalla sitemap"],
+  },
+  {
+    version: "0.2.0-prototype",
+    date: "2026-07-24",
+    added: [
+      "Modalità delle istruzioni dell’estensione",
+      "Gruppo di pagine per esportare chat AI",
+    ],
+    improved: [
+      "Testo sulla privacy della scheda attiva e avvisi delle piattaforme",
+    ],
+    fixed: ["Criteri di indicizzazione della pagina di benvenuto"],
+  },
+  {
+    version: "0.1.0-prototype",
+    date: "2026-07-18",
+    added: [
+      "Mappa iniziale dei percorsi del prodotto",
+      "Base senza account incentrata sulla privacy",
+    ],
+    improved: [
+      "Nomi delle modalità acquisizione della pagina e documento modificabile",
+    ],
+    fixed: [],
+  },
+];
+
+const polishChangelogEntries: ReadonlyArray<ChangelogEntry> = [
+  {
+    version: "0.3.0-prototype",
+    date: "2026-07-29",
+    added: ["Demonstracyjne konwertery PDF i PowerPoint", "Operacje na sekcjach w podglądzie", "Trasy dla 16 języków"],
+    improved: ["Analityka dopiero po zgodzie", "Walidacja tras i treści"],
+    fixed: ["Niezweryfikowane języki są wykluczone z mapy witryny"],
+  },
+  {
+    version: "0.2.0-prototype",
+    date: "2026-07-24",
+    added: ["Tryby instrukcji rozszerzenia", "Grupa stron eksportu czatów AI"],
+    improved: ["Tekst prywatności aktywnej karty i informacje o platformach"],
+    fixed: ["Zasady indeksowania strony powitalnej"],
+  },
+  {
+    version: "0.1.0-prototype",
+    date: "2026-07-18",
+    added: ["Początkowa mapa tras produktu", "Podstawa bez konta skoncentrowana na prywatności"],
+    improved: ["Nazwy trybów zrzutów strony i dokumentu edytowalnego"],
+    fixed: [],
+  },
+];
+
+const czechChangelogEntries: ReadonlyArray<ChangelogEntry> = [
+  {
+    version: "0.3.0-prototype",
+    date: "2026-07-29",
+    added: ["Ukázkové konvertory PDF a PowerPointu", "Operace s částmi v náhledu", "Trasy pro 16 jazyků"],
+    improved: ["Analytika až po souhlasu", "Validace tras a obsahu"],
+    fixed: ["Neověřené jazyky jsou vyloučeny ze sitemap"],
+  },
+  {
+    version: "0.2.0-prototype",
+    date: "2026-07-24",
+    added: ["Režimy návodu k rozšíření", "Skupina stránek pro export AI chatů"],
+    improved: ["Text o soukromí aktivní karty a upozornění platforem"],
+    fixed: ["Pravidla indexování uvítací stránky"],
+  },
+  {
+    version: "0.1.0-prototype",
+    date: "2026-07-18",
+    added: ["Počáteční mapa tras produktu", "Základ bez účtu zaměřený na soukromí"],
+    improved: ["Názvy režimů snímků stránky a upravitelného dokumentu"],
+    fixed: [],
+  },
+];
+
+const swedishChangelogEntries: ReadonlyArray<ChangelogEntry> = [
+  {
+    version: "0.3.0-prototype",
+    date: "2026-07-29",
+    added: ["Demokonverterare för PDF och PowerPoint", "Avsnittsåtgärder i förhandsgranskningen", "Rutter för 16 språk"],
+    improved: ["Analys först efter samtycke", "Validering av rutter och innehåll"],
+    fixed: ["Ej granskade språk utesluts från webbplatskartan"],
+  },
+  {
+    version: "0.2.0-prototype",
+    date: "2026-07-24",
+    added: ["Instruktionslägen för tillägget", "Sidgrupp för export av AI-chattar"],
+    improved: ["Integritetstext för aktiv flik och plattformsmeddelanden"],
+    fixed: ["Indexeringspolicy för välkomstsidan"],
+  },
+  {
+    version: "0.1.0-prototype",
+    date: "2026-07-18",
+    added: ["Första kartan över produktrutter", "Integritetsfokuserad grund utan konto"],
+    improved: ["Benämningar för sidbilder och redigerbara dokument"],
+    fixed: [],
+  },
+];
+
+const norwegianChangelogEntries: ReadonlyArray<ChangelogEntry> = [
+  {
+    version: "0.3.0-prototype",
+    date: "2026-07-29",
+    added: ["Demokonverterere for PDF og PowerPoint", "Handlinger for deler i forhåndsvisningen", "Ruter for 16 språk"],
+    improved: ["Analyse først etter samtykke", "Validering av ruter og innhold"],
+    fixed: ["Språk som ikke er gjennomgått, utelates fra nettstedskartet"],
+  },
+  {
+    version: "0.2.0-prototype",
+    date: "2026-07-24",
+    added: ["Instruksjonsmoduser for utvidelsen", "Sidegruppe for eksport av AI-chatter"],
+    improved: ["Personverntekst for aktiv fane og plattformvarsler"],
+    fixed: ["Indekseringsregler for velkomstsiden"],
+  },
+  {
+    version: "0.1.0-prototype",
+    date: "2026-07-18",
+    added: ["Første kart over produktruter", "Personvernfokusert grunnlag uten konto"],
+    improved: ["Navn på moduser for sidebilder og redigerbare dokumenter"],
+    fixed: [],
+  },
+];
+
+const danishChangelogEntries: ReadonlyArray<ChangelogEntry> = [
+  {
+    version: "0.3.0-prototype",
+    date: "2026-07-29",
+    added: ["Demokonvertere til PDF og PowerPoint", "Afsnitshandlinger i forhåndsvisningen", "Ruter til 16 sprog"],
+    improved: ["Analyse først efter samtykke", "Validering af ruter og indhold"],
+    fixed: ["Sprog, der ikke er gennemgået, udelades fra sitemap"],
+  },
+  {
+    version: "0.2.0-prototype",
+    date: "2026-07-24",
+    added: ["Instruktionstilstande til udvidelsen", "Sidegruppe til eksport af AI-chats"],
+    improved: ["Privatlivstekst til aktiv fane og platformmeddelelser"],
+    fixed: ["Indekseringsregler for velkomstsiden"],
+  },
+  {
+    version: "0.1.0-prototype",
+    date: "2026-07-18",
+    added: ["Første kort over produktruter", "Privatlivsfokuseret grundlag uden konto"],
+    improved: ["Navne på tilstande for sidebilleder og redigerbare dokumenter"],
+    fixed: [],
+  },
+];
+
+const finnishChangelogEntries: ReadonlyArray<ChangelogEntry> = [
+  {
+    version: "0.3.0-prototype",
+    date: "2026-07-29",
+    added: ["PDF- ja PowerPoint-esimerkkimuuntimet", "Osioiden toiminnot esikatselussa", "Reitit 16 kielelle"],
+    improved: ["Analytiikka vasta suostumuksen jälkeen", "Reittien ja sisällön validointi"],
+    fixed: ["Tarkistamattomat kielet jätetään pois sivustokartasta"],
+  },
+  {
+    version: "0.2.0-prototype",
+    date: "2026-07-24",
+    added: ["Laajennuksen ohjetilat", "AI-keskustelujen vientisivujen ryhmä"],
+    improved: ["Aktiivisen välilehden tietosuojateksti ja alustailmoitukset"],
+    fixed: ["Tervetulosivun indeksointikäytäntö"],
+  },
+  {
+    version: "0.1.0-prototype",
+    date: "2026-07-18",
+    added: ["Ensimmäinen tuotereittikartta", "Yksityisyyttä painottava tilitön perusta"],
+    improved: ["Sivukaappausten ja muokattavien asiakirjojen tilanimet"],
+    fixed: [],
+  },
+];
+
+const romanianChangelogEntries: ReadonlyArray<ChangelogEntry> = [
+  {
+    version: "0.3.0-prototype", date: "2026-07-29",
+    added: ["Convertoare demonstrative pentru PDF și PowerPoint", "Operații pe secțiuni în previzualizare", "Rute pentru 16 limbi"],
+    improved: ["Analiză numai după consimțământ", "Validarea rutelor și conținutului"],
+    fixed: ["Limbile neverificate sunt excluse din sitemap"],
+  },
+  {
+    version: "0.2.0-prototype", date: "2026-07-24",
+    added: ["Moduri de instrucțiuni pentru extensie", "Grup de pagini pentru exportul conversațiilor AI"],
+    improved: ["Text de confidențialitate pentru fila activă și notificări despre platforme"],
+    fixed: ["Reguli de indexare pentru pagina de bun venit"],
+  },
+  {
+    version: "0.1.0-prototype", date: "2026-07-18",
+    added: ["Prima hartă a rutelor produsului", "Bază fără cont axată pe confidențialitate"],
+    improved: ["Denumiri pentru modurile instantanee ale paginii și document editabil"],
+    fixed: [],
+  },
+];
+
+const hungarianChangelogEntries: ReadonlyArray<ChangelogEntry> = [
+  {
+    version: "0.3.0-prototype", date: "2026-07-29",
+    added: ["Minta PDF- és PowerPoint-konverterek", "Szakaszműveletek az előnézetben", "Útvonalak 16 nyelvhez"],
+    improved: ["Analitika csak hozzájárulás után", "Útvonal- és tartalomellenőrzés"],
+    fixed: ["A nem ellenőrzött nyelvek kimaradnak a webhelytérképből"],
+  },
+  {
+    version: "0.2.0-prototype", date: "2026-07-24",
+    added: ["A bővítmény útmutatómódjai", "AI-csevegés exportoldalainak csoportja"],
+    improved: ["Aktív lap adatvédelmi szövege és platformértesítések"],
+    fixed: ["Az üdvözlőoldal indexelési szabályai"],
+  },
+  {
+    version: "0.1.0-prototype", date: "2026-07-18",
+    added: ["Első termékútvonal-térkép", "Adatvédelem-központú, fiók nélküli alap"],
+    improved: ["Oldal-pillanatkép és szerkeszthető dokumentum módnevek"],
+    fixed: [],
+  },
+];
+
 const findEntry = (
   entries: ReadonlyArray<ContentEntry>,
   slug: string,
@@ -858,20 +1208,24 @@ const findEntry = (
   return entries.find(matchesSlug) ?? null;
 };
 
+type TranslatedBlogLocale = Exclude<Locale, "en" | "ru">;
+
 const getTranslatedBlogEntries = (
-  locale: Locale,
+  locale: TranslatedBlogLocale,
 ): ReadonlyArray<ContentEntry> => {
   const components = localizedBlogComponents[locale];
   const metadata = localizedBlogMetadata[locale];
   if (!components || !metadata) {
-    return blogEntries;
+    throw new Error(`Localized blog registry is incomplete for ${locale}.`);
   }
 
   return blogEntries.map((entry: ContentEntry): ContentEntry => {
     const component = components[entry.slug];
     const localizedMetadata = metadata[entry.slug];
     if (!component || !localizedMetadata) {
-      return entry;
+      throw new Error(
+        `Localized blog entry is incomplete for ${locale}/${entry.slug}.`,
+      );
     }
     return {
       ...entry,
@@ -882,21 +1236,63 @@ const getTranslatedBlogEntries = (
 };
 
 export const getBlogEntries = (locale: Locale): ReadonlyArray<ContentEntry> =>
-  locale === "ru" ? russianBlogEntries : getTranslatedBlogEntries(locale);
+  locale === "en"
+    ? blogEntries
+    : locale === "ru"
+      ? russianBlogEntries
+      : getTranslatedBlogEntries(locale);
 
-export const getUpdateEntries = (locale: Locale): ReadonlyArray<ContentEntry> =>
-  locale === "ru" ? russianUpdateEntries : updateEntries;
+const updateEntriesByLocale: Record<
+  Locale,
+  ReadonlyArray<ContentEntry>
+> = {
+  en: updateEntries,
+  ru: russianUpdateEntries,
+  de: updateEntries,
+  fr: updateEntries,
+  es: updateEntries,
+  nl: updateEntries,
+  pt: updateEntries,
+  it: updateEntries,
+  pl: updateEntries,
+  cs: updateEntries,
+  sv: updateEntries,
+  no: updateEntries,
+  da: updateEntries,
+  fi: updateEntries,
+  ro: updateEntries,
+  hu: updateEntries,
+};
+
+export const getUpdateEntries = (
+  locale: Locale,
+): ReadonlyArray<ContentEntry> => updateEntriesByLocale[locale];
+
+const changelogEntriesByLocale: Record<
+  Locale,
+  ReadonlyArray<ChangelogEntry>
+> = {
+  en: changelogEntries,
+  ru: russianChangelogEntries,
+  de: germanChangelogEntries,
+  fr: frenchChangelogEntries,
+  es: spanishChangelogEntries,
+  nl: dutchChangelogEntries,
+  pt: portugueseChangelogEntries,
+  it: italianChangelogEntries,
+  pl: polishChangelogEntries,
+  cs: czechChangelogEntries,
+  sv: swedishChangelogEntries,
+  no: norwegianChangelogEntries,
+  da: danishChangelogEntries,
+  fi: finnishChangelogEntries,
+  ro: romanianChangelogEntries,
+  hu: hungarianChangelogEntries,
+};
 
 export const getChangelogEntries = (
   locale: Locale,
-): ReadonlyArray<ChangelogEntry> =>
-  locale === "ru"
-    ? russianChangelogEntries
-    : locale === "de"
-      ? germanChangelogEntries
-      : locale === "fr"
-        ? frenchChangelogEntries
-        : changelogEntries;
+): ReadonlyArray<ChangelogEntry> => changelogEntriesByLocale[locale];
 
 export const getBlogEntry = (
   locale: Locale,

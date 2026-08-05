@@ -7,7 +7,7 @@ describe("HomeExtensionPromo", () => {
     render(<HomeExtensionPromo locale="de" />);
 
     const promo = screen.getByRole("link", {
-      name: /aktuellen tab exportieren.*browse chrome extensions/i,
+      name: /aktuellen tab exportieren.*chrome-erweiterungen durchsuchen/i,
     });
 
     expect(promo.getAttribute("href")).toBe(
@@ -16,6 +16,6 @@ describe("HomeExtensionPromo", () => {
     expect(promo.getAttribute("target")).toBe("_blank");
     expect(promo.getAttribute("rel")).toBe("noopener noreferrer");
     expect(promo.querySelector("button")).toBeNull();
-    expect(screen.getByText("Browse Chrome extensions")).not.toBeNull();
+    expect(screen.getByText("Chrome-Erweiterungen durchsuchen")).not.toBeNull();
   });
 });

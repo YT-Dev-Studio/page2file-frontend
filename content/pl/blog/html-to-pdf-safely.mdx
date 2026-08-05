@@ -1,0 +1,124 @@
+Konwersja HTML do PDF zmienia dostarczony plik HTML w dokument o stałym układzie. W [aplikacji GPT HTML 2 PDF](/pl/html2pdf-gpt) źródłem jest przekazany plik, a nie przeszukiwanie URL ani uwierzytelniony stan karty przeglądarki.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wyrenderuj HTML jako stronę przed potraktowaniem go jako źródła dokumentu."}
+  caption={"Wyrenderuj HTML jako stronę przed potraktowaniem go jako źródła dokumentu."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wyrenderuj HTML jako stronę przed potraktowaniem go jako źródła dokumentu."}
+  src="/blog/instructions/html-to-pdf-safely/01.svg"
+  step={1}
+/>
+
+Traktuj każdy plik HTML jak aktywny kod, dopóki mechanizm renderujący nie wykaże inaczej. Odpowiedzialny projekt konwersji ogranicza skrypty i niespodziewany dostęp do sieci, blokuje żądania do plików lokalnych i usług wewnętrznych oraz ujawnia nieobsługiwaną treść do kontroli. Nie wnioskuj o tych zabezpieczeniach z estetycznego PDF — przed przekazaniem poufnego źródła sprawdź udokumentowaną granicę konwertera.
+
+## Przygotuj samodzielny plik
+
+Używaj semantycznych nagłówków, akapitów, list i tabel. Dołącz CSS wymagany przez układ oraz obrazy w formie, którą zatwierdzone wejście potrafi rozwiązać. Plik zależny od prywatnego serwera kompilacji lub zalogowanego API nie odtworzy się niezawodnie w izolowanym rendererze.
+
+Usuń analitykę, wysyłanie formularzy, automatyczne media i kod zmieniający dokument po wczytaniu. PDF jest statycznym celem; zachowywanie tych zachowań zwiększa ryzyko bez poprawy dokumentu.
+
+## Izoluj mechanizm renderujący
+
+Niezaufany HTML może próbować czytać pliki lokalne, odpytywać adresy wewnętrzne lub zużywać nadmierne zasoby. Konwersja powinna działać w osobnym ograniczonym procesie z wyłączonymi skryptami, WebSocketami i dowolnymi żądaniami sieciowymi.
+
+Izolacja może zmienić wygląd treści zależnej od zdalnych fontów, obrazów lub komponentów klienckich. Brakujące zasoby traktuj jako ustalenia kontroli, a nie jako dowód kompletności ukończonego renderu.
+
+## Projektuj dla stałych stron
+
+Ustaw rozsądne szerokości wydruku, pozwól zawijać długie słowa i kod oraz unikaj elementów wymagających najechania. Tabele potrzebują powtarzalnych nagłówków i komórek, które można podzielić lub przeskalować bez utraty czytelności.
+
+Jeśli źródłem jest już publiczna strona, użyj [konwertera strony do PDF](/pl/convert-webpage-to-pdf). Jeśli to prywatna strona widoczna w Chrome, użyj [rozszerzenia](/pl/chrome-extension/how-to-use).
+
+## Sprawdzaj dokument, nie tylko HTML
+
+Skontroluj zastąpione fonty, brakujące obrazy, ucięte elementy pozycjonowane, podziały stron i linki. Złożone sekcje porównaj ze wskazówkami o [zrzucie i wyniku edytowalnym](/pl/blog/visual-vs-editable).
+
+HTML 2 PDF jest użyteczne, gdy kontrolujesz plik wejściowy i chcesz odizolowanego renderowania dokumentu. Nie jest endpointem automatyzacji przeglądarki, scraperem witryn ani sposobem uruchamiania dostarczonych skryptów.
+
+## Zinwentaryzuj wszystkie zależności
+
+Plik HTML rzadko opowiada całą historię. Układ może zależeć od lokalnych arkuszy, fontów internetowych, obrazów, SVG, skryptów lub zasobów zdalnych. Określ, które są niezbędne i jak są adresowane. Plik kompletny w projekcie może po samodzielnym otwarciu stać się nieostylowaną kolumną tekstu.
+
+Preferuj samodzielne style i zasoby, z których dokument może korzystać. Zastąp ścieżki deweloperskie i odwołania do sieci prywatnej. Jeśli zdalny obraz jest konieczny, sprawdź dostęp bez zalogowanej sesji. Konwerter nie powinien dziedziczyć plików cookie ani układu systemu plików stacji roboczej.
+
+Usuń skrypty pobierające dane użytkownika, analitykę lub niepowiązany stan aplikacji. Statyczny HTML do PDF zwykle wymaga mniej wykonywania niż oryginalna witryna. Zachowaj tylko zachowanie potrzebne do ujawnienia dokumentu i upewnij się, że finalna treść nie zależy od timera ani gestu.
+
+## Jawnie określ wymiary wydruku
+
+Układy przeglądarki reagują na viewport, a PDF używa stałych wymiarów. Określ szerokość treści, marginesy i typografię dla docelowego papieru. Nie pozycjonuj głównego dokumentu według wysokości viewportu i nie pozostawiaj ważnego tekstu w poziomo przewijanych kontenerach.
+
+Użyj reguł podziału jako wskazówek wokół nagłówków, ilustracji, tabel i kodu, a potem sprawdź wynik. Reguły mogą się ścierać, gdy element jest wyższy niż strona. Duża tabela może wymagać powtarzanych nagłówków lub orientacji poziomej, a wysoki element — jednego przeskalowanego obrazu.
+
+Bardzo jasny tekst, półprzezroczyste warstwy i tokeny wyłącznie trybu ciemnego mogą być trudne do odczytania na wydruku. Sprawdź sam PDF zamiast zakładać, że podgląd przeglądarki reprezentuje każdy czytnik i drukarkę.
+
+## Traktuj przesłany HTML jak niezaufane wejście
+
+Przesyłaj tylko pliki, które wolno Ci przetwarzać, i usuwaj sekrety osadzone w kodzie, komentarzach, atrybutach danych lub skryptach inline. Ukryta treść nadal może podróżować ze źródłem, nawet gdy nie jest widoczna na finalnej stronie.
+
+Renderer powinien ograniczać dostęp do sieci i systemu lokalnego, ale izolacja techniczna nie naprawia niebezpiecznych decyzji dotyczących treści. Przed dystrybucją sprawdź zewnętrzne linki, formularze i wygenerowane kody QR. PDF jest statyczny, lecz jego linki nadal mogą prowadzić odbiorcę poza dokument.
+
+Porównaj wynik z listą zależności. Potwierdź fonty, obrazy, kolejność stron, nagłówki, linki i ostatnią stronę. Jeśli brakuje zasobu, napraw pakiet HTML lub użyj publicznego URL, który wczytuje kompletną stronę.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: użyj Current tab dla wyrenderowanej treści lokalnej lub By URL dla dozwolonej strony publicznej."}
+  caption={"Użyj Current tab dla wyrenderowanej treści lokalnej lub By URL dla dozwolonej strony publicznej."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: użyj Current tab dla wyrenderowanej treści lokalnej lub By URL dla dozwolonej strony publicznej."}
+  src="/blog/instructions/html-to-pdf-safely/02.svg"
+  step={2}
+/>
+
+## Oddziel ryzyka tworzenia od ryzyk renderowania
+
+Ryzyka tworzenia są już w pliku: osadzone sekrety, ukryte dane osobowe, mylące linki i treść bez prawa do dystrybucji. Ryzyka renderowania powstają, gdy aktywny HTML może żądać zasobów sieciowych, uzyskać dostęp do niezamierzonego miejsca lub zużyć nadmierny czas. Wiarygodny proces potrzebuje kontroli obu kategorii.
+
+Jeśli to możliwe, sprawdź źródło przed przesłaniem. Wyszukaj skrypty inline, obsługę zdarzeń, formularze, zewnętrzne URL, ścieżki lokalne i duże osadzone zasoby. Usuń wszystko niezwiązane z dokumentem. Zmniejsza to niejednoznaczność, nawet gdy renderer ma własne ograniczenia.
+
+Nie używaj konwersji do ustalania, czy nieznany HTML jest bezpieczny. Jeśli plik pochodzi od niezaufanego nadawcy, najpierw zastosuj firmowy proces obsługi malware i dokumentów. Wynik PDF nie czyni wejścia bezpiecznym wstecznie.
+
+## Buduj przewidywalny HTML do paginacji
+
+Użyj logicznej hierarchii nagłówków i pozostaw główną kolejność czytania w przepływie dokumentu. Pozycjonowanie absolutne może pomóc na okładce, ale zastosowane w całym raporcie utrudnia diagnozę przepełnienia. Określ szerokości tabel i mediów, dodaj rozsądne maksima i pozwól zawijać długi tekst.
+
+CSS do druku może określać marginesy, papier i preferencje podziałów, lecz są to prośby, nie gwarancje. Element wyższy od strony trzeba przeskalować lub podzielić. Trzymaj podpisy przy ilustracjach, powtarzaj kontekst tabel, jeśli renderer to obsługuje, i nie umieszczaj ważnych wyjaśnień tylko w stanach hover lub pseudo-elementach.
+
+Fonty potrzebują stosu zastępczego. Zdalny krój może być niedostępny w ograniczonym środowisku. Wybierz zamiennik o podobnych metrykach i sprawdź zmienione zawijanie w nagłówkach, tabelach i kodzie. Dokładny font jest mniej ważny niż stabilny, czytelny wynik, chyba że typografia sama jest tematem.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wybierz PDF i styl wyniku, gdy strona jest już stabilna."}
+  caption={"Wybierz PDF i styl wyniku, gdy strona jest już stabilna."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz PDF i styl wyniku, gdy strona jest już stabilna."}
+  src="/blog/instructions/html-to-pdf-safely/03.svg"
+  step={3}
+/>
+
+## Sprawdzaj wynik jako nowy artefakt
+
+Porównaj PDF z inwentarzem treści, a nie tylko z widokiem HTML w przeglądarce. Potwierdź, że każda wymagana sekcja występuje raz, kolejność stron jest właściwa, obrazy są aktualne, a linki prowadzą do zatwierdzonych miejsc. Jeśli oczekujesz zaznaczalnego tekstu, wyszukaj frazę z początku, środka i końca.
+
+Szukaj śladów zablokowanych zależności: pustych ramek obrazów, zastępczych fontów, pustych wykresów i luk w miejscu komponentu generowanego skryptem. Napraw pakiet źródłowy albo zaakceptuj wyraźnie opisany zamiennik zrzutowy. Nie ukrywaj brakującego elementu dlatego, że reszta stron wyrenderowała się poprawnie.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: traktuj dostęp skryptów, sieci i plików jako osobną granicę bezpieczeństwa renderera."}
+  caption={"Traktuj dostęp skryptów, sieci i plików jako osobną granicę bezpieczeństwa renderera."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: traktuj dostęp skryptów, sieci i plików jako osobną granicę bezpieczeństwa renderera."}
+  src="/blog/instructions/html-to-pdf-safely/04.svg"
+  step={4}
+/>
+
+HTML 2 PDF jest przedstawione jako aplikacja GPT dla jednego przesłanego pliku HTML i jednego wyniku PDF. Nie jest ogólnym crawlerem witryn ani środowiskiem wykonawczym kodu aplikacji. Dla strony publicznej użyj konwertera URL, a dla autoryzowanej aktywnej karty — rozszerzenia Chrome.
+
+Przed dystrybucją sprawdź metadane pliku, widoczne identyfikatory i klikalne cele. Nawet najbezpieczniejszy render może zawierać informacje umieszczone przez autora. Zachowaj zatwierdzony PDF we własnym magazynie, ponieważ Page 2 File nie udostępnia bazy historii konwersji.
+
+Inne kategorie źródeł porównuje [przewodnik po PDF i PowerPoint dla witryn](/pl/blog/website-types-to-pdf-or-powerpoint).
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: sprawdź stałe strony PDF i zapisz brakujące lub zablokowane zależności."}
+  caption={"Sprawdź stałe strony PDF i zapisz brakujące lub zablokowane zależności."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: sprawdź stałe strony PDF i zapisz brakujące lub zablokowane zależności."}
+  src="/blog/instructions/html-to-pdf-safely/05.svg"
+  step={5}
+/>

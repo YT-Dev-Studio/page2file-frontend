@@ -1,0 +1,110 @@
+För att spara en webbsida som PDF behöver du först avgöra om du vill ha sidan som den ser ut eller som ett dokument du kan söka i och återanvända. Page 2 File stöder båda alternativen: Accurate copy (skärmbildsliknande utdata) registrerar renderade avsnitt, medan Editable document (redigerbar utdata) återskapar text, bilder och länkar som stöds som dokumentelement.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Öppna webbsidan och läs in artikeln, bilderna och referenserna du behöver."}
+  caption={"Öppna webbsidan och läs in artikeln, bilderna och referenserna du behöver."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: öppna webbsidan och läs in artikeln, bilderna och referenserna du behöver."}
+  src="/blog/instructions/save-webpage-as-pdf/01.svg"
+  step={1}
+/>
+
+För en offentlig sida klistrar du in dess fullständiga HTTPS-adress i [webbsida till PDF-konverteraren](/sv/convert-webpage-to-pdf). För en inloggad sida öppnar du den i Chrome och följer [tilläggsguiden](/sv/chrome-extension/how-to-use) i stället för att dela inloggningsuppgifter via ett URL-formulär. Den separata guiden om att [spara en autentiserad webbsida](/sv/blog/save-authenticated-webpage-as-pdf) förklarar den gränsen.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: För en offentlig sida väljer du By URL och klistrar in den fullständiga HTTPS-adressen."}
+  caption={"För en offentlig sida väljer du By URL och klistrar in den fullständiga HTTPS-adressen."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: för en offentlig sida väljer du By URL och klistrar in den fullständiga HTTPS-adressen."}
+  src="/blog/instructions/save-webpage-as-pdf/02.svg"
+  step={2}
+/>
+
+## Bestäm vad som ska ingå i PDF-filen
+
+En webbläsarflik kan innehålla mycket mer än dokumentet du vill behålla. Cookie-banderoller, fast navigering, relaterade artiklar, kommentarer och ett oändligt flöde kan ligga bredvid det användbara materialet. Läs in den del du behöver, fäll ut komprimerade avsnitt och sluta rulla när källans gräns är tydlig.
+
+Långa sidor behöver också tid för att läsa in bilder och diagram som laddas sent. Om innehåll visas först efter att du har rullat ska du ta in det på den renderade sidan före insamlingen. Page 2 File gör inte anspråk på åtkomst till meddelanden, paneler eller grenar som sidan inte har läst in.
+
+## Välj skärmbild eller redigerbar utdata
+
+Accurate copy passar bäst för en landningssida, portfölj, ett kvitto eller en instrumentpanel där position och utseende har betydelse. Nackdelen är att ett skärmbildsavsnitt inte är en samling redigerbara textrutor.
+
+Editable document är avsett för artiklar, dokumentation och rapporter där markerbar text, bilder och klickbara länkar är viktiga. Webbläsarspecifika funktioner som video, canvas-ritning och animation kan representeras av en stillbild. Den detaljerade jämförelsen av [skärmbild och redigerbar konvertering](/sv/blog/visual-vs-editable) förklarar var varje läge får ge vika.
+
+## Granska sidbrytningar före nedladdning
+
+En PDF inför fasta sidgränser i en källa som utformades för rullning. Kontrollera rubriker, tabeller, kodblock och bildtexter i förhandsvisningen. Flytta, dela eller ta bort ett avsnitt innan filen renderas i stället för att acceptera en rubrik längst ned på en sida och dess stycke på nästa.
+
+Guiden om [sidbrytningar på långa webbsidor](/sv/blog/long-webpage-page-breaks) behandlar svåra layouter. För ett bredare val efter källa använder du [guiden för webbsidans utdata](/sv/blog/website-types-to-pdf-or-powerpoint).
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Välj PDF som utdataformat."}
+  caption={"Välj PDF som utdataformat."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: välj PDF som utdataformat."}
+  src="/blog/instructions/save-webpage-as-pdf/03.svg"
+  step={3}
+/>
+
+## Ta reda på var tillfälliga data hamnar
+
+Konvertering av en offentlig URL skapar ett tillfälligt backend-jobb efter att du uttryckligen har startat det. Tillägget arbetar från den aktiva fliken och öppnar en förhandsvisning utan att skapa ett Page 2 File-konto eller en konverteringshistorik. Förhandsvisningsdata raderas när förhandsvisningsfliken stängs, och Page 2 File har ingen databas för att lagra historik över användarnas konverteringar.
+
+Du ansvarar fortfarande för rätten att återge källan. En PDF är en portabel kopia, inte ett sätt att kringgå inloggning, betalvägg eller publiceringsbegränsning.
+
+## Förbered källan före konvertering
+
+Behandla webbläsarsidan som källdokumentet. Välj slutligt språk, datumintervall, filter och utfällda avsnitt före insamlingen. Stäng överlägg endast när de inte är en del av dokumentationen. För ett kvitto eller en instrumentpanel behåller du det synliga tillstånd som visar vad som presenterades; för en artikel tar du bort navigering som stör läsningen.
+
+Kontrollera om sidan förändras när du rullar. Vissa webbplatser ersätter äldre objekt, skjuter upp bilder eller ritar om diagram när de kommer in i visningsområdet. Rulla igenom det nödvändiga intervallet en gång, återgå sedan till början och bekräfta att det tidiga innehållet fortfarande finns kvar. Om webbplatsen har tagit bort det ur den renderade sidan ska du fånga ett mindre, tydligt avgränsat intervall i stället för att anta att ”hela sidan” omfattar material som inte längre visas.
+
+Teckensnitt och inbäddade medier kan bli klara efter att huvuddokumentet har rapporterat att det har laddats. Ett saknat teckensnitt är oftast kosmetiskt, men ett sent diagram eller en sen bild kan ändra filens innebörd. Vänta tills sidan har slutat röra sig och kontrollera viktiga visuella element innan du startar jobbet.
+
+## Granska förhandsvisningen med läsaren i åtanke
+
+Läs förhandsvisningen i ordning i stället för att bara kontrollera första och sista sidan. En användbar PDF bör hålla varje rubrik nära dess inledande stycke, undvika att dela en kort tabell över flera sidor och ge figurer tillräckligt med sammanhang för att förstås. En perfekt kopia av ett dåligt förberett webbläsartillstånd är fortfarande ett dåligt dokument.
+
+I Editable document testar du ett urval av textmarkering och länkar. Bekräfta att en länk leder till rätt mål, särskilt när etiketten är generell. I Accurate copy zoomar du in små etiketter, kod och diagramförklaringar. Om de är oläsliga vid en normal PDF-zoom ska du ändra avsnittets skala eller insamlingsgräns före nedladdning.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Välj Accurate copy för utseendet eller Editable document för text och länkar som stöds."}
+  caption={"Välj Accurate copy för utseendet eller Editable document för text och länkar som stöds."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: välj Accurate copy för utseendet eller Editable document för text och länkar som stöds."}
+  src="/blog/instructions/save-webpage-as-pdf/04.svg"
+  step={4}
+/>
+
+För material som ska delas kontrollerar du metadata som syns på sidan: kontonamn, namn på arbetsytor, e-postadresser, kundidentifierare och frågeparametrar kan visas i rubriker eller länkar. Maskning bör ske före distribution, inte efter att en mottagare har fått originalfilen.
+
+## Använd en upprepningsbar acceptanskontroll
+
+Bekräfta att PDF-filen börjar och slutar på avsedda punkter, att varje nödvändigt avsnitt finns exakt en gång, att läsordningen är korrekt, att sidbrytningar inte döljer innehåll och att det valda läget stöder nästa arbetsuppgift. Öppna sedan minst en viktig länk och granska en sida i normal lässtorlek.
+
+Behåll källans URL och insamlingsdatum tillsammans med dokumentet när ursprung är viktigt. Dynamiska sidor kan ändras efter konverteringen, så en PDF registrerar ett renderat tillstånd utan att garantera att den levande sidan förblir identisk. Om källan ändras ofta använder du en konsekvent namnstandard för senare insamlingar i stället för att skriva över den tidigare posten utan att ange det.
+
+När ett resultat inte klarar kontrollen ändrar du en variabel åt gången: sidans tillstånd, insamlingsintervallet, utdataläget eller avsnittsgränsen. Då blir orsaken synlig och du undviker upprepade exporter med samma fel.
+
+## Bevara sammanhang utan att behålla oreda
+
+En användbar PDF behöver tillräckligt med sammanhang för att förklara vad läsaren ser. Behåll sidtiteln, den relevanta avsnittsrubriken och valda filter som ändrar resultatet. För en transaktion eller instrumentpanel tar du med synligt datum och status. För dokumentation behåller du produktversionen eller brödsmulan när den skiljer en uppsättning instruktioner från en annan.
+
+Det betyder inte att varje webbläsarkontroll ska bevaras. Kontomenyer, orelaterade rekommendationer och flytande supportwidgetar kan skymma ämnet eller avslöja information som mottagaren inte behöver. Avgör vad som fastställer ursprung, vad som stöder tolkningen och vad som bara är gränssnittskrom. Förbered sidan utifrån den skillnaden före insamlingen.
+
+Tillgängligheten förändras också mellan webben och en fast fil. Etiketter vid hovring, paneler som bara nås med tangentbord och komprimerade beskrivningar kanske inte finns i det insamlade tillståndet. Visa viktiga etiketter före konverteringen och kontrollera sedan läsordning och kontrast i resultatet. Redigerbar text är mer användbar för sökning och hjälpmedel, men behöver fortfarande sammanhängande rubriker och meningsfulla länketiketter.
+
+## Välj en metod för lagring och delning
+
+Page 2 File behåller ingen konverteringshistorik, så den nedladdade filen och de poster du sparar med den blir ditt arkiv. Använd ett filnamn som identifierar ämnet och datumet utan att avslöja känsliga data. Om den levande källan kan ändras dokumenterar du källans URL och insamlingsdatum i en medföljande anteckning eller ett godkänt dokumentfält.
+
+Före delning öppnar du PDF-filen utanför konverteringens förhandsvisning. Bekräfta att den öppnas i en vanlig läsare, att avsedda sidor finns och att inget privat webbläsartillstånd syns i rubriker, länkar eller bilder. Skicka det minsta dokument som uppfyller syftet och använd mottagarens godkända kanal när innehållet är konfidentiellt.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Välj Preview PDF och granska de skapade sidorna före nedladdning."}
+  caption={"Välj Preview PDF och granska de skapade sidorna före nedladdning."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: välj Preview PDF och granska de skapade sidorna före nedladdning."}
+  src="/blog/instructions/save-webpage-as-pdf/05.svg"
+  step={5}
+/>

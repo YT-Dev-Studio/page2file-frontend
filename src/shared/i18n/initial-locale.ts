@@ -1,4 +1,4 @@
-import type { PublishedLocale } from "./locales";
+import { isLocale, type Locale } from "./locales";
 
 type InitialLocaleSignals = {
   acceptLanguage?: string | null;
@@ -7,7 +7,7 @@ type InitialLocaleSignals = {
 
 type WeightedLocale = {
   index: number;
-  locale: PublishedLocale;
+  locale: Locale;
   weight: number;
 };
 
@@ -43,19 +43,14 @@ const parseWeight = (parameters: ReadonlyArray<string>): number | null => {
   return weight;
 };
 
-const parsePublishedLocale = (
-  languageTag: string,
-): PublishedLocale | null => {
+const parseSupportedLocale = (languageTag: string): Locale | null => {
   const primaryLanguage = languageTag.trim().toLowerCase().split("-")[0];
-  if (primaryLanguage === "en" || primaryLanguage === "ru") {
-    return primaryLanguage;
-  }
-  return null;
+  return isLocale(primaryLanguage) ? primaryLanguage : null;
 };
 
 const preferredHeaderLocale = (
   acceptLanguage: string | null | undefined,
-): PublishedLocale | null => {
+): Locale | null => {
   if (!acceptLanguage?.trim()) {
     return null;
   }
@@ -64,7 +59,7 @@ const preferredHeaderLocale = (
   acceptLanguage.split(",").forEach(
     (entry: string, index: number): void => {
       const [languageTag = "", ...parameters] = entry.split(";");
-      const locale = parsePublishedLocale(languageTag);
+      const locale = parseSupportedLocale(languageTag);
       const weight = parseWeight(parameters);
       if (!locale || weight === null || weight === 0) {
         return;
@@ -83,7 +78,7 @@ const preferredHeaderLocale = (
 export const resolveInitialLocale = ({
   acceptLanguage,
   countryCode,
-}: InitialLocaleSignals): PublishedLocale => {
+}: InitialLocaleSignals): Locale => {
   const normalizedCountryCode = normalizeCountryCode(countryCode);
   const headerLocale = preferredHeaderLocale(acceptLanguage);
 

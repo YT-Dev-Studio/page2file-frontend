@@ -1,0 +1,161 @@
+Ett Chrome-tillägg kan endast exportera chattar från meddelandegränssnitt som renderas i Chrome. Page 2 File stöder gränsen för aktiv flik i Discord Web, Slack Web, Microsoft Teams på webben, Messenger och Instagram DMs samt de särskilda arbetsflödena för WhatsApp Web och Telegram Web.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Läs in inlägg, svar, inbäddningar och källhänvisning för en communitytråd."}
+  caption={"Läs in inlägg, svar, inbäddningar och källhänvisning för en communitytråd."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Läs in inlägg, svar, inbäddningar och källhänvisning för en communitytråd."}
+  src="/blog/instructions/export-browser-messenger-chats-to-pdf/01.svg"
+  step={1}
+/>
+
+Öppna exakt konversation, läs in meddelandeintervallet och använd [Page 2 File-tillägget](/sv/chrome-extension/how-to-use). Det kan inte samla in Signal eller något annat inbyggt skrivbords- eller mobilgränssnitt utanför webbläsaren.
+
+## Discord Web och communitytrådar
+
+Öppna kanalen, tråden eller direktmeddelandet och rulla till början av det nödvändiga intervallet. Läs in viktiga svar, bilagor och inbäddningar. Undvik att samla in orelaterad servernavigering eller medlemslistor.
+
+En skärmbilds-PDF bevarar inläggsgruppering och inbäddningar; redigerbart resultat prioriterar text och länkar som stöds. Respektera serverregler och meddelandeförfattares rättigheter.
+
+## Slack Web och Microsoft Teams
+
+Arbetsplatsmeddelanden kan innehålla konfidentiella meddelanden och material med lagringskontroller. Välj en kanal, tråd eller chatt och verifiera organisationens export- och delningspolicy före insamlingen.
+
+Slacks [officiella exportdokumentation](https://slack.com/help/articles/201658943-Export-your-workspace-data) beskriver ägar-/administratörsexporter med abonnemangsberoende omfattning. Microsoft dokumenterar separat [export på kontonivå för Teams Free](https://support.microsoft.com/en-us/office/export-or-delete-your-data-in-microsoft-teams-free-1ed6ac68-5fb4-41be-9861-1a4127fecf68). Page 2 File är en läsbar kopia av aktiv flik, inte en compliance-export eller ett Discovery API.
+
+## Messenger och Instagram DMs
+
+Öppna en webbkonversation och läs in nödvändiga meddelanden och medier. Stäng konto- och navigeringspaneler där det är möjligt. Kontrollera om försvinnande, raderat eller ej inläst innehåll saknas; tillägget kan inte återställa det.
+
+Page 2 File är inte en kontosäkerhetskopia. Använd plattformens egen datanedladdning när du behöver ett bredare arkiv; Meta dokumenterar [export av Instagram-information](https://www.facebook.com/help/181231772500920/?locale=en_GB) och en separat [nedladdning för krypterade Facebook-chattar](https://www.facebook.com/help/1388443508232330/).
+
+## Granska format och integritet
+
+Accurate copy (skärmbildsliknande resultat) behåller bubblor, reaktioner, tidsstämplar och synliga bilagor. Editable document (redigerbart resultat) gör text, bilder och säkra länkar som stöds enklare att söka. Komplexa inbäddningar kan förbli visuella.
+
+Ta bort orelaterade person- eller arbetsplatsdata före nedladdningen. När förhandsvisningen stängs raderas tillfälliga förhandsvisningsdata och Page 2 File sparar ingen databas med konverteringshistorik.
+
+## Använd de särskilda guiderna för webbmeddelanden
+
+För detaljerad förberedelse läser du [WhatsApp Web till PDF](/sv/blog/export-whatsapp-chat-to-pdf) och [Telegram Web till PDF](/sv/blog/export-telegram-chat-to-pdf). För AI-assistenter börjar du vid [navet för export av AI-chattar](/sv/blog/export-ai-chats-privately).
+
+Page 2 File är oberoende och varken anslutet till eller rekommenderat av meddelandeplattformarna som nämns här.
+
+## Definiera en tråd som syns i webbläsaren
+
+Börja med att verifiera arbetsyta, server, team, konto eller profil. Discord, Slack, Teams, Messenger och Instagram kan visa flera konversationer i sidofält, så stäng eller uteslut orelaterad kontext. Välj ett tydligt första och sista meddelande.
+
+Läs in äldre historik gradvis och kontrollera om gränssnittet virtualiserar meddelanden. Om tidigt innehåll försvinner minskar du intervallet eller samlar in flera märkta delar. En lång rullningslist bevisar inte att varje meddelande finns på den renderade sidan.
+
+Trådar, svar och kanaler skapar förgrenade strukturer. Avgör om svar ska ligga inline, i ett separat avsnitt eller utanför exporten. Registrera utelämnanden så att en linjär PDF inte förväxlas med hela plattformshistoriken.
+
+## Hantera varje plattforms struktur noggrant
+
+Discord Web kan kombinera kanaler, trådar, reaktioner, inbäddningar och gränssnitt för röstfunktioner. Bevara kanal- och avsändarkontext och uteslut orelaterad servernavigering. Slack Web och Teams Web kan skilja kanalposter, trådar och direktmeddelanden åt; verifiera vilken vy som är aktiv före insamlingen.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Isolera en behörig kanal eller konversation i Slack eller Teams."}
+  caption={"Isolera en behörig kanal eller konversation i Slack eller Teams."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Isolera en behörig kanal eller konversation i Slack eller Teams."}
+  src="/blog/instructions/export-browser-messenger-chats-to-pdf/02.svg"
+  step={2}
+/>
+
+Messenger och Instagram DMs kan innehålla reaktioner, delade inlägg, försvinnande medier och kontokontext. Accurate copy registrerar det visade tillståndet, medan Editable document behåller text och länkar som stöds. Inget av lägena återskapar interaktivt eller utgånget innehåll.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Läs in reaktioner, delade inlägg och det avsedda intervallet för direktmeddelanden i webbläsaren."}
+  caption={"Läs in reaktioner, delade inlägg och det avsedda intervallet för direktmeddelanden i webbläsaren."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Läs in reaktioner, delade inlägg och det avsedda intervallet för direktmeddelanden i webbläsaren."}
+  src="/blog/instructions/export-browser-messenger-chats-to-pdf/03.svg"
+  step={3}
+/>
+
+För Slack och Teams kan officiella arbetsyte- eller kontoexporter hantera en bredare administrativ uppgift och har egna behörighetsregler. En vald PDF från en webbflik är en läskopia, inte en ersättning för dessa verktyg.
+
+## Granska avancerat meddelandeinnehåll
+
+Länkar, filer, bilder, kodblock, omröstningar, reaktioner, röstmeddelanden och videor behöver individuella kontroller. En miniatyr betyder inte att den underliggande filen har bäddats in. En statisk PDF kan inte bevara uppspelning, liveomröstningar eller hover-detaljer.
+
+Behåll tillräcklig källhänvisning för vidarebefordrade meddelanden, citerade svar och delade inlägg. Testa viktiga mål och ta bort privata eller signerade länkar. Kontrollera sidbrytningar runt avsändarnamn och svarskontext.
+
+Använd en skärmbildsreserv för komponenter vars layout bär innebörd och redigerbar struktur för text som stöds och behöver kunna sökas eller citeras. Ange valt läge i överlämningen.
+
+## Skydda deltagare och lokala kopior
+
+Åtkomst till en arbetsyta eller privat konversation ger inte rätt att distribuera allt synligt innehåll. Minimera deltagarnamn, kontaktuppgifter, kunddata och orelaterade meddelanden. Följ organisationens lagringskrav och juridiska krav.
+
+När förhandsvisningsfliken stängs raderas tillfälliga förhandsvisningsdata och Page 2 File sparar ingen databas med konverteringshistorik. Det nedladdade dokumentet förblir på den enhet eller lagringsplats du valde.
+
+Signal och andra applikationer som endast är inbyggda ligger utanför arbetsflödet om inte den nödvändiga konversationen visas i en Chrome-flik som stöds. Använd plattformens egen export för innehåll som endast finns i en skrivbords- eller mobilapplikation.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Välj Current tab och verifiera exakt den öppna webbläsarkonversationen."}
+  caption={"Välj Current tab och verifiera exakt den öppna webbläsarkonversationen."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Välj Current tab och verifiera exakt den öppna webbläsarkonversationen."}
+  src="/blog/instructions/export-browser-messenger-chats-to-pdf/04.svg"
+  step={4}
+/>
+
+## Jämför insamling av aktiv flik med plattformsarkiv
+
+Discord dokumenterar ett officiellt [datapaket](https://support.discord.com/hc/en-us/articles/360004957991-Your-Discord-Data-Package) med kontodata i JSON-filer. Slack, Teams och Meta tillhandahåller egna exporter med plattformsspecifik behörighet och omfattning. Dessa alternativ hanterar bredare konto-, arbetsyte- eller administrativa uppgifter.
+
+Insamling av aktiv flik har ett smalare kontrakt: en behörig tråd som syns i webbläsaren blir en granskad PDF eller PPTX. Den gör inte anspråk på att inkludera raderade meddelanden, dolda kanaler, fullständiga bilagor, lagringskontrollerade poster eller varje meddelande i ett konto.
+
+Välj den inbyggda vägen när fullständighet, administration eller maskinläsbara data krävs. Välj Page 2 File när leveransen är ett människoläsbart dokument av en definierad synlig konversation.
+
+## Förbered en plattformsneutral meddelandeinventering
+
+Registrera plattform, arbetsyta eller konto, konversationsidentifierare, första och sista nödvändiga meddelande, synligt datumintervall och insamlingstid. Lista element som behöver särskild granskning: trådar, citerade svar, reaktioner, ändringar, filer, bilder, röstmeddelanden, video, omröstningar, kod och delade inlägg.
+
+Läs in historik medvetet. Återvänd till början efter rullning och bekräfta att tidiga meddelanden fortfarande renderas. Virtualiserade gränssnitt kan ersätta innehåll utanför skärmen; när det händer samlar du in mindre intervall och märker deras ordning i stället för att påstå ett sammanhängande transkript.
+
+Avgör hur grenar ska visas. Trådar i Slack och Teams, svar i Discord och svarskontext i Meta kan plattas ut felaktigt om källtillståndet är otydligt. Behåll tillräckligt med synliga etiketter för att läsaren ska förstå ordningen och registrera utelämnanden.
+
+## Tillämpa en enhetlig dokumentstandard
+
+Accurate copy passar när bubblor, reaktioner, inbäddningar och gruppering bär innebörd. Editable document hjälper vid sökning, citat och länkar som stöds. Komplexa meddelandekomponenter kan förbli visuella i ett i övrigt redigerbart resultat.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Välj output style för visuell gruppering eller återanvändbart innehåll som stöds."}
+  caption={"Välj output style för visuell gruppering eller återanvändbart innehåll som stöds."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Välj output style för visuell gruppering eller återanvändbart innehåll som stöds."}
+  src="/blog/instructions/export-browser-messenger-chats-to-pdf/05.svg"
+  step={5}
+/>
+
+Kontrollera avsändar- och tidsstämpelkontext vid varje sidgräns. Håll ett citerat meddelande tillsammans med sitt svar där det är möjligt och behåll bildtexter med medieförhandsvisningar. Beskriv inte en miniatyr som originalbilagan eller en spelbar kontroll som bevarad interaktion.
+
+Testa viktiga länkar och ta bort sessionsspecifika eller privata mål. Granska liten text vid normal PDF-zoom eller presentationsavstånd. En till synes fullständig förhandsvisning kan fortfarande vara oanvändbar om namn, tidsstämplar eller kod är för små för att läsas.
+
+## Skydda arbetsplatsdata och personuppgifter
+
+Arbetsplatsmeddelanden kan innehålla kunduppgifter, intern strategi, autentiseringsuppgifter och poster som styrs av lagrings- eller legal hold-policy. Personliga meddelanden kan avslöja kontaktnamn, relationer, plats och delade medier. Begränsa exporten till det mottagaren behöver.
+
+Granska sidofält, aviseringar, profilpaneler och orelaterade konversationsförhandsvisningar. Sök efter känsliga termer i redigerbart resultat och granska rasteravsnitt visuellt. Åtkomst till en kanal eller DM innebär inte automatiskt rätt att distribuera innehållet.
+
+Stäng förhandsvisningsfliken efter godkännandet så att tillfälliga förhandsvisningsdata raderas. Page 2 File har ingen databas med konverteringshistorik men kan inte ta bort det nedladdade dokumentet från en enhet, molnlagring, e-post eller säkerhetskopia.
+
+## Avsluta med avstämning från källa till fil
+
+Jämför PDF-filen med meddelandeinventeringen: rätt konto, exakt tråd, angiven start och slut, nödvändiga grenar, representativt avancerat innehåll och ingen förbjuden sidokontext. Öppna den nedladdade filen i en vanlig läsare och granska den första, sista och flera gränssidor.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Förhandsgranska avancerat innehåll, avsändarkontext, sidgränser, privata länkar och sidopaneler."}
+  caption={"Förhandsgranska avancerat innehåll, avsändarkontext, sidgränser, privata länkar och sidopaneler."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Förhandsgranska avancerat innehåll, avsändarkontext, sidgränser, privata länkar och sidopaneler."}
+  src="/blog/instructions/export-browser-messenger-chats-to-pdf/06.svg"
+  step={6}
+/>
+
+Registrera otillgänglig historik, utgångna medier, utelämnade trådar och innehåll som endast finns i en inbyggd app. Om en nödvändig konversation inte kan visas i Chrome använder du plattformens egen behöriga export. Signal är fortsatt ett uttryckligt exempel på ett inbyggt gränssnitt utanför tilläggets arbetsflöde.
+
+Page 2 File är oberoende av Discord, Slack, Microsoft, Meta och de andra meddelandeleverantörer som nämns här. Deras officiella dokumentation definierar deras eget export-, lagrings- och delningsbeteende.
+
+Kontrollera relevant officiell vägledning igen före en reglerad eller administratörsledd export, eftersom behörighet, lagring och arkivomfattning kan ändras oberoende av webbläsarinsamling.

@@ -1,0 +1,155 @@
+Websideoptagelse opretter et dokument, som et menneske kan læse. Webscraping udtrækker strukturerede data, som software kan behandle. Page 2 File er et produkt til optagelse og konvertering; det er ikke en scraper-API, overvågningscrawler eller datapipeline.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Åbn en repræsentativ kildeside, og definér den krævede outputkontrakt."}
+  caption={"Åbn en repræsentativ kildeside, og definér den krævede outputkontrakt."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Åbn en repræsentativ kildeside, og definér den krævede outputkontrakt."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/01.svg"
+  step={1}
+/>
+
+Brug Page 2 File, når det krævede resultat er en PDF eller PowerPoint, der bevarer synligt indhold og, hvor det understøttes, tekst, billeder og links. Brug et scrapingværktøj, når du har brug for rækker, felter, tilbagevendende indsamling eller maskinlæsbart output.
+
+## Hvad optagelse bevarer
+
+Skærmbilledoptagelse registrerer komposition, farve, diagramplacering og beskedgruppering. Redigerbar konvertering rekonstruerer understøttede dokumentelementer. Begge begynder med en gengivet browserside og sigter mod en menneskelæsbar fil.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Brug Current tab eller By URL, når leverancen er et menneskelæsbart dokument."}
+  caption={"Brug Current tab eller By URL, når leverancen er et menneskelæsbart dokument."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Brug Current tab eller By URL, når leverancen er et menneskelæsbart dokument."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/02.svg"
+  step={2}
+/>
+
+[Guiden til websitetyper](/da/blog/website-types-to-pdf-or-powerpoint) oplister egnede kilder. Offentlige sider bruger en konverter; private aktive faner bruger [udvidelsen](/da/chrome-extension/how-to-use).
+
+## Hvad scraping er bygget til
+
+Scrapere identificerer selektorer eller dataendpoints, normaliserer felter og kører ofte gentagne gange. De kan paginere kataloger, overvåge priser eller levere data til en database. Opgaverne kræver eksplicitte hastighedsgrænser, håndtering af ændringer, deduplikering og et juridisk grundlag.
+
+En PDF af et produktgitter er ikke et prisdatasæt. En visuel kopi af et dashboard er ikke dets underliggende metrics-API. At kalde dokumentoptagelse for scraping vil skabe den forkerte forventning.
+
+## Vælg efter outputkontrakten
+
+Hvis en kollega skal læse, citere, udskrive eller præsentere kilden, passer optagelse. Hvis software skal sortere, aggregere eller opdatere kilden automatisk, passer struktureret udtræk.
+
+Begynd med [webside til PDF](/da/blog/save-webpage-as-pdf) til én læsbar side. Gennemgå [website med flere sider til PDF](/da/blog/multi-page-website-to-pdf) til en afgrænset websitesamling.
+
+## Respektér kilden uanset metode
+
+Adgangstilladelse, ophavsret, personoplysninger og platformsvilkår gælder for begge metoder. Et login giver ikke tilladelse til at videredistribuere alt, der er synligt efter login. Automatiseret indsamling har også driftsmæssige virkninger på kildetjenesten.
+
+Page 2 File omgår ikke godkendelse og viser ikke skjulte sidedata. Det konverterer tilladt gengivet indhold efter en eksplicit brugerhandling.
+
+## Sammenlign outputkontrakterne
+
+Optagelse producerer et dokument eller slide deck til mennesker. Succeskriterierne omfatter visuel kontinuitet, læserækkefølge, sidegrænser, links og kildekontekst. Resultatet er beregnet til læsning, præsentation eller registrering.
+
+Scraping producerer felter, poster eller råt indhold til software. Succeskriterierne omfatter skemastabilitet, identifikatorer, deduplikering, pagineringshåndtering og maskinlæsbare fejl. En flot PDF er et dårligt API-svar, og et JSON-datasæt er ikke en troværdig visuel registrering.
+
+Skriv det ønskede output, før du vælger metode. Hvis kravet siger ”vis præcis, hvad dashboardet viste på denne dato”, passer optagelse. Hvis det siger ”indsaml prisen fra hvert produkt hver dag”, er det et problem med dataudtræk og overvågning.
+
+## Forstå begrænsninger på dynamiske sider
+
+Begge metoder møder lazy loading, virtualisering og godkendelse, men håndterer dem forskelligt. Optagelse kræver, at den nødvendige tilstand er synligt gengivet. En scraper kan kalde en godkendt API eller analysere kildedata uden at gengive den visuelle grænseflade.
+
+En Chrome-udvidelse kan optage en aktiv fane med login, efter at brugeren har åbnet den. Det viser ikke skjulte programposter og skaber ikke en generel crawling-legitimation. Automatiseret scraping af godkendte systemer kræver eksplicit tilladelse, sikker legitimationshåndtering og et separat driftsdesign.
+
+Interaktive diagrammer viser forskellen. Optagelse kan registrere den valgte diagramtilstand visuelt. Scraping kræver adgang til de underliggende værdier og et skema, der forklarer dem. Page 2 File lover ikke dette udtræk.
+
+## Vurdér vedligeholdelse og risiko
+
+En optagelsesarbejdsgang ændres, når layout, paginering eller gengivelsesadfærd ændres. En scrapingarbejdsgang ændres, når markup, API'er, skemaer, hastighedsgrænser eller antiautomatiseringskontroller ændres. Ingen er vedligeholdelsesfri, men fejltilstandene er forskellige.
+
+Scraping i stor skala kan påvirke kildeinfrastrukturen og kræve throttling, forsøgspolitik, robots-håndtering og juridisk gennemgang. Manuel eller eksplicit optagelse kræver stadig tilladelse, ophavsretsvurdering og beskyttelse af personoplysninger.
+
+Undgå blandede påstande, der skjuler ansvar. Brug af en browser gør ikke en scraper til en dokumentkonverter, og valg af redigerbar konvertering gør ikke Page 2 File til en tjeneste for strukturerede data.
+
+## Vælg en gennemgangsmetode
+
+Gennemgå optagelse ved at sammenligne PDF eller PPTX med den synlige kildetilstand. Kontrollér fuldstændighed, læsbarhed, links og privatliv. Gennemgå scraping ved at validere felter mod et skema, udtage kildeposter og overvåge udtræksfejl.
+
+Hvis et projekt kræver begge dele, skal leverancerne holdes adskilt. Brug en godkendt datakilde til analyse og en optagelse til visuel dokumentation, og registrér derefter, hvordan hver blev produceret. Udled ikke maskindata af skærmbilleder, når præcise værdier er vigtige.
+
+Valget bliver tydeligt, når acceptkriterierne skrives ud fra modtageren: Et menneske læser eller præsenterer det optagne dokument; software bruger de scrapede poster.
+
+## Sammenlign repræsentative opgaver
+
+En analytiker, der skal bruge en visuel registrering af en valgt dashboardtilstand, har brug for optagelse. PDF-filen bør bevare filtre, etiketter, diagramkontekst og optagelsestidspunkt. En analytiker, der skal bruge alle underliggende værdier til beregning, har brug for en godkendt API eller udtræksarbejdsgang med et defineret skema.
+
+En forsker, der arkiverer én artikel, kan have brug for søgbar tekst, citationer og sideoprindelse. Et team, der sporer tusindvis af artikeltitler, har brug for strukturerede poster, deduplikering og opdateringslogik. Et salgsteam, der præsenterer en offentlig produktside, kan have brug for PPTX-slides; en prisovervåger har brug for normaliserede felter og planlagt indsamling.
+
+AI-chats og samtaler i browsermessengers følger samme forskel. Page 2 File kan oprette et læsbart dokument fra de godkendte beskeder, der er gengivet i den aktive fane. Det viser ikke skjult kontohistorik, besked-API'er eller et struktureret samtaledatasæt.
+
+## Stil driftsmæssige spørgsmål før valg af scraping
+
+Struktureret udtræk kræver mere end valg af selektorer. Definér tilladelse, anmodningsvolumen, hastighedsgrænser, godkendelse, skemaejerskab, opbevaring og hvordan fejl opdages. Afgør, hvad der sker, når et felt forsvinder, en side skifter sprog, eller kilden returnerer flere varianter.
+
+Foretræk en officiel API eller understøttet eksport, når den leverer de nødvendige data. Hvis scraping er godkendt og nødvendig, skal du bruge et system, der er designet til maskinlæsbart output og driftskontroller. Page 2 File bør ikke indsættes som en genvej fra billede til data.
+
+Optagelse har sin egen forberedelse: stabilisér den synlige tilstand, definér grænsen, vælg skærmbillede eller redigerbart output, og undersøg forhåndsvisningen. Dens driftsområde er mindre, fordi resultatet er et dokument, men ophavsret, personoplysninger og distributionstilladelser gælder stadig.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Vælg output style efter krav til nøjagtighed, søgning og links."}
+  caption={"Vælg output style efter krav til nøjagtighed, søgning og links."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Vælg output style efter krav til nøjagtighed, søgning og links."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/03.svg"
+  step={3}
+/>
+
+## Undgå vildledende blandede arbejdsgange
+
+Optisk tegngenkendelse eller kopiering af tekst fra en PDF kan være nyttigt til tilgængelighed eller citater, men omdanner ikke filen til en pålidelig kildedatabase. Layout, gentagne headers og skærmbilledfallbacks kan indføre manglende eller dublerede værdier.
+
+En scraper kan tilsvarende gemme skærmbilleder til fejlfinding uden at producere et redaktionelt gennemgået dokument. Hvis et projekt kræver strukturerede data og visuel dokumentation, skal hvert artefakt genereres og valideres gennem den passende arbejdsgang og derefter forbindes med kildeidentifikatorer og optagelsesdatoer.
+
+Beskriv ikke redigerbar websidekonvertering som scraping. Understøttet tekst, billeder og links bliver dokumentelementer til læsning og redigering, ikke normaliserede felter med et stabilt skema eller en tilbagevendende indsamling.
+
+## Brug forskellige acceptkriterier
+
+Afstem dokumentet med den synlige kildedisposition ved optagelse. Kontrollér start- og slutgrænser, læserækkefølge, læsbarhed, links, fallbacks og private oplysninger. Registrér kildetilstand og dato, når oprindelse er vigtig.
+
+Validér nødvendige felter, datatyper, unikke identifikatorer, pagineringsdækning, dublethåndtering og fejl mod en specifikation ved scraping. Sammenlign stikprøveposter med den autoritative kilde, og overvåg ændringer over tid. Et antal rækker beviser ikke i sig selv korrekthed.
+
+Hvis begge leverancer produceres, skal du ikke antage, at den ene automatisk validerer den anden. Et skærmbillede kan vise kontekst til en stikprøvepost, men kan afspejle et andet tidspunkt, filter eller en anden session. Bevar grænserne i gennemgangsregistreringen.
+
+## Beslut med en skriftlig outputkontrakt
+
+Skriv én sætning, der nævner modtager og artefakt. ”En kontrollant har brug for en PDF, der viser denne godkendte dashboardtilstand” peger på optagelse. ”Vores program har brug for daglige produktpriser som poster” peger på en godkendt datakilde eller et scrapingsystem. ”En præsentationsholder har brug for redigerbare slides fra denne rapport” peger på webside-til-PowerPoint-konvertering.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Gennemgå PDF eller PPTX som et gengivet kommunikationsartefakt."}
+  caption={"Gennemgå PDF eller PPTX som et gengivet kommunikationsartefakt."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Gennemgå PDF eller PPTX som et gengivet kommunikationsartefakt."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/04.svg"
+  step={4}
+/>
+
+Skriv derefter udelukkelserne. Page 2 File leverer ikke en crawling-API, overvågningsplan, struktureret udtræk eller adgang til skjulte data. En scraper leverer ikke i sig selv en læsbar, pagineret eller præsentationsklar gengivelse af kilden.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Brug et godkendt datasystem, når leverancen er strukturerede poster."}
+  caption={"Brug et godkendt datasystem, når leverancen er strukturerede poster."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Brug et godkendt datasystem, når leverancen er strukturerede poster."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/05.svg"
+  step={5}
+/>
+
+Den eksplicitte kontrakt gør også blandede projekter nemmere at afgrænse. Optagelse og scraping kan eksistere side om side, men forbliver separate systemer med forskellige risici, vedligeholdelse og dokumentation.
+
+Genovervej kontrakten, når leverancen ændres. En anmodning, der begynder som en præsentation, kan senere blive til et tilbagevendende datasæt, hvilket kræver en ny godkendt dataarbejdsgang frem for gentagen dokumentkonvertering.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Behandl ikke Page 2 File som en crawler, overvågningstjeneste eller API til skjulte data."}
+  caption={"Behandl ikke Page 2 File som en crawler, overvågningstjeneste eller API til skjulte data."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Behandl ikke Page 2 File som en crawler, overvågningstjeneste eller API til skjulte data."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/06.svg"
+  step={6}
+/>

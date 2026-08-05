@@ -1,0 +1,128 @@
+För att spara en webbsida bakom inloggning som PDF samlar du in sidan från den autentiserade Chrome-fliken. Klistra inte in en privat URL i en offentlig konverterare och ge inte en konverteringstjänst ditt lösenord eller din sessionscookie.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Öppna exakt det behöriga dashboardtillståndet i den inloggade webbläsarfliken."}
+  caption={"Öppna exakt det behöriga dashboardtillståndet i den inloggade webbläsarfliken."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Öppna exakt det behöriga dashboardtillståndet i den inloggade webbläsarfliken."}
+  src="/blog/instructions/save-authenticated-webpage-as-pdf/01.svg"
+  step={1}
+/>
+
+[Page 2 File-tillägget](/sv/chrome-extension/how-to-use) fungerar efter att du uttryckligen har öppnat den tillåtna sidan. Det förbereder en förhandsvisning från den renderade flikens innehåll utan att skapa ett Page 2 File-konto eller en konverteringshistorik.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Välj Current tab; kortet identifierar sidan som redan är öppen i Chrome."}
+  caption={"Välj Current tab; kortet identifierar sidan som redan är öppen i Chrome."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Välj Current tab; kortet identifierar sidan som redan är öppen i Chrome."}
+  src="/blog/instructions/save-authenticated-webpage-as-pdf/02.svg"
+  step={2}
+/>
+
+## Öppna exakt det tillstånd du behöver
+
+Välj rapportintervall, konversation, beställning, lektion eller dashboardvy före insamlingen. Fäll ut panelerna som ska ingå i dokumentet och dölj känsliga kontroller eller orelaterade poster när källapplikationen tillåter det.
+
+Innehåll som inte har lästs in kan inte samlas in. Rulla försiktigt genom virtualiserade tabeller och långa konversationer och kontrollera om äldre rader förblir tillgängliga på sidan.
+
+## Håll autentiseringsuppgifter utanför jobbet
+
+Tillägget använder sidan du redan har öppnat; det ska aldrig be dig kopiera ett lösenord, en cookie eller ett behörighetshuvud. En offentlig URL-backend kan inte återskapa en personlig session och ska returnera en åtkomstvarning i stället för att försöka kringgå den.
+
+För verkligt offentliga källor använder du [webbsidans PDF-konverterare](/sv/convert-webpage-to-pdf). Skillnaden är källgränsen, inte ett löfte om att en metod kan besegra åtkomstkontroller.
+
+## Välj vad PDF-filen ska bevara
+
+Accurate copy (skärmbildsliknande resultat) passar när det autentiserade gränssnittet, diagramlayouten eller meddelandegrupperingen är viktig. Editable document (redigerbart resultat) är bättre för rapporttext, tabeller, bilder och länkar som stöds. Komplexa kontroller kan ersättas av en statisk återgivning.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Välj PDF och den output style som passar rapporten."}
+  caption={"Välj PDF och den output style som passar rapporten."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Välj PDF och den output style som passar rapporten."}
+  src="/blog/instructions/save-authenticated-webpage-as-pdf/03.svg"
+  step={3}
+/>
+
+Granska beslutet i [skärmbild kontra redigerbar konvertering](/sv/blog/visual-vs-editable) och följ sedan [stegen för helsidesinsamling](/sv/blog/capture-full-webpage-as-pdf) om källan är lång.
+
+## Respektera integriteten efter insamlingen
+
+Granska förhandsvisningen efter namn, e-postadresser, kontonummer och orelaterade poster före nedladdningen. Lagra och dela PDF-filen enligt källorganisationens regler.
+
+När Page 2 Files förhandsvisningsflik stängs raderas dess tillfälliga förhandsvisningsdata. Page 2 File upprätthåller ingen databas med konverteringshistorik, men den nedladdade filen förblir under din kontroll.
+
+## Förbered det behöriga webbläsartillståndet
+
+Öppna exakt det konto, den arbetsyta och den post som du ska samla in. Kontrollera organisationsnamn, filter och datumintervall innan du börjar. Inloggade applikationer kan se likadana ut i olika miljöer, och en PDF från fel arbetsyta kan exponera data även om layouten är korrekt.
+
+Läs in innehåll medvetet. Fäll ut nödvändiga paneler, rulla genom virtualiserade listor och vänta på diagram eller bilagor. Stäng orelaterade aviseringar och sidofält men behåll statusindikatorer som bevisar postens tillstånd. Tillägget samlar in det som den aktiva fliken renderar; det hämtar inte dolda databasrader.
+
+Undvik insamling under en pågående redigering eller transaktion. Spara ändringar först när applikationen stöder det och välj ett stabilt ögonblick för live-dashboards. En PDF registrerar det visade tillståndet, inte applikationens senare uppdateringar.
+
+## Separera autentiseringsuppgifter från insamlat innehåll
+
+Arbetsflödet med aktiv flik innebär att du inte klistrar in lösenord eller sessionscookies i ett offentligt URL-fält. Det innebär inte att själva sidan är fri från känsliga identifierare. Sidhuvuden, profilmenyer, frågeparametrar och länkade nedladdningar kan avslöja mer än det centrala dokumentet.
+
+Granska länkmål efter signerade token eller privata resurssökvägar. Om mottagaren inte behöver en länk tar du bort det länkade avsnittet eller distribuerar en maskerad kopia. Utloggning efter insamlingen återkallar inte alla länkar som bäddats in i en redan nedladdad PDF.
+
+Följ källapplikationens regler och organisationens lagringspolicy. Åtkomst till en sida innebär inte automatiskt tillstånd att exportera eller dela den. För reglerat eller konfidentiellt material behåller du en godkännandepost utanför Page 2 File.
+
+## Validera det privata dokumentets gräns
+
+Jämför förhandsvisningen med en kort lista över obligatoriska och förbjudna fält. Bekräfta att den nödvändiga posten är fullständig och att angränsande kunder, meddelanden eller navigeringsdetaljer saknas. Sök i den redigerbara PDF-filen efter känsliga namn som kan ligga utanför de första synliga sidorna.
+
+Stäng förhandsvisningsfliken efter nedladdningen för att ta bort tillfälliga förhandsvisningsdata. Lagra sedan den lokala filen på den godkända platsen och ta bort arbetskopior som inte längre behövs. Page 2 File har ingen databas med konverteringshistorik, men kan inte kontrollera filer som sparats på din enhet eller i delad lagring.
+
+Om applikationen förhindrar fullständig rendering eller tar bort tidigare innehåll begränsar du insamlingen. Ett uttryckligen partiellt, granskat dokument är säkrare än en fil som beskrivs som fullständig när förhandsvisningen inte kan bevisa det.
+
+## Hantera virtualiserade gränssnitt och livegränssnitt
+
+Inloggade dashboards, inkorgar och chattar renderar ofta bara ett fönster av tillgängliga data. En lång rullningslist bevisar inte att varje rad eller meddelande finns på sidan samtidigt. Rulla till den nödvändiga gränsen och återvänd sedan för att bekräfta att tidigare innehåll finns kvar.
+
+När applikationen ersätter material utanför skärmen samlar du in mindre definierade intervall eller använder dess egen behöriga export. Märk partiella poster med start, slut och insamlingstid. Kombinera inte intervall på ett sätt som döljer luckor eller ändrar ordningen.
+
+Live-dashboards kan uppdateras medan insamlingen förbereds. Pausa uppdateringen när applikationen har den kontrollen eller registrera ett tydligt insamlingsögonblick. Håll valda filter och tidszon synliga när de påverkar innebörden av ett diagram eller en totalsumma.
+
+## Granska länkar och bilagor
+
+Autentiserade sidor kan innehålla signerade nedladdnings-URL:er, sessionsspecifika rutter och bilagor som kräver samma konto. En PDF-länk kan förbli klickbar efter att den synliga sidan har maskerats. Granska målet för varje viktig länk innan filen delas utanför den ursprungliga åtkomstgruppen.
+
+En miniatyr eller bilageetikett bevisar inte att den underliggande filen inkluderades. Page 2 File samlar in den renderade flikens innehåll; tjänsten gör inte anspråk på att paketera dolda bilagor eller applikationsposter. Öppna endast material du har rätt att samla in och kontrollera vad som visas i förhandsvisningen.
+
+När en länk kommer att löpa ut bevarar du tillräcklig synlig hänvisningsinformation för att dokumentet ska förbli begripligt. Undvik att kopiera cookies, behörighetshuvuden eller privata token till anteckningar i försök att göra länken portabel.
+
+## Använd en godkännandechecklista för privat innehåll
+
+Bekräfta rätt konto, arbetsyta, post, filter och tidsintervall. Kontrollera den första och sista nödvändiga posten, alla utfällda paneler och representativa komplexa komponenter. Sök efter namn, e-postadresser, kontoidentifierare och privata termer i redigerbart resultat; granska samma områden visuellt när avsnittet är bildbaserat.
+
+Kontrollera sedan vad som inte får finnas med: orelaterade navigeringsposter, aviseringsförhandsvisningar, angränsande kunder, dolda frågeparametrar och profiluppgifter. Öppna den nedladdade PDF-filen i en vanlig läsare och verifiera viktiga länkar under ett konto med avsedd åtkomstnivå.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Granska profilmenyer, aviseringsförhandsvisningar, angränsande poster och signerade länkar."}
+  caption={"Granska profilmenyer, aviseringsförhandsvisningar, angränsande poster och signerade länkar."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Granska profilmenyer, aviseringsförhandsvisningar, angränsande poster och signerade länkar."}
+  src="/blog/instructions/save-authenticated-webpage-as-pdf/04.svg"
+  step={4}
+/>
+
+Dokumentera vem som godkände insamlingen och var den får lagras när organisationens policy kräver det. Page 2 Files integritetsgräns omfattar tillfälliga förhandsvisningsdata och avsaknaden av en databas med konverteringshistorik; den ersätter inte källsystemets åtkomstregler eller din lagringsprocess.
+
+## Vet när du inte ska samla in
+
+Använd inte konvertering av aktiv flik för att kringgå en betalvägg, teknisk kontroll eller policy som förbjuder återgivning. Samla inte in data enbart för att ditt webbläsarkonto kan visa dem. Åtkomst, export och vidare distribution är separata behörigheter.
+
+Om sidan inte kan stabiliseras, det nödvändiga intervallet inte kan förbli renderat eller maskering skulle ta bort viktig kontext stoppar du och väljer en annan behörig metod. Källplattformens egen rapport- eller dataexport kan vara mer fullständig för poster som aldrig utformades för att samexistera i ett webbläsartillstånd.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Förhandsgranska PDF-filen, ta bort orelaterad privat kontext och verifiera slutfilen."}
+  caption={"Förhandsgranska PDF-filen, ta bort orelaterad privat kontext och verifiera slutfilen."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Förhandsgranska PDF-filen, ta bort orelaterad privat kontext och verifiera slutfilen."}
+  src="/blog/instructions/save-authenticated-webpage-as-pdf/05.svg"
+  step={5}
+/>
+
+[Guiden för webbplatskategorier](/sv/blog/website-types-to-pdf-or-powerpoint) jämför autentiserade sidor med andra källor.

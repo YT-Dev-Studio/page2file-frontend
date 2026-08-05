@@ -1,0 +1,120 @@
+Napsautettavat linkit säilyvät verkkosivun PDF-muunnoksessa vain, kun tuloste sisältää linkkimerkintöjä tai muokattavia asiakirjaelementtejä. Visuaalinen kuvakaappaus voi säilyttää linkin ulkoasun säilyttämättä sen toimintaa.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Avaa dokumentaatio, jossa on merkityksellisiä näkyviä linkkejä ja tunnetut kohteet."}
+  caption={"Avaa dokumentaatio, jossa on merkityksellisiä näkyviä linkkejä ja tunnetut kohteet."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Avaa dokumentaatio, jossa on merkityksellisiä näkyviä linkkejä ja tunnetut kohteet."}
+  src="/blog/instructions/preserve-clickable-links/01.svg"
+  step={1}
+/>
+
+Valitse [Page 2 File PDF -muuntimessa](/fi/convert-webpage-to-pdf) Editable document (muokattava tuloste), kun linkkien toiminta on tärkeää. Valitse Accurate copy (kuvakaappaustyylinen tuloste), kun sivun tarkka ulkoasu on tärkeämpi, ja oleta tällöin, etteivät kaapattuun kuvaan sisältyvät linkit ole vuorovaikutteisia.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Valitse PDF vakaata lukuasiakirjaa varten."}
+  caption={"Valitse PDF vakaata lukuasiakirjaa varten."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Valitse PDF vakaata lukuasiakirjaa varten."}
+  src="/blog/instructions/preserve-clickable-links/02.svg"
+  step={2}
+/>
+
+## Näkyvä URL ei ole automaattisesti linkki
+
+Kuvassa oleva sininen alleviivattu teksti on edelleen vain pikseleitä. PDF-lukija tarvitsee kohdealueen ja määränpään. Muokattava muunnos voi yhdistää verkkosivun tuetut ankkurielementit PDF-linkkimerkintöihin ja pitää samalla ympäröivän tekstin valittavana.
+
+Painikkeet ja kortit voivat myös sisältää kohteita, mutta viedyn asiakirjan ei pidä keksiä URL-osoitetta elementille, joka vain käynnistää komentosarjan. Jos kohdetta ei voida tunnistaa turvallisesti, varoitus tai ei-napsautettava visualisointi on rehellisempi ratkaisu.
+
+## Tarkista kohde, älä vain selitettä
+
+Sivu voi näyttää vakuuttavaa tekstiä ja osoittaa samalla muualle. Turvallisen muunnoksen tulee hyväksyä tavalliset verkkokohteet ja hylätä vaaralliset URI-mallit. Uudelleenohjaukset ja kirjautuneen istunnon vaativat linkit voivat silti epäonnistua PDF-lukijassa, vaikka merkintä olisi teknisesti kelvollinen.
+
+Testaa tärkeät linkit esikatselusta tai lopullisesta tiedostosta ympäristössä, jossa niiden avaaminen on asianmukaista. Kiinnitä erityistä huomiota alaviitteisiin, viitenumeroihin, tuotekortteihin ja lähdemerkkeihin.
+
+## Tunnista, milloin kuvakaappaus on oikea kompromissi
+
+Monimutkainen hallintanäkymä, kampanjasivu tai keskustelu voi menettää merkityksensä, jos se rakennetaan uudelleen tavallisina tekstilaatikkoina. Accurate copy säilyttää sommittelun mutta muuttaa osion kuvaksi. Jos sekä ulkoasu että linkit ovat tärkeitä, muunnin voi lisätä turvallisia linkkialueita kuvakaappausosion päälle, mutta vain kohteille, jotka se pystyy paikantamaan.
+
+Lue [kuvakaappaus- ja muokattavan muunnoksen vertailu](/fi/blog/visual-vs-editable) ennen valintaa. Esityksissä sama ero näkyy [kuvakaappausdiojen ja muokattavan PowerPointin](/fi/blog/screenshot-vs-editable-powerpoint) välillä.
+
+## Tee lyhyt linkkitarkastus
+
+Avaa yksi navigointilinkki, yksi tekstinsisäinen viite, yksi painike ja yksi pitkä rivittyvä URL. Varmista, että kukin napsautettava alue vastaa näkyvää selitettä eikä peitä viereistä tekstiä. Tarkista, että sähköposti-, puhelin- ja sovelluskohtaisia URI-malleja käsitellään asiakirjan turvallisuuskäytännön mukaisesti.
+
+Toista pitkän lähteen tarkastus sivunvaihtojen muuttamisen jälkeen. Osion jakaminen voi siirtää sen linkkialueita, minkä vuoksi [pitkien sivujen opas](/fi/blog/long-webpage-page-breaks) käsittelee linkkejä osana esikatselun tarkistusta.
+
+## Tunnista merkitystä kantavat linkit
+
+Kaikki ankkurit eivät ansaitse yhtä paljon huomiota. Viite, lataus, käytäntölinkki tai seuraavan vaiheen painike voi olla asiakirjalle olennainen, kun taas logolinkki, tilivalikko tai seurantapikseli ei ole. Laadi ennen muunnosta luettelo kohteista, joihin lukijan täytyy päästä, ja käytä sitä hyväksyntätestauksessa.
+
+Kuvakkeiden taakse piilotetut linkit tarvitsevat näkyvän asiayhteyden staattisessa asiakirjassa. Jos painikkeessa lukee vain ”Avaa” tai se käyttää nimeämätöntä nuolta, kohdetta voi olla mahdoton tulkita ympäröivien käyttöliittymäelementtien poistamisen jälkeen. Säilytä riittävästi lähellä olevaa tekstiä toiminnon selittämiseksi.
+
+Myös sivunsisäisten fragmenttilinkkien merkitys voi muuttua. Sisällysluettelo voi osoittaa lähdesivun otsikoihin, kun taas PDF käyttää omaa sivunavigointiaan. Testaa, ovatko ankkurit edelleen hyödyllisiä. Jos eivät, näkyvä sisällysluettelo voi silti toimia lukurunkona, mutta sitä ei pidä kuvata vuorovaikutteiseksi.
+
+## Varo turvattomia tai epävakaita kohteita
+
+Todennetuilla sivuilla URL-osoitteisiin voi sisältyä istuntotunnuksia, allekirjoitettuja lataustunnuksia tai henkilökohtaisia kyselyparametreja. Napsautettava PDF voi paljastaa nämä arvot kaikille vastaanottajille. Tarkista todellinen kohde pelkän näkyvän selitteen sijaan ja poista tai korvaa arkaluonteiset linkit ennen jakamista.
+
+Suhteelliset linkit riippuvat perus-URL-osoitteesta. Selain pystyy ratkaisemaan osoitteen `/docs/start`, koska se tuntee lähteen alkuperän, mutta erillinen HTML-tiedosto ei välttämättä pysty siihen. Kun muunnat ladattua HTML:ää, määritä kelvollinen perusosoite tai käytä vaadituissa kohteissa täydellisiä HTTPS-linkkejä.
+
+Uudelleenohjaukset ja lyhytlinkkipalvelut vaikeuttavat tarkistusta, koska näkyvä verkkotunnus ei välttämättä ole lopullinen. Avaa tärkeät viitteet turvallisessa selainympäristössä ja varmista lopullinen kohde. Linkin säilyttäminen ei tarkoita, että kohteen tarkkuutta tai turvallisuutta suositeltaisiin.
+
+## Tarkista uudelleen rakenteellisten muutosten jälkeen
+
+Osioiden jakaminen, yhdistäminen tai poistaminen voi muuttaa säilyviä ankkureita ja niiden sijaintia. Toista tarkastus muokkausten jälkeen, ei vain ensimmäisen muunnoksen jälkeen. Ensimmäisessä esikatselussa toiminut linkki on voinut kuulua osioon, joka myöhemmin korvattiin kuvakaappauksella.
+
+Testaa näppäimistökohdistus tai PDF-lukijan linkkiluettelo, kun saavutettavuudella on merkitystä. Näkyvä sivu voi näyttää oikealta, vaikka merkinnät olisivat väärässä järjestyksessä. Kopioi myös linkitetty virke varmistaaksesi, ettei merkintä peitä asiaankuulumatonta tekstiä.
+
+Suhteuta lopputarkistus riskiin. Henkilökohtaiseen lukukappaleeseen voi riittää edustava testaus. Tutkimusmateriaalissa, vaatimustenmukaisuustallenteessa tai asiakasasiakirjassa jokainen olennainen kohde on tarkistettava ja kirjattava.
+
+## Erota tavalliset linkkityypit
+
+Tavalliset HTTPS-linkit ovat selvimpiä säilytettäviä, koska kohde voidaan esittää PDF-merkintänä. Sähköposti-, puhelin- ja sovelluskohtaiset linkit riippuvat vastaanottajan laitteesta ja määritetystä ohjelmistosta. Teknisesti kelvollinen merkintä voi silti olla käyttökelvoton heidän ympäristössään, joten kaikkia URI-malleja ei pidä käsitellä samanarvoisina.
+
+Lataukset vaativat lisäharkintaa. Linkki voi vanhentua, vaatia istunnon tai palauttaa myöhemmin eri tiedoston. Kun linkitetty aineisto on osa todistusaineistoa, harkitse sen nimen, julkaisijan ja käyttöpäivän säilyttämistä näkyvänä tekstinä sen sijaan, että luottaisit vain napsautettavaan kohteeseen.
+
+Komentosarjoilla ohjatut säätimet eivät välttämättä ole linkkejä lainkaan. Kortti voi avata modaalin, vaihtaa suodatinta tai kutsua sovellusreittiä näyttämättä vakaata kohdetta. Muokattavan muunnoksen ei pidä keksiä kohdetta. Säilytä näkyvä tila ja selitä rajoitus, kun toiminto on keskeinen sivun ymmärtämiselle.
+
+## Pidä merkinnät lukujärjestyksen mukaisina
+
+Linkkialueet voivat muuttua sekaviksi, kun teksti rivittyy, sarakkeet liikkuvat tai osiota skaalataan. Tarkista, että aktiivinen alue peittää vain tarkoitetun selitteen ja etteivät päällekkäiset merkinnät johda viereistä tekstiä samaan kohteeseen. Tarkista monisarakkeisessa asiakirjassa linkit sarake kerrallaan sen sijaan, että seuraisit sivun poikki kulkevaa visuaalista lukulinjaa.
+
+Merkitykselliset selitteet ovat parempia kuin toistuva ”napsauta tästä”, koska ne säilyvät ymmärrettävinä kopioitaessa, haettaessa tai linkkiluettelossa tarkistettaessa. Säilytä ympäröivä virke, kun se kertoo, miksi kohde on tärkeä. Säilytä pelkille kuvaketoiminnoille näkyvä nimi, jos lähde tarjoaa sellaisen.
+
+Jos PDF-tiedostoa käytetään apuvälineillä, testaa muutakin kuin hiiren napsautuksia. Tarkista, pysyykö teksti valittavana, noudattaako merkintöjen järjestys asiakirjaa ja ovatko linkkien nimet ymmärrettäviä ilman lähellä olevaa koristelua. Page 2 File voi säilyttää tuetun asiakirjarakenteen, mutta lähde ja tarkistettu tuloste ratkaisevat, onko rakenne hyödyllinen.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Säilytä tuetut turvalliset linkkikohteet valitsemalla Editable document."}
+  caption={"Säilytä tuetut turvalliset linkkikohteet valitsemalla Editable document."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Säilytä tuetut turvalliset linkkikohteet valitsemalla Editable document."}
+  src="/blog/instructions/preserve-clickable-links/03.svg"
+  step={3}
+/>
+
+## Suojaa alkuperä ja yksityisyys
+
+Linkki voi paljastaa näkyvää verkkotunnustaan enemmän. Kyselymerkkijonot voivat sisältää asiakirjatunnuksia, hakusanoja, viittaustietoja tai allekirjoitettuja tunnuksia. Tarkista todennettujen sivujen kohteet ennen jakamista ja poista kaikki, mitä vastaanottajan ei pidä saada. Peitetyn PDF:n avaamisen ei pidä vahingossa johtaa peittämättömään yksityiseen aineistoon.
+
+Kirjaa lähteen URL ja kaappauspäivä, kun viitteet vaativat alkuperätietoja, mutta vältä istuntokohtaisia parametreja. Laajennuksen esikatselutiedot ovat väliaikaisia ja poistetaan, kun välilehti suljetaan, eikä Page 2 File ylläpidä muunnoshistoriaa. Ladattu PDF voi säilyttää linkkinsä rajattomasti, joten niiden kohteet vaativat saman tarkistuksen kuin näkyvä sisältö.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Pidä Remove links valitsematta, kun kohteiden on säilyttävä käytettävissä."}
+  caption={"Pidä Remove links valitsematta, kun kohteiden on säilyttävä käytettävissä."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Pidä Remove links valitsematta, kun kohteiden on säilyttävä käytettävissä."}
+  src="/blog/instructions/preserve-clickable-links/04.svg"
+  step={4}
+/>
+
+Katso lähdetyyppikohtaiset linkkiriskit [verkkosivuston tulostemuoto-oppaasta](/fi/blog/website-types-to-pdf-or-powerpoint).
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Esikatsele PDF ja testaa edustavat säilytetyt sekä tarkoituksella poistetut linkit."}
+  caption={"Esikatsele PDF ja testaa edustavat säilytetyt sekä tarkoituksella poistetut linkit."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Esikatsele PDF ja testaa edustavat säilytetyt sekä tarkoituksella poistetut linkit."}
+  src="/blog/instructions/preserve-clickable-links/05.svg"
+  step={5}
+/>

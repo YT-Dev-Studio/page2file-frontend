@@ -1,0 +1,120 @@
+PDF celé webové stránky má obsahovat úplný dokument, který jste chtěli zachytit — ne pouze jednu obrazovku ani všechna nekonečná doporučení, která web dokáže načítat. Otevřete stránku, načtěte požadované oddíly, zvolte jasný bod ukončení a zachyťte aktivní kartu pomocí [rozšíření Page 2 File](/cs/chrome-extension/how-to-use).
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: načtěte celou posuvnou stránku a určete jasný začátek a konec."}
+  caption={"Načtěte celou posuvnou stránku a určete jasný začátek a konec."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: načtěte celou posuvnou stránku a určete jasný začátek a konec."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/01.svg"
+  step={1}
+/>
+
+Pro jednoduchou veřejnou adresu stačí [převodník webové stránky do PDF](/cs/convert-webpage-to-pdf). Rozšíření je vhodnější hranicí pro stránky po přihlášení, dlouhé konverzace s AI a webové aplikace, jejichž stav existuje jen ve vašem prohlížeči.
+
+## Celá stránka neznamená nekonečnou stránku
+
+Mnoho kanálů přidává obsah během posouvání. Určete, zda dokument končí datem, zprávou, nadpisem nebo načteným oddílem. Tak zabráníte tomu, aby export sbíral nesouvisející doporučení nebo opakovaně spouštěl síťové požadavky.
+
+Stránka může obsahovat také pevná záhlaví, plovoucí tlačítka chatu a překryvné vrstvy souhlasu. Zavřete ty, které smíte odmítnout. Navigaci ponechte pouze tehdy, když čtenáři pomáhá pochopit zdroj.
+
+## Načítejte dynamický materiál záměrně
+
+Projděte líně načítané obrázky a rozbalte prvky, které chcete zahrnout. Ve virtualizovaném chatu mohou starší zprávy při načítání novějších zmizet z DOM; před zachycením zpřístupněte požadovaný rozsah pomocí ovládacích prvků platformy. Page 2 File zachytí vykreslený obsah, nikoli skryté záznamy účtu.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: před zachycením rozbalte požadované oddíly a spusťte líné načítání."}
+  caption={"Před zachycením rozbalte požadované oddíly a spusťte líné načítání."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: před zachycením rozbalte požadované oddíly a spusťte líné načítání."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/02.svg"
+  step={2}
+/>
+
+Počkejte, až se grafy a vlastní písma ustálí. Pokud se stránka nepřetržitě mění, zachyťte stabilní stav a uveďte datum zachycení v dokumentu nebo názvu souboru.
+
+## Proměňte výšku v čitelné stránky
+
+Export jako snímek může zachovat každý vykreslený oddíl, zatímco náhled určí hranice PDF. Neoddělujte řádek tabulky, ukázku kódu nebo popisek od obrázku. Článek o [zalomení dlouhých stránek](/cs/blog/long-webpage-page-breaks) nabízí podrobnější postup kontroly.
+
+Pokud jsou odkazy a označitelný text důležitější než přesné pixely, použijte Editable document (upravitelný výstup) a zkontrolujte každou složitou náhradu. [Průvodce klikatelnými odkazy](/cs/blog/preserve-clickable-links) vysvětluje, proč se snímek a upravitelný dokument chovají odlišně.
+
+## Soukromé zachycení stále vyžaduje úsudek
+
+Zachycujte pouze materiál, který smíte uchovat. Rozšíření neodstraňuje řízení přístupu; pracuje až poté, co jste stránku oprávněně otevřeli. Nedokáže zachytit nativní desktopovou nebo mobilní aplikaci mimo Chrome.
+
+Náhled je dočasný. Zavřením jeho karty se data náhledu odstraní a Page 2 File nevede databázi historie konverzí.
+
+## Před zachycením si stránku zmapujte
+
+Dlouhé stránky se lépe řídí, když nejprve určíte jejich strukturu. Označte začátek, poslední požadovaný oddíl a komponenty, které se načítají až po interakci. Rozhodněte, zda do záznamu patří komentáře, související položky, navigace a zápatí. „Všechno, co web může nakonec načíst“ není použitelnou hranicí nekonečného kanálu.
+
+Věnujte pozornost vnořeným posuvným oblastem. Dashboard může mít posuvník stránky, tabulku s vlastním posuvníkem a chat načítající historii nezávisle. Operace celé stránky může pracovat jen s obsahem vykresleným kartou. Před konverzí otevřete požadované řádky nebo zprávy a potvrďte jejich přítomnost.
+
+Připnutá záhlaví a plovoucí ovládací prvky se mohou opakovat při dělení dlouhé stránky. Ponechte je, pokud poskytují důležitý kontext, například názvy sloupců; odstraňte nebo sbalte je, když zakrývají obsah. Cílem je návaznost pro čtenáře, nikoli doslovné opakování každé vrstvy rozhraní.
+
+## Zvládněte líné načítání a virtualizaci
+
+Líné načítání odkládá obrázky nebo panely, dokud se nepřiblíží k viewportu. Záměrný průchod shora dolů obvykle ukáže, zda se zdroj načítá správně. Poté se vraťte na začátek. Pokud rané karty zmizely, web pravděpodobně virtualizuje seznam a nahrazuje uzly mimo obrazovku.
+
+U virtualizovaných zdrojů zachyťte menší rozsah nebo několik logických oddílů a každý ověřte. Neusuzujte z posuvníku, že neviditelná část stránky existuje ve výstupu. Náhled musí ukázat skutečný začátek, konec a pořadí každého zachyceného oddílu.
+
+Dynamická počítadla, živé kanály a animace se během průchodu mohou měnit. Pozastavte aktualizace, pokud web takový ovládací prvek nabízí, nebo zvolte jasný okamžik zachycení a zaznamenejte jej. PDF je statický snímek a nemůže zachovat živé chování, které zobrazený stav vytvořilo.
+
+## Zkontrolujte návaznost mezi stránkami PDF
+
+Prohlédněte přechody mezi stránkami a hledejte opakované připnuté prvky, oříznuté nadpisy, zdvojené řádky a obsah zakrytý překryvy. Oddíl čitelný samostatně může být stále nejasný, pokud se jeho název objevil o dvě stránky dříve.
+
+Široké grafy a tabulky vyžadují vědomou volbu. Zachování plné šířky může zmenšit štítky, zatímco rozdělení prvku může odstranit kontext. Pokud zdroj nabízí kompaktní pohled, zvolte jej před zachycením. Jinak ponechte vizuál jako jeden oddíl a vyberte měřítko, při kterém jsou popisky čitelné.
+
+Nakonec porovnejte náhled s osnovou zdroje. Každý požadovaný nadpis se má objevit jednou a ve správném pořadí. Pokud je stránka pro tento test příliš nestabilní, omezení zdokumentujte a zachyťte užší, opakovatelnou část.
+
+## Diagnostikujte neúplný výsledek celé stránky
+
+Pokud náhled končí příliš brzy, vraťte se ke zdroji a najděte první chybějící oddíl. Ovládací prvek „načíst více“, sbalený panel nebo vnořený posuvník obvykle vyžaduje přímou interakci. Když stránka zobrazuje indikátor načítání, počkejte na dokončení a ověřte, že nový obsah zůstane přítomen i po odrolování.
+
+Pokud náhled obsah opakuje, zkontrolujte připnutá záhlaví, řádky tabulek a komponenty znovu vykreslované na hranicích oddílů. Sbalte nepotřebné pevné prvky a zopakujte menší zachycení. Měňte vždy jednu podmínku, abyste rozlišili chybu stavu stránky, rozsahu nebo dělení.
+
+Pokud raný obsah po načtení pozdějšího zmizí, zdroj je pravděpodobně virtualizovaný. Nemusí existovat jediný stav prohlížeče s celou historií. Definujte několik rozsahů s jasným překryvem, zachyťte je zvlášť a označte pořadí. Neoznačujte záznam za souvislý, pokud jej zdroj nikdy souvisle nevykreslil.
+
+## Před stažením zkontrolujte soukromí
+
+Zachycení celé stránky může odhalit detaily daleko mimo původní viewport: nabídky účtů, jména účastníků, náhledy oznámení, parametry dotazu a obsah sousedních panelů. Projděte celý náhled a nepředpokládejte, že vše mimo obrazovku je neškodné. Před vytvořením výsledného souboru odstraňte nepotřebné oddíly ve zdroji nebo náhledu.
+
+Rozšíření pracuje s aktivní kartou. Data náhledu jsou dočasná, odstraní se po zavření karty a neukládají se do databáze historie konverzí Page 2 File. Stažené PDF je poté pod vaší kontrolou, proto zvolte název, místo uložení a kanál sdílení podle citlivosti obsahu.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: zvolte Current tab, aby pop-up použil stránku již otevřenou v prohlížeči."}
+  caption={"Zvolte Current tab, aby pop-up použil stránku již otevřenou v prohlížeči."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: zvolte Current tab, aby pop-up použil stránku již otevřenou v prohlížeči."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/03.svg"
+  step={3}
+/>
+
+## Použijte kontrolní seznam dokončení
+
+PDF celé stránky je hotové, když jeho začátek a konec odpovídají deklarované hranici, každý požadovaný oddíl se objeví ve správném pořadí, žádný blok není skrytě zdvojen a text i vizuální detaily zůstávají čitelné při běžném zvětšení. Zkontrolujte alespoň jeden přechod mezi oddíly, jednu složitou komponentu a jeden důležitý odkaz.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: zvolte PDF a styl výstupu odpovídající cíli kontroly."}
+  caption={"Zvolte PDF a styl výstupu odpovídající cíli kontroly."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: zvolte PDF a styl výstupu odpovídající cíli kontroly."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/04.svg"
+  step={4}
+/>
+
+Pokud se stránka může změnit, zaznamenejte zdrojovou URL a datum zachycení. U přihlášeného obsahu nevkládejte tajné údaje ani identifikátory relace do názvu souboru či poznámek. Chybí-li v náhledu jakýkoli požadovaný obsah, je zachycení neúplné, i když se PDF otevře bez chyby.
+
+Uchovejte osnovu zdroje spolu se schváleným souborem, pokud bude hranici zachycení později ověřovat jiná osoba.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: v náhledu ověřte celý rozsah a první, poslední i hraniční oddíly."}
+  caption={"V náhledu ověřte celý rozsah a první, poslední i hraniční oddíly."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: v náhledu ověřte celý rozsah a první, poslední i hraniční oddíly."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/05.svg"
+  step={5}
+/>
+
+Přípravu podle typu zdroje popisuje [průvodce exportem webových stránek](/cs/blog/website-types-to-pdf-or-powerpoint).

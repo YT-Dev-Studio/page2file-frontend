@@ -1,0 +1,143 @@
+Nettleserens Skriv ut til PDF og konvertering fra URL til PDF starter fra ulike versjoner av en side. Utskrift bruker nettstedets utskriftsstilark når det finnes. En konverterer kan arbeide fra det gjengitte skjermoppsettet og dele det inn i seksjoner som kan kontrolleres. Ingen av metodene er automatisk bedre; siden og det tiltenkte dokumentet avgjør.
+
+<ArticleFigure
+  alt={"Nettleser og Page 2 File-utvidelsen: Åpne nettleserens utskriftsforhåndsvisning og noter hvilke områder på kontrollpanelet som forsvinner."}
+  caption={"Åpne nettleserens utskriftsforhåndsvisning og noter hvilke områder på kontrollpanelet som forsvinner."}
+  closeLabel={"Lukk bildeforhåndsvisningen"}
+  openLabel={"Åpne bildet i full størrelse: åpne nettleserens utskriftsforhåndsvisning og noter hvilke områder på kontrollpanelet som forsvinner."}
+  src="/blog/instructions/why-print-to-pdf-breaks/01.svg"
+  step={1}
+/>
+
+Bruk [Page 2 File PDF-konvertereren](/no/convert-webpage-to-pdf) når du trenger en forhåndsvisning og et bevisst valg mellom skjermbilde og redigerbart resultat. Bruk nettleserutskrift når utgiveren har laget en ryddig utskriftsvisning og du bare trenger en rask kopi.
+
+## Hvorfor utskriftsresultatet kan se annerledes ut enn skjermen
+
+CSS kan ha ulike regler for skjerm og utskrift. Et utskriftsstilark kan fjerne navigasjon og annonser, men det kan også skjule bakgrunner, endre kolonner, erstatte skrifter eller skjule interaktive paneler. Faste og klebrige elementer kan gjentas på flere sider. Et diagram tegnet på canvas kan bli et tomt område hvis utskriftsprosessen ikke registrerer pikslene.
+
+<ArticleFigure
+  alt={"Nettleser og Page 2 File-utvidelsen: Sammenlign utskriftsresultatet med skjermen og identifiser manglende diagrammer og bakgrunner."}
+  caption={"Sammenlign utskriftsresultatet med skjermen og identifiser manglende diagrammer og bakgrunner."}
+  closeLabel={"Lukk bildeforhåndsvisningen"}
+  openLabel={"Åpne bildet i full størrelse: sammenlign utskriftsresultatet med skjermen og identifiser manglende diagrammer og bakgrunner."}
+  src="/blog/instructions/why-print-to-pdf-breaks/02.svg"
+  step={2}
+/>
+
+Medier som lastes sent, skaper et annet avvik. Utskriften starter fra dokumentets nåværende tilstand; innhold som aldri har vært i visningsområdet, finnes kanskje ikke i denne tilstanden. Virtualiserte grensesnitt for chat og kontrollpanel kan fjerne eldre rader fra DOM mens du ruller, noe som betyr at en utskriftskommando ikke kan gjenopprette dem.
+
+## Hva URL-konvertering endrer
+
+En offentlig URL-konverterer laster inn adressen i en kontrollert nettleser og klargjør det gjengitte resultatet for PDF. Den arver ikke den personlige økten din og kan derfor ikke se et privat kontrollpanel eller en side bak pålogging. Denne grensen beskytter påloggingsinformasjon, men gjør metoden uegnet for autentisert materiale.
+
+For en privat fane registrerer [Page 2 File-utvidelsen](/no/chrome-extension/how-to-use) siden du åpnet etter en uttrykkelig handling. Den ber ikke om kontopassordet. Sørg for at nødvendige paneler og meldinger er synlige før opptak.
+
+## Sammenlign filene, ikke knappetekstene
+
+Kontroller om tekst kan markeres, lenker forblir nyttige, bakgrunner bærer informasjon og sideskift respekterer overskrifter. En skjermbildeeksport bevarer vanligvis et vanskelig oppsett mer nøyaktig. En redigerbar eksport gjør støttet innhold enklere å søke i og endre, men kan rasterisere komplekse elementer.
+
+Veiledningen om [skjermbilde sammenlignet med redigerbart resultat](/no/blog/visual-vs-editable) forklarer denne avveiningen. For svært høye kilder bør du også lese [veiledningen for opptak av hele siden](/no/blog/capture-full-webpage-as-pdf) før du velger metode.
+
+## En praktisk avgjørelse
+
+Velg nettleserutskrift for en enkel artikkel med et godt utskriftsstilark. Velg URL-konvertering med skjermbilde når utseendet er viktig, eller redigerbar konvertering når innholdet må forbli søkbart og lenket. Velg opptak av aktiv fane når kilden er privat, personlig eller bare tilgjengelig etter samhandling.
+
+Forhåndsvisningen er fortsatt det avgjørende beviset. Hvis en viktig blokk mangler der, må du ikke anta at den kommer tilbake i den endelige PDF-filen.
+
+## Utfør en kontrollert sammenligning
+
+Sammenlign begge metodene fra samme nettlesertilstand. Angi samme visningsområde, filtre, utvidede paneler og rulleposisjon før du oppretter noen av filene. Ellers måler sammenligningen to forskjellige kilder i stedet for to konverteringsmetoder. Registrer om siden hadde fullført lasting av bilder, nettskrifter og diagrammer.
+
+Start med nettleserens utskriftsforhåndsvisning. Noter hvilke navigasjonselementer, bakgrunner, interaktive paneler og klebrige elementer som forsvinner. Det er ikke automatisk en feil: et godt utskriftsstilark kan fjerne rot og skape den reneste lesekopien. Spørsmålet er om det fjernet noe som kreves for formålet ditt.
+
+Kontroller deretter Page 2 File-forhåndsvisningen i modusen som passer oppgaven. Accurate copy (skjermbildelignende resultat) bør vurderes etter likhet og lesbarhet. Editable document (redigerbart resultat) bør vurderes etter leserekkefølge, tekstmarkering, lenkeatferd og kvaliteten på erstatninger for komplekse komponenter. En sammenligning av filstørrelse sier lite om hvorvidt dokumentene er brukbare.
+
+## Diagnostiser vanlige forskjeller
+
+Manglende farger eller bilder skyldes ofte utskriftsspesifikk CSS, nettleserinnstillinger for bakgrunnsgrafikk eller en komponent som gjengis annerledes for utskriftsmedier. Avkortede paneler oppstår ofte når en rullebeholder har fast høyde eller når virtualisert innhold aldri kom inn på den gjengitte siden. Tomrom kan komme fra klebrige topptekster, reserverte annonseplasser eller utskriftsregler som tvinger fram et skift.
+
+Tabeller viser en annen forskjell. Et utskriftsstilark kan gjenta overskrifter korrekt, krympe tabellen til teksten blir uleselig eller klippe kolonner utenfor den utskrivbare bredden. Et skjermbildeopptak kan bevare den viste tabellen, men kan ikke få et bredt oppsett til å passe naturlig på en stående side. Redigerbar konvertering kan bygge opp vanlige rader og celler og samtidig bruke et bilde som reserve for uvanlige rutenett.
+
+Lenker fortjener en egen kontroll. PDF-filer som opprettes av nettleseren kan beholde vanlige ankere, men en synlig URL tegnet i canvas eller levert av et skript blir kanskje ikke interaktiv. Page 2 File Editable document beholder støttede ankere; Accurate copy prioriterer utseendet. Test målene i stedet for å anta at blå understreket tekst er klikkbar.
+
+## Velg etter bevis og vedlikeholdskostnad
+
+For en enkelt artikkel med en god utskriftsvisning er nettleserutskrift ofte tilstrekkelig. For et kontrollpanel, en autentisert applikasjon, en lang dynamisk side eller en presentasjonsorientert arbeidsflyt kan kontrollene for opptak og forhåndsvisning være viktigere enn nettleserens utskriftskonvensjoner. Ingen av metodene bør behandles som universelt overlegen.
+
+Hvis den samme kilden eksporteres regelmessig, dokumenterer du klargjøringstrinnene og godkjenningskontrollene. En stabil prosedyre er mer verdifull enn å velge verktøy på nytt etter intuisjon. Kontroller den på nytt når nettstedet endrer oppsett, autentisering eller virtualiseringsatferd.
+
+Video, animasjon, pekertilstander og live-kontroller kan ikke forbli interaktive i en vanlig PDF. Det forsvarlige resultatet er en lesbar registrering av en definert sidetilstand med kjente avveininger.
+
+## Skill utskriftsinnstillinger fra kildeproblemer
+
+Noen feil kan rettes i nettleserens utskriftsdialog. Papirstørrelse, retning, marger, skalering og innstillinger for bakgrunnsgrafikk kan endre resultatet vesentlig. Prøv disse kontrollene når innholdet finnes, men passer dårlig. De kan ikke gjenopprette et panel som utskriftsstilarket fjernet, eller meldinger som et virtualisert grensesnitt aldri gjenga.
+
+Topptekster og bunntekster som nettleseren legger til, er et annet utskriftsspesifikt valg. De kan gi URL og dato, men kan også avsløre en privat adresse eller skyve innhold til en ekstra side. Vurder dem bevisst i stedet for å godta standarden. En URL-konverterer har en annen forhåndsvisnings- og seksjonsmodell, så sammenlign de faktiske metadataene i hver fil.
+
+Ikke behandle større sidestørrelse som en universalløsning. Liggende retning kan hjelpe en bred tabell, men gjør en smal artikkel vanskeligere å lese. Kraftig skalering kan unngå klipping, men gjøre etiketter og fotnoter uleselige. De tiltenkte visningsforholdene er viktigere enn å få alt inn på færrest mulig ark.
+
+## Bestem med en matrise for kilde og oppgave
+
+For en utgiverutformet artikkel er nettleserutskrift en fornuftig første test fordi utskriftsstilarket allerede kan fjerne navigasjon og formatere sitater. For en markedsføringsside eller designreferanse er skjermbildekonvertering vanligvis en bedre kandidat fordi skjermkomposisjonen bærer betydning. For dokumentasjon og forskningsnotater fortjener redigerbar konvertering den første testen fordi søk, markering og lenker er viktige.
+
+Kontrollpaneler og chatter krever et annet spørsmål: er den nødvendige tilstanden faktisk gjengitt? Hvis svaret er nei, kan verken utskrift eller URL-konvertering rekonstruere den. Last inn det autoriserte området, stabiliser filtrene og bruk opptak av aktiv fane når tilstanden avhenger av en innlogget nettleserøkt. En offentlig URL-jobb skal aldri forventes å arve denne økten.
+
+<ArticleFigure
+  alt={"Nettleser og Page 2 File-utvidelsen: Bruk By URL for den samme offentlige siden når ingen innlogget tilstand kreves."}
+  caption={"Bruk By URL for den samme offentlige siden når ingen innlogget tilstand kreves."}
+  closeLabel={"Lukk bildeforhåndsvisningen"}
+  openLabel={"Åpne bildet i full størrelse: bruk By URL for den samme offentlige siden når ingen innlogget tilstand kreves."}
+  src="/blog/instructions/why-print-to-pdf-breaks/03.svg"
+  step={3}
+/>
+
+Når resultatet skal bli en presentasjon, er PDF kanskje ikke riktig endepunkt. En [arbeidsflyt fra nettside til PowerPoint](/no/blog/webpage-to-powerpoint) lar deg velge mellom utseendeorienterte lysbilder og støttede redigerbare elementer i stedet for å konvertere en PDF på nytt.
+
+<ArticleFigure
+  alt={"Nettleser og Page 2 File-utvidelsen: Velg Accurate copy når den viste komposisjonen er beviset."}
+  caption={"Velg Accurate copy når den viste komposisjonen er beviset."}
+  closeLabel={"Lukk bildeforhåndsvisningen"}
+  openLabel={"Åpne bildet i full størrelse: velg Accurate copy når den viste komposisjonen er beviset."}
+  src="/blog/instructions/why-print-to-pdf-breaks/04.svg"
+  step={4}
+/>
+
+## Dokumenter en forsvarlig sammenligning
+
+For gjentatte eksporter beholder du en kort testpost: kilde-URL, nettlesertilstand, dato, utskriftsinnstillinger, Page 2 File-modus og feilene som ble funnet i hvert resultat. Skjermbilder av de to forhåndsvisningene kan bidra til å forklare hvorfor én metode ble valgt, men bør ikke erstatte kontrollen av den endelige PDF-filen.
+
+Vurder begge filene mot de samme godkjenningskriteriene:
+
+- alt nødvendig innhold vises én gang og i riktig rekkefølge;
+- brødtekst, diagrametiketter og kode er lesbare ved normal zoom;
+- viktige lenker fungerer og avslører ikke sensitive mål;
+- overskrifter, bildetekster og tabellsammenheng overlever sidegrenser;
+- private konto- eller arbeidsområdedetaljer er fraværende med mindre de er nødvendige.
+
+En metode består når den skaper dokumentet som trengs for denne kilden og oppgaven. Hvis begge mislykkes, begrenser du opptaket, endrer sidetilstanden eller bruker kildeplattformens egen spesialbygde eksport. Å gjenta samme kommando på en ustabil side er ikke en reparasjonsstrategi.
+
+<ArticleFigure
+  alt={"Nettleser og Page 2 File-utvidelsen: Velg Editable document når leserekkefølge, markering og lenker er viktige."}
+  caption={"Velg Editable document når leserekkefølge, markering og lenker er viktige."}
+  closeLabel={"Lukk bildeforhåndsvisningen"}
+  openLabel={"Åpne bildet i full størrelse: velg Editable document når leserekkefølge, markering og lenker er viktige."}
+  src="/blog/instructions/why-print-to-pdf-breaks/05.svg"
+  step={5}
+/>
+
+## Kontroller på nytt etter at nettstedet endres
+
+Utskrifts- og opptaksatferd kan endres når et nettsted oppdaterer CSS, diagrambibliotek, samtykkelag eller virtualiseringsregler. En prosedyre som fungerte forrige måned, er bevis for den versjonen av siden, ikke en permanent garanti. Kjør representative kontroller på nytt etter en redesign og før distribusjon med store konsekvenser.
+
+Dette vedlikeholdspunktet er spesielt viktig for rutiner som ser automatiserte ut. Page 2 File tilbyr en forhåndsvisning fordi sidetilstanden fortsatt trenger menneskelig kontroll. Forhåndsvisningen kan avsløre manglende seksjoner og uheldige grenser; den kan ikke avgjøre om dokumentet er komplett for ditt juridiske, arkivmessige eller operative formål.
+
+<ArticleFigure
+  alt={"Nettleser og Page 2 File-utvidelsen: Sammenlign begge Page 2 File-forhåndsvisningene med nettleserutskrift før du bestemmer deg."}
+  caption={"Sammenlign begge Page 2 File-forhåndsvisningene med nettleserutskrift før du bestemmer deg."}
+  closeLabel={"Lukk bildeforhåndsvisningen"}
+  openLabel={"Åpne bildet i full størrelse: sammenlign begge Page 2 File-forhåndsvisningene med nettleserutskrift før du bestemmer deg."}
+  src="/blog/instructions/why-print-to-pdf-breaks/06.svg"
+  step={6}
+/>
+
+Bruk [veiledningen for nettstedsresultat](/no/blog/website-types-to-pdf-or-powerpoint) når kildetypen, og ikke bare utskriftsatferden, bør styre avgjørelsen.

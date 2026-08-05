@@ -1,0 +1,146 @@
+{
+  "export-ai-chats-privately": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como exportar chats de IA para PDF de forma privada",
+    "description": "Exporte conversas de IA visíveis a partir de um separador ativo, defina o intervalo de mensagens, escolha um modo PDF e compreenda os dados temporários da pré-visualização.",
+    "imageAlt": "Uma conversa privada de IA passa por um escudo para um PDF"
+  },
+  "export-browser-messenger-chats-to-pdf": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como exportar chats de mensageiros no navegador para PDF",
+    "description": "Exporte chats visíveis do Discord Web, Slack Web, Teams, Messenger ou mensagens diretas do Instagram e compreenda por que as aplicações apenas nativas ficam excluídas.",
+    "imageAlt": "Vários painéis de mensageiros no navegador convergem em documentos PDF"
+  },
+  "export-chatgpt-conversation-to-pdf": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como exportar uma conversa do ChatGPT para PDF",
+    "description": "Prepare uma conversa visível do ChatGPT, carregue o intervalo necessário, escolha PDF por capturas ou editável e distinga a captura do separador da exportação da conta.",
+    "imageAlt": "Uma conversa genérica de IA no navegador transforma-se num documento PDF"
+  },
+  "export-claude-chat-to-pdf": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como exportar um chat do Claude para PDF",
+    "description": "Capture uma conversa visível do Claude e a área de artefactos como PDF, escolha limites legíveis e compare-a com a exportação de dados da conta do Claude.",
+    "imageAlt": "Um chat genérico de IA e um painel de artefactos transformam-se num PDF"
+  },
+  "export-gemini-chat-to-pdf": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como exportar um chat do Gemini para PDF",
+    "description": "Guarde uma conversa visível do Gemini com citações e imagens como PDF, carregue o conteúdo necessário e distinga a captura do Google Takeout.",
+    "imageAlt": "Um chat de IA com cartões de fontes e imagens transforma-se num PDF"
+  },
+  "export-other-ai-chats-to-pdf": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como exportar chats do Grok, DeepSeek, Perplexity ou Copilot",
+    "description": "Exporte chats visíveis do Grok, DeepSeek, Perplexity ou Copilot a partir de um separador do navegador, respeitando o conteúdo carregado, a privacidade e os limites da plataforma.",
+    "imageAlt": "Vários separadores genéricos de chats de IA convergem num PDF"
+  },
+  "export-telegram-chat-to-pdf": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como exportar um chat do Telegram para PDF",
+    "description": "Prepare um chat ou canal do Telegram Web, carregue respostas e multimédia, escolha PDF por capturas ou editável e reveja os limites das mensagens capturadas.",
+    "imageAlt": "Uma conversa genérica de canal passa por um escudo para um PDF"
+  },
+  "export-whatsapp-chat-to-pdf": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como exportar um chat do WhatsApp para PDF",
+    "description": "Prepare uma conversa no WhatsApp Web, carregue as mensagens e a multimédia necessárias, escolha um modo PDF e compreenda os limites do separador ativo.",
+    "imageAlt": "Uma conversa genérica num mensageiro Web pessoal transforma-se num PDF"
+  },
+  "capture-full-webpage-as-pdf": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como capturar uma página Web completa como PDF",
+    "description": "Capture uma página Web deslocável completa como PDF definindo o limite, carregando secções dinâmicas, revendo quebras e respeitando os limites de acesso.",
+    "imageAlt": "Uma página completa e deslocável do navegador flui para um documento PDF"
+  },
+  "html-to-pdf-safely": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como converter HTML em PDF com segurança",
+    "description": "Converta um ficheiro HTML carregado em PDF tratando scripts, recursos remotos, acesso a ficheiros e destinos de rede privada como limites de segurança.",
+    "imageAlt": "Conteúdo HTML é isolado antes de se tornar um PDF limpo"
+  },
+  "html-to-powerpoint": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como converter conteúdo HTML Web em PowerPoint",
+    "description": "Transfira conteúdo HTML Web renderizado para PowerPoint selecionando secções úteis, escolhendo diapositivos por capturas ou editáveis e revendo alternativas complexas.",
+    "imageAlt": "Blocos HTML renderizados passam de um navegador para diapositivos"
+  },
+  "long-webpage-page-breaks": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como converter uma página Web longa sem quebras incorretas",
+    "description": "Prepare páginas Web longas para PDF, mantenha títulos e tabelas juntos, carregue conteúdo dinâmico e corrija limites incómodos na pré-visualização.",
+    "imageAlt": "Uma página Web longa é dividida em limites legíveis de páginas PDF"
+  },
+  "multi-page-website-to-pdf": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como converter um site com várias páginas em PDF",
+    "description": "Transforme páginas acessíveis de um site em ficheiros PDF separados, defina os limites da descoberta, reveja falhas e não prometa um único documento combinado.",
+    "imageAlt": "Um mapa do site transforma-se em vários documentos PDF separados"
+  },
+  "preserve-clickable-links": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como preservar ligações clicáveis num PDF de página Web",
+    "description": "Saiba quando as ligações permanecem clicáveis em PDF, por que as capturas eliminam a interação e como a saída editável trata destinos seguros.",
+    "imageAlt": "Ligações do navegador são transportadas para um documento PDF editável"
+  },
+  "save-authenticated-webpage-as-pdf": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como guardar em PDF uma página Web protegida por início de sessão",
+    "description": "Guarde uma página Web com sessão iniciada a partir do separador ativo do Chrome sem fornecer credenciais a um conversor de URL e reveja os limites de privacidade e captura.",
+    "imageAlt": "Um separador protegido do navegador transforma-se numa cópia PDF privada"
+  },
+  "save-webpage-as-pdf": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como guardar uma página Web como PDF",
+    "description": "Guarde uma página Web pública ou autenticada como PDF, escolha capturas ou saída editável, reveja as quebras de página e compreenda o limite temporário da pré-visualização.",
+    "imageAlt": "Uma página longa do navegador transforma-se numa pilha organizada de páginas PDF"
+  },
+  "sections-to-slides": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como as secções de uma página Web se tornam diapositivos PowerPoint",
+    "description": "Utilize a hierarquia da página para definir limites dos diapositivos, preservar o contexto, dividir secções densas e rever a saída PowerPoint por capturas ou editável.",
+    "imageAlt": "Secções de uma página Web são organizadas como diapositivos PowerPoint separados"
+  },
+  "screenshot-vs-editable-powerpoint": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Diapositivos por captura versus PowerPoint editável a partir de uma página Web",
+    "description": "Compare diapositivos por captura com a saída PowerPoint editável quanto a fidelidade do layout, texto selecionável, ligações, gráficos, manutenção e acessibilidade.",
+    "imageAlt": "Diapositivos por captura são comparados com elementos PowerPoint editáveis"
+  },
+  "visual-vs-editable": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Capturas versus conversão editável de páginas Web",
+    "description": "Escolha entre capturas fiéis e conversão editável comparando texto, ligações, imagens, gráficos, layouts e saída PowerPoint.",
+    "imageAlt": "Uma página Web capturada é comparada com blocos de documento editáveis"
+  },
+  "webpage-capture-vs-web-scraping": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Captura de páginas Web versus web scraping: de qual precisa?",
+    "description": "Escolha a captura de páginas Web para um documento legível com imagens ou web scraping para dados estruturados e evite tratar o Page 2 File como uma API de rastreio.",
+    "imageAlt": "Uma página do navegador divide-se num documento e numa tabela de dados"
+  },
+  "webpage-to-powerpoint": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como converter uma página Web em PowerPoint",
+    "description": "Converta uma página Web em PowerPoint, escolha diapositivos por capturas ou editáveis, defina secções úteis e reveja o PPTX antes da transferência.",
+    "imageAlt": "Uma página Web é reorganizada numa apresentação PowerPoint"
+  },
+  "website-to-powerpoint": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Como converter um site em PowerPoint",
+    "description": "Converta páginas acessíveis de um site em ficheiros PowerPoint separados, mantenha explícitos os limites das páginas e reveja diapositivos por captura ou editáveis.",
+    "imageAlt": "Um mapa do site flui para apresentações PowerPoint separadas"
+  },
+  "website-types-to-pdf-or-powerpoint": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "Que tipos de sites pode exportar para PDF ou PowerPoint?",
+    "description": "Veja como artigos, documentação, dashboards, lojas, páginas de aprendizagem, aplicações Web, chats de IA e mensageiros no navegador se adaptam à exportação para PDF ou PowerPoint.",
+    "imageAlt": "Diferentes tipos de sites convergem em PDFs e apresentações"
+  },
+  "why-print-to-pdf-breaks": {
+    "author": "Equipa editorial do Page 2 File",
+    "title": "URL para PDF ou impressão do navegador: qual captura mais?",
+    "description": "Compare a conversão de URL em PDF com a impressão do navegador, incluindo estilos de impressão, conteúdo diferido, separadores privados, fidelidade visual e saída editável.",
+    "imageAlt": "O caminho de impressão do navegador é comparado com a captura de uma página Web"
+  }
+}

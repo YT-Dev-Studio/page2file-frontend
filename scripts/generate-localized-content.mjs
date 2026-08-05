@@ -71,8 +71,9 @@ import type { ComponentType } from "react";
 import type { Locale } from "@/shared/i18n/locales";
 ${imports.join("\n")}
 
-export const localizedBlogComponents: Partial<
-  Record<Locale, Record<string, ComponentType>>
+export const localizedBlogComponents: Record<
+  Exclude<Locale, "en" | "ru">,
+  Record<string, ComponentType>
 > = {
 ${localeEntries.join("\n")}
 };

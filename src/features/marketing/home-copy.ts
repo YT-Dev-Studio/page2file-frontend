@@ -1,11 +1,19 @@
-import type {
-  Locale,
-  LocalizedPublished,
-} from "@/shared/i18n/locales";
-import { isPublishedLocale } from "@/shared/i18n/locales";
+import type { Locale } from "@/shared/i18n/locales";
 import type { StaticRoute } from "@/shared/routes/routes";
 import { homeCopyDe } from "./home-copy.de";
+import { homeCopyEs } from "./home-copy.es";
 import { homeCopyFr } from "./home-copy.fr";
+import { homeCopyNl } from "./home-copy.nl";
+import { homeCopyPt } from "./home-copy.pt";
+import { homeCopyIt } from "./home-copy.it";
+import { homeCopyPl } from "./home-copy.pl";
+import { homeCopyCs } from "./home-copy.cs";
+import { homeCopySv } from "./home-copy.sv";
+import { homeCopyNo } from "./home-copy.no";
+import { homeCopyDa } from "./home-copy.da";
+import { homeCopyFi } from "./home-copy.fi";
+import { homeCopyRo } from "./home-copy.ro";
+import { homeCopyHu } from "./home-copy.hu";
 
 export type CopyList = {
   items: ReadonlyArray<string>;
@@ -117,7 +125,7 @@ export type HomeCopy = {
   };
 };
 
-const homeCopy: LocalizedPublished<HomeCopy> = {
+const publishedHomeCopy: Record<"en" | "ru", HomeCopy> = {
   en: {
     title: "Export any webpage to PDF/PPTX",
     lead:
@@ -610,12 +618,26 @@ const homeCopy: LocalizedPublished<HomeCopy> = {
   },
 };
 
-export const getHomeCopy = (locale: Locale): HomeCopy =>
-  locale === "de"
-    ? homeCopyDe
-    : locale === "fr"
-      ? homeCopyFr
-      : homeCopy[isPublishedLocale(locale) ? locale : "en"];
+const homeCopy: Record<Locale, HomeCopy> = {
+  en: publishedHomeCopy.en,
+  ru: publishedHomeCopy.ru,
+  de: homeCopyDe,
+  fr: homeCopyFr,
+  es: homeCopyEs,
+  nl: homeCopyNl,
+  pt: homeCopyPt,
+  it: homeCopyIt,
+  pl: homeCopyPl,
+  cs: homeCopyCs,
+  sv: homeCopySv,
+  no: homeCopyNo,
+  da: homeCopyDa,
+  fi: homeCopyFi,
+  ro: homeCopyRo,
+  hu: homeCopyHu,
+};
+
+export const getHomeCopy = (locale: Locale): HomeCopy => homeCopy[locale];
 
 const chromeInstallLabels: Record<Locale, string> = {
   cs: "Nainstalovat do Chromu",

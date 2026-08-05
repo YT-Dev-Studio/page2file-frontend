@@ -22,14 +22,49 @@ describe("homepage copy", () => {
     );
   });
 
-  test("provides manual German and French variants", () => {
+  test("provides the completed manual localization batches", () => {
     expect(getHomeCopy("de").title).toBe(
       "Jede Webseite als PDF/PPTX exportieren",
     );
     expect(getHomeCopy("fr").title).toBe(
       "Exportez n’importe quelle page web en PDF/PPTX",
     );
-    expect(getHomeCopy("es")).toBe(getHomeCopy("en"));
+    expect(getHomeCopy("es").title).toBe(
+      "Exporte cualquier página web a PDF/PPTX",
+    );
+    expect(getHomeCopy("nl").title).toBe(
+      "Exporteer elke webpagina naar PDF/PPTX",
+    );
+    expect(getHomeCopy("pt").title).toBe(
+      "Exporte qualquer página web para PDF/PPTX",
+    );
+    expect(getHomeCopy("it").title).toBe(
+      "Esporta qualsiasi pagina web in PDF/PPTX",
+    );
+    expect(getHomeCopy("pl").title).toBe(
+      "Eksportuj dowolną stronę internetową do PDF/PPTX",
+    );
+    expect(getHomeCopy("cs").title).toBe(
+      "Exportujte libovolnou webovou stránku do PDF/PPTX",
+    );
+    expect(getHomeCopy("sv").title).toBe(
+      "Exportera valfri webbsida till PDF/PPTX",
+    );
+    expect(getHomeCopy("no").title).toBe(
+      "Eksporter en hvilken som helst nettside til PDF/PPTX",
+    );
+    expect(getHomeCopy("da").title).toBe(
+      "Eksportér enhver webside til PDF/PPTX",
+    );
+    expect(getHomeCopy("fi").title).toBe(
+      "Vie mikä tahansa verkkosivu PDF/PPTX-tiedostoksi",
+    );
+    expect(getHomeCopy("ro").title).toBe(
+      "Exportați orice pagină web în PDF/PPTX",
+    );
+    expect(getHomeCopy("hu").title).toBe(
+      "Exportáljon bármilyen weboldalt PDF/PPTX-fájlba",
+    );
   });
 
   test("keeps the four homepage articles in the approved order", () => {

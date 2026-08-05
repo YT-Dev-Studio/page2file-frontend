@@ -11,11 +11,47 @@
     "description": "Exporteer zichtbare AI-gesprekken vanuit een actief browsertabblad, definieer het berichtbereik, kies een PDF-modus en begrijp tijdelijke voorbeeldgegevens.",
     "imageAlt": "Een privé-AI-gesprek gaat via een schild naar PDF"
   },
+  "export-browser-messenger-chats-to-pdf": {
+    "author": "Redactie Page 2 File",
+    "title": "Chats uit browsermessengers naar PDF exporteren",
+    "description": "Exporteer zichtbare chats uit Discord Web, Slack Web, Teams, Messenger of Instagram-DM's en begrijp waarom uitsluitend native apps zijn uitgesloten.",
+    "imageAlt": "Meerdere browsermessengerpanelen komen samen in PDF-documenten"
+  },
   "export-chatgpt-conversation-to-pdf": {
     "author": "Redactie Page 2 File",
     "title": "Een ChatGPT-gesprek naar PDF exporteren",
     "description": "Bereid een zichtbaar ChatGPT-gesprek voor, laad het benodigde bereik, kies pagina-opnamen of bewerkbare PDF en onderscheid tabbladopname van accountexport.",
     "imageAlt": "Een algemeen AI-gesprek in de browser wordt een PDF-document"
+  },
+  "export-claude-chat-to-pdf": {
+    "author": "Redactie Page 2 File",
+    "title": "Een Claude-chat naar PDF exporteren",
+    "description": "Leg een zichtbaar Claude-gesprek en artifact-gebied als PDF vast, kies een leesbare grens en vergelijk dit met de export van Claude-accountgegevens.",
+    "imageAlt": "Een algemene AI-chat en een artifact-paneel worden een PDF"
+  },
+  "export-gemini-chat-to-pdf": {
+    "author": "Redactie Page 2 File",
+    "title": "Een Gemini-chat naar PDF exporteren",
+    "description": "Sla een zichtbaar Gemini-gesprek met citaten en afbeeldingen als PDF op, laad de vereiste inhoud en onderscheid opname van Google Takeout.",
+    "imageAlt": "Een AI-chat met bronkaarten en afbeeldingen wordt een PDF"
+  },
+  "export-other-ai-chats-to-pdf": {
+    "author": "Redactie Page 2 File",
+    "title": "Grok-, DeepSeek-, Perplexity- of Copilot-chats exporteren",
+    "description": "Exporteer zichtbare Grok-, DeepSeek-, Perplexity- of Copilot-chats vanuit een browsertabblad met respect voor geladen inhoud, privacy en platformgrenzen.",
+    "imageAlt": "Meerdere algemene AI-chattabbladen komen samen in één PDF"
+  },
+  "export-telegram-chat-to-pdf": {
+    "author": "Redactie Page 2 File",
+    "title": "Een Telegram-chat naar PDF exporteren",
+    "description": "Bereid een Telegram Web-chat of -kanaal voor, laad antwoorden en media, kies pagina-opnamen of bewerkbare PDF en controleer de vastgelegde berichtgrens.",
+    "imageAlt": "Een algemeen kanaalgesprek gaat via een schild naar PDF"
+  },
+  "export-whatsapp-chat-to-pdf": {
+    "author": "Redactie Page 2 File",
+    "title": "Een WhatsApp-chat naar PDF exporteren",
+    "description": "Bereid een gesprek in WhatsApp Web voor, laad de vereiste berichten en media, kies een PDF-modus en begrijp de grens van het actieve tabblad.",
+    "imageAlt": "Een algemeen persoonlijk webmessengergesprek wordt een PDF"
   },
   "html-to-pdf-safely": {
     "author": "Redactie Page 2 File",

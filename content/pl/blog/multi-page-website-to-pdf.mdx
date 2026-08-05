@@ -1,0 +1,143 @@
+Wielostroniczną witrynę należy konwertować jako ograniczony zbiór, a nie nieograniczone indeksowanie. [Aplikacja GPT Web 2 PDF](/pl/web2pdf-gpt) znajduje dostępne strony docelowej witryny, wysyła każdy wybrany publiczny URL do konwersji i zwraca kilka plików PDF do pobrania.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: zbuduj ograniczony spis stron witryny należących do zadania."}
+  caption={"Zbuduj ograniczony spis stron witryny należących do zadania."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: zbuduj ograniczony spis stron witryny należących do zadania."}
+  src="/blog/instructions/multi-page-website-to-pdf/01.svg"
+  step={1}
+/>
+
+Narzędzie nie łączy po cichu całej sieci w jeden dokument. Każda strona zachowuje własną granicę źródła i plik wynikowy, dzięki czemu łatwiej sprawdzić błędy i uprawnienia.
+
+## Określ granicę witryny
+
+Zacznij od hosta i sekcji należącej do zbioru. Zdecyduj, czy uwzględniać warianty językowe, archiwa, wyniki wyszukiwania, strony tagów i duplikaty z parametrami. Zewnętrzne domeny pozostają linkami, a nie nowymi celami odkrywania.
+
+Mapa witryny może sugerować strony, ale nie dowodzi, że każdy URL należy do eksportu. Usuń trasy administracyjne, strony kont, zdublowane filtry oraz wszystko, czego nie wolno Ci reprodukować.
+
+## Zachowaj jedną stronę na zadanie wynikowe
+
+Oddzielne pliki PDF zachowują tytuły stron i jasno pokazują, który URL zawiódł lub przekierował. Zapobiegają też unieważnieniu całego eksportu przez jedną uszkodzoną stronę.
+
+Jeśli odbiorca potrzebuje jednego pakietu, pobierz sprawdzone pliki i połącz lub zarchiwizuj je odpowiednim narzędziem. Sam Web 2 PDF zwraca wiele plików zamiast obiecywać jeden idealny dokument całej witryny.
+
+## Oczekuj różnic między stronami
+
+Witryna może łączyć szablony artykułów, siatki produktów, dashboardy i media osadzone. Wybierz zrzut lub wynik edytowalny według celu zbioru i sprawdź ostrzeżenia o fontach, obrazach i linkach. [Przewodnik po typach witryn](/pl/blog/website-types-to-pdf-or-powerpoint) pomaga klasyfikować źródła.
+
+Obszarów po zalogowaniu nie da się odkryć publicznie. Dozwoloną prywatną stronę przechwytuj [rozszerzeniem](/pl/chrome-extension/how-to-use), po jednej aktywnej karcie.
+
+## Sprawdź przed dystrybucją
+
+Skontroluj listę URL, tytuły, duplikaty, przekierowania oraz pierwszą i ostatnią stronę każdego PDF. Dla pojedynczych długich źródeł zastosuj [kontrolę podziałów stron](/pl/blog/long-webpage-page-breaks).
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: otwórz pierwszą zatwierdzoną stronę przez By URL."}
+  caption={"Otwórz pierwszą zatwierdzoną stronę przez By URL."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: otwórz pierwszą zatwierdzoną stronę przez By URL."}
+  src="/blog/instructions/multi-page-website-to-pdf/02.svg"
+  step={2}
+/>
+
+Eksport obejmujący witrynę jest kopią opublikowanego materiału. Respektuj wskazówki robots, warunki źródła, prawa autorskie i limity żądań; nie używaj go do obchodzenia kontroli dostępu.
+
+## Zbuduj jawny spis stron
+
+Zacznij od listy kandydatów i powodu, dla którego każda strona należy do zbioru. Nawigacja, mapy i linki wewnętrzne pomagają odkrywać publiczne strony, lecz odkrycie nie dowodzi, że wszystkie należy eksportować. Wyklucz zdublowane widoki druku, warianty śledzące, wyniki wyszukiwania i strony spoza zamierzonej sekcji.
+
+Przed konwersją znormalizuj oczywiste warianty. Końcowy ukośnik, fragment lub parametr kampanii może wskazywać tę samą treść, a wyglądać jak osobna strona. Warianty językowe i regionalne zachowuj tylko wtedy, gdy świadomie należą do zbioru.
+
+Zapisz strony wymagające logowania, zgody lub działania użytkownika. Web 2 PDF pracuje z dostępnymi stronami publicznymi i nie obchodzi zabezpieczeń. Autoryzowane strony prywatne przechwytuj z aktywnych kart jako osobny proces.
+
+## Utrzymuj zbiór łatwy do nawigacji
+
+Ponieważ wynikiem jest jeden PDF na stronę, ważne są nazwy plików i prosty indeks. Stosuj stabilny wzorzec wskazujący sekcję źródłową i tytuł strony. Nie polegaj na kolejności pobierania, która może się zmieniać w zależności od czasu zakończenia zadań.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wybierz PDF i jedną spójną politykę wynikową."}
+  caption={"Wybierz PDF i jedną spójną politykę wynikową."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz PDF i jedną spójną politykę wynikową."}
+  src="/blog/instructions/multi-page-website-to-pdf/03.svg"
+  step={3}
+/>
+
+Indeks może zawierać pierwotny URL, datę przechwycenia, nazwę wyniku i status kontroli. Daje odbiorcy mapę bez udawania, że oddzielne pliki są jedną książką. Jeśli wymagane jest połączone wydawnictwo, scalaj dopiero po zatwierdzeniu pojedynczych PDF i udokumentuj nową kolejność czytania.
+
+Zachowaj pochodzenie na poziomie strony. Witryna może zmienić jedną stronę bez modyfikacji innych, dlatego zbiór tworzony w różnych dniach powinien to ujawniać. Ponowne uruchomienie całej witryny może być zbędne, gdy zmienił się tylko mały podzbiór.
+
+## Sprawdzaj wzorce i wyjątki
+
+Skontroluj reprezentatywne strony każdego szablonu: główną, artykuł, dokumentację, produkt i każdy nietypowy układ. Wady szablonowe, takie jak ucięta nawigacja czy brak fontów, prawdopodobnie się powtórzą i powinny zostać naprawione przed kontrolą wszystkich plików.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: powtórz tę samą konwersję jednej strony dla każdego zatwierdzonego adresu."}
+  caption={"Powtórz tę samą konwersję jednej strony dla każdego zatwierdzonego adresu."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: powtórz tę samą konwersję jednej strony dla każdego zatwierdzonego adresu."}
+  src="/blog/instructions/multi-page-website-to-pdf/04.svg"
+  step={4}
+/>
+
+Następnie sprawdź ryzyka konkretnej strony. Długie tabele, galerie, osadzone wykresy i krótkie strony przekierowań mogą zawieść mimo poprawnego szablonu. Potwierdź oczekiwany tytuł, właściwy początek treści oraz brak błędu uwierzytelniania i ściany cookies.
+
+Zakończ uzgodnieniem: liczba zaakceptowanych plików musi odpowiadać sprawdzonemu spisowi URL, a każde wykluczenie mieć powód. To zapobiega pomyleniu wygodnego folderu pobrań z kompletnym archiwum witryny.
+
+## Wybierz metodę odkrywania bez obiecywania crawl
+
+Zacznij od widocznej nawigacji, zadeklarowanej mapy i linków wewnętrznych należących do żądanej sekcji. To sygnały odkrywania, nie polecenie bez końca podążać za każdym URL. Kalendarze, filtry fasetowe i generowane wyniki wyszukiwania mogą tworzyć praktycznie nieograniczoną przestrzeń adresów.
+
+Przed odkrywaniem określ reguły: dozwolony host, prefiks ścieżki, język, maksymalny uzgodniony zakres i obsługę parametrów. Zatrzymaj się, gdy kandydat wykracza poza nie. Web 2 PDF jest opisany jako znajdowanie dostępnych stron i tworzenie oddzielnych plików; nie przedstawiaj go jako API crawlera ani scrapera danych strukturalnych.
+
+Niektóre strony mogą być dostępne tylko przez nawigację JavaScript, a wpisy mapy już nie działać. Zapisz je jako odkrycia ze statusem i zdecyduj, czy należą do zbioru. Nie podstawiaj po cichu celu przekierowania, gdy zmienia temat lub przekracza zatwierdzoną granicę.
+
+## Wybierz tryb wyniku dla zbioru
+
+Spójny tryb ułatwia używanie zbioru, ale witryna może zawierać kilka typów dokumentów. Wynik edytowalny jest dobrym ustawieniem dla artykułów i dokumentacji, ponieważ zachowuje użyteczny tekst i linki. Wynik zrzutowy lepiej pasuje do wzorców projektowych, dashboardów i stron, gdzie kompozycja niesie znaczenie.
+
+Jeśli zbiór miesza te typy, pogrupuj strony według szablonu lub celu i udokumentuj tryb dla każdej grupy. Nie zmieniaj trybu bez reguły dla każdej strony; odbiorcy powinni rozumieć, dlaczego jeden plik jest przeszukiwalny, a drugi obrazowy.
+
+Przed przetworzeniem całego spisu sprawdź reprezentatywne strony. Zbadaj jedną zwykłą i każdy nietypowy szablon. Powtarzalną wadę nawigacji lub fontu należy rozwiązać na poziomie wzorca, zanim pojawi się w dziesiątkach plików.
+
+## Obsługuj błędy bez utraty spisu
+
+Niedostępny URL, pętla przekierowań, usunięta strona lub ostrzeżenie renderowania powinny pozostać widoczne w zapisie kontroli. Ponowienie może pomóc przy chwilowym błędzie zasobu, ale nie naprawi trasy prywatnej ani strony bez uprawnień. Po zmienionej próbie oznacz stronę jako zaakceptowaną, wykluczoną lub zablokowaną wraz z powodem.
+
+Sama liczba plików nie dowodzi kompletności. Uzgodnij każdy URL kandydata z nazwą pliku i statusem. Sprawdź zdublowane tytuły, puste strony błędu oraz PDF zawierające tylko komunikat cookies lub dostępu. Plik możliwy do pobrania nadal może być nieudaną konwersją.
+
+Dla treści po zalogowaniu opuść proces publicznego zbioru. Otwórz każdą dozwoloną stronę w Chrome i użyj aktywnej karty. Podgląd jest tymczasowy, usuwany po zamknięciu karty i nie trafia do bazy historii Page 2 File. Stron prywatnych nie dodawaj do publicznej listy odkrywania.
+
+## Spakuj sprawdzony wynik
+
+Używaj nazw pozostających unikalnymi przy powtarzających się tytułach. Krótki identyfikator ze ścieżki może rozróżnić dwie strony „Overview” bez ujawniania poufnych parametrów. Zachowaj osobny manifest ze źródłowym URL, tytułem, datą, trybem, nazwą pliku i wynikiem kontroli.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: zachowaj wynikowe pliki PDF osobno i nazwij je według ścieżek źródłowych."}
+  caption={"Zachowaj wynikowe pliki PDF osobno i nazwij je według ścieżek źródłowych."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: zachowaj wynikowe pliki PDF osobno i nazwij je według ścieżek źródłowych."}
+  src="/blog/instructions/multi-page-website-to-pdf/05.svg"
+  step={5}
+/>
+
+Uporządkuj PDF w zamierzonej kolejności dopiero po uzgodnieniu każdej strony. Jeśli odbiorcy potrzebują jednego PDF, połącz zaakceptowane pliki odpowiednim narzędziem i sprawdź zakładki, kolejność i granice. Połączony artefakt jest osobnym wynikiem redakcyjnym; Web 2 PDF zwraca po jednym PDF na odkrytą stronę.
+
+Przed przekazaniem sprawdź próbkę linków i podziałów z każdego szablonu oraz otwórz każdy plik z ostrzeżeniem. Podaj zakres i wykluczenia obok zbioru. „Sekcja dokumentacji przechwycona tego dnia, bez prywatnych stron kont i zdublowanych języków” jest użyteczniejsze niż „cała witryna”, gdy granica była węższa.
+
+## Utrzymuj zbiór w czasie
+
+Witryny zmieniają się nierównomiernie. Nowy element nawigacji może dodać stronę, stary URL przekierować, a pojedynczy artykuł zmienić się bez pozostałych. Zachowaj wcześniejszy manifest, aby późniejsze uruchomienie wykryło dodane, usunięte i zmienione źródła zamiast tworzyć niewyjaśniony folder od nowa.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: uzgodnij pliki z manifestem i zapisz wykluczenia lub błędy."}
+  caption={"Uzgodnij pliki z manifestem i zapisz wykluczenia lub błędy."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: uzgodnij pliki z manifestem i zapisz wykluczenia lub błędy."}
+  src="/blog/instructions/multi-page-website-to-pdf/06.svg"
+  step={6}
+/>
+
+Nie sugeruj ciągłej synchronizacji. Każdy PDF zapisuje stan wyrenderowanej strony w momencie przechwycenia. Gdy liczy się aktualność, określ datę kontroli, powtórz odkrywanie według tych samych reguł i zachowaj dwa manifesty osobno do porównania.

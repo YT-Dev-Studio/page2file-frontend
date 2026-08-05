@@ -1,0 +1,118 @@
+Egy ChatGPT-beszélgetés PDF-be exportálásához nyissa meg a csevegést a böngészőben, töltse be a szükséges üzeneteket, és használja a [Page 2 File bővítményt](/hu/chrome-extension/how-to-use) az aktív lapon. Letöltés előtt ellenőrizze a rögzített tartományt, az oldaltöréseket, a kódblokkokat és a hivatkozásokat.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Töltse be a szükséges üzeneteket, és bontsa ki a kódot, táblázatokat és forráspaneleket."}
+  caption={"Töltse be a szükséges üzeneteket, és bontsa ki a kódot, táblázatokat és forráspaneleket."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Töltse be a szükséges üzeneteket, és bontsa ki a kódot, táblázatokat és forráspaneleket."}
+  src="/blog/instructions/export-chatgpt-conversation-to-pdf/01.svg"
+  step={1}
+/>
+
+Így egyetlen látható beszélgetésből olvasható dokumentum készül. Ez nem azonos az OpenAI fiókszintű adatexportjával, és nem állítja helyre a rejtett vagy be nem töltött ágakat.
+
+## Készítse elő a beszélgetést
+
+Görgessen a szükséges tartomány elejére, és várja meg a régebbi üzenetek megjelenését. Bontsa ki a PDF-be tartozó kódot, táblázatokat, forrásokat és összecsukott válaszokat. Ha lehet, zárja be a kapcsolódás nélküli oldalpaneleket.
+
+Ha egy hosszú csevegés virtualizálja az üzeneteket, ellenőrizze, hogy a korábbi tartalom továbbra is jelen van-e a renderelt oldalon. Az előnézet mutatja meg, mit kapott meg a Page 2 File.
+
+## Válassza ki a dokumentum stílusát
+
+Az Accurate copy (képernyőképszerű kimenet) megőrzi a beszélgetés üzenetkártyáit, térközeit és kódstílusát. Az Editable document (szerkeszthető kimenet) a támogatott szöveget, kódot, táblázatokat, képeket és hivatkozásokat tisztább dokumentummá alakítja, az összetett elemeket pedig képként helyettesíti.
+
+Az [AI-csevegések adatvédelmi útmutatója](/hu/blog/export-ai-chats-privately) ismerteti a különbséget és az ideiglenes előnézet határát.
+
+## Tudja, mikor használja az OpenAI exportját
+
+Az OpenAI [hivatalos adatexportja](https://help.openai.com/en/articles/7260999-how-do-i-export-my-chatgpt-history-and-data) a csevegési előzményeket és más fiókadatokat ZIP-archívumba foglalhatja. Ez biztonsági mentéshez és fiókadat-kérelmekhez megfelelő, nem pedig egyetlen szál kifinomult PDF-jéhez.
+
+Egy kiválasztott, olvasható beszélgetéshez használja a Page 2 File-t. A hivatalos exportot akkor használja, ha a szélesebb archívumra van szüksége, és teljesíti a fiók vagy munkaterület követelményeit.
+
+## Ellenőrizze az adatvédelmet és a forrásmegjelölést
+
+Megosztás előtt távolítsa el a titkokat, személyes adatokat és kapcsolódás nélküli promptokat. Őrizze meg a látható idézeteket és forrás-URL-eket, ha szükségesek a válasz megértéséhez, de az állításokat önállóan ellenőrizze.
+
+Az előnézet bezárása törli az ideiglenes előnézeti adatokat; a Page 2 File nem hoz létre konverzióselőzmény-adatbázist. A Page 2 File független, és nem áll kapcsolatban az OpenAI-jal, illetve nem élvezi annak támogatását.
+
+## Folytassa a kapcsolódó csevegésekkel
+
+Más asszisztenshez használja a [Claude](/hu/blog/export-claude-chat-to-pdf), [Gemini](/hu/blog/export-gemini-chat-to-pdf) vagy [más AI-csevegések](/hu/blog/export-other-ai-chats-to-pdf) útmutatóját. Minden forrást saját böngészőlapon kell betölteni.
+
+## Határozza meg pontosan a szálat
+
+Rögzítés előtt erősítse meg a beszélgetés címét és a fiókot vagy munkaterületet. Ha a csevegésnek alternatív ágai vannak, válassza ki a dokumentumba tartozó útvonalat. A Page 2 File a látható útvonalat rögzíti; a rejtett alternatívákat nem egyesíti egyetlen átiratban.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Válassza a Current tab lehetőséget, és erősítse meg a ChatGPT-beszélgetés kártyáját."}
+  caption={"Válassza a Current tab lehetőséget, és erősítse meg a ChatGPT-beszélgetés kártyáját."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Válassza a Current tab lehetőséget, és erősítse meg a ChatGPT-beszélgetés kártyáját."}
+  src="/blog/instructions/export-chatgpt-conversation-to-pdf/02.svg"
+  step={2}
+/>
+
+Válassza ki az első és utolsó üzenetet. Hasznos határ lehet a feladatot meghatározó prompt, a releváns válaszok és azok hivatkozott forrásai. Távolítsa el a kapcsolódás nélküli beállítást, személyes anyagot és későbbi kísérleteket, amelyek nem segítik az olvasót.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Válassza a PDF-et."}
+  caption={"Válassza a PDF-et."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Válassza a PDF-et."}
+  src="/blog/instructions/export-chatgpt-conversation-to-pdf/03.svg"
+  step={3}
+/>
+
+Megosztott GPT-k vagy munkaterületi beszélgetések esetén ellenőrizze, hogy a látható anyag exportálható-e az érvényes szabályok szerint. A szálhoz való hozzáférés nem jelent automatikus engedélyt a munkaterületen kívüli terjesztésre.
+
+## Kezelje a kódot, táblázatokat és forrásokat
+
+Bontsa ki a kódblokkokat, és ellenőrizze a vízszintesen széles tartalom olvashatóságát. Az Accurate copy megőrzi a megjelenített stílust, míg az Editable document alkalmasabb a támogatott szöveg másolására. A nagyon széles táblázatok vagy hosszú sorok saját szakaszt vagy képi helyettesítést igényelhetnek.
+
+Nyissa meg az értelmezéshez szükséges idézetpaneleket és forráslistákat. Teszteljen néhány PDF-hivatkozást, és távolítsa el a privát vagy ideiglenes célokat. Egy hivatkozott forrás megváltozhat, és jelenléte nem bizonyítja a modell állítását.
+
+A generált képek és csatolt fájlok összefoglalói külön ellenőrzést igényelnek. Erősítse meg, hogy a csevegésben látható anyag megőrizhető, és jelezze, ha az alapul szolgáló melléklet nem szerepel a PDF-ben.
+
+## Ellenőrizze az exportált beszélgetést
+
+Olvassa végig a PDF-et a nyitó prompttól az utolsó belefoglalt válaszig. Ellenőrizze az üzenetek sorrendjét, a beszélők megkülönböztetését, a kód behúzását, a táblázatokat, idézeteket és oldaltöréseket. Keressen rá egy-egy kifejezésre az elejéről és a végéről, hogy megerősítse a kívánt tartomány jelenlétét.
+
+Vizsgálja meg a fiókneveket, e-mail-címeket, munkaterületi címkéket és oldalsáv-tartalmat. Ha a fájlt megosztják, a kitakarás az exportfolyamat része, nem pedig a kézbesítés utáni választható lépés.
+
+Az ellenőrzés és letöltés befejezésekor zárja be az előnézetet. Az ideiglenes előnézeti adatok törlődnek, a Page 2 File pedig nem őriz konverzióselőzmény-adatbázist; a letöltött fájl az Ön ellenőrzése alatt marad.
+
+## Pontosan nevezze meg a hatókört
+
+A fájlt egy adott napon rögzített, látható ChatGPT-beszélgetés másolataként jelölje meg. Ne nevezze teljes fiókarchívumnak, minden ág hitelesített átiratának vagy a modell válaszai helyességét igazoló bizonyítéknak.
+
+Fiókszintű biztonsági mentéshez kövesse az OpenAI aktuális hivatalos exportálási utasításait, és vizsgálja meg a kapott archívumot. A két munkafolyamat együtt is használható, mert eltérő feladatot old meg.
+
+A Page 2 File független az OpenAI-tól. A terméknevek a forrásfelületet azonosítják, és nem jelentenek szponzorációt, támogatást vagy privilegizált hozzáférést.
+
+## Végezzen végső szál–fájl ellenőrzést
+
+Hasonlítsa az előnézethez az első promptot, az utolsó szükséges választ és minden lényeges kódblokkot, táblázatot vagy idézetet. Ellenőrizze, hogy a látható válaszág az, amelyet az olvasó vár, és jegyezze fel a szándékosan kihagyott ágakat vagy üzeneteket.
+
+Nyissa meg a letöltött PDF-et egy szokásos olvasóban. Teszteljen egy fontos forráshivatkozást, vizsgálja meg a kód tördelését, és szerkeszthető kimenet esetén keressen reprezentatív szöveget. Az előnézeti lap bezárása törli az ideiglenes adatokat; a jóváhagyott PDF ezután az Ön ellenőrzése alatt marad.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Válassza ki a kimeneti stílust az elrendezési hűség vagy a támogatott, újrafelhasználható szöveg alapján."}
+  caption={"Válassza ki a kimeneti stílust az elrendezési hűség vagy a támogatott, újrafelhasználható szöveg alapján."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Válassza ki a kimeneti stílust az elrendezési hűség vagy a támogatott, újrafelhasználható szöveg alapján."}
+  src="/blog/instructions/export-chatgpt-conversation-to-pdf/04.svg"
+  step={4}
+/>
+
+Ha a származás számít, tartson a fájllal biztonságos beszélgetésazonosítót és rögzítési dátumot. Ha a szál bizalmas promptokat vagy feltöltött fájlok tartalmát foglalja magában, a forrásanyagéval azonos hozzáférési szabályok szerint tárolja, ne közönséges nyilvános PDF-ként.
+
+A későbbi jegyzeteket külön revízióként kezelje.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Tekintse át az üzenetsorrendet, a kód tördelését, a táblázatokat, idézeteket és a kiválasztott ágat."}
+  caption={"Tekintse át az üzenetsorrendet, a kód tördelését, a táblázatokat, idézeteket és a kiválasztott ágat."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Tekintse át az üzenetsorrendet, a kód tördelését, a táblázatokat, idézeteket és a kiválasztott ágat."}
+  src="/blog/instructions/export-chatgpt-conversation-to-pdf/05.svg"
+  step={5}
+/>

@@ -1,0 +1,120 @@
+Klikbare links overlever kun konvertering fra webside til PDF, når outputtet indeholder linkannoteringer eller redigerbare dokumentelementer. Et visuelt skærmbillede kan bevare et links udseende uden at bevare dets funktion.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Åbn dokumentation med meningsfulde synlige links og kendte destinationer."}
+  caption={"Åbn dokumentation med meningsfulde synlige links og kendte destinationer."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Åbn dokumentation med meningsfulde synlige links og kendte destinationer."}
+  src="/blog/instructions/preserve-clickable-links/01.svg"
+  step={1}
+/>
+
+Vælg Editable document (redigerbart output) i [Page 2 File PDF-konverteren](/da/convert-webpage-to-pdf), når linkfunktion er vigtig. Vælg Accurate copy (output som et skærmbillede), når sidens nøjagtige udseende er vigtigere, og gå derefter ud fra, at links i det optagne billede ikke er interaktive.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Vælg PDF for at få et stabilt læsedokument."}
+  caption={"Vælg PDF for at få et stabilt læsedokument."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Vælg PDF for at få et stabilt læsedokument."}
+  src="/blog/instructions/preserve-clickable-links/02.svg"
+  step={2}
+/>
+
+## En synlig URL er ikke automatisk et link
+
+Blå understreget tekst i et billede er stadig kun pixels. En PDF-læser skal bruge et målområde og en destination. Redigerbar konvertering kan overføre understøttede ankerelementer fra websiden til PDF-linkannoteringer, mens den omgivende tekst forbliver markerbar.
+
+Knapper og kort kan også indeholde mål, men det eksporterede dokument bør ikke opfinde en URL til et element, der kun udløser et script. Hvis destinationen ikke kan identificeres sikkert, er en advarsel eller en ikke-klikbar visualisering mere ærlig.
+
+## Kontrollér destinationen, ikke kun etiketten
+
+En side kan vise betryggende tekst og samtidig pege et andet sted hen. Sikker konvertering bør acceptere almindelige webdestinationer og afvise farlige skemaer. Omdirigeringer og links, der kræver en aktiv login-session, kan stadig fejle i PDF-læseren, selv om annoteringen er gyldig.
+
+Test vigtige links fra forhåndsvisningen eller den endelige fil i et miljø, hvor det er hensigtsmæssigt at åbne dem. Vær særlig opmærksom på fodnoter, citationsnumre, produktkort og kildebadges.
+
+## Vid, hvornår et skærmbillede er det rigtige kompromis
+
+Et komplekst dashboard, en kampagneside eller en chat kan miste sin betydning, hvis den genopbygges som almindelige tekstfelter. Accurate copy bevarer kompositionen, men omdanner sektionen til et billede. Hvis både udseende og links er vigtige, kan en konverter placere sikre linkområder oven på en skærmbilledsektion, men kun for mål, den kan lokalisere.
+
+Læs [skærmbillede kontra redigerbar konvertering](/da/blog/visual-vs-editable), før du vælger. I præsentationer findes den samme forskel mellem [skærmbilledslides og redigerbar PowerPoint](/da/blog/screenshot-vs-editable-powerpoint).
+
+## Brug en kort linkkontrol
+
+Åbn ét navigationslink, én inline-citation, én knap og én lang URL med linjeskift. Bekræft, at hvert klikbart område svarer til den synlige etiket og ikke dækker nabotekst. Kontrollér, at mail-, telefon- og programspecifikke skemaer håndteres i overensstemmelse med dokumentets sikkerhedspolitik.
+
+Gentag kontrollen på en lang kilde efter ændringer af sideskift. Opdeling af en sektion kan flytte dens linkområder, og derfor behandler [guiden til lange sider](/da/blog/long-webpage-page-breaks) links som en del af gennemgangen af forhåndsvisningen.
+
+## Identificér de links, der bærer betydning
+
+Ikke alle ankere fortjener samme opmærksomhed. En citation, download, politikhenvisning eller knap til næste trin kan være afgørende for dokumentet; et logolink, en kontomenu eller en sporingspixel er det ikke. Lav før konverteringen en liste over de destinationer, læseren skal kunne følge, og brug listen til accepttesten.
+
+Links, der er skjult bag ikoner, har brug for synlig kontekst i et statisk dokument. Hvis en knap kun siger ”Åbn” eller bruger en pil uden etiket, kan destinationen være umulig at forstå, når de omgivende grænsefladeelementer fjernes. Bevar tilstrækkelig nærliggende tekst til at forklare handlingen.
+
+Interne fragmentlinks kan også ændre betydning. En indholdsfortegnelse kan pege på overskrifter på kildesiden, mens PDF-filen har sin egen sidenavigation. Test, om disse ankere fortsat er nyttige. Hvis ikke, kan den synlige indholdsfortegnelse stadig fungere som læseoversigt, men den bør ikke beskrives som interaktiv.
+
+## Hold øje med usikre eller ustabile destinationer
+
+Godkendte sider kan placere sessions-id'er, signerede downloadtokens eller personlige forespørgselsparametre i URL'er. En klikbar PDF kan eksponere disse værdier for alle, der modtager den. Undersøg den faktiske destination, ikke kun den synlige etiket, og fjern eller erstat følsomme links før deling.
+
+Relative links afhænger af en basis-URL. En browser kan opløse `/docs/start`, fordi den kender kildens oprindelse, mens en isoleret HTML-fil måske ikke kan. Når du konverterer uploadet HTML, skal du angive en gyldig base eller bruge fuldstændige HTTPS-links til nødvendige destinationer.
+
+Omdirigeringer og linkforkortere gør kontrollen sværere, fordi det synlige domæne ikke nødvendigvis er det endelige. Åbn vigtige referencer i en sikker browserkontekst, og bekræft den endelige destination. Bevarelse af et link er ikke en anbefaling af destinationens nøjagtighed eller sikkerhed.
+
+## Kontrollér igen efter strukturelle ændringer
+
+Opdeling, sammenfletning eller fjernelse af sektioner kan ændre, hvilke ankere der overlever, og hvor de vises. Gentag kontrollen efter redigeringer, ikke kun efter den første konvertering. Et link, der virkede i den første forhåndsvisning, kan have været knyttet til en sektion, som senere blev erstattet af et skærmbillede.
+
+Test tastaturfokus eller PDF-læserens linkliste, når tilgængelighed er vigtig. Den synlige side kan se korrekt ud, selv om annoteringerne er i forkert rækkefølge. Kopiér også en sætning med link for at bekræfte, at annoteringen ikke dækker uvedkommende tekst.
+
+Tilpas den endelige kontrol til risikoen. En personlig læsekopi behøver måske kun repræsentative tests. I et forskningsbilag, et compliance-dokument eller et kundedokument bør alle væsentlige destinationer kontrolleres og registreres.
+
+## Skeln mellem almindelige linktyper
+
+Almindelige HTTPS-links er de tydeligste kandidater til bevarelse, fordi målet kan repræsenteres som en PDF-annotering. E-mail-, telefon- og programspecifikke links afhænger af modtagerens enhed og installerede software. En teknisk gyldig annotering kan stadig være ubrugelig i deres miljø, så behandl ikke alle skemaer som ens.
+
+Downloads kræver ekstra omtanke. Et link kan udløbe, kræve en session eller levere en anden fil senere. Når den linkede ressource er en del af dokumentationen, bør du overveje at bevare titel, udgiver og adgangsdato som synlig tekst i stedet for kun at stole på klikmålet.
+
+Scriptstyrede kontrolelementer er ikke nødvendigvis links. Et kort kan åbne en modal, ændre et filter eller kalde en programrute uden at vise en stabil destination. Redigerbar konvertering bør ikke opfinde en. Bevar den synlige tilstand, og forklar begrænsningen, når handlingen er central for forståelsen af siden.
+
+## Hold annoteringer på linje med læserækkefølgen
+
+Linkområder kan blive forvirrende, når teksten ombrydes, kolonner flyttes, eller en sektion skaleres. Kontrollér, at det aktive område kun dækker den tilsigtede etiket, og at overlappende annoteringer ikke sender nabotekst til samme destination. I et dokument med flere kolonner bør du kontrollere links kolonne for kolonne i stedet for at følge den visuelle læselinje på tværs af siden.
+
+Meningsfulde etiketter er bedre end gentaget ”klik her”, fordi de forbliver forståelige, når de kopieres, søges eller gennemgås i en linkliste. Bevar den omgivende sætning, når den forklarer, hvorfor destinationen er vigtig. Bevar en synlig etiket til handlinger, der kun består af et ikon, hvis kilden har en.
+
+Hvis PDF-filen skal bruges med hjælpeteknologi, skal du teste mere end museklik. Undersøg, om teksten fortsat kan markeres, om annoteringernes rækkefølge følger dokumentet, og om linketiketter giver mening uden nærliggende dekoration. Page 2 File kan bevare understøttet dokumentstruktur, men kilden og det gennemgåede output afgør, om strukturen er nyttig.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Vælg Editable document for at bevare understøttede og sikre linkmål."}
+  caption={"Vælg Editable document for at bevare understøttede og sikre linkmål."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Vælg Editable document for at bevare understøttede og sikre linkmål."}
+  src="/blog/instructions/preserve-clickable-links/03.svg"
+  step={3}
+/>
+
+## Beskyt oprindelse og privatliv
+
+Et link kan afsløre mere end sit synlige domæne. Forespørgselsstrenge kan indeholde dokument-id'er, søgeord, henvisningsdata eller signerede tokens. Undersøg mål fra godkendte sider før deling, og fjern alt, modtageren ikke bør få. Åbning af en redigeret PDF bør ikke ved et uheld føre tilbage til en uredigeret privat ressource.
+
+Registrér kilde-URL og optagelsesdato, når citationer kræver dokumenteret oprindelse, men undgå sessionsspecifikke parametre. Udvidelsens forhåndsvisningsdata er midlertidige og slettes, når fanen lukkes, og Page 2 File fører ingen konverteringshistorik. Den downloadede PDF kan bevare sine links på ubestemt tid, så destinationerne kræver samme kontrol som det synlige indhold.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Lad Remove links være umarkeret, når destinationerne skal bevares."}
+  caption={"Lad Remove links være umarkeret, når destinationerne skal bevares."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Lad Remove links være umarkeret, når destinationerne skal bevares."}
+  src="/blog/instructions/preserve-clickable-links/04.svg"
+  step={4}
+/>
+
+Se [guiden til website-output](/da/blog/website-types-to-pdf-or-powerpoint) for linksikkerhedsrisici ved forskellige kildetyper.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Forhåndsvis PDF-filen, og test repræsentative bevarede og bevidst fjernede links."}
+  caption={"Forhåndsvis PDF-filen, og test repræsentative bevarede og bevidst fjernede links."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Forhåndsvis PDF-filen, og test repræsentative bevarede og bevidst fjernede links."}
+  src="/blog/instructions/preserve-clickable-links/05.svg"
+  step={5}
+/>

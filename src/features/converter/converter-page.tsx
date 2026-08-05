@@ -100,12 +100,10 @@ export const ConverterPage = ({
         </section>
 
         <nav
-          aria-label={locale === "ru" ? "Статьи по теме" : "Related articles"}
+          aria-label={copy.relatedArticlesLabel}
           className={styles.articleLinks}
         >
-          <strong>
-            {locale === "ru" ? "Статьи по теме" : "Related articles"}
-          </strong>
+          <strong>{copy.relatedArticlesLabel}</strong>
           <ul>
             {relatedArticles.map((entry) => (
               <li key={entry.slug}>

@@ -1,0 +1,116 @@
+För att exportera en Claude-chatt till PDF öppnar du den nödvändiga konversationen i Claudes webbapp, läser in hela intervallet du behöver och samlar in den aktiva fliken med [Page 2 File-tillägget](/sv/chrome-extension/how-to-use). Förhandsvisningen visar meddelanden, kod, hänvisningar och synlig artefaktkontext före nedladdningen.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Läs in hela svarsintervallet och öppna den artefaktvy som ska ingå i posten."}
+  caption={"Läs in hela svarsintervallet och öppna den artefaktvy som ska ingå i posten."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Läs in hela svarsintervallet och öppna den artefaktvy som ska ingå i posten."}
+  src="/blog/instructions/export-claude-chat-to-pdf/01.svg"
+  step={1}
+/>
+
+Page 2 File skapar ett läsbart dokument från renderat innehåll. Tjänsten begär inte Claude-lösenordet och gör inte anspråk på åtkomst till dolda konversationer.
+
+## Läs in långa svar och artefakter
+
+Rulla till det tidigaste meddelandet du behöver och vänta tills gränssnittet har läst in det. Fäll ut hänvisningar, kod och allt artefaktinnehåll som ska visas i filen. En artefakttitel bevisar inte att allt innehåll finns i fliken.
+
+Jämför förhandsvisningen med konversationen. Om ett svar eller en artefakt saknas återvänder du till Claude, gör innehållet synligt och samlar in på nytt.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Välj Current tab och bekräfta kortet för Claude-konversationen."}
+  caption={"Välj Current tab och bekräfta kortet för Claude-konversationen."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Välj Current tab och bekräfta kortet för Claude-konversationen."}
+  src="/blog/instructions/export-claude-chat-to-pdf/02.svg"
+  step={2}
+/>
+
+## Välj skärmbilds- eller redigerbart läge
+
+Accurate copy (skärmbildsliknande resultat) bevarar meddelanderytm, kodfärger och layout. Editable document (redigerbart resultat) återskapar rubriker, Markdown, listor, kod, bilder och länkar som stöds för sökning och återanvändning. Komplexa artefaktvyer kan förbli skärmbilder.
+
+[Navet för export av AI-chattar](/sv/blog/export-ai-chats-privately) förklarar integritetsgränsen och skillnaden mot ett kontoarkiv.
+
+## Jämför med Claude-dataexport
+
+Anthropics [officiella exportinstruktioner](https://support.claude.com/en/articles/9450526-export-your-claude-data) beskriver en export av kontodata som innehåller konversationer och användardata för behöriga användare. Den bearbetade nedladdningslänken levereras separat.
+
+Använd den officiella exporten för säkerhetskopiering av kontot. Använd Page 2 File när leveransen är en granskad PDF som följer den synliga läsordningen.
+
+## Granska konfidentiell kontext
+
+Claude-chattar kan innehålla kundmaterial, kod och uppladdade dokument. Ta bort orelaterat innehåll, behåll nödvändiga hänvisningar och följ tillämpliga delningsregler.
+
+När Page 2 Files förhandsvisningsflik stängs raderas tillfälliga förhandsvisningsdata. Page 2 File sparar ingen databas med konverteringshistorik och är inte anslutet till Anthropic.
+
+## Relaterade exportguider
+
+Se de specifika stegen för [ChatGPT](/sv/blog/export-chatgpt-conversation-to-pdf), [Gemini](/sv/blog/export-gemini-chat-to-pdf) och [andra AI-assistenter](/sv/blog/export-other-ai-chats-to-pdf).
+
+## Definiera den synliga Claude-posten
+
+Bekräfta konversation, konto eller arbetsyta före insamlingen. Välj det första och sista meddelande som läsaren behöver och ta bort orelaterade frågor eller utkast. Om ett svar hänvisar till material utanför intervallet inkluderar du nödvändig kontext eller anger utelämnandet.
+
+Claude kan visa långa svar, kod, tabeller och artefakter bredvid konversationen. Öppna exakt den vy som ska ingå i PDF-filen och se till att relevant material renderas. En artefakt i en sidopanel kan behöva ett eget skärmbildsavsnitt; den ska inte beskrivas som en inbyggd bilaga om bara dess visade tillstånd samlades in.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Välj PDF."}
+  caption={"Välj PDF."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Välj PDF."}
+  src="/blog/instructions/export-claude-chat-to-pdf/03.svg"
+  step={3}
+/>
+
+När en konversation har redigerats eller ett nytt försök gjorts registrerar du den synliga sökvägen. Page 2 File rekonstruerar inte alternativ som inte visas i den aktiva fliken.
+
+## Granska hänvisningar och bilagor
+
+Fäll ut källor och testa viktiga mål efter konverteringen. Bevara tillräckligt med etikett och omgivande text för att förklara varför en länk finns. En hänvisning kan ändras senare och exporten verifierar inte svarets faktiska korrekthet.
+
+Granska uppladdat innehåll, genererade filer och bilder separat. Konversationen kan nämna en fil utan att bädda in hela innehållet på sidan. Notera begränsningen i stället för att antyda att PDF-filen innehåller originalbilagan.
+
+Bred kod och breda tabeller behöver en läsbarhetskontroll vid normal zoom. Använd Editable document när text som stöds måste kunna kopieras eller Accurate copy när Claudes visade komposition är den primära posten.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Välj Accurate copy för artefaktkontext eller Editable document för text som stöds."}
+  caption={"Välj Accurate copy för artefaktkontext eller Editable document för text som stöds."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Välj Accurate copy för artefaktkontext eller Editable document för text som stöds."}
+  src="/blog/instructions/export-claude-chat-to-pdf/04.svg"
+  step={4}
+/>
+
+## Slutför en integritets- och omfattningsgranskning
+
+Sök i förhandsvisningen efter namn, autentiseringsuppgifter, kundinformation, interna instruktioner och arbetsyteidentifierare. Granska sidofält och kontokontroller som kan ha kommit med i det insamlade intervallet. Ta bort data mottagaren inte behöver.
+
+Stäng förhandsvisningen efter nedladdningen för att radera tillfälliga förhandsvisningsdata. Skydda den lokala PDF-filen enligt konversationens innehåll. Page 2 File sparar ingen databas med konverteringshistorik men kan inte ta bort kopior från din enhet eller delad lagring.
+
+Märk resultatet som en synlig Claude-konversation insamlad på ett datum. Anthropics officiella dataexport tjänar ett bredare syfte för kontodata. Page 2 File är oberoende av Anthropic och certifierar inte modellresultat.
+
+## Stäm av PDF-filen mot den synliga tråden
+
+Skapa en kort checklista med den första frågan, det sista nödvändiga svaret och varje artefakt, kodblock eller hänvisning som måste finnas. Jämför den med förhandsvisningen i ordning. Om Claudes gränssnitt tar bort en tidigare del när en senare del öppnas använder du mindre märkta intervall i stället för att beskriva en PDF som fullständig.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Förhandsgranska meddelanden, hänvisningar, kod och den synliga artefaktgränsen."}
+  caption={"Förhandsgranska meddelanden, hänvisningar, kod och den synliga artefaktgränsen."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: Förhandsgranska meddelanden, hänvisningar, kod och den synliga artefaktgränsen."}
+  src="/blog/instructions/export-claude-chat-to-pdf/05.svg"
+  step={5}
+/>
+
+Granska den nedladdade filen vid normal zoom. Sök efter representativa fraser i Editable document och bekräfta artefaktetiketter och meddelandegruppering i Accurate copy. Registrera varje otillgänglig fil, dold gren eller sidopanelsinnehåll som avsiktligt utelämnades.
+
+Förhandsvisningen är tillfällig och raderas när fliken stängs, och Page 2 File har ingen databas med konverteringshistorik. Förvara den godkända PDF-filen och dess omfattningsnotering på en plats som motsvarar konversationens känslighet.
+
+## Avgör hur artefakter ska representeras
+
+En artefakt kan visas bredvid huvudkonversationen och kanske inte passar naturligt i transkriptets ordning. Avgör om läsaren behöver artefakten, meddelandet som introducerade den eller båda. Samla in dess synliga tillstånd som ett separat skärmbildsavsnitt när layouten är viktig och märk var den hör hemma i konversationen.
+
+Beskriv inte en visad artefakt som en separat bifogad källfil om filen inte faktiskt inkluderades genom ett behörigt arbetsflöde. Kontrollera små etiketter, kod och tabeller vid normal PDF-zoom och registrera sedan interaktion eller versionshistorik som ett statiskt dokument inte kan bevara.
+
+Håll senare ändringar separata från den godkända insamlingen.

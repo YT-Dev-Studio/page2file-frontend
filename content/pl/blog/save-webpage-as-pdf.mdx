@@ -1,0 +1,110 @@
+Aby zapisać stronę internetową jako PDF, najpierw zdecyduj, czy potrzebujesz jej w obecnym wyglądzie, czy jako dokumentu, który można przeszukiwać i ponownie wykorzystywać. Page 2 File obsługuje oba warianty: Accurate copy (wynik w stylu zrzutu) zapisuje wyrenderowane sekcje, a Editable document (wynik edytowalny) odtwarza obsługiwany tekst, obrazy i łącza jako elementy dokumentu.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: otwórz stronę i wczytaj potrzebny artykuł, obrazy oraz źródła."}
+  caption={"Otwórz stronę i wczytaj potrzebny artykuł, obrazy oraz źródła."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: otwórz stronę i wczytaj potrzebny artykuł, obrazy oraz źródła."}
+  src="/blog/instructions/save-webpage-as-pdf/01.svg"
+  step={1}
+/>
+
+W przypadku strony publicznej wklej jej adres HTTPS do [konwertera strony internetowej na PDF](/pl/convert-webpage-to-pdf). W przypadku strony po zalogowaniu otwórz ją w Chrome i skorzystaj z [instrukcji rozszerzenia](/pl/chrome-extension/how-to-use), zamiast przekazywać dane uwierzytelniające w formularzu URL. Osobny poradnik dotyczący [zapisywania strony po zalogowaniu](/pl/blog/save-authenticated-webpage-as-pdf) wyjaśnia tę granicę.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: dla strony publicznej wybierz By URL i wklej pełny adres HTTPS."}
+  caption={"Dla strony publicznej wybierz By URL i wklej pełny adres HTTPS."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: dla strony publicznej wybierz By URL i wklej pełny adres HTTPS."}
+  src="/blog/instructions/save-webpage-as-pdf/02.svg"
+  step={2}
+/>
+
+## Określ, co ma znaleźć się w PDF
+
+Karta przeglądarki może zawierać znacznie więcej niż dokument, który chcesz zachować. Banery plików cookie, przyklejona nawigacja, powiązane artykuły, komentarze i nieskończony kanał mogą otaczać właściwą treść. Wczytaj potrzebny fragment, rozwiń zwinięte sekcje i przestań przewijać, gdy granica źródła jest jasna.
+
+Długie strony potrzebują również czasu na leniwe wczytanie obrazów i wykresów. Jeśli treść pojawia się dopiero po przewinięciu, wprowadź ją do wyrenderowanej strony przed przechwyceniem. Page 2 File nie deklaruje dostępu do wiadomości, paneli ani gałęzi, których strona nie wczytała.
+
+## Wybierz zrzuty lub wynik edytowalny
+
+Accurate copy lepiej pasuje do landing page, portfolio, paragonu lub dashboardu, gdzie położenie i wygląd mają znaczenie. Kompromis polega na tym, że sekcja będąca zrzutem nie jest zbiorem edytowalnych pól tekstowych.
+
+Editable document jest przeznaczony do artykułów, dokumentacji i raportów, w których ważne są zaznaczalny tekst, obrazy i klikalne łącza. Funkcje dostępne tylko w przeglądarce, takie jak wideo, rysowanie na canvasie i animacje, mogą zostać przedstawione jako nieruchomy obraz. Szczegółowe porównanie w artykule [zrzuty a konwersja edytowalna](/pl/blog/visual-vs-editable) wyjaśnia ograniczenia obu trybów.
+
+## Sprawdź podziały stron przed pobraniem
+
+PDF wprowadza stałe granice stron do źródła zaprojektowanego do przewijania. Sprawdź w podglądzie nagłówki, tabele, bloki kodu i podpisy obrazów. Przenieś, podziel lub usuń sekcję przed renderowaniem pliku, zamiast akceptować nagłówek na dole jednej strony i jego akapit na następnej.
+
+Poradnik o [podziałach długich stron internetowych](/pl/blog/long-webpage-page-breaks) obejmuje trudne układy. Szerszy wybór według rodzaju źródła opisuje [przewodnik po wynikach dla witryn](/pl/blog/website-types-to-pdf-or-powerpoint).
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wybierz PDF jako format wyjściowy."}
+  caption={"Wybierz PDF jako format wyjściowy."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz PDF jako format wyjściowy."}
+  src="/blog/instructions/save-webpage-as-pdf/03.svg"
+  step={3}
+/>
+
+## Dowiedz się, gdzie trafiają dane tymczasowe
+
+Konwersja publicznego URL tworzy tymczasowe zadanie backendu po jej wyraźnym uruchomieniu. Rozszerzenie działa na aktywnej karcie i otwiera podgląd bez tworzenia konta Page 2 File ani historii konwersji. Dane podglądu są usuwane po zamknięciu karty podglądu, a Page 2 File nie ma bazy danych przechowującej historię konwersji użytkowników.
+
+Odpowiadasz za prawo do powielania źródła. PDF jest przenośną kopią, a nie sposobem na ominięcie logowania, paywalla czy ograniczeń publikacji.
+
+## Przygotuj źródło przed konwersją
+
+Traktuj stronę w przeglądarce jako dokument źródłowy. Przed przechwyceniem wybierz docelowy język, zakres dat, filtry i rozwinięte sekcje. Odrzucaj nakładki tylko wtedy, gdy nie są częścią zapisu. W przypadku paragonu lub dashboardu zachowaj widoczny stan potwierdzający prezentowane dane; w przypadku artykułu usuń nawigację rozpraszającą podczas czytania.
+
+Sprawdź, czy strona zmienia się podczas przewijania. Niektóre witryny zastępują starsze elementy, opóźniają obrazy lub ponownie rysują wykresy po wejściu w viewport. Przewiń raz wymagany zakres, wróć na początek i potwierdź, że wcześniejsza treść nadal jest obecna. Jeśli witryna ją usunęła, przechwyć mniejszy, jasno określony zakres zamiast zakładać, że „pełna strona” obejmuje materiał, który nie jest już renderowany.
+
+Fonty i osadzone media mogą kończyć wczytywanie po zgłoszeniu gotowości głównego dokumentu. Brak kroju pisma jest zwykle kosmetyczny, ale spóźniony wykres lub obraz może zmienić znaczenie pliku. Poczekaj, aż strona przestanie się poruszać, i sprawdź ważne elementy wizualne przed rozpoczęciem zadania.
+
+## Sprawdź podgląd z perspektywy czytelnika
+
+Przeczytaj podgląd po kolei, zamiast sprawdzać wyłącznie pierwszą i ostatnią stronę. Użyteczny PDF powinien utrzymywać nagłówek blisko pierwszego akapitu, nie dzielić krótkiej tabeli między wiele stron i zapewniać ilustracjom wystarczający kontekst. Doskonała kopia źle przygotowanego stanu przeglądarki nadal jest złym dokumentem.
+
+W Editable document przetestuj zaznaczanie tekstu i kilka łączy. Potwierdź, że łącze prowadzi do oczekiwanego celu, zwłaszcza gdy jego etykieta jest ogólna. W Accurate copy powiększ małe etykiety, kod i legendy wykresów. Jeśli nie da się ich odczytać przy typowym powiększeniu PDF, zmień skalę sekcji lub granicę przechwytywania przed pobraniem.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wybierz Accurate copy dla wyglądu lub Editable document dla obsługiwanego tekstu i łączy."}
+  caption={"Wybierz Accurate copy dla wyglądu lub Editable document dla obsługiwanego tekstu i łączy."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz Accurate copy dla wyglądu lub Editable document dla obsługiwanego tekstu i łączy."}
+  src="/blog/instructions/save-webpage-as-pdf/04.svg"
+  step={4}
+/>
+
+W przypadku materiału przeznaczonego do udostępnienia sprawdź metadane widoczne na stronie: nazwy kont, przestrzeni roboczych, adresy e-mail, identyfikatory klientów i parametry zapytań mogą pojawić się w nagłówkach lub łączach. Redakcja powinna nastąpić przed dystrybucją, nie po otrzymaniu oryginalnego pliku przez odbiorcę.
+
+## Stosuj powtarzalną kontrolę akceptacyjną
+
+Potwierdź, że PDF zaczyna się i kończy we właściwych miejscach, każda wymagana sekcja występuje raz, kolejność czytania jest poprawna, podziały stron nie ukrywają treści, a wybrany tryb wspiera kolejne zadanie. Następnie otwórz co najmniej jedno ważne łącze i obejrzyj jedną stronę w typowym rozmiarze.
+
+Gdy ważne jest pochodzenie, zachowaj URL źródła i datę przechwycenia wraz z dokumentem. Dynamiczne strony mogą zmienić się po konwersji, dlatego PDF rejestruje wyrenderowany stan, lecz nie gwarantuje identyczności strony na żywo. Jeśli źródło jest często aktualizowane, stosuj spójne nazewnictwo kolejnych przechwyceń zamiast po cichu nadpisywać wcześniejszy zapis.
+
+Jeśli wynik nie przejdzie kontroli, zmieniaj po jednej zmiennej: stan strony, zakres przechwycenia, tryb wyjściowy lub granicę sekcji. Ułatwia to znalezienie przyczyny i zapobiega powtarzaniu eksportów z tym samym defektem.
+
+## Zachowaj kontekst bez zbędnego interfejsu
+
+Użyteczny PDF potrzebuje wystarczającego kontekstu, aby wyjaśnić to, co widzi czytelnik. Zachowaj tytuł strony, odpowiedni nagłówek sekcji i wybrane filtry zmieniające wynik. W przypadku transakcji lub dashboardu uwzględnij widoczną datę i status. W dokumentacji zachowaj wersję produktu lub okruszki nawigacji, jeśli odróżniają dany zestaw instrukcji.
+
+Nie oznacza to zachowania każdego elementu przeglądarki. Menu konta, niepowiązane rekomendacje i pływające widżety pomocy mogą zasłaniać temat lub ujawniać dane niepotrzebne odbiorcy. Przed przechwyceniem rozstrzygnij, co potwierdza pochodzenie, co wspiera interpretację, a co jest jedynie otoczeniem interfejsu.
+
+Dostępność również zmienia się między stroną a stałym plikiem. Etykiety hover, panele dostępne tylko z klawiatury i zwinięte opisy mogą nie występować w przechwyconym stanie. Odsłoń kluczowe etykiety przed konwersją, a następnie sprawdź kolejność czytania i kontrast. Edytowalny tekst jest bardziej przydatny do wyszukiwania i technologii asystujących, ale nadal wymaga spójnych nagłówków i znaczących etykiet łączy.
+
+## Wybierz sposób przechowywania i udostępniania
+
+Page 2 File nie utrzymuje historii konwersji, dlatego pobrany plik i powiązane z nim zapisy stają się Twoim archiwum. Użyj nazwy pliku identyfikującej temat i datę bez ujawniania danych poufnych. Jeśli źródło na żywo może się zmieniać, zapisz jego URL i datę przechwycenia w notatce lub zatwierdzonym polu dokumentu.
+
+Przed udostępnieniem otwórz PDF poza podglądem konwersji. Potwierdź, że działa w zwykłym czytniku, zawiera oczekiwane strony i nie ujawnia prywatnego stanu przeglądarki w nagłówkach, łączach ani obrazach. Wyślij najmniejszy dokument spełniający cel i użyj zatwierdzonego kanału odbiorcy, gdy treść jest poufna.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wybierz Preview PDF i sprawdź wygenerowane strony przed pobraniem."}
+  caption={"Wybierz Preview PDF i sprawdź wygenerowane strony przed pobraniem."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz Preview PDF i sprawdź wygenerowane strony przed pobraniem."}
+  src="/blog/instructions/save-webpage-as-pdf/05.svg"
+  step={5}
+/>

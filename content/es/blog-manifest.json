@@ -11,11 +11,47 @@
     "description": "Exporte conversaciones de IA visibles desde una pestaña activa, defina el intervalo de mensajes, elija un modo PDF y comprenda los datos temporales de la vista previa.",
     "imageAlt": "Una conversación privada de IA pasa por un escudo hacia PDF"
   },
+  "export-browser-messenger-chats-to-pdf": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo exportar chats de mensajeros del navegador a PDF",
+    "description": "Exporte chats visibles de Discord Web, Slack Web, Teams, Messenger o Instagram DMs y comprenda por qué se excluyen las aplicaciones exclusivamente nativas.",
+    "imageAlt": "Varios paneles de mensajería del navegador convergen en documentos PDF"
+  },
   "export-chatgpt-conversation-to-pdf": {
     "author": "Equipo editorial de Page 2 File",
     "title": "Cómo exportar una conversación de ChatGPT a PDF",
     "description": "Prepare una conversación visible de ChatGPT, cargue el intervalo necesario, elija capturas o PDF editable y distinga la captura de pestaña de la exportación de cuenta.",
     "imageAlt": "Una conversación genérica de IA en el navegador se convierte en un documento PDF"
+  },
+  "export-claude-chat-to-pdf": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo exportar un chat de Claude a PDF",
+    "description": "Capture una conversación visible de Claude y su área de artifacts como PDF, elija un límite legible y compárela con la exportación de datos de cuenta de Claude.",
+    "imageAlt": "Un chat genérico de IA y un panel de artifacts se convierten en un PDF"
+  },
+  "export-gemini-chat-to-pdf": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo exportar un chat de Gemini a PDF",
+    "description": "Guarde una conversación visible de Gemini con citas e imágenes como PDF, cargue el contenido necesario y distinga la captura de Google Takeout.",
+    "imageAlt": "Un chat de IA con tarjetas de fuentes e imágenes se convierte en un PDF"
+  },
+  "export-other-ai-chats-to-pdf": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo exportar chats de Grok, DeepSeek, Perplexity o Copilot",
+    "description": "Exporte chats visibles de Grok, DeepSeek, Perplexity o Copilot desde una pestaña del navegador respetando el contenido cargado, la privacidad y los límites de la plataforma.",
+    "imageAlt": "Varias pestañas genéricas de chat de IA convergen en un PDF"
+  },
+  "export-telegram-chat-to-pdf": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo exportar un chat de Telegram a PDF",
+    "description": "Prepare un chat o canal de Telegram Web, cargue respuestas y contenido multimedia, elija capturas o PDF editable y revise el límite de mensajes capturado.",
+    "imageAlt": "Una conversación genérica de canal pasa por un escudo hacia PDF"
+  },
+  "export-whatsapp-chat-to-pdf": {
+    "author": "Equipo editorial de Page 2 File",
+    "title": "Cómo exportar un chat de WhatsApp a PDF",
+    "description": "Prepare una conversación en WhatsApp Web, cargue los mensajes y contenido multimedia necesarios, elija un modo PDF y comprenda el límite de la pestaña activa.",
+    "imageAlt": "Una conversación genérica de mensajería web personal se convierte en un PDF"
   },
   "html-to-pdf-safely": {
     "author": "Equipo editorial de Page 2 File",

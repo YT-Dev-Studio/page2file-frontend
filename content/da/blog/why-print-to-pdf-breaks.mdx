@@ -1,0 +1,143 @@
+Browserens Print til PDF og URL til PDF-konvertering begynder fra forskellige versioner af en side. Print bruger websitets print-stylesheet, når det findes. En konverter kan arbejde ud fra det gengivne skærmlayout og opdele det i sektioner, der kan gennemgås. Ingen af metoderne er automatisk bedre; siden og det ønskede dokument afgør valget.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Åbn browserens udskriftsvisning, og bemærk, hvilke dashboardområder der forsvinder."}
+  caption={"Åbn browserens udskriftsvisning, og bemærk, hvilke dashboardområder der forsvinder."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Åbn browserens udskriftsvisning, og bemærk, hvilke dashboardområder der forsvinder."}
+  src="/blog/instructions/why-print-to-pdf-breaks/01.svg"
+  step={1}
+/>
+
+Brug [Page 2 File PDF-konverteren](/da/convert-webpage-to-pdf), når du har brug for en forhåndsvisning og et bevidst valg mellem skærmbillede og redigerbart output. Brug browserens Print, når udgiveren har forberedt en ren udskriftsvisning, og du kun har brug for en hurtig kopi.
+
+## Hvorfor udskriftsresultatet kan se helt anderledes ud end skærmen
+
+CSS kan tildele forskellige regler til skærm og udskrift. Et print-stylesheet kan fjerne navigation og annoncer, men det kan også skjule baggrunde, ændre kolonner, erstatte skrifttyper eller skjule interaktive paneler. Faste og klæbende elementer kan blive gentaget på flere sider. Et diagram tegnet på canvas kan ende som et tomt område, hvis udskriftsprocessen ikke optager dets pixels.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Sammenlign udskriftsresultatet med skærmen, og identificer manglende diagrammer og baggrunde."}
+  caption={"Sammenlign udskriftsresultatet med skærmen, og identificer manglende diagrammer og baggrunde."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Sammenlign udskriftsresultatet med skærmen, og identificer manglende diagrammer og baggrunde."}
+  src="/blog/instructions/why-print-to-pdf-breaks/02.svg"
+  step={2}
+/>
+
+Medier, der indlæses dynamisk, skaber endnu en forskel. Udskrivning begynder fra dokumentets aktuelle tilstand; indhold, der aldrig har været i visningsområdet, findes måske ikke i denne tilstand. Virtualiserede chat- og dashboardgrænseflader kan fjerne ældre rækker fra DOM'en under rulning, og en udskriftskommando kan derfor ikke gendanne dem.
+
+## Hvad URL-konvertering ændrer
+
+En offentlig URL-konverter indlæser adressen i en kontrolleret browser og forbereder det gengivne resultat til PDF. Den arver ikke din personlige session og kan derfor ikke se et privat dashboard eller en side bag login. Denne grænse beskytter loginoplysninger, men gør metoden uegnet til godkendt materiale.
+
+Til en privat fane optager [Page 2 File-udvidelsen](/da/chrome-extension/how-to-use) den side, du åbnede efter en udtrykkelig handling. Den beder ikke om kontoens adgangskode. Sørg for, at de nødvendige paneler og meddelelser er synlige før optagelsen.
+
+## Sammenlign filerne, ikke knappernes etiketter
+
+Kontrollér, om tekst kan markeres, links forbliver nyttige, baggrunde bærer information, og sideskift respekterer overskrifter. En skærmbilledeeksport bevarer normalt et vanskeligt layout mere nøjagtigt. En redigerbar eksport gør understøttet indhold lettere at søge i og ændre, men kan rasterisere komplekse elementer.
+
+[Vejledningen om skærmbillede kontra redigerbart](/da/blog/visual-vs-editable) forklarer denne afvejning. For meget høje kilder bør du også gennemgå [vejledningen til helsideoptagelse](/da/blog/capture-full-webpage-as-pdf), før du vælger metode.
+
+## En praktisk beslutning
+
+Vælg browserens Print til en enkel artikel med et godt print-stylesheet. Vælg URL-konvertering som skærmbillede, når udseendet er vigtigt, eller redigerbar konvertering, når indholdet skal forblive søgbart og linket. Vælg optagelse af aktiv fane, når kilden er privat, personlig eller kun tilgængelig efter interaktion.
+
+Forhåndsvisningen er det afgørende bevis. Hvis en vigtig blok mangler der, skal du ikke antage, at den kommer tilbage i den endelige PDF.
+
+## Kør en kontrolleret sammenligning
+
+Sammenlign begge metoder fra samme browsertillstand. Angiv samme visningsområde, filtre, udfoldede paneler og rulleposition, før du opretter nogen af filerne. Ellers måler sammenligningen to forskellige kilder i stedet for to konverteringsmetoder. Registrer, om siden var færdig med at indlæse billeder, webskrifter og diagrammer.
+
+Begynd med browserens udskriftsvisning. Bemærk, hvilke navigationselementer, baggrunde, interaktive paneler og klæbende elementer der forsvinder. Det er ikke automatisk en fejl: Et veldesignet print-stylesheet kan fjerne rod og skabe den reneste læsekopi. Spørgsmålet er, om det fjernede noget, der var nødvendigt for dit formål.
+
+Gennemgå derefter Page 2 File-forhåndsvisningen i den tilstand, der passer til opgaven. Accurate copy (skærmbilledlignende output) skal vurderes på lighed og læsbarhed. Editable document (redigerbart output) skal vurderes på læserækkefølge, tekstmarkering, linkadfærd og kvaliteten af reserver til komplekse komponenter. En sammenligning af filstørrelser fortæller kun lidt om, hvorvidt dokumenterne er anvendelige.
+
+## Diagnosticer almindelige forskelle
+
+Manglende farver eller billeder skyldes ofte udskriftsspecifik CSS, browserindstillinger for baggrundsgrafik eller en komponent, der gengives anderledes til udskriftsmediet. Afkortede paneler opstår ofte, når en rullecontainer har en fast højde, eller når virtualiseret indhold aldrig kom ind på den gengivne side. Tom plads kan skyldes klæbende sidehoveder, reserverede annoncepladser eller udskriftsregler, der tvinger et skift.
+
+Tabeller viser en anden forskel. Et print-stylesheet kan gentage overskrifter korrekt, formindske tabellen, til teksten bliver ulæselig, eller klippe kolonner uden for den udskrivbare bredde. En skærmbilledeoptagelse kan bevare den viste tabel, men kan ikke få et bredt layout til naturligt at passe på en stående side. Redigerbar konvertering kan rekonstruere standardrækker og celler og bruge en billedreserve til usædvanlige gitre.
+
+Links kræver deres egen kontrol. Browsergenererede PDF-filer kan bevare standardankre, men en synlig URL tegnet på canvas eller leveret af et script bliver måske ikke interaktiv. Page 2 File Editable document beholder understøttede ankere; Accurate copy prioriterer udseendet. Test målene i stedet for at antage, at blå understreget tekst er klikbar.
+
+## Vælg efter bevis og vedligeholdelsesomkostning
+
+Til en enkelt artikel med en stærk udskriftsvisning er browserens Print ofte tilstrækkelig. Til et dashboard, en godkendt applikation, en lang dynamisk side eller et præsentationsorienteret arbejdsforløb kan optagelses- og forhåndsvisningskontroller være vigtigere end browserens udskriftskonventioner. Ingen af metoderne bør betragtes som universelt bedre.
+
+Hvis samme kilde eksporteres regelmæssigt, skal du skrive forberedelsestrin og godkendelseskontroller ned. En stabil procedure er mere værdifuld end gentagne gange at vælge værktøj efter intuition. Kontrollér den igen, når websitet ændrer layout, godkendelse eller virtualiseringsadfærd.
+
+Video, animation, hovertilstande og livekontroller kan ikke forblive interaktive i en almindelig PDF. Det forsvarlige resultat er en læsbar post af en defineret sidetilstand med kendte afvejninger.
+
+## Adskil udskriftsindstillinger fra kildeproblemer
+
+Nogle fejl kan rettes i browserens udskriftsdialog. Papirstørrelse, retning, margener, skala og indstillinger for baggrundsgrafik kan ændre resultatet markant. Prøv disse kontroller, når indholdet er til stede, men passer dårligt. De kan ikke gendanne et panel, som print-stylesheetet fjernede, eller meddelelser, som en virtualiseret grænseflade aldrig gengav.
+
+Sidehoveder og sidefødder, som browseren tilføjer, er et andet udskriftsspecifikt valg. De kan vise en URL og dato, men de kan også afsløre en privat adresse eller skubbe indhold til en ekstra side. Gennemgå dem bevidst i stedet for at acceptere standarden. En URL-konverter har en anden forhåndsvisnings- og sektionsmodel, så sammenlign de faktiske metadata i hver fil.
+
+Behandl ikke en større sidestørrelse som en universel løsning. Liggende retning kan hjælpe en bred tabel, men gør en smal artikel sværere at læse. Kraftig skalering kan undgå klipning, men gøre etiketter og fodnoter ulæselige. De tilsigtede visningsforhold er vigtigere end at få alt til at passe på færrest mulige ark.
+
+## Beslut med en kilde- og opgavematrix
+
+Til en artikel, som udgiveren har formateret, er browserens Print en fornuftig første test, fordi print-stylesheetet måske allerede fjerner navigation og formaterer citater. Til en marketingside eller designreference er skærmbilledkonvertering normalt en bedre kandidat, fordi skærmens komposition bærer betydning. Til dokumentation og forskningsnoter fortjener redigerbar konvertering den første test, fordi søgning, markering og links er vigtige.
+
+Dashboards og chats kræver et andet spørgsmål: Er den nødvendige tilstand faktisk gengivet? Hvis svaret er nej, kan hverken Print eller URL-konvertering rekonstruere den. Indlæs det godkendte interval, stabiliser filtrene, og brug optagelse af aktiv fane, når tilstanden afhænger af en indlogget browsersession. Et offentligt URL-job bør aldrig forventes at arve denne session.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Brug By URL til den samme offentlige side, når en indlogget tilstand ikke er nødvendig."}
+  caption={"Brug By URL til den samme offentlige side, når en indlogget tilstand ikke er nødvendig."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Brug By URL til den samme offentlige side, når en indlogget tilstand ikke er nødvendig."}
+  src="/blog/instructions/why-print-to-pdf-breaks/03.svg"
+  step={3}
+/>
+
+Når outputtet skal blive en præsentation, er PDF måske ikke det rigtige slutformat. Et [arbejdsforløb fra webside til PowerPoint](/da/blog/webpage-to-powerpoint) lader dig vælge mellem udseendeorienterede slides og understøttede redigerbare elementer i stedet for at konvertere en PDF igen.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Vælg Accurate copy, når den viste komposition er dokumentationen."}
+  caption={"Vælg Accurate copy, når den viste komposition er dokumentationen."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Vælg Accurate copy, når den viste komposition er dokumentationen."}
+  src="/blog/instructions/why-print-to-pdf-breaks/04.svg"
+  step={4}
+/>
+
+## Registrer en forsvarlig sammenligning
+
+Ved tilbagevendende eksporter gemmer du en kort testpost: kilde-URL, browsertillstand, dato, udskriftsindstillinger, Page 2 File-tilstand og de fundne fejl i hvert resultat. Skærmbilleder af de to forhåndsvisninger kan hjælpe med at forklare valget af metode, men de bør ikke erstatte kontrollen af den endelige PDF.
+
+Bedøm begge filer efter de samme godkendelseskriterier:
+
+- alt nødvendigt indhold vises én gang og i den rigtige rækkefølge;
+- brødtekst, diagrametiketter og kode er læsbare ved normal zoom;
+- vigtige links virker og afslører ikke følsomme mål;
+- overskrifter, billedtekster og tabelkontekst overlever sidegrænser;
+- private konto- eller arbejdsområdeoplysninger er fraværende, medmindre de er nødvendige.
+
+En metode består, når den skaber det dokument, der kræves til denne kilde og opgave. Hvis begge mislykkes, indsnævrer du optagelsen, ændrer sidetilstanden eller bruger kildeplatformens egen specialbyggede eksport. Det er ikke en reparationsstrategi at gentage samme kommando på en ustabil side.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Vælg Editable document, når læserækkefølge, markering og links er vigtige."}
+  caption={"Vælg Editable document, når læserækkefølge, markering og links er vigtige."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Vælg Editable document, når læserækkefølge, markering og links er vigtige."}
+  src="/blog/instructions/why-print-to-pdf-breaks/05.svg"
+  step={5}
+/>
+
+## Kontrollér igen, når websitet ændres
+
+Udskrifts- og optagelsesadfærd kan ændre sig, når et website opdaterer CSS, diagrambibliotek, samtykkelag eller virtualiseringsregler. En procedure, der virkede sidste måned, er dokumentation for den version af siden, ikke en permanent garanti. Kør repræsentative kontroller igen efter et redesign og før en distribution med store konsekvenser.
+
+Dette vedligeholdelsespunkt er særligt vigtigt for rutiner, der ser automatiserede ud. Page 2 File giver en forhåndsvisning, fordi sidetilstanden stadig kræver menneskelig gennemgang. Forhåndsvisningen kan vise manglende sektioner og uhensigtsmæssige grænser; den kan ikke afgøre, om dokumentet er komplet til dit juridiske, arkivmæssige eller driftsmæssige formål.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Sammenlign begge Page 2 File-forhåndsvisninger med browserens Print, før du beslutter dig."}
+  caption={"Sammenlign begge Page 2 File-forhåndsvisninger med browserens Print, før du beslutter dig."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Sammenlign begge Page 2 File-forhåndsvisninger med browserens Print, før du beslutter dig."}
+  src="/blog/instructions/why-print-to-pdf-breaks/06.svg"
+  step={6}
+/>
+
+Brug [vejledningen til websiteoutput](/da/blog/website-types-to-pdf-or-powerpoint), når kildetypen og ikke kun udskriftsadfærden skal styre beslutningen.

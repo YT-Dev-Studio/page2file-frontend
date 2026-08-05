@@ -1,0 +1,128 @@
+HTML para PowerPoint pode significar dois trabalhos diferentes: transformar uma página Web renderizada em diapositivos ou carregar um ficheiro HTML em bruto. Atualmente, o Page 2 File serve o trabalho de página renderizada através do [conversor PowerPoint](/pt/convert-webpage-to-powerpoint) e da extensão. O carregamento de HTML em bruto é suportado apenas pela aplicação HTML 2 PDF GPT, não por uma ferramenta separada de carregamento de HTML para PPTX.
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: renderizar e estabilizar o HTML antes de o mapear para diapositivos."}
+  caption={"Renderize e estabilize o HTML antes de o mapear para diapositivos."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: renderizar e estabilizar o HTML antes de o mapear para diapositivos."}
+  src="/blog/instructions/html-to-powerpoint/01.svg"
+  step={1}
+/>
+
+Este limite impede que uma expressão de pesquisa se torne numa falsa promessa de produto. Se o HTML puder ser aberto como uma página Web autorizada, o Page 2 File pode converter as respetivas secções visíveis numa apresentação.
+
+## Renderize o HTML antes de mapear os diapositivos
+
+Um navegador resolve o layout CSS, os tipos de letra, as imagens e as regras responsivas. O conversor trabalha depois a partir da estrutura renderizada, em vez de tratar as etiquetas como instruções de diapositivos. Títulos, secções e quebras visíveis fornecem limites mais sólidos do que fragmentos arbitrários do código-fonte.
+
+Os componentes do lado do cliente têm de terminar a renderização e o conteúdo escondido atrás de controlos deve ser aberto. Scripts ou recursos indisponíveis na página não podem ser reconstruídos apenas a partir da marcação.
+
+## Escolha objetos de apresentação ou secções por captura
+
+Editable document (saída editável) mapeia texto, imagens e formas compatíveis para objetos PowerPoint. Accurate copy (saída ao estilo de captura) regista secções renderizadas e preserva melhor a composição da página. Efeitos complexos podem tornar-se imagens em qualquer fluxo quando o PowerPoint não tem equivalente.
+
+Utilize [diapositivos por captura versus PowerPoint editável](/pt/blog/screenshot-vs-editable-powerpoint) para escolher um modo antes da conversão.
+
+## Prepare o conteúdo para 16:9
+
+Uma página Web alta precisa de vários diapositivos. Mantenha um tópico por diapositivo, evite texto minúsculo e permita que uma tabela grande continue em vários diapositivos. Remova a repetição de navegação e rodapé, a menos que forneça contexto necessário.
+
+O artigo sobre a transformação de secções de páginas Web em diapositivos apresenta uma sequência prática de divisão e revisão.
+
+## Utilize a superfície correta do Page 2 File
+
+Para uma página pública renderizada, utilize o [One Page 2 PowerPoint](/pt/one-page2powerpoint-gpt). Para várias páginas acessíveis de um site, utilize o [Web 2 PowerPoint](/pt/web2powerpoint-gpt). Para um separador privado renderizado, utilize a extensão.
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: utilizar o separador aberto ou uma URL pública como origem suportada."}
+  caption={"Utilize o separador aberto ou uma URL pública como origem suportada."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: utilizar o separador aberto ou uma URL pública como origem suportada."}
+  src="/blog/instructions/html-to-powerpoint/02.svg"
+  step={2}
+/>
+
+Se tiver apenas um ficheiro HTML e precisar de PDF, utilize o [HTML 2 PDF](/pt/html2pdf-gpt). O carregamento direto de um ficheiro HTML para PPTX não é suportado; a conversão PowerPoint começa com conteúdo Web renderizado.
+
+## Publique o HTML num contexto controlado
+
+Se a origem existir apenas como ficheiro, decida se pode ser servida numa URL acessível ou aberta num separador autorizado do navegador. Confirme que os estilos, imagens e tipos de letra são carregados nesse contexto. Um caminho de desenvolvimento local ou uma referência privada a um recurso não se torna portátil apenas porque a página está visível num computador.
+
+Remova controlos da aplicação que não pertencem à apresentação e selecione o estado responsivo final. Defina filtros, expanda painéis e interrompa atualizações em direto quando possível. A conversão pode registar aquilo que o navegador renderizou; não consegue inferir conteúdo por trás de um controlo fechado.
+
+Mantenha a versão da origem utilizada na apresentação. O HTML muda facilmente e uma compilação posterior pode produzir diapositivos diferentes a partir da mesma URL. Uma data de captura e um identificador de versão podem ajudar quando a proveniência é importante.
+
+## Reestruture as secções para os diapositivos
+
+Uma secção HTML pode ser muito mais alta do que um diapositivo 16:9. Identifique quebras naturais em títulos, cartões, linhas ou figuras, em vez de reduzir toda a secção até o texto ficar ilegível. Mantenha legendas com os elementos visuais e repita o contexto quando uma tabela ocupar vários diapositivos.
+
+A navegação, os controlos de cookies e os cabeçalhos fixos repetem-se muitas vezes sem ajudar a apresentação. Oculte-os ou remova-os da origem preparada, quando permitido. Preserve a marca apenas quando pertencer à apresentação e puder ser utilizada legalmente.
+
+Na saída editável, mantenha blocos de texto concisos e evite depender de camadas CSS complexas. Filtros complexos, canvas e animações precisarão de alternativas por captura. Na saída por captura, confirme que a largura do navegador produz texto ainda legível num diapositivo.
+
+## Faça uma avaliação de aceitação da apresentação
+
+Compare a ordem dos diapositivos com o esboço HTML. Confirme que nenhuma secção foi duplicada ou omitida e que a apresentação termina num ponto intencional. Um rodapé do site não deve tornar-se automaticamente na conclusão.
+
+Abra o PPTX na aplicação de destino e inspecione a substituição de tipos de letra, o recorte de imagens, o comportamento das ligações e os objetos fora dos limites do diapositivo. Se os destinatários precisarem de editar a apresentação, altere texto representativo e mova uma imagem compatível.
+
+Indique o limite com rigor: o Page 2 File converte uma página Web renderizada ou um separador ativo em PowerPoint. Não aceita o carregamento de HTML em bruto para PPTX, não executa uma compilação arbitrária de um projeto nem transforma todas as propriedades CSS em objetos PowerPoint nativos.
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: escolher PowerPoint."}
+  caption={"Escolha PowerPoint."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: escolher PowerPoint."}
+  src="/blog/instructions/html-to-powerpoint/03.svg"
+  step={3}
+/>
+
+## Prepare HTML responsivo para uma tela fixa
+
+Uma página responsiva pode mudar substancialmente entre larguras de desktop. Escolha a viewport que contém a navegação, o layout dos gráficos e a medida do texto pretendidos antes da conversão. Não presuma que a vista mais larga é a melhor; uma grelha de desktop densa pode produzir diapositivos ilegíveis, enquanto um layout compacto pode agrupar a informação com maior clareza.
+
+Verifique o overflow na largura escolhida. Tabelas, blocos de código e carrosséis com deslocamento horizontal podem esconder conteúdo fora da área renderizada. Defina o estado relevante e decida se o componente deve tornar-se num diapositivo por captura, em vários diapositivos focados ou numa reconstrução editável com alternativa.
+
+Tipos de letra Web e imagens diferidas podem alterar as dimensões depois da primeira renderização. Aguarde até a página estabilizar e compare o início e o fim das secções longas. Se um componente do lado do cliente nunca for renderizado no estado autorizado do navegador, a conversão não consegue inferi-lo a partir de código-fonte não utilizado.
+
+## Preserve a semântica durante a reestruturação
+
+O esboço HTML ajuda a estabelecer a ordem, mas não é um plano de apresentação acabado. Mantenha os níveis de títulos significativos, associe legendas a figuras e preserve a sequência das listas quando uma secção longa ocupar vários diapositivos. Elementos decorativos não devem tornar-se diapositivos vazios apenas porque ocupam um bloco próprio.
+
+Nas tabelas, preserve os rótulos das colunas e as unidades. No código, mantenha os rótulos de linguagem ou contexto com o exemplo e inspecione as quebras de linha. Numa chamada de atenção, conserve o texto que explica o estado, em vez de depender apenas da cor. Estas relações são mais importantes do que copiar todos os detalhes de CSS.
+
+A conversão editável pode facilitar a revisão de conteúdo compatível, mas não deve ser descrita como um compilador de código-fonte para PowerPoint. Reveja a ordem de leitura e o agrupamento dos objetos. Um componente Web complexo pode ser mais exato como uma única imagem do que como dezenas de formas difíceis de manter.
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: escolher Editable document para objetos compatíveis ou Accurate copy para a composição."}
+  caption={"Escolha Editable document para objetos compatíveis ou Accurate copy para a composição."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: escolher Editable document para objetos compatíveis ou Accurate copy para a composição."}
+  src="/blog/instructions/html-to-powerpoint/04.svg"
+  step={4}
+/>
+
+## Reveja a proveniência e o estado privado
+
+Se a página renderizada vier de um ambiente de desenvolvimento, staging ou com sessão iniciada, inspecione-a quanto a nomes de conta, dados de teste, material não publicado e URLs privadas. O acesso a esse separador não implica autorização para distribuir a respetiva apresentação.
+
+Mantenha a versão, a URL ou o identificador de lançamento da origem junto do PPTX aprovado quando a rastreabilidade for importante. Uma implementação posterior pode produzir diapositivos diferentes, mesmo quando a rota permanece igual. Evite guardar tokens de sessão ou parâmetros de consulta confidenciais nos nomes dos ficheiros e nas notas de origem.
+
+A extensão trabalha a partir do separador ativo; os dados da pré-visualização são temporários e eliminados quando o separador fecha, e o Page 2 File não tem uma base de dados de histórico de conversões. O PPTX transferido permanece sob o seu controlo, por isso guarde-o e partilhe-o de acordo com a sensibilidade da origem.
+
+## Decida se o PowerPoint é o destino correto
+
+Utilize PPTX quando o destinatário precisar de uma sequência de apresentação, uma explicação conduzida por um orador ou elementos compatíveis que possa rever. Se o objetivo for um arquivo de leitura fiel, um PDF pode preservar um documento longo de forma mais natural. Se o objetivo for editar a própria aplicação Web, continue a trabalhar em HTML em vez de tratar uma apresentação como origem.
+
+Execute a apresentação no tamanho de apresentação e conclua uma edição prevista antes da entrega. Confirme a ordem dos diapositivos, a legibilidade da tipografia, a qualidade das imagens, as ligações e as alternativas. Se uma secção necessária estiver ausente na pré-visualização, corrija o estado renderizado da origem; um ficheiro final não pode recuperar HTML que o navegador nunca apresentou.
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: rever diapositivos 16:9 e inspecionar alternativas para HTML complexo."}
+  caption={"Reveja os diapositivos 16:9 e inspecione as alternativas para HTML complexo."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: rever diapositivos 16:9 e inspecionar alternativas para HTML complexo."}
+  src="/blog/instructions/html-to-powerpoint/05.svg"
+  step={5}
+/>
+
+Utilize o [guia de saída para sites](/pt/blog/website-types-to-pdf-or-powerpoint) para comparar HTML com outras origens do navegador.

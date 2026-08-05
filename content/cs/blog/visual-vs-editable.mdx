@@ -1,0 +1,126 @@
+Snímková konverze zachová vykreslený vzhled webové stránky, zatímco upravitelná konverze zachová podporovaný obsah jako objekty dokumentu. Správná volba závisí na tom, co musí příjemce po stažení udělat.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: otevřete stránku s vrstveným rozvržením, typografií, obrázky a výzvami k akci."}
+  caption={"Otevřete stránku s vrstveným rozvržením, typografií, obrázky a výzvami k akci."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: otevřete stránku s vrstveným rozvržením, typografií, obrázky a výzvami k akci."}
+  src="/blog/instructions/visual-vs-editable/01.svg"
+  step={1}
+/>
+
+Oba režimy jsou dostupné v [převodníku PDF](/cs/convert-webpage-to-pdf) i [převodníku PowerPoint](/cs/convert-webpage-to-powerpoint) Page 2 File. Náhled ukáže kompromis ještě před vykreslením výsledného souboru.
+
+## Režim snímků zachová kompozici
+
+Snímkový výstup zaznamená oddíly tak, jak se zobrazují v prohlížeči. Hodí se pro kampaně, dashboardy, designové předlohy, účtenky a konverzace, kde nesou informaci rozestupy, barvy a seskupení.
+
+Cenou je upravitelnost. Text v zachyceném oddílu se chová jako obsah obrázku, pokud nejsou přidány samostatné textové nebo odkazové vrstvy. Video se změní na statické zobrazení a animace nemůže v běžném PDF zůstat animovaná.
+
+## Upravitelný režim zachová strukturu dokumentu
+
+Upravitelný výstup převede podporované nadpisy, odstavce, seznamy, obrázky, tvary a odkazy na prvky PDF nebo PowerPointu. Čtenáři mohou vyhledávat text, používat bezpečné odkazy a upravovat podporovaný obsah prezentace.
+
+Rozvržení prohlížeče je výrazově bohatší než formát dokumentu. Složité CSS, canvas, filtry SVG a interaktivní widgety mohou být zjednodušeny nebo rasterizovány. „Upravitelné“ má znamenat použitelné objekty dokumentu, nikoli příslib rekonstrukce pixel po pixelu.
+
+## Přizpůsobte režim zdroji
+
+Accurate copy (výstup ve stylu snímku) použijte pro portfolio, produktovou stránku, snímek dashboardu nebo archiv chatu s původním vzhledem. Editable document (upravitelný výstup) použijte pro článek, dokumentaci, výzkumnou poznámku nebo prezentaci, kterou má kolega aktualizovat.
+
+Pro odkazy v PDF si přečtěte [jak se zachovávají klikatelné odkazy](/cs/blog/preserve-clickable-links). U slidů porovnejte [snímkový a upravitelný PowerPoint](/cs/blog/screenshot-vs-editable-powerpoint).
+
+## Zkontrolujte náhrady
+
+Náhled má upozornit na nahrazená písma, rasterizované oblasti, odstraněné nebezpečné cíle a hranice stran či slidů. Pozorně prohlédněte tabulky, kód, grafy a vrstvené návrhy. Náhrada je přijatelná, když je viditelná a dokument stále slouží svému účelu.
+
+U dlouhých zdrojů se volba režimu prolíná se stránkováním. [Průvodce dlouhými stránkami](/cs/blog/long-webpage-page-breaks) ukazuje kontrolu oddílů překračujících pevné strany PDF.
+
+## Jednoduché pravidlo
+
+Zvolte Accurate copy, když je záznamem samotná stránka. Zvolte Editable document, když musí informace dále fungovat mimo prohlížeč. Pokud požadavek nesplní ani jeden režim, zachovejte původní stránku nebo použijte účelový export zdrojové platformy.
+
+## Posuzujte zdroj podle typu komponent
+
+Začněte prvky, jejichž ztráta by byla nejdražší. Standardní nadpisy, odstavce, obrázky a odkazy obvykle upřednostňují upravitelný výstup. Složité grafy, mapy, canvasy, vlastní diagramy a silně vrstvená rozvržení upřednostňují vizuální podobu. Stránka s oběma typy může potřebovat upravitelnou strukturu a obrazové náhrady obtížných komponent.
+
+Tabulky leží mezi těmito kategoriemi. Běžná tabulka může zůstat prohledávatelným a užitečným obsahem dokumentu. Virtualizovaná mřížka s připnutými sloupci, ovládacími prvky a podmíněným formátováním může být srozumitelnější jako snímek. Rozhodněte, zda čtenář potřebuje analyzovat hodnoty, uchovat zobrazený stav, nebo obojí.
+
+Interaktivní ovládací prvky nezůstanou interaktivní v běžném PDF ani prezentaci. Vybraný filtr lze zaznamenat, ale příjemce jej nezmění a graf nevygeneruje znovu. Zachovejte popisky vysvětlující vybraný stav, aby statický výsledek nebyl zaměněn za živý dashboard.
+
+## Zvažte cílový formát
+
+Čtenáři PDF obvykle očekávají stabilní stránkování, prohledávatelný text a spolehlivé odkazy. Editable document tyto cíle podporuje u dokumentových zdrojů, zatímco Accurate copy poskytuje silnější záznam rozvržení. Smíšený report může použít snímkové oddíly pro grafy a upravitelné oddíly pro výklad.
+
+PowerPoint mění priority. Snímek na slidu rychle zachová část stránky, ale obtížněji se styluje a může obsahovat příliš drobný text. Upravitelný slide dovolí změnu textu a podporovaných objektů, složité detaily však mohou být seskupeny nebo nahrazeny obrázkem. Nejlepší prezentace nemusí být nejdoslovnější kopií stránky.
+
+Záleží také na distribuci. Pokud příjemci výsledek pouze prohlížejí nebo archivují, vizuální věrnost může stačit. Pokud musí citovat, překládat, měnit značku nebo znovu používat jednotlivé prvky, má větší hodnotu upravitelná struktura. Rozhodněte před konverzí.
+
+## Kontrolujte smíšené náhrady poctivě
+
+Upravitelná konverze nezmění každý pixel na nativní objekt. Nepodporované nebo nejednoznačné prvky mohou zůstat obrázky, aby se jejich vzhled nezničil. Prohlédněte tyto náhrady a ověřte, že neobsahují text, který musí příjemce upravovat.
+
+Accurate copy má také omezení. Malý text se po změně měřítka může špatně číst a odkazy v zachyceném obrázku nejsou automaticky interaktivní anotace. Zkontrolujte důležité cíle a zvolte hranice oddílů zachovávající čitelnost.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: zvolte Accurate copy pro zachování vykreslené kompozice."}
+  caption={"Zvolte Accurate copy pro zachování vykreslené kompozice."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: zvolte Accurate copy pro zachování vykreslené kompozice."}
+  src="/blog/instructions/visual-vs-editable/02.svg"
+  step={2}
+/>
+
+Pokud soubor vstupuje do sdíleného postupu, zvolený režim zdokumentujte. Poznámka „rozvržení zachováno; graf je statický obrázek“ nebo „text je upravitelný; složité widgety jsou snímkové náhrady“ zabrání pozdějším uživatelům předpokládat schopnosti, které soubor nemá.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: zvolte Editable document, když musí být podporovaný obsah označitelný nebo upravitelný."}
+  caption={"Zvolte Editable document, když musí být podporovaný obsah označitelný nebo upravitelný."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: zvolte Editable document, když musí být podporovaný obsah označitelný nebo upravitelný."}
+  src="/blog/instructions/visual-vs-editable/03.svg"
+  step={3}
+/>
+
+## Rozhodujte podle dalšího kroku příjemce
+
+Začněte úkolem po konverzi. Pokud má příjemce archivovat důkaz toho, co bylo v prohlížeči, obvykle nejvíc záleží na kompozici a viditelném stavu. Pokud potřebuje hledat, citovat, překládat nebo měnit styl, je důležitější struktura dokumentu. Soubor může vypadat působivě a přesto nesplnit účel předání.
+
+Ptejte se, co musí zůstat přesné. U účtenky mohou být záznamem částky, data a vizuální seskupení. U výzkumného článku záleží na citacích a pořadí čtení. U prezentace mohou být zásadní upravitelné nadpisy, zatímco složitý graf zůstane statický. Rozhodování podle komponent je užitečnější než volba pouze podle kategorie zdroje.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: porovnejte vizuální věrnost, označitelný text, odkazy a složité náhrady."}
+  caption={"Porovnejte vizuální věrnost, označitelný text, odkazy a složité náhrady."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: porovnejte vizuální věrnost, označitelný text, odkazy a složité náhrady."}
+  src="/blog/instructions/visual-vs-editable/04.svg"
+  step={4}
+/>
+
+Rozhodněte také, co se smí měnit. Upravitelný výstup usnadňuje revize, což pomůže u pracovní prezentace, ale není vhodné pro archivní záznam. Snímek zachová vzhled, ale nedokazuje pravost ani nebrání úpravě obrázku. Tyto otázky řešte organizačními kontrolami a záznamy původu, nikoli režimem souboru.
+
+## Proveďte kontrolu smíšeného obsahu
+
+Začněte osnovou stránky a označte důležité komponenty jako text, odkaz, obrázek, tabulku, graf nebo interaktivní stav. V upravitelném náhledu ověřte pořadí čtení, výběr textu a cíle odkazů a vyhledejte každou rastrovou náhradu. Ve snímkovém náhledu zkontrolujte měřítko, ostrost a potřebu samostatného kontextu pro důležité akce.
+
+Ve smíšeném reportu ponechte výklad a běžné tabulky upravitelné, pokud je výsledek soudržný. Složité dashboardy, mapy nebo vrstvené karty zachovejte vizuálně, pokud by je rekonstrukce zkreslila. Zkontrolujte přechody, aby nadpisy a popisky stále vysvětlovaly následující obsah.
+
+Nepředpokládejte, že smíšený výsledek bez nákladů spojuje všechny výhody. Snímková náhrada může obsahovat neprohledávatelný text, zatímco upravitelný oddíl může zjednodušit rozestupy nebo typografii. Pokud tyto hranice ovlivňují použití, uveďte je při předání.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: vyberte výsledek odpovídající skutečnému úkolu čtenáře."}
+  caption={"Vyberte výsledek odpovídající skutečnému úkolu čtenáře."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: vyberte výsledek odpovídající skutečnému úkolu čtenáře."}
+  src="/blog/instructions/visual-vs-editable/05.svg"
+  step={5}
+/>
+
+## PDF a PowerPoint kontrolujte odlišně
+
+U PDF testujte pořadí stran, vyhledávání, označování, důležité odkazy a čitelnost při běžném zvětšení. Ověřte, zda pevné hranice neoddělují důkaz od nadpisu nebo popisku. U PowerPointu otevřete prezentaci v kompatibilním editoru a zkontrolujte názvy slidů, polohy objektů, přetečení textu a skutečně upravitelné prvky.
+
+Snímek na slidu je vizuálně stabilní, ale často obsahuje text prohlížeče příliš malý pro projekci. Upravitelný slide lze přizpůsobit publiku, složitá komponenta však může být seskupena nebo rasterizována. Posuzujte prezentaci při velikosti promítání, ne pouze při 100% zvětšení v editoru.
+
+V každém formátu považujte náhled za schvalovací krok. Data náhledu Page 2 File jsou dočasná a po zavření karty se odstraní; databáze historie konverzí neexistuje. Uchovejte schválený stažený soubor a záznam kontroly požadovaný vaším postupem.
+
+[Průvodce výstupy webových stránek](/cs/blog/website-types-to-pdf-or-powerpoint) aplikuje volbu režimu na běžné kategorie zdrojů.

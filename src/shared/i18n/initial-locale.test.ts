@@ -46,13 +46,43 @@ describe("resolveInitialLocale", (): void => {
         acceptLanguage: "de-DE,ru-RU;q=0.8,en-US;q=0.5",
         countryCode: "DE",
       }),
-    ).toBe("ru");
+    ).toBe("de");
     expect(
       resolveInitialLocale({
         acceptLanguage: "fr-FR,en-GB;q=0.8,ru;q=0.5",
         countryCode: "FR",
       }),
-    ).toBe("en");
+    ).toBe("fr");
+  });
+
+  test("recognizes every supported locale from Accept-Language", (): void => {
+    const localeTags = {
+      cs: "cs-CZ",
+      da: "da-DK",
+      de: "de-DE",
+      en: "en-US",
+      es: "es-ES",
+      fi: "fi-FI",
+      fr: "fr-FR",
+      hu: "hu-HU",
+      it: "it-IT",
+      nl: "nl-NL",
+      no: "no-NO",
+      pl: "pl-PL",
+      pt: "pt-PT",
+      ro: "ro-RO",
+      ru: "ru-RU",
+      sv: "sv-SE",
+    } as const;
+
+    for (const [locale, languageTag] of Object.entries(localeTags)) {
+      expect(
+        resolveInitialLocale({
+          acceptLanguage: `${languageTag},en;q=0.5`,
+          countryCode: "XX",
+        }),
+      ).toBe(locale);
+    }
   });
 
   test("ignores wildcard, zero-weight and invalid quality values", (): void => {
@@ -74,7 +104,7 @@ describe("resolveInitialLocale", (): void => {
     expect(resolveInitialLocale({})).toBe("en");
     expect(
       resolveInitialLocale({
-        acceptLanguage: "de-DE,*;q=0.5",
+        acceptLanguage: "ja-JP,*;q=0.5",
         countryCode: "not-a-country",
       }),
     ).toBe("en");

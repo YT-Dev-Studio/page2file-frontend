@@ -6,6 +6,7 @@ import type { KeyboardEvent, ReactNode } from "react";
 import { useRef, useState } from "react";
 import type { Locale } from "@/shared/i18n/locales";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
+import { getExtensionActionLabel } from "@/shared/routes/extension-link";
 import { ExternalCta } from "@/shared/ui/external-cta";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
@@ -118,11 +119,10 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
           <ExternalCta
             externalLinkKey="chromeExtension"
             label={siteCopy.header.extensionAction}
-            placeholderLabel={
-              locale === "ru"
-                ? "Каталог расширений Chrome"
-                : "Browse Chrome extensions"
-            }
+            placeholderLabel={getExtensionActionLabel(
+              locale,
+              siteCopy.header.extensionAction,
+            )}
           />
         </PublicHero>
         <div

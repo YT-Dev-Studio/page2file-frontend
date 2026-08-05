@@ -38,4 +38,18 @@ describe("root locale route", (): void => {
       "https://page2file.test/en",
     );
   });
+
+  test("redirects to any supported browser locale", (): void => {
+    const response = GET(
+      createRequest({
+        "accept-language": "hu-HU,es;q=0.8,en;q=0.5",
+        "cf-ipcountry": "HU",
+      }),
+    );
+
+    expect(response.status).toBe(307);
+    expect(response.headers.get("location")).toBe(
+      "https://page2file.test/hu",
+    );
+  });
 });

@@ -1,0 +1,126 @@
+Konwersja zrzutowa zachowuje wyrenderowany wygląd strony, a konwersja edytowalna zachowuje obsługiwaną treść jako obiekty dokumentu. Właściwy wybór zależy od tego, co odbiorca musi zrobić po pobraniu pliku.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: otwórz stronę z warstwowym układem, typografią, obrazami i wezwaniami do działania."}
+  caption={"Otwórz stronę z warstwowym układem, typografią, obrazami i wezwaniami do działania."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: otwórz stronę z warstwowym układem, typografią, obrazami i wezwaniami do działania."}
+  src="/blog/instructions/visual-vs-editable/01.svg"
+  step={1}
+/>
+
+Oba tryby są dostępne w [konwerterze PDF](/pl/convert-webpage-to-pdf) i [konwerterze PowerPoint](/pl/convert-webpage-to-powerpoint) Page 2 File. Podgląd pokazuje kompromis przed wyrenderowaniem finalnego pliku.
+
+## Tryb zrzutów zachowuje kompozycję
+
+Wynik zrzutowy zapisuje sekcje tak, jak wyglądają w przeglądarce. Nadaje się do stron kampanii, dashboardów, wzorców projektowych, paragonów i rozmów, w których odstępy, kolor i grupowanie niosą informacje.
+
+Kosztem jest edytowalność. Tekst w przechwyconej sekcji zachowuje się jak treść obrazu, chyba że dodano osobne warstwy tekstu lub linków. Wideo staje się statycznym obrazem, a animacja nie pozostanie animowana w zwykłym PDF.
+
+## Tryb edytowalny zachowuje strukturę dokumentu
+
+Wynik edytowalny odwzorowuje obsługiwane nagłówki, akapity, listy, obrazy, kształty i linki jako elementy PDF lub PowerPoint. Czytelnicy mogą wyszukiwać tekst, korzystać z bezpiecznych linków i poprawiać obsługiwaną treść prezentacji.
+
+Układ przeglądarki jest bardziej ekspresyjny niż format dokumentu. Złożony CSS, canvas, filtry SVG i interaktywne widżety mogą zostać uproszczone lub zrasteryzowane. „Edytowalny” powinien oznaczać użyteczne obiekty dokumentu, a nie obietnicę rekonstrukcji piksel w piksel.
+
+## Dopasuj tryb do źródła
+
+Użyj Accurate copy (wynik w stylu zrzutu) dla portfolio, strony produktu, migawki dashboardu lub archiwum czatu z oryginalnym wyglądem. Użyj Editable document (wynik edytowalny) dla artykułu, dokumentacji, notatki badawczej lub prezentacji, którą współpracownik musi aktualizować.
+
+W przypadku linków PDF przeczytaj [jak zachowywane są klikalne linki](/pl/blog/preserve-clickable-links). Dla slajdów porównaj [zrzutowy i edytowalny PowerPoint](/pl/blog/screenshot-vs-editable-powerpoint).
+
+## Sprawdź zamienniki
+
+Podgląd powinien wskazywać zastąpione fonty, zrasteryzowane obszary, usunięte niebezpieczne cele i granice stron lub slajdów. Dokładnie obejrzyj tabele, kod, wykresy i warstwowe projekty. Zamiennik jest akceptowalny, jeśli jest widoczny, a dokument nadal spełnia cel.
+
+Dla długich źródeł wybór trybu współdziała z paginacją. [Przewodnik po długich stronach](/pl/blog/long-webpage-page-breaks) pokazuje, jak sprawdzać sekcje przekraczające stałe strony PDF.
+
+## Prosta zasada
+
+Wybierz Accurate copy, gdy sama strona jest zapisem. Wybierz Editable document, gdy informacja ma nadal działać poza przeglądarką. Jeśli żaden tryb nie spełnia wymagania, zachowaj oryginalną stronę albo użyj dedykowanego eksportu platformy źródłowej.
+
+## Oceń źródło według typów komponentów
+
+Zacznij od elementów, których utrata byłaby najdroższa. Standardowe nagłówki, akapity, obrazy i linki zwykle przemawiają za wynikiem edytowalnym. Złożone wykresy, mapy, canvasy, niestandardowe diagramy i mocno warstwowe układy sprzyjają reprezentacji wizualnej. Strona zawierająca oba typy może wymagać edytowalnej struktury z obrazowymi zamiennikami trudnych komponentów.
+
+Tabele leżą między tymi kategoriami. Zwykła tabela może pozostać przeszukiwalna i użyteczna jako treść dokumentu. Wirtualizowana siatka z przypiętymi kolumnami, kontrolkami i formatowaniem warunkowym może być czytelniejsza jako sekcja zrzutu. Zdecyduj, czy czytelnik ma analizować wartości, zachować widoczny stan, czy potrzebuje obu rzeczy.
+
+Interaktywne kontrolki nie pozostaną interaktywne w zwykłym PDF ani prezentacji. Można zapisać wybrany filtr, ale odbiorca nie zmieni go i nie wygeneruje wykresu ponownie. Zachowaj etykiety wyjaśniające wybrany stan, aby statyczny wynik nie został pomylony z żywym dashboardem.
+
+## Uwzględnij format docelowy
+
+Czytelnicy PDF oczekują stabilnej paginacji, przeszukiwalnego tekstu i niezawodnych linków. Editable document wspiera te cele dla źródeł dokumentowych, a Accurate copy daje mocniejszy zapis układu. Raport mieszany może używać sekcji zrzutowych dla wykresów i edytowalnych dla narracji.
+
+PowerPoint zmienia priorytety. Zrzut na slajdzie szybko zachowuje sekcję strony, ale trudniej go ostylować i może zawierać drobny tekst przeglądarki. Slajdy edytowalne umożliwiają zmianę tekstu i obsługiwanych obiektów, lecz złożone detale mogą być pogrupowane lub zastąpione obrazem. Najlepsza prezentacja nie musi być najbardziej dosłowną kopią strony.
+
+Znaczenie ma też dystrybucja. Jeśli odbiorcy tylko przeglądają lub archiwizują wynik, zgodność wizualna może wystarczyć. Jeśli mają cytować, tłumaczyć, zmieniać branding lub ponownie używać elementów, struktura edytowalna jest cenniejsza. Zdecyduj o tym przed konwersją.
+
+## Uczciwie sprawdź zamienniki w trybie mieszanym
+
+Konwersja edytowalna nie zmienia każdego piksela w natywny obiekt. Nieobsługiwane lub niejednoznaczne elementy mogą pozostać obrazami, aby nie zniszczyć wyglądu. Sprawdź je i upewnij się, że nie zawierają tekstu, który odbiorca musi edytować.
+
+Accurate copy także ma ograniczenia. Mały tekst po przeskalowaniu może być trudny do odczytania, a linki w przechwyconym obrazie nie stają się automatycznie interaktywnymi adnotacjami. Sprawdź ważne cele i wybierz granice sekcji zachowujące czytelność.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wybierz Accurate copy, aby zachować wyrenderowaną kompozycję."}
+  caption={"Wybierz Accurate copy, aby zachować wyrenderowaną kompozycję."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz Accurate copy, aby zachować wyrenderowaną kompozycję."}
+  src="/blog/instructions/visual-vs-editable/02.svg"
+  step={2}
+/>
+
+Udokumentuj wybrany tryb, gdy plik trafia do wspólnego procesu. Notatka „układ zachowany; wykres jest statycznym obrazem” albo „tekst jest edytowalny; złożone widżety są zrzutami” zapobiega błędnym założeniom późniejszych użytkowników.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wybierz Editable document, gdy obsługiwana treść musi być zaznaczana lub poprawiana."}
+  caption={"Wybierz Editable document, gdy obsługiwana treść musi być zaznaczana lub poprawiana."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz Editable document, gdy obsługiwana treść musi być zaznaczana lub poprawiana."}
+  src="/blog/instructions/visual-vs-editable/03.svg"
+  step={3}
+/>
+
+## Zdecyduj na podstawie następnego działania odbiorcy
+
+Zacznij od zadania po konwersji. Jeśli odbiorca ma archiwizować dowód tego, co było widoczne w przeglądarce, zwykle najważniejsze są kompozycja i stan. Jeśli musi wyszukiwać, cytować, tłumaczyć lub zmieniać styl, ważniejsza jest struktura dokumentu. Plik może wyglądać efektownie, a mimo to nie spełniać celu przekazania.
+
+Zapytaj, co musi pozostać dokładne. Dla paragonu zapisem mogą być kwoty, daty i grupowanie wizualne. Dla artykułu badawczego liczą się cytaty, źródła i kolejność czytania. W prezentacji nagłówki mogą wymagać edycji, a złożony wykres pozostać statyczny. Taka decyzja na poziomie komponentu jest użyteczniejsza niż wybór wyłącznie według kategorii źródła.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: porównaj zgodność wizualną, zaznaczalny tekst, linki i złożone zamienniki."}
+  caption={"Porównaj zgodność wizualną, zaznaczalny tekst, linki i złożone zamienniki."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: porównaj zgodność wizualną, zaznaczalny tekst, linki i złożone zamienniki."}
+  src="/blog/instructions/visual-vs-editable/04.svg"
+  step={4}
+/>
+
+Zdecyduj także, co może się zmieniać. Wynik edytowalny ułatwia poprawki, co jest dobre dla roboczej prezentacji, lecz niewłaściwe dla zapisu archiwalnego. Zrzut zachowuje wygląd, ale nie dowodzi autentyczności ani nie zapobiega edycji obrazu. Do tych celów użyj kontroli organizacyjnych i zapisów pochodzenia, a nie samego trybu pliku.
+
+## Zastosuj kontrolę treści mieszanej
+
+Zacznij od konspektu i oznacz ważne komponenty jako tekst, link, obraz, tabela, wykres lub stan interaktywny. W podglądzie edytowalnym sprawdź kolejność czytania, zaznaczanie i cele linków, a następnie znajdź wszystkie rastrowe zamienniki. W podglądzie zrzutowym sprawdź skalę, ostrość i to, czy ważne działania potrzebują osobnego kontekstu.
+
+W raporcie mieszanym pozostaw narrację i zwykłe tabele edytowalne, jeśli wynik jest spójny. Złożone dashboardy, mapy i warstwowe karty zachowaj wizualnie, gdy ich odtwarzanie zniekształciłoby treść. Sprawdź przejścia, aby nagłówki i podpisy nadal objaśniały kolejne sekcje.
+
+Nie zakładaj, że wynik mieszany łączy wszystkie zalety bez kosztu. Zamiennik zrzutowy może zawierać nieprzeszukiwalny tekst, a sekcja edytowalna uprościć odstępy lub typografię. Opisz te granice przy przekazaniu, jeśli wpływają na sposób użycia pliku.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wybierz wynik odpowiadający rzeczywistemu zadaniu czytelnika."}
+  caption={"Wybierz wynik odpowiadający rzeczywistemu zadaniu czytelnika."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz wynik odpowiadający rzeczywistemu zadaniu czytelnika."}
+  src="/blog/instructions/visual-vs-editable/05.svg"
+  step={5}
+/>
+
+## Sprawdzaj PDF i PowerPoint inaczej
+
+Dla PDF testuj kolejność stron, wyszukiwanie, zaznaczanie, ważne linki i czytelność przy normalnym powiększeniu. Sprawdź, czy stałe granice nie oddzielają dowodu od nagłówka lub podpisu. Dla PowerPoint otwórz prezentację w zgodnym edytorze i skontroluj tytuły slajdów, pozycje obiektów, przepełnienie tekstu i rzeczywistą edytowalność.
+
+Zrzut na slajdzie jest wizualnie stabilny, ale często zawiera tekst przeglądarki zbyt mały do projekcji. Slajd edytowalny można dostosować do odbiorców, jednak złożony komponent może być pogrupowany lub zrasteryzowany. Oceniaj prezentację w rozmiarze projekcji, nie tylko przy 100% w edytorze.
+
+Niezależnie od formatu traktuj podgląd jako etap zatwierdzenia. Dane podglądu Page 2 File są tymczasowe i usuwane po zamknięciu karty; nie istnieje baza historii konwersji. Zachowaj zatwierdzony pobrany plik oraz wymagany zapis kontroli.
+
+[Przewodnik po wynikach witryn](/pl/blog/website-types-to-pdf-or-powerpoint) stosuje wybór trybu do typowych kategorii źródeł.

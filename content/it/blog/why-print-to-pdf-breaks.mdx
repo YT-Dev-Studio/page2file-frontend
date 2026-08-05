@@ -1,0 +1,143 @@
+Stampa in PDF del browser e conversione da URL a PDF partono da versioni diverse di una pagina. La stampa usa il foglio di stile di stampa del sito, quando esiste. Un convertitore può partire dal layout renderizzato sullo schermo e dividerlo in sezioni controllabili. Nessun metodo è automaticamente migliore: decidono la pagina e il documento desiderato.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: apra l'anteprima di stampa del browser e annoti le aree del dashboard che scompaiono."}
+  caption={"Apra l'anteprima di stampa del browser e annoti le aree del dashboard che scompaiono."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: apra l'anteprima di stampa del browser e annoti le aree del dashboard che scompaiono."}
+  src="/blog/instructions/why-print-to-pdf-breaks/01.svg"
+  step={1}
+/>
+
+Utilizzi il [convertitore PDF di Page 2 File](/it/convert-webpage-to-pdf) quando le servono un'anteprima e una scelta intenzionale tra acquisizioni e output modificabile. Usi la stampa del browser quando l'editore ha preparato una vista di stampa pulita e le basta una copia rapida.
+
+## Perché il risultato di stampa può non assomigliare allo schermo
+
+Il CSS può assegnare regole diverse a schermo e stampa. Un foglio di stile di stampa può rimuovere navigazione e annunci, ma anche eliminare sfondi, cambiare colonne, sostituire caratteri o nascondere pannelli interattivi. Gli elementi fissi possono ripetersi su più pagine. Un grafico disegnato su canvas può diventare un'area vuota se il processo di stampa non ne acquisisce i pixel.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: confronti il risultato di stampa con lo schermo e individui grafici e sfondi mancanti."}
+  caption={"Confronti il risultato di stampa con lo schermo e individui grafici e sfondi mancanti."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: confronti il risultato di stampa con lo schermo e individui grafici e sfondi mancanti."}
+  src="/blog/instructions/why-print-to-pdf-breaks/02.svg"
+  step={2}
+/>
+
+I contenuti multimediali a caricamento differito creano un'altra differenza. La stampa parte dallo stato corrente del documento; il contenuto che non è mai entrato nell'area visibile potrebbe non esistere in quello stato. Le interfacce virtualizzate di chat e dashboard possono rimuovere dal DOM le righe precedenti durante lo scorrimento, perciò un comando di stampa non può recuperarle.
+
+## Cosa cambia la conversione da URL
+
+Un convertitore di URL pubblico carica l'indirizzo in un browser controllato e prepara il risultato renderizzato per il PDF. Non eredita la sessione personale, quindi non può vedere un dashboard privato o una pagina dietro accesso. Questo confine protegge le credenziali ma rende il metodo inadatto al materiale autenticato.
+
+Per una scheda privata, l'[estensione Page 2 File](/it/chrome-extension/how-to-use) acquisisce la pagina aperta dopo un'azione esplicita. Non chiede la password dell'account. Si assicuri che pannelli e messaggi necessari siano visibili prima dell'acquisizione.
+
+## Confronti i file, non le etichette dei pulsanti
+
+Controlli se il testo è selezionabile, i link restano utili, gli sfondi trasmettono informazioni e le interruzioni rispettano i titoli. Un'esportazione come acquisizioni conserva generalmente più fedelmente un layout difficile. Un'esportazione modificabile rende il contenuto supportato più facile da cercare e rivedere, ma può rasterizzare elementi complessi.
+
+La guida alle [acquisizioni rispetto all'output modificabile](/it/blog/visual-vs-editable) spiega questo compromesso. Per fonti molto alte, consulti anche la [guida all'acquisizione della pagina completa](/it/blog/capture-full-webpage-as-pdf) prima di scegliere un metodo.
+
+## Una decisione pratica
+
+Scelga la stampa del browser per un articolo semplice con un buon foglio di stile. Scelga la conversione URL come acquisizioni quando conta l'aspetto, o quella modificabile quando il contenuto deve restare ricercabile e collegato. Scelga l'acquisizione della scheda attiva quando la fonte è privata, personalizzata o disponibile solo dopo un'interazione.
+
+L'anteprima resta la prova decisiva. Se manca un blocco importante, non presuma che ricompaia nel PDF finale.
+
+## Esegua un confronto controllato
+
+Confronti entrambi i metodi partendo dallo stesso stato del browser. Imposti le stesse dimensioni, filtri, pannelli espansi e posizione di scorrimento prima di creare i file. Altrimenti il confronto misura due fonti diverse, non due metodi. Registri se la pagina aveva terminato di caricare immagini, caratteri Web e grafici.
+
+Inizi dall'anteprima di stampa. Annoti quali elementi di navigazione, sfondi, pannelli interattivi ed elementi fissi scompaiono. Non è automaticamente un difetto: un foglio di stile ben progettato può rimuovere il superfluo e produrre la copia di lettura più pulita. La domanda è se abbia rimosso qualcosa di necessario allo scopo.
+
+Esamini poi l'anteprima di Page 2 File nella modalità adatta al compito. Accurate copy (output come acquisizioni) va giudicato per somiglianza e leggibilità. Editable document (output modificabile) va giudicato per ordine di lettura, selezione del testo, comportamento dei link e qualità delle alternative per componenti complessi. Il solo confronto delle dimensioni dei file dice poco sulla loro utilità.
+
+## Diagnostichi le differenze comuni
+
+Colori o immagini mancanti derivano spesso da CSS specifico per la stampa, impostazioni del browser per la grafica di sfondo o componenti renderizzati diversamente per il supporto di stampa. I pannelli troncati compaiono spesso quando un contenitore di scorrimento ha altezza fissa o il contenuto virtualizzato non è mai entrato nella pagina renderizzata. Gli spazi vuoti possono provenire da intestazioni fisse, slot pubblicitari riservati o regole che forzano un'interruzione.
+
+Le tabelle mostrano un'altra differenza. Un foglio di stile può ripetere correttamente le intestazioni, ridurre la tabella fino a rendere il testo illeggibile o tagliare colonne fuori dalla larghezza stampabile. Un'acquisizione può conservare la tabella visualizzata ma non fa adattare naturalmente un layout largo a una pagina verticale. La conversione modificabile può ricostruire righe e celle standard e usare un'immagine alternativa per griglie insolite.
+
+I link meritano un controllo a parte. I PDF generati dal browser possono mantenere gli anchor standard, ma un URL visibile disegnato su canvas o fornito da uno script potrebbe non diventare interattivo. Page 2 File Editable document mantiene gli anchor supportati; Accurate copy privilegia l'aspetto. Provi le destinazioni invece di presumere che il testo blu sottolineato sia cliccabile.
+
+## Scelga in base alle prove e al costo di manutenzione
+
+Per un articolo occasionale con una buona vista di stampa, la stampa del browser spesso basta. Per dashboard, applicazioni autenticate, pagine dinamiche lunghe o flussi orientati alla presentazione, i controlli di acquisizione e anteprima possono contare più delle convenzioni di stampa. Nessun metodo deve essere considerato universalmente superiore.
+
+Se la stessa fonte viene esportata regolarmente, annoti i passaggi di preparazione e i controlli di accettazione. Una procedura stabile vale più della scelta ripetuta per intuito. La ricontrolli quando il sito modifica layout, autenticazione o virtualizzazione.
+
+Video, animazioni, stati hover e controlli live non possono restare interattivi in un PDF normale. Il risultato difendibile è un record leggibile di uno stato definito della pagina con compromessi noti.
+
+## Separi le impostazioni di stampa dai problemi della fonte
+
+Alcuni difetti si correggono nella finestra di stampa del browser. Formato carta, orientamento, margini, scala e impostazioni della grafica di sfondo possono cambiare molto il risultato. Provi questi controlli quando il contenuto è presente ma adattato male. Non possono ripristinare un pannello rimosso dal foglio di stile o messaggi che un'interfaccia virtualizzata non ha mai renderizzato.
+
+Intestazioni e piè di pagina aggiunti dal browser sono un'altra scelta specifica. Possono fornire URL e data, ma anche rivelare un indirizzo privato o spingere contenuto su una pagina in più. Li controlli intenzionalmente invece di accettare i valori predefiniti. Un convertitore URL usa un modello diverso di anteprima e sezioni, quindi confronti i metadati reali in ciascun file.
+
+Non tratti un formato pagina più grande come soluzione universale. L'orientamento orizzontale può aiutare una tabella larga ma rende un articolo stretto più difficile da leggere. Una scala aggressiva può evitare il taglio ma rendere illeggibili etichette e note. Le condizioni di visualizzazione previste contano più del numero minimo di fogli.
+
+## Decida con una matrice fonte-attività
+
+Per un articolo progettato dall'editore, la stampa del browser è un primo test ragionevole perché il foglio di stile può già rimuovere la navigazione e formattare le citazioni. Per una pagina marketing o un riferimento di design, la conversione come acquisizioni è solitamente più adatta perché la composizione dello schermo ha significato. Per documentazione e note di ricerca, la conversione modificabile merita il primo test perché contano ricerca, selezione e link.
+
+Dashboard e chat richiedono una domanda diversa: lo stato necessario è davvero renderizzato? Se la risposta è no, né la stampa né la conversione da URL possono ricostruirlo. Carichi l'intervallo autorizzato, stabilizzi i filtri e usi l'acquisizione della scheda attiva quando lo stato dipende da una sessione autenticata. Non si deve mai pretendere che un processo URL pubblico erediti quella sessione.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: usi By URL per la stessa pagina pubblica quando non è richiesto uno stato autenticato."}
+  caption={"Usi By URL per la stessa pagina pubblica quando non è richiesto uno stato autenticato."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: usi By URL per la stessa pagina pubblica quando non è richiesto uno stato autenticato."}
+  src="/blog/instructions/why-print-to-pdf-breaks/03.svg"
+  step={3}
+/>
+
+Quando l'output diventerà una presentazione, il PDF potrebbe non essere il punto finale giusto. Un [flusso da pagina Web a PowerPoint](/it/blog/webpage-to-powerpoint) permette di scegliere tra diapositive orientate all'aspetto ed elementi modificabili supportati invece di riconvertire un PDF.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: scelga Accurate copy quando la composizione mostrata costituisce la prova."}
+  caption={"Scelga Accurate copy quando la composizione mostrata costituisce la prova."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: scelga Accurate copy quando la composizione mostrata costituisce la prova."}
+  src="/blog/instructions/why-print-to-pdf-breaks/04.svg"
+  step={4}
+/>
+
+## Registri un confronto difendibile
+
+Per esportazioni ricorrenti, conservi un breve record di test: URL di origine, stato del browser, data, impostazioni di stampa, modalità Page 2 File e difetti trovati in ogni risultato. Le immagini delle due anteprime possono spiegare perché è stato scelto un metodo, ma non devono sostituire il controllo del PDF finale.
+
+Valuti entrambi i file con gli stessi criteri:
+
+- tutto il contenuto richiesto compare una volta e nell'ordine corretto;
+- testo, etichette dei grafici e codice sono leggibili con zoom normale;
+- i link importanti funzionano e non espongono destinazioni sensibili;
+- titoli, didascalie e contesto delle tabelle superano i confini di pagina;
+- dati privati di account o spazi di lavoro sono assenti, salvo quando necessari.
+
+Un metodo supera il test quando produce il documento necessario per questa fonte e attività. Se entrambi falliscono, restringa l'acquisizione, cambi lo stato della pagina o usi l'esportazione specifica della piattaforma. Ripetere lo stesso comando su una pagina instabile non è una strategia di riparazione.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: scelga Editable document quando contano ordine di lettura, selezione e link."}
+  caption={"Scelga Editable document quando contano ordine di lettura, selezione e link."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: scelga Editable document quando contano ordine di lettura, selezione e link."}
+  src="/blog/instructions/why-print-to-pdf-breaks/05.svg"
+  step={5}
+/>
+
+## Ricontrolli dopo le modifiche del sito
+
+Il comportamento di stampa e acquisizione può cambiare quando un sito aggiorna CSS, libreria dei grafici, livello del consenso o regole di virtualizzazione. Una procedura valida il mese scorso è una prova su quella versione della pagina, non una garanzia permanente. Ripeta controlli rappresentativi dopo un redesign e prima di una distribuzione ad alto impatto.
+
+Questo aspetto di manutenzione è particolarmente importante per le routine che sembrano automatiche. Page 2 File fornisce un'anteprima perché lo stato della pagina richiede ancora revisione umana. L'anteprima può mostrare sezioni mancanti e confini scomodi; non può decidere se il documento sia completo per il suo scopo legale, archivistico o operativo.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: confronti entrambe le anteprime Page 2 File con la stampa del browser prima di decidere."}
+  caption={"Confronti entrambe le anteprime Page 2 File con la stampa del browser prima di decidere."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: confronti entrambe le anteprime Page 2 File con la stampa del browser prima di decidere."}
+  src="/blog/instructions/why-print-to-pdf-breaks/06.svg"
+  step={6}
+/>
+
+Utilizzi la [guida agli output per siti Web](/it/blog/website-types-to-pdf-or-powerpoint) quando il tipo di fonte, e non soltanto il comportamento di stampa, deve guidare la decisione.

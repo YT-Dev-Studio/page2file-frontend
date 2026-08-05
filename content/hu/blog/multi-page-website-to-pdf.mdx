@@ -1,0 +1,143 @@
+A többoldalas webhelyet korlátozott gyűjteményként kell konvertálni, nem korlátlan bejárásként. A [Web 2 PDF GPT-alkalmazás](/hu/web2pdf-gpt) elérhető oldalakat talál a célwebhelyen, minden kiválasztott nyilvános URL-t elküld konvertálásra, és több PDF-fájlt ad vissza letöltésre.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Készítsen korlátozott leltárt a feladathoz tartozó webhelyoldalakról."}
+  caption={"Készítsen korlátozott leltárt a feladathoz tartozó webhelyoldalakról."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Készítsen korlátozott leltárt a feladathoz tartozó webhelyoldalakról."}
+  src="/blog/instructions/multi-page-website-to-pdf/01.svg"
+  step={1}
+/>
+
+Nem egyesíti észrevétlenül a teljes webet egy dokumentummá. Minden oldal megtartja saját forráshatárát és kimeneti fájlját, így könnyebb ellenőrizni a hibákat és engedélyeket.
+
+## Határozza meg a webhely határát
+
+Kezdje a gazdagéppel és a gyűjteményhez tartozó szakasszal. Döntse el, hogy a nyelvi változatokat, archívumokat, keresési eredményeket, címkeoldalakat és lekérdezésikarakterlánc-duplikátumokat fel kell-e venni. A külső tartományok hivatkozások maradnak, nem válnak új bejárási célokká.
+
+A webhelytérkép oldalakat javasolhat, de nem bizonyítja, hogy minden URL az exportba tartozik. Távolítsa el az adminisztrátori útvonalakat, fiókoldalakat, duplikált szűrőket és mindent, amelynek reprodukálására nincs engedélye.
+
+## Kimeneti feladatonként egy oldalt tartson
+
+A külön PDF-fájlok megőrzik az oldalszintű címeket, és világossá teszik, mely URL hibázott vagy irányított át. Azt is megakadályozzák, hogy egy hibás oldal érvénytelenítse az egyébként hasznos webhelyexportot.
+
+Ha a címzettnek egyetlen csomagra van szüksége, töltse le az ellenőrzött PDF-eket, és megfelelő dokumentumeszközzel egyesítse vagy archiválja őket. Maga a Web 2 PDF több fájlt ad vissza, nem állítja, hogy egyetlen tökéletes, egyesített webhelydokumentumot készít.
+
+## Számítson oldalak közötti eltérésekre
+
+Egy webhely cikk-sablonokat, termékrácsokat, irányítópultokat és beágyazott médiát keverhet. A gyűjtemény célja alapján válasszon képernyőképszerű vagy szerkeszthető kimenetet, és vizsgálja meg a betűtípus-, kép- és hivatkozásfigyelmeztetéseket. A [webhelytípusok útmutatója](/hu/blog/website-types-to-pdf-or-powerpoint) segít e források besorolásában.
+
+A hitelesített területeket nyilvános bejárás nem fedezheti fel. Az engedélyezett bejelentkezett oldalakat a [bővítménnyel](/hu/chrome-extension/how-to-use), aktív laponként rögzítse.
+
+## Terjesztés előtt ellenőrizzen
+
+Ellenőrizze az URL-listát, címeket, ismétlődő oldalakat, átirányításokat, valamint minden PDF első és utolsó oldalát. Egyedi hosszú forrásoknál alkalmazza az [oldaltörési ellenőrzést](/hu/blog/long-webpage-page-breaks).
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Nyissa meg az első jóváhagyott oldalt a By URL lehetőséggel."}
+  caption={"Nyissa meg az első jóváhagyott oldalt a By URL lehetőséggel."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Nyissa meg az első jóváhagyott oldalt a By URL lehetőséggel."}
+  src="/blog/instructions/multi-page-website-to-pdf/02.svg"
+  step={2}
+/>
+
+A teljes webhelyes export közzétett anyag másolata. Tartsa tiszteletben a robots-útmutatást, a forrás feltételeit, a szerzői jogot és a kérési korlátokat, és ne használja hozzáférési ellenőrzések megkerülésére.
+
+## Készítsen egyértelmű oldalleltárt
+
+Kezdje a jelölt URL-ek listájával és azzal, miért tartozik az egyes oldal a gyűjteményhez. A navigáció, webhelytérképek és belső hivatkozások segíthetnek a nyilvános oldalak felfedezésében, de a felfedezés nem bizonyítja, hogy minden URL-t exportálni kell. Zárja ki a duplikált nyomtatási nézeteket, követési változatokat, keresési eredményeket és a kívánt szakaszon kívüli oldalakat.
+
+Konvertálás előtt normalizálja a nyilvánvaló változatokat. A záró perjel, töredék vagy kampányparaméter ugyanarra a tartalomra mutathat, miközben külön oldalnak látszik. A nyelvi és regionális változatokat csak akkor tartsa meg, ha szándékosan részei a gyűjteménynek.
+
+Jegyezze fel a bejelentkezést, hozzájárulást vagy felhasználói műveletet igénylő oldalakat. A Web 2 PDF elérhető nyilvános oldalakkal dolgozik; nem kerüli meg a hozzáférési ellenőrzéseket. Az engedélyezett privát oldalakat külön munkafolyamatban, aktív böngészőlapjukról rögzítse.
+
+## Tartsa navigálhatónak a gyűjteményt
+
+Mivel az eredmény oldalanként egy PDF, fontosak a fájlnevek és az egyszerű index. Használjon stabil elnevezési mintát, amely azonosítja a forrásszakaszt és az oldal címét. Ne támaszkodjon a letöltési sorrendre, amely megváltozhat, amikor az oldalak eltérő időpontban készülnek el.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Válassza a PDF-et és egy következetes kimeneti szabályt."}
+  caption={"Válassza a PDF-et és egy következetes kimeneti szabályt."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Válassza a PDF-et és egy következetes kimeneti szabályt."}
+  src="/blog/instructions/multi-page-website-to-pdf/03.svg"
+  step={3}
+/>
+
+Az index tartalmazhatja az eredeti URL-t, a rögzítés dátumát, a kimeneti fájlnevet és az ellenőrzési állapotot. Ez térképet ad a címzettnek anélkül, hogy a külön fájlokat egyesített könyvként mutatná be. Ha egyesített kiadvány kell, csak az egyes PDF-ek ellenőrzése után egyesítsen, és dokumentálja az új olvasási sorrendet.
+
+Őrizze meg az oldalszintű származást. Egy webhely frissíthet egy oldalt a többi módosítása nélkül, ezért a különböző dátumokon összeállított gyűjteménynek ezt jeleznie kell. A teljes webhely újbóli futtatása szükségtelen lehet, ha csak kis részhalmaz változott.
+
+## Vizsgálja meg a mintákat és kivételeket
+
+Ellenőrizzen reprezentatív oldalakat minden sablonból: kezdőlapot, cikket, dokumentációs oldalt, termékoldalt és minden szokatlan elrendezést. A sablonszintű hibák, például a levágott navigáció vagy hiányzó betűtípus, valószínűleg ismétlődnek, és minden fájl ellenőrzése előtt javítandók.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Ismételje meg ugyanazt az egyoldalas konverziót minden jóváhagyott címnél."}
+  caption={"Ismételje meg ugyanazt az egyoldalas konverziót minden jóváhagyott címnél."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Ismételje meg ugyanazt az egyoldalas konverziót minden jóváhagyott címnél."}
+  src="/blog/instructions/multi-page-website-to-pdf/04.svg"
+  step={4}
+/>
+
+Ezután vizsgálja meg az oldalspecifikus kockázatokat. Hosszú táblázatok, képgalériák, beágyazott diagramok és rövid átirányítási oldalak akkor is hibázhatnak, ha a sablon helyesnek tűnik. Győződjön meg arról, hogy minden PDF a várt címmel rendelkezik, a kívánt tartalomnál kezdődik, és nem tartalmaz hitelesítési hibát vagy sütifalat.
+
+Végül egyeztesse az eredményt: az elfogadott fájlok számának meg kell egyeznie az ellenőrzött URL-leltárral, minden kizáráshoz pedig okot kell rendelni. Így egy kényelmes letöltési mappa nem téveszthető össze teljes webhelyarchívummal.
+
+## Felfedezési módszert válasszon bejárás ígérete nélkül
+
+Induljon a webhely látható navigációjából, bejelentett webhelytérképéből és a kért szakaszhoz tartozó belső hivatkozásokból. Ezek felfedezési jelek, nem utasítások minden URL korlátlan követésére. A naptárak, fazettás szűrők és létrehozott keresési oldalak gyakorlatilag korlátlan címteret képezhetnek.
+
+Felfedezés előtt állítson fel egyértelmű szabályokat: engedélyezett gazdagép, útvonalelőtag, nyelv, a feladathoz egyeztetett maximális hatókör és a lekérdezési paraméterek kezelése. Álljon meg, ha egy jelölt kívül esik e szabályokon. A Web 2 PDF elérhető oldalak megtalálásaként és külön fájlok létrehozásaként van leírva; nem szabad bejáró API-ként vagy strukturáltadat-kinyerőként bemutatni.
+
+Egyes oldalak csak JavaScript-navigációval érhetők el, egyes webhelytérkép-bejegyzések pedig már nem működnek. Állapottal együtt jegyezze fel őket felfedezésként, majd döntse el, hogy odatartoznak-e. Ne helyettesítse észrevétlenül az átirányítás célját, ha az megváltoztatja a tárgyat vagy átlépi a jóváhagyott határt.
+
+## Válasszon kimeneti módot a gyűjteményhez
+
+A következetes mód könnyebben használhatóvá teszi a gyűjteményt, de egy webhely több dokumentumtípust tartalmazhat. Az Editable document jó alapértelmezés cikkekhez és dokumentációhoz, mert a támogatott szöveg és hivatkozások hasznosak maradnak. Az Accurate copy jobban illik tervezési referenciákhoz, irányítópultokhoz és olyan oldalakhoz, ahol a kompozíció hordozza a jelentést.
+
+Ha a gyűjtemény keveri ezeket, sablon vagy cél szerint csoportosítsa az oldalakat, és dokumentálja az egyes csoportokhoz választott módot. Szabály nélkül ne változtasson módot oldalról oldalra; a címzetteknek érteniük kell, miért kereshető az egyik fájl, míg a másik képalapú.
+
+A teljes leltár feldolgozása előtt tekintsen meg reprezentatív oldalakat. Ellenőrizzen egy hétköznapi oldalt és minden szokatlan sablont. Az ismétlődő navigációs hibát vagy hiányzó betűtípust mintaszinten kell kezelni, mielőtt több tucat fájlban megjelenik.
+
+## A leltár elvesztése nélkül kezelje a hibákat
+
+Az elérhetetlen URL-nek, átirányítási huroknak, eltávolított oldalnak vagy renderelési figyelmeztetésnek láthatónak kell maradnia az ellenőrzési feljegyzésben. Az újrapróbálás segíthet átmeneti erőforráshibánál, de privát útvonalat vagy nem engedélyezett oldalt nem javíthat meg. Módosított kísérlet után jelölje az oldalt elfogadottnak, kizártnak vagy blokkoltnak, indoklással.
+
+A fájlszám önmagában nem bizonyítja a teljességet. Minden jelölt URL-t egyeztessen egy kimeneti fájlnévvel és állapottal. Keressen ismétlődő címeket, üres hibaoldalakat és csak süti- vagy hozzáférési értesítést tartalmazó PDF-eket. Egy technikailag letölthető fájl ettől még sikertelen konverzió lehet.
+
+Bejelentkezett anyagnál hagyja el a nyilvános gyűjteményi munkafolyamatot. Nyisson meg minden engedélyezett oldalt a Chrome-ban, és használjon aktív lapos rögzítést. Az előnézet ideiglenes, lapjának bezárásakor törlődik, és nem kerül Page 2 File konverzióselőzmény-adatbázisba. Privát oldalakat ne adjon nyilvános felfedezési listához.
+
+## Csomagolja az ellenőrzött eredményt
+
+Használjon akkor is egyedi fájlneveket, amikor oldalcímek ismétlődnek. Rövid, útvonalból származó azonosító megkülönböztethet két „Áttekintés” oldalt érzékeny lekérdezési paraméterek felfedése nélkül. Tartson külön manifestet a forrás-URL-lel, címmel, rögzítési dátummal, választott móddal, kimeneti fájlnévvel és ellenőrzési eredménnyel.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Tartsa külön a létrejött PDF-eket, és nevezze el őket forrásútvonalaik alapján."}
+  caption={"Tartsa külön a létrejött PDF-eket, és nevezze el őket forrásútvonalaik alapján."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Tartsa külön a létrejött PDF-eket, és nevezze el őket forrásútvonalaik alapján."}
+  src="/blog/instructions/multi-page-website-to-pdf/05.svg"
+  step={5}
+/>
+
+A PDF-eket csak minden oldal egyeztetése után rendezze a kívánt olvasási sorrendbe. Ha a címzetteknek egyetlen egyesített PDF kell, megfelelő eszközzel egyesítse az elfogadott fájlokat, majd ellenőrizze az egyesített könyvjelzőket, oldalsorrendet és határokat. Az egyesített műtermék külön szerkesztői eredmény; maga a Web 2 PDF minden felfedezett oldalhoz egy PDF-et ad vissza.
+
+Átadás előtt minden sablonból vegyen mintát hivatkozásokból és oldaltörésekből, és nyisson meg minden figyelmeztetést kapott fájlt. A gyűjtemény mellett közölje a hatókört és kizárásokat. A „dokumentációs szakasz ezen a napon rögzítve, a privát fiókoldalak és duplikált nyelvi változatok nélkül” hasznosabb, mint az „egész webhely”, amikor a határ szűkebb volt.
+
+## Tartsa karban a gyűjteményt
+
+A webhelyek egyenetlenül változnak. Egy új navigációs elem oldalt adhat hozzá, egy régi URL átirányíthat, és egyetlen cikk módosulhat, miközben a többi stabil marad. Őrizze meg a korábbi manifestet, hogy egy későbbi futtatás egy magyarázat nélküli mappa újjáépítése helyett azonosíthassa a hozzáadásokat, eltávolításokat és módosult forrásokat.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Egyeztesse a fájlokat egy manifesttel, és jegyezze fel a kizárásokat vagy hibákat."}
+  caption={"Egyeztesse a fájlokat egy manifesttel, és jegyezze fel a kizárásokat vagy hibákat."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Egyeztesse a fájlokat egy manifesttel, és jegyezze fel a kizárásokat vagy hibákat."}
+  src="/blog/instructions/multi-page-website-to-pdf/06.svg"
+  step={6}
+/>
+
+Ne sugalljon folyamatos szinkronizálást. Minden PDF a rögzítés időpontjának renderelt oldalállapotát őrzi. Ha számít a frissesség, határozzon meg ellenőrzési dátumot, ismételje meg a felfedezést azonos határszabályokkal, majd összehasonlításhoz tartsa külön a két manifestet.

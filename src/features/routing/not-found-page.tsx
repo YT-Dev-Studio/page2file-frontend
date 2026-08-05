@@ -18,7 +18,7 @@ type NotFoundActions = {
   converter: string;
 };
 
-const actions: Record<"en" | "ru" | "de" | "fr", NotFoundActions> = {
+const actions: Record<Locale, NotFoundActions> = {
   en: {
     home: "Return home",
     converter: "Open the PDF converter",
@@ -35,18 +35,62 @@ const actions: Record<"en" | "ru" | "de" | "fr", NotFoundActions> = {
     home: "Retour à l’accueil",
     converter: "Ouvrir le convertisseur PDF",
   },
+  es: {
+    home: "Volver al inicio",
+    converter: "Abrir el convertidor PDF",
+  },
+  nl: {
+    home: "Terug naar de startpagina",
+    converter: "PDF-converter openen",
+  },
+  pt: {
+    home: "Voltar ao início",
+    converter: "Abrir o conversor PDF",
+  },
+  it: {
+    home: "Torna alla home",
+    converter: "Apri il convertitore PDF",
+  },
+  pl: {
+    home: "Wróć na stronę główną",
+    converter: "Otwórz konwerter PDF",
+  },
+  cs: {
+    home: "Zpět na domovskou stránku",
+    converter: "Otevřít konvertor PDF",
+  },
+  sv: {
+    home: "Tillbaka till startsidan",
+    converter: "Öppna PDF-konverteraren",
+  },
+  no: {
+    home: "Tilbake til startsiden",
+    converter: "Åpne PDF-konvertereren",
+  },
+  da: {
+    home: "Tilbage til startsiden",
+    converter: "Åbn PDF-konverteren",
+  },
+  fi: {
+    home: "Takaisin etusivulle",
+    converter: "Avaa PDF-muunnin",
+  },
+  ro: {
+    home: "Înapoi la pagina principală",
+    converter: "Deschide convertorul PDF",
+  },
+  hu: {
+    home: "Vissza a kezdőlapra",
+    converter: "PDF-konverter megnyitása",
+  },
 };
-
-const hasLocalizedActions = (
-  locale: Locale,
-): locale is keyof typeof actions => locale in actions;
 
 export const NotFoundPage = (): ReactNode => {
   const pathname = usePathname();
   const firstSegment = pathname.split("/").filter(Boolean)[0] ?? "en";
   const locale = isLocale(firstSegment) ? firstSegment : "en";
   const copy = getSeoCopy(locale, "notFound");
-  const actionCopy = actions[hasLocalizedActions(locale) ? locale : "en"];
+  const actionCopy = actions[locale];
   return (
     <PublicPage className={styles.page}>
       <Container>

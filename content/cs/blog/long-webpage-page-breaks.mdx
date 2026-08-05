@@ -1,0 +1,122 @@
+Chcete-li převést dlouhou webovou stránku bez poškozených stran PDF, považujte zdroj za posloupnost smysluplných oddílů, nikoli za jeden obrovský snímek. Page 2 File vytvoří náhled, ve kterém je můžete před výsledným vykreslením zkontrolovat.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: rozdělte dlouhý článek na nadpisy, obrázky, tabulky a chráněné jednotky obsahu."}
+  caption={"Rozdělte dlouhý článek na nadpisy, obrázky, tabulky a chráněné jednotky obsahu."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: rozdělte dlouhý článek na nadpisy, obrázky, tabulky a chráněné jednotky obsahu."}
+  src="/blog/instructions/long-webpage-page-breaks/01.svg"
+  step={1}
+/>
+
+U veřejné URL začněte [převodníkem webové stránky do PDF](/cs/convert-webpage-to-pdf). [Rozšíření pro Chrome](/cs/chrome-extension/how-to-use) použijte, když je dlouhá stránka soukromá nebo závisí na aktuálním stavu karty.
+
+## Nejprve stabilizujte zdroj
+
+Posuňte se dostatečně daleko, aby se načetly potřebné obrázky, komentáře nebo řádky reportu. Rozbalte pouze ovládací prvky patřící do dokumentu. Rozvržení, které se při načítání písem a médií stále posouvá, nemůže vytvořit spolehlivé hranice.
+
+Pokud je to povoleno, odstraňte nebo zavřete plovoucí překryvy. Připnutá navigace může být užitečná jednou, ale při opakování v každém zachyceném oddílu zabírá místo a může zakrývat text.
+
+## Chraňte jednotky, které mají zůstat spolu
+
+Nadpis a jeho první odstavec, obrázek a popisek, záhlaví tabulky a první řádky nebo označení kódu a jeho blok tvoří jednu čtecí jednotku. Kontrolujte hranice kolem těchto jednotek místo snahy zaplnit každou stránku až po poslední řádek.
+
+Velmi vysoké tabulky a výpisy kódu mohou stále vyžadovat rozdělení. Upřednostněte viditelné pokračování před zmenšením materiálu do nečitelné velikosti. Pokud je přesné rozvržení důležitější než tok textu, porovnejte možnosti v článku [snímek versus upravitelná konverze](/cs/blog/visual-vs-editable).
+
+## Dávejte pozor na chyby prohlížeče
+
+Tiskové CSS může těsně před tiskem změnit šířky a skrýt prvky. Canvas, video a animovaný obsah nemusí mít tisknutelnou podobu. Srovnání [konverze URL a tisku v prohlížeči](/cs/blog/why-print-to-pdf-breaks) vysvětluje, proč stránka správná na obrazovce může selhat v tiskovém dialogu.
+
+V režimu Accurate copy (výstup ve stylu snímku) zůstávají složité oddíly obrázky. V Editable document (upravitelný výstup) se podporovaný text a odkazy rekonstruují, zatímco obtížná grafika může přejít na rastrovou náhradu. Žádný režim by neměl tvrdit, že každá funkce prohlížeče bude upravitelná.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: posouvejte záměrně, dokud líně načítané oddíly nezůstanou načtené."}
+  caption={"Posouvejte záměrně, dokud líně načítané oddíly nezůstanou načtené."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: posouvejte záměrně, dokud líně načítané oddíly nezůstanou načtené."}
+  src="/blog/instructions/long-webpage-page-breaks/02.svg"
+  step={2}
+/>
+
+## Použijte náhled jako schvalovací krok
+
+Zkontrolujte první a poslední řádek každé stránky a poté tabulky, kód, popisky a upozornění. Před vykreslením odstraňte zdvojenou navigaci, rozdělte příliš velký oddíl nebo změňte jeho pořadí. Odkazy ověřte také pomocí [průvodce klikatelným PDF](/cs/blog/preserve-clickable-links).
+
+Výsledný soubor nemá být prvním místem, kde uvidíte zalomení stránek. Pokud je náhled neúplný, vraťte se ke zdroji, načtěte chybějící obsah a zachyťte jej znovu.
+
+## Před rozdělením obsah roztřiďte
+
+Různé bloky snášejí zalomení odlišně. Běžné odstavce mohou pokračovat na další straně, ale nadpis má zůstat s prvními řádky vysvětlení. Obrázek má být blízko popisku, ukázka kódu zachovat odsazení a řádek tabulky se nemá dělit bez rozumného důvodu.
+
+Vytvořte stručnou osnovu dlouhé stránky a označte nedělitelné jednotky. Zdrojový web nemusíte upravovat. Potřebujete vědět, které přechody kontrolovat v náhledu: před a za tabulkami, mezi zprávami, kolem produktových karet a na začátku hlavních oddílů.
+
+U snímkového výstupu se zachycený oddíl může chovat jako jeden obrázek. Pokud je vyšší než strana PDF, rozdělte jej na přirozené vizuální hranici nebo změňte měřítko celého oddílu. Měřítko je přijatelné jen tehdy, když hlavní text a štítky zůstávají čitelné při běžném zvětšení.
+
+## Počítejte s opakovaným kontextem
+
+Webová stránka často drží navigaci připnutou, aby ji čtenář při posouvání stále viděl. V PDF může tento prvek zakrývat obsah nebo se opakovat bez přidané hodnoty. Před zachycením jej pokud možno sbalte. Když je opakovaný kontext nutný, ponechte jej kompaktní a ověřte, že nezabírá většinu krátké stránky.
+
+Tabulky a dlouhé seznamy mohou potřebovat vlastní opakované popisky. Čtenář, který dokument otevře uprostřed, má rozumět významu sloupců bez návratu o několik stran. Pokud zdroj opakovatelná záhlaví nenabízí, uchovejte tabulku jako snímkový oddíl nebo ji rozdělte do menších označených skupin.
+
+Poznámky a odkazy na zdroje mají zůstat dohledatelné. Držte značky citací u věty, ke které patří, a nenechávejte krátký nadpis zdrojů samotný na konci stránky. Mírně nerovnoměrná stránka je lepší než formálně vyvážené rozvržení oddělující důkaz od vysvětlení.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: zvolte PDF s Accurate copy, když musí původní rozvržení zůstat neporušené."}
+  caption={"Zvolte PDF s Accurate copy, když musí původní rozvržení zůstat neporušené."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: zvolte PDF s Accurate copy, když musí původní rozvržení zůstat neporušené."}
+  src="/blog/instructions/long-webpage-page-breaks/03.svg"
+  step={3}
+/>
+
+## Testujte v realistické velikosti
+
+Náhled na desktopu může skrýt problémy s čitelností, protože plocha je velká. Prohlédněte PDF přibližně ve velikosti, kterou použije čtenář, včetně okna notebooku a mobilní čtečky PDF, pokud je důležitá mobilní distribuce. Text vyžadující neustálé přibližování je chybou rozvržení, i když žádný znak není oříznut.
+
+Vyhledejte charakteristickou frázi poblíž několika hranic stránek. V upravitelném výstupu tím ověříte očekávané pořadí textu. Ve snímkovém výstupu stejná místa přibližte a hledejte spoje, zdvojené pixely nebo chybějící řádky.
+
+Porovnejte počet stránek a oddílů s osnovou zdroje. Neočekávaný nárůst může znamenat opakovaný připnutý obsah, pokles může signalizovat vynechaný líně načtený materiál. Nesrovnalost před sdílením vyřešte.
+
+## Zvolte velikost a orientaci podle obsahu
+
+Hranice se spravují snadněji, když rozměry dokumentu odpovídají hlavnímu materiálu. Orientace na výšku je přirozená pro články a zprávy; orientace na šířku poskytne prostor širokým tabulkám a časovým osám. Míchání orientací může být možné, ale komplikuje čtení na obrazovce i tisk. Pokud konkrétní oddíl nevyžaduje výjimku, upřednostněte jeden jasný model.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: otevřete Preview PDF a zkontrolujte nadpisy, tabulky a popisky na hranicích stránek."}
+  caption={"Otevřete Preview PDF a zkontrolujte nadpisy, tabulky a popisky na hranicích stránek."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: otevřete Preview PDF a zkontrolujte nadpisy, tabulky a popisky na hranicích stránek."}
+  src="/blog/instructions/long-webpage-page-breaks/04.svg"
+  step={4}
+/>
+
+Okraje chrání text před omezením tiskárny a vizuálně oddělují nadpisy, ale příliš velké okraje mohou vynutit zbytečná zalomení. Měřítko má podobný kompromis. Mírné zmenšení oddílu může udržet obrázek s popiskem; zmenšení celého dashboardu do nečitelných štítků pouze skrývá původní problém.
+
+Pokud zdroj obsahuje jedinou mimořádně širokou komponentu, zvažte její zachycení jako samostatný snímkový oddíl a okolní vysvětlení ponechte upravitelné. Náhled má tento kompromis jasně ukázat. Cílem není jednotná implementace za každou cenu, ale použitelný dokument.
+
+## Rozpoznejte podobu špatného zalomení
+
+Osamocený nadpis na konci stránky obvykle znamená, že nadpis a úvodní odstavec nebyly považovány za jednotku. Opakovaný pruh na každé hranici často ukazuje na připnuté rozhraní. Chybějící řádek mezi stránkami může znamenat nebezpečný vizuální řez, zatímco zdvojené řádky naznačují překrývající se hranice oddílů.
+
+Tabulky vyžadují vlastní diagnózu. Oříznuté sloupce znamenají problém šířky nebo orientace. Pokud čtenář na dalších stránkách ztratí význam sloupců, chybí opakovaný kontext. Když zmizí řádky, ověřte před změnou stránkování, že se tabulka plně vykreslila a nebyla virtualizovaná.
+
+U kódu a předformátovaného textu zachovejte odsazení a zalamování záměrně. Vynucené zalomení může snížit čitelnost, zatímco vodorovné oříznutí může skrýt významné znaky. Prohlédněte několik nejdelších řádků, ne pouze první blok.
+
+## Schvalte výsledné PDF systematicky
+
+Začněte strukturálním vzorkem: první strana, poslední strana a každá strana začínající nebo končící poblíž tabulky, obrázku, bloku kódu či hranice chatu. Poté v upravitelném výstupu vyhledejte nadpisy z osnovy, nebo je vizuálně porovnejte v obrazovém výstupu. Tím odhalíte vynechání, která může plynulý počet stran skrýt.
+
+Stažený soubor zkontrolujte v běžné čtečce PDF, nejen v náhledu. Ověřte čitelnost při normálním zvětšení, označitelný text tam, kde jej očekáváte, a funkční důležité odkazy. Data náhledu jsou dočasná a po zavření karty se odstraní; Page 2 File nevede databázi historie konverzí, takže při potřebě dohledatelnosti uchovejte vlastní schválený soubor a poznámky.
+
+Pokud dokument neprojde ani po změně stavu stránky, užším zachycení a jiném režimu, zastavte se a omezení zaznamenejte. Jasně vymezený částečný záznam je spolehlivější než soubor označený za úplný, když zdroj nešlo vykreslit souvisle.
+
+[Průvodce zdroji webových stránek](/cs/blog/website-types-to-pdf-or-powerpoint) popisuje přípravu podle typu stránky.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: vraťte se ke zdroji, změňte jednu podmínku a potvrďte opravená zalomení."}
+  caption={"Vraťte se ke zdroji, změňte jednu podmínku a potvrďte opravená zalomení."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: vraťte se ke zdroji, změňte jednu podmínku a potvrďte opravená zalomení."}
+  src="/blog/instructions/long-webpage-page-breaks/05.svg"
+  step={5}
+/>

@@ -1,0 +1,120 @@
+A kattintható hivatkozások csak akkor élik túl a weboldalból PDF-et készítő konverziót, ha a kimenet hivatkozási jegyzeteket vagy szerkeszthető dokumentumelemeket tartalmaz. A vizuális képernyőkép megőrizheti a hivatkozás megjelenését a művelete nélkül.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Nyisson meg jelentéssel bíró, látható hivatkozásokat és ismert célokat tartalmazó dokumentációt."}
+  caption={"Nyisson meg jelentéssel bíró, látható hivatkozásokat és ismert célokat tartalmazó dokumentációt."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Nyisson meg jelentéssel bíró, látható hivatkozásokat és ismert célokat tartalmazó dokumentációt."}
+  src="/blog/instructions/preserve-clickable-links/01.svg"
+  step={1}
+/>
+
+Válassza az Editable document (szerkeszthető kimenet) lehetőséget a [Page 2 File PDF-konverterben](/hu/convert-webpage-to-pdf), ha fontos a hivatkozások működése. Válassza az Accurate copy (képernyőképszerű kimenet) módot, ha fontosabb az oldal pontos megjelenése, majd számítson arra, hogy a rögzített képen belüli hivatkozások nem lesznek interaktívak.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Válassza a PDF-et egy stabil olvasási dokumentumhoz."}
+  caption={"Válassza a PDF-et egy stabil olvasási dokumentumhoz."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Válassza a PDF-et egy stabil olvasási dokumentumhoz."}
+  src="/blog/instructions/preserve-clickable-links/02.svg"
+  step={2}
+/>
+
+## A látható URL nem automatikusan hivatkozás
+
+A képen látható kék, aláhúzott szöveg továbbra is csak képpont. A PDF-olvasónak célterületre és rendeltetési helyre van szüksége. A szerkeszthető konverzió a weboldal támogatott horgonyelemeit PDF-hivatkozási jegyzetekhez rendelheti, miközben a környező szöveg kijelölhető marad.
+
+A gombok és kártyák is tartalmazhatnak célokat, az exportált dokumentum azonban ne találjon ki URL-t egy csak szkriptet indító elemhez. Ha a cél nem azonosítható biztonságosan, őszintébb egy figyelmeztetés vagy nem kattintható vizuális elem.
+
+## Ne csak a címkét, hanem a célt is ellenőrizze
+
+Egy oldal megnyugtató szöveget jeleníthet meg, miközben máshová mutat. A biztonságos konverziónak el kell fogadnia a szokásos webes célokat, a veszélyes sémákat pedig el kell utasítania. Az átirányítások és bejelentkezett munkamenetet igénylő hivatkozások a PDF-olvasó számára akkor is sikertelenek lehetnek, ha a jegyzet érvényes.
+
+A fontos hivatkozásokat az előnézetből vagy a végleges fájlból olyan környezetben tesztelje, ahol helyénvaló megnyitni őket. Különösen figyeljen a lábjegyzetekre, idézetszámokra, termékkártyákra és forrásjelvényekre.
+
+## Ismerje fel, mikor jó kompromisszum a képernyőképszerű mód
+
+Egy összetett irányítópult, kampányoldal vagy csevegés elveszítheti jelentését, ha egyszerű szövegdobozokként építik újra. Az Accurate copy megőrzi ezt a kompozíciót, de képpé alakítja a szakaszt. Ha a megjelenés és a hivatkozások is számítanak, a konverter biztonságos hivatkozásrétegeket helyezhet a képernyőkép fölé, de csak az általa megtalálható célokhoz.
+
+Döntés előtt olvassa el a [képernyőképszerű és szerkeszthető konverzió](/hu/blog/visual-vs-editable) útmutatóját. Prezentációknál ugyanez a különbség jelenik meg a [képernyőképszerű diák és a szerkeszthető PowerPoint](/hu/blog/screenshot-vs-editable-powerpoint) között.
+
+## Végezzen rövid hivatkozás-ellenőrzést
+
+Nyisson meg egy navigációs hivatkozást, egy szövegközi idézetet, egy gombot és egy több sorba törő hosszú URL-t. Erősítse meg, hogy minden kattintható terület megfelel látható címkéjének, és nem fedi a szomszédos szöveget. Ellenőrizze, hogy a levelezési, telefonos és egyedi alkalmazási sémákat a dokumentum biztonsági szabályai szerint kezeli-e.
+
+Hosszú forrásnál ismételje meg az ellenőrzést az oldaltörések módosítása után. A szakasz felosztása elmozdíthatja a hivatkozási téglalapokat, ezért a [hosszú oldalak útmutatója](/hu/blog/long-webpage-page-breaks) a hivatkozásokat az előnézet ellenőrzésének részeként kezeli.
+
+## Azonosítsa a jelentést hordozó hivatkozásokat
+
+Nem minden horgony érdemel azonos figyelmet. Egy idézet, letöltés, szabályzati hivatkozás vagy következő lépés gombja lényeges lehet a dokumentumhoz; a logó hivatkozása, a fiókmenü vagy a követőpixel nem az. Konvertálás előtt sorolja fel azokat a célokat, amelyeket az olvasónak el kell tudnia érni, és ezt a listát használja az elfogadási teszthez.
+
+Az ikonok mögé rejtett hivatkozásoknak látható környezetre van szükségük egy statikus dokumentumban. Ha egy gomb csak annyit mond, hogy „Megnyitás”, vagy címke nélküli nyilat használ, a cél értelmezhetetlenné válhat a környező felületi elemek eltávolítása után. Tartson meg elegendő közeli szöveget a művelet magyarázatához.
+
+Az oldalon belüli töredékhivatkozások jelentése is változhat. A tartalomjegyzék a forrásoldal címsoraira mutathat, miközben a PDF saját oldalnavigációval rendelkezik. Tesztelje, hogy ezek a horgonyok továbbra is hasznosak-e; ha nem, a látható tartalomjegyzék olvasási vázlatként még szolgálhat, de nem szabad interaktívnak nevezni.
+
+## Figyelje a nem biztonságos vagy instabil célokat
+
+A hitelesített oldalak időnként munkamenet-azonosítókat, aláírt letöltési tokeneket vagy személyes lekérdezési paramétereket helyeznek az URL-ekbe. Egy kattintható PDF ezeket az értékeket minden címzettnek felfedheti. Ne csak a látható címkét, hanem a tényleges célt is vizsgálja meg, és megosztás előtt távolítsa el vagy cserélje le az érzékeny hivatkozásokat.
+
+A relatív hivatkozások alap-URL-től függnek. A böngésző fel tudja oldani a `/docs/start` címet, mert ismeri a forrás eredetét, egy elkülönített HTML-fájl azonban nem feltétlenül. Feltöltött HTML konvertálásakor adjon meg érvényes alapot, vagy használjon teljes HTTPS-hivatkozásokat a szükséges célokhoz.
+
+Az átirányítások és rövidítők megnehezítik az ellenőrzést, mert a látható tartomány nem feltétlenül a végleges. Fontos hivatkozásnál biztonságos böngészőkörnyezetben nyissa meg a linket, és ellenőrizze a végcélt. A hivatkozás megőrzése nem jelenti a cél pontosságának vagy biztonságának jóváhagyását.
+
+## Szerkezeti változtatások után ellenőrizzen újra
+
+A szakaszok felosztása, egyesítése vagy eltávolítása megváltoztathatja, mely horgonyok maradnak meg és hol jelennek meg. Módosítás után ismételje meg az ellenőrzést, ne csak a kezdeti konverzió után. Az első előnézetben működő hivatkozás egy később képernyőképes helyettesítésre cserélt szakaszhoz kapcsolódhatott.
+
+Ha fontos az akadálymentesség, tesztelje a billentyűzetfókuszt vagy a PDF-olvasó hivatkozáslistáját. A látható oldal helyesnek tűnhet, miközben a jegyzetek sorrendje hibás. Másoljon ki egy hivatkozást tartalmazó mondatot is, és ellenőrizze, hogy a jegyzet nem fed-e le kapcsolódás nélküli szöveget.
+
+A végső ellenőrzés legyen arányos a kockázattal. Egy személyes olvasási példánynál elegendők lehetnek reprezentatív tesztek. Kutatási segédanyag, megfelelőségi feljegyzés vagy ügyféldokumentum esetén minden jelentős célt ellenőrizni és rögzíteni kell.
+
+## Különböztesse meg a gyakori hivatkozástípusokat
+
+A közönséges HTTPS-hivatkozások a legvilágosabb megőrzési jelöltek, mert céljuk PDF-jegyzetként ábrázolható. Az e-mail-, telefon- és alkalmazásspecifikus hivatkozások a címzett eszközétől és beállított szoftverétől függenek. Egy technikailag érvényes jegyzet is használhatatlan lehet a környezetében, ezért ne tekintsen minden sémát egyenértékűnek.
+
+A letöltések további körültekintést igényelnek. Egy hivatkozás lejárhat, munkamenetet igényelhet vagy később más fájlt adhat vissza. Ha a hivatkozott erőforrás a bizonyíték része, fontolja meg címének, kiadójának és hozzáférési dátumának látható szövegként való megőrzését, ne csak a kattintási célra támaszkodjon.
+
+A szkriptvezérelt vezérlők nem feltétlenül hivatkozások. Egy kártya megnyithat modális ablakot, módosíthat szűrőt vagy meghívhat alkalmazásútvonalat anélkül, hogy stabil célt fedne fel. A szerkeszthető konverzió ne találjon ki ilyet. Tartsa meg a látható állapotot, és magyarázza el a korlátozást, ha a művelet központi az oldal megértéséhez.
+
+## Igazítsa a jegyzeteket az olvasási sorrendhez
+
+A hivatkozási téglalapok zavaróvá válhatnak, amikor a szöveg törik, az oszlopok elmozdulnak vagy egy szakaszt átméreteznek. Ellenőrizze, hogy az aktív terület csak a kívánt címkét fedi, és az átfedő jegyzetek nem küldik ugyanarra a célra a szomszédos szöveget. Többoszlopos dokumentumban oszloponként ellenőrizze a hivatkozásokat, ne az oldalt átszelő vizuális pásztázási vonalat követve.
+
+A jelentéssel bíró címkék jobbak az ismételt „kattintson ide” szövegnél, mert másoláskor, kereséskor vagy hivatkozáslistában vizsgálva is érthetők maradnak. Tartsa meg a környező mondatot, amikor az magyarázza a cél fontosságát. Csak ikonnal jelzett műveleteknél őrizzen meg látható címkét, ha a forrás biztosít egyet.
+
+Ha a PDF-et segítő technológiával használják, ne csak az egérkattintásokat tesztelje. Vizsgálja meg, hogy a szöveg kijelölhető marad-e, a jegyzetek sorrendje követi-e a dokumentumot, és a hivatkozáscímkék érthetők-e közeli díszítés nélkül. A Page 2 File megőrizheti a támogatott dokumentumszerkezetet, de a forrás és az ellenőrzött kimenet dönti el, hogy az hasznos-e.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: A támogatott biztonságos hivatkozáscélok megőrzéséhez válassza az Editable document módot."}
+  caption={"A támogatott biztonságos hivatkozáscélok megőrzéséhez válassza az Editable document módot."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: A támogatott biztonságos hivatkozáscélok megőrzéséhez válassza az Editable document módot."}
+  src="/blog/instructions/preserve-clickable-links/03.svg"
+  step={3}
+/>
+
+## Védje a származást és az adatvédelmet
+
+A hivatkozás a látható tartománynál többet fedhet fel. A lekérdezési karakterláncok dokumentumazonosítókat, keresőkifejezéseket, ajánlási adatokat vagy aláírt tokeneket tartalmazhatnak. Megosztás előtt vizsgálja meg a hitelesített oldalak céljait, és távolítson el mindent, amit a címzettnek nem kell megkapnia. Egy kitakart PDF megnyitása ne vezessen véletlenül vissza egy kitakaratlan privát erőforráshoz.
+
+Ha az idézetekhez származási adatok kellenek, jegyezze fel a forrás URL-jét és a rögzítés dátumát, miközben kerüli a munkamenetspecifikus paramétereket. A bővítmény előnézeti adatai ideiglenesek és lapjának bezárása után törlődnek, a Page 2 File pedig nem tart fenn konverziós előzményt. A letöltött PDF korlátlan ideig megőrizheti saját hivatkozásait, ezért céljai ugyanolyan ellenőrzést igényelnek, mint látható tartalma.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Hagyja kikapcsolva a Remove links beállítást, ha a céloknak elérhetőknek kell maradniuk."}
+  caption={"Hagyja kikapcsolva a Remove links beállítást, ha a céloknak elérhetőknek kell maradniuk."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Hagyja kikapcsolva a Remove links beállítást, ha a céloknak elérhetőknek kell maradniuk."}
+  src="/blog/instructions/preserve-clickable-links/04.svg"
+  step={4}
+/>
+
+A forrásspecifikus hivatkozási kockázatokhoz tekintse meg a [webhely-kimeneti útmutatót](/hu/blog/website-types-to-pdf-or-powerpoint).
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Tekintse át a PDF-et, és tesztelje a reprezentatív módon megőrzött és szándékosan eltávolított hivatkozásokat."}
+  caption={"Tekintse át a PDF-et, és tesztelje a reprezentatív módon megőrzött és szándékosan eltávolított hivatkozásokat."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Tekintse át a PDF-et, és tesztelje a reprezentatív módon megőrzött és szándékosan eltávolított hivatkozásokat."}
+  src="/blog/instructions/preserve-clickable-links/05.svg"
+  step={5}
+/>

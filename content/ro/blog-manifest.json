@@ -1,0 +1,146 @@
+{
+  "save-webpage-as-pdf": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să salvați o pagină web ca PDF",
+    "description": "Salvați o pagină web ca PDF, alegeți un rezultat tip captură sau editabil, verificați întreruperile de pagină și înțelegeți ce se întâmplă cu datele temporare ale conversiei.",
+    "imageAlt": "O pagină lungă din browser devine un teanc ordonat de pagini PDF"
+  },
+  "why-print-to-pdf-breaks": {
+    "author": "Redacția Page 2 File",
+    "title": "URL în PDF sau imprimarea browserului: ce capturează mai mult?",
+    "description": "Comparați conversia URL în PDF cu imprimarea browserului, inclusiv stilurile de tipărire, conținutul întârziat, filele private, fidelitatea vizuală și rezultatul editabil.",
+    "imageAlt": "Fluxul de imprimare al browserului comparat cu fluxul de captură a paginii web"
+  },
+  "capture-full-webpage-as-pdf": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să capturați o pagină web completă ca PDF",
+    "description": "Capturați o pagină web derulabilă completă ca PDF definind limita, încărcând secțiunile dinamice, verificând întreruperile și respectând restricțiile de acces.",
+    "imageAlt": "O pagină web derulabilă completă curge într-un document PDF"
+  },
+  "long-webpage-page-breaks": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să convertiți o pagină lungă fără întreruperi PDF greșite",
+    "description": "Pregătiți o pagină lungă pentru PDF, încărcați conținutul dinamic, păstrați unitățile de lectură și remediați întreruperile în previzualizare.",
+    "imageAlt": "O pagină web lungă împărțită la limite PDF semnificative"
+  },
+  "preserve-clickable-links": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să păstrați linkurile accesibile în PDF-urile din pagini web",
+    "description": "Aflați când linkurile rămân accesibile în PDF, de ce capturile elimină interactivitatea și cum se verifică destinațiile în rezultatul editabil.",
+    "imageAlt": "Linkuri dintr-o pagină web păstrate ca adnotări accesibile în PDF"
+  },
+  "visual-vs-editable": {
+    "author": "Redacția Page 2 File",
+    "title": "Conversia unei pagini web: captură sau rezultat editabil",
+    "description": "Comparați conversia tip captură cu cea editabilă pentru pagini web, PDF și PowerPoint, inclusiv aspectul, textul, linkurile și soluțiile de rezervă.",
+    "imageAlt": "O pagină web comparată ca rezultat tip captură și document editabil"
+  },
+  "html-to-pdf-safely": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să convertiți HTML în PDF în siguranță",
+    "description": "Pregătiți HTML autonom, limitați comportamentul activ, izolați randarea, proiectați pentru pagini fixe și verificați dependențele și linkurile.",
+    "imageAlt": "Un fișier HTML izolat trece printr-o limită de randare sigură către PDF"
+  },
+  "multi-page-website-to-pdf": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să convertiți un site cu mai multe pagini în PDF",
+    "description": "Definiți domeniul site-ului, descoperiți paginile publice, convertiți fiecare URL într-un PDF separat și reconciliați fișierele cu un manifest verificat.",
+    "imageAlt": "Mai multe pagini ale unui site organizate ca fișiere PDF separate cu un manifest"
+  },
+  "webpage-to-powerpoint": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să convertiți o pagină web în PowerPoint",
+    "description": "Transformați o pagină web într-un PPTX 16:9, alegeți diapozitive tip captură sau editabile și verificați structura, linkurile și obiectele.",
+    "imageAlt": "Secțiunile unei pagini web transformate într-o prezentare PowerPoint 16:9"
+  },
+  "website-to-powerpoint": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să convertiți un site în PowerPoint",
+    "description": "Selectați pagini publice cu limite clare, creați câte un PPTX pentru fiecare sursă și verificați o colecție trasabilă cu o politică de diapozitive consecventă.",
+    "imageAlt": "Mai multe pagini ale unui site convertite în prezentări PowerPoint separate"
+  },
+  "html-to-powerpoint": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să convertiți HTML în PowerPoint",
+    "description": "Convertiți HTML randat în diapozitive 16:9, alegeți obiecte editabile sau secțiuni capturate și înțelegeți limita pentru încărcarea HTML brut.",
+    "imageAlt": "HTML randat într-un browser transformat într-o prezentare PowerPoint"
+  },
+  "sections-to-slides": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să transformați secțiunile unei pagini web în diapozitive",
+    "description": "Transformați secțiunile unei pagini web în diapozitive PowerPoint lizibile, controlați densitatea, păstrați contextul și verificați harta sursă-diapozitiv.",
+    "imageAlt": "Secțiuni structurate ale unei pagini web distribuite pe diapozitive PowerPoint"
+  },
+  "screenshot-vs-editable-powerpoint": {
+    "author": "Redacția Page 2 File",
+    "title": "PowerPoint tip captură sau editabil: cum alegeți",
+    "description": "Comparați diapozitivele tip captură cu PowerPoint editabil după fidelitate, sarcini reale de editare, accesibilitate, întreținere și soluții de rezervă.",
+    "imageAlt": "Un diapozitiv tip captură comparat cu obiecte PowerPoint editabile"
+  },
+  "save-authenticated-webpage-as-pdf": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să salvați o pagină web autentificată ca PDF",
+    "description": "Capturați o pagină autentificată din fila activă fără a partaja date de autentificare, verificați limitele private și distribuiți fișierul în siguranță.",
+    "imageAlt": "Un tablou de bord autentificat capturat din fila activă într-un PDF verificat"
+  },
+  "website-types-to-pdf-or-powerpoint": {
+    "author": "Redacția Page 2 File",
+    "title": "Ce tipuri de site-uri se convertesc în PDF sau PowerPoint?",
+    "description": "Asociați articole, tablouri de bord, magazine, pagini educaționale, chaturi și aplicații autentificate cu formatul, modul și pregătirea potrivite.",
+    "imageAlt": "Mai multe tipuri de pagini web asociate cu rezultate PDF și PowerPoint"
+  },
+  "webpage-capture-vs-web-scraping": {
+    "author": "Redacția Page 2 File",
+    "title": "Captura unei pagini web față de web scraping",
+    "description": "Comparați documentele lizibile produse prin captură cu datele structurate produse prin scraping și alegeți după contract, risc și criterii de acceptare.",
+    "imageAlt": "Un document capturat pentru oameni comparat cu date structurate pentru software"
+  },
+  "export-ai-chats-privately": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să exportați privat chaturile AI în PDF",
+    "description": "Capturați o conversație AI vizibilă din fila activă, definiți intervalul, verificați ramurile, sursele și datele sensibile și separați PDF-ul de arhiva contului.",
+    "imageAlt": "O conversație AI verificată și limitată, pregătită pentru export privat în PDF"
+  },
+  "export-chatgpt-conversation-to-pdf": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să exportați o conversație ChatGPT în PDF",
+    "description": "Exportați o conversație ChatGPT vizibilă în PDF, încărcați intervalul corect, verificați codul, tabelele, sursele și datele sensibile și separați documentul de arhiva contului.",
+    "imageAlt": "O conversație ChatGPT cu mesaje, cod și surse pregătită pentru export în PDF"
+  },
+  "export-claude-chat-to-pdf": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să exportați un chat Claude în PDF",
+    "description": "Exportați un chat Claude vizibil în PDF, încărcați răspunsurile și artefactele necesare, verificați citările, atașamentele și datele confidențiale.",
+    "imageAlt": "Un chat Claude cu răspunsuri, citări și un artefact vizibil pregătit pentru PDF"
+  },
+  "export-gemini-chat-to-pdf": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să exportați un chat Gemini în PDF",
+    "description": "Exportați un chat Gemini vizibil în PDF, pregătiți mesajele, sursele și materialele media, verificați datele contului și separați documentul de arhiva Takeout.",
+    "imageAlt": "Un chat Gemini cu mesaje, imagini și carduri cu surse pregătit pentru PDF"
+  },
+  "export-other-ai-chats-to-pdf": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să exportați alte chaturi AI în PDF",
+    "description": "Exportați conversații Grok, DeepSeek, Perplexity și Copilot în PDF, pregătiți sursele și materialele vizibile și verificați limitele fiecărei platforme.",
+    "imageAlt": "Un chat AI universal cu surse, cod și conținut generat pregătit pentru PDF"
+  },
+  "export-whatsapp-chat-to-pdf": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să exportați un chat WhatsApp în PDF",
+    "description": "Exportați un chat WhatsApp Web în PDF, definiți intervalul, verificați răspunsurile, participanții, materialele media și confidențialitatea înainte de distribuire.",
+    "imageAlt": "O conversație WhatsApp Web cu participanți, răspunsuri și media pregătită pentru PDF"
+  },
+  "export-telegram-chat-to-pdf": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să exportați un chat Telegram în PDF",
+    "description": "Exportați un chat sau canal Telegram Web în PDF, încărcați istoricul, păstrați răspunsurile și atribuirea și verificați media, linkurile și limitele.",
+    "imageAlt": "Un chat Telegram Web cu răspunsuri, media și atribuirea mesajelor pregătit pentru PDF"
+  },
+  "export-browser-messenger-chats-to-pdf": {
+    "author": "Redacția Page 2 File",
+    "title": "Cum să exportați chaturile din mesageria browserului în PDF",
+    "description": "Exportați conversații Discord, Slack, Teams, Messenger și Instagram din Chrome în PDF, definiți intervalul și verificați răspunsurile, media și confidențialitatea.",
+    "imageAlt": "Mai multe tipuri de conversații din browser pregătite ca documente PDF verificate"
+  }
+}

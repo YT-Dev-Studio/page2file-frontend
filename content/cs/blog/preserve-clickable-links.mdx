@@ -1,0 +1,120 @@
+Klikatelné odkazy přežijí konverzi webové stránky do PDF pouze tehdy, když výstup obsahuje odkazové anotace nebo upravitelné prvky dokumentu. Vizuální snímek může zachovat vzhled odkazu bez jeho funkce.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: otevřete dokumentaci se srozumitelnými viditelnými odkazy a známými cíli."}
+  caption={"Otevřete dokumentaci se srozumitelnými viditelnými odkazy a známými cíli."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: otevřete dokumentaci se srozumitelnými viditelnými odkazy a známými cíli."}
+  src="/blog/instructions/preserve-clickable-links/01.svg"
+  step={1}
+/>
+
+Pokud záleží na funkci odkazů, zvolte v [převodníku PDF Page 2 File](/cs/convert-webpage-to-pdf) Editable document (upravitelný výstup). Pokud je důležitější přesný vzhled stránky, zvolte Accurate copy (výstup ve stylu snímku) a počítejte s tím, že odkazy uvnitř zachyceného obrázku nebudou interaktivní.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: zvolte PDF jako stabilní dokument ke čtení."}
+  caption={"Zvolte PDF jako stabilní dokument ke čtení."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: zvolte PDF jako stabilní dokument ke čtení."}
+  src="/blog/instructions/preserve-clickable-links/02.svg"
+  step={2}
+/>
+
+## Viditelná URL není automaticky odkaz
+
+Modrý podtržený text v obrázku jsou stále jen pixely. Čtečka PDF potřebuje cílový obdélník a adresu. Upravitelná konverze může převést podporované odkazy z webu na anotace PDF a okolní text ponechat označitelný.
+
+Tlačítka a karty mohou mít cíle také, ale exportovaný dokument nemá vymýšlet URL pro prvek, který pouze spouští skript. Pokud cíl nelze bezpečně určit, je poctivější upozornění nebo neklikatelný vizuál.
+
+## Kontrolujte cíl, ne jen popisek
+
+Stránka může zobrazovat důvěryhodný text a přitom odkazovat jinam. Bezpečná konverze má přijímat běžné webové cíle a odmítat nebezpečná schémata. Přesměrování a odkazy vyžadující přihlášenou relaci mohou ve čtečce PDF selhat, i když je anotace platná.
+
+Důležité odkazy testujte z náhledu nebo výsledného souboru v prostředí, kde je vhodné je otevřít. Zaměřte se na poznámky, čísla citací, produktové karty a štítky zdrojů.
+
+## Poznejte, kdy je snímek správným kompromisem
+
+Složitý dashboard, kampaňová stránka nebo chat mohou po přestavbě na obyčejná textová pole ztratit význam. Accurate copy zachová kompozici, ale změní oddíl na obrázek. Pokud záleží na vzhledu i odkazech, převodník může přidat bezpečné odkazové vrstvy nad snímek, avšak pouze u cílů, které dokáže určit.
+
+Před rozhodnutím si přečtěte [srovnání snímku a upravitelné konverze](/cs/blog/visual-vs-editable). V prezentacích se stejný rozdíl objevuje mezi [snímkovými slidy a upravitelným PowerPointem](/cs/blog/screenshot-vs-editable-powerpoint).
+
+## Proveďte krátký audit odkazů
+
+Otevřete jeden navigační odkaz, jednu citaci v textu, jedno tlačítko a jednu dlouhou zalomenou URL. Ověřte, že každá aktivní oblast odpovídá viditelnému popisku a nezakrývá sousední text. Zkontrolujte zpracování e-mailových, telefonních a aplikačních schémat podle bezpečnostních pravidel dokumentu.
+
+U dlouhého zdroje audit po změně zalomení zopakujte. Rozdělení oddílu může posunout obdélníky odkazů, proto [průvodce dlouhými stránkami](/cs/blog/long-webpage-page-breaks) zahrnuje odkazy do kontroly náhledu.
+
+## Určete odkazy, které nesou význam
+
+Ne každý odkaz je stejně důležitý. Citace, stažení, zásady nebo tlačítko dalšího kroku mohou být zásadní; odkaz loga, nabídka účtu nebo sledovací pixel nikoli. Před konverzí vypište cíle, které musí čtenář navštívit, a použijte seznam při výstupním testu.
+
+Odkazy skryté za ikonami potřebují ve statickém dokumentu viditelný kontext. Pokud tlačítko říká jen „Otevřít“ nebo používá nepopsanou šipku, po odstranění okolního rozhraní nemusí být cíl pochopitelný. Zachovejte dostatek okolního textu.
+
+Odkazy na fragmenty stránky mohou také změnit význam. Obsah může směřovat k nadpisům zdrojové stránky, zatímco PDF má vlastní navigaci. Ověřte jejich užitečnost; pokud nefungují, viditelný obsah může stále sloužit jako osnova, ale nemá být označen za interaktivní.
+
+## Dávejte pozor na nebezpečné a nestabilní cíle
+
+Přihlášené stránky někdy vkládají do URL identifikátory relace, podepsané tokeny ke stažení nebo osobní parametry. Klikatelné PDF je může odhalit každému příjemci. Kontrolujte skutečný cíl, nejen viditelný popisek, a citlivé odkazy před sdílením odstraňte nebo nahraďte.
+
+Relativní odkazy závisejí na základní URL. Prohlížeč umí vyřešit `/docs/start`, protože zná původ zdroje, izolovaný HTML soubor však nemusí. Při převodu HTML poskytněte platnou základnu nebo pro potřebné cíle použijte úplné HTTPS adresy.
+
+Přesměrování a zkracovače ztěžují kontrolu, protože viditelná doména nemusí být konečná. Důležité odkazy otevřete v bezpečném kontextu a ověřte výsledný cíl. Zachování odkazu není potvrzením jeho správnosti ani bezpečnosti.
+
+## Ověřujte po strukturálních změnách
+
+Rozdělení, sloučení nebo odebrání oddílů může změnit, které odkazy přežijí a kde budou. Audit opakujte po úpravách, ne pouze po počáteční konverzi. Odkaz fungující v prvním náhledu mohl patřit k oddílu později nahrazenému snímkem.
+
+Pokud záleží na přístupnosti, otestujte fokus klávesnice nebo seznam odkazů ve čtečce PDF. Viditelná stránka může být správná, zatímco anotace jsou ve špatném pořadí. Zkopírujte také větu s odkazem a ověřte, že anotace nezakrývá jiný text.
+
+Rozsah výsledné kontroly přizpůsobte riziku. Osobní kopie ke čtení může vyžadovat reprezentativní testy. U výzkumného materiálu, záznamu shody nebo zákaznického dokumentu zkontrolujte a zaznamenejte každý důležitý cíl.
+
+## Rozlišujte běžné typy odkazů
+
+Běžné HTTPS odkazy jsou nejjasnějšími kandidáty k zachování, protože jejich cíl lze představit jako anotaci PDF. E-mailové, telefonní a aplikační odkazy závisejí na zařízení a softwaru příjemce. Technicky platná anotace může být v jeho prostředí nepoužitelná, proto nepovažujte všechna schémata za rovnocenná.
+
+Stažení vyžadují další opatrnost. Odkaz může vypršet, vyžadovat relaci nebo později vrátit jiný soubor. Když je propojený zdroj součástí důkazu, uchovejte jeho název, vydavatele a datum přístupu ve viditelném textu namísto spoléhání pouze na kliknutí.
+
+Ovládací prvky řízené skriptem nemusí být odkazy. Karta může otevřít modal, změnit filtr nebo zavolat aplikační trasu bez stabilního cíle. Upravitelná konverze jej nemá vymýšlet. Pokud je akce zásadní pro pochopení stránky, zachovejte viditelný stav a vysvětlete omezení.
+
+## Udržujte anotace v pořadí čtení
+
+Obdélníky odkazů mohou být matoucí, když se text zalomí, sloupce posunou nebo se oddíl zmenší. Ověřte, že aktivní oblast pokrývá jen zamýšlený popisek a překrývající se anotace neposílají sousední text na stejný cíl. Ve vícesloupcovém dokumentu kontrolujte odkazy po jednotlivých sloupcích.
+
+Smysluplné popisky jsou lepší než opakované „klikněte zde“, protože zůstávají srozumitelné při kopírování, vyhledávání i v seznamu odkazů. Zachovejte okolní větu, když vysvětluje důležitost cíle. U akcí pouze s ikonou ponechte viditelný popisek, pokud jej zdroj nabízí.
+
+Pokud se PDF bude používat s asistenční technologií, testujte více než kliknutí myší. Ověřte označitelnost textu, pořadí anotací a smysl popisků bez okolní dekorace. Page 2 File může zachovat podporovanou strukturu dokumentu, ale o její užitečnosti rozhoduje zdroj a zkontrolovaný výstup.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: zvolte Editable document pro zachování podporovaných bezpečných cílů odkazů."}
+  caption={"Zvolte Editable document pro zachování podporovaných bezpečných cílů odkazů."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: zvolte Editable document pro zachování podporovaných bezpečných cílů odkazů."}
+  src="/blog/instructions/preserve-clickable-links/03.svg"
+  step={3}
+/>
+
+## Chraňte původ a soukromí
+
+Odkaz může odhalit více než viditelnou doménu. Parametry dotazu mohou obsahovat identifikátory dokumentů, hledané výrazy, údaje o doporučení nebo podepsané tokeny. Před sdílením zkontrolujte cíle z přihlášených stránek a odstraňte vše, co příjemce nemá dostat. Otevření redigovaného PDF nemá omylem vést k neredigovanému soukromému zdroji.
+
+Pokud citace vyžadují původ, zaznamenejte zdrojovou URL a datum zachycení bez parametrů relace. Data náhledu rozšíření jsou dočasná a po zavření karty se odstraní; Page 2 File nevede historii konverzí. Stažené PDF může své odkazy uchovat neomezeně, proto jejich cíle vyžadují stejnou kontrolu jako viditelný obsah.
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: ponechte Remove links vypnuté, pokud mají cíle zůstat dostupné."}
+  caption={"Ponechte Remove links vypnuté, pokud mají cíle zůstat dostupné."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: ponechte Remove links vypnuté, pokud mají cíle zůstat dostupné."}
+  src="/blog/instructions/preserve-clickable-links/04.svg"
+  step={4}
+/>
+
+Rizika odkazů podle zdroje popisuje [průvodce výstupy webových stránek](/cs/blog/website-types-to-pdf-or-powerpoint).
+
+<ArticleFigure
+  alt={"Prohlížeč a rozšíření Page 2 File: zobrazte náhled PDF a otestujte ukázkové zachované i záměrně odstraněné odkazy."}
+  caption={"Zobrazte náhled PDF a otestujte ukázkové zachované i záměrně odstraněné odkazy."}
+  closeLabel={"Zavřít náhled obrázku"}
+  openLabel={"Otevřít obrázek v plné velikosti: zobrazte náhled PDF a otestujte ukázkové zachované i záměrně odstraněné odkazy."}
+  src="/blog/instructions/preserve-clickable-links/05.svg"
+  step={5}
+/>

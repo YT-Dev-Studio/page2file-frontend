@@ -1,0 +1,155 @@
+A weboldal-rögzítés ember által olvasható dokumentumot hoz létre. A web scraping szoftver által feldolgozható strukturált adatot nyer ki. A Page 2 File rögzítési és konverziós termék; nem scraper API, monitorozó bejáró vagy adatfolyam.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Nyisson meg reprezentatív forrásoldalt, és határozza meg a szükséges kimeneti szerződést."}
+  caption={"Nyisson meg reprezentatív forrásoldalt, és határozza meg a szükséges kimeneti szerződést."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Nyisson meg reprezentatív forrásoldalt, és határozza meg a szükséges kimeneti szerződést."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/01.svg"
+  step={1}
+/>
+
+A Page 2 File-t akkor használja, ha a szükséges eredmény a látható tartalmat és – ahol támogatott – a szöveget, képeket és hivatkozásokat megőrző PDF vagy PowerPoint. Scraping eszközt akkor használjon, ha sorokra, mezőkre, ismétlődő gyűjtésre vagy géppel olvasható kimenetre van szüksége.
+
+## Mit őriz meg a rögzítés?
+
+A képernyőképszerű rögzítés megőrzi a kompozíciót, színt, diagramelhelyezést és üzenetcsoportosítást. A szerkeszthető konverzió újraépíti a támogatott dokumentumelemeket. Mindkettő renderelt böngészőoldalból indul, és ember által olvasható fájlra törekszik.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Használja a Current tab vagy By URL lehetőséget, ha a szállítandó eredmény ember által olvasható dokumentum."}
+  caption={"Használja a Current tab vagy By URL lehetőséget, ha a szállítandó eredmény ember által olvasható dokumentum."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Használja a Current tab vagy By URL lehetőséget, ha a szállítandó eredmény ember által olvasható dokumentum."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/02.svg"
+  step={2}
+/>
+
+A [webhelytípusok útmutatója](/hu/blog/website-types-to-pdf-or-powerpoint) felsorolja a megfelelő forrásokat. Nyilvános oldalak konvertert, privát aktív lapok a [bővítményt](/hu/chrome-extension/how-to-use) használják.
+
+## Mire épül a scraping?
+
+A scraperek szelektorokat vagy adatvégpontokat azonosítanak, mezőket normalizálnak, és gyakran ismétlődően futnak. Lapozhatnak katalógusokat, árakat figyelhetnek vagy adatbázist tölthetnek. Ezek a feladatok egyértelmű kéréskorlátokat, változáskezelést, deduplikációt és jogalapot igényelnek.
+
+A termékrács PDF-je nem ár-adatkészlet. Az irányítópult vizuális másolata nem az alapul szolgáló mérőszám-API. A dokumentumrögzítés scrapingnek nevezése rossz elvárást állítana.
+
+## A kimeneti szerződés alapján válasszon
+
+Ha egy munkatársnak el kell olvasnia, idéznie, nyomtatnia vagy prezentálnia a forrást, a rögzítés illik. Ha a szoftvernek automatikusan rendeznie, összesítenie vagy frissítenie kell a forrást, strukturált kinyerés illik.
+
+Egy olvasható oldalhoz kezdje a [weboldal PDF-be mentésével](/hu/blog/save-webpage-as-pdf). Korlátozott webhelygyűjteményhez tekintse át a [többoldalas webhely PDF-be mentését](/hu/blog/multi-page-website-to-pdf).
+
+## Mindkét esetben tartsa tiszteletben a forrást
+
+A hozzáférési engedély, szerzői jog, személyes adatok és platformfeltételek mindkét módszerre vonatkoznak. A bejelentkezés nem ad engedélyt minden utána látható tartalom újraterjesztésére. Az automatizált gyűjtésnek működési hatása is van a forrásszolgáltatásra.
+
+A Page 2 File nem kerüli meg a hitelesítést, és nem fedi fel az oldal rejtett adatait. Kifejezett felhasználói művelet után engedélyezett renderelt tartalmat konvertál.
+
+## Hasonlítsa össze a kimeneti szerződéseket
+
+A rögzítés embernek szánt dokumentumot vagy diasort készít. Sikerkritériumai közé tartozik a vizuális folytonosság, olvasási sorrend, oldalhatárok, hivatkozások és forráskörnyezet. Az eredmény olvasásra, prezentálásra vagy feljegyzésre szolgál.
+
+A scraping mezőket, rekordokat vagy nyers tartalmat készít szoftverhez. Sikerkritériumai a sémastabilitás, azonosítók, deduplikáció, lapozáskezelés és géppel olvasható hibák. Egy gyönyörű PDF rossz API-válasz, a JSON-adatkészlet pedig nem hű vizuális feljegyzés.
+
+A módszer kiválasztása előtt írja le a kívánt kimenetet. Ha a követelmény azt mondja: „pontosan mutassa meg, mit jelenített meg az irányítópult ezen a napon”, a rögzítés illik. Ha azt mondja: „minden termék árát naponta gyűjtse össze”, ez adatkinyerési és monitorozási probléma.
+
+## Értse meg a dinamikus oldalak korlátait
+
+Mindkét megközelítés találkozik késleltetett betöltéssel, virtualizációval és hitelesítéssel, de eltérően kezeli őket. A rögzítéshez a szükséges állapotnak láthatóan renderelve kell lennie. A scraper engedélyezett API-t hívhat vagy forrásadatot elemezhet a vizuális felület reprodukálása nélkül.
+
+A Chrome-bővítmény azután tud aktív bejelentkezett lapot rögzíteni, hogy a felhasználó megnyitotta. Ez nem tár fel rejtett alkalmazásrekordokat, és nem hoz létre általános bejárási hitelesítő adatot. Hitelesített rendszerek automatizált scrapingje kifejezett engedélyt, biztonságos hitelesítőadat-kezelést és külön működési tervet igényel.
+
+Az interaktív diagramok szemléltetik a különbséget. A rögzítés vizuálisan megőrizheti a kiválasztott diagramállapotot. A scrapingnek hozzáférés kellene az alapul szolgáló értékekhez és azokat magyarázó sémához. A Page 2 File nem ígér ilyen kinyerést.
+
+## Becsülje meg a karbantartást és kockázatot
+
+A rögzítési munkafolyamat akkor változik, amikor az elrendezés, lapozás vagy renderelési működés változik. A scraping munkafolyamat akkor, amikor a jelölés, API-k, sémák, kéréskorlátok vagy automatizálás elleni ellenőrzések változnak. Egyik sem karbantartásmentes, de hibamódjaik eltérnek.
+
+A nagy léptékű scraping befolyásolhatja a forrásinfrastruktúrát, és korlátozást, újrapróbálási szabályt, robots-kezelést és jogi ellenőrzést igényelhet. A kézi vagy kifejezett rögzítés továbbra is engedélyt, szerzői jogi megfontolást és személyesadat-védelmet igényel.
+
+Kerülje a felelősséget elfedő hibrid állításokat. A böngésző használata nem teszi a scrapert dokumentumkonverterré, a szerkeszthető konverzió választása pedig nem alakítja a Page 2 File-t strukturáltadat-szolgáltatássá.
+
+## Válasszon ellenőrzési módszert
+
+A rögzítést a PDF vagy PPTX és a látható forrásállapot összehasonlításával ellenőrizze. Vizsgálja meg a teljességet, olvashatóságot, hivatkozásokat és adatvédelmet. A scrapinget a mezők séma szerinti validálásával, forrásrekordok mintavételezésével és kinyerési hibák monitorozásával ellenőrizze.
+
+Ha a projektnek mindkettőre szüksége van, tartsa külön a szállítandó eredményeket. Elemzéshez engedélyezett adatforrást, vizuális bizonyítékhoz rögzítést használjon, majd jegyezze fel mindkettő létrehozási módját. Ha pontos értékek számítanak, képernyőképekből ne következtessen gépi adatokra.
+
+A választás egyértelművé válik, ha az elfogadási feltételeket a címzett szempontjából írják: egy ember olvassa vagy prezentálja a rögzített dokumentumot; szoftver fogyasztja a kinyert rekordokat.
+
+## Hasonlítson össze reprezentatív feladatokat
+
+A kiválasztott irányítópult-állapot vizuális feljegyzését igénylő elemzőnek rögzítés kell. A PDF őrizze meg a szűrőket, címkéket, diagramkörnyezetet és rögzítési időt. A számításhoz minden alapértéket igénylő elemzőnek engedélyezett API-ra vagy meghatározott sémájú kinyerési munkafolyamatra van szüksége.
+
+Egy cikket archiváló kutatónak kereshető szöveg, idézetek és oldalszármazás kellhet. Több ezer cikkcímet követő csapatnak strukturált rekordok, deduplikáció és frissítési logika szükséges. Nyilvános termékoldalt prezentáló értékesítési csapatnak PPTX-diák, árfigyelőnek normalizált mezők és ütemezett gyűjtés kell.
+
+Az AI-csevegések és böngészős üzenetküldő-beszélgetések ugyanezt a különbséget követik. A Page 2 File olvasható dokumentumot készíthet az aktív lapon renderelt engedélyezett üzenetekből. Nem tár fel rejtett fiókelőzményt, üzenet-API-kat vagy strukturált beszélgetési adatkészletet.
+
+## A scraping kiválasztása előtt tegyen fel működési kérdéseket
+
+A strukturált kinyerés több a szelektorok kiválasztásánál. Határozza meg az engedélyt, kérésmennyiséget, korlátokat, hitelesítést, sématulajdonost, megőrzést és a hibák észlelési módját. Döntse el, mi történik, ha egy mező eltűnik, az oldal nyelvet vált, vagy a forrás több változatot ad vissza.
+
+Ha biztosítja a szükséges adatot, részesítse előnyben a hivatalos API-t vagy támogatott exportot. Ha a scraping engedélyezett és szükséges, géppel olvasható kimenetre és működési ellenőrzésekre tervezett rendszert használjon. A Page 2 File-t ne iktassa be kép–adat rövidítésként.
+
+A rögzítésnek saját előkészítése van: stabilizálja a látható állapotot, határozza meg a határt, válasszon képernyőképszerű vagy szerkeszthető kimenetet, és vizsgálja meg az előnézetet. Működési hatóköre kisebb, mert az eredmény dokumentum, de a szerzői jog, személyes adatok és terjesztési engedély továbbra is érvényes.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: A hűség, keresés és hivatkozások követelménye szerint válasszon kimeneti stílust."}
+  caption={"A hűség, keresés és hivatkozások követelménye szerint válasszon kimeneti stílust."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: A hűség, keresés és hivatkozások követelménye szerint válasszon kimeneti stílust."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/03.svg"
+  step={3}
+/>
+
+## Kerülje a félrevezető hibrid munkafolyamatokat
+
+Az optikai karakterfelismerés vagy PDF-ből szövegmásolás hasznos lehet akadálymentességhez vagy idézéshez, de nem alakítja a fájlt megbízható forrásadatbázissá. Az elrendezés, ismétlődő fejlécek és képernyőképes helyettesítések hiányzó vagy megkettőzött értékeket vezethetnek be.
+
+Hasonlóképpen egy scraper hibakereséshez képernyőképeket menthet szerkesztőileg ellenőrzött dokumentum készítése nélkül. Ha egy projekt strukturált adatot és vizuális bizonyítékot is igényel, minden műterméket a megfelelő munkafolyamattal hozzon létre és validáljon, majd forrásazonosítókkal és rögzítési dátumokkal kapcsolja össze.
+
+A szerkeszthető weboldal-konverziót ne nevezze scrapingnek. A támogatott szöveg, képek és hivatkozások olvasáshoz és szerkesztéshez dokumentumelemmé válnak, nem stabil sémájú normalizált mezőkké vagy ismétlődő gyűjtési szerződéssé.
+
+## Eltérő elfogadási feltételeket használjon
+
+Rögzítésnél egyeztesse a dokumentumot a látható forrásvázlattal. Ellenőrizze a kezdő- és végpontokat, olvasási sorrendet, olvashatóságot, hivatkozásokat, helyettesítéseket és privát információt. Ha a származás számít, jegyezze fel a forrásállapotot és dátumot.
+
+Scrapingnél specifikáció szerint validálja a kötelező mezőket, adattípusokat, egyedi azonosítókat, lapozási lefedettséget, duplikátumkezelést és hibákat. Mintavételezze vissza a rekordokat a hiteles forráshoz, és idővel figyelje a változásokat. A sorszám önmagában nem bizonyítja a helyességet.
+
+Ha mindkét eredmény elkészül, ne feltételezze, hogy az egyik automatikusan validálja a másikat. A képernyőkép környezetet mutathat egy mintarekordhoz, de más időt, szűrőt vagy munkamenetet tükrözhet. Ezeket a határokat őrizze meg az ellenőrzési feljegyzésben.
+
+## Írott kimeneti szerződéssel döntsön
+
+Írjon egy mondatot, amely megnevezi a címzettet és a műterméket. „Egy ellenőrnek PDF kell erről az engedélyezett irányítópult-állapotról” rögzítésre mutat. „Alkalmazásunknak napi termékárak kellenek rekordokként” engedélyezett adatforrásra vagy scraping rendszerre mutat. „Egy prezentálónak szerkeszthető diák kellenek ebből a jelentésből” weboldal–PowerPoint konverzióra mutat.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Renderelt kommunikációs műtermékként vizsgálja meg a PDF-et vagy PPTX-et."}
+  caption={"Renderelt kommunikációs műtermékként vizsgálja meg a PDF-et vagy PPTX-et."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Renderelt kommunikációs műtermékként vizsgálja meg a PDF-et vagy PPTX-et."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/04.svg"
+  step={4}
+/>
+
+Ezután sorolja fel a kizárásokat. A Page 2 File nem biztosít bejáró API-t, monitorozási ütemezést, strukturált kinyerést vagy rejtettadat-hozzáférést. A scraper önmagában nem ad a forrásról olvasható, lapozott vagy prezentációra kész ábrázolást.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Strukturált rekordokból álló eredményhez engedélyezett adatrendszert használjon."}
+  caption={"Strukturált rekordokból álló eredményhez engedélyezett adatrendszert használjon."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Strukturált rekordokból álló eredményhez engedélyezett adatrendszert használjon."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/05.svg"
+  step={5}
+/>
+
+Ez az egyértelmű szerződés a vegyes projektek körülhatárolását is megkönnyíti. A rögzítés és scraping együtt létezhet, de eltérő kockázatokkal, karbantartással és bizonyítékkal rendelkező külön rendszerek maradnak.
+
+A szállítandó eredmény változásakor értékelje újra a szerződést. Egy prezentációként induló kérés később ismétlődő adatkészletté válhat, ami ismételt dokumentumkonverzió helyett új engedélyezett adatmunkafolyamatot igényel.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Ne kezelje a Page 2 File-t bejáróként, monitorozási szolgáltatásként vagy rejtettadat-API-ként."}
+  caption={"Ne kezelje a Page 2 File-t bejáróként, monitorozási szolgáltatásként vagy rejtettadat-API-ként."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Ne kezelje a Page 2 File-t bejáróként, monitorozási szolgáltatásként vagy rejtettadat-API-ként."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/06.svg"
+  step={6}
+/>

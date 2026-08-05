@@ -1,0 +1,124 @@
+Conversia HTML în PDF transformă un fișier HTML furnizat într-un document fix. Cu [aplicația GPT HTML 2 PDF](/ro/html2pdf-gpt), intrarea este fișierul pe care îl furnizați, nu o explorare a unui URL și nici starea autentificată a unei file de browser.
+
+<ArticleFigure
+  alt={"Browser și extensia Page 2 File: Randați HTML-ul ca pagină de browser înainte de a-l trata drept sursă de document."}
+  caption={"Randați HTML-ul ca pagină de browser înainte de a-l trata drept sursă de document."}
+  closeLabel={"Închideți previzualizarea imaginii"}
+  openLabel={"Deschideți imaginea la dimensiune completă: Randați HTML-ul ca pagină de browser înainte de a-l trata drept sursă de document."}
+  src="/blog/instructions/html-to-pdf-safely/01.svg"
+  step={1}
+/>
+
+Tratați fiecare fișier HTML drept cod activ până când un randor dovedește contrariul. Un design de conversie justificabil restricționează scripturile și accesul neașteptat la rețea, blochează solicitările către fișiere locale și servicii interne și face vizibil conținutul neacceptat pentru verificare. Nu deduceți aceste controale dintr-un PDF bine finisat; verificați limitele documentate ale convertorului înainte de a furniza date sensibile.
+
+## Pregătiți un fișier autonom
+
+Folosiți titluri, paragrafe, liste și tabele semantice. Includeți CSS-ul necesar aspectului și împachetați imaginile într-o formă pe care intrarea aprobată o poate rezolva. Un fișier care depinde de un server privat de build sau de un API autentificat nu se va reproduce fiabil într-un randor izolat.
+
+Eliminați analiza, trimiterea formularelor, materialele cu redare automată și codul care modifică documentul după încărcare. PDF-ul este o destinație statică; păstrarea acestor comportamente adaugă risc fără să îmbunătățească documentul.
+
+## Mențineți randorul izolat
+
+HTML-ul neautorizat poate încerca să citească fișiere locale, să apeleze adrese interne sau să consume resurse excesive. Conversia trebuie să ruleze într-un proces separat și restricționat, cu scripturile, WebSockets și solicitările de rețea arbitrare dezactivate.
+
+Izolarea poate schimba aspectul conținutului care depindea de fonturi, imagini sau componente client la distanță. Tratați resursele lipsă drept constatări de verificare, nu presupuneți că o randare finalizată este completă.
+
+## Proiectați pentru pagini fixe
+
+Setați lățimi de imprimare rezonabile, permiteți încadrarea cuvintelor lungi și a codului și evitați elementele care necesită trecerea cursorului. Tabelele au nevoie de anteturi repetabile și celule care se pot împărți sau scala fără să devină ilizibile.
+
+Dacă sursa reală este deja o pagină web publică, folosiți în schimb [convertorul PDF pentru pagini web](/ro/convert-webpage-to-pdf). Dacă este o pagină privată vizibilă în Chrome, folosiți [extensia](/ro/chrome-extension/how-to-use).
+
+## Verificați documentul, nu doar HTML-ul
+
+Verificați fonturile înlocuite, imaginile lipsă, elementele poziționate tăiate, întreruperile de pagină și linkurile. Comparați secțiunile complexe cu îndrumările despre [rezultatul tip captură față de cel editabil](/ro/blog/visual-vs-editable).
+
+HTML 2 PDF este util când controlați fișierul de intrare și doriți o randare izolată a documentului. Nu este un endpoint de automatizare a browserului, un instrument de extragere a site-urilor sau o metodă de executare a scripturilor furnizate.
+
+## Inventariați fiecare dependență
+
+Un fișier HTML spune rareori întreaga poveste. Aspectul său poate depinde de foi de stil locale, fonturi web, imagini, fișiere SVG, scripturi sau active la distanță. Identificați resursele esențiale și modul în care fiecare este referit. Un fișier care pare complet în proiectul original poate deveni o coloană de text fără stil când este deschis singur.
+
+Preferați stiluri și active autonome pe care documentul are permisiunea să le folosească. Înlocuiți căile disponibile numai în dezvoltare și referințele la rețele private. Dacă o imagine la distanță este necesară, verificați că este accesibilă fără o sesiune autentificată în browser. Nu trebuie să vă așteptați ca un convertor să moștenească cookie-urile stației de lucru sau structura sistemului de fișiere.
+
+Eliminați scripturile care obțin date ale utilizatorului, analiză sau stare fără legătură a aplicației. HTML-ul static destinat unui PDF necesită de obicei mai puțină execuție decât site-ul original. Păstrați doar comportamentul necesar pentru afișarea documentului și confirmați că materialul final nu depinde de un temporizator sau un gest al utilizatorului.
+
+## Faceți explicite dimensiunile pentru imprimare
+
+Aspectele de browser răspund la zona vizibilă, în timp ce PDF-urile folosesc dimensiuni fixe ale paginilor. Definiți lățimea, marginile și tipografia potrivite dimensiunii de hârtie dorite. Evitați poziționarea documentului principal pe baza înălțimii zonei vizibile sau lăsarea textului important în containere derulabile orizontal.
+
+Folosiți regulile de întrerupere drept sugestii în jurul titlurilor, figurilor, tabelelor și blocurilor de cod, apoi examinați rezultatul. Regulile pot intra în conflict când un element este mai înalt decât o pagină. Un tabel mare poate avea nevoie de anteturi repetate sau de orientare peisaj; un vizual înalt poate trebui să rămână o singură imagine scalată.
+
+Textul foarte deschis, straturile translucide și tokenurile exclusiv pentru modul întunecat pot fi greu de citit la imprimare. Verificați PDF-ul propriu-zis, nu presupuneți că previzualizarea browserului reprezintă toate cititoarele și imprimantele.
+
+## Tratați HTML-ul încărcat drept intrare neautorizată
+
+Încărcați numai fișiere pe care aveți permisiunea să le procesați și eliminați secretele încorporate în marcaje, comentarii, atribute de date sau scripturi inline. Conținutul ascuns poate călători cu sursa chiar dacă nu este vizibil în pagina finală.
+
+Un randor trebuie să restricționeze accesul la rețea și la sistemul local, însă izolarea tehnică nu remediază alegerile nesigure de conținut. Verificați linkurile externe, formularele încorporate și codurile QR generate înainte de distribuire. PDF-ul este static, însă linkurile sale pot în continuare să conducă destinatarul în afara documentului.
+
+Comparați rezultatul cu o listă a dependențelor. Confirmați fonturile, imaginile, ordinea paginilor, titlurile, linkurile și pagina finală. Dacă lipsește o resursă, remediați pachetul HTML sau folosiți un URL public care poate încărca pagina completă.
+
+<ArticleFigure
+  alt={"Browser și extensia Page 2 File: Folosiți Current tab pentru conținut local randat sau By URL pentru o pagină publică permisă."}
+  caption={"Folosiți Current tab pentru conținut local randat sau By URL pentru o pagină publică permisă."}
+  closeLabel={"Închideți previzualizarea imaginii"}
+  openLabel={"Deschideți imaginea la dimensiune completă: Folosiți Current tab pentru conținut local randat sau By URL pentru o pagină publică permisă."}
+  src="/blog/instructions/html-to-pdf-safely/02.svg"
+  step={2}
+/>
+
+## Separați riscurile de creare de cele de randare
+
+Riscurile de creare sunt deja prezente în fișier: secrete încorporate, date personale ascunse, linkuri înșelătoare și conținut pe care nu aveți permisiunea să îl distribuiți. Riscurile de randare apar când HTML-ul activ poate solicita resurse de rețea, accesa o locație neintenționată sau consuma timp de procesare excesiv. Un flux de încredere are nevoie de controale pentru ambele categorii.
+
+Examinați sursa înainte de încărcare atunci când este posibil. Căutați scripturi inline, gestionari de evenimente, formulare, URL-uri externe, căi locale și active încorporate mari. Eliminați tot ce nu are legătură cu documentul. Aceasta reduce ambiguitatea chiar și atunci când randorul aplică propriile restricții.
+
+Nu folosiți conversia pentru a determina dacă un HTML necunoscut este sigur. Dacă fișierul provine de la un expeditor care nu este de încredere, urmați mai întâi procesul organizației pentru malware și gestionarea documentelor. Un rezultat PDF nu face retroactiv intrarea inofensivă.
+
+## Construiți HTML previzibil pentru paginare
+
+Folosiți o ierarhie logică a titlurilor și păstrați ordinea principală de citire în fluxul documentului. Poziționarea absolută poate fi utilă pentru o copertă sau etichetă, dar folosirea ei pentru întregul raport face depășirea paginilor fixe greu de diagnosticat. Setați lățimi explicite pentru tabele și conținut media, adăugați dimensiuni maxime rezonabile și permiteți încadrarea textului lung.
+
+CSS-ul pentru imprimare poate defini marginile, dimensiunea hârtiei și preferințele de întrerupere, însă aceste reguli sunt solicitări, nu garanții. Un element mai înalt decât o pagină trebuie în continuare scalat sau împărțit. Păstrați legendele aproape de figuri, repetați contextul tabelului acolo unde randorul permite și evitați să plasați explicații esențiale numai în stări la trecerea cursorului sau pseudo-elemente.
+
+Fonturile au nevoie de o listă de rezervă. Un font încărcat de la distanță poate fi indisponibil într-un mediu de randare restricționat. Alegeți un font de rezervă cu metrici similare, apoi verificați titlurile, tabelele și codul pentru încadrare modificată. Fontul exact contează mai puțin decât un rezultat stabil și lizibil, dacă tipografia nu este ea însăși subiectul documentului.
+
+<ArticleFigure
+  alt={"Browser și extensia Page 2 File: Alegeți PDF și un stil de ieșire după ce pagina este vizibil stabilă."}
+  caption={"Alegeți PDF și un stil de ieșire după ce pagina este vizibil stabilă."}
+  closeLabel={"Închideți previzualizarea imaginii"}
+  openLabel={"Deschideți imaginea la dimensiune completă: Alegeți PDF și un stil de ieșire după ce pagina este vizibil stabilă."}
+  src="/blog/instructions/html-to-pdf-safely/03.svg"
+  step={3}
+/>
+
+## Verificați rezultatul ca pe un artefact nou
+
+Comparați PDF-ul cu un inventar de conținut, nu doar cu vederea HTML din browser. Confirmați că fiecare secțiune necesară apare o singură dată, ordinea paginilor este corectă, imaginile sunt actuale și linkurile duc la destinații aprobate. Căutați o expresie aproape de început, mijloc și sfârșit atunci când este așteptat text selectabil.
+
+Căutați dovezi ale dependențelor blocate: cadre goale pentru imagini, fonturi de rezervă, diagrame goale sau goluri de aspect unde ar fi trebuit să apară o componentă generată de script. Remediați pachetul sursă sau acceptați o imagine de rezervă documentată clar. Nu ascundeți un element lipsă doar pentru că paginile din jur s-au randat cu succes.
+
+<ArticleFigure
+  alt={"Browser și extensia Page 2 File: Tratați accesul la scripturi, rețea și fișiere drept o limită de securitate separată a randorului."}
+  caption={"Tratați accesul la scripturi, rețea și fișiere drept o limită de securitate separată a randorului."}
+  closeLabel={"Închideți previzualizarea imaginii"}
+  openLabel={"Deschideți imaginea la dimensiune completă: Tratați accesul la scripturi, rețea și fișiere drept o limită de securitate separată a randorului."}
+  src="/blog/instructions/html-to-pdf-safely/04.svg"
+  step={4}
+/>
+
+HTML 2 PDF este prezentată ca aplicație GPT pentru un fișier HTML încărcat și un rezultat PDF. Nu este un crawler general de site-uri sau un mediu de execuție pentru codul aplicațiilor. Folosiți convertorul de URL public pentru o pagină publică și extensia Chrome pentru o filă activă autorizată.
+
+Înainte de distribuire, verificați metadatele fișierului, identificatorii vizibili și țintele accesibile. Chiar și cea mai sigură randare poate conține informații introduse de autor în document. Păstrați PDF-ul final aprobat în propriul spațiu de stocare, deoarece Page 2 File nu oferă o bază de date cu istoricul conversiilor.
+
+Comparați alte categorii de surse în [ghidul PDF și PowerPoint pentru site-uri](/ro/blog/website-types-to-pdf-or-powerpoint).
+
+<ArticleFigure
+  alt={"Browser și extensia Page 2 File: Verificați paginile PDF fixe și înregistrați dependențele lipsă sau blocate."}
+  caption={"Verificați paginile PDF fixe și înregistrați dependențele lipsă sau blocate."}
+  closeLabel={"Închideți previzualizarea imaginii"}
+  openLabel={"Deschideți imaginea la dimensiune completă: Verificați paginile PDF fixe și înregistrați dependențele lipsă sau blocate."}
+  src="/blog/instructions/html-to-pdf-safely/05.svg"
+  step={5}
+/>

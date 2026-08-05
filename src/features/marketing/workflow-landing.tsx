@@ -106,12 +106,8 @@ export const WorkflowLanding = ({
                   label={content.primaryLabel}
                   placeholderLabel={
                     family === "gpt-workflow"
-                      ? locale === "ru"
-                        ? "Каталог GPTs"
-                        : "Browse GPTs"
-                      : locale === "ru"
-                        ? "Каталог расширений Chrome"
-                        : "Browse Chrome extensions"
+                      ? copy.landing.browseGpts
+                      : copy.landing.browseChromeExtensions
                   }
                 />
               ) : null}
@@ -149,14 +145,10 @@ export const WorkflowLanding = ({
 
         {content.articleLinks && content.articleLinks.length > 0 ? (
           <nav
-            aria-label={
-              locale === "ru" ? "Статьи по теме" : "Related articles"
-            }
+            aria-label={copy.landing.relatedPages}
             className={styles.articleLinks}
           >
-            <strong>
-              {locale === "ru" ? "Статьи по теме" : "Related articles"}
-            </strong>
+            <strong>{copy.landing.relatedPages}</strong>
             <ul>
               {content.articleLinks.map((articleLink): ReactNode => (
                 <li key={articleLink.slug}>

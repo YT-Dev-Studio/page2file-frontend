@@ -1,0 +1,146 @@
+{
+  "save-webpage-as-pdf": {
+    "author": "Page 2 File -toimitus",
+    "title": "Verkkosivun tallentaminen PDF-muotoon",
+    "description": "Tallenna verkkosivu PDF-muotoon, valitse kuvakaappaus tai muokattava tulos, tarkista sivunvaihdot ja ymmärrä, mitä väliaikaisille muunnostiedoille tapahtuu.",
+    "imageAlt": "Pitkä selainsivu muuttuu järjestetyksi PDF-sivupinoksi"
+  },
+  "why-print-to-pdf-breaks": {
+    "author": "Page 2 File -toimitus",
+    "title": "URL PDF-tiedostoksi vai selaintulostus: Kumpi tallentaa enemmän?",
+    "description": "Vertaa URL-osoitteesta PDF-tiedostoksi -muunnosta selaintulostukseen, tulostustyyleihin, myöhäiseen sisältöön, yksityisiin välilehtiin, visuaaliseen tarkkuuteen ja muokattavaan tulokseen.",
+    "imageAlt": "Selaimen tulostustyönkulkua verrataan verkkosivun kaappaustyönkulkuun"
+  },
+  "capture-full-webpage-as-pdf": {
+    "author": "Page 2 File -toimitus",
+    "title": "Koko verkkosivun kaappaaminen PDF-muotoon",
+    "description": "Kaappaa kokonainen vieritettävä verkkosivu PDF-muotoon määrittämällä raja, lataamalla dynaamiset osiot, tarkistamalla sivunvaihdot ja kunnioittamalla käyttörajoja.",
+    "imageAlt": "Kokonainen vieritettävä verkkosivu virtaa PDF-asiakirjaan"
+  },
+  "long-webpage-page-breaks": {
+    "author": "Page 2 File -toimitus",
+    "title": "Pitkän verkkosivun muuntaminen ilman rikkoutuneita sivunvaihtoja",
+    "description": "Valmistele pitkät verkkosivut PDF-muotoon, pidä otsikot ja taulukot yhdessä, lataa dynaaminen sisältö ja korjaa hankalat rajat osioiden esikatselussa.",
+    "imageAlt": "Pitkä verkkosivu jaettuna luettaville PDF-sivurajoille"
+  },
+  "preserve-clickable-links": {
+    "author": "Page 2 File -toimitus",
+    "title": "Napsautettavien linkkien säilyttäminen verkkosivun PDF-tiedostossa",
+    "description": "Lue, milloin linkit pysyvät napsautettavina PDF:ssä, miksi kuvakaappaus poistaa vuorovaikutuksen ja miten kohteet tarkistetaan muokattavassa tulosteessa.",
+    "imageAlt": "Verkkosivun linkit säilyvät PDF-tiedostossa"
+  },
+  "visual-vs-editable": {
+    "author": "Page 2 File -toimitus",
+    "title": "Verkkosivun kuvakaappausmuunnos vai muokattava muunnos",
+    "description": "Vertaa Accurate copy- ja Editable document -tiloja PDF- ja PowerPoint-tulosteissa asettelun, haettavan tekstin, linkkien ja muokattavuuden perusteella.",
+    "imageAlt": "Visuaalinen ja muokattava verkkosivutuloste rinnakkain"
+  },
+  "html-to-pdf-safely": {
+    "author": "Page 2 File -toimitus",
+    "title": "HTML:n turvallinen muuntaminen PDF:ksi",
+    "description": "Valmistele itsenäinen HTML, rajoita aktiivisia riippuvuuksia, suunnittele kiinteille sivuille ja tarkista eristetty PDF-tulos ennen jakelua.",
+    "imageAlt": "HTML-koodi hahmonnettu turvallisesti kiinteäksi PDF-asiakirjaksi"
+  },
+  "multi-page-website-to-pdf": {
+    "author": "Page 2 File -toimitus",
+    "title": "Monisivuisen verkkosivuston muuntaminen PDF-tiedostoiksi",
+    "description": "Rajaa julkisten sivujen kokoelma, muunna yksi URL yhdeksi PDF:ksi, tarkista virheet ja pakkaa tulos manifestin kanssa lupaamatta rajoittamatonta läpikäyntiä.",
+    "imageAlt": "Useita verkkosivuston sivuja järjestettynä erillisiksi PDF-tiedostoiksi"
+  },
+  "webpage-to-powerpoint": {
+    "author": "Page 2 File -toimitus",
+    "title": "Verkkosivun muuntaminen PowerPoint-esitykseksi",
+    "description": "Muunna yksi julkinen verkkosivu luettavaksi 16:9 PowerPoint-esitykseksi, valitse Accurate copy tai Editable document ja tarkista diat ennen luovutusta.",
+    "imageAlt": "Verkkosivu jaettuna 16:9 PowerPoint-esitykseksi"
+  },
+  "website-to-powerpoint": {
+    "author": "Page 2 File -toimitus",
+    "title": "Verkkosivuston muuntaminen PowerPoint-esityksiksi",
+    "description": "Rajaa julkiset sivut, luo yksi PPTX lähdettä kohden, käytä yhtenäistä diakäytäntöä ja toimita tarkistettu kokoelma manifestin kanssa.",
+    "imageAlt": "Useita verkkosivuston sivuja muunnettuna erillisiksi PowerPoint-esityksiksi"
+  },
+  "html-to-powerpoint": {
+    "author": "Page 2 File -toimitus",
+    "title": "Hahmonnetun HTML:n muuntaminen PowerPointiksi",
+    "description": "Vakauta sallittu hahmonnettu HTML-sivu, muotoile sen osiot 16:9-dioiksi ja tarkista muokattavat objektit sekä visuaaliset vararatkaisut.",
+    "imageAlt": "Hahmonnettu HTML muutettuna 16:9 PowerPoint-esitykseksi"
+  },
+  "sections-to-slides": {
+    "author": "Page 2 File -toimitus",
+    "title": "Verkkosivun osioiden muuttaminen PowerPoint-dioiksi",
+    "description": "Kartoita merkitykselliset osiot, jaa korkea sisältö luettaville 16:9-dioille ja säilytä asiayhteys, näyttö sekä muokkaustarkoitus.",
+    "imageAlt": "Verkkosivun osiot järjestettynä luettaviksi PowerPoint-dioiksi"
+  },
+  "screenshot-vs-editable-powerpoint": {
+    "author": "Page 2 File -toimitus",
+    "title": "Kuvakaappausdiat vai muokattava PowerPoint",
+    "description": "Vertaa Accurate copy- ja Editable document -tiloja PowerPointissa visuaalisen uskollisuuden, todellisten muokkaustehtävien, saavutettavuuden ja ylläpidon perusteella.",
+    "imageAlt": "Kuvakaappausdiat ja muokattavat PowerPoint-diat rinnakkain"
+  },
+  "save-authenticated-webpage-as-pdf": {
+    "author": "Page 2 File -toimitus",
+    "title": "Kirjautumisen takana olevan verkkosivun tallentaminen PDF:ksi",
+    "description": "Kaappaa todennettu Chrome-välilehti jakamatta tunnistetietoja, tarkista arkaluonteiset alueet ja säilytä yksityinen PDF lähteen sääntöjen mukaisesti.",
+    "imageAlt": "Yksityinen hallintanäkymä kaapattuna turvallisesti todennetulta selainvälilehdeltä"
+  },
+  "website-types-to-pdf-or-powerpoint": {
+    "author": "Page 2 File -toimitus",
+    "title": "Minkä tyyppiset verkkosivustot voi tallentaa PDF- tai PowerPoint-muotoon?",
+    "description": "Valitse oikea muoto, tulostetila ja valmistelu artikkeleille, hallintanäkymille, kaupoille, oppimissivuille, keskusteluille, viestimille ja yksityisille verkkosovelluksille.",
+    "imageAlt": "Erilaisia verkkosivustotyyppejä yhdistettynä PDF- ja PowerPoint-tulosteisiin"
+  },
+  "webpage-capture-vs-web-scraping": {
+    "author": "Page 2 File -toimitus",
+    "title": "Verkkosivun kaappaus vai web scraping",
+    "description": "Vertaa ihmisen luettavia PDF- ja PPTX-kaappauksia rakenteisen datan poimintaan ja valitse tulostesopimuksen, toiminnan, riskien ja hyväksyntäkriteerien mukaan.",
+    "imageAlt": "Verkkosivun kaappaus verrattuna rakenteiseen web scrapingiin"
+  },
+  "export-ai-chats-privately": {
+    "author": "Page 2 File -toimitus",
+    "title": "Tekoälykeskustelujen yksityinen vienti PDF:ksi",
+    "description": "Kaappaa rajattu tekoälykeskustelu aktiiviselta välilehdeltä, tarkista haarat, koodi, lähteet ja arkaluonteiset tiedot sekä erota tiedosto virallisesta tiliarkistosta.",
+    "imageAlt": "Tekoälykeskustelu tarkistettuna yksityisesti ennen PDF-vientiä"
+  },
+  "export-chatgpt-conversation-to-pdf": {
+    "author": "Page 2 File -toimitus",
+    "title": "ChatGPT-keskustelun vienti PDF:ksi",
+    "description": "Lataa valittu ChatGPT-alue, valitse asiakirjatyyli, tarkista koodi, taulukot, lähteet ja yksityisyys sekä erota PDF OpenAI:n tiliviennistä.",
+    "imageAlt": "ChatGPT-keskustelu valmisteltuna ja tarkistettuna PDF-vientiä varten"
+  },
+  "export-claude-chat-to-pdf": {
+    "author": "Page 2 File -toimitus",
+    "title": "Claude-keskustelun vienti PDF:ksi",
+    "description": "Lataa rajattu Claude-keskustelu näkyvine artefakteineen, valitse tulostetila, tarkista viitteet ja yksityisyys sekä täsmäytä PDF ketjuun.",
+    "imageAlt": "Claude-keskustelu ja näkyvä artefaktinäkymä valmisteltuna PDF:ksi"
+  },
+  "export-gemini-chat-to-pdf": {
+    "author": "Page 2 File -toimitus",
+    "title": "Gemini-keskustelun vienti PDF:ksi",
+    "description": "Lataa rajattu Gemini-alue lähteineen ja medioineen, valitse asiakirjatyyli, suojaa tilitiedot ja täsmäytä lopullinen PDF keskusteluun.",
+    "imageAlt": "Gemini-keskustelu lähdekortteineen ja kuvineen valmisteltuna PDF:ksi"
+  },
+  "export-other-ai-chats-to-pdf": {
+    "author": "Page 2 File -toimitus",
+    "title": "Grok-, DeepSeek-, Perplexity- ja Copilot-keskustelujen vienti PDF:ksi",
+    "description": "Mukauta aktiivisen välilehden kaappaus eri tekoälykäyttöliittymiin, säilytä näkyvät lähteet, suojaa yksityiset tiedot ja varmista täsmällinen keskusteluraja.",
+    "imageAlt": "Yleinen tekoälykeskustelu lähteineen, koodeineen ja medioineen valmisteltuna PDF:ksi"
+  },
+  "export-whatsapp-chat-to-pdf": {
+    "author": "Page 2 File -toimitus",
+    "title": "WhatsApp Web -keskustelun vienti PDF:ksi",
+    "description": "Lataa määritelty WhatsApp Web -viestialue, säilytä vastaukset, päivämäärät ja näkyvä media, tarkista yksityisyys ja varmista ladattu PDF.",
+    "imageAlt": "WhatsApp Web -keskustelu viesteineen ja medioineen valmisteltuna PDF:ksi"
+  },
+  "export-telegram-chat-to-pdf": {
+    "author": "Page 2 File -toimitus",
+    "title": "Telegram Web -keskustelun vienti PDF:ksi",
+    "description": "Lataa rajattu Telegram Web -alue, säilytä vastaukset, lähdemerkinnät ja media, tarkista oikeudet ja erota PDF Telegram Desktop -viennistä.",
+    "imageAlt": "Telegram Web -keskustelu tai -kanava valmisteltuna PDF:ksi"
+  },
+  "export-browser-messenger-chats-to-pdf": {
+    "author": "Page 2 File -toimitus",
+    "title": "Selainviestinkeskustelujen vienti PDF:ksi",
+    "description": "Kaappaa rajatut Discord-, Slack-, Teams-, Messenger- ja Instagram-keskustelut Chromesta, tarkista monipuolinen sisältö ja yksityisyys sekä erota PDF alusta-arkistoista.",
+    "imageAlt": "Useita selainviestinkeskustelutyyppejä valmisteltuna PDF:ksi"
+  }
+}

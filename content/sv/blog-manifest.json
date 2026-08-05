@@ -1,0 +1,146 @@
+{
+  "save-webpage-as-pdf": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så sparar du en webbsida som PDF",
+    "description": "Spara en offentlig eller inloggad webbsida som PDF, välj skärmbild eller redigerbar utdata, granska sidbrytningar och förstå den tillfälliga förhandsvisningens gräns.",
+    "imageAlt": "En lång sida i webbläsaren blir en ordnad stapel PDF-sidor"
+  },
+  "why-print-to-pdf-breaks": {
+    "author": "Page 2 File-redaktionen",
+    "title": "URL till PDF eller webbläsarutskrift: vad fångar mest?",
+    "description": "Jämför URL-till-PDF med webbläsarutskrift, inklusive utskriftsstilar, sent innehåll, privata flikar, visuell trohet och redigerbar utdata.",
+    "imageAlt": "Webbläsarens utskriftsflöde jämförs med flödet för insamling av webbsidor"
+  },
+  "capture-full-webpage-as-pdf": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så fångar du en hel webbsida som PDF",
+    "description": "Fånga en komplett rullbar webbsida som PDF genom att ange dess gräns, läsa in dynamiska avsnitt, granska sidbrytningar och respektera åtkomstbegränsningar.",
+    "imageAlt": "En hel rullbar webbsida flödar in i ett PDF-dokument"
+  },
+  "long-webpage-page-breaks": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så konverterar du en lång webbsida utan trasiga sidbrytningar",
+    "description": "Förbered långa webbsidor för PDF, håll rubriker och tabeller samman, läs in dynamiskt innehåll och korrigera olämpliga gränser i avsnittsförhandsvisningen.",
+    "imageAlt": "En lång webbsida delad vid läsbara PDF-sidgränser"
+  },
+  "preserve-clickable-links": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så bevarar du klickbara länkar i en PDF från en webbsida",
+    "description": "Lär dig när webbsidelänkar förblir klickbara i PDF, varför skärmbilder plattar ut interaktion och hur Editable document hanterar säkra länkmål.",
+    "imageAlt": "Webbläsarlänkar överförda till ett redigerbart PDF-dokument"
+  },
+  "visual-vs-editable": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Skärmbild eller redigerbar konvertering av en webbsida",
+    "description": "Jämför skärmbild och redigerbar webbsideskonvertering efter layout, text, länkar, bilder, komplexa ersättningar och resultat i PDF eller PowerPoint.",
+    "imageAlt": "En visuell skärmbild av en sida jämförd med ett redigerbart dokument"
+  },
+  "html-to-pdf-safely": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så konverterar du HTML till PDF på ett säkert sätt",
+    "description": "Konvertera en uppladdad HTML-fil till PDF och behandla skript, fjärrresurser, filåtkomst och mål i privata nätverk som säkerhetsgränser.",
+    "imageAlt": "HTML-innehåll isolerat innan det blir en ren PDF"
+  },
+  "multi-page-website-to-pdf": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så konverterar du en flersidig webbplats till PDF",
+    "description": "Gör tillgängliga sidor från en webbplats till separata PDF-filer, ange en genomsökningsgräns, granska fel och undvik att lova ett sammanslaget dokument.",
+    "imageAlt": "En webbplatskarta blir flera separata PDF-dokument"
+  },
+  "webpage-to-powerpoint": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så konverterar du en webbsida till PowerPoint",
+    "description": "Konvertera en webbsida till PowerPoint, välj skärmbilder eller redigerbara bilder, definiera användbara avsnitt och granska PPTX-filen innan du laddar ned den.",
+    "imageAlt": "En webbsida omorganiserad till en PowerPoint-presentation"
+  },
+  "website-to-powerpoint": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så konverterar du en webbplats till PowerPoint",
+    "description": "Konvertera tillgängliga webbplatssidor till separata PowerPoint-filer, håll sidgränsen tydlig och granska resultatet som skärmbilder eller redigerbara bilder.",
+    "imageAlt": "En webbplatskarta som flödar till separata PowerPoint-presentationer"
+  },
+  "html-to-powerpoint": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så konverterar du HTML-webbinnehåll till PowerPoint",
+    "description": "Flytta renderat HTML-webbinnehåll till PowerPoint genom att välja användbara avsnitt, välja skärmbilder eller redigerbara bilder och granska komplexa reserver.",
+    "imageAlt": "Renderade HTML-block som flyttas från en webbläsare till bilder"
+  },
+  "sections-to-slides": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så blir webbsidesavsnitt PowerPoint-bilder",
+    "description": "Använd webbsidans hierarki för att ange bildgränser, bevara kontext, dela täta avsnitt och granska resultatet som skärmbilder eller redigerbar PowerPoint.",
+    "imageAlt": "Webbsidesavsnitt ordnade som separata PowerPoint-bilder"
+  },
+  "screenshot-vs-editable-powerpoint": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Skärmbilder kontra redigerbar PowerPoint från en webbsida",
+    "description": "Jämför skärmbilder med redigerbart PowerPoint-resultat efter layouttrohet, markerbar text, länkar, diagram, underhåll och tillgänglighet.",
+    "imageAlt": "Skärmbilder jämförda med redigerbara PowerPoint-element"
+  },
+  "save-authenticated-webpage-as-pdf": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så sparar du en webbsida bakom inloggning som PDF",
+    "description": "Spara en inloggad webbsida från den aktiva Chrome-fliken utan att ge en URL-konverterare dina autentiseringsuppgifter och granska sedan integritet och insamlingsgränser.",
+    "imageAlt": "En skyddad webbläsarflik som blir en privat PDF-kopia"
+  },
+  "website-types-to-pdf-or-powerpoint": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Vilka typer av webbplatser kan exporteras till PDF eller PowerPoint?",
+    "description": "Se hur artiklar, dokumentation, dashboards, butiker, utbildningssidor, webbappar, AI-chattar och webbläsarmeddelanden passar för export till PDF eller PowerPoint.",
+    "imageAlt": "Olika webbplatstyper som samlas i PDF-filer och presentationer"
+  },
+  "webpage-capture-vs-web-scraping": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Webbsidesinsamling kontra webbskrapning: vilket behöver du?",
+    "description": "Välj webbsidesinsamling för ett läsbart skärmbildsdokument eller webbskrapning för strukturerade data och undvik att behandla Page 2 File som ett crawler-API.",
+    "imageAlt": "En webbläsarsida som förgrenas till ett dokument och en datatabell"
+  },
+  "export-ai-chats-privately": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så exporterar du AI-chattar privat till PDF",
+    "description": "Exportera synliga AI-konversationer från en aktiv webbläsarflik, definiera meddelandeintervallet, välj PDF-läge och förstå tillfälliga förhandsvisningsdata.",
+    "imageAlt": "En privat AI-konversation som passerar genom en sköld till PDF"
+  },
+  "export-chatgpt-conversation-to-pdf": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så exporterar du en ChatGPT-konversation till PDF",
+    "description": "Förbered en synlig ChatGPT-konversation, läs in nödvändigt intervall, välj skärmbilds- eller redigerbar PDF och skilj flikinsamling från kontoexport.",
+    "imageAlt": "En generell AI-konversation i webbläsaren som blir ett PDF-dokument"
+  },
+  "export-claude-chat-to-pdf": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så exporterar du en Claude-chatt till PDF",
+    "description": "Samla in en synlig Claude-konversation och artefaktyta som PDF, välj en läsbar gräns och jämför den med Claudes export av kontodata.",
+    "imageAlt": "En generell AI-chatt och artefaktpanel som blir en PDF"
+  },
+  "export-gemini-chat-to-pdf": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så exporterar du en Gemini-chatt till PDF",
+    "description": "Spara en synlig Gemini-konversation med hänvisningar och bilder som PDF, läs in nödvändigt innehåll och skilj insamling från Google Takeout.",
+    "imageAlt": "En AI-chatt med källkort och bilder som blir en PDF"
+  },
+  "export-other-ai-chats-to-pdf": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så exporterar du chattar från Grok, DeepSeek, Perplexity eller Copilot",
+    "description": "Exportera synliga chattar från Grok, DeepSeek, Perplexity eller Copilot från en webbläsarflik med respekt för inläst innehåll, integritet och plattformsgränser.",
+    "imageAlt": "Flera generella AI-chattflikar som samlas i en PDF"
+  },
+  "export-whatsapp-chat-to-pdf": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så exporterar du en WhatsApp-chatt till PDF",
+    "description": "Förbered en konversation i WhatsApp Web, läs in nödvändiga meddelanden och medier, välj PDF-läge och förstå gränsen för aktiv flik.",
+    "imageAlt": "En generell personlig webbmeddelandekonversation som blir en PDF"
+  },
+  "export-telegram-chat-to-pdf": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så exporterar du en Telegram-chatt till PDF",
+    "description": "Förbered en Telegram Web-chatt eller kanal, läs in svar och medier, välj skärmbilds- eller redigerbar PDF och granska den insamlade meddelandegränsen.",
+    "imageAlt": "En generell kanalkonversation som passerar genom en sköld till PDF"
+  },
+  "export-browser-messenger-chats-to-pdf": {
+    "author": "Page 2 File-redaktionen",
+    "title": "Så exporterar du webbläsarmeddelanden till PDF",
+    "description": "Exportera synliga chattar från Discord Web, Slack Web, Teams, Messenger eller Instagram DMs och förstå varför appar som endast är inbyggda utesluts.",
+    "imageAlt": "Flera paneler för webbläsarmeddelanden som samlas i PDF-dokument"
+  }
+}

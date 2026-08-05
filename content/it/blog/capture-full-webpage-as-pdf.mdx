@@ -1,0 +1,120 @@
+Un PDF di una pagina Web completa deve contenere l'intero documento che intendeva acquisire, non soltanto una schermata né ogni consiglio infinito che il sito può caricare. Apra la pagina, carichi le sezioni necessarie, scelga un punto finale chiaro e acquisisca dalla scheda attiva con l'[estensione Page 2 File](/it/chrome-extension/how-to-use).
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: carichi l'intera pagina a scorrimento e definisca un inizio e una fine chiari."}
+  caption={"Carichi l'intera pagina a scorrimento e definisca un inizio e una fine chiari."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: carichi l'intera pagina a scorrimento e definisca un inizio e una fine chiari."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/01.svg"
+  step={1}
+/>
+
+Per un indirizzo pubblico semplice, il [convertitore da pagina Web a PDF](/it/convert-webpage-to-pdf) è sufficiente. L'estensione offre un confine migliore per pagine con accesso effettuato, lunghe conversazioni AI e applicazioni Web il cui stato esiste solo nel browser.
+
+## Pagina completa non significa pagina infinita
+
+Molti feed aggiungono contenuti durante lo scorrimento. Decida se il documento termina a una data, un messaggio, un titolo o una sezione caricata. Questa decisione impedisce all'esportazione di raccogliere consigli non correlati o attivare ripetutamente richieste di rete.
+
+Una pagina può contenere anche intestazioni fisse, pulsanti chat mobili e sovrapposizioni di consenso. Chiuda quelle che può rimuovere. Mantenga la navigazione solo quando aiuta il lettore a capire la fonte.
+
+## Carichi intenzionalmente il materiale dinamico
+
+Scorra le immagini a caricamento differito ed espanda gli elementi che desidera includere. In una chat virtualizzata, i messaggi più vecchi possono scomparire dal DOM mentre vengono caricati quelli recenti; usi i controlli della piattaforma per rendere visibile l'intervallo richiesto prima dell'acquisizione. Page 2 File può acquisire contenuti renderizzati, non record nascosti dell'account.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: espanda le sezioni richieste e attivi il contenuto a caricamento differito prima dell'acquisizione."}
+  caption={"Espanda le sezioni richieste e attivi il contenuto a caricamento differito prima dell'acquisizione."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: espanda le sezioni richieste e attivi il contenuto a caricamento differito prima dell'acquisizione."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/02.svg"
+  step={2}
+/>
+
+Attenda che grafici e caratteri personalizzati si stabilizzino. Se la pagina cambia continuamente, acquisisca uno stato stabile e annoti la data nel documento o nel nome del file.
+
+## Trasformi l'altezza in pagine leggibili
+
+Un'esportazione come acquisizioni può conservare ogni sezione renderizzata mentre l'anteprima stabilisce i confini del PDF. Eviti di tagliare una riga di tabella, un esempio di codice o una didascalia dalla sua immagine. L'articolo sulle [interruzioni delle pagine lunghe](/it/blog/long-webpage-page-breaks) offre una sequenza di revisione più dettagliata.
+
+Se link e testo selezionabile contano più dei pixel esatti, utilizzi Editable document (output modificabile) ed esamini ogni alternativa complessa. La [guida ai link cliccabili](/it/blog/preserve-clickable-links) spiega perché un'acquisizione e un documento modificabile si comportano diversamente.
+
+## Anche l'acquisizione privata richiede giudizio
+
+Acquisisca solo materiale che è autorizzato a conservare. L'estensione non rimuove i controlli di accesso; funziona dopo che ha aperto legittimamente una pagina. Inoltre non può acquisire un'applicazione nativa desktop o mobile fuori da Chrome.
+
+L'anteprima è temporanea. La chiusura della scheda elimina i relativi dati e Page 2 File non conserva un database della cronologia delle conversioni.
+
+## Mappi la pagina prima di acquisirla
+
+Le pagine lunghe sono più facili da controllare quando ne identifica prima la struttura. Segni il punto iniziale, l'ultima sezione necessaria e i componenti che si caricano solo dopo un'interazione. Decida se commenti, elementi correlati, navigazione e piè di pagina appartengano al record. “Tutto ciò che il sito può prima o poi caricare” non è un confine utile per un feed infinito.
+
+Presti attenzione alle aree di scorrimento annidate. Un dashboard può avere la barra della pagina, una tabella con una propria barra e un pannello chat che carica la cronologia indipendentemente. Un'operazione a pagina intera può lavorare solo con contenuto renderizzato dalla scheda. Apra righe o messaggi necessari e ne confermi la presenza prima della conversione.
+
+Intestazioni fisse e controlli mobili possono ripetersi quando una pagina lunga viene divisa in sezioni. Li mantenga quando forniscono contesto essenziale, come etichette di colonna; li rimuova o comprima quando coprono il contenuto. L'obiettivo è la continuità per il lettore, non la ripetizione letterale di ogni livello del browser.
+
+## Gestisca caricamento differito e virtualizzazione
+
+Il caricamento differito rimanda immagini o pannelli finché non si avvicinano all'area visibile. Un passaggio intenzionale dall'alto verso il basso rivela di solito se la fonte si carica correttamente. Dopo il passaggio, torni all'inizio. Se le schede iniziali sono scomparse, probabilmente il sito virtualizza l'elenco sostituendo i nodi fuori schermo.
+
+Per fonti virtualizzate, acquisisca un intervallo più piccolo o più sezioni logiche e verifichi ciascuna. Non deduca che una parte invisibile esista nell'output perché una barra suggerisce altro contenuto. L'anteprima deve mostrare inizio, fine e ordine reali di ogni sezione acquisita.
+
+Contatori dinamici, feed live e animazioni possono cambiare durante il passaggio. Metta in pausa gli aggiornamenti quando il sito offre un controllo, oppure scelga un momento di acquisizione chiaro e lo registri. Un PDF è un'istantanea statica; non può conservare il comportamento live che ha prodotto lo stato visualizzato.
+
+## Controlli la continuità tra pagine PDF
+
+Esamini le transizioni tra pagine cercando elementi fissi ripetuti, titoli tagliati, righe duplicate e contenuti nascosti dalle sovrapposizioni. Una sezione leggibile isolatamente può risultare confusa se il titolo appare due pagine prima.
+
+Grafici e tabelle larghi richiedono una scelta consapevole. Mantenere tutta la larghezza può rendere piccole le etichette, mentre dividere l'elemento può togliere contesto. Se la fonte offre una vista compatta, la selezioni prima dell'acquisizione. In alternativa mantenga il visuale come una sezione e scelga una scala leggibile.
+
+Concluda confrontando l'anteprima con uno schema della fonte. Ogni titolo richiesto deve comparire una volta e in ordine. Se la pagina è troppo instabile per superare il test, documenti la limitazione e acquisisca una parte più stretta e ripetibile.
+
+## Diagnostichi un risultato incompleto
+
+Se l'anteprima si ferma troppo presto, torni alla fonte e trovi la prima sezione mancante. Un comando “carica altro”, un pannello compresso o una barra annidata richiedono spesso interazione diretta. Quando la pagina mostra un indicatore di caricamento, attenda che finisca e verifichi che il nuovo contenuto resti presente dopo essersi allontanato.
+
+Se l'anteprima ripete contenuti, controlli intestazioni fisse, righe bloccate e componenti che si renderizzano di nuovo ai confini. Comprima gli elementi fissi non essenziali e ripeta un'acquisizione più piccola. Modifichi una condizione alla volta per capire se il difetto proviene dallo stato della pagina, dall'intervallo o dalla divisione.
+
+Se il contenuto iniziale scompare dopo il caricamento di quello successivo, la fonte è probabilmente virtualizzata. Potrebbe non esistere un singolo stato del browser contenente tutta la cronologia. Definisca più intervalli con una sovrapposizione chiara, li acquisisca separatamente e ne etichetti l'ordine. Non dichiari un record continuo se la fonte non ne ha mai renderizzato uno.
+
+## Controlli la privacy prima del download
+
+L'acquisizione completa può rivelare dettagli molto oltre l'area visibile iniziale: menu account, nomi dei partecipanti, anteprime di notifiche, parametri di query e contenuto dei pannelli adiacenti. Esamini tutta l'anteprima invece di presumere che ciò che era fuori schermo sia innocuo. Rimuova le sezioni inutili alla fonte o in anteprima prima di creare il file finale.
+
+L'estensione lavora con la scheda attiva. I dati dell'anteprima sono temporanei, vengono eliminati alla chiusura della scheda e non sono memorizzati in un database di cronologia Page 2 File. Il PDF scaricato è sotto il suo controllo, quindi scelga nome, posizione e canale di condivisione in base alla sensibilità.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: scelga Current tab affinché il popup utilizzi la pagina già aperta nel browser."}
+  caption={"Scelga Current tab affinché il popup utilizzi la pagina già aperta nel browser."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: scelga Current tab affinché il popup utilizzi la pagina già aperta nel browser."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/03.svg"
+  step={3}
+/>
+
+## Utilizzi una lista di completamento
+
+Un PDF a pagina intera è pronto quando inizio e fine corrispondono al confine dichiarato, ogni sezione richiesta appare in ordine, nessun blocco viene duplicato silenziosamente e testo o dettaglio visivo restano leggibili con zoom normale. Controlli almeno una transizione, un componente complesso e un link importante.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: scelga PDF e lo stile di output adatto all'obiettivo della revisione."}
+  caption={"Scelga PDF e lo stile di output adatto all'obiettivo della revisione."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: scelga PDF e lo stile di output adatto all'obiettivo della revisione."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/04.svg"
+  step={4}
+/>
+
+Registri URL di origine e data quando la pagina può cambiare. Per materiale autenticato, eviti segreti o identificatori di sessione nel nome del file o nelle note. Se manca contenuto richiesto nell'anteprima, l'acquisizione è incompleta anche se il PDF si apre senza errori.
+
+Conservi lo schema della fonte con il file approvato quando un'altra persona dovrà verificare in seguito il confine dell'acquisizione.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: visualizzi l'intero intervallo e verifichi prima, ultima e sezioni di confine."}
+  caption={"Visualizzi l'intero intervallo e verifichi prima, ultima e sezioni di confine."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: visualizzi l'intero intervallo e verifichi prima, ultima e sezioni di confine."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/05.svg"
+  step={5}
+/>
+
+Per la preparazione specifica della fonte, utilizzi la [guida all'esportazione dei siti](/it/blog/website-types-to-pdf-or-powerpoint).

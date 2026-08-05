@@ -1,0 +1,124 @@
+A HTML-ből PDF-et készítő konverzió a megadott HTML-fájlt rögzített dokumentummá alakítja. A [HTML 2 PDF GPT-alkalmazásban](/hu/html2pdf-gpt) a bemenet az Ön által megadott fájl, nem URL-feltérképezés és nem egy böngészőlap hitelesített állapota.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Renderelje a HTML-t böngészőoldalként, mielőtt dokumentumforrásként kezeli."}
+  caption={"Renderelje a HTML-t böngészőoldalként, mielőtt dokumentumforrásként kezeli."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Renderelje a HTML-t böngészőoldalként, mielőtt dokumentumforrásként kezeli."}
+  src="/blog/instructions/html-to-pdf-safely/01.svg"
+  step={1}
+/>
+
+Minden HTML-fájlt aktív kódként kezeljen, amíg egy renderelő az ellenkezőjét nem bizonyítja. A védhető konverziós kialakítás korlátozza a szkripteket és a váratlan hálózati hozzáférést, blokkolja a helyi fájlokra és belső szolgáltatásokra irányuló kéréseket, továbbá ellenőrzéshez láthatóvá teszi a nem támogatott tartalmat. Ne következtessen ezekre az ellenőrzésekre egy szép PDF-ből; érzékeny bemenet megadása előtt ellenőrizze a konverter dokumentált határait.
+
+## Készítsen önálló fájlt
+
+Használjon szemantikus címsorokat, bekezdéseket, listákat és táblázatokat. Adja hozzá az elrendezéshez szükséges CSS-t, a képeket pedig olyan formában csomagolja, amelyet a jóváhagyott bemenet fel tud oldani. A privát build szervertől vagy bejelentkezett API-tól függő fájl nem reprodukálható megbízhatóan elkülönített renderelőben.
+
+Távolítsa el az analitikát, az űrlapküldést, az automatikusan lejátszott médiát és a dokumentumot betöltés után módosító kódot. A PDF statikus cél; e működések megtartása kockázatot ad hozzá a dokumentum javítása nélkül.
+
+## Tartsa elkülönítve a renderelőt
+
+A nem megbízható HTML megpróbálhat helyi fájlokat olvasni, belső címeket hívni vagy túl sok erőforrást fogyasztani. A konverziónak külön, korlátozott folyamatban kell futnia, letiltott szkriptekkel, WebSocketekkel és tetszőleges hálózati kérésekkel.
+
+Az elkülönítés megváltoztathatja a távoli betűtípusokra, képekre vagy kliensoldali összetevőkre támaszkodó tartalom megjelenését. A hiányzó erőforrásokat ellenőrzési megállapításként kezelje, ne feltételezze, hogy a befejezett renderelés teljes.
+
+## Rögzített oldalakhoz tervezzen
+
+Állítson be ésszerű nyomtatási szélességeket, engedje a hosszú szavak és kód tördelését, és kerülje a rámutatást igénylő elemeket. A táblázatoknak ismételhető fejlécekre, valamint olvashatatlanná válás nélkül felosztható vagy méretezhető cellákra van szükségük.
+
+Ha a tényleges forrás már nyilvános weboldal, használja inkább a [weboldal-PDF-konvertert](/hu/convert-webpage-to-pdf). Ha Chrome-ban látható privát oldal, használja a [bővítményt](/hu/chrome-extension/how-to-use).
+
+## Ne csak a HTML-t, hanem a dokumentumot ellenőrizze
+
+Vizsgálja meg a betűtípus-helyettesítéseket, hiányzó képeket, levágott pozicionált elemeket, oldaltöréseket és hivatkozásokat. Az összetett szakaszokat hasonlítsa össze a [képernyőképszerű és szerkeszthető kimenetről](/hu/blog/visual-vs-editable) szóló útmutatóval.
+
+A HTML 2 PDF akkor hasznos, ha Ön ellenőrzi a bemeneti fájlt, és elkülönített dokumentumrenderelést szeretne. Nem böngészőautomatizálási végpont, webhelykinyerő vagy a megadott szkriptek futtatásának módja.
+
+## Leltározzon minden függőséget
+
+Egy HTML-fájl ritkán mondja el a teljes történetet. Elrendezése helyi stíluslapoktól, webes betűtípusoktól, képektől, SVG-fájloktól, szkriptektől vagy távoli eszközöktől függhet. Azonosítsa a lényeges erőforrásokat és hivatkozásuk módját. Az eredeti projektben teljesnek látszó fájl önmagában megnyitva stílus nélküli szövegoszloppá válhat.
+
+Részesítse előnyben az önálló stílusokat és eszközöket, amelyeket a dokumentum használhat. Cserélje le a csak fejlesztésben létező útvonalakat és privát hálózati hivatkozásokat. Ha távoli kép szükséges, ellenőrizze, hogy bejelentkezett böngésző-munkamenet nélkül elérhető-e. A konvertertől nem várható, hogy örökölje a munkaállomás sütijeit vagy fájlrendszer-elrendezését.
+
+Távolítsa el a felhasználói adatokat, analitikát vagy kapcsolódás nélküli alkalmazásállapotot lekérő szkripteket. A PDF-hez készült statikus HTML általában kevesebb végrehajtást igényel az eredeti webhelynél. Csak a dokumentum megjelenítéséhez szükséges működést tartsa meg, és győződjön meg arról, hogy a végső tartalom nem függ időzítőtől vagy felhasználói gesztustól.
+
+## Tegye egyértelművé a nyomtatási méreteket
+
+A böngészőelrendezések nézetmérethez alkalmazkodnak, a PDF-ek rögzített oldalméretet használnak. Adjon meg a kívánt papírmérethez megfelelő tartalomszélességet, margókat és tipográfiát. Ne nézetmagasság-feltételezéssel pozicionálja a fő dokumentumot, és ne hagyjon fontos szöveget vízszintesen görgethető tárolókban.
+
+A törési szabályokat jelzésként használja címsorok, ábrák, táblázatok és kódblokkok körül, majd vizsgálja meg az eredményt. A szabályok ütközhetnek, ha egy elem magasabb egy oldalnál. Egy nagy táblázatnak ismételt fejlécekre vagy fekvő kezelésre, egy magas vizuálnak egyetlen méretezett képként való megőrzésre lehet szüksége.
+
+A nagyon világos szöveg, áttetsző rétegek és csak sötét módban működő tokenek nehezen olvashatók lehetnek nyomtatásban. Magát a PDF-et ellenőrizze, ne feltételezze, hogy a böngésző előnézete minden megjelenítőt és nyomtatót képvisel.
+
+## A feltöltött HTML-t nem megbízható bemenetként kezelje
+
+Csak olyan fájlokat töltsön fel, amelyek feldolgozására jogosult, és távolítsa el a jelölésbe, megjegyzésekbe, adatattribútumokba vagy beágyazott szkriptekbe foglalt titkokat. A rejtett tartalom akkor is a forrással utazhat, ha nem látható a végső oldalon.
+
+A renderelőnek korlátoznia kell a hálózati és helyi rendszerhozzáférést, de a technikai elkülönítés nem javítja a nem biztonságos tartalmi döntéseket. Terjesztés előtt vizsgálja meg a külső hivatkozásokat, beágyazott űrlapokat és létrehozott QR-kódokat. A PDF statikus, hivatkozásai azonban továbbra is elvezethetik a címzettet a dokumentumtól.
+
+Hasonlítsa össze az eredményt egy függőségi ellenőrzőlistával. Erősítse meg a betűtípusokat, képeket, oldalsorrendet, címsorokat, hivatkozásokat és utolsó oldalt. Ha egy erőforrás hiányzik, javítsa a HTML-csomagot, vagy használjon a teljes oldalt betöltő nyilvános URL-t.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Renderelt helyi tartalomhoz használja a Current tab, engedélyezett nyilvános oldalhoz a By URL lehetőséget."}
+  caption={"Renderelt helyi tartalomhoz használja a Current tab, engedélyezett nyilvános oldalhoz a By URL lehetőséget."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Renderelt helyi tartalomhoz használja a Current tab, engedélyezett nyilvános oldalhoz a By URL lehetőséget."}
+  src="/blog/instructions/html-to-pdf-safely/02.svg"
+  step={2}
+/>
+
+## Válassza külön a szerzői és renderelési kockázatokat
+
+A szerzői kockázatok már a fájlban vannak: beágyazott titkok, rejtett személyes adatok, megtévesztő hivatkozások és olyan tartalom, amelynek terjesztésére nincs engedélye. A renderelési kockázatok akkor keletkeznek, amikor az aktív HTML hálózati erőforrásokat kérhet, nem kívánt helyet érhet el vagy túl sok feldolgozási időt fogyaszthat. A megbízható munkafolyamatnak mindkét kategóriát kezelnie kell.
+
+Ha lehet, feltöltés előtt vizsgálja meg a forrást. Keressen beágyazott szkripteket, eseménykezelőket, űrlapokat, külső URL-eket, helyi útvonalakat és nagy beágyazott eszközöket. Távolítson el mindent, ami nem tartozik a dokumentumhoz. Ez akkor is csökkenti a kétértelműséget, ha a renderelő saját korlátozásokat alkalmaz.
+
+Ne a konverzióval próbálja megállapítani, hogy egy ismeretlen HTML biztonságos-e. Ha a fájl nem megbízható feladótól érkezett, először kövesse szervezete kártevő- és dokumentumkezelési folyamatát. A PDF-eredmény nem teszi utólag ártalmatlanná a bemenetet.
+
+## Kiszámítható HTML-t készítsen a lapozáshoz
+
+Használjon logikus címsorhierarchiát, és tartsa a fő olvasási sorrendet a dokumentumfolyamban. Az abszolút pozicionálás hasznos lehet borítóhoz vagy címkéhez, de az egész jelentésnél alkalmazva nehezen diagnosztizálhatóvá teszi a rögzített oldalakon való túlcsordulást. Állítson be egyértelmű szélességet a táblázatokhoz és médiához, adjon meg ésszerű maximális méreteket, és engedje a hosszú szöveg tördelését.
+
+A nyomtatási CSS meghatározhat margókat, papírméretet és törési preferenciákat, de ezek a szabályok kérések, nem garanciák. Egy oldalnál magasabb elemet ettől még át kell méretezni vagy fel kell osztani. Tartsa a képaláírásokat az ábrák közelében, ismételje a táblázati környezetet, ahol a renderelő támogatja, és ne helyezzen lényeges magyarázatot kizárólag rámutatási állapotba vagy pszeudoelembe.
+
+A betűtípusoknak tartaléklistára van szükségük. A távolról betöltött betűkészlet elérhetetlen lehet korlátozott renderelési környezetben. Válasszon hasonló metrikájú tartalékot, majd ellenőrizze a címsorok, táblázatok és kód megváltozott tördelését. Hacsak nem maga a tipográfia a dokumentum tárgya, a pontos betűtípusnál fontosabb a stabil, olvasható eredmény.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Válassza a PDF-et és a kimeneti stílust, miután az oldal láthatóan stabil."}
+  caption={"Válassza a PDF-et és a kimeneti stílust, miután az oldal láthatóan stabil."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Válassza a PDF-et és a kimeneti stílust, miután az oldal láthatóan stabil."}
+  src="/blog/instructions/html-to-pdf-safely/03.svg"
+  step={3}
+/>
+
+## Új műtermékként vizsgálja meg a kimenetet
+
+A PDF-et tartalomjegyzékkel hasonlítsa össze, ne csupán a HTML böngészőnézetével. Erősítse meg, hogy minden szükséges szakasz egyszer jelenik meg, az oldalsorrend helyes, a képek aktuálisak, a hivatkozások pedig jóváhagyott célokra mutatnak. Ha kijelölhető szöveget vár, keressen egy kifejezést a kezdet, közép és vég közelében.
+
+Keresse a blokkolt függőségek jeleit: üres képkereteket, tartalék betűtípusokat, üres diagramokat vagy elrendezési réseket ott, ahol szkript által létrehozott összetevőnek kellene lennie. Javítsa a forráscsomagot, vagy fogadjon el egy világosan dokumentált képernyőképes helyettesítést. Ne rejtse el a hiányzó elemet csak azért, mert a környező oldalak sikeresen renderelődtek.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: A szkript-, hálózati és fájlhozzáférést külön renderelőbiztonsági határként kezelje."}
+  caption={"A szkript-, hálózati és fájlhozzáférést külön renderelőbiztonsági határként kezelje."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: A szkript-, hálózati és fájlhozzáférést külön renderelőbiztonsági határként kezelje."}
+  src="/blog/instructions/html-to-pdf-safely/04.svg"
+  step={4}
+/>
+
+A HTML 2 PDF egy feltöltött HTML-fájlhoz és egy PDF-eredményhez készült GPT-alkalmazásként jelenik meg. Nem általános webhelybejáró vagy alkalmazáskód-futtatási környezet. Nyilvános weboldalhoz használja a nyilvános URL-konvertert, engedélyezett aktív laphoz pedig a Chrome-bővítményt.
+
+Terjesztés előtt ellenőrizze a fájl metaadatait, látható azonosítóit és kattintható céljait. A legbiztonságosabb renderelés is tartalmazhat a szerző által a dokumentumba helyezett információt. A jóváhagyott végső PDF-et saját tárhelyén őrizze, mert a Page 2 File nem biztosít konverzióselőzmény-adatbázist.
+
+Más forráskategóriákat a [PDF és PowerPoint webhelyútmutatóban](/hu/blog/website-types-to-pdf-or-powerpoint) hasonlíthat össze.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Vizsgálja meg a rögzített PDF-oldalakat, és jegyezze fel a hiányzó vagy blokkolt függőségeket."}
+  caption={"Vizsgálja meg a rögzített PDF-oldalakat, és jegyezze fel a hiányzó vagy blokkolt függőségeket."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Vizsgálja meg a rögzített PDF-oldalakat, és jegyezze fel a hiányzó vagy blokkolt függőségeket."}
+  src="/blog/instructions/html-to-pdf-safely/05.svg"
+  step={5}
+/>

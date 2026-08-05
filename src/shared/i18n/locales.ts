@@ -44,12 +44,6 @@ export const localeRegistry: ReadonlyArray<LocaleDefinition> = [
   { code: "hu", languageName: "Magyar", htmlLang: "hu", openGraphLocale: "hu_HU", reviewed: false, indexable: false },
 ];
 
-export type PublishedLocale = "en" | "ru";
-export type LocalizedPublished<T> = Record<PublishedLocale, T>;
-
-export const isPublishedLocale = (locale: Locale): locale is PublishedLocale =>
-  locale === "en" || locale === "ru";
-
 const localeCodes = localeRegistry.map(
   (definition: LocaleDefinition): Locale => definition.code,
 );

@@ -1,0 +1,120 @@
+Um PDF de página Web completa deve conter todo o documento que pretendia capturar, não apenas um ecrã nem todas as recomendações intermináveis que o site consegue carregar. Abra a página, carregue as secções necessárias, escolha um ponto final claro e capture a partir do separador ativo com a [extensão Page 2 File](/pt/chrome-extension/how-to-use).
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: carregue a página deslocável completa e defina um início e um fim claros."}
+  caption={"Carregue a página deslocável completa e defina um início e um fim claros."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: carregue a página deslocável completa e defina um início e um fim claros."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/01.svg"
+  step={1}
+/>
+
+Para um endereço público simples, o [conversor de página Web para PDF](/pt/convert-webpage-to-pdf) é suficiente. A extensão estabelece um limite melhor para páginas com sessão iniciada, conversas AI longas e aplicações Web cujo estado existe apenas no seu navegador.
+
+## Página completa não significa página infinita
+
+Muitos feeds acrescentam conteúdo à medida que se desloca. Decida se o documento termina numa data, mensagem, título ou secção carregada. Esta decisão impede que uma exportação recolha recomendações não relacionadas ou desencadeie repetidamente pedidos de rede.
+
+Uma página também pode conter cabeçalhos fixos, botões flutuantes de chat e sobreposições de consentimento. Feche as sobreposições que pode dispensar. Mantenha a navegação apenas quando ajudar o leitor a compreender a fonte.
+
+## Carregue deliberadamente o material dinâmico
+
+Percorra as imagens de carregamento diferido e expanda os acordeões que pretende incluir. Num chat virtualizado, as mensagens mais antigas podem desaparecer do DOM enquanto carregam as mais recentes; utilize os controlos da plataforma para expor o intervalo necessário antes da captura. O Page 2 File consegue capturar conteúdo renderizado, não registos ocultos da conta.
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: expanda as secções necessárias e ative o conteúdo de carregamento diferido antes da captura."}
+  caption={"Expanda as secções necessárias e ative o conteúdo de carregamento diferido antes da captura."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: expanda as secções necessárias e ative o conteúdo de carregamento diferido antes da captura."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/02.svg"
+  step={2}
+/>
+
+Aguarde que gráficos e tipos de letra personalizados estabilizem. Se a página mudar continuamente, capture um estado estável e anote a data no documento ou nome do ficheiro resultante.
+
+## Transforme altura em páginas legíveis
+
+Uma exportação por capturas pode preservar cada secção renderizada enquanto a pré-visualização estabelece os limites do PDF. Evite cortar uma linha de tabela, exemplo de código ou legenda para longe da respetiva imagem. O artigo sobre [quebras em páginas longas](/pt/blog/long-webpage-page-breaks) oferece uma sequência de revisão mais detalhada.
+
+Se ligações e texto selecionável forem mais importantes do que píxeis exatos, utilize Editable document (saída editável) e inspecione todas as alternativas complexas. O [guia de ligações clicáveis](/pt/blog/preserve-clickable-links) explica por que motivo uma captura e um documento editável se comportam de forma diferente.
+
+## A captura privada continua a exigir discernimento
+
+Capture apenas material que tenha autorização para conservar. A extensão não remove controlos de acesso; funciona depois de abrir legitimamente uma página. Também não consegue capturar uma aplicação nativa de computador ou telemóvel fora do Chrome.
+
+A pré-visualização é temporária. Fechar o respetivo separador elimina os dados e o Page 2 File não mantém uma base de dados do histórico de conversões.
+
+## Mapeie a página antes de a capturar
+
+As páginas longas são mais fáceis de controlar quando identifica primeiro a sua estrutura. Marque o ponto inicial, a última secção necessária e todos os componentes que carregam apenas após interação. Decida se comentários, itens relacionados, navegação e rodapés pertencem ao registo. “Tudo o que o site consegue carregar” não é um limite útil para um feed infinito.
+
+Preste atenção às áreas de deslocamento aninhadas. Um dashboard pode ter a barra da página, uma tabela com deslocamento próprio e um painel de chat que carrega histórico de forma independente. Uma operação de página completa só consegue trabalhar com conteúdo renderizado pelo separador. Abra as linhas ou mensagens necessárias e confirme a sua presença antes da conversão.
+
+Cabeçalhos fixos e controlos flutuantes podem repetir-se quando uma página longa é dividida em secções. Mantenha-os quando fornecem contexto essencial, como rótulos de colunas; remova-os ou recolha-os quando tapam conteúdo. O objetivo é a continuidade para o leitor, não a repetição literal de todas as camadas do navegador.
+
+## Trate o carregamento diferido e a virtualização
+
+O carregamento diferido adia imagens ou painéis até se aproximarem da área visível. Uma passagem deliberada de cima para baixo costuma revelar se a fonte está a carregar corretamente. Depois dessa passagem, volte ao início. Se os cartões iniciais desapareceram, é provável que o site esteja a virtualizar a lista substituindo nós fora do ecrã.
+
+Para fontes virtualizadas, capture um intervalo menor ou várias secções lógicas e verifique cada uma. Não presuma que uma parte invisível existe na saída só porque uma barra de deslocamento sugere mais conteúdo. A pré-visualização deve mostrar o início, fim e ordem reais de cada secção capturada.
+
+Contadores dinâmicos, feeds em direto e animações podem mudar durante a passagem. Pause as atualizações quando o site oferecer esse controlo, ou escolha um momento claro de captura e registe-o. Um PDF é uma captura estática; não consegue preservar o comportamento em direto que produziu o estado apresentado.
+
+## Verifique a continuidade entre páginas PDF
+
+Inspecione as transições entre páginas, procurando elementos fixos repetidos, títulos cortados, linhas duplicadas e conteúdo escondido por sobreposições. Uma secção legível isoladamente pode tornar-se confusa quando o título surge duas páginas antes.
+
+Gráficos e tabelas largos exigem uma escolha consciente. Manter toda a largura visual pode tornar os rótulos pequenos, enquanto dividir o elemento pode remover contexto. Se a fonte oferecer uma vista compacta, selecione-a antes da captura. Caso contrário, preserve o visual como uma secção e escolha uma escala que mantenha os rótulos legíveis.
+
+Termine comparando a pré-visualização com um esquema da fonte. Todos os títulos necessários devem aparecer uma vez e por ordem. Se a página for demasiado instável para passar este teste, documente a limitação e capture uma parte mais restrita e repetível.
+
+## Diagnostique um resultado incompleto
+
+Se a pré-visualização terminar cedo, volte à fonte e encontre a primeira secção em falta. Um controlo “carregar mais”, um painel recolhido ou uma barra aninhada costuma exigir interação direta. Quando a página mostrar um indicador de carregamento, aguarde que termine e verifique que o novo conteúdo permanece depois de se afastar.
+
+Se a pré-visualização repetir conteúdo, inspecione cabeçalhos fixos, linhas de tabela afixadas e componentes que voltam a renderizar nos limites das secções. Recolha elementos fixos não essenciais e repita uma captura menor. Altere uma condição de cada vez para perceber se o defeito veio do estado da página, intervalo ou divisão de secções.
+
+Se o conteúdo inicial desaparecer depois de carregar conteúdo posterior, a fonte está provavelmente virtualizada. Pode não existir um único estado do navegador com todo o histórico. Defina vários intervalos com sobreposição clara, capture-os separadamente e identifique a sua ordem. Não afirme ter um registo contínuo de página completa quando a fonte nunca renderizou um.
+
+## Reveja a privacidade antes de transferir
+
+Uma captura completa pode revelar detalhes muito além da área visível inicial: menus de conta, nomes de participantes, pré-visualizações de notificações, parâmetros de consulta e conteúdo de painéis adjacentes. Examine toda a pré-visualização em vez de assumir que o que estava fora do ecrã é inofensivo. Remova secções desnecessárias na fonte ou na pré-visualização antes de criar o ficheiro final.
+
+A extensão trabalha com o separador ativo. Os dados da pré-visualização são temporários, são eliminados quando o separador fecha e não são guardados numa base de dados de histórico do Page 2 File. O PDF transferido fica sob o seu controlo, por isso escolha nome, local de armazenamento e canal de partilha conforme a sensibilidade do conteúdo.
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: escolha Current tab para o pop-up utilizar a página já aberta no navegador."}
+  caption={"Escolha Current tab para o pop-up utilizar a página já aberta no navegador."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: escolha Current tab para o pop-up utilizar a página já aberta no navegador."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/03.svg"
+  step={3}
+/>
+
+## Utilize uma lista de conclusão
+
+Um PDF de página completa está pronto quando o início e o fim correspondem ao limite declarado, todas as secções necessárias aparecem por ordem, nenhum bloco é duplicado silenciosamente e o texto ou detalhe visual continua legível com zoom normal. Verifique pelo menos uma transição entre secções, um componente complexo e uma ligação importante.
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: escolha PDF e o estilo de saída que corresponde ao objetivo da revisão."}
+  caption={"Escolha PDF e o estilo de saída que corresponde ao objetivo da revisão."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: escolha PDF e o estilo de saída que corresponde ao objetivo da revisão."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/04.svg"
+  step={4}
+/>
+
+Registe o URL de origem e a data quando a página puder mudar. Para material autenticado, evite colocar segredos ou identificadores de sessão no nome do ficheiro ou notas. Se faltar conteúdo necessário na pré-visualização, a captura está incompleta mesmo que o PDF abra sem erro.
+
+Mantenha o esquema da fonte junto ao ficheiro aprovado quando outra pessoa tiver de verificar mais tarde o limite da captura.
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: pré-visualize todo o intervalo e verifique a primeira, última e as secções de limite."}
+  caption={"Pré-visualize todo o intervalo e verifique a primeira, última e as secções de limite."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: pré-visualize todo o intervalo e verifique a primeira, última e as secções de limite."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/05.svg"
+  step={5}
+/>
+
+Para preparação específica por fonte, utilize o [guia de exportação de sites](/pt/blog/website-types-to-pdf-or-powerpoint).

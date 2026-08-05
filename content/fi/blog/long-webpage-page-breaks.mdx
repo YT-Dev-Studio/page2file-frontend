@@ -1,0 +1,122 @@
+Kun haluat muuntaa pitkän verkkosivun ilman rikkoutuneita PDF-sivuja, käsittele lähdettä merkityksellisten osioiden sarjana yhden valtavan kuvakaappauksen sijasta. Page 2 File luo esikatselun, jossa osiot voi tarkistaa ennen lopullista renderöintiä.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Jäsennä pitkä artikkeli otsikoihin, kuviin, taulukoihin ja suojattuihin sisältöyksiköihin."}
+  caption={"Jäsennä pitkä artikkeli otsikoihin, kuviin, taulukoihin ja suojattuihin sisältöyksiköihin."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Jäsennä pitkä artikkeli otsikoihin, kuviin, taulukoihin ja suojattuihin sisältöyksiköihin."}
+  src="/blog/instructions/long-webpage-page-breaks/01.svg"
+  step={1}
+/>
+
+Aloita julkisen URL-osoitteen [verkkosivusta PDF-tiedostoksi -muuntimella](/fi/convert-webpage-to-pdf). Käytä [Chrome-laajennusta](/fi/chrome-extension/how-to-use), kun pitkä sivu on yksityinen tai riippuu nykyisen välilehden tilasta.
+
+## Vakauta ensin lähde
+
+Vieritä riittävän pitkälle ladataksesi tarvitsemasi kuvat, kommentit tai raporttirivit. Avaa vain asiakirjaan kuuluvat ohjaimet. Asettelu, joka vielä liikkuu fonttien ja median latautuessa, ei voi tuottaa luotettavia rajoja.
+
+Poista tai sulje kelluvat peittotasot, kun se on sallittua. Tarttuva navigointi voi olla hyödyllinen kerran, mutta jokaisessa kaapatussa osiossa toistuessaan se vie tilaa ja voi peittää tekstiä.
+
+## Suojaa yhdessä pidettävät yksiköt
+
+Otsikko ja sen ensimmäinen kappale, kuva ja kuvateksti, taulukon otsikko ja ensimmäiset rivit tai koodin tunniste ja lohko muodostavat yhden lukuyksikön. Tarkista näiden yksiköiden ympärillä olevat rajat sen sijaan, että yrittäisit täyttää jokaisen sivun viimeiselle riville.
+
+Erittäin korkeat taulukot ja koodilistaukset voivat silti tarvita jaon. Suosi näkyvää jatkoa materiaalin pienentämisen sijasta, kunnes sitä ei voi lukea. Jos tarkka asettelu on tekstin virtausta tärkeämpi, vertaa vaihtoehtoja [kuvakaappaus- ja muokattavassa muunnoksessa](/fi/blog/visual-vs-editable).
+
+## Tarkkaile selainkohtaisia virheitä
+
+Tulostus-CSS voi muuttaa leveyksiä ja piilottaa elementtejä juuri ennen tulostusta. Canvas-, video- ja animoidulla sisällöllä ei ehkä ole tulostettavaa esitystapaa. [URL-muunnoksen ja selaintulostuksen vertailu](/fi/blog/why-print-to-pdf-breaks) selittää, miksi näytöllä oikealta näyttävä sivu voi epäonnistua tulostusikkunassa.
+
+Accurate copy -tilassa (kuvakaappaustyylinen tulos) monimutkaiset osiot pysyvät kuvina. Editable document -tilassa (muokattava tulos) tuettu teksti ja linkit rakennetaan uudelleen, kun vaikea grafiikka voi käyttää rasterivaraa. Kummankaan tilan ei pidä väittää, että jokaisesta selainominaisuudesta tulee muokattava.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Vieritä tietoisesti, kunnes viivästetysti ladattavat osiot pysyvät ladattuina."}
+  caption={"Vieritä tietoisesti, kunnes viivästetysti ladattavat osiot pysyvät ladattuina."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Vieritä tietoisesti, kunnes viivästetysti ladattavat osiot pysyvät ladattuina."}
+  src="/blog/instructions/long-webpage-page-breaks/02.svg"
+  step={2}
+/>
+
+## Käytä esikatselua hyväksymisvaiheena
+
+Tarkista jokaisen sivun ensimmäinen ja viimeinen rivi sekä taulukot, koodi, kuvatekstit ja huomiolaatikot. Poista kahdentunut navigointi, jaa liian suuri osio tai muuta järjestystä ennen renderöintiä. Tarkista linkit myös [napsautettavien PDF-linkkien oppaan](/fi/blog/preserve-clickable-links) avulla.
+
+Lopullisen tiedoston ei pidä olla ensimmäinen paikka, jossa näet sivunvaihdot. Jos esikatselu on keskeneräinen, palaa lähteeseen, lataa puuttuva sisältö ja kaappaa uudelleen.
+
+## Luokittele sisältö ennen jakamista
+
+Eri lohkot kestävät sivunvaihtoja eri tavoin. Tavalliset kappaleet voivat virrata sivujen yli, mutta otsikon pitää pysyä ensimmäisten sitä selittävien rivien yhteydessä. Kuvan pitää olla lähellä kuvatekstiä, koodiesimerkin säilyttää sisennys eikä taulukkoriviä pidä jakaa ilman hyvää syytä.
+
+Luo pitkästä sivusta nopea jäsennys ja merkitse jakamattomat yksiköt. Tämä ei vaadi lähdesivuston muokkaamista. Se tarkoittaa sen tietämistä, mitkä siirtymät pitää tarkistaa esikatselussa: ennen taulukoita ja niiden jälkeen, chat-viestien välillä, tuotekorttien ympärillä ja suurten osioiden alussa.
+
+Kuvakaappaustuloksessa kaapattu osio voi käyttäytyä yhtenä kuvana. Jos se on PDF-sivua korkeampi, päätä, jaetaanko se luonnollisella visuaalisella rajalla vai skaalataanko koko osio. Skaalaus on hyväksyttävää vain, kun leipäteksti ja tunnisteet pysyvät luettavina tavallisella zoomauksella.
+
+## Huomioi toistuva konteksti
+
+Selainsivu pitää navigoinnin usein kiinteänä, koska vierittävä lukija näkee sen aina. PDF-tiedostossa elementti voi peittää sisältöä tai toistua tuomatta arvoa. Supista se ennen kaappausta, kun mahdollista. Kun toistuvaa kontekstia tarvitaan, pidä se tiiviinä ja varmista, ettei se vie suurinta osaa lyhyestä sivusta.
+
+Taulukot ja pitkät listat voivat tarvita omia toistuvia tunnisteita. Asiakirjan keskeltä avaavan lukijan pitää ymmärtää sarakkeet palaamatta useita sivuja taaksepäin. Jos lähde ei tarjoa toistettavia otsakkeita, säilytä taulukko kuvakaappausosiona tai jaa se pienempiin nimettyihin ryhmiin.
+
+Alaviitteiden ja viitteiden pitää pysyä löydettävissä. Pidä viitemerkit niitä koskevan lauseen yhteydessä ja vältä lyhyen viiteotsikon jättämistä yksin sivun alareunaan. Hieman epätasainen sivu on parempi kuin muodollisesti tasapainoinen asettelu, joka erottaa todisteen selityksestä.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Valitse PDF ja Accurate copy, kun alkuperäisen asettelun pitää säilyä."}
+  caption={"Valitse PDF ja Accurate copy, kun alkuperäisen asettelun pitää säilyä."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Valitse PDF ja Accurate copy, kun alkuperäisen asettelun pitää säilyä."}
+  src="/blog/instructions/long-webpage-page-breaks/03.svg"
+  step={3}
+/>
+
+## Testaa realistisissa katseluko'oissa
+
+Työpöydän suuri esikatselu voi piilottaa luettavuusongelmia. Tarkista PDF suunnilleen lukijan käyttämässä koossa, myös kannettavan ikkunassa ja mobiili-PDF-lukijassa, jos mobiilijakelu on tärkeää. Jatkuvaa zoomausta vaativa teksti on asetteluvirhe, vaikka yhtään merkkiä ei olisi leikattu.
+
+Etsi erottuva lause usean sivurajan läheltä. Muokattavassa tuloksessa tämä varmistaa tekstin pysyvän odotetussa lukujärjestyksessä. Kuvakaappaustuloksessa lähennä samoihin kohtiin ja etsi saumoja, kahdentuneita pikseleitä tai puuttuvia rivejä.
+
+Vertaa sivu- ja osiomäärää lähteen jäsennykseen. Odottamaton kasvu voi viitata toistuvaan tarttuvaan sisältöön, kun taas odottamaton väheneminen voi tarkoittaa viivästetysti ladatun materiaalin puuttumista. Ratkaise ero ennen jakamista.
+
+## Valitse sivukoko ja suunta sisällön mukaan
+
+Sivurajoja on helpompi hallita, kun asiakirjan mitat vastaavat hallitsevaa materiaalia. Pystysuunta sopii artikkeleihin ja viesteihin, kun taas vaakasuunta voi antaa leveille taulukoille ja aikajanoille riittävästi tilaa. Monien suuntien sekoittaminen voi olla joissakin työnkuluissa teknisesti mahdollista, mutta tehdä näytöltä lukemisesta ja tulostuksesta hankalaa. Suosi yhtä selkeää lukumallia, ellei tietty osio voi toimia siinä.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Avaa Preview PDF ja tarkista otsikot, taulukot ja kuvatekstit sivurajoilla."}
+  caption={"Avaa Preview PDF ja tarkista otsikot, taulukot ja kuvatekstit sivurajoilla."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Avaa Preview PDF ja tarkista otsikot, taulukot ja kuvatekstit sivurajoilla."}
+  src="/blog/instructions/long-webpage-page-breaks/04.svg"
+  step={4}
+/>
+
+Marginaalit suojaavat tekstiä tulostimen rajoilta ja antavat otsikoille visuaalista eroa, mutta hyvin suuret marginaalit voivat pakottaa tarpeettomia vaihtoja. Skaalauksessa on sama kompromissi. Osion vähäinen pienentäminen voi pitää kuvan kuvatekstin yhteydessä; koko dashboardin pienentäminen niin, ettei tunnisteita voi lukea, vain piilottaa alkuperäisen ongelman.
+
+Kun lähteessä on yksi poikkeuksellisen leveä komponentti, harkitse sen kaappaamista erillisenä kuvakaappausosiona ja pidä ympäröivä selitys muokattavana. Esikatselun pitää tehdä kompromissi näkyväksi. Tavoite ei ole yhtenäinen toteutus hinnalla millä hyvänsä, vaan käyttökelpoinen asiakirja.
+
+## Selvitä huonon vaihdon muoto
+
+Yksinäinen otsikko sivun alareunassa tarkoittaa yleensä, ettei otsikkoa ja sen aloituskappaletta käsitelty yhtenä yksikkönä. Jokaisella rajalla toistuva kaistale viittaa usein tarttuvaan käyttöliittymäkoristeeseen. Sivujen välistä puuttuva rivi voi osoittaa turvattomaan visuaaliseen jakoon, kun taas kahdentuneet rivit viittaavat päällekkäisiin osiorajoihin.
+
+Taulukot tarvitsevat oman diagnoosin. Jos sarakkeet leikkautuvat, ongelma on leveydessä tai suunnassa. Jos lukija menettää sarakkeiden merkityksen myöhemmillä sivuilla, ongelma on toistuvassa kontekstissa. Jos rivejä katoaa, varmista ennen sivutusasetusten muuttamista, että taulukko renderöityi kokonaan eikä ollut virtualisoitu.
+
+Säilytä koodin ja esimuotoillun tekstin sisennys ja rivitys tietoisesti. Pakotettu rivinvaihto voi muuttaa luettavuutta, kun taas vaakasuuntainen leikkaus voi piilottaa merkityksellisiä merkkejä. Tarkista useita pisimpiä rivejä vain ensimmäisen lohkon sijasta.
+
+## Hyväksy lopullinen PDF järjestelmällisesti
+
+Aloita rakenteellisella otannalla: ensimmäinen sivu, viimeinen sivu ja jokainen sivu, joka alkaa tai päättyy taulukon, kuvan, koodilohkon tai chat-rajan lähellä. Etsi sitten lähteen jäsennyksen otsikoita muokattavasta tuloksesta tai vertaa niitä visuaalisesti kuvapohjaisessa tuloksessa. Näin löydät puutteita, jotka tasainen sivumäärä voi piilottaa.
+
+Tarkista lopullinen ladattu tiedosto tavallisessa PDF-lukijassa, ei vain esikatselussa. Varmista luettavuus tavallisella zoomauksella, odotettu valittava teksti ja tärkeiden linkkien toiminta. Esikatselutiedot ovat väliaikaisia ja poistetaan välilehden sulkemisen yhteydessä. Page 2 File ei ylläpidä muunnoshistorian tietokantaa, joten säilytä oma hyväksytty tiedosto ja tarkistusmuistiinpanot, kun jäljitettävyydellä on merkitystä.
+
+Jos asiakirja ei läpäise tarkistusta muutetun sivutilan, kapeamman kaappauksen ja eri tilan jälkeenkään, lopeta ja kirjaa rajoitus. Selkeästi rajattu osittainen tallenne on luotettavampi kuin täydelliseksi kuvattu tiedosto, kun lähdettä ei voitu renderöidä jatkuvasti.
+
+[Verkkosivustolähteiden opas](/fi/blog/website-types-to-pdf-or-powerpoint) käsittelee lähdekohtaista valmistelua.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Palaa lähteeseen, muuta yhtä ehtoa ja varmista korjatut sivunvaihdot."}
+  caption={"Palaa lähteeseen, muuta yhtä ehtoa ja varmista korjatut sivunvaihdot."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Palaa lähteeseen, muuta yhtä ehtoa ja varmista korjatut sivunvaihdot."}
+  src="/blog/instructions/long-webpage-page-breaks/05.svg"
+  step={5}
+/>

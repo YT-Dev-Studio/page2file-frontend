@@ -1,0 +1,110 @@
+Per salvare una pagina Web come PDF, decida prima se le serve la pagina così come appare oppure come documento che possa cercare e riutilizzare. Page 2 File supporta entrambe le opzioni: Accurate copy (output come acquisizioni) registra le sezioni renderizzate, mentre Editable document (output modificabile) ricostruisce testo, immagini e link supportati come elementi del documento.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: apra la pagina Web e carichi l'articolo, le immagini e i riferimenti necessari."}
+  caption={"Apra la pagina Web e carichi l'articolo, le immagini e i riferimenti necessari."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: apra la pagina Web e carichi l'articolo, le immagini e i riferimenti necessari."}
+  src="/blog/instructions/save-webpage-as-pdf/01.svg"
+  step={1}
+/>
+
+Per una pagina pubblica, incolli l'indirizzo HTTPS nel [convertitore da pagina Web a PDF](/it/convert-webpage-to-pdf). Per una pagina con accesso effettuato, la apra in Chrome e utilizzi la [guida dell'estensione](/it/chrome-extension/how-to-use) invece di condividere le credenziali con un modulo URL. La guida separata per [salvare una pagina autenticata](/it/blog/save-authenticated-webpage-as-pdf) spiega questo confine.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: per una pagina pubblica, scelga By URL e incolli l'indirizzo HTTPS completo."}
+  caption={"Per una pagina pubblica, scelga By URL e incolli l'indirizzo HTTPS completo."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: per una pagina pubblica, scelga By URL e incolli l'indirizzo HTTPS completo."}
+  src="/blog/instructions/save-webpage-as-pdf/02.svg"
+  step={2}
+/>
+
+## Definisca cosa appartiene al PDF
+
+Una scheda del browser può contenere molto più del documento che intende conservare. Banner dei cookie, navigazione fissa, articoli correlati, commenti e feed infiniti possono affiancare il materiale utile. Carichi la parte necessaria, espanda le sezioni compresse e smetta di scorrere quando il confine della fonte è chiaro.
+
+Le pagine lunghe richiedono inoltre tempo per completare il caricamento differito di immagini e grafici. Se il contenuto appare solo dopo lo scorrimento, lo porti nella pagina renderizzata prima dell'acquisizione. Page 2 File non afferma di accedere a messaggi, pannelli o rami che la pagina non ha caricato.
+
+## Scelga acquisizioni o output modificabile
+
+Accurate copy è più adatto a landing page, portfolio, ricevute o dashboard in cui posizione e aspetto trasmettono significato. Il compromesso è che una sezione acquisita non è una raccolta di caselle di testo modificabili.
+
+Editable document è pensato per articoli, documentazione e report in cui contano testo selezionabile, immagini e link cliccabili. Funzioni esclusive del browser come video, disegno canvas e animazioni possono essere rappresentate da un'immagine statica. Il confronto dettagliato tra [acquisizioni e conversione modificabile](/it/blog/visual-vs-editable) spiega i limiti di ogni modalità.
+
+## Controlli le interruzioni di pagina prima del download
+
+Un PDF introduce confini fissi in una fonte progettata per lo scorrimento. Controlli nell'anteprima titoli, tabelle, blocchi di codice e didascalie. Sposti, divida o rimuova una sezione prima di renderizzare il file, invece di accettare un titolo in fondo a una pagina e il relativo paragrafo in quella successiva.
+
+La guida alle [interruzioni nelle pagine Web lunghe](/it/blog/long-webpage-page-breaks) tratta i layout difficili. Per una scelta più ampia in base alla fonte, utilizzi la [guida agli output per siti Web](/it/blog/website-types-to-pdf-or-powerpoint).
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: scelga PDF come formato di output."}
+  caption={"Scelga PDF come formato di output."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: scelga PDF come formato di output."}
+  src="/blog/instructions/save-webpage-as-pdf/03.svg"
+  step={3}
+/>
+
+## Sappia dove vanno i dati temporanei
+
+La conversione di un URL pubblico crea un processo temporaneo nel backend dopo l'avvio esplicito. L'estensione lavora dalla scheda attiva e apre un'anteprima senza creare un account Page 2 File né una cronologia delle conversioni. I dati dell'anteprima vengono eliminati quando la relativa scheda si chiude e Page 2 File non dispone di un database per archiviare la cronologia delle conversioni degli utenti.
+
+Resta responsabile dell'autorizzazione a riprodurre la fonte. Un PDF è una copia portatile, non un modo per aggirare accessi, paywall o restrizioni di pubblicazione.
+
+## Prepari la fonte prima della conversione
+
+Tratti la pagina del browser come documento di origine. Selezioni lingua finale, intervallo di date, filtri e sezioni espanse prima dell'acquisizione. Chiuda le sovrapposizioni solo quando non fanno parte del record. Per una ricevuta o dashboard, mantenga lo stato visibile che dimostra ciò che è stato mostrato; per un articolo, rimuova la navigazione che disturberebbe la lettura.
+
+Verifichi se la pagina cambia durante lo scorrimento. Alcuni siti sostituiscono gli elementi precedenti, rimandano le immagini o ridisegnano i grafici quando entrano nell'area visibile. Scorra una volta l'intervallo necessario, torni all'inizio e confermi che il contenuto iniziale sia ancora presente. Se il sito lo ha scaricato, acquisisca un intervallo più piccolo e definito invece di presumere che “pagina completa” includa materiale non più renderizzato.
+
+I caratteri e i contenuti incorporati possono completarsi dopo che il documento principale risulta caricato. Un carattere mancante è spesso un problema estetico, ma un grafico o un'immagine tardivi possono cambiare il significato del file. Attenda che la pagina smetta di muoversi e verifichi gli elementi visivi importanti prima di avviare il processo.
+
+## Esamini l'anteprima pensando al lettore
+
+Legga l'anteprima in ordine invece di controllare solo prima e ultima pagina. Un PDF utilizzabile dovrebbe tenere ogni titolo vicino al paragrafo iniziale, evitare di dividere una tabella breve su più pagine e fornire alle figure contesto sufficiente. Una copia perfetta di uno stato del browser mal preparato resta un cattivo documento.
+
+In Editable document, provi un campione di selezione del testo e link. Confermi che un link punti alla destinazione prevista, soprattutto quando l'etichetta è generica. In Accurate copy, ingrandisca etichette piccole, codice e legende dei grafici. Se non sono leggibili con un normale livello di zoom PDF, modifichi la scala della sezione o il confine di acquisizione prima del download.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: scelga Accurate copy per l'aspetto o Editable document per testo e link supportati."}
+  caption={"Scelga Accurate copy per l'aspetto o Editable document per testo e link supportati."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: scelga Accurate copy per l'aspetto o Editable document per testo e link supportati."}
+  src="/blog/instructions/save-webpage-as-pdf/04.svg"
+  step={4}
+/>
+
+Per il materiale da condividere, controlli i metadati visibili nella pagina: nomi account, titoli degli spazi di lavoro, indirizzi email, identificatori cliente e parametri di query possono comparire nelle intestazioni o nei link. L'oscuramento deve avvenire prima della distribuzione, non dopo che il destinatario ha ricevuto il file originale.
+
+## Utilizzi un controllo di accettazione ripetibile
+
+Confermi che il PDF inizi e finisca nei punti previsti, che ogni sezione necessaria compaia una sola volta, che l'ordine di lettura sia corretto, che le interruzioni non nascondano contenuti e che la modalità selezionata supporti il compito successivo. Apra poi almeno un link importante ed esamini una pagina alle dimensioni tipiche di lettura.
+
+Conservi l'URL di origine e la data di acquisizione insieme al documento quando la provenienza è importante. Le pagine dinamiche possono cambiare dopo la conversione, quindi un PDF registra uno stato renderizzato senza garantire che la pagina live rimanga identica. Se la fonte viene aggiornata spesso, adotti una convenzione coerente per i nomi delle acquisizioni successive invece di sovrascrivere silenziosamente il record precedente.
+
+Quando un risultato non supera il controllo, modifichi una variabile alla volta: stato della pagina, intervallo di acquisizione, modalità di output o confine della sezione. Questo rende visibile la causa ed evita esportazioni ripetute con lo stesso difetto.
+
+## Conservi il contesto senza mantenere il superfluo
+
+Un PDF utile necessita di contesto sufficiente a spiegare ciò che il lettore vede. Mantenga il titolo della pagina, l'intestazione della sezione pertinente e gli eventuali filtri selezionati che cambiano il risultato. Per una transazione o dashboard, includa data e stato visibili. Per la documentazione, conservi la versione del prodotto o breadcrumb quando distingue un insieme di istruzioni da un altro.
+
+Questo non significa conservare ogni controllo del browser. Menu account, suggerimenti non correlati e widget di assistenza mobili possono nascondere il soggetto o rivelare informazioni non necessarie al destinatario. Decida cosa stabilisce la provenienza, cosa aiuta l'interpretazione e cosa è solo interfaccia. Prepari la pagina secondo questa distinzione prima dell'acquisizione.
+
+Anche l'accessibilità cambia tra Web e file fisso. Etichette al passaggio del mouse, pannelli accessibili solo da tastiera e descrizioni compresse potrebbero non essere presenti nello stato acquisito. Riveli le etichette essenziali prima della conversione, quindi controlli ordine di lettura e contrasto nel risultato. Il testo modificabile è più utile per ricerca e tecnologie assistive, ma richiede comunque titoli coerenti ed etichette significative dei link.
+
+## Scelga una pratica di archiviazione e condivisione
+
+Page 2 File non mantiene una cronologia delle conversioni, quindi il file scaricato e gli eventuali record associati diventano il suo archivio. Utilizzi un nome che identifichi soggetto e data senza esporre dati sensibili. Se la fonte live può cambiare, registri l'URL di origine e la data di acquisizione in una nota associata o in un campo approvato del documento.
+
+Prima di condividere, apra il PDF al di fuori dell'anteprima di conversione. Confermi che si apra in un lettore comune, che le pagine previste siano presenti e che nessuno stato privato del browser appaia in intestazioni, link o immagini. Invii il documento più piccolo che soddisfi lo scopo e usi il canale approvato dal destinatario quando il contenuto è riservato.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: selezioni Preview PDF ed esamini le pagine generate prima del download."}
+  caption={"Selezioni Preview PDF ed esamini le pagine generate prima del download."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: selezioni Preview PDF ed esamini le pagine generate prima del download."}
+  src="/blog/instructions/save-webpage-as-pdf/05.svg"
+  step={5}
+/>

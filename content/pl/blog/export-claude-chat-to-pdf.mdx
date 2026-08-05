@@ -1,0 +1,116 @@
+Aby wyeksportować czat Claude do PDF, otwórz wymaganą rozmowę w aplikacji internetowej Claude, wczytaj cały potrzebny zakres i przechwyć aktywną kartę za pomocą [rozszerzenia Page 2 File](/pl/chrome-extension/how-to-use). Przed pobraniem podgląd pokazuje wiadomości, kod, cytowania i widoczny kontekst artefaktu.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: Wczytaj pełny zakres odpowiedzi i otwórz widok artefaktu, który należy do zapisu."}
+  caption={"Wczytaj pełny zakres odpowiedzi i otwórz widok artefaktu, który należy do zapisu."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wczytaj pełny zakres odpowiedzi i otwórz widok artefaktu, który należy do zapisu."}
+  src="/blog/instructions/export-claude-chat-to-pdf/01.svg"
+  step={1}
+/>
+
+Page 2 File tworzy jeden czytelny dokument z wyrenderowanej treści. Nie prosi o hasło do Claude ani nie deklaruje dostępu do ukrytych rozmów.
+
+## Wczytaj długie odpowiedzi i artefakty
+
+Przewiń do najwcześniejszej potrzebnej wiadomości i poczekaj na jej wczytanie przez interfejs. Rozwiń cytowania, kod i każdą treść artefaktu, która ma znaleźć się w pliku. Sam tytuł artefaktu nie dowodzi, że cała jego treść jest obecna na karcie.
+
+Porównaj podgląd z rozmową. Jeśli brakuje odpowiedzi lub artefaktu, wróć do Claude, wyświetl je i przechwyć ponownie.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: Wybierz Current tab i potwierdź kartę rozmowy Claude."}
+  caption={"Wybierz Current tab i potwierdź kartę rozmowy Claude."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz Current tab i potwierdź kartę rozmowy Claude."}
+  src="/blog/instructions/export-claude-chat-to-pdf/02.svg"
+  step={2}
+/>
+
+## Wybierz tryb zrzutowy lub edytowalny
+
+Accurate copy (wynik w stylu zrzutu) zachowuje rytm wiadomości, kolory kodu i układ. Editable document (wynik edytowalny) odtwarza obsługiwane nagłówki, Markdown, listy, kod, obrazy i linki, aby ułatwić wyszukiwanie i ponowne użycie. Złożone widoki artefaktów mogą pozostać zrzutami.
+
+[Centrum eksportu czatów AI](/pl/blog/export-ai-chats-privately) wyjaśnia granice prywatności i różnicę względem archiwum konta.
+
+## Porównaj z eksportem danych Claude
+
+[Oficjalna instrukcja eksportu](https://support.claude.com/en/articles/9450526-export-your-claude-data) Anthropic opisuje eksport danych konta obejmujący rozmowy i dane użytkownika dla uprawnionych osób. Link do pobrania przetworzonego archiwum jest dostarczany osobno.
+
+Użyj oficjalnego eksportu do kopii zapasowej konta. Użyj Page 2 File, gdy wynikiem ma być jeden sprawdzony PDF zgodny z widoczną kolejnością czytania.
+
+## Sprawdź poufny kontekst
+
+Czaty Claude mogą zawierać materiały klientów, kod i przesłane dokumenty. Usuń niepowiązaną treść, zachowaj potrzebne cytowania i przestrzegaj właściwych zasad udostępniania.
+
+Zamknięcie karty podglądu Page 2 File usuwa tymczasowe dane podglądu. Page 2 File nie prowadzi bazy historii konwersji i nie jest powiązany z Anthropic.
+
+## Powiązane instrukcje eksportu
+
+Zobacz szczegółowe kroki dla [ChatGPT](/pl/blog/export-chatgpt-conversation-to-pdf), [Gemini](/pl/blog/export-gemini-chat-to-pdf) oraz [innych asystentów AI](/pl/blog/export-other-ai-chats-to-pdf).
+
+## Określ widoczny zapis Claude
+
+Przed przechwyceniem potwierdź rozmowę oraz konto lub przestrzeń roboczą. Wybierz pierwszą i ostatnią wiadomość potrzebną czytelnikowi oraz usuń niepowiązane prompty lub wersje robocze. Jeśli odpowiedź odwołuje się do materiału spoza tego zakresu, uwzględnij potrzebny kontekst albo wskaż pominięcie.
+
+Claude może przedstawiać długie odpowiedzi, kod, tabele i artefakty obok rozmowy. Otwórz dokładnie ten widok, który ma znaleźć się w PDF, i upewnij się, że odpowiedni materiał został wyrenderowany. Artefakt pokazany w panelu bocznym może wymagać własnej sekcji zrzutowej; nie należy go opisywać jako natywnego załącznika, jeśli przechwycono tylko jego wyświetlony stan.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: Wybierz PDF."}
+  caption={"Wybierz PDF."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz PDF."}
+  src="/blog/instructions/export-claude-chat-to-pdf/03.svg"
+  step={3}
+/>
+
+Jeśli rozmowa została edytowana lub odpowiedź wygenerowano ponownie, zapisz widoczną ścieżkę. Page 2 File nie odtwarza alternatyw, których nie pokazano na aktywnej karcie.
+
+## Sprawdź cytowania i załączniki
+
+Rozwiń źródła i po konwersji przetestuj ważne adresy. Zachowaj wystarczającą część etykiety i otaczającego tekstu, aby wyjaśnić obecność linku. Cytowanie może później się zmienić, a jego eksport nie weryfikuje zgodności odpowiedzi z faktami.
+
+Osobno sprawdź przesłaną treść, wygenerowane pliki i obrazy. Rozmowa może wspominać o pliku bez osadzenia jego pełnej zawartości na stronie. Wskaż to ograniczenie, zamiast sugerować, że PDF zawiera oryginalny załącznik.
+
+Szeroki kod i tabele wymagają kontroli czytelności w normalnym powiększeniu. Użyj Editable document, gdy obsługiwany tekst trzeba kopiować, albo Accurate copy, gdy głównym zapisem jest kompozycja wyświetlana przez Claude.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: Wybierz Accurate copy dla kontekstu artefaktów albo Editable document dla obsługiwanego tekstu."}
+  caption={"Wybierz Accurate copy dla kontekstu artefaktów albo Editable document dla obsługiwanego tekstu."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz Accurate copy dla kontekstu artefaktów albo Editable document dla obsługiwanego tekstu."}
+  src="/blog/instructions/export-claude-chat-to-pdf/04.svg"
+  step={4}
+/>
+
+## Zakończ kontrolę prywatności i zakresu
+
+Wyszukaj w podglądzie nazwiska, dane logowania, informacje o klientach, instrukcje wewnętrzne i identyfikatory przestrzeni roboczej. Sprawdź paski boczne i elementy sterowania kontem, które mogły wejść do przechwyconego zakresu. Usuń dane niepotrzebne odbiorcy.
+
+Po pobraniu zamknij podgląd, aby usunąć jego tymczasowe dane. Chroń lokalny PDF odpowiednio do treści rozmowy. Page 2 File nie prowadzi bazy historii konwersji, ale nie może usunąć kopii z Twojego urządzenia ani współdzielonego miejsca.
+
+Oznacz wynik jako jedną widoczną rozmowę Claude przechwyconą w danym dniu. Oficjalny eksport danych Anthropic służy szerszemu celowi związanemu z danymi konta. Page 2 File jest niezależny od Anthropic i nie certyfikuje wyników modelu.
+
+## Uzgodnij PDF z widocznym wątkiem
+
+Utwórz krótką listę kontrolną zawierającą pierwszy prompt, ostatnią wymaganą odpowiedź oraz każdy artefakt, blok kodu lub cytowanie, które musi się pojawić. Porównaj ją kolejno z podglądem. Jeśli interfejs Claude usuwa wcześniejszą część podczas otwierania późniejszej, użyj mniejszych oznaczonych zakresów zamiast opisywać jeden PDF jako kompletny.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: Sprawdź w podglądzie wiadomości, cytowania, kod i widoczne granice artefaktu."}
+  caption={"Sprawdź w podglądzie wiadomości, cytowania, kod i widoczne granice artefaktu."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: sprawdź w podglądzie wiadomości, cytowania, kod i widoczne granice artefaktu."}
+  src="/blog/instructions/export-claude-chat-to-pdf/05.svg"
+  step={5}
+/>
+
+Sprawdź pobrany plik w normalnym powiększeniu. W Editable document wyszukaj reprezentatywne frazy, a w Accurate copy potwierdź etykiety artefaktów i grupowanie wiadomości. Zapisz każdy niedostępny plik, ukrytą gałąź lub treść panelu bocznego, którą celowo wykluczono.
+
+Podgląd jest tymczasowy i zostaje usunięty po zamknięciu jego karty, a Page 2 File nie prowadzi bazy historii konwersji. Przechowuj zatwierdzony PDF i notatkę o jego zakresie w miejscu odpowiednim do wrażliwości rozmowy.
+
+## Zdecyduj, jak przedstawić artefakty
+
+Artefakt może pojawić się obok głównej rozmowy i nie pasować naturalnie do kolejności zapisu. Zdecyduj, czy czytelnik potrzebuje samego artefaktu, wiadomości, która go wprowadziła, czy obu tych elementów. Gdy ważne jest zachowanie układu, przechwyć jego widoczny stan jako osobną sekcję zrzutową i oznacz jego miejsce w rozmowie.
+
+Nie opisuj wyświetlanego artefaktu jako niezależnie dołączonego pliku źródłowego, chyba że taki plik rzeczywiście uwzględniono w autoryzowanym procesie. Sprawdź małe etykiety, kod i tabele w normalnym powiększeniu PDF, a następnie zapisz każdą interakcję lub historię wersji, której statyczny dokument nie może zachować.
+
+Późniejsze zmiany przechowuj oddzielnie od zatwierdzonego przechwycenia.

@@ -1,0 +1,143 @@
+Funcția Print to PDF din browser și conversia URL în PDF pornesc de la versiuni diferite ale unei pagini. Imprimarea folosește foaia de stil pentru tipărire a site-ului, dacă aceasta există. Un convertor poate lucra cu aspectul randat pe ecran și îl poate împărți în secțiuni care pot fi verificate. Niciuna dintre metode nu este automat mai bună; pagina și documentul dorit determină alegerea.
+
+<ArticleFigure
+  alt={"Browser și extensia Page 2 File: Deschideți previzualizarea imprimării din browser și observați ce regiuni ale tabloului de bord dispar."}
+  caption={"Deschideți previzualizarea imprimării din browser și observați ce regiuni ale tabloului de bord dispar."}
+  closeLabel={"Închideți previzualizarea imaginii"}
+  openLabel={"Deschideți imaginea la dimensiune completă: Deschideți previzualizarea imprimării din browser și observați ce regiuni ale tabloului de bord dispar."}
+  src="/blog/instructions/why-print-to-pdf-breaks/01.svg"
+  step={1}
+/>
+
+Folosiți [convertorul PDF Page 2 File](/ro/convert-webpage-to-pdf) când aveți nevoie de previzualizare și de o alegere deliberată între rezultatul tip captură și cel editabil. Folosiți imprimarea din browser când editorul a pregătit o versiune de tipărire curată și aveți nevoie doar de o copie rapidă.
+
+## De ce rezultatul imprimării poate să nu semene cu ecranul
+
+CSS poate atribui reguli diferite pentru ecran și imprimare. O foaie de stil pentru tipărire poate elimina navigarea și reclamele, dar poate și suprima fundalurile, modifica coloanele, înlocui fonturile sau ascunde panourile interactive. Elementele fixe și lipicioase se pot repeta pe mai multe pagini. O diagramă desenată pe canvas poate apărea ca o zonă goală dacă procesul de imprimare nu îi capturează pixelii.
+
+<ArticleFigure
+  alt={"Browser și extensia Page 2 File: Comparați rezultatul imprimării cu ecranul și identificați diagramele și fundalurile lipsă."}
+  caption={"Comparați rezultatul imprimării cu ecranul și identificați diagramele și fundalurile lipsă."}
+  closeLabel={"Închideți previzualizarea imaginii"}
+  openLabel={"Deschideți imaginea la dimensiune completă: Comparați rezultatul imprimării cu ecranul și identificați diagramele și fundalurile lipsă."}
+  src="/blog/instructions/why-print-to-pdf-breaks/02.svg"
+  step={2}
+/>
+
+Conținutul media încărcat întârziat creează un alt decalaj. Imprimarea pornește din starea curentă a documentului; conținutul care nu a intrat niciodată în zona vizibilă poate să nu existe în acea stare. Interfețele virtualizate de chat și tablou de bord pot elimina rândurile mai vechi din DOM în timpul derulării, ceea ce înseamnă că o comandă de imprimare nu le poate recupera.
+
+## Ce schimbă conversia unui URL
+
+Un convertor pentru URL-uri publice încarcă adresa într-un browser controlat și pregătește rezultatul randat pentru PDF. Nu moștenește sesiunea dumneavoastră personală, deci nu poate vedea un tablou de bord privat sau o pagină din spatele autentificării. Această limită protejează datele de autentificare, dar face metoda nepotrivită pentru materialele autentificate.
+
+Pentru o filă privată, [extensia Page 2 File](/ro/chrome-extension/how-to-use) capturează pagina pe care ați deschis-o după o acțiune explicită. Nu solicită parola contului. Asigurați-vă că panourile și mesajele necesare sunt vizibile înainte de captură.
+
+## Comparați fișierele, nu etichetele butoanelor
+
+Verificați dacă textul poate fi selectat, linkurile rămân utile, fundalurile transmit informații și întreruperile de pagină respectă titlurile. Un export tip captură păstrează de obicei mai fidel un aspect dificil. Un export editabil face conținutul acceptat mai ușor de căutat și revizuit, dar poate rasteriza elementele complexe.
+
+Ghidul [captură față de editabil](/ro/blog/visual-vs-editable) explică acest compromis. Pentru surse foarte înalte, consultați și [ghidul capturii întregii pagini](/ro/blog/capture-full-webpage-as-pdf) înainte de alegerea metodei.
+
+## O decizie practică
+
+Alegeți imprimarea din browser pentru un articol simplu, cu o foaie de stil pentru tipărire bună. Alegeți conversia URL tip captură când aspectul contează sau conversia editabilă când conținutul trebuie să rămână căutabil și legat. Alegeți captura filei active când sursa este privată, personalizată sau disponibilă numai după interacțiune.
+
+Previzualizarea rămâne dovada decisivă. Dacă un bloc important lipsește acolo, nu presupuneți că va reapărea în PDF-ul final.
+
+## Efectuați o comparație controlată
+
+Comparați ambele metode pornind din aceeași stare a browserului. Setați aceeași zonă vizibilă, aceleași filtre, panouri extinse și aceeași poziție de derulare înainte de a crea oricare dintre fișiere. Altfel, comparația măsoară două surse diferite, nu două metode de conversie. Notați dacă pagina terminase încărcarea imaginilor, fonturilor web și diagramelor.
+
+Începeți cu previzualizarea imprimării din browser. Notați ce navigare, fundaluri, panouri interactive și elemente lipicioase dispar. Aceasta nu este automat o eroare: o foaie de stil pentru tipărire bine concepută poate elimina aglomerația și produce cea mai curată copie pentru lectură. Întrebarea este dacă a eliminat ceva necesar scopului dumneavoastră.
+
+Apoi examinați previzualizarea Page 2 File în modul potrivit sarcinii. Accurate copy (rezultat de tip captură) trebuie evaluat după asemănare și lizibilitate. Editable document (rezultat editabil) trebuie evaluat după ordinea de citire, selecția textului, comportamentul linkurilor și calitatea soluțiilor de rezervă pentru componentele complexe. Compararea exclusivă a dimensiunii fișierelor spune prea puțin despre utilizabilitatea documentelor.
+
+## Diagnosticați diferențele obișnuite
+
+Culorile sau imaginile lipsă provin adesea din CSS specific imprimării, din setările browserului pentru grafica de fundal sau dintr-o componentă care se randează diferit pentru mediul de tipărire. Panourile trunchiate apar frecvent când un container derulabil are înălțime fixă sau când un conținut virtualizat nu a intrat niciodată în pagina randată. Spațiul gol poate proveni din anteturi lipicioase, spații rezervate reclamelor sau reguli de imprimare care forțează o întrerupere.
+
+Tabelele scot la iveală o altă diferență. O foaie de stil pentru tipărire poate repeta corect anteturile, poate micșora tabelul până când textul devine ilizibil sau poate tăia coloanele din afara lățimii imprimabile. O captură poate păstra tabelul afișat, dar nu poate face ca un aspect lat să încapă natural pe o pagină portret. Conversia editabilă poate reconstrui rândurile și celulele standard, folosind în același timp o imagine de rezervă pentru grile neobișnuite.
+
+Linkurile merită o verificare separată. PDF-urile generate de browser pot păstra ancorele standard, dar un URL vizibil desenat în canvas sau furnizat de un script poate să nu devină interactiv. Page 2 File Editable document păstrează ancorele acceptate; Accurate copy prioritizează aspectul. Testați destinațiile în loc să presupuneți că textul albastru subliniat poate fi accesat.
+
+## Alegeți pe baza dovezilor și a costului de întreținere
+
+Pentru un articol exportat o singură dată, cu o versiune de tipărire bună, imprimarea din browser este adesea suficientă. Pentru un tablou de bord, o aplicație autentificată, o pagină dinamică lungă sau un flux orientat spre prezentare, controalele de captură și previzualizare pot conta mai mult decât convențiile de imprimare ale browserului. Nicio metodă nu trebuie considerată universal superioară.
+
+Dacă aceeași sursă este exportată regulat, notați pașii de pregătire și verificările de acceptare. O procedură stabilă este mai valoroasă decât alegerea repetată a unui instrument din intuiție. Verificați-o din nou când site-ul își schimbă aspectul, autentificarea sau comportamentul de virtualizare.
+
+Materialele video, animațiile, stările la trecerea cursorului și controalele live nu pot rămâne interactive într-un PDF obișnuit. Rezultatul justificabil este o înregistrare lizibilă a unei stări definite a paginii, cu compromisuri cunoscute.
+
+## Separați setările de imprimare de problemele sursei
+
+Unele defecte pot fi corectate în caseta de imprimare a browserului. Dimensiunea hârtiei, orientarea, marginile, scara și setările pentru grafica de fundal pot schimba considerabil rezultatul. Încercați aceste controale când conținutul este prezent, dar încadrat prost. Ele nu pot restabili un panou eliminat de foaia de stil pentru tipărire sau mesajele pe care o interfață virtualizată nu le-a randat.
+
+Anteturile și subsolurile adăugate de browser sunt o altă alegere specifică imprimării. Ele pot furniza un URL și o dată, dar pot și dezvălui o adresă privată sau împinge conținutul pe o pagină suplimentară. Verificați-le deliberat, nu acceptați valoarea implicită. Un convertor URL are alt model de previzualizare și secțiuni, deci comparați metadatele reale din fiecare fișier.
+
+Nu tratați o dimensiune mai mare a paginii ca soluție universală. Orientarea peisaj poate ajuta un tabel lat, dar face un articol îngust mai greu de citit. O scalare agresivă poate evita tăierea, dar poate transforma etichetele și notele de subsol în text ilizibil. Condițiile de vizualizare dorite contează mai mult decât încadrarea tuturor elementelor pe cât mai puține foi.
+
+## Decideți cu o matrice sursă-sarcină
+
+Pentru un articol conceput de editor, imprimarea din browser este un prim test rezonabil, deoarece foaia de stil poate deja elimina navigarea și formata citările. Pentru o pagină de marketing sau o referință de design, conversia tip captură este de obicei un candidat mai bun, fiindcă alcătuirea ecranului transmite sens. Pentru documentație și note de cercetare, conversia editabilă merită testată prima, deoarece căutarea, selecția și linkurile contează.
+
+Tablourile de bord și chaturile impun altă întrebare: starea necesară este randată în realitate? Dacă răspunsul este nu, nici imprimarea, nici conversia URL nu o pot reconstrui. Încărcați intervalul autorizat, stabilizați filtrele și folosiți captura filei active când starea depinde de o sesiune autentificată în browser. Nu trebuie să vă așteptați niciodată ca o sarcină pentru URL public să moștenească acea sesiune.
+
+<ArticleFigure
+  alt={"Browser și extensia Page 2 File: Folosiți By URL pentru aceeași pagină publică atunci când nu este necesară o stare autentificată."}
+  caption={"Folosiți By URL pentru aceeași pagină publică atunci când nu este necesară o stare autentificată."}
+  closeLabel={"Închideți previzualizarea imaginii"}
+  openLabel={"Deschideți imaginea la dimensiune completă: Folosiți By URL pentru aceeași pagină publică atunci când nu este necesară o stare autentificată."}
+  src="/blog/instructions/why-print-to-pdf-breaks/03.svg"
+  step={3}
+/>
+
+Când rezultatul urmează să devină o prezentare, PDF-ul poate să nu fie destinația potrivită. Un [flux din pagină web în PowerPoint](/ro/blog/webpage-to-powerpoint) vă permite să alegeți între diapozitive orientate spre aspect și elemente editabile acceptate, în loc să reconvertiți un PDF.
+
+<ArticleFigure
+  alt={"Browser și extensia Page 2 File: Alegeți Accurate copy când compoziția afișată reprezintă dovada."}
+  caption={"Alegeți Accurate copy când compoziția afișată reprezintă dovada."}
+  closeLabel={"Închideți previzualizarea imaginii"}
+  openLabel={"Deschideți imaginea la dimensiune completă: Alegeți Accurate copy când compoziția afișată reprezintă dovada."}
+  src="/blog/instructions/why-print-to-pdf-breaks/04.svg"
+  step={4}
+/>
+
+## Înregistrați o comparație justificabilă
+
+Pentru exporturi recurente, păstrați o fișă scurtă de test: URL-ul sursei, starea browserului, data, setările de imprimare, modul Page 2 File și defectele găsite în fiecare rezultat. Capturile celor două previzualizări pot ajuta la explicarea alegerii unei metode, dar nu trebuie să înlocuiască verificarea PDF-ului final.
+
+Evaluați ambele fișiere după aceleași criterii de acceptare:
+
+- tot conținutul obligatoriu apare o singură dată și în ordinea corectă;
+- textul principal, etichetele diagramelor și codul sunt lizibile la zoom normal;
+- linkurile importante funcționează și nu expun destinații sensibile;
+- titlurile, legendele și contextul tabelelor supraviețuiesc limitelor de pagină;
+- detaliile private ale contului sau spațiului de lucru lipsesc, dacă nu sunt necesare.
+
+O metodă trece testul când produce documentul necesar pentru sursa și sarcina respectivă. Dacă ambele eșuează, restrângeți captura, schimbați starea paginii sau folosiți exportul specializat al platformei sursă. Repetarea aceleiași comenzi pe o pagină instabilă nu este o strategie de remediere.
+
+<ArticleFigure
+  alt={"Browser și extensia Page 2 File: Alegeți Editable document când contează ordinea de citire, selecția și linkurile."}
+  caption={"Alegeți Editable document când contează ordinea de citire, selecția și linkurile."}
+  closeLabel={"Închideți previzualizarea imaginii"}
+  openLabel={"Deschideți imaginea la dimensiune completă: Alegeți Editable document când contează ordinea de citire, selecția și linkurile."}
+  src="/blog/instructions/why-print-to-pdf-breaks/05.svg"
+  step={5}
+/>
+
+## Verificați din nou după schimbarea site-ului
+
+Comportamentul imprimării și capturii se poate schimba când un site își actualizează CSS-ul, biblioteca de diagrame, stratul de consimțământ sau regulile de virtualizare. O procedură care a funcționat luna trecută este o dovadă despre versiunea de atunci a paginii, nu o garanție permanentă. Repetați verificările reprezentative după o reproiectare și înainte de o distribuire cu consecințe importante.
+
+Acest aspect al întreținerii este deosebit de important pentru rutinele care par automatizate. Page 2 File oferă previzualizare deoarece starea paginii necesită în continuare verificare umană. Previzualizarea poate dezvălui secțiuni lipsă și limite incomode; nu poate decide dacă documentul este complet pentru scopul dumneavoastră juridic, arhivistic sau operațional.
+
+<ArticleFigure
+  alt={"Browser și extensia Page 2 File: Comparați ambele previzualizări Page 2 File cu imprimarea din browser înainte de a decide."}
+  caption={"Comparați ambele previzualizări Page 2 File cu imprimarea din browser înainte de a decide."}
+  closeLabel={"Închideți previzualizarea imaginii"}
+  openLabel={"Deschideți imaginea la dimensiune completă: Comparați ambele previzualizări Page 2 File cu imprimarea din browser înainte de a decide."}
+  src="/blog/instructions/why-print-to-pdf-breaks/06.svg"
+  step={6}
+/>
+
+Folosiți [ghidul formatelor pentru site-uri](/ro/blog/website-types-to-pdf-or-powerpoint) când tipul sursei, nu doar comportamentul imprimării, trebuie să determine decizia.

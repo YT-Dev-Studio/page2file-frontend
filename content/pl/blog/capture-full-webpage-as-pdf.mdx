@@ -1,0 +1,120 @@
+PDF z całej strony powinien zawierać kompletny dokument, który zamierzasz przechwycić — nie tylko jeden ekran i nie wszystkie nieskończone rekomendacje, które witryna potrafi doładować. Otwórz stronę, wczytaj wymagane sekcje, wybierz wyraźny punkt końcowy i przechwyć aktywną kartę za pomocą [rozszerzenia Page 2 File](/pl/chrome-extension/how-to-use).
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wczytaj całą przewijaną stronę i określ wyraźny początek oraz koniec."}
+  caption={"Wczytaj całą przewijaną stronę i określ wyraźny początek oraz koniec."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wczytaj całą przewijaną stronę i określ wyraźny początek oraz koniec."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/01.svg"
+  step={1}
+/>
+
+Dla prostego publicznego adresu wystarczy [konwerter strony do PDF](/pl/convert-webpage-to-pdf). Rozszerzenie stanowi lepszą granicę dla stron po zalogowaniu, długich rozmów AI i aplikacji internetowych, których stan istnieje tylko w Twojej przeglądarce.
+
+## Cała strona nie oznacza strony nieskończonej
+
+Wiele kanałów dołącza treść podczas przewijania. Ustal, czy dokument kończy się na określonej dacie, wiadomości, nagłówku czy wczytanej sekcji. Dzięki temu eksport nie zbierze niepowiązanych rekomendacji ani nie będzie wielokrotnie wyzwalał żądań sieciowych.
+
+Strona może też zawierać stałe nagłówki, pływające przyciski czatu i nakładki zgody. Zamknij nakładki, które wolno Ci odrzucić. Zachowaj nawigację tylko wtedy, gdy pomaga czytelnikowi zrozumieć źródło.
+
+## Wczytuj dynamiczny materiał świadomie
+
+Przewiń leniwie ładowane obrazy i rozwiń akordeony, które mają znaleźć się w dokumencie. W wirtualizowanym czacie starsze wiadomości mogą znikać z DOM podczas ładowania nowszych; przed przechwyceniem użyj kontrolek platformy, aby odsłonić wymagany zakres. Page 2 File może przechwycić wyrenderowaną treść, a nie ukryte rekordy konta.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: rozwiń wymagane sekcje i uruchom leniwe ładowanie przed przechwyceniem."}
+  caption={"Rozwiń wymagane sekcje i uruchom leniwe ładowanie przed przechwyceniem."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: rozwiń wymagane sekcje i uruchom leniwe ładowanie przed przechwyceniem."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/02.svg"
+  step={2}
+/>
+
+Poczekaj, aż wykresy i niestandardowe fonty się ustabilizują. Jeśli strona zmienia się bez przerwy, przechwyć stabilny stan i zapisz datę przechwycenia w dokumencie lub nazwie pliku.
+
+## Zamień wysokość na czytelne strony
+
+Eksport jako zrzut może zachować każdą wyrenderowaną sekcję, a podgląd wyznacza granice PDF. Unikaj odcinania wiersza tabeli, fragmentu kodu lub podpisu od jego obrazu. Artykuł o [podziałach długich stron](/pl/blog/long-webpage-page-breaks) przedstawia dokładniejszą sekwencję kontroli.
+
+Jeśli linki i zaznaczalny tekst są ważniejsze niż dokładne piksele, użyj Editable document (wynik edytowalny) i sprawdź każdy złożony zamiennik. [Przewodnik po klikalnych linkach](/pl/blog/preserve-clickable-links) wyjaśnia, dlaczego zrzut i dokument edytowalny zachowują się inaczej.
+
+## Prywatne przechwytywanie nadal wymaga oceny
+
+Przechwytuj tylko materiał, który wolno Ci zachować. Rozszerzenie nie usuwa kontroli dostępu; działa po legalnym otwarciu strony. Nie może też przechwycić natywnej aplikacji komputerowej lub mobilnej poza Chrome.
+
+Podgląd jest tymczasowy. Zamknięcie jego karty usuwa dane podglądu, a Page 2 File nie prowadzi bazy historii konwersji.
+
+## Sporządź mapę strony przed przechwyceniem
+
+Długie strony łatwiej kontrolować, gdy najpierw rozpoznasz ich strukturę. Zaznacz punkt początkowy, ostatnią wymaganą sekcję i komponenty ładowane dopiero po interakcji. Zdecyduj, czy komentarze, powiązane elementy, nawigacja i stopki należą do zapisu. „Wszystko, co witryna może kiedyś wczytać” nie jest użyteczną granicą nieskończonego kanału.
+
+Zwróć uwagę na zagnieżdżone obszary przewijania. Dashboard może mieć pasek strony, osobny pasek tabeli i panel czatu niezależnie ładujący historię. Operacja całej strony może pracować tylko z treścią wyrenderowaną przez kartę. Otwórz wymagane wiersze lub wiadomości i potwierdź ich obecność przed konwersją.
+
+Przyklejone nagłówki i pływające kontrolki mogą powtarzać się przy dzieleniu długiej strony na sekcje. Zachowaj je, gdy zapewniają niezbędny kontekst, na przykład etykiety kolumn; usuń lub zwiń, gdy zasłaniają treść. Celem jest ciągłość dla czytelnika, a nie dosłowne powtarzanie każdej warstwy interfejsu.
+
+## Obsłuż leniwe ładowanie i wirtualizację
+
+Leniwe ładowanie opóźnia obrazy lub panele, dopóki nie zbliżą się do viewportu. Świadome przejście od góry do dołu zwykle ujawnia, czy źródło ładuje się prawidłowo. Potem wróć na początek. Jeśli wczesne karty zniknęły, witryna prawdopodobnie wirtualizuje listę, zastępując węzły poza ekranem.
+
+Dla źródeł wirtualizowanych przechwytuj mniejszy zakres lub kilka logicznych sekcji i sprawdzaj każdą osobno. Nie wnioskuj z samego paska przewijania, że niewidoczna część strony znajdzie się w wyniku. Podgląd powinien pokazywać rzeczywisty początek, koniec i kolejność każdej przechwyconej sekcji.
+
+Dynamiczne liczniki, kanały na żywo i animacje mogą zmieniać się podczas przejścia. Wstrzymaj aktualizacje, jeśli witryna udostępnia taką opcję, albo wybierz jednoznaczny moment i go zanotuj. PDF jest statycznym zrzutem; nie zachowa działania, które wytworzyło widoczny stan.
+
+## Sprawdź ciągłość między stronami PDF
+
+Skontroluj przejścia między stronami pod kątem powtarzających się przyklejonych elementów, uciętych nagłówków, zdublowanych wierszy i treści ukrytej pod nakładkami. Sekcja czytelna osobno nadal może być niejasna, jeśli jej tytuł znajduje się dwie strony wcześniej.
+
+Szerokie wykresy i tabele wymagają świadomego wyboru. Zachowanie pełnej szerokości może zmniejszyć etykiety, a podział elementu może odebrać kontekst. Jeśli źródło oferuje widok kompaktowy, wybierz go przed przechwyceniem. W przeciwnym razie zachowaj wizualizację jako jedną sekcję i dobierz skalę zapewniającą czytelność.
+
+Na końcu porównaj podgląd z konspektem źródła. Każdy wymagany nagłówek powinien wystąpić raz i we właściwej kolejności. Jeśli strona jest zbyt niestabilna, aby przejść ten test, udokumentuj ograniczenie i przechwyć węższą, powtarzalną część.
+
+## Zdiagnozuj niepełny wynik całej strony
+
+Jeśli podgląd kończy się za wcześnie, wróć do źródła i znajdź pierwszą brakującą sekcję. Przycisk „wczytaj więcej”, zwinięty panel lub zagnieżdżony pasek przewijania zwykle wymaga bezpośredniej interakcji. Gdy strona pokazuje wskaźnik ładowania, poczekaj na zakończenie i sprawdź, czy nowa treść pozostaje po przewinięciu.
+
+Jeśli podgląd powtarza treść, sprawdź przyklejone nagłówki, przypięte wiersze tabel i komponenty renderowane ponownie na granicach sekcji. Zwiń niepotrzebne elementy stałe i powtórz mniejsze przechwycenie. Zmieniaj po jednym warunku, aby rozpoznać, czy wada pochodzi ze stanu strony, zakresu czy podziału sekcji.
+
+Jeśli wczesna treść znika po wczytaniu późniejszej, źródło prawdopodobnie jest wirtualizowane. Może nie istnieć jeden stan przeglądarki zawierający całą historię. Określ kilka zakresów z wyraźnym nakładaniem, przechwyć je osobno i oznacz kolejność. Nie nazywaj zapisu ciągłym, jeśli źródło nigdy nie wyrenderowało go w całości.
+
+## Sprawdź prywatność przed pobraniem
+
+Przechwytywanie całej strony może ujawnić szczegóły daleko poza początkowym viewportem: menu konta, nazwy uczestników, podglądy powiadomień, parametry zapytań i treść sąsiednich paneli. Przejrzyj cały podgląd zamiast zakładać, że elementy poza ekranem są nieszkodliwe. Przed utworzeniem finalnego pliku usuń zbędne sekcje w źródle lub podglądzie.
+
+Rozszerzenie pracuje z aktywną kartą przeglądarki. Dane podglądu są tymczasowe, usuwane po zamknięciu karty i nie są przechowywane w bazie historii konwersji Page 2 File. Pobrany PDF pozostaje pod Twoją kontrolą, dlatego dobierz nazwę, miejsce zapisu i kanał udostępniania do wrażliwości treści.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wybierz Current tab, aby pop-up użył strony już otwartej w przeglądarce."}
+  caption={"Wybierz Current tab, aby pop-up użył strony już otwartej w przeglądarce."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz Current tab, aby pop-up użył strony już otwartej w przeglądarce."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/03.svg"
+  step={3}
+/>
+
+## Użyj listy kontroli kompletności
+
+PDF z całej strony jest gotowy, gdy jego początek i koniec odpowiadają zadeklarowanej granicy, każda wymagana sekcja występuje w kolejności, żaden blok nie został po cichu zdublowany, a tekst i szczegóły wizualne pozostają czytelne przy zwykłym powiększeniu. Sprawdź co najmniej jedno przejście między sekcjami, jeden złożony komponent i jeden ważny link.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wybierz PDF oraz styl wyniku odpowiadający celowi kontroli."}
+  caption={"Wybierz PDF oraz styl wyniku odpowiadający celowi kontroli."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz PDF oraz styl wyniku odpowiadający celowi kontroli."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/04.svg"
+  step={4}
+/>
+
+Zapisz URL źródła i datę przechwycenia, gdy strona może się zmienić. W przypadku treści wymagających logowania nie umieszczaj sekretów ani identyfikatorów sesji w nazwie pliku lub notatkach. Jeśli w podglądzie brakuje wymaganej treści, przechwycenie jest niepełne, nawet gdy PDF otwiera się bez błędu.
+
+Zachowaj konspekt źródła wraz z zatwierdzonym plikiem, jeśli inna osoba będzie później weryfikować granicę przechwycenia.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: sprawdź w podglądzie cały zakres oraz pierwszą, ostatnią i graniczne sekcje."}
+  caption={"Sprawdź w podglądzie cały zakres oraz pierwszą, ostatnią i graniczne sekcje."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: sprawdź w podglądzie cały zakres oraz pierwszą, ostatnią i graniczne sekcje."}
+  src="/blog/instructions/capture-full-webpage-as-pdf/05.svg"
+  step={5}
+/>
+
+Wskazówki dotyczące przygotowania konkretnych źródeł znajdziesz w [przewodniku po eksporcie witryn](/pl/blog/website-types-to-pdf-or-powerpoint).

@@ -1,0 +1,126 @@
+A conversão por capturas preserva a aparência renderizada de uma página Web; a conversão editável preserva conteúdo suportado como objetos do documento. A escolha certa depende do que o destinatário precisa de fazer após a transferência.
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: abra uma página com layout em camadas, tipografia, imagens e chamadas à ação."}
+  caption={"Abra uma página com layout em camadas, tipografia, imagens e chamadas à ação."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: abra uma página com layout em camadas, tipografia, imagens e chamadas à ação."}
+  src="/blog/instructions/visual-vs-editable/01.svg"
+  step={1}
+/>
+
+Ambos os modos estão disponíveis no [conversor PDF](/pt/convert-webpage-to-pdf) e no [conversor PowerPoint](/pt/convert-webpage-to-powerpoint) do Page 2 File. A pré-visualização torna o compromisso visível antes da renderização final.
+
+## O modo de capturas mantém a composição
+
+A saída em capturas regista secções tal como aparecem no navegador. É adequada para páginas de campanha, dashboards, referências de design, recibos e conversas em que o espaço, a cor e o agrupamento transportam informação.
+
+O custo é a editabilidade. O texto dentro de uma secção capturada comporta-se como imagem salvo se forem adicionadas camadas separadas de texto ou ligação. Um vídeo torna-se uma representação estática e uma animação não pode permanecer animada num PDF comum.
+
+## O modo editável mantém a estrutura do documento
+
+A saída editável mapeia títulos, parágrafos, listas, imagens, formas e ligações suportados para elementos PDF ou PowerPoint. Os leitores podem pesquisar texto, seguir ligações seguras e rever conteúdo suportado numa apresentação.
+
+Um layout do navegador é mais expressivo do que um formato de documento. CSS complexo, canvas, filtros SVG e widgets interativos podem ser simplificados ou rasterizados. Editável deve significar objetos úteis, não uma promessa de reconstrução perfeita ao píxel.
+
+## Faça corresponder o modo à fonte
+
+Utilize Accurate copy (saída em capturas) para um portefólio, página de produto, captura de dashboard ou arquivo de chat com aspeto original. Utilize Editable document (saída editável) para um artigo, documentação, nota de investigação ou apresentação que um colega tenha de atualizar.
+
+Para ligações PDF, leia [como preservar ligações clicáveis](/pt/blog/preserve-clickable-links). Para diapositivos, compare [PowerPoint capturado e editável](/pt/blog/screenshot-vs-editable-powerpoint).
+
+## Reveja as alternativas
+
+A pré-visualização deve identificar tipos de letra substituídos, regiões rasterizadas, destinos inseguros removidos e limites de página ou diapositivo. Observe tabelas, código, gráficos e designs em camadas. Uma alternativa é aceitável quando está visível e o documento continua a cumprir o objetivo.
+
+Para fontes longas, a seleção de modo e a paginação interagem. O [guia de páginas Web longas](/pt/blog/long-webpage-page-breaks) mostra como rever secções que atravessam páginas PDF fixas.
+
+## Uma regra simples
+
+Escolha Accurate copy quando a própria página for o registo. Escolha Editable document quando a informação tiver de continuar a funcionar fora do navegador. Se nenhum satisfizer o requisito, mantenha a página original ou utilize uma exportação específica da plataforma de origem.
+
+## Avalie a fonte por tipo de componente
+
+Comece pelos elementos cuja perda seria mais dispendiosa. Títulos, parágrafos, imagens e ligações normais favorecem geralmente a saída editável. Gráficos complexos, mapas, canvas, diagramas personalizados e layouts com muitas camadas favorecem representação visual. Uma página com ambos pode precisar de estrutura editável e imagens alternativas para componentes difíceis.
+
+As tabelas ficam entre estas categorias. Uma tabela convencional pode continuar pesquisável e útil como conteúdo. Uma grelha virtualizada com colunas fixas, controlos incorporados e formatação condicional pode ser mais clara como secção capturada. Decida se o leitor precisa de analisar valores, preservar o estado apresentado ou ambos.
+
+Os controlos interativos não permanecem interativos num PDF ou apresentação comum. Um filtro selecionado pode ser registado, mas o destinatário não o pode alterar e voltar a gerar o gráfico. Preserve rótulos que expliquem o estado escolhido para que o resultado estático não seja confundido com um dashboard em direto.
+
+## Considere o formato de destino
+
+Os leitores PDF esperam normalmente paginação estável, texto pesquisável e ligações fiáveis. Editable document suporta estes objetivos para fontes semelhantes a documentos, enquanto Accurate copy oferece um registo mais forte do layout. Um relatório misto pode usar capturas para gráficos e secções editáveis para narrativa.
+
+O PowerPoint muda a prioridade. Um diapositivo capturado preserva rapidamente uma secção Web, mas é mais difícil de redesenhar e pode conter texto pequeno do navegador. Diapositivos editáveis permitem rever texto e objetos suportados, embora detalhes complexos possam acabar agrupados ou como imagens. A melhor apresentação não é necessariamente a cópia mais literal.
+
+A distribuição também importa. Se os destinatários apenas revirem ou arquivarem, a fidelidade visual pode bastar. Se precisarem de citar, traduzir, atualizar a marca ou reutilizar elementos, a estrutura editável tem mais valor. Decida antes da conversão.
+
+## Reveja honestamente as alternativas mistas
+
+A conversão editável não transforma cada píxel num objeto nativo. Elementos não suportados ou ambíguos podem permanecer imagens para não destruir a aparência. Inspecione-os e confirme que não contêm texto que o destinatário tenha de editar.
+
+Accurate copy também tem limites. Texto pequeno pode tornar-se difícil de ler após redimensionamento, e ligações dentro de uma imagem não se tornam automaticamente anotações interativas. Verifique destinos importantes e escolha limites que preservem a legibilidade.
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: escolha Accurate copy para preservar a composição renderizada."}
+  caption={"Escolha Accurate copy para preservar a composição renderizada."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: escolha Accurate copy para preservar a composição renderizada."}
+  src="/blog/instructions/visual-vs-editable/02.svg"
+  step={2}
+/>
+
+Documente o modo escolhido quando o ficheiro entrar num fluxo partilhado. Uma nota como “layout preservado; gráfico é uma imagem estática” ou “texto editável; widgets complexos são capturas alternativas” evita que utilizadores posteriores assumam capacidades inexistentes.
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: escolha Editable document quando o conteúdo suportado tiver de ser selecionado ou revisto."}
+  caption={"Escolha Editable document quando o conteúdo suportado tiver de ser selecionado ou revisto."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: escolha Editable document quando o conteúdo suportado tiver de ser selecionado ou revisto."}
+  src="/blog/instructions/visual-vs-editable/03.svg"
+  step={3}
+/>
+
+## Decida a partir da próxima ação do destinatário
+
+Comece pela tarefa após a conversão. Se o destinatário precisa de arquivar provas do que apareceu no navegador, composição e estado visível costumam importar mais. Se precisa de pesquisar, citar, traduzir ou redesenhar, a estrutura importa mais. Um ficheiro pode parecer impressionante e falhar a entrega real.
+
+Pergunte o que deve permanecer exato. Num recibo, valores, datas e agrupamento visual podem ser o registo. Num artigo de investigação, importam citações, referências e ordem de leitura. Numa apresentação, títulos editáveis podem ser essenciais enquanto um gráfico complexo fica estático. Esta decisão por componente é mais útil do que escolher apenas pela categoria da fonte.
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: compare fidelidade visual, texto selecionável, ligações e alternativas complexas."}
+  caption={"Compare fidelidade visual, texto selecionável, ligações e alternativas complexas."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: compare fidelidade visual, texto selecionável, ligações e alternativas complexas."}
+  src="/blog/instructions/visual-vs-editable/04.svg"
+  step={4}
+/>
+
+Decida também o que pode mudar. A saída editável facilita rever elementos suportados, útil numa apresentação de trabalho mas inadequado para arquivo. Uma captura preserva a aparência mas não prova autenticidade nem impede edição da imagem. Use controlos organizacionais e registos de proveniência para estas questões, não o modo do ficheiro.
+
+## Aplique uma revisão de conteúdo misto
+
+Comece por um esquema e marque cada componente como texto, ligação, imagem, tabela, gráfico ou estado interativo. Na pré-visualização editável, verifique ordem, seleção e destinos e identifique cada alternativa raster. Na pré-visualização de capturas, verifique escala, nitidez e se ações importantes precisam de contexto separado.
+
+Num relatório misto, mantenha narrativa e tabelas convencionais editáveis quando o resultado permanecer coerente. Preserve visualmente dashboards, mapas ou cartões em camadas quando a reconstrução os distorceria. Reveja a transição para que títulos e legendas continuem a explicar o que se segue.
+
+Não presuma que um resultado misto combina todas as vantagens sem custo. Uma imagem alternativa pode conter texto não pesquisável, enquanto uma secção editável pode simplificar espaçamento ou tipografia. Declare esses limites na entrega quando afetarem o uso.
+
+<ArticleFigure
+  alt={"Navegador e extensão Page 2 File: selecione o resultado correspondente à tarefa real do leitor."}
+  caption={"Selecione o resultado correspondente à tarefa real do leitor."}
+  closeLabel={"Fechar a pré-visualização da imagem"}
+  openLabel={"Abrir imagem em tamanho completo: selecione o resultado correspondente à tarefa real do leitor."}
+  src="/blog/instructions/visual-vs-editable/05.svg"
+  step={5}
+/>
+
+## Verifique PDF e PowerPoint de forma diferente
+
+Para PDF, teste ordem de páginas, pesquisa, seleção, ligações importantes e legibilidade com zoom normal. Verifique se os limites fixos separam provas do título ou legenda. Para PowerPoint, abra a apresentação num editor compatível e inspecione títulos, posições, excesso de texto e elementos realmente editáveis.
+
+Uma captura num diapositivo é visualmente estável mas costuma incluir texto do navegador demasiado pequeno para projeção. Um diapositivo editável pode ser reformatado, mas um componente complexo pode ficar agrupado ou rasterizado. Avalie a apresentação no tamanho de apresentação, não apenas a 100% no editor.
+
+Seja qual for o formato, trate a pré-visualização como aprovação. Os dados de pré-visualização do Page 2 File são temporários e eliminados ao fechar o separador, e não existe base de dados de histórico. Guarde o ficheiro aprovado e o registo de revisão exigido pelo seu fluxo.
+
+O [guia de saída para sites](/pt/blog/website-types-to-pdf-or-powerpoint) aplica a escolha de modo a categorias comuns de fontes.

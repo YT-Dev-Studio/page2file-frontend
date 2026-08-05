@@ -1,0 +1,146 @@
+{
+  "save-webpage-as-pdf": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak zapisać stronę internetową jako PDF",
+    "description": "Zapisz publiczną stronę lub stronę po zalogowaniu jako PDF, wybierz zrzuty albo wynik edytowalny, sprawdź podziały stron i poznaj tymczasowe granice podglądu.",
+    "imageAlt": "Długa strona w przeglądarce zmienia się w uporządkowany stos stron PDF"
+  },
+  "why-print-to-pdf-breaks": {
+    "author": "Redakcja Page 2 File",
+    "title": "URL do PDF czy drukowanie w przeglądarce: co przechwytuje więcej?",
+    "description": "Porównaj konwersję URL do PDF z drukowaniem w przeglądarce, w tym style druku, leniwą treść, prywatne karty, zgodność wizualną i wynik edytowalny.",
+    "imageAlt": "Porównanie ścieżki drukowania w przeglądarce ze ścieżką przechwytywania strony internetowej"
+  },
+  "capture-full-webpage-as-pdf": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak przechwycić całą stronę internetową jako PDF",
+    "description": "Przechwyć kompletną przewijaną stronę jako PDF: określ granice, wczytaj dynamiczne sekcje, sprawdź podziały stron i respektuj ograniczenia dostępu.",
+    "imageAlt": "Cała przewijana strona internetowa przechodzi w dokument PDF"
+  },
+  "long-webpage-page-breaks": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak konwertować długą stronę bez uszkodzonych podziałów",
+    "description": "Przygotuj długą stronę do PDF, utrzymaj nagłówki i tabele razem, wczytaj dynamiczną treść i popraw niezręczne granice w podglądzie sekcji.",
+    "imageAlt": "Długa strona internetowa podzielona na czytelnych granicach stron PDF"
+  },
+  "preserve-clickable-links": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak zachować klikalne linki w PDF ze strony internetowej",
+    "description": "Dowiedz się, kiedy linki pozostają klikalne w PDF, dlaczego zrzuty usuwają interaktywność i jak działa tryb Editable document.",
+    "imageAlt": "Linki ze strony internetowej zachowane jako klikalne cele w dokumencie PDF"
+  },
+  "visual-vs-editable": {
+    "author": "Redakcja Page 2 File",
+    "title": "Zrzut czy edytowalna konwersja strony internetowej",
+    "description": "Porównaj zrzutową i edytowalną konwersję strony pod kątem układu, tekstu, linków, obrazów, złożonych zamienników oraz wyników PDF i PowerPoint.",
+    "imageAlt": "Wizualny zrzut strony porównany z edytowalnym dokumentem"
+  },
+  "html-to-pdf-safely": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak bezpiecznie konwertować HTML do PDF",
+    "description": "Konwertuj przesłany plik HTML do PDF, traktując skrypty, zdalne zasoby, dostęp do plików i cele w sieci prywatnej jako granice bezpieczeństwa.",
+    "imageAlt": "Treść HTML odizolowana przed utworzeniem czystego PDF"
+  },
+  "multi-page-website-to-pdf": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak konwertować wielostronicową witrynę do PDF",
+    "description": "Zmień dostępne strony jednej witryny w osobne pliki PDF, określ granicę odkrywania, sprawdź błędy i nie obiecuj jednego scalonego dokumentu.",
+    "imageAlt": "Mapa witryny zmienia się w kilka oddzielnych dokumentów PDF"
+  },
+  "webpage-to-powerpoint": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak konwertować stronę internetową do PowerPoint",
+    "description": "Przekonwertuj jedną stronę do PowerPoint, wybierz slajdy zrzutowe lub edytowalne, określ użyteczne sekcje i sprawdź PPTX przed pobraniem.",
+    "imageAlt": "Jedna strona internetowa uporządkowana jako prezentacja PowerPoint"
+  },
+  "website-to-powerpoint": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak konwertować witrynę do PowerPoint",
+    "description": "Konwertuj dostępne strony witryny do osobnych plików PowerPoint, zachowaj jawną granicę strony i sprawdź slajdy zrzutowe lub edytowalne.",
+    "imageAlt": "Mapa witryny przechodzi w osobne prezentacje PowerPoint"
+  },
+  "html-to-powerpoint": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak konwertować treść internetową HTML do PowerPoint",
+    "description": "Przenieś wyrenderowaną treść HTML do PowerPoint, wybierając użyteczne sekcje, slajdy zrzutowe lub edytowalne i sprawdzając złożone zamienniki.",
+    "imageAlt": "Wyrenderowane bloki HTML przechodzą z przeglądarki na slajdy"
+  },
+  "sections-to-slides": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak sekcje strony stają się slajdami PowerPoint",
+    "description": "Użyj hierarchii strony do wyznaczenia granic slajdów, zachowaj kontekst, podziel gęste sekcje i sprawdź zrzutowy lub edytowalny PowerPoint.",
+    "imageAlt": "Sekcje strony internetowej ułożone jako osobne slajdy PowerPoint"
+  },
+  "screenshot-vs-editable-powerpoint": {
+    "author": "Redakcja Page 2 File",
+    "title": "Slajdy zrzutowe czy edytowalny PowerPoint ze strony",
+    "description": "Porównaj slajdy zrzutowe z edytowalnym PowerPointem pod kątem zgodności układu, zaznaczalnego tekstu, linków, wykresów, utrzymania i dostępności.",
+    "imageAlt": "Slajdy zrzutowe porównane z edytowalnymi elementami PowerPoint"
+  },
+  "save-authenticated-webpage-as-pdf": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak zapisać stronę za logowaniem jako PDF",
+    "description": "Zapisz zalogowaną stronę z aktywnej karty Chrome bez przekazywania danych logowania konwerterowi URL, a następnie sprawdź prywatność i ograniczenia przechwycenia.",
+    "imageAlt": "Chroniona karta przeglądarki zmienia się w prywatną kopię PDF"
+  },
+  "website-types-to-pdf-or-powerpoint": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jakie typy witryn można eksportować do PDF lub PowerPoint?",
+    "description": "Sprawdź, jak artykuły, dokumentacja, dashboardy, sklepy, strony edukacyjne, aplikacje webowe, czaty AI i komunikatory pasują do eksportu PDF lub PowerPoint.",
+    "imageAlt": "Różne typy witryn zbiegają się w plikach PDF i prezentacjach"
+  },
+  "webpage-capture-vs-web-scraping": {
+    "author": "Redakcja Page 2 File",
+    "title": "Przechwytywanie strony a web scraping: czego potrzebujesz?",
+    "description": "Wybierz przechwytywanie strony dla czytelnego dokumentu zrzutowego albo web scraping dla danych strukturalnych i nie traktuj Page 2 File jak API crawlera.",
+    "imageAlt": "Strona w przeglądarce rozgałęziająca się na dokument i tabelę danych"
+  },
+  "export-ai-chats-privately": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak prywatnie eksportować czaty AI do PDF",
+    "description": "Eksportuj widoczne rozmowy AI z aktywnej karty przeglądarki, określ zakres wiadomości, wybierz tryb PDF i poznaj zasady tymczasowych danych podglądu.",
+    "imageAlt": "Prywatna rozmowa AI przechodząca przez tarczę do PDF"
+  },
+  "export-chatgpt-conversation-to-pdf": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak wyeksportować rozmowę ChatGPT do PDF",
+    "description": "Przygotuj widoczną rozmowę ChatGPT, wczytaj wymagany zakres, wybierz zrzutowy lub edytowalny PDF i odróżnij przechwycenie karty od eksportu konta.",
+    "imageAlt": "Ogólna rozmowa AI w przeglądarce zmieniająca się w dokument PDF"
+  },
+  "export-claude-chat-to-pdf": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak wyeksportować czat Claude do PDF",
+    "description": "Przechwyć widoczną rozmowę Claude i obszar artefaktu jako PDF, wybierz czytelne granice i porównaj wynik z eksportem danych konta Claude.",
+    "imageAlt": "Ogólny czat AI i panel artefaktu zmieniające się w PDF"
+  },
+  "export-gemini-chat-to-pdf": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak wyeksportować czat Gemini do PDF",
+    "description": "Zapisz widoczną rozmowę Gemini z cytowaniami i obrazami jako PDF, wczytaj wymaganą treść i odróżnij przechwycenie od Google Takeout.",
+    "imageAlt": "Czat AI z kartami źródeł i obrazami zmieniający się w PDF"
+  },
+  "export-other-ai-chats-to-pdf": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak eksportować czaty Grok, DeepSeek, Perplexity lub Copilot",
+    "description": "Eksportuj widoczne czaty Grok, DeepSeek, Perplexity lub Copilot z karty przeglądarki, respektując wczytaną treść, prywatność i ograniczenia platformy.",
+    "imageAlt": "Kilka ogólnych kart czatów AI zbiegających się w jednym PDF"
+  },
+  "export-whatsapp-chat-to-pdf": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak wyeksportować czat WhatsApp do PDF",
+    "description": "Przygotuj rozmowę w WhatsApp Web, wczytaj wymagane wiadomości i media, wybierz tryb PDF i poznaj granice aktywnej karty.",
+    "imageAlt": "Ogólna prywatna rozmowa w komunikatorze internetowym zmieniająca się w PDF"
+  },
+  "export-telegram-chat-to-pdf": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak wyeksportować czat Telegram do PDF",
+    "description": "Przygotuj czat lub kanał Telegram Web, wczytaj odpowiedzi i media, wybierz zrzutowy lub edytowalny PDF i sprawdź przechwycone granice wiadomości.",
+    "imageAlt": "Ogólna rozmowa na kanale przechodząca przez tarczę do PDF"
+  },
+  "export-browser-messenger-chats-to-pdf": {
+    "author": "Redakcja Page 2 File",
+    "title": "Jak eksportować czaty komunikatorów przeglądarkowych do PDF",
+    "description": "Eksportuj widoczne czaty z Discord Web, Slack Web, Teams, Messenger lub wiadomości prywatnych Instagram i poznaj ograniczenie aplikacji dostępnych tylko natywnie.",
+    "imageAlt": "Kilka paneli komunikatorów przeglądarkowych zbiegających się w dokumentach PDF"
+  }
+}

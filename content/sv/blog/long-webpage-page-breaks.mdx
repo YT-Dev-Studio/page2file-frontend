@@ -1,0 +1,122 @@
+För att konvertera en lång webbsida utan trasiga PDF-sidor ska du behandla källan som en följd av meningsfulla avsnitt i stället för en enda enorm skärmbild. Page 2 File skapar en förhandsvisning där avsnitten kan kontrolleras före slutlig rendering.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Kartlägg den långa artikeln som rubriker, figurer, tabeller och skyddade innehållsenheter."}
+  caption={"Kartlägg den långa artikeln som rubriker, figurer, tabeller och skyddade innehållsenheter."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: kartlägg den långa artikeln som rubriker, figurer, tabeller och skyddade innehållsenheter."}
+  src="/blog/instructions/long-webpage-page-breaks/01.svg"
+  step={1}
+/>
+
+Börja med [webbsida till PDF-konverteraren](/sv/convert-webpage-to-pdf) för en offentlig URL. Använd [Chrome-tillägget](/sv/chrome-extension/how-to-use) när den långa sidan är privat eller beror på tillståndet i din aktuella flik.
+
+## Stabilisera källan först
+
+Rulla tillräckligt långt för att läsa in de bilder, kommentarer eller rapportrader du behöver. Fäll bara ut kontroller som ska ingå i dokumentet. En layout som fortfarande flyttar sig medan teckensnitt och medier läses in kan inte ge tillförlitliga gränser.
+
+Ta bort eller stäng flytande överlägg när det är tillåtet. Klistrad navigering kan vara användbar en gång, men om den upprepas i varje fångat avsnitt slösar den utrymme och kan täcka text.
+
+## Skydda enheter som bör hållas ihop
+
+En rubrik och dess första stycke, en figur och dess bildtext, ett tabellhuvud och de första raderna eller en kodetikett och dess block bildar en läsenhet. Granska gränserna runt dessa enheter i stället för att försöka fylla varje sida till sista raden.
+
+Mycket höga tabeller och kodlistor kan ändå behöva delas. Föredra en synlig fortsättning framför att krympa materialet tills det blir oläsligt. Om exakt layout är viktigare än textflöde jämför du alternativen i [skärmbild kontra redigerbar konvertering](/sv/blog/visual-vs-editable).
+
+## Var uppmärksam på webbläsarspecifika fel
+
+Utskrifts-CSS kan ändra bredder och dölja element precis före utskrift. Canvas, video och animerat innehåll kanske saknar en utskrivbar representation. Jämförelsen mellan [URL-konvertering och webbläsarutskrift](/sv/blog/why-print-to-pdf-breaks) förklarar varför en sida som ser korrekt ut på skärmen kan misslyckas i utskriftsdialogen.
+
+I Accurate copy (skärmbildsliknande utdata) förblir komplexa avsnitt bilder. I Editable document (redigerbar utdata) återskapas text och länkar som stöds medan svår grafik kan falla tillbaka till raster. Inget läge ska påstå att alla webbläsarfunktioner blir redigerbara.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Rulla medvetet tills sent inlästa avsnitt förblir inlästa."}
+  caption={"Rulla medvetet tills sent inlästa avsnitt förblir inlästa."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: rulla medvetet tills sent inlästa avsnitt förblir inlästa."}
+  src="/blog/instructions/long-webpage-page-breaks/02.svg"
+  step={2}
+/>
+
+## Använd förhandsvisningen som godkännandesteg
+
+Kontrollera den första och sista raden på varje sida och granska sedan tabeller, kod, bildtexter och markeringar. Ta bort duplicerad navigering, dela ett alltför stort avsnitt eller ändra dess ordning före rendering. Verifiera även länkar med [guiden för klickbara PDF-filer](/sv/blog/preserve-clickable-links).
+
+Den slutliga filen ska inte vara första gången du ser sidbrytningarna. Om förhandsvisningen är ofullständig går du tillbaka till källan, läser in saknat innehåll och fångar igen.
+
+## Klassificera innehållet före delning
+
+Olika block tål sidbrytningar olika väl. Vanliga stycken kan flöda över sidor, men en rubrik bör hållas ihop med de första raderna som förklarar den. En figur bör ligga nära sin bildtext, ett kodexempel bör bevara indrag och en tabellrad bör inte delas om det finns ett rimligt alternativ.
+
+Skapa en snabb disposition över den långa sidan och markera odelbara enheter. Det kräver inte att du redigerar källwebbplatsen. Det innebär att du vet vilka övergångar som ska granskas i förhandsvisningen: före och efter tabeller, mellan chattmeddelanden, runt produktkort och i början av huvudavsnitt.
+
+För skärmbildsutdata kan det fångade avsnittet fungera som en bild. Om det är högre än en PDF-sida bestämmer du om det ska delas vid en naturlig visuell gräns eller om hela avsnittet ska skalas. Skalning är bara acceptabel så länge brödtext och etiketter förblir läsbara vid normal zoom.
+
+## Ta hänsyn till upprepat sammanhang
+
+En webbsida håller ofta navigeringen fast eftersom den som rullar alltid kan se den. I en PDF kan elementet täcka innehåll eller upprepas utan att ge värde. Fäll ihop det före insamlingen där det är möjligt. När upprepat sammanhang behövs håller du det kompakt och kontrollerar att det inte tar upp större delen av en kort sida.
+
+Tabeller och långa listor kan behöva egna upprepade etiketter. En läsare som öppnar dokumentet halvvägs ska kunna förstå kolumnernas betydelse utan att gå tillbaka flera sidor. Om källan inte erbjuder upprepningsbara rubriker bevarar du tabellen som ett skärmbildsavsnitt eller delar den i mindre märkta grupper.
+
+Fotnoter och referenser ska vara lätta att hitta. Håll citatmarkörer tillsammans med meningen de gäller och undvik en kort referensrubrik ensam längst ned på en sida. En något ojämn sida är bättre än en formellt balanserad layout som skiljer bevis från förklaring.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Välj PDF med Accurate copy när originallayouten måste förbli intakt."}
+  caption={"Välj PDF med Accurate copy när originallayouten måste förbli intakt."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: välj PDF med Accurate copy när originallayouten måste förbli intakt."}
+  src="/blog/instructions/long-webpage-page-breaks/03.svg"
+  step={3}
+/>
+
+## Testa vid realistiska visningsstorlekar
+
+En förhandsvisning på dator kan dölja läsbarhetsproblem eftersom arbetsytan är stor. Granska PDF-filen ungefär i den storlek läsaren kommer att använda, inklusive ett fönster på bärbar dator och en mobil PDF-läsare om mobildistribution är viktig. Text som kräver ständig zoomning är ett layoutfel även om inga tecken klipps.
+
+Sök efter en utmärkande fras nära flera sidgränser. I redigerbar utdata bekräftar det att texten finns kvar i förväntad läsordning. I skärmbildsutdata zoomar du in på samma platser för att kontrollera sömmar, duplicerade pixlar eller saknade rader.
+
+Jämför sidantal och avsnittsantal med källdispositionen. En oväntad ökning kan tyda på upprepat klistrat innehåll; en oväntad minskning kan signalera utelämnat sent inläst material. Lös avvikelsen före delning.
+
+## Välj sidstorlek och orientering efter innehållet
+
+Sidgränser är enklare att hantera när dokumentets mått motsvarar det dominerande materialet. Stående format är naturligt för artiklar och meddelanden; liggande kan ge breda tabeller och tidslinjer tillräckligt med utrymme. Att blanda många orienteringar kan vara tekniskt möjligt i vissa arbetsflöden, men kan göra skärmläsning och utskrift besvärlig. Föredra en tydlig läsmodell om inte ett specifikt avsnitt omöjligen fungerar i den.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Öppna Preview PDF och granska rubriker, tabeller och bildtexter vid sidgränser."}
+  caption={"Öppna Preview PDF och granska rubriker, tabeller och bildtexter vid sidgränser."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: öppna Preview PDF och granska rubriker, tabeller och bildtexter vid sidgränser."}
+  src="/blog/instructions/long-webpage-page-breaks/04.svg"
+  step={4}
+/>
+
+Marginaler skyddar text från skrivarens begränsningar och ger rubriker visuell separation, men mycket stora marginaler kan tvinga fram onödiga brytningar. Skalning har en liknande avvägning. Om ett avsnitt minskas något kan en figur hållas ihop med sin bildtext; att krympa en hel instrumentpanel tills etiketterna inte går att läsa döljer bara det ursprungliga problemet.
+
+När en källa innehåller en exceptionellt bred komponent kan du fånga den som ett separat skärmbildsavsnitt och behålla den omgivande förklaringen redigerbar. Förhandsvisningen ska göra kompromissen tydlig. Målet är inte en enhetlig implementation till varje pris, utan ett användbart dokument.
+
+## Diagnostisera formen på en dålig brytning
+
+En ensam rubrik längst ned på en sida innebär oftast att rubriken och dess inledande stycke inte behandlades som en enhet. En upprepad remsa vid varje gräns pekar ofta på klistrade gränssnittselement. En saknad rad mellan sidor kan tyda på en osäker visuell delning, medan duplicerade rader antyder överlappande avsnittsgränser.
+
+Tabeller kräver en särskild diagnos. Om kolumner klipps är bredd eller orientering problemet. Om läsaren förlorar kolumnernas betydelse på senare sidor är upprepat sammanhang problemet. Om rader försvinner ska du bekräfta att tabellen var fullt renderad och inte virtualiserad innan du ändrar sidindelningen.
+
+För kod och förformaterad text bevarar du indrag och radbrytning medvetet. En tvingad radbrytning kan ändra läsbarheten, medan horisontell klippning kan dölja betydelsefulla tecken. Granska flera av de längsta raderna i stället för bara det första blocket.
+
+## Godkänn den slutliga PDF-filen systematiskt
+
+Börja med strukturella stickprov: första sidan, sista sidan och varje sida som börjar eller slutar nära en tabell, figur, kodblock eller chattgräns. Sök sedan efter rubriker från källdispositionen i redigerbar utdata eller matcha dem visuellt i bildbaserad utdata. Det fångar utelämnanden som ett jämnt sidantal kan dölja.
+
+Kontrollera den slutliga nedladdade filen i en vanlig PDF-läsare, inte bara i förhandsvisningen. Bekräfta läsbarhet vid normal zoom, markerbar text där den förväntas och fungerande viktiga länkar. Förhandsvisningsdata är tillfälliga och raderas när fliken stängs; Page 2 File behåller ingen databas med konverteringshistorik, så spara din egen godkända fil och granskningsanteckningar när spårbarhet är viktig.
+
+Om dokumentet inte kan godkännas efter ändrat sidtillstånd, en smalare insamling och ett annat läge, stannar du och dokumenterar begränsningen. Ett tydligt avgränsat deldokument är mer tillförlitligt än en fil som beskrivs som komplett när källan inte kunde renderas kontinuerligt.
+
+[Guiden för webbplatskällor](/sv/blog/website-types-to-pdf-or-powerpoint) behandlar sidspecifik förberedelse.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Återgå till källan, ändra ett villkor och bekräfta korrigerade sidbrytningar."}
+  caption={"Återgå till källan, ändra ett villkor och bekräfta korrigerade sidbrytningar."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: återgå till källan, ändra ett villkor och bekräfta korrigerade sidbrytningar."}
+  src="/blog/instructions/long-webpage-page-breaks/05.svg"
+  step={5}
+/>

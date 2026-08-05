@@ -21,7 +21,7 @@ type LegalSectionProps = {
   section: ContentSection;
 };
 
-const legalPageCopy: Record<"en" | "ru" | "de" | "fr", LegalPageCopy> = {
+const legalPageCopy: Record<Locale, LegalPageCopy> = {
   en: {
     updatedAt: "Updated 4 August 2026",
   },
@@ -34,11 +34,43 @@ const legalPageCopy: Record<"en" | "ru" | "de" | "fr", LegalPageCopy> = {
   fr: {
     updatedAt: "Mis à jour le 4 août 2026",
   },
+  es: {
+    updatedAt: "Actualizado el 4 de agosto de 2026",
+  },
+  nl: {
+    updatedAt: "Bijgewerkt op 4 augustus 2026",
+  },
+  pt: {
+    updatedAt: "Atualizado em 4 de agosto de 2026",
+  },
+  it: {
+    updatedAt: "Aggiornato il 4 agosto 2026",
+  },
+  pl: {
+    updatedAt: "Zaktualizowano 4 sierpnia 2026",
+  },
+  cs: {
+    updatedAt: "Aktualizováno 4. srpna 2026",
+  },
+  sv: {
+    updatedAt: "Uppdaterad 4 augusti 2026",
+  },
+  no: {
+    updatedAt: "Oppdatert 4. august 2026",
+  },
+  da: {
+    updatedAt: "Opdateret 4. august 2026",
+  },
+  fi: {
+    updatedAt: "Päivitetty 4. elokuuta 2026",
+  },
+  ro: {
+    updatedAt: "Actualizat la 4 august 2026",
+  },
+  hu: {
+    updatedAt: "Frissítve: 2026. augusztus 4.",
+  },
 };
-
-const hasLegalPageCopy = (
-  locale: Locale,
-): locale is keyof typeof legalPageCopy => locale in legalPageCopy;
 
 const interpolateLegalText = (value: string, locale: Locale): string =>
   value
@@ -79,7 +111,7 @@ export const LegalPage = ({
   content,
   locale,
 }: LegalPageProps): ReactNode => {
-  const copy = legalPageCopy[hasLegalPageCopy(locale) ? locale : "en"];
+  const copy = legalPageCopy[locale];
 
   return (
     <PublicPage className={styles.page} family="legal">

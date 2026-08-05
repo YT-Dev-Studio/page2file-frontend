@@ -1,0 +1,143 @@
+A böngésző Print to PDF funkciója és az URL-ből PDF-et készítő konverzió az oldal eltérő változataiból indul ki. A nyomtatás a webhely nyomtatási stíluslapját használja, ha létezik ilyen. A konverter a képernyőn renderelt elrendezésből dolgozhat, és ellenőrizhető szakaszokra oszthatja. Egyik módszer sem automatikusan jobb; az oldal és a kívánt dokumentum dönt.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Nyissa meg a böngésző nyomtatási előnézetét, és figyelje meg, mely irányítópult-régiók tűnnek el."}
+  caption={"Nyissa meg a böngésző nyomtatási előnézetét, és figyelje meg, mely irányítópult-régiók tűnnek el."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Nyissa meg a böngésző nyomtatási előnézetét, és figyelje meg, mely irányítópult-régiók tűnnek el."}
+  src="/blog/instructions/why-print-to-pdf-breaks/01.svg"
+  step={1}
+/>
+
+Használja a [Page 2 File PDF-konvertert](/hu/convert-webpage-to-pdf), ha előnézetre, valamint a képernyőképszerű és szerkeszthető kimenet közötti tudatos választásra van szüksége. Használja a böngésző nyomtatási funkcióját, ha a kiadó tiszta nyomtatási nézetet készített, és csak gyors másolatra van szüksége.
+
+## Miért lehet a nyomtatási eredmény eltérő a képernyőtől?
+
+A CSS eltérő szabályokat rendelhet a képernyőhöz és a nyomtatáshoz. A nyomtatási stíluslap eltávolíthatja a navigációt és a hirdetéseket, de elnyomhatja a háttereket, módosíthatja az oszlopokat, lecserélheti a betűtípusokat vagy elrejtheti az interaktív paneleket is. A rögzített és tapadó elemek több oldalon megismétlődhetnek. A canvason rajzolt diagram üres területként jelenhet meg, ha a nyomtatási folyamat nem rögzíti a képpontjait.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Hasonlítsa össze a nyomtatási eredményt a képernyővel, és azonosítsa a hiányzó diagramokat és háttereket."}
+  caption={"Hasonlítsa össze a nyomtatási eredményt a képernyővel, és azonosítsa a hiányzó diagramokat és háttereket."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Hasonlítsa össze a nyomtatási eredményt a képernyővel, és azonosítsa a hiányzó diagramokat és háttereket."}
+  src="/blog/instructions/why-print-to-pdf-breaks/02.svg"
+  step={2}
+/>
+
+A késleltetetten betöltődő média további eltérést okoz. A nyomtatás az aktuális dokumentumállapotból indul; az a tartalom, amely soha nem került a nézetbe, ebben az állapotban esetleg nem létezik. A virtualizált csevegő- és irányítópult-felületek görgetés közben eldobhatják a régebbi sorokat a DOM-ból, ezért egy nyomtatási parancs nem tudja azokat visszaállítani.
+
+## Mit változtat az URL-konverzió?
+
+A nyilvános URL-konverter ellenőrzött böngészőben tölti be a címet, és előkészíti a renderelt eredményt PDF-hez. Nem örökli az Ön személyes munkamenetét, ezért nem láthat privát irányítópultot vagy bejelentkezés mögötti oldalt. Ez a határ védi a hitelesítő adatokat, ugyanakkor alkalmatlanná teszi a módszert a hitelesített anyagokhoz.
+
+Privát lap esetén a [Page 2 File bővítmény](/hu/chrome-extension/how-to-use) kifejezett művelet után rögzíti az Ön által megnyitott oldalt. Nem kéri a fiók jelszavát. Rögzítés előtt győződjön meg arról, hogy a szükséges panelek és üzenetek láthatók.
+
+## A fájlokat hasonlítsa össze, ne a gombfeliratokat
+
+Ellenőrizze, kijelölhető-e a szöveg, használhatók maradnak-e a hivatkozások, információt hordoznak-e a hátterek, és tiszteletben tartják-e az oldaltörések a címsorokat. A képernyőképszerű export általában hűségesebben őrzi meg a nehéz elrendezést. A szerkeszthető export a támogatott tartalmat könnyebben kereshetővé és módosíthatóvá teszi, de az összetett elemeket raszterizálhatja.
+
+A [képernyőképszerű és szerkeszthető kimenet útmutatója](/hu/blog/visual-vs-editable) bemutatja ezt a kompromisszumot. Nagyon magas forrásoknál a módszer kiválasztása előtt tekintse át a [teljes oldalas rögzítés útmutatóját](/hu/blog/capture-full-webpage-as-pdf) is.
+
+## Gyakorlati döntés
+
+Jó nyomtatási stíluslappal rendelkező egyszerű cikkhez válassza a böngésző nyomtatását. Ha a megjelenés számít, válassza a képernyőképszerű URL-konverziót; ha a tartalomnak kereshetőnek és hivatkozásokkal ellátottnak kell maradnia, a szerkeszthető konverziót. Akkor válassza az aktív lap rögzítését, ha a forrás privát, személyre szabott vagy csak interakció után érhető el.
+
+Az előnézet marad a döntő bizonyíték. Ha egy fontos blokk ott hiányzik, ne feltételezze, hogy a végleges PDF-ben visszatér.
+
+## Végezzen ellenőrzött összehasonlítást
+
+Mindkét módszert ugyanabból a böngészőállapotból hasonlítsa össze. Bármelyik fájl létrehozása előtt állítsa be ugyanazt a nézetméretet, szűrőket, kibontott paneleket és görgetési pozíciót. Ellenkező esetben az összehasonlítás két különböző forrást mér, nem két konverziós módszert. Jegyezze fel, hogy az oldal befejezte-e a képek, webes betűtípusok és diagramok betöltését.
+
+Kezdje a böngésző nyomtatási előnézetével. Jegyezze fel, mely navigációs elemek, hátterek, interaktív panelek és tapadó elemek tűnnek el. Ez nem automatikusan hiba: egy jól megtervezett nyomtatási stíluslap eltávolíthatja a zavaró elemeket, és a legtisztább olvasási példányt készítheti. A kérdés az, hogy eltávolított-e valamit, ami szükséges az Ön céljához.
+
+Ezután vizsgálja meg a Page 2 File előnézetét a feladatnak megfelelő módban. Az Accurate copy (képernyőképszerű kimenet) hasonlóság és olvashatóság alapján értékelendő. Az Editable document (szerkeszthető kimenet) esetén az olvasási sorrendet, a szövegkijelölést, a hivatkozások működését és az összetett összetevők helyettesítésének minőségét kell vizsgálni. A fájlméret puszta összehasonlítása keveset mond arról, hogy bármelyik dokumentum használható-e.
+
+## Diagnosztizálja a gyakori eltéréseket
+
+A hiányzó szín vagy kép gyakran nyomtatásspecifikus CSS-ből, a háttérgrafikák böngészőbeállításaiból vagy egy nyomtatási médiában eltérően renderelt összetevőből ered. A csonkolt panelek gyakran akkor jelennek meg, ha egy görgethető tárolónak rögzített magassága van, vagy ha a virtualizált tartalom soha nem került be a renderelt oldalba. Az üres terület oka lehet tapadó fejléc, fenntartott hirdetési hely vagy törést kikényszerítő nyomtatási szabály.
+
+A táblázatok újabb különbséget tárnak fel. A nyomtatási stíluslap helyesen megismételheti a fejléceket, olvashatatlanságig zsugoríthatja a táblázatot, vagy levághatja a nyomtatható szélességen kívüli oszlopokat. A képernyőképszerű rögzítés megőrizheti a megjelenített táblázatot, de nem tud egy széles elrendezést természetesen álló oldalra illeszteni. A szerkeszthető konverzió újraépítheti a szabványos sorokat és cellákat, miközben a szokatlan rácsokhoz képi helyettesítést használ.
+
+A hivatkozások külön ellenőrzést érdemelnek. A böngésző által létrehozott PDF-ek megtarthatják a szabványos horgonyokat, de a canvasra rajzolt vagy szkript által megadott látható URL nem feltétlenül válik interaktívvá. A Page 2 File Editable document megtartja a támogatott horgonyokat; az Accurate copy a megjelenést részesíti előnyben. Tesztelje a célokat, és ne feltételezze, hogy a kék, aláhúzott szöveg kattintható.
+
+## Bizonyíték és karbantartási költség alapján válasszon
+
+Egy egyszer exportált, jó nyomtatási nézettel rendelkező cikkhez gyakran elegendő a böngésző nyomtatása. Irányítópult, hitelesített alkalmazás, hosszú dinamikus oldal vagy prezentációközpontú munkafolyamat esetén a rögzítési és előnézeti vezérlők fontosabbak lehetnek a böngésző nyomtatási szokásainál. Egyik módszert sem szabad általánosan felsőbbrendűnek tekinteni.
+
+Ha ugyanazt a forrást rendszeresen exportálja, írja le az előkészítési lépéseket és az elfogadási ellenőrzéseket. Egy stabil eljárás értékesebb, mint minden alkalommal megérzés alapján eszközt választani. Ellenőrizze újra, amikor a webhely módosítja az elrendezését, hitelesítését vagy virtualizációs működését.
+
+A videó, animáció, rámutatási állapot és élő vezérlő nem maradhat interaktív egy közönséges PDF-ben. A védhető eredmény egy meghatározott oldalállapot olvasható feljegyzése, ismert kompromisszumokkal.
+
+## Válassza külön a nyomtatási beállításokat és a forrás hibáit
+
+Egyes hibák kijavíthatók a böngésző nyomtatási párbeszédpanelén. A papírméret, tájolás, margók, méretezés és háttérgrafika-beállítások jelentősen módosíthatják az eredményt. Próbálja ki ezeket, ha a tartalom jelen van, de rosszul illeszkedik. Nem tudják visszaállítani azt a panelt, amelyet a nyomtatási stíluslap eltávolított, vagy azokat az üzeneteket, amelyeket a virtualizált felület soha nem renderelt.
+
+A böngésző által hozzáadott fejlécek és láblécek szintén nyomtatásspecifikus választások. URL-t és dátumot adhatnak, de privát címet is felfedhetnek, vagy új oldalra tolhatják a tartalmat. Tudatosan vizsgálja felül őket, ne fogadja el automatikusan az alapértéket. Az URL-konverter más előnézeti és szakaszmodellt használ, ezért hasonlítsa össze az egyes fájlok tényleges metaadatait.
+
+Ne kezelje a nagyobb oldalméretet általános megoldásként. A fekvő tájolás segíthet egy széles táblázatnál, miközben nehezebben olvashatóvá tesz egy keskeny cikket. Az erős kicsinyítés elkerülheti a levágást, de olvashatatlanná teheti a címkéket és lábjegyzeteket. A kívánt megtekintési feltételek fontosabbak annál, hogy minden a lehető legkevesebb lapra férjen.
+
+## Forrás–feladat mátrix alapján döntsön
+
+Kiadói tervezésű cikknél a böngésző nyomtatása ésszerű első teszt, mert a nyomtatási stíluslap már eltávolíthatja a navigációt és formázhatja az idézeteket. Marketingoldalnál vagy tervezési referenciánál általában a képernyőképszerű konverzió jobb jelölt, mert a képernyő kompozíciója jelentést hordoz. Dokumentációhoz és kutatási jegyzetekhez érdemes először a szerkeszthető konverziót próbálni, mert fontos a keresés, kijelölés és a hivatkozások.
+
+Az irányítópultok és csevegések más kérdést vetnek fel: a szükséges állapot valóban renderelve van? Ha nem, sem a nyomtatás, sem az URL-konverzió nem tudja újraalkotni. Töltse be az engedélyezett tartományt, stabilizálja a szűrőket, és használjon aktív lapos rögzítést, ha az állapot bejelentkezett böngésző-munkamenettől függ. Nyilvános URL-feladattól soha ne várja e munkamenet öröklését.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Ugyanahhoz a nyilvános oldalhoz használja a By URL lehetőséget, ha nincs szükség bejelentkezett állapotra."}
+  caption={"Ugyanahhoz a nyilvános oldalhoz használja a By URL lehetőséget, ha nincs szükség bejelentkezett állapotra."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Ugyanahhoz a nyilvános oldalhoz használja a By URL lehetőséget, ha nincs szükség bejelentkezett állapotra."}
+  src="/blog/instructions/why-print-to-pdf-breaks/03.svg"
+  step={3}
+/>
+
+Ha a kimenetből prezentáció lesz, nem biztos, hogy a PDF a megfelelő végpont. A [weboldalból PowerPointot készítő munkafolyamat](/hu/blog/webpage-to-powerpoint) lehetővé teszi a megjelenésközpontú diák és a támogatott szerkeszthető elemek közötti választást a PDF újbóli konvertálása helyett.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Válassza az Accurate copy módot, ha a megjelenített kompozíció a bizonyíték."}
+  caption={"Válassza az Accurate copy módot, ha a megjelenített kompozíció a bizonyíték."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Válassza az Accurate copy módot, ha a megjelenített kompozíció a bizonyíték."}
+  src="/blog/instructions/why-print-to-pdf-breaks/04.svg"
+  step={4}
+/>
+
+## Készítsen védhető összehasonlítást
+
+Ismétlődő exportoknál vezessen rövid tesztnaplót: forrás-URL, böngészőállapot, dátum, nyomtatási beállítások, Page 2 File mód és az egyes eredményekben talált hibák. A két előnézet képernyőképei segíthetnek megmagyarázni a módszer kiválasztását, de nem helyettesíthetik a végső PDF ellenőrzését.
+
+Mindkét fájlt azonos elfogadási feltételek alapján értékelje:
+
+- minden szükséges tartalom egyszer és megfelelő sorrendben jelenik meg;
+- a törzsszöveg, diagramcímkék és kód normál nagyításnál olvashatók;
+- a fontos hivatkozások működnek, és nem fednek fel érzékeny célokat;
+- a címsorok, képaláírások és táblázati összefüggések túlélik az oldalhatárokat;
+- a privát fiók- vagy munkaterületadatok hiányoznak, kivéve ha szükségesek.
+
+A módszer akkor felel meg, ha az adott forráshoz és feladathoz szükséges dokumentumot állítja elő. Ha mindkettő sikertelen, szűkítse a rögzítést, módosítsa az oldal állapotát, vagy használja a forrásplatform saját célzott exportját. Ugyanazon parancs ismétlése instabil oldalon nem javítási stratégia.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Válassza az Editable document módot, ha az olvasási sorrend, a kijelölés és a hivatkozások fontosak."}
+  caption={"Válassza az Editable document módot, ha az olvasási sorrend, a kijelölés és a hivatkozások fontosak."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Válassza az Editable document módot, ha az olvasási sorrend, a kijelölés és a hivatkozások fontosak."}
+  src="/blog/instructions/why-print-to-pdf-breaks/05.svg"
+  step={5}
+/>
+
+## Ellenőrizze újra a webhely változása után
+
+A nyomtatási és rögzítési viselkedés megváltozhat, amikor egy webhely frissíti CSS-ét, diagramkönyvtárát, hozzájárulási rétegét vagy virtualizációs szabályait. A múlt hónapban működő eljárás az oldal akkori verziójára vonatkozó bizonyíték, nem állandó garancia. Újratervezés után és fontos terjesztés előtt futtassa újra a reprezentatív ellenőrzéseket.
+
+Ez a karbantartási szempont különösen fontos az automatizáltnak tűnő rutinoknál. A Page 2 File azért ad előnézetet, mert az oldal állapota továbbra is emberi ellenőrzést igényel. Az előnézet felfedheti a hiányzó szakaszokat és kellemetlen határokat; azt nem tudja eldönteni, hogy a dokumentum teljes-e az Ön jogi, archiválási vagy működési céljához.
+
+<ArticleFigure
+  alt={"Böngésző és Page 2 File bővítmény: Döntés előtt hasonlítsa össze mindkét Page 2 File előnézetet a böngésző nyomtatásával."}
+  caption={"Döntés előtt hasonlítsa össze mindkét Page 2 File előnézetet a böngésző nyomtatásával."}
+  closeLabel={"Kép-előnézet bezárása"}
+  openLabel={"Kép megnyitása teljes méretben: Döntés előtt hasonlítsa össze mindkét Page 2 File előnézetet a böngésző nyomtatásával."}
+  src="/blog/instructions/why-print-to-pdf-breaks/06.svg"
+  step={6}
+/>
+
+Használja a [webhely-kimeneti útmutatót](/hu/blog/website-types-to-pdf-or-powerpoint), ha a döntést nem csak a nyomtatási viselkedésnek, hanem a forrástípusnak kell meghatároznia.

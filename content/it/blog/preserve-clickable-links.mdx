@@ -1,0 +1,120 @@
+I link cliccabili sopravvivono alla conversione da pagina Web a PDF solo quando l'output contiene annotazioni di link o elementi modificabili. Un'acquisizione visiva può conservare l'aspetto di un link senza conservarne l'azione.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: apra documentazione con link visibili significativi e destinazioni note."}
+  caption={"Apra documentazione con link visibili significativi e destinazioni note."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: apra documentazione con link visibili significativi e destinazioni note."}
+  src="/blog/instructions/preserve-clickable-links/01.svg"
+  step={1}
+/>
+
+Scelga Editable document (output modificabile) nel [convertitore PDF di Page 2 File](/it/convert-webpage-to-pdf) quando conta il comportamento dei link. Scelga Accurate copy (output come acquisizioni) quando conta di più l'aspetto esatto e presuma che i link nell'immagine non siano interattivi.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: scelga PDF per un documento di lettura stabile."}
+  caption={"Scelga PDF per un documento di lettura stabile."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: scelga PDF per un documento di lettura stabile."}
+  src="/blog/instructions/preserve-clickable-links/02.svg"
+  step={2}
+/>
+
+## Un URL visibile non è automaticamente un link
+
+Il testo blu sottolineato in un'immagine resta un insieme di pixel. Un lettore PDF richiede un rettangolo attivo e una destinazione. La conversione modificabile può mappare gli anchor supportati della pagina alle annotazioni PDF mantenendo selezionabile il testo circostante.
+
+Anche pulsanti e schede possono contenere destinazioni, ma il documento non deve inventare un URL per un elemento che attiva solo uno script. Se la destinazione non può essere identificata in sicurezza, un avviso o un visuale non cliccabile è più onesto.
+
+## Controlli la destinazione, non solo l'etichetta
+
+Una pagina può mostrare testo rassicurante e puntare altrove. Una conversione sicura dovrebbe accettare normali destinazioni Web e rifiutare schemi pericolosi. Reindirizzamenti e link che richiedono accesso possono fallire per il lettore anche se l'annotazione è valida.
+
+Provi i link importanti dall'anteprima o dal file finale in un ambiente in cui sia appropriato aprirli. Presti attenzione a note, numeri di citazione, schede prodotto e badge delle fonti.
+
+## Sappia quando le acquisizioni sono il compromesso giusto
+
+Un dashboard, una pagina di campagna o una chat complessa possono perdere significato se ricostruiti come semplici caselle di testo. Accurate copy mantiene la composizione ma trasforma la sezione in un'immagine. Se contano aspetto e link, un convertitore può aggiungere sovrapposizioni sicure sulla sezione, ma solo per destinazioni individuabili.
+
+Legga [acquisizioni rispetto a conversione modificabile](/it/blog/visual-vs-editable) prima di decidere. Per le presentazioni, la stessa distinzione appare in [diapositive acquisite rispetto a PowerPoint modificabile](/it/blog/screenshot-vs-editable-powerpoint).
+
+## Esegua un breve audit dei link
+
+Apra un link di navigazione, una citazione inline, un pulsante e un URL lungo che va a capo. Confermi che ogni area cliccabile corrisponda all'etichetta e non copra testo vicino. Controlli che schemi email, telefono o applicazioni personalizzate siano gestiti secondo la politica di sicurezza.
+
+Per una fonte lunga, ripeta l'audit dopo aver cambiato le interruzioni. Dividere una sezione può spostare i rettangoli, motivo per cui la [guida alle pagine lunghe](/it/blog/long-webpage-page-breaks) tratta i link come parte della revisione.
+
+## Identifichi quali link trasmettono significato
+
+Non ogni anchor merita la stessa attenzione. Una citazione, un download, un riferimento normativo o un pulsante successivo può essere essenziale; un link del logo, un menu account o un pixel di monitoraggio no. Prima della conversione, elenchi le destinazioni che il lettore deve poter seguire e usi l'elenco per il test.
+
+I link nascosti dietro icone richiedono contesto visibile in un documento statico. Se un pulsante dice solo “Apri” o usa una freccia senza etichetta, la destinazione può diventare incomprensibile dopo la rimozione dell'interfaccia. Mantenga abbastanza testo vicino da spiegare l'azione.
+
+Anche i link a frammenti interni possono cambiare significato. Un indice può puntare ai titoli della pagina di origine, mentre il PDF ha la propria navigazione. Verifichi se questi anchor restano utili; altrimenti l'indice visibile può ancora essere uno schema di lettura, ma non va descritto come interattivo.
+
+## Faccia attenzione a destinazioni insicure o instabili
+
+Le pagine autenticate possono inserire identificatori di sessione, token firmati o parametri personali negli URL. Un PDF cliccabile può esporli a chiunque lo riceva. Esamini la destinazione effettiva e rimuova o sostituisca i link sensibili prima di condividere.
+
+I link relativi dipendono da un URL base. Il browser risolve `/docs/start` perché conosce l'origine, mentre un file HTML isolato potrebbe non conoscerla. Nella conversione di HTML caricato, fornisca una base valida o usi link HTTPS completi per le destinazioni necessarie.
+
+Reindirizzamenti e abbreviatori rendono più difficile la revisione perché il dominio visibile non è necessariamente quello finale. Per riferimenti importanti, apra il link in un contesto sicuro e verifichi la destinazione finale. Conservare un link non approva l'accuratezza o la sicurezza del sito.
+
+## Verifichi dopo le modifiche strutturali
+
+Dividere, unire o rimuovere sezioni può cambiare quali anchor sopravvivono e dove appaiono. Ripeta l'audit dopo le modifiche, non soltanto dopo la prima conversione. Un link funzionante nella prima anteprima può appartenere a una sezione sostituita in seguito da un'immagine alternativa.
+
+Provi il focus da tastiera o l'elenco dei link del lettore quando conta l'accessibilità. La pagina può apparire corretta mentre le annotazioni sono fuori ordine. Copi anche una frase collegata per confermare che l'annotazione non copra testo estraneo.
+
+Mantenga il controllo proporzionato al rischio. Una copia personale può richiedere test rappresentativi. Un documento di ricerca, conformità o cliente dovrebbe avere ogni destinazione importante verificata e registrata.
+
+## Distingua i tipi comuni di link
+
+I normali link HTTPS sono i candidati più chiari perché la destinazione può essere rappresentata come annotazione PDF. Link email, telefono e specifici di applicazioni dipendono dal dispositivo e software del destinatario. Un'annotazione tecnicamente valida può essere inutilizzabile nel suo ambiente, quindi non tratti ogni schema come equivalente.
+
+I download richiedono ulteriore attenzione. Un link può scadere, richiedere una sessione o restituire un file diverso in futuro. Quando la risorsa collegata fa parte delle prove, consideri di conservarne titolo, editore e data di accesso in testo visibile invece di dipendere dal click.
+
+I controlli basati su script non sono necessariamente link. Una scheda può aprire una finestra, cambiare filtro o chiamare una route senza destinazione stabile. La conversione modificabile non deve inventarne una. Conservi lo stato visibile e spieghi il limite quando l'azione è essenziale alla comprensione.
+
+## Mantenga le annotazioni allineate all'ordine di lettura
+
+I rettangoli dei link possono confondere quando il testo va a capo, le colonne cambiano o una sezione viene ridimensionata. Controlli che l'area attiva copra solo l'etichetta prevista e che annotazioni sovrapposte non inviino testo vicino alla stessa destinazione. In un documento multicolonna, verifichi colonna per colonna.
+
+Etichette significative sono migliori di ripetuti “clicca qui” perché restano comprensibili quando copiate, cercate o visualizzate in un elenco. Mantenga la frase circostante quando spiega perché la destinazione è importante. Per azioni con sola icona, conservi un'etichetta visibile se la fonte la fornisce.
+
+Se il PDF sarà usato con tecnologia assistiva, provi più dei click del mouse. Controlli che il testo resti selezionabile, che l'ordine delle annotazioni segua il documento e che le etichette abbiano senso senza decorazioni vicine. Page 2 File può preservare la struttura supportata, ma fonte e output revisionato determinano se è utile.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: scelga Editable document per conservare destinazioni sicure supportate."}
+  caption={"Scelga Editable document per conservare destinazioni sicure supportate."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: scelga Editable document per conservare destinazioni sicure supportate."}
+  src="/blog/instructions/preserve-clickable-links/03.svg"
+  step={3}
+/>
+
+## Protegga provenienza e privacy
+
+Un link può rivelare più del dominio visibile. Le stringhe di query possono contenere identificatori di documenti, termini di ricerca, dati referral o token firmati. Prima di condividere, esamini i target delle pagine autenticate e rimuova ciò che il destinatario non deve ricevere. L'apertura di un PDF oscurato non deve condurre per errore a una risorsa privata non oscurata.
+
+Registri URL e data di acquisizione quando le citazioni richiedono provenienza, evitando parametri specifici della sessione. I dati di anteprima dell'estensione sono temporanei e vengono eliminati alla chiusura, e Page 2 File non mantiene una cronologia. Il PDF scaricato può conservare i link indefinitamente, quindi le destinazioni richiedono la stessa revisione del contenuto visibile.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: mantenga Remove links deselezionato quando le destinazioni devono restare disponibili."}
+  caption={"Mantenga Remove links deselezionato quando le destinazioni devono restare disponibili."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: mantenga Remove links deselezionato quando le destinazioni devono restare disponibili."}
+  src="/blog/instructions/preserve-clickable-links/04.svg"
+  step={4}
+/>
+
+Consulti la [guida agli output per siti Web](/it/blog/website-types-to-pdf-or-powerpoint) per i rischi specifici dei link.
+
+<ArticleFigure
+  alt={"Browser ed estensione Page 2 File: visualizzi il PDF e provi link rappresentativi conservati e rimossi intenzionalmente."}
+  caption={"Visualizzi il PDF e provi link rappresentativi conservati e rimossi intenzionalmente."}
+  closeLabel={"Chiudi l'anteprima dell'immagine"}
+  openLabel={"Apri l'immagine a dimensione intera: visualizzi il PDF e provi link rappresentativi conservati e rimossi intenzionalmente."}
+  src="/blog/instructions/preserve-clickable-links/05.svg"
+  step={5}
+/>

@@ -1,0 +1,120 @@
+Klikkbare lenker overlever konvertering fra nettside til PDF bare når resultatet inneholder lenkemerknader eller redigerbare dokumentelementer. Et visuelt skjermbilde kan bevare utseendet til en lenke uten å bevare handlingen.
+
+<ArticleFigure
+  alt={"Nettleser og Page 2 File-utvidelsen: Åpne dokumentasjon med meningsfulle synlige lenker og kjente mål."}
+  caption={"Åpne dokumentasjon med meningsfulle synlige lenker og kjente mål."}
+  closeLabel={"Lukk bildeforhåndsvisningen"}
+  openLabel={"Åpne bildet i full størrelse: åpne dokumentasjon med meningsfulle synlige lenker og kjente mål."}
+  src="/blog/instructions/preserve-clickable-links/01.svg"
+  step={1}
+/>
+
+Velg Editable document (redigerbart resultat) i [Page 2 File PDF-konvertereren](/no/convert-webpage-to-pdf) når lenkeatferd er viktig. Velg Accurate copy (skjermbildelignende resultat) når det nøyaktige utseendet på siden er viktigere, og anta da at lenker i det registrerte bildet ikke er interaktive.
+
+<ArticleFigure
+  alt={"Nettleser og Page 2 File-utvidelsen: Velg PDF for et stabilt lesedokument."}
+  caption={"Velg PDF for et stabilt lesedokument."}
+  closeLabel={"Lukk bildeforhåndsvisningen"}
+  openLabel={"Åpne bildet i full størrelse: velg PDF for et stabilt lesedokument."}
+  src="/blog/instructions/preserve-clickable-links/02.svg"
+  step={2}
+/>
+
+## En synlig URL er ikke automatisk en lenke
+
+Blå understreket tekst i et bilde er fortsatt piksler. En PDF-leser trenger et målrektangel og en destinasjon. Redigerbar konvertering kan kartlegge støttede ankere fra nettsiden til PDF-lenkemerknader og samtidig holde teksten rundt markerbar.
+
+Knapper og kort kan også inneholde mål, men det eksporterte dokumentet skal ikke finne opp en URL for et element som bare utløser et skript. Hvis destinasjonen ikke kan identifiseres sikkert, er en advarsel eller en ikke-klikkbar visualisering mer ærlig.
+
+## Kontroller destinasjonen, ikke bare etiketten
+
+En side kan vise betryggende tekst, men peke et annet sted. Sikker konvertering bør godta vanlige nettdestinasjoner og avvise farlige skjemaer. Omdirigeringer og lenker som krever en innlogget økt, kan fortsatt mislykkes for PDF-leseren selv når merknaden er gyldig.
+
+Test viktige lenker fra forhåndsvisningen eller den endelige filen i et miljø der det er riktig å åpne dem. Vær særlig oppmerksom på fotnoter, sitatnumre, produktkort og kildemerker.
+
+## Vit når skjermbildemodus er riktig kompromiss
+
+Et komplekst kontrollpanel, en kampanjeside eller chat kan miste betydningen hvis den bygges om som enkle tekstbokser. Accurate copy beholder komposisjonen, men gjør seksjonen til et bilde. Hvis både utseende og lenker er viktige, kan en konverterer legge sikre lenkeoverlegg over en skjermbildeseksjon, men bare for mål den kan finne.
+
+Les [skjermbilde kontra redigerbar konvertering](/no/blog/visual-vs-editable) før du bestemmer deg. For presentasjoner vises samme skille i [skjermbildelysbilder kontra redigerbar PowerPoint](/no/blog/screenshot-vs-editable-powerpoint).
+
+## Utfør en kort lenkekontroll
+
+Åpne én navigasjonslenke, ett inline-sitat, én knapp og én lang URL med linjebryting. Bekreft at hvert klikkbart område samsvarer med den synlige etiketten og ikke dekker tilstøtende tekst. Kontroller at e-post-, telefon- eller programspesifikke skjemaer håndteres i henhold til dokumentets sikkerhetspolicy.
+
+For en lang kilde gjentar du kontrollen etter at sideskiftene er endret. Å dele en seksjon kan flytte lenkerektanglene, og derfor behandler [veiledningen for lange sider](/no/blog/long-webpage-page-breaks) lenker som en del av forhåndsvisningskontrollen.
+
+## Identifiser hvilke lenker som bærer betydning
+
+Ikke alle ankere fortjener like mye oppmerksomhet. Et sitat, en nedlasting, en policyreferanse eller en neste-trinn-knapp kan være avgjørende for dokumentet; en logolenke, kontomeny eller sporingspiksel er det ikke. Før konvertering lager du en liste over destinasjonene en leser må kunne følge, og bruker listen til godkjenningstesting.
+
+Lenker skjult bak ikoner trenger synlig sammenheng i et statisk dokument. Hvis en knapp bare sier «Åpne» eller bruker en umerket pil, kan destinasjonen være umulig å tolke etter at omkringliggende grensesnittelementer er fjernet. Behold nok tekst i nærheten til å forklare handlingen.
+
+Fragmentlenker på samme side kan også endre betydning. En innholdsfortegnelse kan peke til overskrifter på kildesiden, mens PDF-filen har sin egen sidenavigasjon. Test om ankrene fortsatt er nyttige; hvis ikke, kan den synlige innholdsfortegnelsen fortsatt fungere som en lesedisposisjon, men bør ikke beskrives som interaktiv.
+
+## Vær oppmerksom på usikre eller ustabile destinasjoner
+
+Autentiserte sider legger noen ganger øktidentifikatorer, signerte nedlastingstokener eller personlige spørringsparametere i URL-er. En klikkbar PDF kan avsløre disse verdiene for alle som mottar den. Kontroller den faktiske destinasjonen, ikke bare den synlige etiketten, og fjern eller erstatt sensitive lenker før deling.
+
+Relative lenker avhenger av en basis-URL. En nettleser kan løse `/docs/start` fordi den kjenner kildeopprinnelsen, mens en isolert HTML-fil kanskje ikke kan det. Når du konverterer opplastet HTML, må du oppgi en gyldig base eller bruke fullstendige HTTPS-lenker for nødvendige destinasjoner.
+
+Omdirigeringer og lenkeforkortere gjør kontrollen vanskeligere fordi det synlige domenet ikke nødvendigvis er det endelige. For viktige referanser åpner du lenken i en sikker nettleserkontekst og bekrefter sluttdestinasjonen. Bevaring av en lenke er ikke en godkjenning av destinasjonens nøyaktighet eller sikkerhet.
+
+## Bekreft etter strukturelle endringer
+
+Oppdeling, sammenslåing eller fjerning av seksjoner kan endre hvilke ankere som overlever og hvor de vises. Gjenta kontrollen etter endringer, ikke bare etter den første konverteringen. En lenke som fungerte i første forhåndsvisning, kan ha vært knyttet til en seksjon som senere ble erstattet av et skjermbilde.
+
+Test tastaturfokus eller PDF-leserens lenkeliste når tilgjengelighet er viktig. Den synlige siden kan se riktig ut mens merknadene er i feil rekkefølge. Kopier også en lenket setning for å bekrefte at merknaden ikke dekker urelatert tekst.
+
+Tilpass sluttkontrollen etter risiko. En personlig lesekopi kan trenge representative tester. Et forskningsark, et samsvarsdokument eller et kundedokument bør ha alle viktige destinasjoner kontrollert og registrert.
+
+## Skill mellom vanlige lenketyper
+
+Vanlige HTTPS-lenker er de tydeligste kandidatene for bevaring fordi målet kan representeres som en PDF-merknad. E-post-, telefon- og programspesifikke lenker avhenger av mottakerens enhet og konfigurerte programvare. En teknisk gyldig merknad kan fortsatt være ubrukelig i miljøet deres, så ikke behandle alle skjemaer som likeverdige.
+
+Nedlastinger krever ekstra omtanke. En lenke kan utløpe, kreve en økt eller returnere en annen fil senere. Når den lenkede ressursen er en del av beviset, bør du bevare tittelen, utgiveren og tilgangsdatoen i synlig tekst i stedet for bare å stole på klikkmålet.
+
+Skriptstyrte kontroller er ikke nødvendigvis lenker. Et kort kan åpne et dialogvindu, endre et filter eller kalle en programrute uten å vise en stabil destinasjon. Redigerbar konvertering skal ikke finne opp en. Bevar den synlige tilstanden og forklar begrensningen når handlingen er sentral for forståelsen av siden.
+
+## Hold merknader på linje med leserekkefølgen
+
+Lenkerektangler kan bli forvirrende når tekst brytes, kolonner flyttes eller en seksjon skaleres. Kontroller at det aktive området bare dekker den tiltenkte etiketten, og at overlappende merknader ikke sender nabotekst til samme destinasjon. I et dokument med flere kolonner bekrefter du lenker kolonne for kolonne i stedet for å følge den visuelle skannelinjen over siden.
+
+Meningsfulle etiketter er bedre enn gjentatt «klikk her»-tekst fordi de forblir forståelige når de kopieres, søkes eller kontrolleres i en lenkeliste. Behold setningen rundt når den forklarer hvorfor destinasjonen er viktig. For handlinger med bare ikon bevarer du en synlig etikett hvis kilden tilbyr en.
+
+Hvis PDF-filen skal brukes med hjelpeteknologi, tester du mer enn museklikk. Kontroller om teksten forblir markerbar, om merknadsrekkefølgen følger dokumentet, og om lenkeetikettene gir mening uten dekorasjon i nærheten. Page 2 File kan bevare støttet dokumentstruktur, men kilden og det kontrollerte resultatet avgjør om strukturen er nyttig.
+
+<ArticleFigure
+  alt={"Nettleser og Page 2 File-utvidelsen: Velg Editable document for å bevare støttede sikre lenkemål."}
+  caption={"Velg Editable document for å bevare støttede sikre lenkemål."}
+  closeLabel={"Lukk bildeforhåndsvisningen"}
+  openLabel={"Åpne bildet i full størrelse: velg Editable document for å bevare støttede sikre lenkemål."}
+  src="/blog/instructions/preserve-clickable-links/03.svg"
+  step={3}
+/>
+
+## Beskytt opphav og personvern
+
+En lenke kan avsløre mer enn det synlige domenet. Spørringsstrenger kan inneholde dokumentidentifikatorer, søkeord, henvisningsdata eller signerte tokener. Før deling kontrollerer du mål fra autentiserte sider og fjerner alt mottakeren ikke skal få. Åpning av en sladdet PDF bør ikke ved et uhell lede tilbake til en usladdet privat ressurs.
+
+Registrer kilde-URL og opptaksdato når sitater trenger opphav, samtidig som du unngår øktspesifikke parametere. Utvidelsens forhåndsvisningsdata er midlertidige og slettes etter at fanen lukkes, og Page 2 File opprettholder ingen konverteringshistorikk. Den nedlastede PDF-filen kan bevare sine egne lenker på ubestemt tid, så destinasjonene trenger samme kontroll som det synlige innholdet.
+
+<ArticleFigure
+  alt={"Nettleser og Page 2 File-utvidelsen: La Remove links være umarkert når destinasjonene må forbli tilgjengelige."}
+  caption={"La Remove links være umarkert når destinasjonene må forbli tilgjengelige."}
+  closeLabel={"Lukk bildeforhåndsvisningen"}
+  openLabel={"Åpne bildet i full størrelse: la Remove links være umarkert når destinasjonene må forbli tilgjengelige."}
+  src="/blog/instructions/preserve-clickable-links/04.svg"
+  step={4}
+/>
+
+Se [veiledningen for nettstedsresultat](/no/blog/website-types-to-pdf-or-powerpoint) for kildespesifikke lenkerisikoer.
+
+<ArticleFigure
+  alt={"Nettleser og Page 2 File-utvidelsen: Forhåndsvis PDF-filen og test representative lagrede og bevisst fjernede lenker."}
+  caption={"Forhåndsvis PDF-filen og test representative lagrede og bevisst fjernede lenker."}
+  closeLabel={"Lukk bildeforhåndsvisningen"}
+  openLabel={"Åpne bildet i full størrelse: forhåndsvis PDF-filen og test representative lagrede og bevisst fjernede lenker."}
+  src="/blog/instructions/preserve-clickable-links/05.svg"
+  step={5}
+/>

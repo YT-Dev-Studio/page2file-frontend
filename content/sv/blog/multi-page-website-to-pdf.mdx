@@ -1,0 +1,143 @@
+En webbplats med flera sidor bör konverteras som en avgränsad samling, inte som en obegränsad genomsökning. [Web 2 PDF GPT-appen](/sv/web2pdf-gpt) hittar tillgängliga sidor på målwebbplatsen, skickar varje vald offentlig URL för konvertering och returnerar flera PDF-filer för nedladdning.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Skapa en avgränsad inventering av de webbplatssidor som ingår i arbetet."}
+  caption={"Skapa en avgränsad inventering av de webbplatssidor som ingår i arbetet."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: skapa en avgränsad inventering av de webbplatssidor som ingår i arbetet."}
+  src="/blog/instructions/multi-page-website-to-pdf/01.svg"
+  step={1}
+/>
+
+Den slår inte tyst samman hela webben till ett dokument. Varje sida behåller sin egen källgräns och utdatafil, vilket gör fel och behörigheter enklare att granska.
+
+## Ange webbplatsens gräns
+
+Börja med värden och det avsnitt som ska ingå i samlingen. Bestäm om språkvarianter, arkiv, sökresultat, taggsidor och dubbletter med frågesträng ska inkluderas. Externa domäner förblir länkar i stället för att bli nya genomsökningsmål.
+
+En webbplatskarta kan föreslå sidor, men bevisar inte att varje URL hör hemma i exporten. Ta bort administratörsrutter, kontosidor, duplicerade filter och allt som du inte har rätt att återge.
+
+## Behåll en sida per utdatajobb
+
+Separata PDF-filer bevarar titlar på sidnivå och gör det tydligt vilken URL som misslyckades eller omdirigerades. De förhindrar också att en trasig sida ogiltigförklarar en i övrigt användbar webbplatsexport.
+
+Om en mottagare behöver ett enda paket laddar du ner de granskade PDF-filerna och kombinerar eller arkiverar dem med ett lämpligt dokumentverktyg. Web 2 PDF returnerar flera filer i stället för att hävda att den skapar ett perfekt sammanslaget webbplatsdokument.
+
+## Förvänta dig skillnader mellan sidor
+
+En webbplats kan blanda artikelmallar, produktrutnät, instrumentpaneler och inbäddade medier. Välj skärmbild eller redigerbar utdata utifrån samlingens mål och granska varningar om teckensnitt, bilder och länkar. [Guiden för webbplatstyper](/sv/blog/website-types-to-pdf-or-powerpoint) hjälper till att klassificera källorna.
+
+Autentiserade områden kan inte upptäckas av en offentlig genomsökning. Fånga en tillåten inloggad sida med [tillägget](/sv/chrome-extension/how-to-use), en aktiv flik i taget.
+
+## Granska före distribution
+
+Kontrollera URL-listan, titlar, duplicerade sidor, omdirigeringar samt första och sista sidan i varje PDF. För enskilda långa källor använder du [granskningen av sidbrytningar](/sv/blog/long-webpage-page-breaks).
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Öppna den första godkända sidan med By URL."}
+  caption={"Öppna den första godkända sidan med By URL."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: öppna den första godkända sidan med By URL."}
+  src="/blog/instructions/multi-page-website-to-pdf/02.svg"
+  step={2}
+/>
+
+En export av hela webbplatsen är en kopia av publicerat material. Respektera robots-anvisningar, källvillkor, upphovsrätt och hastighetsgränser och använd den inte för att kringgå åtkomstkontroller.
+
+## Skapa en uttrycklig sidinventering
+
+Börja med en lista över kandidat-URL:er och anledningen till att varje sida ingår. Navigering, webbplatskartor och interna länkar kan hjälpa till att hitta offentliga sidor, men upptäckt bevisar inte att varje URL ska exporteras. Uteslut duplicerade utskriftsvyer, spårningsvarianter, sökresultat och sidor utanför avsett avsnitt.
+
+Normalisera uppenbara varianter före konvertering. Ett avslutande snedstreck, fragment eller kampanjparameter kan peka till samma innehåll och samtidigt se ut som en separat sida. Behåll språk- och regionvarianter endast när de avsiktligt ingår i samlingen.
+
+Dokumentera sidor som kräver inloggning, samtycke eller en användaråtgärd. Web 2 PDF arbetar med tillgängliga offentliga sidor och kringgår inte åtkomstkontroller. Fånga behöriga privata sidor från deras aktiva webbläsarflikar som ett separat arbetsflöde.
+
+## Håll samlingen navigerbar
+
+Eftersom resultatet är en PDF per sida är filnamn och ett enkelt index viktiga. Använd ett stabilt namnmönster som identifierar källavsnitt och sidtitel. Förlita dig inte på nedladdningsordningen, som kan ändras när sidor blir klara vid olika tidpunkter.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Välj PDF och en konsekvent utdatapolicy."}
+  caption={"Välj PDF och en konsekvent utdatapolicy."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: välj PDF och en konsekvent utdatapolicy."}
+  src="/blog/instructions/multi-page-website-to-pdf/03.svg"
+  step={3}
+/>
+
+Ett index kan innehålla den ursprungliga URL:en, insamlingsdatum, utdatafilnamn och granskningsstatus. Det ger mottagaren en karta utan att låtsas att separata filer är en sammanslagen bok. Om en kombinerad publikation krävs slår du samman först när de enskilda PDF-filerna har godkänts och dokumenterar den nya läsordningen.
+
+Behåll ursprung på sidnivå. En webbplats kan uppdatera en sida utan att ändra de andra, så en samling som sammanställts på olika datum ska ange det. Det kan vara onödigt att köra om hela webbplatsen när bara en liten del ändrats.
+
+## Granska mönster och undantag
+
+Kontrollera representativa sidor från varje mall: startsidan, artikel, dokumentationssida, produktsida och ovanliga layouter. Fel på mallnivå, till exempel avklippt navigering eller saknade teckensnitt, kommer sannolikt att upprepas och bör rättas innan varje fil granskas.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Upprepa samma ensideskonvertering för varje godkänd adress."}
+  caption={"Upprepa samma ensideskonvertering för varje godkänd adress."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: upprepa samma ensideskonvertering för varje godkänd adress."}
+  src="/blog/instructions/multi-page-website-to-pdf/04.svg"
+  step={4}
+/>
+
+Granska sedan sidspecifika risker. Långa tabeller, bildgallerier, inbäddade diagram och korta omdirigeringssidor kan misslyckas även när mallen ser korrekt ut. Bekräfta att varje PDF har förväntad titel, börjar vid avsett innehåll och inte innehåller autentiseringsfel eller cookie-vägg.
+
+Avsluta med avstämning: antalet godkända filer måste stämma med den granskade URL-inventeringen och varje uteslutning ska ha en anledning. Det hindrar en praktisk nedladdningsmapp från att förväxlas med ett fullständigt webbplatsarkiv.
+
+## Välj en upptäcktsmetod utan att lova genomsökning
+
+Utgå från webbplatsens synliga navigering, deklarerade webbplatskarta och interna länkar som hör till det efterfrågade avsnittet. Det är upptäcktssignaler, inte en instruktion att följa varje URL i det oändliga. Kalendrar, facetterade filter och genererade söksidor kan skapa praktiskt taget obegränsade adressutrymmen.
+
+Ange uttryckliga regler före upptäckten: tillåten värd, sökvägsprefix, språk, maximalt omfång som avtalats för uppgiften och hantering av frågeparametrar. Stoppa när en kandidat faller utanför reglerna. Web 2 PDF beskrivs som att hitta tillgängliga sidor och skapa separata filer; den ska inte framställas som ett genomsöknings-API eller en skrapa för strukturerade data.
+
+Vissa sidor kan endast nås via JavaScript-navigering och vissa poster i webbplatskartan kan ha slutat fungera. Dokumentera dem som upptäckter med status och avgör sedan om de ska ingå. Ersätt inte tyst ett mål med en omdirigeringsdestination när det ändrar ämnet eller korsar den godkända gränsen.
+
+## Välj utdataläge för en samling
+
+Ett konsekvent läge gör samlingen enklare att använda, men en webbplats kan innehålla flera dokumenttyper. Redigerbar utdata är en stark standard för artiklar och dokumentation eftersom text och länkar som stöds förblir användbara. Skärmbildsutdata passar bättre för designreferenser, instrumentpaneler och sidor där kompositionen bär betydelsen.
+
+Om samlingen blandar dessa typer grupperar du sidor efter mall eller syfte och dokumenterar valt läge för varje grupp. Undvik att ändra läge sida för sida utan regel; mottagare ska kunna förstå varför en fil är sökbar medan en annan är bildbaserad.
+
+Förhandsgranska representativa sidor innan hela inventeringen behandlas. Kontrollera en vanlig sida och varje ovanlig mall. Ett återkommande navigeringsfel eller saknat teckensnitt bör åtgärdas på mönsternivå innan det visas i dussintals filer.
+
+## Hantera fel utan att förlora inventeringen
+
+En otillgänglig URL, omdirigeringsslinga, borttagen sida eller renderingsvarning ska förbli synlig i granskningsposten. Ett nytt försök kan hjälpa när en tillfällig resurs misslyckats, men kan inte rätta en privat rutt eller en sida som du inte har rätt att öppna. Efter ett ändrat försök markerar du sidan som godkänd, utesluten eller blockerad med anledning.
+
+Enbart filantal bevisar inte fullständighet. Stäm av varje kandidat-URL mot ett utdatafilnamn och en status. Kontrollera duplicerade titlar, tomma felsidor och PDF-filer som bara innehåller en cookie- eller åtkomstavisering. En tekniskt nedladdningsbar fil kan ändå vara en misslyckad konvertering.
+
+För inloggat material lämnar du det offentliga samlingsflödet. Öppna varje tillåten sida i Chrome och använd insamling av aktiv flik. Förhandsvisningen är tillfällig, raderas när fliken stängs och behålls inte i en Page 2 File-databas med konverteringshistorik. Privata sidor ska inte läggas till i en offentlig upptäcktslista.
+
+## Paketera det granskade resultatet
+
+Använd filnamn som förblir unika när sidtitlar upprepas. En kort identifierare härledd från sökvägen kan skilja två ”Översikt”-sidor utan att avslöja känsliga frågeparametrar. Behåll ett separat manifest med käll-URL, titel, insamlingsdatum, valt läge, utdatafilnamn och granskningsresultat.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Håll de resulterande PDF-filerna separata och namnge dem efter källsökvägarna."}
+  caption={"Håll de resulterande PDF-filerna separata och namnge dem efter källsökvägarna."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: håll de resulterande PDF-filerna separata och namnge dem efter källsökvägarna."}
+  src="/blog/instructions/multi-page-website-to-pdf/05.svg"
+  step={5}
+/>
+
+Ordna PDF-filerna i avsedd läsordning först efter att varje sida har stämts av. Om mottagarna behöver en kombinerad PDF slår du samman de godkända filerna med ett lämpligt verktyg och verifierar kombinerade bokmärken, sidordning och gränser. Den sammanslagna artefakten är ett separat redaktionellt resultat; Web 2 PDF returnerar själv en PDF per upptäckt sida.
+
+Före leverans gör du stickprov på länkar och sidbrytningar från varje mall och öppnar varje fil som haft en varning. Ange omfång och uteslutningar tillsammans med samlingen. ”Dokumentationsavsnitt fångat detta datum, exklusive privata kontosidor och duplicerade språkvarianter” är mer användbart än ”hela webbplatsen” när gränsen var smalare.
+
+## Underhåll samlingen över tid
+
+Webbplatser förändras ojämnt. Ett nytt navigeringsobjekt kan lägga till en sida, en gammal URL kan omdirigera och en enskild artikel kan revideras medan resten är oförändrad. Bevara det tidigare manifestet så att en senare körning kan identifiera tillägg, borttagningar och ändrade källor i stället för att bygga om en oförklarad mapp.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Stäm av filerna mot ett manifest och dokumentera uteslutningar eller fel."}
+  caption={"Stäm av filerna mot ett manifest och dokumentera uteslutningar eller fel."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: stäm av filerna mot ett manifest och dokumentera uteslutningar eller fel."}
+  src="/blog/instructions/multi-page-website-to-pdf/06.svg"
+  step={6}
+/>
+
+Antyd inte kontinuerlig synkronisering. Varje PDF registrerar sidans renderade tillstånd vid insamlingstidpunkten. När aktualitet är viktig anger du ett granskningsdatum och upprepar upptäckten under samma gränsregler, och håller sedan de två manifesten separata för jämförelse.

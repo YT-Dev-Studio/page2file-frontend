@@ -1,0 +1,128 @@
+HTML do PowerPoint może oznaczać dwa różne zadania: zmianę wyrenderowanej strony w slajdy albo przesłanie surowego pliku HTML. Page 2 File obsługuje dziś pierwsze zadanie przez [konwerter PowerPoint](/pl/convert-webpage-to-powerpoint) i rozszerzenie. Surowy HTML można przesłać tylko do aplikacji GPT HTML 2 PDF, a nie do osobnego narzędzia HTML do PPTX.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wyrenderuj i ustabilizuj HTML przed odwzorowaniem go jako slajdy."}
+  caption={"Wyrenderuj i ustabilizuj HTML przed odwzorowaniem go jako slajdy."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wyrenderuj i ustabilizuj HTML przed odwzorowaniem go jako slajdy."}
+  src="/blog/instructions/html-to-powerpoint/01.svg"
+  step={1}
+/>
+
+Ta granica zapobiega zmianie frazy wyszukiwania w fałszywą obietnicę produktu. Jeśli HTML można otworzyć jako dozwoloną stronę, Page 2 File może przekonwertować jego widoczne sekcje na prezentację.
+
+## Wyrenderuj HTML przed tworzeniem slajdów
+
+Przeglądarka rozwiązuje układ CSS, fonty, obrazy i reguły responsywne. Konwerter pracuje potem z wyrenderowaną strukturą, zamiast traktować tagi jak instrukcje slajdów. Nagłówki, sekcje i widoczne podziały dają lepsze granice niż przypadkowe fragmenty kodu.
+
+Komponenty klienckie muszą zakończyć renderowanie, a treść ukryta za kontrolkami zostać otwarta. Skryptów i zasobów niedostępnych na stronie nie da się odtworzyć z samego markup.
+
+## Wybierz obiekty prezentacji lub sekcje zrzutowe
+
+Editable document (wynik edytowalny) odwzorowuje obsługiwany tekst, obrazy i kształty jako obiekty PowerPoint. Accurate copy (wynik w stylu zrzutu) zapisuje wyrenderowane sekcje i lepiej zachowuje kompozycję. Złożone efekty mogą stać się obrazami w obu procesach, jeśli PowerPoint nie ma odpowiednika.
+
+Artykuł [slajdy zrzutowe a edytowalny PowerPoint](/pl/blog/screenshot-vs-editable-powerpoint) pomoże wybrać tryb przed konwersją.
+
+## Przygotuj treść do 16:9
+
+Wysoka strona wymaga wielu slajdów. Zachowaj jeden temat na slajd, unikaj drobnego tekstu i pozwól dużej tabeli kontynuować się na kolejnych slajdach. Usuń powtarzaną nawigację i stopkę, chyba że dostarczają niezbędnego kontekstu.
+
+Artykuł o zmianie sekcji strony w slajdy przedstawia praktyczną sekwencję dzielenia i kontroli.
+
+## Użyj właściwej powierzchni Page 2 File
+
+Dla jednej publicznej wyrenderowanej strony użyj [One Page 2 PowerPoint](/pl/one-page2powerpoint-gpt). Dla kilku dostępnych stron witryny użyj [Web 2 PowerPoint](/pl/web2powerpoint-gpt). Dla prywatnej wyrenderowanej karty użyj rozszerzenia.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: użyj otwartej karty lub publicznego URL jako obsługiwanego źródła."}
+  caption={"Użyj otwartej karty lub publicznego URL jako obsługiwanego źródła."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: użyj otwartej karty lub publicznego URL jako obsługiwanego źródła."}
+  src="/blog/instructions/html-to-powerpoint/02.svg"
+  step={2}
+/>
+
+Jeśli masz tylko plik HTML i potrzebujesz PDF, użyj [HTML 2 PDF](/pl/html2pdf-gpt). Bezpośrednie przesyłanie HTML do PPTX nie jest obsługiwane; konwersja PowerPoint zaczyna się od wyrenderowanej treści internetowej.
+
+## Opublikuj HTML w kontrolowanym kontekście
+
+Jeśli źródło istnieje tylko jako plik, zdecyduj, czy można je udostępnić pod osiągalnym URL lub otworzyć w autoryzowanej karcie. Sprawdź wczytywanie stylów, obrazów i fontów. Lokalna ścieżka deweloperska lub prywatny zasób nie stanie się przenośny tylko dlatego, że strona jest widoczna na jednym komputerze.
+
+Usuń kontrolki aplikacji niepasujące do prezentacji i wybierz finalny stan responsywny. Ustaw filtry, rozwiń panele i zatrzymaj aktualizacje, jeśli to możliwe. Konwersja zapisze to, co wyrenderowała przeglądarka; nie odgadnie treści za nieotwartą kontrolką.
+
+Zachowaj wersję źródła użytego do prezentacji. HTML łatwo się zmienia, a późniejszy build może stworzyć inne slajdy z tego samego URL. Data przechwycenia i identyfikator wydania pomagają przy pochodzeniu.
+
+## Przekształć sekcje do slajdów
+
+Sekcja HTML może być znacznie wyższa niż slajd 16:9. Znajdź naturalne granice przy nagłówkach, kartach, wierszach lub ilustracjach, zamiast zmniejszać całość do nieczytelnego tekstu. Trzymaj podpisy przy elementach wizualnych i powtarzaj kontekst, gdy tabela przechodzi na kolejne slajdy.
+
+Nawigacja, kontrolki cookies i przyklejone nagłówki często się powtarzają bez korzyści. Ukryj lub usuń je z przygotowanego źródła, gdy jest to dozwolone. Branding zachowaj tylko wtedy, gdy należy do prezentacji i może być legalnie użyty.
+
+Dla wyniku edytowalnego utrzymuj zwięzłe bloki tekstowe i nie polegaj na zawiłych warstwach CSS. Złożone filtry, canvasy i animacje wymagają zrzutowych zamienników. Dla wyniku zrzutowego ustaw szerokość przeglądarki tak, aby tekst pozostał czytelny na slajdzie.
+
+## Przeprowadź odbiór prezentacji
+
+Porównaj kolejność slajdów z konspektem HTML. Potwierdź brak duplikatów i pominięć oraz zamierzony koniec prezentacji. Stopka witryny nie powinna automatycznie stawać się zakończeniem.
+
+Otwórz PPTX w docelowej aplikacji i sprawdź zastąpione fonty, kadrowanie obrazów, linki oraz obiekty poza granicami slajdu. Jeśli odbiorcy mają edytować prezentację, zmień reprezentatywny tekst i przesuń obsługiwany obraz.
+
+Opisuj ograniczenie precyzyjnie: Page 2 File konwertuje wyrenderowaną stronę lub aktywną kartę do PowerPoint. Nie przyjmuje surowego HTML do PPTX, nie wykonuje dowolnego builda projektu i nie zmienia każdej właściwości CSS w natywny obiekt PowerPoint.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wybierz PowerPoint."}
+  caption={"Wybierz PowerPoint."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz PowerPoint."}
+  src="/blog/instructions/html-to-powerpoint/03.svg"
+  step={3}
+/>
+
+## Przygotuj responsywny HTML do stałego obszaru
+
+Responsywna strona może wyraźnie zmieniać się między szerokościami desktopowymi. Przed konwersją wybierz viewport zawierający zamierzoną nawigację, układ wykresów i miarę tekstu. Najszerszy widok nie zawsze jest najlepszy; gęsta siatka może dać nieczytelne slajdy, a układ kompaktowy lepiej grupować informacje.
+
+Sprawdź przepełnienie przy wybranej szerokości. Poziomo przewijane tabele, kod i karuzele mogą ukrywać treść poza wyrenderowanym obszarem. Ustaw właściwy stan i zdecyduj, czy komponent ma stać się jednym zrzutem, kilkoma skupionymi slajdami czy edytowalną rekonstrukcją z zamiennikiem.
+
+Fonty internetowe i opóźnione obrazy mogą zmienić wymiary po pierwszym renderze. Poczekaj na stabilizację, a potem porównaj początek i koniec długich sekcji. Jeśli komponent kliencki nigdy nie pojawia się w autoryzowanym stanie, konwersja nie wywnioskuje go z nieużywanego kodu.
+
+## Zachowaj semantykę podczas restrukturyzacji
+
+Konspekt HTML pomaga ustalić kolejność, ale nie jest gotowym planem prezentacji. Zachowaj znaczące poziomy nagłówków, powiąż podpisy z ilustracjami i utrzymuj kolejność list przy podziale. Dekoracyjne wrappery nie powinny tworzyć pustych slajdów tylko dlatego, że zajmują osobny blok.
+
+Dla tabel zachowaj etykiety kolumn i jednostki. Dla kodu trzymaj język lub kontekst przy próbce i sprawdź zawijanie. Dla calloutu pozostaw tekst wyjaśniający status, nie polegaj wyłącznie na kolorze. Te relacje są ważniejsze niż kopiowanie każdego szczegółu CSS.
+
+Konwersja edytowalna ułatwia poprawianie obsługiwanej treści, ale nie jest kompilatorem kodu źródłowego do PowerPoint. Sprawdź kolejność czytania i grupowanie obiektów. Złożony komponent może być dokładniejszy jako jeden obraz niż dziesiątki trudnych w utrzymaniu kształtów.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: wybierz Editable document dla obsługiwanych obiektów albo Accurate copy dla kompozycji."}
+  caption={"Wybierz Editable document dla obsługiwanych obiektów albo Accurate copy dla kompozycji."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: wybierz Editable document dla obsługiwanych obiektów albo Accurate copy dla kompozycji."}
+  src="/blog/instructions/html-to-powerpoint/04.svg"
+  step={4}
+/>
+
+## Sprawdź pochodzenie i stan prywatny
+
+Jeśli wyrenderowana strona pochodzi ze środowiska deweloperskiego, stagingowego lub po zalogowaniu, sprawdź nazwy kont, dane testowe, nieopublikowany materiał i prywatne URL. Dostęp do karty nie oznacza prawa do dystrybucji prezentacji.
+
+Gdy liczy się identyfikowalność, zachowaj wersję źródła, URL lub identyfikator wydania przy zatwierdzonym PPTX. Późniejsze wdrożenie może stworzyć inne slajdy mimo tej samej trasy. Nie umieszczaj tokenów sesji ani poufnych parametrów w nazwach i notatkach.
+
+Rozszerzenie pracuje z aktywną kartą; dane podglądu są tymczasowe i usuwane po zamknięciu karty, a Page 2 File nie prowadzi historii konwersji. Pobrany PPTX pozostaje pod Twoją kontrolą, dlatego przechowuj i udostępniaj go zgodnie z wrażliwością źródła.
+
+## Zdecyduj, czy PowerPoint jest właściwym celem
+
+Użyj PPTX, gdy odbiorca potrzebuje sekwencji prezentacyjnej, wyjaśnienia przez prelegenta lub obsługiwanych elementów do edycji. Jeśli celem jest wierne archiwum do czytania, PDF może naturalniej zachować długi dokument. Jeśli celem jest edycja aplikacji internetowej, pracuj dalej w HTML zamiast używać prezentacji jako źródła.
+
+Uruchom prezentację w docelowym rozmiarze i wykonaj jedną planowaną edycję przed przekazaniem. Potwierdź kolejność, czytelność, jakość obrazów, linki i zamienniki. Jeśli wymaganej sekcji nie ma w podglądzie, napraw wyrenderowany stan; finalny plik nie odzyska HTML, którego przeglądarka nie pokazała.
+
+<ArticleFigure
+  alt={"Przeglądarka i rozszerzenie Page 2 File: sprawdź slajdy 16:9 i złożone zamienniki HTML."}
+  caption={"Sprawdź slajdy 16:9 i złożone zamienniki HTML."}
+  closeLabel={"Zamknij podgląd obrazu"}
+  openLabel={"Otwórz obraz w pełnym rozmiarze: sprawdź slajdy 16:9 i złożone zamienniki HTML."}
+  src="/blog/instructions/html-to-powerpoint/05.svg"
+  step={5}
+/>
+
+Użyj [przewodnika po wynikach witryn](/pl/blog/website-types-to-pdf-or-powerpoint), aby porównać HTML z innymi źródłami przeglądarkowymi.

@@ -1,0 +1,128 @@
+HTML-til-PowerPoint kan betyde to forskellige opgaver: at omdanne en gengivet webside til slides eller at uploade en rå HTML-fil. Page 2 File håndterer i øjeblikket opgaven med den gengivne side gennem [PowerPoint-konverteren](/da/convert-webpage-to-powerpoint) og udvidelsen. Uploadet rå HTML understøttes kun af HTML 2 PDF GPT-appen, ikke af et separat uploadværktøj fra HTML til PPTX.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Gengiv og stabilisér HTML-filen, før den overføres til slides."}
+  caption={"Gengiv og stabilisér HTML-filen, før den overføres til slides."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Gengiv og stabilisér HTML-filen, før den overføres til slides."}
+  src="/blog/instructions/html-to-powerpoint/01.svg"
+  step={1}
+/>
+
+Denne grænse forhindrer, at en søgefrase bliver til et falsk produktløfte. Hvis HTML-filen kan åbnes som en tilladt webside, kan Page 2 File konvertere dens synlige sektioner til en præsentation.
+
+## Gengiv HTML-filen før overførsel til slides
+
+En browser fortolker CSS-layout, skrifttyper, billeder og responsive regler. Konverteren arbejder derefter ud fra den gengivne struktur i stedet for at behandle tags som slideinstruktioner. Overskrifter, sektioner og synlige skift giver stærkere grænser end vilkårlige stykker kildekode.
+
+Klientsidekomponenter skal være færdige med at blive gengivet, og indhold bag kontrolelementer skal åbnes. Scripts eller ressourcer, der ikke er tilgængelige på siden, kan ikke rekonstrueres ud fra markup alene.
+
+## Vælg præsentationsobjekter eller skærmbilledsektioner
+
+Editable document (redigerbart output) overfører understøttet tekst, billeder og figurer til PowerPoint-objekter. Accurate copy (output som et skærmbillede) registrerer gengivne sektioner og bevarer mere af sidens komposition. Komplekse effekter kan blive til billeder i begge arbejdsgange, når PowerPoint ikke har en tilsvarende funktion.
+
+Brug [skærmbilledslides kontra redigerbar PowerPoint](/da/blog/screenshot-vs-editable-powerpoint) til at vælge tilstand før konvertering.
+
+## Forbered indhold til 16:9
+
+En høj webside kræver flere slides. Bevar ét emne pr. slide, undgå lille tekst, og lad en stor tabel fortsætte på flere slides. Fjern gentaget navigation og footer, medmindre de giver nødvendig kontekst.
+
+Artiklen om at omdanne websidesektioner til slides giver en praktisk rækkefølge til opdeling og gennemgang.
+
+## Brug den rigtige Page 2 File-flade
+
+Brug [One Page 2 PowerPoint](/da/one-page2powerpoint-gpt) til én offentlig gengivet side. Brug [Web 2 PowerPoint](/da/web2powerpoint-gpt) til flere tilgængelige websitesider. Brug udvidelsen til en privat gengivet fane.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Brug den åbne fane eller en offentlig URL som den understøttede kildeflade."}
+  caption={"Brug den åbne fane eller en offentlig URL som den understøttede kildeflade."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Brug den åbne fane eller en offentlig URL som den understøttede kildeflade."}
+  src="/blog/instructions/html-to-powerpoint/02.svg"
+  step={2}
+/>
+
+Hvis du kun har en HTML-fil og skal bruge PDF, skal du bruge [HTML 2 PDF](/da/html2pdf-gpt). Direkte upload fra en HTML-fil til PPTX understøttes ikke; PowerPoint-konvertering begynder med gengivet webindhold.
+
+## Udgiv HTML-filen i en kontrolleret kontekst
+
+Hvis kilden kun findes som en fil, skal du afgøre, om den kan serveres på en tilgængelig URL eller åbnes som en godkendt browserfane. Bekræft, at styles, billeder og skrifttyper indlæses dér. En lokal udviklingssti eller privat aktivreference bliver ikke bærbar, blot fordi siden er synlig på én computer.
+
+Fjern programkontroller, der ikke hører til i decket, og vælg den endelige responsive tilstand. Indstil filtre, udvid paneler, og stop om muligt liveopdateringer. Konverteringen kan registrere det, browseren gengav; den kan ikke udlede indhold bag et uåbnet kontrolelement.
+
+Bevar den kildeversion, der blev brugt til decket. HTML ændres let, og en senere build kan give andre slides fra den samme URL. En optagelsesdato og udgivelsesidentifikator kan hjælpe, når oprindelse er vigtig.
+
+## Omform sektioner til slides
+
+En HTML-sektion kan være meget højere end en 16:9-slide. Identificér naturlige skift ved overskrifter, kort, rækker eller figurer i stedet for at formindske hele sektionen, indtil teksten bliver ulæselig. Hold billedtekster sammen med visualiseringer, og gentag kontekst, når en tabel strækker sig over flere slides.
+
+Navigation, cookiekontroller og fastlåste headers gentages ofte uden at hjælpe præsentationen. Skjul eller fjern dem fra den forberedte kilde, hvor det er tilladt. Bevar kun branding, når den hører til præsentationen og må bruges lovligt.
+
+Hold tekstblokke korte i redigerbart output, og undgå afhængighed af indviklede CSS-lag. Komplekse filtre, canvas-elementer og animationer kræver skærmbilledfallbacks. Sørg i skærmbilledoutput for, at browserbredden giver tekst, der forbliver læsbar på en slide.
+
+## Foretag en acceptgennemgang af decket
+
+Kontrollér sliderækkefølgen i forhold til HTML-dispositionen. Bekræft, at ingen sektion er dubleret eller udeladt, og at decket slutter på et tilsigtet sted. En websitefooter bør ikke automatisk blive afslutningen.
+
+Åbn PPTX-filen i målprogrammet, og undersøg skrifttypeerstatning, billedbeskæring, linkadfærd og objekter uden for slidegrænsen. Hvis modtagerne skal redigere decket, skal du ændre repræsentativ tekst og flytte et understøttet billede.
+
+Angiv begrænsningen præcist: Page 2 File konverterer en gengivet webside eller aktiv fane til PowerPoint. Det accepterer ikke upload af rå HTML til PPTX, udfører ikke en vilkårlig projekt-build og omdanner ikke hver CSS-egenskab til et oprindeligt PowerPoint-objekt.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Vælg PowerPoint."}
+  caption={"Vælg PowerPoint."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Vælg PowerPoint."}
+  src="/blog/instructions/html-to-powerpoint/03.svg"
+  step={3}
+/>
+
+## Forbered responsiv HTML til et fast lærred
+
+En responsiv side kan ændre sig betydeligt mellem forskellige desktopbredder. Vælg den viewport, der indeholder den tilsigtede navigation, diagramopsætning og tekstbredde, før konvertering. Antag ikke, at den bredeste visning er bedst; et tæt desktopgitter kan give ulæselige slides, mens et kompakt layout kan gruppere oplysninger tydeligere.
+
+Kontrollér overløb ved den valgte bredde. Vandret rullende tabeller, kodeblokke og karruseller kan skjule indhold uden for det gengivne område. Indstil den relevante tilstand, og afgør, om komponenten skal være én skærmbilledslide, flere fokuserede slides eller en redigerbar rekonstruktion med en fallback.
+
+Webskrifttyper og forsinkede billeder kan ændre dimensioner efter den første visning. Vent, til siden er stabil, og sammenlign derefter begyndelsen og slutningen af lange sektioner. Hvis en klientsidekomponent aldrig gengives i den godkendte browsertilstand, kan konverteringen ikke udlede den af ubrugt kildekode.
+
+## Bevar semantik under omstrukturering
+
+HTML-dispositionen hjælper med at fastlægge rækkefølge, men er ikke en færdig præsentationsplan. Bevar meningsfulde overskriftsniveauer, tilknyt billedtekster til figurer, og oprethold listerækkefølgen, når en lang sektion strækker sig over flere slides. Dekorative wrappers bør ikke blive tomme slides, blot fordi de optager deres egen blok.
+
+Bevar kolonneetiketter og enheder i tabeller. Bevar sprog- eller kontekstetiketter sammen med kodeeksemplet, og undersøg ombrydning. Bevar den tekst, der forklarer en meddelelses status, i stedet for kun at stole på farven. Disse forhold er vigtigere end at kopiere alle CSS-detaljer.
+
+Redigerbar konvertering kan gøre understøttet indhold nemmere at revidere, men bør ikke beskrives som en compiler fra kildekode til PowerPoint. Gennemgå læserækkefølge og objektgruppering. En kompleks webkomponent kan være mere præcis som ét billede end som snesevis af figurer, der er svære at vedligeholde.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Vælg Editable document til understøttede objekter eller Accurate copy til komposition."}
+  caption={"Vælg Editable document til understøttede objekter eller Accurate copy til komposition."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Vælg Editable document til understøttede objekter eller Accurate copy til komposition."}
+  src="/blog/instructions/html-to-powerpoint/04.svg"
+  step={4}
+/>
+
+## Gennemgå oprindelse og privat tilstand
+
+Hvis den gengivne side kommer fra et udviklings-, staging- eller loginmiljø, skal du undersøge den for kontonavne, testdata, ikke-offentliggjort materiale og private URL'er. Adgang til fanen betyder ikke tilladelse til at distribuere decket.
+
+Bevar kildeversion, URL eller udgivelsesidentifikator sammen med den godkendte PPTX, når sporbarhed er vigtig. En senere udrulning kan producere andre slides, selv når ruten er uændret. Undgå at gemme sessionstokens eller følsomme forespørgselsparametre i filnavne og kildenoter.
+
+Udvidelsen arbejder fra den aktive fane; dens forhåndsvisningsdata er midlertidige og slettes, når forhåndsvisningsfanen lukkes, og Page 2 File har ingen database med konverteringshistorik. Den downloadede PPTX er under din kontrol, så opbevar og del den efter kildens følsomhed.
+
+## Afgør, om PowerPoint er det rigtige mål
+
+Brug PPTX, når modtageren har brug for en præsentationssekvens, en mundtlig forklaring eller understøttede elementer, der kan revideres. Hvis målet er et troværdigt læsearkiv, kan en PDF bevare et langt dokument mere naturligt. Hvis målet er at redigere selve webprogrammet, skal du fortsætte arbejdet i HTML frem for at behandle et deck som kilden.
+
+Kør decket i præsentationsstørrelse, og gennemfør én tilsigtet redigering før overdragelse. Bekræft sliderækkefølge, læsbar tekst, billedkvalitet, links og fallbacks. Hvis en påkrævet sektion mangler i forhåndsvisningen, skal du rette den gengivne kildetilstand; en endelig fil kan ikke gendanne HTML, som browseren aldrig viste.
+
+<ArticleFigure
+  alt={"Browser og Page 2 File-udvidelsen: Gennemgå 16:9-slides, og undersøg fallbacks for kompleks HTML."}
+  caption={"Gennemgå 16:9-slides, og undersøg fallbacks for kompleks HTML."}
+  closeLabel={"Luk billedvisningen"}
+  openLabel={"Åbn billedet i fuld størrelse: Gennemgå 16:9-slides, og undersøg fallbacks for kompleks HTML."}
+  src="/blog/instructions/html-to-powerpoint/05.svg"
+  step={5}
+/>
+
+Brug [guiden til website-output](/da/blog/website-types-to-pdf-or-powerpoint) til at sammenligne HTML med andre browserkilder.

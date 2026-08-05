@@ -1,0 +1,124 @@
+Konvertering från HTML till PDF gör en tillhandahållen HTML-fil till ett fast dokument. Med [HTML 2 PDF GPT-appen](/sv/html2pdf-gpt) är indata filen du tillhandahåller, inte en URL-genomsökning och inte det autentiserade tillståndet i en webbläsarflik.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Rendera HTML-filen som en webbläsarsida innan du behandlar den som dokumentkälla."}
+  caption={"Rendera HTML-filen som en webbläsarsida innan du behandlar den som dokumentkälla."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: rendera HTML-filen som en webbläsarsida innan du behandlar den som dokumentkälla."}
+  src="/blog/instructions/html-to-pdf-safely/01.svg"
+  step={1}
+/>
+
+Behandla varje HTML-fil som aktiv kod tills en renderare bevisar motsatsen. En försvarbar konverteringsdesign begränsar skript och oväntad nätverksåtkomst, blockerar förfrågningar till lokala filer och interna tjänster samt gör innehåll som inte stöds synligt för granskning. Dra inte slutsatsen att dessa kontroller finns bara för att PDF-filen ser välgjord ut; verifiera konverterarens dokumenterade gräns innan du skickar känsliga indata.
+
+## Förbered en självständig fil
+
+Använd semantiska rubriker, stycken, listor och tabeller. Ta med den CSS som krävs för layouten och paketera bilder på ett sätt som godkända indata kan lösa. En fil som är beroende av en privat byggserver eller ett inloggat API återges inte tillförlitligt i en isolerad renderare.
+
+Ta bort analysverktyg, formulärinskickning, automatiskt uppspelade medier och kod som ändrar dokumentet efter inläsning. PDF är ett statiskt mål; att behålla dessa beteenden ökar risken utan att förbättra dokumentet.
+
+## Håll renderaren isolerad
+
+Opålitlig HTML kan försöka läsa lokala filer, anropa interna adresser eller förbruka orimligt mycket resurser. Konvertering bör köras i en separat begränsad process där skript, WebSockets och godtyckliga nätverksförfrågningar är inaktiverade.
+
+Isolering kan ändra utseendet på innehåll som förlitade sig på fjärrteckensnitt, bilder eller klientsidekomponenter. Behandla saknade resurser som granskningsfynd i stället för att anta att en slutförd rendering är komplett.
+
+## Utforma för fasta sidor
+
+Ange rimliga utskriftsbredder, tillåt långa ord och kod att radbrytas och undvik element som kräver hovring. Tabeller behöver upprepningsbara rubriker och celler som kan delas eller skalas utan att bli oläsliga.
+
+Om din verkliga källa redan är en offentlig webbsida använder du [webbsida PDF-konverteraren](/sv/convert-webpage-to-pdf) i stället. Om det är en privat sida som visas i Chrome använder du [tillägget](/sv/chrome-extension/how-to-use).
+
+## Granska dokumentet, inte bara HTML-filen
+
+Kontrollera ersatta teckensnitt, saknade bilder, avklippta positionerade element, sidbrytningar och länkar. Jämför komplexa avsnitt med vägledningen om [skärmbild kontra redigerbar utdata](/sv/blog/visual-vs-editable).
+
+HTML 2 PDF är användbart när du kontrollerar indatafilen och vill ha isolerad dokumentrendering. Det är inte en slutpunkt för webbläsarautomation, en webbskrapa eller ett sätt att köra tillhandahållna skript.
+
+## Inventera varje beroende
+
+En HTML-fil berättar sällan hela historien. Layouten kan vara beroende av lokala formatmallar, webbteckensnitt, bilder, SVG-filer, skript eller fjärrresurser. Identifiera vilka resurser som är nödvändiga och hur de refereras. En fil som ser komplett ut i sitt ursprungliga projekt kan bli en ostylad textkolumn när den öppnas ensam.
+
+Föredra självständiga stilar och resurser som dokumentet får använda. Ersätt sökvägar som bara fungerar under utveckling och referenser till privata nätverk. Om en fjärrbild krävs kontrollerar du att den är tillgänglig utan en autentiserad webbläsarsession. En konverterare ska inte förväntas ärva arbetsstationens cookies eller filsystemslayout.
+
+Ta bort skript som hämtar användardata, analysinformation eller orelaterat applikationstillstånd. Statisk HTML avsedd för PDF behöver normalt mindre exekvering än den ursprungliga webbplatsen. Behåll endast beteende som krävs för att visa dokumentet och bekräfta att det slutliga innehållet inte beror på en timer eller användargest.
+
+## Gör utskriftsmåtten uttryckliga
+
+Webbläsarlayouter reagerar på en visningsyta, medan PDF-filer använder fasta sidmått. Definiera rimlig innehållsbredd, marginaler och typografi för avsedd pappersstorlek. Undvik att positionera huvuddokumentet med antaganden om visningsytans höjd eller lämna viktig text i horisontellt rullande behållare.
+
+Använd brytningsregler som ledtrådar runt rubriker, figurer, tabeller och kodblock och granska sedan resultatet. Regler kan krocka när ett element är högre än en sida. En stor tabell kan behöva upprepade rubriker eller liggande format; en hög visualisering kan behöva förbli en skalad bild.
+
+Mycket ljus text, genomskinliga lager och token som endast är avsedda för mörkt läge kan vara svåra att läsa i utskrift. Kontrollera själva PDF-filen i stället för att anta att webbläsarens förhandsvisning representerar varje läsare och skrivare.
+
+## Behandla uppladdad HTML som opålitliga indata
+
+Ladda endast upp filer som du har rätt att behandla och ta bort hemligheter som finns i kod, kommentarer, dataattribut eller infogade skript. Dolt innehåll kan fortfarande följa med källan även när det inte syns på den slutliga sidan.
+
+En renderare bör begränsa åtkomst till nätverk och lokala system, men teknisk isolering rättar inte osäkra innehållsval. Granska externa länkar, inbäddade formulär och genererade QR-koder före distribution. PDF-filen är statisk, men dess länkar kan fortfarande föra mottagaren bort från dokumentet.
+
+Jämför resultatet med en checklista över beroenden. Bekräfta teckensnitt, bilder, sidordning, rubriker, länkar och slutsidan. Om en resurs saknas rättar du HTML-paketet eller använder en offentlig URL som kan läsa in hela sidan.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Använd Current tab för renderat lokalt innehåll eller By URL för en tillåten offentlig sida."}
+  caption={"Använd Current tab för renderat lokalt innehåll eller By URL för en tillåten offentlig sida."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: använd Current tab för renderat lokalt innehåll eller By URL för en tillåten offentlig sida."}
+  src="/blog/instructions/html-to-pdf-safely/02.svg"
+  step={2}
+/>
+
+## Skilj författarrisker från renderingsrisker
+
+Författarrisker finns redan i filen: inbäddade hemligheter, dolda personuppgifter, vilseledande länkar och innehåll som du inte har rätt att distribuera. Renderingsrisker uppstår när aktiv HTML kan begära nätverksresurser, nå en oavsedd plats eller förbruka för mycket behandlingstid. Ett tillförlitligt arbetsflöde behöver kontroller för båda kategorierna.
+
+Granska källan före uppladdning när det är möjligt. Sök efter infogade skript, händelsehanterare, formulär, externa URL:er, lokala sökvägar och stora inbäddade resurser. Ta bort allt som inte hör till dokumentet. Det minskar tvetydigheten även när renderaren tillämpar egna begränsningar.
+
+Använd inte konvertering som ett sätt att avgöra om okänd HTML är säker. Om filen kommer från en opålitlig avsändare följer du först organisationens process för skadlig kod och dokumenthantering. Ett PDF-resultat gör inte indata ofarliga i efterhand.
+
+## Bygg förutsägbar HTML för sidindelning
+
+Använd en logisk rubrikhierarki och håll den huvudsakliga läsordningen i dokumentflödet. Absolut positionering kan vara användbar för ett omslag eller en etikett, men om den används för hela rapporten blir överflöde på fasta sidor svårt att diagnostisera. Ange uttryckliga bredder för tabeller och medier, lägg till rimliga maxmått och tillåt lång text att radbrytas.
+
+Utskrifts-CSS kan definiera marginaler, pappersstorlek och önskade brytningar, men reglerna är önskemål snarare än garantier. Ett element som är högre än en sida måste fortfarande skalas eller delas. Håll bildtexter nära figurer, upprepa tabellsammanhang där renderaren stöder det och lägg inte viktiga förklaringar enbart i hovringstillstånd eller pseudoelement.
+
+Teckensnitt behöver en reservstack. Ett fjärrinläst teckensnitt kanske inte är tillgängligt i en begränsad renderingsmiljö. Välj en reserv med liknande mått och kontrollera sedan rubriker, tabeller och kod för ändrad radbrytning. Det exakta teckensnittet är mindre viktigt än ett stabilt och läsbart resultat om inte typografin i sig är dokumentets ämne.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Välj PDF och ett output style när sidan är synligt stabil."}
+  caption={"Välj PDF och ett output style när sidan är synligt stabil."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: välj PDF och ett output style när sidan är synligt stabil."}
+  src="/blog/instructions/html-to-pdf-safely/03.svg"
+  step={3}
+/>
+
+## Granska resultatet som en ny artefakt
+
+Jämför PDF-filen med en innehållsinventering, inte bara webbläsarvyn av HTML-filen. Bekräfta att varje nödvändigt avsnitt visas en gång, att sidordningen är korrekt, att bilderna är aktuella och att länkar leder till godkända destinationer. Sök efter en fras nära början, mitten och slutet när markerbar text förväntas.
+
+Leta efter tecken på blockerade beroenden: tomma bildramar, reservteckensnitt, tomma diagram eller layoutluckor där en skriptgenererad komponent skulle ha visats. Rätta källpaketet eller acceptera en tydligt dokumenterad skärmbildsersättning. Dölj inte ett saknat element bara för att omgivande sidor renderades korrekt.
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Behandla skript-, nätverks- och filåtkomst som en separat säkerhetsgräns för renderaren."}
+  caption={"Behandla skript-, nätverks- och filåtkomst som en separat säkerhetsgräns för renderaren."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: behandla skript-, nätverks- och filåtkomst som en separat säkerhetsgräns för renderaren."}
+  src="/blog/instructions/html-to-pdf-safely/04.svg"
+  step={4}
+/>
+
+HTML 2 PDF presenteras som en GPT-app för en uppladdad HTML-fil och ett PDF-resultat. Det är inte en allmän webbplatsgenomsökare eller en exekveringsmiljö för applikationskod. Använd den offentliga URL-konverteraren för en offentlig webbsida och Chrome-tillägget för en behörig aktiv flik.
+
+Före distribution kontrollerar du filmetadata, synliga identifierare och klickbara mål. Den säkraste renderingen kan fortfarande innehålla information som författaren placerade i dokumentet. Behåll den godkända slutliga PDF-filen i din egen lagring eftersom Page 2 File inte erbjuder någon databas med konverteringshistorik.
+
+Jämför andra källkategorier i [guiden för webbplatser till PDF och PowerPoint](/sv/blog/website-types-to-pdf-or-powerpoint).
+
+<ArticleFigure
+  alt={"Webbläsare och tillägget Page 2 File: Granska de fasta PDF-sidorna och dokumentera saknade eller blockerade beroenden."}
+  caption={"Granska de fasta PDF-sidorna och dokumentera saknade eller blockerade beroenden."}
+  closeLabel={"Stäng bildförhandsvisningen"}
+  openLabel={"Öppna bilden i full storlek: granska de fasta PDF-sidorna och dokumentera saknade eller blockerade beroenden."}
+  src="/blog/instructions/html-to-pdf-safely/05.svg"
+  step={5}
+/>

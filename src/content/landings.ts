@@ -6,6 +6,30 @@ import { germanLandingContent } from "./german-landings";
 import { frenchLandingContent } from "./french-landings";
 import { germanLegalLandingContent } from "./german-legal-landings";
 import { frenchLegalLandingContent } from "./french-legal-landings";
+import { spanishLandingContent } from "./spanish-landings";
+import { dutchLandingContent } from "./dutch-landings";
+import { spanishLegalLandingContent } from "./spanish-legal-landings";
+import { dutchLegalLandingContent } from "./dutch-legal-landings";
+import { portugueseLandingContent } from "./portuguese-landings";
+import { italianLandingContent } from "./italian-landings";
+import { portugueseLegalLandingContent } from "./portuguese-legal-landings";
+import { italianLegalLandingContent } from "./italian-legal-landings";
+import { polishLandingContent } from "./polish-landings";
+import { czechLandingContent } from "./czech-landings";
+import { polishLegalLandingContent } from "./polish-legal-landings";
+import { czechLegalLandingContent } from "./czech-legal-landings";
+import { swedishLandingContent } from "./swedish-landings";
+import { norwegianLandingContent } from "./norwegian-landings";
+import { swedishLegalLandingContent } from "./swedish-legal-landings";
+import { norwegianLegalLandingContent } from "./norwegian-legal-landings";
+import { danishLandingContent } from "./danish-landings";
+import { finnishLandingContent } from "./finnish-landings";
+import { danishLegalLandingContent } from "./danish-legal-landings";
+import { finnishLegalLandingContent } from "./finnish-legal-landings";
+import { romanianLandingContent } from "./romanian-landings";
+import { hungarianLandingContent } from "./hungarian-landings";
+import { romanianLegalLandingContent } from "./romanian-legal-landings";
+import { hungarianLegalLandingContent } from "./hungarian-legal-landings";
 
 export type ContentSection = {
   id?: string;
@@ -488,18 +512,29 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
   },
 };
 
+const localizedLandingContent: Record<
+  Locale,
+  Partial<Record<StaticRoute, LandingContent>>
+> = {
+  en: landingContent,
+  ru: russianLandingContent,
+  de: { ...germanLandingContent, ...germanLegalLandingContent },
+  fr: { ...frenchLandingContent, ...frenchLegalLandingContent },
+  es: { ...spanishLandingContent, ...spanishLegalLandingContent },
+  nl: { ...dutchLandingContent, ...dutchLegalLandingContent },
+  pt: { ...portugueseLandingContent, ...portugueseLegalLandingContent },
+  it: { ...italianLandingContent, ...italianLegalLandingContent },
+  pl: { ...polishLandingContent, ...polishLegalLandingContent },
+  cs: { ...czechLandingContent, ...czechLegalLandingContent },
+  sv: { ...swedishLandingContent, ...swedishLegalLandingContent },
+  no: { ...norwegianLandingContent, ...norwegianLegalLandingContent },
+  da: { ...danishLandingContent, ...danishLegalLandingContent },
+  fi: { ...finnishLandingContent, ...finnishLegalLandingContent },
+  ro: { ...romanianLandingContent, ...romanianLegalLandingContent },
+  hu: { ...hungarianLandingContent, ...hungarianLegalLandingContent },
+};
+
 export const getLandingContent = (
   locale: Locale,
   route: StaticRoute,
-): LandingContent | null =>
-  (locale === "ru"
-    ? russianLandingContent[route]
-    : locale === "de"
-      ? germanLandingContent[route] ??
-        germanLegalLandingContent[route] ??
-        landingContent[route]
-      : locale === "fr"
-        ? frenchLandingContent[route] ??
-          frenchLegalLandingContent[route] ??
-          landingContent[route]
-        : landingContent[route]) ?? null;
+): LandingContent | null => localizedLandingContent[locale][route] ?? null;

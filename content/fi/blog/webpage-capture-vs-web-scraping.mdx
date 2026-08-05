@@ -1,0 +1,155 @@
+Verkkosivun kaappaus luo ihmisen luettavan asiakirjan. Web scraping poimii ohjelmiston käsiteltävää rakenteista dataa. Page 2 File on kaappaus- ja muunnostuote; se ei ole scraper-API, valvontaan tarkoitettu sivuston läpikäyntityökalu tai tietoputki.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Avaa edustava lähdesivu ja määritä vaadittu tulostesopimus."}
+  caption={"Avaa edustava lähdesivu ja määritä vaadittu tulostesopimus."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Avaa edustava lähdesivu ja määritä vaadittu tulostesopimus."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/01.svg"
+  step={1}
+/>
+
+Käytä Page 2 Filea, kun vaadittu tulos on näkyvän sisällön sekä tuetuissa kohdissa tekstin, kuvien ja linkkien säilyttävä PDF tai PowerPoint. Käytä scraping-työkalua, kun tarvitset rivejä, kenttiä, toistuvaa keruuta tai koneellisesti luettavaa tulostetta.
+
+## Mitä kaappaus säilyttää
+
+Kuvakaappaus tallentaa sommittelun, värit, kaavioiden sijainnin ja viestien ryhmittelyn. Muokattava muunnos rakentaa uudelleen tuettuja asiakirjaelementtejä. Molemmat alkavat hahmonnetusta selainsivusta ja tähtäävät ihmisen luettavaan tiedostoon.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Käytä Current tab- tai By URL -tilaa, kun toimitettava tulos on ihmisen luettava asiakirja."}
+  caption={"Käytä Current tab- tai By URL -tilaa, kun toimitettava tulos on ihmisen luettava asiakirja."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Käytä Current tab- tai By URL -tilaa, kun toimitettava tulos on ihmisen luettava asiakirja."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/02.svg"
+  step={2}
+/>
+
+[Verkkosivustotyyppien opas](/fi/blog/website-types-to-pdf-or-powerpoint) luettelee sopivat lähteet. Julkiset sivut käyttävät muunninta ja yksityiset aktiiviset välilehdet [laajennusta](/fi/chrome-extension/how-to-use).
+
+## Mihin scraping on rakennettu
+
+Scraperit tunnistavat valitsimia tai datan päätepisteitä, normalisoivat kenttiä ja toimivat usein toistuvasti. Ne voivat sivuttaa luetteloita, valvoa hintoja tai syöttää tietokantaa. Tehtävät vaativat täsmälliset nopeusrajat, muutosten käsittelyn, kaksoiskappaleiden poiston ja oikeusperustan.
+
+Tuoteruudukon PDF ei ole hintatietoaineisto. Hallintanäkymän visuaalinen kopio ei ole sen taustalla oleva mittarirajapinta. Asiakirjakaappauksen kutsuminen scrapingiksi asettaisi väärän odotuksen.
+
+## Valitse tulostesopimuksen mukaan
+
+Jos työtoverin täytyy lukea, lainata, tulostaa tai esittää lähdettä, kaappaus sopii. Jos ohjelmiston täytyy lajitella, koota tai päivittää lähdettä automaattisesti, rakenteinen poiminta sopii.
+
+Aloita yhdestä luettavasta sivusta oppaalla [verkkosivu PDF:ksi](/fi/blog/save-webpage-as-pdf). Tarkista rajattua sivustokokoelmaa varten [monisivuinen verkkosivusto PDF:ksi](/fi/blog/multi-page-website-to-pdf).
+
+## Kunnioita lähdettä kummallakin tavalla
+
+Käyttöoikeus, tekijänoikeus, henkilötiedot ja alustan ehdot koskevat kumpaakin menetelmää. Kirjautuminen ei anna lupaa jakaa kaikkea sen jälkeen näkyvää. Automaattisella keruulla on myös toiminnallisia vaikutuksia lähdepalveluun.
+
+Page 2 File ei ohita todennusta eikä paljasta piilotettua sivudataa. Se muuntaa sallitun hahmonnetun sisällön käyttäjän nimenomaisen toiminnon jälkeen.
+
+## Vertaa tulostesopimuksia
+
+Kaappaus tuottaa ihmisille tarkoitetun asiakirjan tai diaesityksen. Sen onnistumiskriteereihin kuuluvat visuaalinen jatkuvuus, lukujärjestys, sivurajat, linkit ja lähdekonteksti. Tulos on tarkoitettu lukemiseen, esittämiseen tai tallentamiseen.
+
+Scraping tuottaa kenttiä, tietueita tai raakasisältöä ohjelmistolle. Sen onnistumiskriteereihin kuuluvat skeeman vakaus, tunnisteet, kaksoiskappaleiden poisto, sivutuksen käsittely ja koneellisesti luettavat virheet. Kaunis PDF on huono API-vastaus, eikä JSON-aineisto ole uskollinen visuaalinen tallenne.
+
+Kirjoita haluttu tuloste ennen menetelmän valintaa. Jos vaatimus kuuluu ”näytä täsmälleen, mitä hallintanäkymä näytti tänä päivänä”, kaappaus sopii. Jos se kuuluu ”kerää jokaisen tuotteen hinta päivittäin”, kyseessä on datan poiminta- ja valvontaongelma.
+
+## Ymmärrä dynaamisten sivujen rajat
+
+Molemmat menetelmät kohtaavat viiveellä latauksen, virtualisoinnin ja todennuksen mutta käsittelevät niitä eri tavoin. Kaappaus vaatii tarvittavan tilan näkyvää hahmontamista. Scraper voi kutsua valtuutettua API:a tai jäsentää lähdedataa toistamatta visuaalista käyttöliittymää.
+
+Chrome-laajennus voi kaapata aktiivisen kirjautuneen välilehden käyttäjän avaamisen jälkeen. Tämä ei paljasta piilotettuja sovellustietueita eikä luo yleistä läpikäyntitunnusta. Todennettujen järjestelmien automaattinen scraping tarvitsee nimenomaisen valtuutuksen, turvallisen tunnistetietojen käsittelyn ja erillisen toimintasuunnittelun.
+
+Vuorovaikutteiset kaaviot havainnollistavat eroa. Kaappaus voi tallentaa valitun kaaviotilan visuaalisena. Scraping vaatisi pääsyn taustalla oleviin arvoihin ja niitä selittävän skeeman. Page 2 File ei lupaa tätä poimintaa.
+
+## Arvioi ylläpito ja riski
+
+Kaappaustyönkulku muuttuu asettelun, sivutuksen tai hahmonnustoiminnan muuttuessa. Scraping-työnkulku muuttuu merkintäkielen, API:en, skeemojen, nopeusrajojen tai automaation estojen muuttuessa. Kumpikaan ei ole ylläpitovapaa, mutta virhetilat ovat erilaisia.
+
+Laajamittainen scraping voi vaikuttaa lähdeinfrastruktuuriin ja vaatia pyyntöjen rajoittamista, uudelleenyrityskäytäntöä, robots-ohjeiden käsittelyä ja oikeudellista tarkistusta. Manuaalinen tai nimenomainen kaappaus vaatii silti luvan, tekijänoikeusarvion ja henkilötietojen suojaamisen.
+
+Vältä vastuun peittäviä yhdistelmäväitteitä. Selaimen käyttäminen ei tee scraperista asiakirjamuunninta, eikä muokattavan muunnoksen valitseminen tee Page 2 Filesta rakenteisen datan palvelua.
+
+## Valitse tarkistusmenetelmä
+
+Tarkista kaappaus vertaamalla PDF:ää tai PPTX:ää näkyvään lähdetilaan. Tarkista täydellisyys, luettavuus, linkit ja yksityisyys. Tarkista scraping validoimalla kentät skeemaa vasten, ottamalla näytteitä lähdetietueista ja valvomalla poimintavirheitä.
+
+Jos projekti tarvitsee molemmat, pidä toimitettavat tulokset erillään. Käytä valtuutettua datalähdettä analyysiin ja kaappausta visuaaliseen näyttöön ja kirjaa, miten kumpikin tuotettiin. Älä päättele konedataa kuvakaappauksista, kun tarkat arvot ovat tärkeitä.
+
+Valinta selkenee, kun hyväksyntäkriteerit kirjoitetaan vastaanottajan mukaan: ihminen lukee tai esittää kaapatun asiakirjan, ohjelmisto käsittelee scrapetut tietueet.
+
+## Vertaa edustavia tehtäviä
+
+Valitun hallintanäkymän tilan visuaalisen tallenteen tarvitseva analyytikko tarvitsee kaappausta. PDF:n tulee säilyttää suodattimet, nimet, kaaviokonteksti ja kaappausaika. Jokaisen tausta-arvon laskentaan tarvitseva analyytikko tarvitsee valtuutetun API:n tai määritellyn skeeman sisältävän poimintatyönkulun.
+
+Yhtä artikkelia arkistoiva tutkija voi tarvita haettavaa tekstiä, viitteitä ja sivun alkuperätietoja. Tuhansia artikkeliotsikoita seuraava tiimi tarvitsee rakenteisia tietueita, kaksoiskappaleiden poistoa ja päivityslogiikkaa. Julkista tuotesivua esittävä myyntitiimi voi tarvita PPTX-dioja; hintavalvonta tarvitsee normalisoituja kenttiä ja ajoitettua keruuta.
+
+Tekoälykeskustelut ja selainviestinten keskustelut noudattavat samaa eroa. Page 2 File voi luoda luettavan asiakirjan aktiivisella välilehdellä hahmonnetuista valtuutetuista viesteistä. Se ei paljasta piilotettua tilihistoriaa, viestirajapintoja tai rakenteista keskusteluaineistoa.
+
+## Kysy toiminnalliset kysymykset ennen scrapingin valintaa
+
+Rakenteinen poiminta vaatii muutakin kuin valitsimien valitsemisen. Määritä lupa, pyyntömäärä, nopeusrajat, todennus, skeeman omistajuus, säilytys ja virheiden havaitseminen. Päätä, mitä tapahtuu kentän kadotessa, sivun vaihtaessa kieltä tai lähteen palauttaessa useita versioita.
+
+Suosi virallista API:a tai tuettua vientiä, kun se tarjoaa vaaditut tiedot. Jos scraping on valtuutettua ja tarpeellista, käytä koneellisesti luettavaan tulosteeseen ja toiminnallisiin hallintakeinoihin suunniteltua järjestelmää. Page 2 Filea ei pidä käyttää kuvan ja datan välisenä oikotienä.
+
+Kaappauksella on oma valmistelunsa: vakauta näkyvä tila, määritä raja, valitse kuvakaappaus- tai muokattava tuloste ja tarkista esikatselu. Sen toiminnallinen laajuus on pienempi, koska tulos on asiakirja, mutta tekijänoikeus, henkilötiedot ja jakeluluvat pätevät edelleen.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Valitse output style uskollisuus-, haku- ja linkkivaatimusten mukaan."}
+  caption={"Valitse output style uskollisuus-, haku- ja linkkivaatimusten mukaan."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Valitse output style uskollisuus-, haku- ja linkkivaatimusten mukaan."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/03.svg"
+  step={3}
+/>
+
+## Vältä harhaanjohtavia yhdistelmätyönkulkuja
+
+Optinen merkkien tunnistus tai tekstin kopiointi PDF:stä voi auttaa saavutettavuudessa tai lainaamisessa, mutta se ei muuta tiedostoa luotettavaksi lähdetietokannaksi. Asettelu, toistuvat otsakkeet ja kuvakaappausvararatkaisut voivat tuoda puuttuvia tai päällekkäisiä arvoja.
+
+Vastaavasti scraper voi tallentaa kuvakaappauksia virheenkorjausta varten tuottamatta toimituksellisesti tarkistettua asiakirjaa. Jos projekti tarvitsee rakenteista dataa ja visuaalista näyttöä, muodosta ja validoi kumpikin artefakti omalla asianmukaisella työnkulullaan ja yhdistä ne lähdetunnisteilla sekä kaappauspäivillä.
+
+Älä kuvaa muokattavaa verkkosivumuunnosta scrapingiksi. Tuetusta tekstistä, kuvista ja linkeistä tulee asiakirjaelementtejä lukemista ja muokkaamista varten, ei vakaan skeeman normalisoituja kenttiä tai toistuvan keruun sopimusta.
+
+## Käytä erilaisia hyväksyntäkriteereitä
+
+Täsmäytä kaappausasiakirja näkyvään lähderunkoon. Tarkista alku- ja loppurajat, lukujärjestys, luettavuus, linkit, vararatkaisut ja yksityiset tiedot. Kirjaa lähteen tila ja päivämäärä, kun alkuperällä on merkitystä.
+
+Validoi scrapingissa vaaditut kentät, tietotyypit, yksilölliset tunnisteet, sivutuksen kattavuus, kaksoiskappaleiden käsittely ja virheet määritystä vasten. Vertaa otostietueita arvovaltaiseen lähteeseen ja valvo muutoksia ajan kuluessa. Pelkkä rivimäärä ei todista oikeellisuutta.
+
+Jos molemmat tulokset tuotetaan, älä oleta toisen validoivan automaattisesti toista. Kuvakaappaus voi näyttää otostietueen asiayhteyden, mutta se voi kuvata eri aikaa, suodatinta tai istuntoa. Säilytä rajat tarkistustallenteessa.
+
+## Päätä kirjallisella tulostesopimuksella
+
+Kirjoita yksi virke, joka nimeää vastaanottajan ja artefaktin. ”Tarkistaja tarvitsee PDF:n tästä valtuutetusta hallintanäkymän tilasta” osoittaa kaappaukseen. ”Sovelluksemme tarvitsee päivittäiset tuotehinnat tietueina” osoittaa valtuutettuun datalähteeseen tai scraping-järjestelmään. ”Esittäjä tarvitsee muokattavat diat tästä raportista” osoittaa verkkosivun PowerPoint-muunnokseen.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Tarkista PDF tai PPTX hahmonnettuna viestintäartefaktina."}
+  caption={"Tarkista PDF tai PPTX hahmonnettuna viestintäartefaktina."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Tarkista PDF tai PPTX hahmonnettuna viestintäartefaktina."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/04.svg"
+  step={4}
+/>
+
+Luettele sitten poisrajaukset. Page 2 File ei tarjoa läpikäyntirajapintaa, valvonta-aikataulua, rakenteista poimintaa tai pääsyä piilotettuun dataan. Scraper ei itsessään tarjoa luettavaa, sivutettua tai esitysvalmista esitystä lähteestä.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Käytä valtuutettua datajärjestelmää, kun toimitettava tulos on rakenteisia tietueita."}
+  caption={"Käytä valtuutettua datajärjestelmää, kun toimitettava tulos on rakenteisia tietueita."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Käytä valtuutettua datajärjestelmää, kun toimitettava tulos on rakenteisia tietueita."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/05.svg"
+  step={5}
+/>
+
+Selkeä sopimus helpottaa myös yhdistelmäprojektien rajaamista. Kaappaus ja scraping voivat esiintyä rinnakkain, mutta ne pysyvät erillisinä järjestelminä, joilla on eri riskit, ylläpito ja näyttö.
+
+Arvioi sopimus uudelleen toimitettavan tuloksen muuttuessa. Esityksenä alkanut pyyntö voi myöhemmin muuttua toistuvaksi tietoaineistoksi, mikä vaatii uuden valtuutetun datatyönkulun eikä toistuvaa asiakirjamuunnosta.
+
+<ArticleFigure
+  alt={"Selain ja Page 2 File -laajennus: Älä käsittele Page 2 Filea sivuston läpikäyntityökaluna, valvontapalveluna tai piilotetun datan rajapintana."}
+  caption={"Älä käsittele Page 2 Filea sivuston läpikäyntityökaluna, valvontapalveluna tai piilotetun datan rajapintana."}
+  closeLabel={"Sulje kuvan esikatselu"}
+  openLabel={"Avaa kuva täysikokoisena: Älä käsittele Page 2 Filea sivuston läpikäyntityökaluna, valvontapalveluna tai piilotetun datan rajapintana."}
+  src="/blog/instructions/webpage-capture-vs-web-scraping/06.svg"
+  step={6}
+/>
