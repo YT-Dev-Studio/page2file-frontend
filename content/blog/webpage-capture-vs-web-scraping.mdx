@@ -54,7 +54,7 @@ Write the desired output before choosing a method. If the requirement says “sh
 
 ## Understand dynamic-page limits
 
-Both approaches face lazy loading, virtualization and authentication, but they handle them differently. Capture requires the needed state to be visibly rendered. A scraper may call an authorized API or parse source data without reproducing the visual interface.
+Both approaches must handle content that appears only after scrolling, pages that replace off-screen items, and signed-in access. Page capture needs the required content to be visibly displayed. A data-extraction tool may use an authorized API or read structured source information without reproducing the visual interface.
 
 A Chrome extension can capture an active signed-in tab after the user opens it. That does not expose hidden application records or create a general crawling credential. Automated scraping of authenticated systems needs explicit authorization, secure credential handling and a separate operational design.
 

@@ -26,7 +26,7 @@ export const germanLandingContent: Partial<
     title: "Webpage to PDF Converter — Web2File",
     displayTitle: "GPT: Webpage 2 PDF",
     description:
-      "Webpage to PDF Converter — Web2File konvertiert genaue öffentliche Webseiten-URLs und verarbeitet hochgeladene Webseiten-PDFs oder Screenshots zu getrennten Visual PDF- oder Interactive PDF-Dateien.",
+      "Webpage to PDF Converter — Web2File verarbeitet genaue öffentliche URLs, Webseiten-PDFs und Screenshots als Visual PDF oder Interactive PDF.",
     lead:
       "Geben Sie eine genaue öffentliche URL, eine Liste genauer URLs, ein Webseiten-PDF oder ganzseitige beziehungsweise aufeinanderfolgende Screenshots an. Wählen Sie Visual PDF, um die Website als Seitenaufnahmen zu speichern, oder Interactive PDF für auswählbaren Text und anklickbare Links.",
     sections: [
@@ -146,7 +146,7 @@ export const germanLandingContent: Partial<
     eyebrow: "AI-Chat-Export",
     title: "Unterhaltung aus dem aktiven Tab exportieren",
     description:
-      "Exportieren Sie unterstützte ChatGPT-, Claude-, Gemini- und Grok-Unterhaltungen mit der Page 2 File Erweiterung, einer temporären Vorschau und ohne Konvertierungsverlauf als PDF.",
+      "Exportieren Sie unterstützte ChatGPT-, Claude-, Gemini- und Grok-Chats aus dem aktiven Browser-Tab als PDF, mit temporärer Vorschau und ohne Verlauf.",
     lead:
       "Wählen Sie das ursprüngliche Erscheinungsbild oder ein ruhiges Lesedokument. Die Page 2 File Erweiterung exportiert den Chat aus dem aktiven Browser-Tab.",
     sections: [
@@ -174,7 +174,7 @@ export const germanLandingContent: Partial<
     sections: [
       { heading: "Was erhalten bleibt", body: "Nachrichten, Sprecherreihenfolge, Codeblöcke, Tabellen und sichtbare Links werden in der Vorschau abgebildet." },
       { heading: "Zwei Lesestile", body: "Behalten Sie den ursprünglichen visuellen Rhythmus bei oder wählen Sie ein ruhigeres Dokument zum Lesen und Drucken." },
-      { heading: "Plattformspezifische Grenzen", body: "Eingeklappte Zweige, nicht geladene Nachrichten und Inhalte außerhalb des DOM müssen möglicherweise vor der Erfassung gescrollt oder geöffnet werden." },
+      { heading: "Plattformspezifische Grenzen", body: "Eingeklappte Zweige, nicht geladene Nachrichten und noch nicht vom Browser geladene Inhalte müssen möglicherweise vor der Erfassung gescrollt oder geöffnet werden." },
       { heading: "Keine offizielle Verbindung", body: "Page 2 File ist ein unabhängiges Exportwerkzeug und wird weder von OpenAI noch von ChatGPT unterstützt oder betrieben." },
     ],
     externalLinkKey: "chromeExtension",
@@ -216,7 +216,7 @@ export const germanLandingContent: Partial<
       "Prüfen Sie die Darstellung von Quellenkarten und sichtbaren Bildern, bevor Sie ein übersichtliches oder visuell treues Dokument erstellen.",
     sections: [
       { heading: "Quellen bleiben nützlich", body: "Sichtbare Quellenangaben und Quellenlinks bleiben anklickbar, wenn ihre Ziele sicher sind." },
-      { heading: "Bilder folgen dem DOM", body: "Nur Medien, die der aktiven Seite zur Verfügung stehen, können in der temporären Vorschau erscheinen." },
+      { heading: "Bilder folgen der geladenen Seite", body: "Nur Medien, die der aktiven Seite zur Verfügung stehen, können in der temporären Vorschau erscheinen." },
       { heading: "Keine offizielle Verbindung", body: "Page 2 File ist unabhängig und kein Produkt von Google oder Gemini." },
     ],
     externalLinkKey: "chromeExtension",

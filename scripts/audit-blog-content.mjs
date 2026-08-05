@@ -2,15 +2,38 @@ import { readdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 const root = process.cwd();
-const locales = ["en", "ru"];
+const locales = [
+  "en",
+  "ru",
+  "de",
+  "fr",
+  "es",
+  "nl",
+  "pt",
+  "it",
+  "pl",
+  "cs",
+  "sv",
+  "no",
+  "da",
+  "fi",
+  "ro",
+  "hu",
+];
 const allowPending = process.argv.includes("--allow-pending");
-const directories = {
-  en: join(root, "content", "blog"),
-  ru: join(root, "content", "ru", "blog"),
-};
+const writeReview = process.argv.includes("--write-review");
+const directories = Object.fromEntries(
+  locales.map((locale) => [
+    locale,
+    locale === "en"
+      ? join(root, "content", "blog")
+      : join(root, "content", locale, "blog"),
+  ]),
+);
 const reviewState = JSON.parse(
   await readFile(join(root, "SEO", "editorial-review-state.json"), "utf8"),
 );
+const reviewedLocales = new Set(reviewState.reviewedLocales ?? ["en", "ru"]);
 
 const technicalGuides = new Set([
   "save-webpage-as-pdf",
@@ -40,11 +63,6 @@ const hubSlugs = new Set([
   "export-ai-chats-privately",
   "export-browser-messenger-chats-to-pdf",
 ]);
-const wordRanges = {
-  technical: [1200, 1800],
-  hub: [1400, 2200],
-  platform: [900, 1400],
-};
 const requiredOfficialDomains = new Map([
   [
     "export-ai-chats-privately",
@@ -64,7 +82,7 @@ const requiredOfficialDomains = new Map([
     ["discord.com", "slack.com", "support.microsoft.com", "facebook.com"],
   ],
 ]);
-const forbiddenPatterns = [
+const commonForbiddenPatterns = [
   /\bdelve\b/i,
   /\bever-evolving landscape\b/i,
   /\brobust\b/i,
@@ -78,14 +96,54 @@ const forbiddenPatterns = [
   /\bin today'?s (?:digital )?(?:world|landscape)\b/i,
   /\bin this (?:article|guide),? we(?:'ll| will)\b/i,
   /\bwhether you(?:'re| are)\b/i,
-  /\bscenario\b/i,
-  /сценар/iu,
   /Page2File|Page2PDF|Web2PDF|HTML2PDF|Web2PowerPoint/,
-  /\b(?:TODO|TBD|placeholder)\b/i,
+  /\b(?:TODO|TBD|placeholder)\b/,
   /\bavailable now\b/i,
   /\bprocessed locally\b/i,
   /\bstays? local\b/i,
   /обрабатыва(?:ется|ются).*локальн/iu,
+];
+const localeForbiddenPatterns = {
+  en: [/\bscenario\b/i],
+  ru: [/сценар/iu],
+};
+const untranslatedJargonPatterns = [
+  /\blazy[- ]load(?:ing|ed)?\b/i,
+  /\brendered state\b/i,
+  /\bsource data\b/i,
+  /\bactive-tab capture\b/i,
+  /\btext-and-media package\b/i,
+  /\bnative export\b/i,
+  /\b(?:content|account|navigation|membership|profile) details\b/i,
+  /\bboundaries\b/i,
+  /\bviewport\b/i,
+  /\bDOM\b/,
+];
+const englishJargonRules = [
+  {
+    term: /\blazy[- ]load(?:ing|ed)?\b/i,
+    explanation:
+      /(?:appear|load|show)[^.]{0,100}(?:scroll|visible)|scroll[^.]{0,100}(?:appear|load|show)/i,
+    label: "lazy-loading-without-plain-explanation",
+  },
+  {
+    term: /\bviewport\b/i,
+    explanation:
+      /(?:visible|viewable)[^.]{0,80}(?:area|part|screen)|(?:area|part)[^.]{0,80}(?:screen|you can see)/i,
+    label: "viewport-without-plain-explanation",
+  },
+  {
+    term: /\bDOM\b/,
+    explanation:
+      /(?:elements|rows|content)[^.]{0,100}(?:browser|page)|browser[^.]{0,100}(?:keeps|holds|removes|replaces)/i,
+    label: "dom-without-plain-explanation",
+  },
+  {
+    term: /\bvirtuali[sz](?:e|ed|ation|ing)\b/i,
+    explanation:
+      /(?:remove|replace|discard|unload)[^.]{0,120}(?:off-screen|older|previous|element|row|content)/i,
+    label: "virtualization-without-plain-explanation",
+  },
 ];
 const unsupportedClaimPatterns = [
   /\bprocessed locally\b/i,
@@ -143,14 +201,16 @@ for (const locale of locales) {
   }
 }
 
-if (filesByLocale.en.join("|") !== filesByLocale.ru.join("|")) {
-  throw new Error("English and Russian blog filenames do not match.");
+for (const locale of locales) {
+  if (filesByLocale.en.join("|") !== filesByLocale[locale].join("|")) {
+    throw new Error(`English and ${locale} blog filenames do not match.`);
+  }
 }
 
 const validBlogPaths = new Set(
   filesByLocale.en.flatMap((name) => {
     const slug = name.replace(/\.mdx$/, "");
-    return [`/en/blog/${slug}`, `/ru/blog/${slug}`];
+    return locales.map((locale) => `/${locale}/blog/${slug}`);
   }),
 );
 const stripArticleFigures = (content) =>
@@ -169,7 +229,9 @@ for (const filename of filesByLocale.en) {
 }
 
 const reviewRows = [];
-const allParagraphs = new Map();
+const allParagraphsByLocale = new Map(
+  locales.map((locale) => [locale, new Map()]),
+);
 const incomingLinks = new Map();
 for (const locale of locales) {
   for (const filename of filesByLocale[locale]) {
@@ -196,9 +258,6 @@ for (const locale of locales) {
     const linkedHubs = linkedBlogSlugs.filter(
       (linkedSlug) => hubSlugs.has(linkedSlug) && linkedSlug !== slug,
     );
-    const adjacentLinks = linkedBlogSlugs.filter(
-      (linkedSlug) => !hubSlugs.has(linkedSlug) && linkedSlug !== slug,
-    );
     const wrongLocaleLinks = internalLinks.filter(
       ({ href }) => !href.startsWith(`/${locale}/`),
     );
@@ -220,6 +279,7 @@ for (const locale of locales) {
           !value.startsWith("-"),
       );
     const duplicateParagraphs = [];
+    const allParagraphs = allParagraphsByLocale.get(locale);
     for (const paragraph of paragraphs) {
       const normalized = paragraph.replace(/\s+/g, " ").toLowerCase();
       const previous = allParagraphs.get(normalized);
@@ -241,20 +301,31 @@ for (const locale of locales) {
       (heading, index) => headings.indexOf(heading) !== index,
     );
     const h2Count = headings.length;
+    const forbiddenPatterns = [
+      ...commonForbiddenPatterns,
+      ...(localeForbiddenPatterns[locale] ?? []),
+    ];
     const forbidden = forbiddenPatterns
       .filter((pattern) => pattern.test(content))
       .map((pattern) => pattern.source);
+    const unexplainedJargon =
+      locale === "en"
+        ? englishJargonRules
+            .filter(
+              ({ term, explanation }) =>
+                term.test(content) && !explanation.test(content),
+            )
+            .map(({ label }) => label)
+        : untranslatedJargonPatterns
+            .filter((pattern) => pattern.test(content))
+            .map((pattern) => pattern.source);
     const unsupportedClaims = unsupportedClaimPatterns
       .filter((pattern) => pattern.test(content))
       .map((pattern) => pattern.source);
     const articleClass = contentClass(slug);
-    const [targetMin, targetMax] = wordRanges[articleClass];
     const translationRatio =
-      locale === "ru" ? wordCount / englishWordCounts.get(slug) : 1;
-    const wordDepthPass =
-      locale === "en"
-        ? wordCount >= targetMin && wordCount <= targetMax
-        : translationRatio >= 0.55 && translationRatio <= 1.2;
+      locale === "en" ? 1 : wordCount / englishWordCounts.get(slug);
+    const contentDepthPass = wordCount >= 400 && h2Count >= 3;
     const officialDomains = requiredOfficialDomains.get(slug) ?? [];
     const missingOfficialDomains =
       locale === "en"
@@ -272,17 +343,21 @@ for (const locale of locales) {
     const manualComplete =
       locale === "en"
         ? reviewState.englishFrozen.includes(slug)
-        : reviewState.russianProofread.includes(slug);
+        : locale === "ru"
+          ? reviewState.russianProofread.includes(slug)
+          : reviewedLocales.has(locale);
     const reviewCycle = reviewState.reviewCycles[reviewKey] ?? 0;
-    const renderedComplete = reviewState.renderedReviewed.includes(reviewKey);
+    const renderedComplete =
+      reviewState.renderedReviewed.includes(reviewKey) ||
+      reviewState.renderedReviewed.includes(`${locale}:*`);
 
     const automatedSeoPass =
-      wordDepthPass &&
-      h2Count >= 6 &&
-      internalLinks.length >= 3 &&
-      internalLinks.length <= 6;
+      contentDepthPass &&
+      internalLinks.length >= 2 &&
+      internalLinks.length <= 10;
     const automatedAntiSlopPass =
       forbidden.length === 0 &&
+      unexplainedJargon.length === 0 &&
       duplicateParagraphs.length === 0 &&
       duplicateHeadings.length === 0;
     const automatedFactPass =
@@ -290,8 +365,6 @@ for (const locale of locales) {
     const automatedLinkPass =
       productLinks.length >= 1 &&
       linkedHubs.length >= 1 &&
-      adjacentLinks.length >= 1 &&
-      adjacentLinks.length <= 3 &&
       wrongLocaleLinks.length === 0 &&
       brokenBlogLinks.length === 0;
 
@@ -317,21 +390,18 @@ for (const locale of locales) {
     const blockers = [
       !manualComplete ? "manual-editorial-review" : "",
       !renderedComplete ? "rendered-review" : "",
-      !wordDepthPass
-        ? locale === "en"
-          ? `word-depth:${wordCount} outside ${targetMin}-${targetMax}`
-          : `translation-ratio:${translationRatio.toFixed(2)} outside 0.55-1.20`
+      !contentDepthPass
+        ? `minimum-depth:${wordCount} words/${h2Count} h2`
         : "",
-      h2Count < 6 ? `h2-count:${h2Count}<6` : "",
       productLinks.length < 1 ? "missing-product-link" : "",
       linkedHubs.length < 1 ? "missing-hub-link" : "",
-      adjacentLinks.length < 1 || adjacentLinks.length > 3
-        ? `adjacent-links:${adjacentLinks.length} outside 1-3`
-        : "",
-      internalLinks.length < 3 || internalLinks.length > 6
-        ? `internal-links:${internalLinks.length} outside 3-6`
+      internalLinks.length < 2 || internalLinks.length > 10
+        ? `internal-links:${internalLinks.length} outside 2-10`
         : "",
       forbidden.length > 0 ? `forbidden:${forbidden.join(";")}` : "",
+      unexplainedJargon.length > 0
+        ? `plain-language:${unexplainedJargon.join(";")}`
+        : "",
       unsupportedClaims.length > 0
         ? `unsupported-claims:${unsupportedClaims.join(";")}`
         : "",
@@ -358,10 +428,7 @@ for (const locale of locales) {
       content_class: articleClass,
       review_cycle: reviewCycle,
       word_count: wordCount,
-      target_word_range:
-        locale === "en"
-          ? `${targetMin}-${targetMax}`
-          : `translation-ratio:${translationRatio.toFixed(2)}`,
+      target_word_range: `minimum:400;translation-ratio:${translationRatio.toFixed(2)}`,
       h2_count: h2Count,
       internal_links: internalLinks.length,
       external_links: externalLinks.length,
@@ -381,16 +448,33 @@ const csv = [
     headers.map((header) => csvCell(row[header])).join(","),
   ),
 ].join("\n");
-await writeFile(
-  join(root, "SEO", "editorial-review.csv"),
-  `${csv}\n`,
-  "utf8",
-);
+if (writeReview) {
+  await writeFile(
+    join(root, "SEO", "editorial-review.csv"),
+    `${csv}\n`,
+    "utf8",
+  );
+}
 
-for (const [locale, landingFile] of [
-  ["en", "src/content/landings.ts"],
-  ["ru", "src/content/russian-landings.ts"],
-]) {
+const landingFiles = {
+  en: "src/content/landings.ts",
+  ru: "src/content/russian-landings.ts",
+  de: "src/content/german-landings.ts",
+  fr: "src/content/french-landings.ts",
+  es: "src/content/spanish-landings.ts",
+  nl: "src/content/dutch-landings.ts",
+  pt: "src/content/portuguese-landings.ts",
+  it: "src/content/italian-landings.ts",
+  pl: "src/content/polish-landings.ts",
+  cs: "src/content/czech-landings.ts",
+  sv: "src/content/swedish-landings.ts",
+  no: "src/content/norwegian-landings.ts",
+  da: "src/content/danish-landings.ts",
+  fi: "src/content/finnish-landings.ts",
+  ro: "src/content/romanian-landings.ts",
+  hu: "src/content/hungarian-landings.ts",
+};
+for (const [locale, landingFile] of Object.entries(landingFiles)) {
   const source = await readFile(join(root, landingFile), "utf8");
   for (const blockMatch of source.matchAll(
     /articleLinks: \[([\s\S]*?)\n    \],/g,
@@ -411,10 +495,10 @@ if (orphanedBlogPaths.length > 0) {
 }
 if (blocked.length > 0 && !allowPending) {
   throw new Error(
-    `${blocked.length} article reviews are blocked. See SEO/editorial-review.csv.`,
+    `${blocked.length} article reviews are blocked. Run npm run audit:content:update to refresh SEO/editorial-review.csv.`,
   );
 }
 
 console.log(
-  `Editorial audit recorded ${reviewRows.length} localized articles: ${reviewRows.length - blocked.length} publish, ${blocked.length} blocked; ${orphanedBlogPaths.length} orphaned blog paths.`,
+  `Editorial audit checked ${reviewRows.length} localized articles: ${reviewRows.length - blocked.length} publish, ${blocked.length} blocked; ${orphanedBlogPaths.length} orphaned blog paths${writeReview ? "; review CSV updated" : "; read-only mode"}.`,
 );

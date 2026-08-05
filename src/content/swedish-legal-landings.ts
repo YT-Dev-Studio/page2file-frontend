@@ -33,7 +33,7 @@ export const swedishLegalLandingContent: Partial<Record<StaticRoute, LandingCont
   terms: {
     route: "terms",
     eyebrow: "Tjänsteavtal",
-    title: "Användarvillkor",
+    title: "Villkor för Page 2 File",
     description: "Villkor för användning av Page 2 File, inklusive tillåtna källor, begränsningar, ansvar och tillgänglighet.",
     lead: "Dessa Villkor styr användningen av Page 2 File-webbplatsen, Chrome-tillägget och tjänsterna för konvertering till PDF eller PowerPoint.",
     sections: [

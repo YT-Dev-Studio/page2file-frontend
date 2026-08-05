@@ -58,7 +58,7 @@ Hvis målet er udtræk af strukturerede data, overvågning eller et API-feed, er
 
 ## Lange og dynamiske sider
 
-Lange artikler, tidslinjer, katalogsider og uendelige feeds kræver et defineret slutpunkt. Indlæs lazy-loadede billeder og udvidet indhold, og bekræft derefter, at tidligere sektioner forbliver til stede. Virtualiserede grænseflader kan erstatte elementer uden for skærmen, så rullebjælkens længde beviser ikke i sig selv, at hele kilden kan optages.
+Lange artikler, tidslinjer, katalogsider og uendelige feeds kræver et defineret slutpunkt. Indlæs billeder, der først hentes, når du ruller og udvidet indhold, og bekræft derefter, at tidligere sektioner forbliver til stede. Virtualiserede grænseflader kan erstatte elementer uden for skærmen, så rullebjælkens længde beviser ikke i sig selv, at hele kilden kan optages.
 
 PDF passer normalt til lineær læsning, mens PowerPoint kræver stærkere sektionsgrænser. En lang side, der fungerer godt som PDF, kan kræve betydelig redaktionel udvælgelse, før den bliver til et brugbart deck.
 
@@ -82,7 +82,7 @@ Oprindelige desktop- eller mobilprogrammer ligger uden for en Chrome-udvidelses 
 
 Page 2 File leverer heller ikke udtræk af strukturerede data, overvågning, ændringsregistrering eller en crawling-API. En datapipeline bør bruge en godkendt API eller et scrapingsystem, der er designet til maskinlæsbart output.
 
-Endelig forhindrer nogle websites bevidst gengivelse, udelader indhold fra den gengivne DOM eller kræver interaktioner, der ikke kan repræsenteres i en statisk fil. Bevar begrænsningen i overdragelsen i stedet for at påstå en komplet eksport.
+Endelig forhindrer nogle websites bevidst gengivelse, udelader indhold fra den gengivne sidestrukturen i browseren eller kræver interaktioner, der ikke kan repræsenteres i en statisk fil. Bevar begrænsningen i overdragelsen i stedet for at påstå en komplet eksport.
 
 ## Brug en godkendelsesregistrering for kilden
 
@@ -102,7 +102,7 @@ En kilde kan understøtte begge outputs til forskellige modtagere. Bevar separat
 
 ## Forbered dynamiske og godkendte kilder
 
-Vælg den præcise sidetilstand før optagelse: sprog, konto, datointerval, filtre, udvidede paneler og stopgrænse. Indlæs lazy-loadede medier, og vend tilbage til begyndelsen af lange sider for at opdage virtualisering. Hvis tidligere indhold forsvinder, skal du bruge mindre definerede intervaller frem for at påstå en komplet side.
+Vælg den præcise sidetilstand før optagelse: sprog, konto, datointerval, filtre, udvidede paneler og stopgrænse. Indlæs medier, der først hentes, når du ruller, og vend tilbage til begyndelsen af lange sider for at opdage virtualisering. Hvis tidligere indhold forsvinder, skal du bruge mindre definerede intervaller frem for at påstå en komplet side.
 
 <ArticleFigure
   alt={"Browser og Page 2 File-udvidelsen: Indlæs nødvendige produkter, lektioner og medier på butikssider og læringssider."}

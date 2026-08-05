@@ -33,7 +33,7 @@ export const finnishLegalLandingContent: Partial<Record<StaticRoute, LandingCont
   terms: {
     route: "terms",
     eyebrow: "Palvelusopimus",
-    title: "Käyttöehdot",
+    title: "Page 2 File -käyttöehdot",
     description: "Page 2 File -palvelun käyttöehdot, mukaan lukien sallitut lähteet, rajoitukset, vastuu ja saatavuus.",
     lead: "Nämä Ehdot koskevat Page 2 File -sivuston, Chrome-laajennuksen ja PDF- tai PowerPoint-muunnospalvelujen käyttöä.",
     sections: [

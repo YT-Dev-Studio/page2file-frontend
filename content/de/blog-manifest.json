@@ -32,7 +32,7 @@
   "export-ai-chats-privately": {
     "author": "Page 2 File Redaktion",
     "title": "KI-Chats privat als PDF exportieren",
-    "description": "Exportieren Sie sichtbare KI-Unterhaltungen aus dem aktiven Browser-Tab, definieren Sie den Nachrichtenbereich, wählen Sie einen PDF-Modus und verstehen Sie temporäre Vorschaudaten.",
+    "description": "Exportieren Sie sichtbare KI-Unterhaltungen aus dem aktiven Browser-Tab, grenzen Sie Nachrichten ein und wählen Sie den passenden PDF-Modus.",
     "imageAlt": "Eine private KI-Unterhaltung wird durch ein Schutzschild in PDF übertragen"
   },
   "export-browser-messenger-chats-to-pdf": {
@@ -44,7 +44,7 @@
   "export-chatgpt-conversation-to-pdf": {
     "author": "Page 2 File Redaktion",
     "title": "Eine ChatGPT-Unterhaltung als PDF exportieren",
-    "description": "Bereiten Sie eine sichtbare ChatGPT-Unterhaltung vor, laden Sie den benötigten Bereich, wählen Sie Seitenaufnahme oder bearbeitbares PDF und unterscheiden Sie Tab-Erfassung vom Kontoexport.",
+    "description": "Bereiten Sie eine sichtbare ChatGPT-Unterhaltung vor, laden Sie den benötigten Bereich und wählen Sie Seitenaufnahme oder bearbeitbares PDF.",
     "imageAlt": "Eine generische KI-Unterhaltung im Browser wird zu einem PDF-Dokument"
   },
   "export-claude-chat-to-pdf": {
@@ -56,7 +56,7 @@
   "export-gemini-chat-to-pdf": {
     "author": "Page 2 File Redaktion",
     "title": "Einen Gemini-Chat als PDF exportieren",
-    "description": "Speichern Sie eine sichtbare Gemini-Unterhaltung mit Quellenangaben und Bildern als PDF, laden Sie die erforderlichen Inhalte und unterscheiden Sie die Erfassung von Google Takeout.",
+    "description": "Speichern Sie eine sichtbare Gemini-Unterhaltung mit Quellen und Bildern als PDF und grenzen Sie die Erfassung von Google Takeout ab.",
     "imageAlt": "Ein KI-Chat mit Quellenkarten und Bildern wird zu einem PDF"
   },
   "export-other-ai-chats-to-pdf": {
@@ -68,7 +68,7 @@
   "export-telegram-chat-to-pdf": {
     "author": "Page 2 File Redaktion",
     "title": "Einen Telegram-Chat als PDF exportieren",
-    "description": "Bereiten Sie einen Telegram-Web-Chat oder -Kanal vor, laden Sie Antworten und Medien, wählen Sie Seitenaufnahme oder bearbeitbares PDF und prüfen Sie die Nachrichtenbegrenzung.",
+    "description": "Bereiten Sie einen Telegram-Web-Chat vor, laden Sie Antworten und Medien, wählen Sie den PDF-Modus und prüfen Sie die Nachrichtenbegrenzung.",
     "imageAlt": "Eine generische Kanalunterhaltung fließt durch ein Schutzschild in ein PDF"
   },
   "export-whatsapp-chat-to-pdf": {
@@ -128,7 +128,7 @@
   "website-to-powerpoint": {
     "author": "Page 2 File Redaktion",
     "title": "So wandeln Sie eine Website in PowerPoint um",
-    "description": "Konvertieren Sie ausgewählte öffentliche Seiten einer Website in getrennte PPTX-Dateien, definieren Sie die Grenze, prüfen Sie die Ausgaben und erstellen Sie ein Manifest.",
+    "description": "Konvertieren Sie ausgewählte öffentliche Website-Seiten in getrennte PPTX-Dateien, legen Sie die Grenze fest und prüfen Sie jede Ausgabe.",
     "imageAlt": "Eine Website-Karte wird zu mehreren getrennten PowerPoint-Präsentationen"
   },
   "website-types-to-pdf-or-powerpoint": {

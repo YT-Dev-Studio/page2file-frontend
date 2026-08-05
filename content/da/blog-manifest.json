@@ -121,7 +121,7 @@
   },
   "export-other-ai-chats-to-pdf": {
     "author": "Page 2 File-redaktionen",
-    "title": "Sådan eksporterer du Grok-, DeepSeek-, Perplexity- og Copilot-chats til PDF",
+    "title": "Eksportér andre AI-samtaler til PDF",
     "description": "Tilpas aktiv-fane-optagelsen til forskellige AI-grænseflader, bevar synlige kilder, beskyt private data, og kontrollér den præcise samtalegrænse.",
     "imageAlt": "En generisk AI-chat med kilder, kode og medier forberedt til PDF"
   },

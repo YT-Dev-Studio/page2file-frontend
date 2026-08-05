@@ -19,7 +19,7 @@ Stránka může obsahovat také pevná záhlaví, plovoucí tlačítka chatu a p
 
 ## Načítejte dynamický materiál záměrně
 
-Projděte líně načítané obrázky a rozbalte prvky, které chcete zahrnout. Ve virtualizovaném chatu mohou starší zprávy při načítání novějších zmizet z DOM; před zachycením zpřístupněte požadovaný rozsah pomocí ovládacích prvků platformy. Page 2 File zachytí vykreslený obsah, nikoli skryté záznamy účtu.
+Projděte líně načítané obrázky a rozbalte prvky, které chcete zahrnout. Ve virtualizovaném chatu mohou starší zprávy při načítání novějších zmizet z struktura stránky v prohlížeči; před zachycením zpřístupněte požadovaný rozsah pomocí ovládacích prvků platformy. Page 2 File zachytí vykreslený obsah, nikoli skryté záznamy účtu.
 
 <ArticleFigure
   alt={"Prohlížeč a rozšíření Page 2 File: před zachycením rozbalte požadované oddíly a spusťte líné načítání."}
@@ -54,7 +54,7 @@ Připnutá záhlaví a plovoucí ovládací prvky se mohou opakovat při dělen�
 
 ## Zvládněte líné načítání a virtualizaci
 
-Líné načítání odkládá obrázky nebo panely, dokud se nepřiblíží k viewportu. Záměrný průchod shora dolů obvykle ukáže, zda se zdroj načítá správně. Poté se vraťte na začátek. Pokud rané karty zmizely, web pravděpodobně virtualizuje seznam a nahrazuje uzly mimo obrazovku.
+Líné načítání odkládá obrázky nebo panely, dokud se nepřiblíží k viditelná oblast prohlížečeu. Záměrný průchod shora dolů obvykle ukáže, zda se zdroj načítá správně. Poté se vraťte na začátek. Pokud rané karty zmizely, web pravděpodobně virtualizuje seznam a nahrazuje uzly mimo obrazovku.
 
 U virtualizovaných zdrojů zachyťte menší rozsah nebo několik logických oddílů a každý ověřte. Neusuzujte z posuvníku, že neviditelná část stránky existuje ve výstupu. Náhled musí ukázat skutečný začátek, konec a pořadí každého zachyceného oddílu.
 
@@ -78,7 +78,7 @@ Pokud raný obsah po načtení pozdějšího zmizí, zdroj je pravděpodobně vi
 
 ## Před stažením zkontrolujte soukromí
 
-Zachycení celé stránky může odhalit detaily daleko mimo původní viewport: nabídky účtů, jména účastníků, náhledy oznámení, parametry dotazu a obsah sousedních panelů. Projděte celý náhled a nepředpokládejte, že vše mimo obrazovku je neškodné. Před vytvořením výsledného souboru odstraňte nepotřebné oddíly ve zdroji nebo náhledu.
+Zachycení celé stránky může odhalit detaily daleko mimo původní viditelná oblast prohlížeče: nabídky účtů, jména účastníků, náhledy oznámení, parametry dotazu a obsah sousedních panelů. Projděte celý náhled a nepředpokládejte, že vše mimo obrazovku je neškodné. Před vytvořením výsledného souboru odstraňte nepotřebné oddíly ve zdroji nebo náhledu.
 
 Rozšíření pracuje s aktivní kartou. Data náhledu jsou dočasná, odstraní se po zavření karty a neukládají se do databáze historie konverzí Page 2 File. Stažené PDF je poté pod vaší kontrolou, proto zvolte název, místo uložení a kanál sdílení podle citlivosti obsahu.
 

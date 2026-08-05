@@ -160,7 +160,7 @@ export const homeCopyIt: HomeCopy = {
       {
         title: "Testo e link restano modificabili o accessibili?",
         body:
-          "La modalità modificabile conserva il testo supportato come contenuto del documento e le destinazioni sicure dei link. Widget complessi, grafica canvas ed elementi non supportati possono essere rappresentati come immagini. Le acquisizioni della pagina danno priorità all’aspetto e non trasformano ogni pixel in un oggetto modificabile.",
+          "La modalità modificabile conserva il testo supportato come contenuto del documento e le destinazioni sicure dei link. Widget complessi, grafica disegnata direttamente dal browser ed elementi non supportati possono essere rappresentati come immagini. Le acquisizioni della pagina danno priorità all’aspetto e non trasformano ogni pixel in un oggetto modificabile.",
       },
       {
         title: "Può acquisire completamente pagine lunghe e dinamiche?",

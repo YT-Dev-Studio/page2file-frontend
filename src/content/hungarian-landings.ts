@@ -20,7 +20,7 @@ export const hungarianLandingContent: Partial<Record<StaticRoute, LandingContent
   "page2pdf-gpt": {
     route: "page2pdf-gpt", eyebrow: "GPT-alkalmazás · pontos URL-ek, PDF-ek vagy képernyőképek", title: "Webpage to PDF Converter — Web2File",
     displayTitle: "GPT: Webpage 2 PDF",
-    description: "A Webpage to PDF Converter — Web2File pontos nyilvános weboldal-URL-eket konvertál, valamint feltöltött weboldal-PDF-eket vagy képernyőképeket dolgoz fel külön Visual PDF vagy Interactive PDF fájlokká.",
+    description: "A Webpage to PDF Converter — Web2File pontos nyilvános címeket, weboldal-PDF-eket és képernyőképeket kezel Visual PDF vagy Interactive PDF formában.",
     lead: "Adjon meg egy pontos nyilvános URL-t, pontos URL-ek listáját, weboldal-PDF-et vagy teljes oldalas, illetve egymást követő képernyőképeket. Válassza a Visual PDF módot a webhely képernyőképként történő mentéséhez, vagy az Interactive PDF módot a kijelölhető szöveghez és kattintható linkekhez.",
     sections: [
       { heading: "1. Adjon meg egy vagy több URL-t", body: "Küldjön nyilvános URL-t, pontos nyilvános URL-ek listáját, meglévő weboldal-PDF-et vagy teljes oldalas, illetve egymást követő képernyőképeket. Minden weboldal külön PDF marad." },
@@ -38,7 +38,7 @@ export const hungarianLandingContent: Partial<Record<StaticRoute, LandingContent
     },
   },
   "web2pdf-gpt": {
-    route: "web2pdf-gpt", eyebrow: "GPT-alkalmazás · elérhető weboldalak", title: "Webhelyoldalak konvertálása külön PDF-ekbe a Web 2 PDF segítségével",
+    route: "web2pdf-gpt", eyebrow: "GPT-alkalmazás · elérhető weboldalak", title: "Weboldalak külön PDF-fájlokba a Web 2 PDF-fel",
     description: "A Web 2 PDF megkeresi a webhely elérhető oldalait, konvertálja a kiválasztottakat, és minden oldalhoz külön PDF-et ad vissza.",
     lead: "Adjon a Web 2 PDF-nek egy nyilvános címet. Az alkalmazás megtalálja az elérhető oldalakat, konvertálja a kiválasztott URL-eket, és több letöltési hivatkozást ad vissza — oldalanként egyet.",
     sections: [
@@ -82,7 +82,7 @@ export const hungarianLandingContent: Partial<Record<StaticRoute, LandingContent
     articleLinks: [{ slug: "webpage-to-powerpoint", label: "Weboldal konvertálása PowerPointba" }, { slug: "sections-to-slides", label: "Oldalszakaszok konvertálása diákká" }], relatedRoutes: gptRoutes,
   },
   "web2powerpoint-gpt": {
-    route: "web2powerpoint-gpt", eyebrow: "GPT-alkalmazás · elérhető weboldalak", title: "Webhelyoldalak konvertálása PPTX-be a Web 2 PowerPoint segítségével",
+    route: "web2powerpoint-gpt", eyebrow: "GPT-alkalmazás · elérhető weboldalak", title: "Weboldalak külön PPTX-fájlokba a Web 2 PowerPointtal",
     description: "A Web 2 PowerPoint megtalálja az elérhető oldalakat, konvertálja a kiválasztottakat, és minden oldalhoz külön PPTX-fájlt ad vissza.",
     lead: "Adjon a Web 2 PowerPointnak egy nyilvános címet. Az alkalmazás megtalálja az elérhető oldalakat, konvertálja a kiválasztott URL-eket, és több prezentációs hivatkozást ad vissza.",
     sections: [
@@ -113,7 +113,7 @@ export const hungarianLandingContent: Partial<Record<StaticRoute, LandingContent
     sections: [
       { heading: "Mi marad meg", body: "Az üzenetek, a résztvevők sorrendje, a kód, a táblázatok és a látható hivatkozások megjelennek az előnézetben." },
       { heading: "Két olvasási stílus", body: "Tartsa meg az eredeti vizuális ritmust, vagy válasszon nyugodtabb dokumentumot olvasáshoz és nyomtatáshoz." },
-      { heading: "Platformkorlátok", body: "Az összecsukott ágakat, be nem töltött üzeneteket és DOM-on kívüli tartalmat rögzítés előtt meg kell nyitni vagy be kell tölteni." },
+      { heading: "Platformkorlátok", body: "Az összecsukott ágakat, be nem töltött üzeneteket és a böngésző által még be nem töltött tartalmat rögzítés előtt meg kell nyitni vagy be kell tölteni." },
       { heading: "Nincs hivatalos kapcsolat", body: "A Page 2 File független eszköz, amelyet az OpenAI vagy a ChatGPT nem hagyott jóvá és nem üzemeltet." },
     ],
     externalLinkKey: "chromeExtension", primaryLabel: "Telepítés a ChatGPT-hez",
@@ -137,7 +137,7 @@ export const hungarianLandingContent: Partial<Record<StaticRoute, LandingContent
     lead: "Ellenőrizze a forráskártyák és látható képek megjelenését, mielőtt áttekinthető vagy vizuálisan hű dokumentumot hoz létre.",
     sections: [
       { heading: "A források hasznosak maradnak", body: "A látható hivatkozások és idézetek kattinthatók maradnak, ha céljuk biztonságos." },
-      { heading: "A képek követik a DOM-ot", body: "Az ideiglenes előnézetben csak az aktív oldal számára elérhető média jelenhet meg." },
+      { heading: "A képek a betöltött oldaltól függenek", body: "Az ideiglenes előnézetben csak az aktív oldal számára elérhető média jelenhet meg." },
       { heading: "Nincs hivatalos kapcsolat", body: "A Page 2 File független, és nem a Google vagy a Gemini terméke." },
     ],
     externalLinkKey: "chromeExtension", primaryLabel: "Telepítés a Geminihez",

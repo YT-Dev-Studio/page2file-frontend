@@ -19,7 +19,7 @@ Strona może też zawierać stałe nagłówki, pływające przyciski czatu i nak
 
 ## Wczytuj dynamiczny materiał świadomie
 
-Przewiń leniwie ładowane obrazy i rozwiń akordeony, które mają znaleźć się w dokumencie. W wirtualizowanym czacie starsze wiadomości mogą znikać z DOM podczas ładowania nowszych; przed przechwyceniem użyj kontrolek platformy, aby odsłonić wymagany zakres. Page 2 File może przechwycić wyrenderowaną treść, a nie ukryte rekordy konta.
+Przewiń leniwie ładowane obrazy i rozwiń akordeony, które mają znaleźć się w dokumencie. W wirtualizowanym czacie starsze wiadomości mogą znikać z struktura strony w przeglądarce podczas ładowania nowszych; przed przechwyceniem użyj kontrolek platformy, aby odsłonić wymagany zakres. Page 2 File może przechwycić wyrenderowaną treść, a nie ukryte rekordy konta.
 
 <ArticleFigure
   alt={"Przeglądarka i rozszerzenie Page 2 File: rozwiń wymagane sekcje i uruchom leniwe ładowanie przed przechwyceniem."}
@@ -54,7 +54,7 @@ Przyklejone nagłówki i pływające kontrolki mogą powtarzać się przy dziele
 
 ## Obsłuż leniwe ładowanie i wirtualizację
 
-Leniwe ładowanie opóźnia obrazy lub panele, dopóki nie zbliżą się do viewportu. Świadome przejście od góry do dołu zwykle ujawnia, czy źródło ładuje się prawidłowo. Potem wróć na początek. Jeśli wczesne karty zniknęły, witryna prawdopodobnie wirtualizuje listę, zastępując węzły poza ekranem.
+Leniwe ładowanie opóźnia obrazy lub panele, dopóki nie zbliżą się do widoczny obszar przeglądarkiu. Świadome przejście od góry do dołu zwykle ujawnia, czy źródło ładuje się prawidłowo. Potem wróć na początek. Jeśli wczesne karty zniknęły, witryna prawdopodobnie wirtualizuje listę, zastępując węzły poza ekranem.
 
 Dla źródeł wirtualizowanych przechwytuj mniejszy zakres lub kilka logicznych sekcji i sprawdzaj każdą osobno. Nie wnioskuj z samego paska przewijania, że niewidoczna część strony znajdzie się w wyniku. Podgląd powinien pokazywać rzeczywisty początek, koniec i kolejność każdej przechwyconej sekcji.
 
@@ -78,7 +78,7 @@ Jeśli wczesna treść znika po wczytaniu późniejszej, źródło prawdopodobni
 
 ## Sprawdź prywatność przed pobraniem
 
-Przechwytywanie całej strony może ujawnić szczegóły daleko poza początkowym viewportem: menu konta, nazwy uczestników, podglądy powiadomień, parametry zapytań i treść sąsiednich paneli. Przejrzyj cały podgląd zamiast zakładać, że elementy poza ekranem są nieszkodliwe. Przed utworzeniem finalnego pliku usuń zbędne sekcje w źródle lub podglądzie.
+Przechwytywanie całej strony może ujawnić szczegóły daleko poza początkowym widoczny obszar przeglądarkiem: menu konta, nazwy uczestników, podglądy powiadomień, parametry zapytań i treść sąsiednich paneli. Przejrzyj cały podgląd zamiast zakładać, że elementy poza ekranem są nieszkodliwe. Przed utworzeniem finalnego pliku usuń zbędne sekcje w źródle lub podglądzie.
 
 Rozszerzenie pracuje z aktywną kartą przeglądarki. Dane podglądu są tymczasowe, usuwane po zamknięciu karty i nie są przechowywane w bazie historii konwersji Page 2 File. Pobrany PDF pozostaje pod Twoją kontrolą, dlatego dobierz nazwę, miejsce zapisu i kanał udostępniania do wrażliwości treści.
 

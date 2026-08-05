@@ -54,7 +54,7 @@ Skriv ned önskat resultat innan du väljer metod. Om kravet säger ”visa exak
 
 ## Förstå begränsningar på dynamiska sidor
 
-Båda metoderna möter lazy loading, virtualisering och autentisering, men hanterar dem olika. Insamling kräver att det nödvändiga tillståndet renderas synligt. En scraper kan anropa ett behörigt API eller tolka källdata utan att återge det visuella gränssnittet.
+Båda metoderna möter innehåll som läses in först vid rullning, virtualisering och autentisering, men hanterar dem olika. Insamling kräver att det nödvändiga tillståndet renderas synligt. En scraper kan anropa ett behörigt API eller tolka källdata utan att återge det visuella gränssnittet.
 
 Ett Chrome-tillägg kan samla in en aktiv inloggad flik efter att användaren har öppnat den. Det exponerar inte dolda applikationsposter och skapar inte en generell autentiseringsuppgift för genomsökning. Automatiserad skrapning av autentiserade system kräver uttryckligt tillstånd, säker hantering av autentiseringsuppgifter och en separat operativ design.
 

@@ -80,7 +80,7 @@ export const homeCopyNo: HomeCopy = {
     items: [
       { title: "Hvordan konverterer jeg en nettside til PDF eller PowerPoint?", body: "For en offentlig side limer du inn HTTPS-URL-en, velger PDF eller PowerPoint og sidebilder eller redigerbar modus, og kontrollerer delene. For en pålogget side bruker du Page 2 File-utvidelsen i den aktive fanen." },
       { title: "Kan Page 2 File bevare utformingen av siden?", body: "Sidebilder er laget for å bevare det gjengitte utseendet, inkludert layout, farger, bilder og synlige diagrammer. Animasjoner, video og interaktive kontroller gjengis statisk." },
-      { title: "Forblir tekst og lenker redigerbare?", body: "Redigerbar modus bevarer støttet tekst og sikre lenkemål. Komplekse moduler, canvas og elementer som ikke støttes, kan gjengis som bilder. Sidebilder prioriterer utseendet." },
+      { title: "Forblir tekst og lenker redigerbare?", body: "Redigerbar modus bevarer støttet tekst og sikre lenkemål. Komplekse moduler, grafikk som nettleseren tegner direkte og elementer som ikke støttes, kan gjengis som bilder. Sidebilder prioriterer utseendet." },
       { title: "Kan lange og dynamiske sider fanges helt?", body: "Utvidelsen bruker den gjengitte aktive fanen. Utvid først innholdet og rull til slutten. Skjult eller ikke innlastet innhold kan ikke eksporteres." },
       { title: "Kan jeg konvertere sider etter pålogging?", body: "Ja, med Chrome-utvidelsen etter at siden er åpnet på vanlig måte. Utvidelsen bruker den aktive fanen og ber ikke om passordet ditt i skjemaet for offentlige URL-er. Den omgår ikke tilgangskontroller." },
       {

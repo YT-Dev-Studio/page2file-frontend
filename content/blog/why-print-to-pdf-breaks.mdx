@@ -24,7 +24,7 @@ CSS can assign different rules to screen and print. A print stylesheet may remov
   step={2}
 />
 
-Lazy-loaded media creates another gap. Printing begins from the current document state; content that has never entered the viewport may not exist in that state. Virtualized chat and dashboard interfaces can discard older rows from the DOM while you scroll, which means a print command cannot recover them.
+Media that appears only after scrolling creates another gap. Printing begins from the page's current state, so content that has never entered the visible part of the screen may not be loaded. Long chats and dashboards can also remove older rows from the loaded page while you scroll, and a print command cannot recover them.
 
 ## What URL conversion changes
 
@@ -46,7 +46,7 @@ Preview remains the deciding evidence. If an important block is missing there, d
 
 ## Run a controlled comparison
 
-Compare both methods from the same browser state. Set the same viewport, filters, expanded panels and scroll position before creating either file. Otherwise the comparison measures two different sources rather than two conversion methods. Record whether the page had finished loading images, web fonts and charts.
+Compare both methods from the same browser state. Use the same browser-window size, filters, expanded panels and scroll position before creating either file. Otherwise the comparison measures two different source states rather than two conversion methods. Record whether the page had finished loading images, web fonts and charts.
 
 Start with browser Print Preview. Note which navigation, backgrounds, interactive panels and sticky elements disappear. That is not automatically a defect: a well-designed print stylesheet may remove clutter and produce the cleanest reading copy. The question is whether it removed something required for your purpose.
 
@@ -54,7 +54,7 @@ Then inspect the Page 2 File preview in the mode that matches the task. Accurate
 
 ## Diagnose common differences
 
-Missing color or imagery often comes from print-specific CSS, browser settings for background graphics or a component that renders differently for print media. Truncated panels commonly appear when a scroll container has a fixed height or when virtualized content never entered the rendered page. Blank space can come from sticky headers, reserved ad slots or print rules that force a break.
+Missing color or imagery often comes from print-specific CSS, browser settings for background graphics or a component that displays differently when printed. Truncated panels commonly appear when a scrolling area has a fixed height or when content outside the visible area was never loaded. Blank space can come from fixed headers, reserved ad slots or print rules that force a break.
 
 Tables expose another difference. A print stylesheet may repeat headings correctly, shrink the table until text is unreadable or clip columns outside the printable width. A screenshot capture can preserve the displayed table but cannot make a wide layout naturally fit a portrait page. Editable conversion may reconstruct standard rows and cells while using an image fallback for unusual grids.
 
@@ -64,13 +64,13 @@ Links deserve their own check. Browser-generated PDFs may keep standard anchors,
 
 For a one-off article with a strong print view, browser Print is often sufficient. For a dashboard, authenticated application, long dynamic page or presentation-oriented workflow, capture and preview controls may matter more than the browser's print conventions. Neither method should be treated as universally superior.
 
-If the same source is exported regularly, write down the preparation steps and acceptance checks. A stable procedure is more valuable than repeatedly choosing a tool by intuition. Recheck it when the site changes its layout, authentication or virtualization behavior.
+If the same source is exported regularly, write down the preparation steps and acceptance checks. A stable procedure is more valuable than repeatedly choosing a tool by intuition. Recheck it when the site changes its layout, sign-in process or the way it replaces off-screen content.
 
 Video, animation, hover states and live controls cannot remain interactive in an ordinary PDF. The defensible result is a readable record of a defined page state with known tradeoffs.
 
 ## Separate print settings from source problems
 
-Some defects can be corrected in the browser print dialog. Paper size, orientation, margins, scale and background-graphics settings can change a result substantially. Try those controls when the content is present but badly fitted. They cannot restore a panel that the print stylesheet removed or messages that a virtualized interface never rendered.
+Some defects can be corrected in the browser print dialog. Paper size, orientation, margins, scale and background-graphics settings can change a result substantially. Try those controls when the content is present but badly fitted. They cannot restore a panel that the print stylesheet removed or messages that the page unloaded while you scrolled.
 
 Headers and footers added by the browser are another print-specific choice. They can provide a URL and date, but they can also reveal a private address or push content onto an extra page. Review them deliberately instead of accepting the default. A URL converter has a different preview and section model, so compare the actual metadata in each file.
 
@@ -127,7 +127,7 @@ A method passes when it produces the document needed for this source and task. I
 
 ## Recheck after the website changes
 
-Print and capture behavior can change when a site updates its CSS, chart library, consent layer or virtualization rules. A procedure that worked last month is evidence about that version of the page, not a permanent guarantee. Re-run representative checks after a redesign and before a high-consequence distribution.
+Print and capture behavior can change when a site updates its CSS, chart library, consent layer or rules for loading and removing off-screen content. A procedure that worked last month is evidence about that version of the page, not a permanent guarantee. Re-run representative checks after a redesign and before an important distribution.
 
 This maintenance point is especially important for automated-looking routines. Page 2 File provides a preview because page state still needs human review. The preview can reveal missing sections and awkward boundaries; it cannot decide whether the document is complete for your legal, archival or operational purpose.
 

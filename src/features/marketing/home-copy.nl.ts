@@ -160,7 +160,7 @@ export const homeCopyNl: HomeCopy = {
       {
         title: "Blijven tekst en links bewerkbaar of aanklikbaar?",
         body:
-          "De bewerkbare modus behoudt ondersteunde tekst als documentinhoud en veilige linkdoelen. Complexe widgets, canvasafbeeldingen en niet-ondersteunde elementen kunnen als afbeeldingen worden weergegeven. Pagina-opnamen geven prioriteit aan de weergave en maken niet van iedere pixel een bewerkbaar object.",
+          "De bewerkbare modus behoudt ondersteunde tekst als documentinhoud en veilige linkdoelen. Complexe widgets, afbeeldingen die de browser rechtstreeks tekent en niet-ondersteunde elementen kunnen als afbeeldingen worden weergegeven. Pagina-opnamen geven prioriteit aan de weergave en maken niet van iedere pixel een bewerkbaar object.",
       },
       {
         title: "Kan de service lange en dynamische pagina's volledig vastleggen?",

@@ -80,7 +80,7 @@ export const homeCopyFi: HomeCopy = {
     items: [
       { title: "Miten muunnan verkkosivun PDF- tai PowerPoint-tiedostoksi?", body: "Liitä julkisen sivun HTTPS-URL, valitse PDF tai PowerPoint sekä sivukaappaukset tai muokattava tila ja tarkista osiot. Käytä kirjautuneella sivulla aktiivisen välilehden Page 2 File -laajennusta." },
       { title: "Voiko Page 2 File säilyttää sivun ulkoasun?", body: "Sivukaappaukset on suunniteltu säilyttämään renderöity ulkoasu, kuten asettelu, värit, kuvat ja näkyvät kaaviot. Animaatiot, videot ja vuorovaikutteiset ohjaimet renderöidään staattisina." },
-      { title: "Säilyvätkö teksti ja linkit muokattavina?", body: "Muokattava tila säilyttää tuetun tekstin ja turvalliset linkkikohteet. Monimutkaiset moduulit, canvas ja tukemattomat elementit voidaan renderöidä kuvina. Sivukaappaukset painottavat ulkoasua." },
+      { title: "Säilyvätkö teksti ja linkit muokattavina?", body: "Muokattava tila säilyttää tuetun tekstin ja turvalliset linkkikohteet. Monimutkaiset moduulit, selaimen suoraan piirtämä grafiikka ja tukemattomat elementit voidaan renderöidä kuvina. Sivukaappaukset painottavat ulkoasua." },
       { title: "Voiko pitkät ja dynaamiset sivut kaapata kokonaan?", body: "Laajennus käyttää renderöityä aktiivista välilehteä. Avaa ensin sisältö ja selaa loppuun. Piilotettua tai lataamatonta sisältöä ei voi viedä." },
       { title: "Voinko muuntaa sivuja kirjautumisen jälkeen?", body: "Kyllä, Chrome-laajennuksella sen jälkeen, kun sivu on avattu normaalisti. Laajennus käyttää aktiivista välilehteä eikä kysy salasanaasi julkisen URL:n lomakkeessa. Se ei ohita käyttöoikeuksia." },
       {

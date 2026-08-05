@@ -1,7 +1,9 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 import type { ContentSection, LandingContent } from "@/content/landings";
 import { legalProfile } from "@/shared/config/site";
 import type { Locale } from "@/shared/i18n/locales";
+import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
 import styles from "./legal-page.module.css";
@@ -112,6 +114,7 @@ export const LegalPage = ({
   locale,
 }: LegalPageProps): ReactNode => {
   const copy = legalPageCopy[locale];
+  const siteCopy = getSiteCopy(locale).footer;
 
   return (
     <PublicPage className={styles.page} family="legal">
@@ -135,6 +138,17 @@ export const LegalPage = ({
               ),
             )}
           </div>
+          {content.route === "about" ? (
+            <nav aria-label={siteCopy.legalTitle} className={styles.points}>
+              <Link href={`mailto:${legalProfile.contactEmail}`}>
+                {legalProfile.contactEmail}
+              </Link>
+              {" · "}
+              <Link href={`/${locale}/privacy`}>{siteCopy.links.privacy}</Link>
+              {" · "}
+              <Link href={`/${locale}/terms`}>{siteCopy.links.terms}</Link>
+            </nav>
+          ) : null}
         </article>
       </Container>
     </PublicPage>

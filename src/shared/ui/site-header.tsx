@@ -55,8 +55,8 @@ export const SiteHeader = ({
           <Image
             alt=""
             className={styles.brandImage}
+            fetchPriority="high"
             height={40}
-            priority
             src={page2FileLogo}
             width={40}
           />

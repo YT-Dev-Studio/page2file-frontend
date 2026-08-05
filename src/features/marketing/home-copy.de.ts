@@ -158,7 +158,7 @@ export const homeCopyDe: HomeCopy = {
       {
         title: "Bleiben Text und Links bearbeitbar oder anklickbar?",
         body:
-          "Der bearbeitbare Modus erhält unterstützten Text als Dokumentinhalt und sichere Linkziele. Komplexe Widgets, Canvas-Grafiken und nicht unterstützte Elemente können als Bilder dargestellt werden. Seitenaufnahmen priorisieren das Erscheinungsbild und machen nicht jedes Pixel zu einem bearbeitbaren Objekt.",
+          "Der bearbeitbare Modus erhält unterstützten Text als Dokumentinhalt und sichere Linkziele. Komplexe Widgets, direkt vom Browser gezeichnete Grafiken und nicht unterstützte Elemente können als Bilder dargestellt werden. Seitenaufnahmen priorisieren das Erscheinungsbild und machen nicht jedes Pixel zu einem bearbeitbaren Objekt.",
       },
       {
         title: "Kann der Dienst lange und dynamische Seiten vollständig erfassen?",

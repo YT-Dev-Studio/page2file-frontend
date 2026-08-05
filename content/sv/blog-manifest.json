@@ -85,7 +85,7 @@
   },
   "website-types-to-pdf-or-powerpoint": {
     "author": "Page 2 File-redaktionen",
-    "title": "Vilka typer av webbplatser kan exporteras till PDF eller PowerPoint?",
+    "title": "Vilka webbplatser passar för PDF eller PowerPoint?",
     "description": "Se hur artiklar, dokumentation, dashboards, butiker, utbildningssidor, webbappar, AI-chattar och webbläsarmeddelanden passar för export till PDF eller PowerPoint.",
     "imageAlt": "Olika webbplatstyper som samlas i PDF-filer och presentationer"
   },
@@ -121,7 +121,7 @@
   },
   "export-other-ai-chats-to-pdf": {
     "author": "Page 2 File-redaktionen",
-    "title": "Så exporterar du chattar från Grok, DeepSeek, Perplexity eller Copilot",
+    "title": "Exportera andra AI-chattar till PDF",
     "description": "Exportera synliga chattar från Grok, DeepSeek, Perplexity eller Copilot från en webbläsarflik med respekt för inläst innehåll, integritet och plattformsgränser.",
     "imageAlt": "Flera generella AI-chattflikar som samlas i en PDF"
   },

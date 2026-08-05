@@ -24,7 +24,7 @@ CSS kan verschillende regels aan scherm en afdruk toewijzen. Een afdrukstijl kan
   step={2}
 />
 
-Uitgesteld geladen media veroorzaken nog een verschil. Afdrukken begint vanuit de huidige documenttoestand; inhoud die nooit in het zichtbare gebied is gekomen, bestaat mogelijk niet in die toestand. Gevirtualiseerde chat- en dashboardinterfaces kunnen oudere rijen uit de DOM verwijderen tijdens het scrollen, waardoor een afdrukopdracht ze niet kan herstellen.
+Uitgesteld geladen media veroorzaken nog een verschil. Afdrukken begint vanuit de huidige documenttoestand; inhoud die nooit in het zichtbare gebied is gekomen, bestaat mogelijk niet in die toestand. Gevirtualiseerde chat- en dashboardinterfaces kunnen oudere rijen uit de paginastructuur in de browser verwijderen tijdens het scrollen, waardoor een afdrukopdracht ze niet kan herstellen.
 
 ## Wat URL-conversie verandert
 
@@ -46,7 +46,7 @@ Het voorbeeld blijft het beslissende bewijs. Als daarin een belangrijk blok ontb
 
 ## Voer een gecontroleerde vergelijking uit
 
-Vergelijk beide methoden vanuit dezelfde browsertoestand. Stel dezelfde viewport, filters, uitgevouwen panelen en scrollpositie in voordat u elk bestand maakt. Anders vergelijkt u twee verschillende bronnen in plaats van twee conversiemethoden. Noteer of de pagina klaar was met het laden van afbeeldingen, weblettertypen en grafieken.
+Vergelijk beide methoden vanuit dezelfde browsertoestand. Stel dezelfde zichtbare deel van de browser, filters, uitgevouwen panelen en scrollpositie in voordat u elk bestand maakt. Anders vergelijkt u twee verschillende bronnen in plaats van twee conversiemethoden. Noteer of de pagina klaar was met het laden van afbeeldingen, weblettertypen en grafieken.
 
 Begin met het afdrukvoorbeeld van de browser. Noteer welke navigatie, achtergronden, interactieve panelen en plakkende elementen verdwijnen. Dat is niet automatisch een gebrek: een goed ontworpen afdrukstijl kan rommel verwijderen en de netste leeskopie opleveren. De vraag is of iets is verwijderd dat voor uw doel noodzakelijk is.
 

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import page2FileLogo from "@/app/assets/logo.png";
+import { getLandingContent } from "@/content/landings";
 import { AnalyticsBootstrap } from "@/features/analytics/analytics-bootstrap";
 import type { Locale } from "@/shared/i18n/locales";
 import { getMessages } from "@/shared/i18n/messages";
@@ -27,6 +28,7 @@ const DevelopmentNotice = ({ locale }: { locale: Locale }): ReactNode => (
 
 const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getSiteCopy(locale).footer;
+  const about = getLandingContent(locale, "about");
 
   return (
     <footer className={styles.footer}>
@@ -42,7 +44,6 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
                 alt=""
                 className={styles.footerLogo}
                 height={80}
-                loading="eager"
                 src={page2FileLogo}
                 width={80}
               />
@@ -79,6 +80,9 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
 
           <nav aria-label={copy.companyTitle} className={styles.footerLinks}>
             <h2>{copy.companyTitle}</h2>
+            <Link href={`/${locale}/about`}>
+              {about?.title ?? "About Page 2 File"}
+            </Link>
             <Link href={`/${locale}/blog`}>{copy.links.blog}</Link>
             <Link href={`/${locale}/privacy`}>{copy.links.privacy}</Link>
           </nav>

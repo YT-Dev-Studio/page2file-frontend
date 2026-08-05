@@ -174,7 +174,7 @@ export const italianLandingContent: Partial<
     sections: [
       { heading: "Cosa viene conservato", body: "Messaggi, ordine dei partecipanti, codice, tabelle e link visibili vengono rappresentati nell’anteprima." },
       { heading: "Due stili di lettura", body: "Mantieni il ritmo visivo originale oppure scegli un documento più semplice da leggere e stampare." },
-      { heading: "Limiti specifici della piattaforma", body: "Rami compressi, messaggi non caricati e contenuti esterni al DOM potrebbero dover essere aperti o caricati prima dell’acquisizione." },
+      { heading: "Limiti specifici della piattaforma", body: "Rami compressi, messaggi non caricati e contenuti non ancora caricati dal browser potrebbero dover essere aperti o caricati prima dell’acquisizione." },
       { heading: "Nessun rapporto ufficiale", body: "Page 2 File è uno strumento indipendente e non è approvato né gestito da OpenAI o ChatGPT." },
     ],
     externalLinkKey: "chromeExtension",
@@ -216,7 +216,7 @@ export const italianLandingContent: Partial<
       "Verifica come appaiono le schede delle fonti e le immagini visibili prima di creare un documento ordinato o visivamente fedele.",
     sections: [
       { heading: "Le fonti restano utili", body: "Le citazioni e i link visibili restano selezionabili quando le loro destinazioni sono sicure." },
-      { heading: "Le immagini seguono il DOM", body: "Solo i contenuti multimediali disponibili nella pagina attiva possono apparire nell’anteprima temporanea." },
+      { heading: "Le immagini dipendono dalla pagina caricata", body: "Solo i contenuti multimediali disponibili nella pagina attiva possono apparire nell’anteprima temporanea." },
       { heading: "Nessun rapporto ufficiale", body: "Page 2 File è indipendente e non è un prodotto Google o Gemini." },
     ],
     externalLinkKey: "chromeExtension",

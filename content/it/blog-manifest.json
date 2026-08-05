@@ -2,7 +2,7 @@
   "export-ai-chats-privately": {
     "author": "Redazione Page 2 File",
     "title": "Come esportare privatamente le chat di IA in PDF",
-    "description": "Esporti conversazioni di IA visibili da una scheda attiva del browser, definisca l'intervallo dei messaggi, scelga una modalità PDF e comprenda i dati temporanei dell'anteprima.",
+    "description": "Esporti conversazioni di IA visibili dalla scheda attiva, definisca i messaggi, scelga il PDF e controlli i dati temporanei.",
     "imageAlt": "Una conversazione privata di IA passa attraverso uno scudo in un PDF"
   },
   "export-browser-messenger-chats-to-pdf": {
@@ -14,13 +14,13 @@
   "export-chatgpt-conversation-to-pdf": {
     "author": "Redazione Page 2 File",
     "title": "Come esportare una conversazione ChatGPT in PDF",
-    "description": "Prepari una conversazione ChatGPT visibile, carichi l'intervallo richiesto, scelga PDF acquisito o modificabile e distingua l'acquisizione della scheda dall'esportazione dell'account.",
+    "description": "Prepari una conversazione ChatGPT visibile, carichi l’intervallo richiesto e scelga un PDF acquisito o modificabile.",
     "imageAlt": "Una conversazione generica di IA nel browser diventa un documento PDF"
   },
   "export-claude-chat-to-pdf": {
     "author": "Redazione Page 2 File",
     "title": "Come esportare una chat Claude in PDF",
-    "description": "Acquisisca una conversazione Claude visibile e l'area degli artefatti come PDF, scelga confini leggibili e la confronti con l'esportazione dei dati dell'account Claude.",
+    "description": "Salvi una conversazione Claude visibile e l’area degli artefatti come PDF, scelga confini leggibili e controlli i dati dell’account.",
     "imageAlt": "Una chat generica di IA e un pannello degli artefatti diventano un PDF"
   },
   "export-gemini-chat-to-pdf": {
@@ -50,7 +50,7 @@
   "capture-full-webpage-as-pdf": {
     "author": "Redazione Page 2 File",
     "title": "Come acquisire una pagina Web completa come PDF",
-    "description": "Acquisisca un'intera pagina Web a scorrimento come PDF definendo il confine, caricando le sezioni dinamiche, controllando le interruzioni e rispettando i limiti di accesso.",
+    "description": "Acquisisca un’intera pagina Web come PDF, carichi le sezioni dinamiche, controlli le interruzioni e rispetti i limiti di accesso.",
     "imageAlt": "Un'intera pagina scorrevole del browser confluisce in un documento PDF"
   },
   "html-to-pdf-safely": {
@@ -62,7 +62,7 @@
   "html-to-powerpoint": {
     "author": "Redazione Page 2 File",
     "title": "Come convertire contenuto HTML Web in PowerPoint",
-    "description": "Trasferisca contenuto HTML Web renderizzato in PowerPoint selezionando sezioni utili, scegliendo diapositive acquisite o modificabili e controllando le alternative complesse.",
+    "description": "Trasferisca contenuto HTML visualizzato in PowerPoint, scelga le sezioni utili e controlli le diapositive acquisite o modificabili.",
     "imageAlt": "Blocchi HTML renderizzati passano da un browser alle diapositive"
   },
   "long-webpage-page-breaks": {
@@ -74,7 +74,7 @@
   "multi-page-website-to-pdf": {
     "author": "Redazione Page 2 File",
     "title": "Come convertire un sito con più pagine in PDF",
-    "description": "Trasformi le pagine accessibili di un sito in file PDF separati, definisca il confine della scoperta, controlli gli errori ed eviti di promettere un unico documento combinato.",
+    "description": "Trasformi le pagine accessibili di un sito in PDF separati, definisca il confine, controlli gli errori ed eviti promesse di unione.",
     "imageAlt": "La mappa di un sito diventa diversi documenti PDF separati"
   },
   "preserve-clickable-links": {
@@ -86,24 +86,24 @@
   "save-authenticated-webpage-as-pdf": {
     "author": "Redazione Page 2 File",
     "title": "Come salvare in PDF una pagina Web protetta da accesso",
-    "description": "Salvi una pagina Web con accesso eseguito dalla scheda attiva di Chrome senza fornire le credenziali a un convertitore di URL, quindi controlli i limiti di privacy e acquisizione.",
+    "description": "Salvi una pagina Web con accesso eseguito dalla scheda Chrome senza fornire credenziali a un convertitore e controlli la privacy.",
     "imageAlt": "Una scheda protetta del browser diventa una copia PDF privata"
   },
   "save-webpage-as-pdf": {
     "author": "Redazione Page 2 File",
     "title": "Come salvare una pagina Web come PDF",
-    "description": "Salvi una pagina Web pubblica o autenticata come PDF, scelga acquisizioni o output modificabile, controlli le interruzioni e comprenda il limite temporaneo dell'anteprima.",
+    "description": "Salvi una pagina Web come PDF, scelga acquisizioni o output modificabile, controlli le interruzioni e l’anteprima temporanea.",
     "imageAlt": "Una lunga pagina del browser diventa una pila ordinata di pagine PDF"
   },
   "sections-to-slides": {
     "author": "Redazione Page 2 File",
-    "title": "Come le sezioni di una pagina Web diventano diapositive PowerPoint",
-    "description": "Utilizzi la gerarchia della pagina per definire i confini delle diapositive, conservare il contesto, dividere sezioni dense e controllare l'output PowerPoint acquisito o modificabile.",
+    "title": "Come trasformare sezioni Web in diapositive",
+    "description": "Usi la gerarchia della pagina per definire le diapositive, dividere sezioni dense e controllare l’output PowerPoint.",
     "imageAlt": "Le sezioni di una pagina Web vengono disposte come diapositive PowerPoint separate"
   },
   "screenshot-vs-editable-powerpoint": {
     "author": "Redazione Page 2 File",
-    "title": "Diapositive acquisite rispetto a PowerPoint modificabile da una pagina Web",
+    "title": "PowerPoint: acquisizione o diapositive modificabili",
     "description": "Confronti le diapositive acquisite con l'output PowerPoint modificabile per fedeltà del layout, testo selezionabile, link, grafici, manutenzione e accessibilità.",
     "imageAlt": "Le diapositive acquisite vengono confrontate con elementi PowerPoint modificabili"
   },
@@ -116,7 +116,7 @@
   "webpage-capture-vs-web-scraping": {
     "author": "Redazione Page 2 File",
     "title": "Acquisizione di pagine Web rispetto a web scraping: quale serve?",
-    "description": "Scelga l'acquisizione di pagine Web per un documento leggibile con immagini o il web scraping per dati strutturati ed eviti di trattare Page 2 File come un'API di scansione.",
+    "description": "Scelga l’acquisizione per un documento leggibile o l’estrazione per dati strutturati, senza trattare Page 2 File come API.",
     "imageAlt": "Una pagina del browser si divide in un documento e una tabella di dati"
   },
   "webpage-to-powerpoint": {
@@ -134,7 +134,7 @@
   "website-types-to-pdf-or-powerpoint": {
     "author": "Redazione Page 2 File",
     "title": "Quali tipi di siti può esportare in PDF o PowerPoint?",
-    "description": "Scopra come articoli, documentazione, dashboard, negozi, pagine formative, applicazioni Web, chat di IA e messenger nel browser si adattano all'esportazione in PDF o PowerPoint.",
+    "description": "Scopra come articoli, negozi, corsi, applicazioni Web, chat di IA e messenger si adattano a PDF o PowerPoint.",
     "imageAlt": "Diversi tipi di siti convergono in PDF e presentazioni"
   },
   "why-print-to-pdf-breaks": {

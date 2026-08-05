@@ -17,7 +17,8 @@ export type StaticRoute =
   | "updates"
   | "changelog"
   | "privacy"
-  | "terms";
+  | "terms"
+  | "about";
 
 export type PublicPageFamily =
   | "home"
@@ -48,6 +49,7 @@ export const staticRoutes: ReadonlyArray<StaticRoute> = [
   "changelog",
   "privacy",
   "terms",
+  "about",
 ];
 
 const publicPageFamilyByRoute: Record<StaticRoute, PublicPageFamily> = {
@@ -67,6 +69,7 @@ const publicPageFamilyByRoute: Record<StaticRoute, PublicPageFamily> = {
   "page2pdf-gpt": "gpt-workflow",
   "privacy": "legal",
   "terms": "legal",
+  "about": "legal",
   "updates": "content",
   "web2pdf-gpt": "gpt-workflow",
   "web2powerpoint-gpt": "gpt-workflow",

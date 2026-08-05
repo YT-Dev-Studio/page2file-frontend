@@ -26,7 +26,7 @@ export const frenchLandingContent: Partial<
     title: "Webpage to PDF Converter — Web2File",
     displayTitle: "GPT: Webpage 2 PDF",
     description:
-      "Webpage to PDF Converter — Web2File convertit des URL publiques exactes et traite des PDF de pages web ou des captures importées en fichiers Visual PDF ou Interactive PDF distincts.",
+      "Webpage to PDF Converter — Web2File traite des URL publiques exactes, des PDF de pages web et des captures en Visual PDF ou Interactive PDF.",
     lead:
       "Fournissez une URL publique exacte, une liste d’URL exactes, un PDF de page web ou des captures pleine page ou consécutives. Choisissez Visual PDF pour enregistrer le site sous forme de captures ou Interactive PDF pour le texte sélectionnable et les liens cliquables.",
     sections: [
@@ -174,7 +174,7 @@ export const frenchLandingContent: Partial<
     sections: [
       { heading: "Ce qui est préservé", body: "Les messages, l’ordre des intervenants, les blocs de code, les tableaux et les liens visibles sont représentés dans l’aperçu." },
       { heading: "Deux styles de lecture", body: "Conservez le rythme visuel d’origine ou choisissez un document plus épuré, optimisé pour la lecture et l’impression." },
-      { heading: "Limites propres à la plateforme", body: "Les branches repliées, messages non chargés et contenus hors DOM peuvent nécessiter un défilement ou un dépliage avant la capture." },
+      { heading: "Limites propres à la plateforme", body: "Les branches repliées, messages non chargés et contenus que le navigateur n’a pas encore chargés peuvent nécessiter un défilement ou un dépliage avant la capture." },
       { heading: "Aucune affiliation officielle", body: "Page 2 File est un outil d’export indépendant qui n’est ni approuvé par ni affilié à OpenAI ou ChatGPT." },
     ],
     externalLinkKey: "chromeExtension",
@@ -216,7 +216,7 @@ export const frenchLandingContent: Partial<
       "Vérifiez l’apparence des cartes sources et images visibles avant de produire un document épuré ou visuellement fidèle.",
     sections: [
       { heading: "Les sources restent utiles", body: "Les citations et liens sources visibles restent cliquables lorsque leur destination est sûre." },
-      { heading: "Les images suivent le DOM", body: "Seuls les médias disponibles sur la page active peuvent apparaître dans l’aperçu temporaire." },
+      { heading: "Les images dépendent de la page chargée", body: "Seuls les médias disponibles sur la page active peuvent apparaître dans l’aperçu temporaire." },
       { heading: "Aucune affiliation officielle", body: "Page 2 File est indépendant et n’est pas un produit Google ou Gemini." },
     ],
     externalLinkKey: "chromeExtension",

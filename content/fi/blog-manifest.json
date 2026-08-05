@@ -8,7 +8,7 @@
   "why-print-to-pdf-breaks": {
     "author": "Page 2 File -toimitus",
     "title": "URL PDF-tiedostoksi vai selaintulostus: Kumpi tallentaa enemmän?",
-    "description": "Vertaa URL-osoitteesta PDF-tiedostoksi -muunnosta selaintulostukseen, tulostustyyleihin, myöhäiseen sisältöön, yksityisiin välilehtiin, visuaaliseen tarkkuuteen ja muokattavaan tulokseen.",
+    "description": "Vertaa URL-osoitteesta tehtävää PDF-muunnosta selaintulostukseen, myöhään latautuvaan sisältöön ja muokattavaan tulokseen.",
     "imageAlt": "Selaimen tulostustyönkulkua verrataan verkkosivun kaappaustyönkulkuun"
   },
   "capture-full-webpage-as-pdf": {
@@ -25,7 +25,7 @@
   },
   "preserve-clickable-links": {
     "author": "Page 2 File -toimitus",
-    "title": "Napsautettavien linkkien säilyttäminen verkkosivun PDF-tiedostossa",
+    "title": "Näin säilytät PDF-linkit napsautettavina",
     "description": "Lue, milloin linkit pysyvät napsautettavina PDF:ssä, miksi kuvakaappaus poistaa vuorovaikutuksen ja miten kohteet tarkistetaan muokattavassa tulosteessa.",
     "imageAlt": "Verkkosivun linkit säilyvät PDF-tiedostossa"
   },
@@ -85,8 +85,8 @@
   },
   "website-types-to-pdf-or-powerpoint": {
     "author": "Page 2 File -toimitus",
-    "title": "Minkä tyyppiset verkkosivustot voi tallentaa PDF- tai PowerPoint-muotoon?",
-    "description": "Valitse oikea muoto, tulostetila ja valmistelu artikkeleille, hallintanäkymille, kaupoille, oppimissivuille, keskusteluille, viestimille ja yksityisille verkkosovelluksille.",
+    "title": "Mitkä verkkosivut sopivat PDF- tai PowerPoint-vientiin?",
+    "description": "Valitse sopiva muoto artikkeleille, hallintanäkymille, kaupoille, oppimissivuille, keskusteluille ja verkkosovelluksille.",
     "imageAlt": "Erilaisia verkkosivustotyyppejä yhdistettynä PDF- ja PowerPoint-tulosteisiin"
   },
   "webpage-capture-vs-web-scraping": {
@@ -121,7 +121,7 @@
   },
   "export-other-ai-chats-to-pdf": {
     "author": "Page 2 File -toimitus",
-    "title": "Grok-, DeepSeek-, Perplexity- ja Copilot-keskustelujen vienti PDF:ksi",
+    "title": "Vie muut AI-keskustelut PDF-tiedostoksi",
     "description": "Mukauta aktiivisen välilehden kaappaus eri tekoälykäyttöliittymiin, säilytä näkyvät lähteet, suojaa yksityiset tiedot ja varmista täsmällinen keskusteluraja.",
     "imageAlt": "Yleinen tekoälykeskustelu lähteineen, koodeineen ja medioineen valmisteltuna PDF:ksi"
   },

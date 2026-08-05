@@ -16,7 +16,7 @@ export type ExternalLink = {
   status: ExternalLinkStatus;
 };
 
-const DEFAULT_SITE_URL = "http://localhost:3000";
+const DEFAULT_SITE_URL = "https://page2file.com";
 const LOCAL_HOSTNAMES: ReadonlySet<string> = new Set([
   "0.0.0.0",
   "127.0.0.1",
@@ -140,3 +140,6 @@ export const externalLinks: Record<ExternalLinkKey, ExternalLink> = {
 
 export const absoluteUrl = (pathname: string): string =>
   new URL(pathname, siteUrl).toString();
+
+export const organizationId = absoluteUrl("/#organization");
+export const websiteId = absoluteUrl("/#website");

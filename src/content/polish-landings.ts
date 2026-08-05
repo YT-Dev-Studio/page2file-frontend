@@ -22,7 +22,7 @@ export const polishLandingContent: Partial<Record<StaticRoute, LandingContent>> 
     eyebrow: "Aplikacja GPT · dokładne URL-e, PDF-y lub zrzuty ekranu",
     title: "Webpage to PDF Converter — Web2File",
     displayTitle: "GPT: Webpage 2 PDF",
-    description: "Webpage to PDF Converter — Web2File konwertuje dokładne publiczne adresy stron i przetwarza przesłane PDF-y stron lub zrzuty ekranu do osobnych plików Visual PDF albo Interactive PDF.",
+    description: "Webpage to PDF Converter — Web2File przetwarza dokładne publiczne adresy, pliki PDF stron i zrzuty jako Visual PDF lub Interactive PDF.",
     lead: "Podaj dokładny publiczny URL, listę dokładnych URL-i, PDF strony internetowej albo pełne lub kolejne zrzuty ekranu. Wybierz Visual PDF, aby zapisać witrynę jako zrzuty, lub Interactive PDF dla zaznaczanego tekstu i aktywnych łączy.",
     sections: [
       { heading: "1. Podaj jeden lub więcej adresów URL", body: "Wyślij publiczny URL, listę dokładnych publicznych URL-i, istniejący PDF strony albo pełne lub kolejne zrzuty ekranu. Każda strona pozostaje osobnym plikiem PDF." },
@@ -139,7 +139,7 @@ export const polishLandingContent: Partial<Record<StaticRoute, LandingContent>> 
     sections: [
       { heading: "Co zostaje zachowane", body: "Wiadomości, kolejność uczestników, kod, tabele i widoczne łącza są odwzorowane w podglądzie." },
       { heading: "Dwa style czytania", body: "Zachowaj oryginalny rytm wizualny lub wybierz spokojniejszy dokument do czytania i druku." },
-      { heading: "Ograniczenia platformy", body: "Zwinięte gałęzie, niewczytane wiadomości i treści poza DOM mogą wymagać otwarcia lub wczytania przed przechwyceniem." },
+      { heading: "Ograniczenia platformy", body: "Zwinięte gałęzie, niewczytane wiadomości i treści, których przeglądarka jeszcze nie wczytała mogą wymagać otwarcia lub wczytania przed przechwyceniem." },
       { heading: "Brak oficjalnego związku", body: "Page 2 File jest niezależnym narzędziem i nie jest wspierany ani obsługiwany przez OpenAI lub ChatGPT." },
     ],
     externalLinkKey: "chromeExtension",
@@ -171,7 +171,7 @@ export const polishLandingContent: Partial<Record<StaticRoute, LandingContent>> 
     lead: "Sprawdź, jak wyglądają karty źródeł i widoczne obrazy, zanim utworzysz przejrzysty lub wizualnie wierny dokument.",
     sections: [
       { heading: "Źródła pozostają użyteczne", body: "Widoczne cytowania i łącza pozostają klikalne, gdy ich cele są bezpieczne." },
-      { heading: "Obrazy podążają za DOM", body: "W tymczasowym podglądzie mogą pojawić się tylko multimedia dostępne dla aktywnej strony." },
+      { heading: "Obrazy zależą od wczytanej strony", body: "W tymczasowym podglądzie mogą pojawić się tylko multimedia dostępne dla aktywnej strony." },
       { heading: "Brak oficjalnego związku", body: "Page 2 File jest niezależny i nie jest produktem Google ani Gemini." },
     ],
     externalLinkKey: "chromeExtension",

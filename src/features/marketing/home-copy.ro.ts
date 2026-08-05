@@ -80,7 +80,7 @@ export const homeCopyRo: HomeCopy = {
     items: [
       { title: "Cum convertesc o pagină web în PDF sau PowerPoint?", body: "Pentru o pagină publică, lipiți URL-ul HTTPS, alegeți PDF sau PowerPoint și instantanee ale paginii sau modul editabil, apoi verificați secțiunile. Pentru o pagină autentificată, folosiți extensia Page 2 File în fila activă." },
       { title: "Poate Page 2 File păstra designul paginii?", body: "Instantaneele paginii sunt concepute pentru a păstra aspectul randat, inclusiv dispunerea, culorile, imaginile și graficele vizibile. Animațiile, videoclipurile și controalele interactive sunt randate static." },
-      { title: "Textul și linkurile rămân editabile?", body: "Modul editabil păstrează textul acceptat și destinațiile sigure ale linkurilor. Modulele complexe, canvas și elementele neacceptate pot fi randate ca imagini. Instantaneele paginii prioritizează aspectul." },
+      { title: "Textul și linkurile rămân editabile?", body: "Modul editabil păstrează textul acceptat și destinațiile sigure ale linkurilor. Modulele complexe, grafică desenată direct de browser și elementele neacceptate pot fi randate ca imagini. Instantaneele paginii prioritizează aspectul." },
       { title: "Pot fi capturate integral paginile lungi și dinamice?", body: "Extensia folosește fila activă randată. Extindeți mai întâi conținutul și derulați până la sfârșit. Conținutul ascuns sau neîncărcat nu poate fi exportat." },
       { title: "Pot converti pagini după autentificare?", body: "Da, cu extensia Chrome după ce pagina a fost deschisă în mod normal. Extensia folosește fila activă și nu vă cere parola în formularul pentru URL-uri publice. Nu ocolește controalele de acces." },
       {

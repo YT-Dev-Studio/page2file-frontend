@@ -9,11 +9,23 @@ export default function robots(): MetadataRoute.Robots {
     };
   }
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: ["/*/preview/", "/*/download/", "/api/"],
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/*/preview/", "/*/download/", "/api/"],
+      },
+      {
+        userAgent: "OAI-SearchBot",
+        allow: "/",
+        disallow: ["/*/preview/", "/*/download/", "/api/"],
+      },
+      {
+        userAgent: "GPTBot",
+        disallow: "/",
+      },
+    ],
     sitemap: absoluteUrl("/sitemap.xml"),
+    host: absoluteUrl("/"),
   };
 }

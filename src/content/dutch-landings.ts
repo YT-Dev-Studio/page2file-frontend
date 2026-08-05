@@ -26,7 +26,7 @@ export const dutchLandingContent: Partial<
     title: "Webpage to PDF Converter — Web2File",
     displayTitle: "GPT: Webpage 2 PDF",
     description:
-      "Webpage to PDF Converter — Web2File converteert exacte openbare webpagina-URL's en verwerkt geüploade webpagina-PDF's of screenshots tot afzonderlijke Visual PDF- of Interactive PDF-bestanden.",
+      "Webpage to PDF Converter — Web2File verwerkt exacte openbare URL's, webpagina-PDF's en screenshots als Visual PDF of Interactive PDF.",
     lead:
       "Geef één exacte openbare URL, een lijst met exacte URL's, een webpagina-PDF of volledige of opeenvolgende screenshots. Kies Visual PDF om de website als schermafbeeldingen op te slaan of Interactive PDF voor selecteerbare tekst en klikbare links.",
     sections: [
@@ -52,7 +52,7 @@ export const dutchLandingContent: Partial<
   "web2pdf-gpt": {
     route: "web2pdf-gpt",
     eyebrow: "GPT-app · toegankelijke webpagina's",
-    title: "Websitepagina's naar afzonderlijke PDF's converteren met Web 2 PDF",
+    title: "Websitepagina's als aparte PDF's met Web 2 PDF",
     description:
       "Web 2 PDF vindt toegankelijke pagina's, converteert geselecteerde pagina's en geeft voor iedere pagina een afzonderlijke PDF terug.",
     lead:
@@ -174,7 +174,7 @@ export const dutchLandingContent: Partial<
     sections: [
       { heading: "Wat behouden blijft", body: "Berichten, sprekersvolgorde, codeblokken, tabellen en zichtbare links worden in het voorbeeld weergegeven." },
       { heading: "Twee leesstijlen", body: "Behoud het oorspronkelijke visuele ritme of kies een rustiger document voor lezen en afdrukken." },
-      { heading: "Platformspecifieke grenzen", body: "Ingeklapte takken, niet-geladen berichten en inhoud buiten de DOM moeten mogelijk vóór vastlegging worden geopend of geladen." },
+      { heading: "Platformspecifieke grenzen", body: "Ingeklapte takken, niet-geladen berichten en inhoud die de browser nog niet heeft geladen moeten mogelijk vóór vastlegging worden geopend of geladen." },
       { heading: "Geen officiële relatie", body: "Page 2 File is een onafhankelijke exporttool en wordt niet ondersteund of beheerd door OpenAI of ChatGPT." },
     ],
     externalLinkKey: "chromeExtension",
@@ -216,7 +216,7 @@ export const dutchLandingContent: Partial<
       "Controleer de weergave van bronkaarten en zichtbare afbeeldingen voordat u een overzichtelijk of visueel getrouw document maakt.",
     sections: [
       { heading: "Bronnen blijven bruikbaar", body: "Zichtbare bronvermeldingen en links blijven aanklikbaar wanneer hun doelen veilig zijn." },
-      { heading: "Afbeeldingen volgen de DOM", body: "Alleen media die voor de actieve pagina beschikbaar zijn, kunnen in het tijdelijke voorbeeld verschijnen." },
+      { heading: "Afbeeldingen volgen de geladen pagina", body: "Alleen media die voor de actieve pagina beschikbaar zijn, kunnen in het tijdelijke voorbeeld verschijnen." },
       { heading: "Geen officiële relatie", body: "Page 2 File is onafhankelijk en geen product van Google of Gemini." },
     ],
     externalLinkKey: "chromeExtension",

@@ -20,7 +20,7 @@ export const romanianLandingContent: Partial<Record<StaticRoute, LandingContent>
   "page2pdf-gpt": {
     route: "page2pdf-gpt", eyebrow: "Aplicație GPT · URL-uri exacte, PDF-uri sau capturi", title: "Webpage to PDF Converter — Web2File",
     displayTitle: "GPT: Webpage 2 PDF",
-    description: "Webpage to PDF Converter — Web2File convertește URL-uri publice exacte și procesează PDF-uri de pagini web sau capturi încărcate în fișiere Visual PDF ori Interactive PDF separate.",
+    description: "Webpage to PDF Converter — Web2File procesează adrese publice exacte, PDF-uri de pagini și capturi ca Visual PDF sau Interactive PDF.",
     lead: "Furnizați un URL public exact, o listă de URL-uri exacte, un PDF al unei pagini web sau capturi complete ori consecutive. Alegeți Visual PDF pentru a salva site-ul sub formă de capturi sau Interactive PDF pentru text selectabil și linkuri active.",
     sections: [
       { heading: "1. Indicați unul sau mai multe URL-uri", body: "Trimiteți un URL public, o listă de URL-uri publice exacte, un PDF existent al unei pagini web sau capturi complete ori consecutive. Fiecare pagină web rămâne într-un PDF separat." },
@@ -113,7 +113,7 @@ export const romanianLandingContent: Partial<Record<StaticRoute, LandingContent>
     sections: [
       { heading: "Ce se păstrează", body: "Mesajele, ordinea participanților, codul, tabelele și linkurile vizibile apar în previzualizare." },
       { heading: "Două stiluri de citire", body: "Păstrați ritmul vizual original sau alegeți un document mai liniștit pentru citire și imprimare." },
-      { heading: "Limite specifice platformei", body: "Ramurile restrânse, mesajele neîncărcate și conținutul din afara DOM pot necesita deschidere sau încărcare înainte de captură." },
+      { heading: "Limite specifice platformei", body: "Ramurile restrânse, mesajele neîncărcate și conținutul pe care browserul nu l-a încărcat pot necesita deschidere sau încărcare înainte de captură." },
       { heading: "Fără afiliere oficială", body: "Page 2 File este un instrument independent și nu este aprobat sau operat de OpenAI ori ChatGPT." },
     ],
     externalLinkKey: "chromeExtension", primaryLabel: "Instalați pentru ChatGPT",
@@ -137,7 +137,7 @@ export const romanianLandingContent: Partial<Record<StaticRoute, LandingContent>
     lead: "Verificați cum apar cardurile de surse și imaginile vizibile înainte de a crea un document clar sau fidel vizual.",
     sections: [
       { heading: "Sursele rămân utile", body: "Citările și linkurile vizibile rămân accesibile când destinațiile sunt sigure." },
-      { heading: "Imaginile urmează DOM-ul", body: "Numai elementele media disponibile paginii active pot apărea în previzualizarea temporară." },
+      { heading: "Imaginile depind de pagina încărcată", body: "Numai elementele media disponibile paginii active pot apărea în previzualizarea temporară." },
       { heading: "Fără afiliere oficială", body: "Page 2 File este independent și nu este un produs Google sau Gemini." },
     ],
     externalLinkKey: "chromeExtension", primaryLabel: "Instalați pentru Gemini",

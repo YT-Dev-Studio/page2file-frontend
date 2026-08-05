@@ -24,7 +24,7 @@ CSS może przypisywać inne reguły dla ekranu i druku. Arkusz stylów druku mo�
   step={2}
 />
 
-Leniwie ładowane media tworzą kolejną różnicę. Drukowanie zaczyna się od bieżącego stanu dokumentu; treść, która nigdy nie znalazła się w obszarze widoku, może w nim nie istnieć. Wirtualizowane interfejsy czatów i dashboardów mogą podczas przewijania usuwać starsze wiersze z DOM, więc polecenie drukowania nie może ich odzyskać.
+Leniwie ładowane media tworzą kolejną różnicę. Drukowanie zaczyna się od bieżącego stanu dokumentu; treść, która nigdy nie znalazła się w obszarze widoku, może w nim nie istnieć. Wirtualizowane interfejsy czatów i dashboardów mogą podczas przewijania usuwać starsze wiersze z struktura strony w przeglądarce, więc polecenie drukowania nie może ich odzyskać.
 
 ## Co zmienia konwersja URL
 
@@ -46,7 +46,7 @@ Podgląd pozostaje rozstrzygającym dowodem. Jeśli brakuje w nim ważnego bloku
 
 ## Przeprowadź kontrolowane porównanie
 
-Porównuj obie metody przy tym samym stanie przeglądarki. Przed utworzeniem każdego pliku ustaw ten sam viewport, filtry, rozwinięte panele i pozycję przewijania. W przeciwnym razie porównujesz dwa różne źródła, a nie dwie metody konwersji. Zapisz, czy strona zakończyła ładowanie obrazów, fontów internetowych i wykresów.
+Porównuj obie metody przy tym samym stanie przeglądarki. Przed utworzeniem każdego pliku ustaw ten sam widoczny obszar przeglądarki, filtry, rozwinięte panele i pozycję przewijania. W przeciwnym razie porównujesz dwa różne źródła, a nie dwie metody konwersji. Zapisz, czy strona zakończyła ładowanie obrazów, fontów internetowych i wykresów.
 
 Zacznij od podglądu wydruku w przeglądarce. Zwróć uwagę, które elementy nawigacji, tła, interaktywne panele i przyklejone elementy znikają. Nie musi to być wada: dobrze zaprojektowany arkusz druku może usunąć bałagan i dać najczystszą kopię do czytania. Pytanie brzmi, czy usunął coś niezbędnego do Twojego celu.
 

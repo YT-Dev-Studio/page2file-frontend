@@ -26,7 +26,7 @@ export const portugueseLandingContent: Partial<
     title: "Webpage to PDF Converter — Web2File",
     displayTitle: "GPT: Webpage 2 PDF",
     description:
-      "Webpage to PDF Converter — Web2File converte URLs públicos exatos e processa PDFs de páginas web ou capturas carregadas em ficheiros Visual PDF ou Interactive PDF separados.",
+      "Webpage to PDF Converter — Web2File processa URLs públicos exatos, PDFs de páginas Web e capturas como Visual PDF ou Interactive PDF.",
     lead:
       "Forneça um URL público exato, uma lista de URLs exatos, um PDF de página web ou capturas de página inteira ou consecutivas. Escolha Visual PDF para guardar o site como capturas ou Interactive PDF para texto selecionável e ligações clicáveis.",
     sections: [
@@ -174,7 +174,7 @@ export const portugueseLandingContent: Partial<
     sections: [
       { heading: "O que é preservado", body: "As mensagens, a ordem dos participantes, o código, as tabelas e as ligações visíveis são representados na pré-visualização." },
       { heading: "Dois estilos de leitura", body: "Mantenha o ritmo visual original ou escolha um documento mais simples para leitura e impressão." },
-      { heading: "Limites específicos da plataforma", body: "Ramos recolhidos, mensagens não carregadas e conteúdo fora do DOM podem ter de ser abertos ou carregados antes da captura." },
+      { heading: "Limites específicos da plataforma", body: "Ramos recolhidos, mensagens não carregadas e conteúdo que o navegador ainda não carregou podem ter de ser abertos ou carregados antes da captura." },
       { heading: "Sem relação oficial", body: "O Page 2 File é uma ferramenta independente e não é aprovado nem operado pela OpenAI ou pelo ChatGPT." },
     ],
     externalLinkKey: "chromeExtension",
@@ -216,7 +216,7 @@ export const portugueseLandingContent: Partial<
       "Reveja como os cartões de fontes e as imagens visíveis aparecem antes de criar um documento limpo ou visualmente fiel.",
     sections: [
       { heading: "As fontes continuam úteis", body: "As citações e ligações visíveis permanecem clicáveis quando os respetivos destinos são seguros." },
-      { heading: "As imagens seguem o DOM", body: "Apenas os conteúdos multimédia disponíveis na página ativa podem aparecer na pré-visualização temporária." },
+      { heading: "As imagens dependem da página carregada", body: "Apenas os conteúdos multimédia disponíveis na página ativa podem aparecer na pré-visualização temporária." },
       { heading: "Sem relação oficial", body: "O Page 2 File é independente e não é um produto da Google ou do Gemini." },
     ],
     externalLinkKey: "chromeExtension",

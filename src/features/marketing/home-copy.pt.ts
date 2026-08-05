@@ -160,7 +160,7 @@ export const homeCopyPt: HomeCopy = {
       {
         title: "O texto e as ligações permanecem editáveis ou acessíveis?",
         body:
-          "O modo editável preserva o texto compatível como conteúdo do documento e os destinos seguros das ligações. Widgets complexos, gráficos canvas e elementos não suportados podem ser representados como imagens. As capturas de página dão prioridade à aparência e não transformam cada píxel num objeto editável.",
+          "O modo editável preserva o texto compatível como conteúdo do documento e os destinos seguros das ligações. Widgets complexos, gráficos desenhados diretamente pelo navegador e elementos não suportados podem ser representados como imagens. As capturas de página dão prioridade à aparência e não transformam cada píxel num objeto editável.",
       },
       {
         title: "Consegue capturar completamente páginas longas e dinâmicas?",

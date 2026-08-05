@@ -284,7 +284,7 @@ const publishedHomeCopy: Record<"en" | "ru", HomeCopy> = {
         {
           title: "Will text and links remain editable or clickable?",
           body:
-            "Editable mode keeps supported text as document content and preserves safe link targets. Complex widgets, canvas graphics, and unsupported elements may be represented as images. Screenshot mode prioritizes appearance and does not turn every pixel into an editable object.",
+            "Editable mode keeps supported text as document content and preserves safe link targets. Complex widgets, graphics drawn directly by the browser, and unsupported elements may be represented as images. Screenshot mode prioritizes appearance and does not turn every pixel into an editable object.",
         },
         {
           title: "Can it capture full-length and dynamic pages?",
@@ -529,7 +529,7 @@ const publishedHomeCopy: Record<"en" | "ru", HomeCopy> = {
         {
           title: "Останутся ли текст и ссылки редактируемыми и кликабельными?",
           body:
-            "Редактируемый режим сохраняет поддерживаемый текст как содержимое документа и оставляет безопасные ссылки кликабельными. Сложные виджеты и canvas могут стать изображениями. Режим скриншотов отдаёт приоритет внешнему виду.",
+            "Редактируемый режим сохраняет поддерживаемый текст как содержимое документа и оставляет безопасные ссылки кликабельными. Сложные виджеты и графика, которую браузер рисует напрямую, может стать изображениями. Режим скриншотов отдаёт приоритет внешнему виду.",
         },
         {
           title: "Можно ли захватить полную и динамическую страницу?",

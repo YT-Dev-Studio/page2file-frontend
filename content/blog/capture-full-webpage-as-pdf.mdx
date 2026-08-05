@@ -19,13 +19,13 @@ A page can also contain fixed headers, floating chat buttons and consent overlay
 
 ## Load dynamic material deliberately
 
-Scroll through lazy images and expand the accordions you want included. In a virtualized chat, older messages may disappear from the DOM while newer ones load; use the platform's own controls to expose the required range before capture. Page 2 File can capture rendered content, not hidden account records.
+Scroll through the page so delayed images appear, and expand the sections you want included. Some long chats remove older messages from the loaded page as newer ones appear; use the platform's own controls to expose the required range before capture. Page 2 File can capture visible content, not hidden account records.
 
 <ArticleFigure
-  alt={"Browser and Page 2 File extension: Expand required sections and trigger lazy-loaded content before capture."}
-  caption={"Expand required sections and trigger lazy-loaded content before capture."}
+  alt={"Browser and Page 2 File extension: Expand required sections and load content that appears only after scrolling."}
+  caption={"Expand required sections and load content that appears only after scrolling."}
   closeLabel={"Close image preview"}
-  openLabel={"Open full-size image: Expand required sections and trigger lazy-loaded content before capture."}
+  openLabel={"Open full-size image: Expand required sections and load content that appears only after scrolling."}
   src="/blog/instructions/capture-full-webpage-as-pdf/02.svg"
   step={2}
 />
@@ -52,11 +52,11 @@ Pay attention to nested scroll areas. A dashboard may have a page scrollbar, a t
 
 Sticky headers and floating controls can repeat as a long page is divided into sections. Keep them when they provide essential context, such as column labels; remove or collapse them when they cover content. The goal is continuity for the reader, not a literal repetition of every browser layer.
 
-## Handle lazy loading and virtualization
+## Load content that appears only while scrolling
 
-Lazy loading delays images or panels until they approach the viewport. A deliberate top-to-bottom pass usually reveals whether the source is loading correctly. After that pass, revisit the beginning. If early cards have disappeared, the site is probably virtualizing the list by replacing off-screen nodes.
+Some pages delay images or panels until you scroll near them. A deliberate top-to-bottom pass shows whether the source is loading correctly. After that pass, revisit the beginning. If early cards have disappeared, the site is replacing items outside the visible area instead of keeping the whole list loaded.
 
-For virtualized sources, capture a smaller range or several logical sections and verify each one. Do not infer that an unseen part of the page exists in the output because a scrollbar suggests more content. The preview should show the actual start, end and order of every captured section.
+When a page replaces older items during scrolling, capture a smaller range or several logical sections and verify each one. Do not assume that an unseen part of the page exists in the output just because the scrollbar suggests more content. The preview should show the actual start, end and order of every captured section.
 
 Dynamic counters, live feeds and animations can change during the pass. Pause updates when the site provides a control, or choose a clear capture moment and record it. A PDF is a static snapshot; it cannot preserve the live behavior that produced the displayed state.
 
@@ -74,11 +74,11 @@ If the preview stops early, return to the source and find the first missing sect
 
 If the preview repeats content, inspect sticky headers, pinned table rows and components that re-render at section boundaries. Collapse nonessential fixed elements and repeat a smaller capture. Change one condition at a time so you can tell whether the defect came from page state, capture range or section splitting.
 
-If early content disappears after later content loads, the source is probably virtualized. There may be no single browser state containing the entire history. Define multiple ranges with clear overlap, capture them separately and label their order. Do not claim a continuous full-page record when the source never rendered one.
+If early content disappears after later content loads, the page is replacing older items. There may be no single browser state containing the entire history. Define multiple ranges with clear overlap, capture them separately and label their order. Do not claim a continuous full-page record when the source never displayed one.
 
 ## Review privacy before download
 
-Full-page capture can reveal details far outside the initial viewport: account menus, participant names, notification previews, query parameters and content from adjacent panels. Scan the complete preview rather than assuming that what was off-screen is harmless. Remove unnecessary sections at the source or in preview before creating the final file.
+Full-page capture can reveal details far outside the area initially visible on screen: account menus, participant names, notification previews, query parameters and content from adjacent panels. Scan the complete preview rather than assuming that off-screen material is harmless. Remove unnecessary sections at the source or in preview before creating the final file.
 
 The extension works with the active browser tab. Preview data is temporary, is deleted when the preview tab closes and is not stored in a Page 2 File conversion-history database. The PDF you download is then under your control, so choose its filename, storage location and sharing channel according to the sensitivity of the content.
 

@@ -80,7 +80,7 @@ export const homeCopySv: HomeCopy = {
     items: [
       { title: "Hur konverterar jag en webbsida till PDF eller PowerPoint?", body: "För en offentlig sida klistrar du in dess HTTPS-URL, väljer PDF eller PowerPoint och sidbilder eller redigerbart läge och granskar avsnitten. För en inloggad sida använder du Page 2 File-tillägget i den aktiva fliken." },
       { title: "Kan Page 2 File bevara sidans utformning?", body: "Sidbilder är avsedda att bevara det renderade utseendet, inklusive layout, färger, bilder och synliga diagram. Animationer, video och interaktiva kontroller återges statiskt." },
-      { title: "Förblir text och länkar redigerbara?", body: "Redigerbart läge bevarar text som stöds och säkra länkmål. Komplexa widgetar, canvas och element som inte stöds kan återges som bilder. Sidbilder prioriterar utseendet." },
+      { title: "Förblir text och länkar redigerbara?", body: "Redigerbart läge bevarar text som stöds och säkra länkmål. Komplexa widgetar, grafik som webbläsaren ritar direkt och element som inte stöds kan återges som bilder. Sidbilder prioriterar utseendet." },
       { title: "Kan långa och dynamiska sidor fångas helt?", body: "Tillägget arbetar med den renderade aktiva fliken. Fäll först ut innehåll och rulla till slutet. Dolt eller inte inläst innehåll kan inte exporteras." },
       { title: "Kan jag konvertera sidor efter inloggning?", body: "Ja, med Chrome-tillägget efter att sidan öppnats normalt. Tillägget använder den aktiva fliken och begär inte ditt lösenord i formuläret för offentliga URL:er. Det kringgår inte åtkomstkontroller." },
       {

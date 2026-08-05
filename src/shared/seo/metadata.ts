@@ -51,7 +51,8 @@ export const buildMetadata = ({
   const canIndex = indexingEnabled && routeIsIndexable;
   const pathname = routePath(locale, route);
   const canonical = absoluteUrl(pathname);
-  const fullTitle = `${title} | ${siteName}`;
+  const titleWithBrand = `${title} | ${siteName}`;
+  const fullTitle = titleWithBrand.length <= 65 ? titleWithBrand : title;
   const alternateLocales = localeRegistry
     .filter(
       (candidate): boolean =>
@@ -69,7 +70,7 @@ export const buildMetadata = ({
     siteName,
     images: [
       {
-        url: absoluteUrl("/demos/share-card.svg"),
+        url: absoluteUrl("/og/page2file-share.png"),
         width: 1200,
         height: 630,
         alt: `${title} — ${siteName}`,
@@ -110,7 +111,7 @@ export const buildMetadata = ({
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [absoluteUrl("/demos/share-card.svg")],
+      images: [absoluteUrl("/og/page2file-share.png")],
     },
   };
 };

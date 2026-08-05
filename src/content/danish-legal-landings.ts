@@ -33,8 +33,8 @@ export const danishLegalLandingContent: Partial<Record<StaticRoute, LandingConte
   terms: {
     route: "terms",
     eyebrow: "Tjenesteaftale",
-    title: "Brugsvilkår",
-    description: "Vilkår for brug af Page 2 File, herunder tilladte kilder, begrænsninger, ansvar og tilgængelighed.",
+    title: "Vilkår for brug af Page 2 File",
+    description: "Læs vilkårene for brug af Page 2 File, herunder tilladte kilder, begrænsninger, ansvar, tjenestens tilgængelighed og kontakt.",
     lead: "Disse Vilkår regulerer din brug af Page 2 File-webstedet, Chrome-udvidelsen og tjenesterne til konvertering til PDF eller PowerPoint.",
     sections: [
       { heading: "Accept og operatør", body: "Ved at åbne eller bruge Page 2 File accepterer du disse Vilkår. Tjenesten drives af {{entityName}}, med adresse {{address}}. Hvis du handler på vegne af en organisation, bekræfter du, at du har ret til at acceptere Vilkårene på dens vegne." },

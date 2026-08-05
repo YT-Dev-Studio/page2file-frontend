@@ -24,7 +24,7 @@ CSS může přiřadit jiná pravidla pro obrazovku a tisk. Tiskový styl může 
   step={2}
 />
 
-Další rozdíl způsobují líně načítaná média. Tisk začíná z aktuálního stavu dokumentu; obsah, který nikdy nevstoupil do viditelné oblasti, v něm nemusí existovat. Virtualizovaná rozhraní chatů a dashboardů mohou při posouvání odstraňovat starší řádky z DOM, takže je tiskový příkaz nedokáže obnovit.
+Další rozdíl způsobují líně načítaná média. Tisk začíná z aktuálního stavu dokumentu; obsah, který nikdy nevstoupil do viditelné oblasti, v něm nemusí existovat. Virtualizovaná rozhraní chatů a dashboardů mohou při posouvání odstraňovat starší řádky z struktura stránky v prohlížeči, takže je tiskový příkaz nedokáže obnovit.
 
 ## Co mění konverze URL
 
@@ -46,7 +46,7 @@ Rozhodujícím důkazem zůstává náhled. Pokud v něm důležitý blok chybí
 
 ## Proveďte kontrolované srovnání
 
-Porovnávejte obě metody ze stejného stavu prohlížeče. Před vytvořením každého souboru nastavte stejný viewport, filtry, rozbalené panely a pozici posunu. Jinak porovnáváte dva různé zdroje, nikoli dvě metody konverze. Zaznamenejte, zda stránka dokončila načítání obrázků, webových písem a grafů.
+Porovnávejte obě metody ze stejného stavu prohlížeče. Před vytvořením každého souboru nastavte stejný viditelná oblast prohlížeče, filtry, rozbalené panely a pozici posunu. Jinak porovnáváte dva různé zdroje, nikoli dvě metody konverze. Zaznamenejte, zda stránka dokončila načítání obrázků, webových písem a grafů.
 
 Začněte náhledem tisku v prohlížeči. Všimněte si, které části navigace, pozadí, interaktivní panely a připnuté prvky zmizí. Nemusí to být chyba: dobře navržený tiskový styl může odstranit nepořádek a vytvořit nejčistší kopii ke čtení. Podstatné je, zda odstranil něco potřebného pro váš účel.
 

@@ -58,7 +58,7 @@ Om målet är strukturerad dataextraktion, övervakning eller ett API-flöde är
 
 ## Långa och dynamiska sidor
 
-Långa artiklar, tidslinjer, katalogsidor och oändliga flöden kräver en definierad slutpunkt. Läs in lazy-load-bilder och utfällt innehåll och kontrollera sedan att tidigare avsnitt finns kvar. Virtualiserade gränssnitt kan ersätta objekt utanför skärmen, så rullningslistens längd bevisar inte att hela källan kan samlas in.
+Långa artiklar, tidslinjer, katalogsidor och oändliga flöden kräver en definierad slutpunkt. Läs in bilder som hämtas först vid rullning och utfällt innehåll och kontrollera sedan att tidigare avsnitt finns kvar. Virtualiserade gränssnitt kan ersätta objekt utanför skärmen, så rullningslistens längd bevisar inte att hela källan kan samlas in.
 
 PDF passar vanligtvis linjär läsning, medan PowerPoint kräver tydligare avsnittsgränser. En lång sida som fungerar bra som PDF kan behöva omfattande redaktionellt urval innan den blir en användbar presentation.
 
@@ -82,7 +82,7 @@ Inbyggda skrivbords- och mobilapplikationer ligger utanför ett Chrome-tilläggs
 
 Page 2 File erbjuder inte heller strukturerad dataextraktion, övervakning, förändringsdetektering eller ett genomsöknings-API. En datapipeline ska använda ett behörigt API eller ett skrapningssystem utformat för maskinläsbart resultat.
 
-Vissa webbplatser förhindrar dessutom medvetet återgivning, utelämnar innehåll från den renderade DOM:en eller kräver interaktioner som inte kan representeras i en statisk fil. Bevara begränsningen vid överlämningen i stället för att påstå en fullständig export.
+Vissa webbplatser förhindrar dessutom medvetet återgivning, utelämnar innehåll från den renderade sidstrukturen i webbläsaren:en eller kräver interaktioner som inte kan representeras i en statisk fil. Bevara begränsningen vid överlämningen i stället för att påstå en fullständig export.
 
 ## Använd en acceptanspost för källan
 
@@ -102,7 +102,7 @@ En källa kan stödja båda resultaten för olika mottagare. Behåll separata ac
 
 ## Förbered dynamiska och autentiserade källor
 
-Välj exakt sidtillstånd före insamlingen: språk, konto, datumintervall, filter, utfällda paneler och slutgräns. Läs in lazy-load-medier och återvänd till början av långa sidor för att upptäcka virtualisering. Om tidigare innehåll försvinner använder du mindre definierade intervall i stället för att påstå en fullständig sida.
+Välj exakt sidtillstånd före insamlingen: språk, konto, datumintervall, filter, utfällda paneler och slutgräns. Läs in medier som hämtas först vid rullning och återvänd till början av långa sidor för att upptäcka virtualisering. Om tidigare innehåll försvinner använder du mindre definierade intervall i stället för att påstå en fullständig sida.
 
 <ArticleFigure
   alt={"Webbläsare och tillägget Page 2 File: Läs in nödvändiga produkter, lektioner och medier för butiker och utbildningssidor."}

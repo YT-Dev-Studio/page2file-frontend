@@ -86,7 +86,7 @@
   "html-to-powerpoint": {
     "author": "Rédaction Page 2 File",
     "title": "Comment convertir du contenu HTML web en PowerPoint",
-    "description": "Transformez du contenu HTML rendu en PowerPoint en sélectionnant les sections utiles, des captures ou des diapositives modifiables, puis vérifiez les solutions de secours.",
+    "description": "Transformez du contenu HTML affiché en PowerPoint, choisissez les sections utiles et vérifiez les diapositives modifiables ou en image.",
     "imageAlt": "Des blocs HTML rendus passent du navigateur aux diapositives"
   },
   "long-webpage-page-breaks": {

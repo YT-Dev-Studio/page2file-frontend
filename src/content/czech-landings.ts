@@ -22,7 +22,7 @@ export const czechLandingContent: Partial<Record<StaticRoute, LandingContent>> =
     eyebrow: "Aplikace GPT · přesné URL, PDF nebo snímky",
     title: "Webpage to PDF Converter — Web2File",
     displayTitle: "GPT: Webpage 2 PDF",
-    description: "Webpage to PDF Converter — Web2File převádí přesné veřejné URL a zpracovává nahrané PDF webových stránek nebo snímky do samostatných souborů Visual PDF či Interactive PDF.",
+    description: "Webpage to PDF Converter — Web2File zpracuje přesné veřejné URL, PDF webových stránek a snímky jako Visual PDF nebo Interactive PDF.",
     lead: "Zadejte přesnou veřejnou URL, seznam přesných URL, PDF webové stránky nebo celostránkové či navazující snímky. Zvolte Visual PDF pro uložení webu jako snímků nebo Interactive PDF pro označitelný text a klikací odkazy.",
     sections: [
       { heading: "1. Zadejte jednu nebo více URL", body: "Odešlete veřejnou URL, seznam přesných veřejných URL, existující PDF webové stránky nebo celostránkové či navazující snímky. Každá webová stránka zůstane v samostatném PDF." },
@@ -45,7 +45,7 @@ export const czechLandingContent: Partial<Record<StaticRoute, LandingContent>> =
     route: "web2pdf-gpt",
     eyebrow: "Aplikace GPT · dostupné webové stránky",
     title: "Převeďte stránky webu do samostatných PDF pomocí Web 2 PDF",
-    description: "Web 2 PDF najde dostupné stránky webu, převede vybrané a vrátí samostatné PDF pro každou stránku.",
+    description: "Web 2 PDF najde dostupné veřejné stránky webu, nechá vás potvrdit výběr a vrátí samostatný soubor PDF pro každou převedenou stránku.",
     lead: "Zadejte aplikaci Web 2 PDF veřejnou adresu. Může najít dostupné stránky, převést vybrané URL a vrátit více odkazů ke stažení, jeden pro každou stránku.",
     sections: [
       { heading: "1. Zadejte web", body: "Odešlete počáteční veřejnou URL. Aplikace najde dostupné stránky a před konverzí zobrazí zvolený rozsah." },
@@ -139,7 +139,7 @@ export const czechLandingContent: Partial<Record<StaticRoute, LandingContent>> =
     sections: [
       { heading: "Co se zachová", body: "Zprávy, pořadí účastníků, kód, tabulky a viditelné odkazy se zobrazí v náhledu." },
       { heading: "Dva styly čtení", body: "Zachovejte původní vizuální rytmus nebo zvolte klidnější dokument pro čtení a tisk." },
-      { heading: "Omezení platformy", body: "Sbalené větve, nenačtené zprávy a obsah mimo DOM může být nutné před zachycením otevřít nebo načíst." },
+      { heading: "Omezení platformy", body: "Sbalené větve, nenačtené zprávy a obsah, který prohlížeč ještě nenačetl může být nutné před zachycením otevřít nebo načíst." },
       { heading: "Bez oficiálního vztahu", body: "Page 2 File je nezávislý nástroj a není podporován ani provozován společností OpenAI nebo ChatGPT." },
     ],
     externalLinkKey: "chromeExtension",
@@ -171,7 +171,7 @@ export const czechLandingContent: Partial<Record<StaticRoute, LandingContent>> =
     lead: "Před vytvořením přehledného nebo vizuálně věrného dokumentu zkontrolujte, jak se zobrazují karty zdrojů a viditelné obrázky.",
     sections: [
       { heading: "Zdroje zůstávají užitečné", body: "Viditelné citace a odkazy zůstávají klikatelné, pokud jsou jejich cíle bezpečné." },
-      { heading: "Obrázky se řídí DOM", body: "V dočasném náhledu se mohou zobrazit pouze média dostupná aktivní stránce." },
+      { heading: "Obrázky závisejí na načtené stránce", body: "V dočasném náhledu se mohou zobrazit pouze média dostupná aktivní stránce." },
       { heading: "Bez oficiálního vztahu", body: "Page 2 File je nezávislý a není produktem společnosti Google ani Gemini." },
     ],
     externalLinkKey: "chromeExtension",

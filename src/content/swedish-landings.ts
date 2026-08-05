@@ -22,7 +22,7 @@ export const swedishLandingContent: Partial<Record<StaticRoute, LandingContent>>
     eyebrow: "GPT-app · exakta URL:er, PDF:er eller skärmbilder",
     title: "Webpage to PDF Converter — Web2File",
     displayTitle: "GPT: Webpage 2 PDF",
-    description: "Webpage to PDF Converter — Web2File konverterar exakta offentliga webbadresser och bearbetar uppladdade webbsides-PDF:er eller skärmbilder till separata Visual PDF- eller Interactive PDF-filer.",
+    description: "Webpage to PDF Converter — Web2File hanterar exakta offentliga adresser, webbsides-PDF:er och skärmbilder som Visual PDF eller Interactive PDF.",
     lead: "Ange en exakt offentlig URL, en lista med exakta URL:er, en webbsides-PDF eller helsides- eller sammanhängande skärmbilder. Välj Visual PDF för att spara webbplatsen som skärmbilder eller Interactive PDF för markerbar text och klickbara länkar.",
     sections: [
       { heading: "1. Ange en eller flera URL:er", body: "Skicka en offentlig URL, en lista med exakta offentliga URL:er, en befintlig webbsides-PDF eller helsides- eller sammanhängande skärmbilder. Varje webbsida förblir en separat PDF." },
@@ -44,7 +44,7 @@ export const swedishLandingContent: Partial<Record<StaticRoute, LandingContent>>
   "web2pdf-gpt": {
     route: "web2pdf-gpt",
     eyebrow: "GPT-app · tillgängliga webbsidor",
-    title: "Konvertera webbplatsens sidor till separata PDF-filer med Web 2 PDF",
+    title: "Webbsidor som separata PDF-filer med Web 2 PDF",
     description: "Web 2 PDF hittar tillgängliga sidor på en webbplats, konverterar de valda och returnerar en separat PDF för varje sida.",
     lead: "Ge Web 2 PDF en offentlig adress. Appen kan hitta tillgängliga sidor, konvertera valda URL:er och returnera flera hämtningslänkar, en per sida.",
     sections: [
@@ -139,7 +139,7 @@ export const swedishLandingContent: Partial<Record<StaticRoute, LandingContent>>
     sections: [
       { heading: "Det här bevaras", body: "Meddelanden, deltagarordning, kod, tabeller och synliga länkar visas i förhandsgranskningen." },
       { heading: "Två lässtilar", body: "Behåll den ursprungliga visuella rytmen eller välj ett lugnare dokument för läsning och utskrift." },
-      { heading: "Plattformens begränsningar", body: "Infällda grenar, ej inlästa meddelanden och innehåll utanför DOM kan behöva öppnas eller läsas in före fångst." },
+      { heading: "Plattformens begränsningar", body: "Infällda grenar, ej inlästa meddelanden och innehåll som webbläsaren ännu inte har läst in kan behöva öppnas eller läsas in före fångst." },
       { heading: "Ingen officiell koppling", body: "Page 2 File är ett oberoende verktyg och stöds eller drivs inte av OpenAI eller ChatGPT." },
     ],
     externalLinkKey: "chromeExtension",
@@ -171,7 +171,7 @@ export const swedishLandingContent: Partial<Record<StaticRoute, LandingContent>>
     lead: "Granska hur källkort och synliga bilder visas innan du skapar ett tydligt eller visuellt troget dokument.",
     sections: [
       { heading: "Källorna förblir användbara", body: "Synliga citat och länkar förblir klickbara när deras mål är säkra." },
-      { heading: "Bilderna följer DOM", body: "Endast medier som är tillgängliga för den aktiva sidan kan visas i den tillfälliga förhandsgranskningen." },
+      { heading: "Bilderna beror på den inlästa sidan", body: "Endast medier som är tillgängliga för den aktiva sidan kan visas i den tillfälliga förhandsgranskningen." },
       { heading: "Ingen officiell koppling", body: "Page 2 File är oberoende och är inte en produkt från Google eller Gemini." },
     ],
     externalLinkKey: "chromeExtension",

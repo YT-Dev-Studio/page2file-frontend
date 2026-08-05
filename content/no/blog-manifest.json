@@ -2,7 +2,7 @@
   "save-webpage-as-pdf": {
     "author": "Page 2 File-redaksjonen",
     "title": "Slik lagrer du en nettside som PDF",
-    "description": "Lagre en offentlig eller innlogget nettside som PDF, velg skjermbilde eller redigerbart resultat, kontroller sideskift og forstå grensen for den midlertidige forhåndsvisningen.",
+    "description": "Lagre en offentlig eller innlogget nettside som PDF, velg skjermbilde eller redigerbart resultat og kontroller sideskift.",
     "imageAlt": "En lang side i nettleseren blir til en ordnet bunke PDF-sider"
   },
   "why-print-to-pdf-breaks": {
@@ -121,7 +121,7 @@
   },
   "export-other-ai-chats-to-pdf": {
     "author": "Page 2 File-redaksjonen",
-    "title": "Slik eksporterer du chatter fra Grok, DeepSeek, Perplexity eller Copilot",
+    "title": "Eksporter andre AI-samtaler til PDF",
     "description": "Eksporter synlige chatter fra Grok, DeepSeek, Perplexity eller Copilot fra en nettleserfane med respekt for innlastet innhold, personvern og plattformgrenser.",
     "imageAlt": "Flere generelle AI-chatfaner som samles i én PDF"
   },

@@ -22,7 +22,7 @@ export const finnishLandingContent: Partial<Record<StaticRoute, LandingContent>>
     eyebrow: "GPT-sovellus · tarkat URL-osoitteet, PDF:t tai kuvakaappaukset",
     title: "Webpage to PDF Converter — Web2File",
     displayTitle: "GPT: Webpage 2 PDF",
-    description: "Webpage to PDF Converter — Web2File muuntaa tarkkoja julkisia verkkosivuosoitteita ja käsittelee ladattuja verkkosivu-PDF:iä tai kuvakaappauksia erillisiksi Visual PDF- tai Interactive PDF -tiedostoiksi.",
+    description: "Webpage to PDF Converter — Web2File käsittelee tarkat julkiset osoitteet, verkkosivu-PDF:t ja kuvakaappaukset Visual PDF- tai Interactive PDF -muodossa.",
     lead: "Anna tarkka julkinen URL, tarkkojen URL-osoitteiden luettelo, verkkosivun PDF tai koko sivun tai peräkkäiset kuvakaappaukset. Valitse Visual PDF tallentaaksesi sivuston kuvakaappauksina tai Interactive PDF valittavaa tekstiä ja napsautettavia linkkejä varten.",
     sections: [
       { heading: "1. Anna yksi tai useampi URL-osoite", body: "Lähetä julkinen URL, tarkkojen julkisten URL-osoitteiden luettelo, olemassa oleva verkkosivu-PDF tai koko sivun tai peräkkäiset kuvakaappaukset. Jokainen verkkosivu pysyy erillisenä PDF:nä." },
@@ -139,7 +139,7 @@ export const finnishLandingContent: Partial<Record<StaticRoute, LandingContent>>
     sections: [
       { heading: "Tämä säilyy", body: "Viestit, osallistujien järjestys, koodi, taulukot ja näkyvät linkit näkyvät esikatselussa." },
       { heading: "Kaksi lukutyyliä", body: "Säilytä alkuperäinen visuaalinen rytmi tai valitse rauhallisempi asiakirja lukemista ja tulostamista varten." },
-      { heading: "Alustakohtaiset rajoitukset", body: "Suljetut haarat, lataamattomat viestit ja DOM:n ulkopuolinen sisältö on ehkä avattava tai ladattava ennen kaappausta." },
+      { heading: "Alustakohtaiset rajoitukset", body: "Suljetut haarat, lataamattomat viestit ja sisältö, jota selain ei ole vielä ladannut on ehkä avattava tai ladattava ennen kaappausta." },
       { heading: "Ei virallista yhteyttä", body: "Page 2 File on riippumaton vientityökalu, jota OpenAI tai ChatGPT ei hyväksy eikä ylläpidä." },
     ],
     externalLinkKey: "chromeExtension",
@@ -171,7 +171,7 @@ export const finnishLandingContent: Partial<Record<StaticRoute, LandingContent>>
     lead: "Tarkista, miten lähdekortit ja näkyvät kuvat esitetään, ennen kuin luot selkeän tai visuaalisesti tarkan asiakirjan.",
     sections: [
       { heading: "Lähteet säilyvät hyödyllisinä", body: "Näkyvät viittaukset ja linkit säilyvät napsautettavina, kun kohteet ovat turvallisia." },
-      { heading: "Kuvat seuraavat DOM:ia", body: "Väliaikaisessa esikatselussa voidaan näyttää vain media, joka on aktiivisen sivun käytettävissä." },
+      { heading: "Kuvat riippuvat ladatusta sivusta", body: "Väliaikaisessa esikatselussa voidaan näyttää vain media, joka on aktiivisen sivun käytettävissä." },
       { heading: "Ei virallista yhteyttä", body: "Page 2 File on riippumaton eikä ole Googlen tai Geminin tuote." },
     ],
     externalLinkKey: "chromeExtension",

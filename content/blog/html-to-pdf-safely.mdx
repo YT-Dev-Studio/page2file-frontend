@@ -45,7 +45,7 @@ Remove scripts that fetch user data, analytics or unrelated application state. S
 
 ## Make print dimensions explicit
 
-Browser layouts respond to a viewport, while PDFs use fixed page dimensions. Define sensible content width, margins and typography for the intended paper size. Avoid positioning the main document with viewport-height assumptions or leaving important text inside horizontally scrolling containers.
+Browser layouts respond to the width and height of the visible browser window, while PDFs use fixed page dimensions. Define sensible content width, margins and typography for the intended paper size. Avoid positioning the main document by screen height or leaving important text inside horizontally scrolling containers.
 
 Use break rules as hints around headings, figures, tables and code blocks, then inspect the result. Rules can conflict when an element is taller than one page. A large table may need repeated headings or a landscape treatment; a tall visual may need to remain one scaled image.
 

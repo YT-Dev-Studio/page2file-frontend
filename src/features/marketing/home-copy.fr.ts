@@ -158,7 +158,7 @@ export const homeCopyFr: HomeCopy = {
       {
         title: "Le texte et les liens restent-ils modifiables ou cliquables ?",
         body:
-          "Le mode modifiable conserve le texte pris en charge comme contenu du document et préserve les destinations de liens sûres. Les widgets complexes, les graphiques canvas et les éléments non pris en charge peuvent être représentés par des images. Les captures privilégient l’apparence sans transformer chaque pixel en objet modifiable.",
+          "Le mode modifiable conserve le texte pris en charge comme contenu du document et préserve les destinations de liens sûres. Les widgets complexes, les graphiques dessinés directement par le navigateur et les éléments non pris en charge peuvent être représentés par des images. Les captures privilégient l’apparence sans transformer chaque pixel en objet modifiable.",
       },
       {
         title: "Peut-il capturer les pages longues et dynamiques en entier ?",

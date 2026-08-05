@@ -153,7 +153,7 @@ export const ContentArticlePage = ({
           title={entry.title}
         >
           <div className={styles.articleMeta}>
-            <span>{entry.author}</span>
+            <Link href={`/${locale}/about`}>{entry.author}</Link>
             <time dateTime={entry.updatedAt}>
               {copy.updatedLabel} {formatContentDate(locale, entry.updatedAt)}
             </time>

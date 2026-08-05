@@ -38,7 +38,7 @@
   "export-other-ai-chats-to-pdf": {
     "author": "Equipo editorial de Page 2 File",
     "title": "Cómo exportar chats de Grok, DeepSeek, Perplexity o Copilot",
-    "description": "Exporte chats visibles de Grok, DeepSeek, Perplexity o Copilot desde una pestaña del navegador respetando el contenido cargado, la privacidad y los límites de la plataforma.",
+    "description": "Exporte chats visibles de Grok, DeepSeek, Perplexity o Copilot desde el navegador, respetando la privacidad y los límites de la plataforma.",
     "imageAlt": "Varias pestañas genéricas de chat de IA convergen en un PDF"
   },
   "export-telegram-chat-to-pdf": {
@@ -85,7 +85,7 @@
   },
   "save-authenticated-webpage-as-pdf": {
     "author": "Equipo editorial de Page 2 File",
-    "title": "Cómo guardar como PDF una página web protegida por inicio de sesión",
+    "title": "Cómo guardar una página privada como PDF",
     "description": "Guarde una página con sesión iniciada desde la pestaña activa de Chrome sin entregar sus credenciales a un conversor de URL y revise los límites de privacidad y captura.",
     "imageAlt": "Una pestaña protegida del navegador se convierte en una copia PDF privada"
   },
@@ -140,7 +140,7 @@
   "website-types-to-pdf-or-powerpoint": {
     "author": "Equipo editorial de Page 2 File",
     "title": "¿Qué tipos de sitios web se pueden exportar a PDF o PowerPoint?",
-    "description": "Descubra cómo encajan en la exportación a PDF o PowerPoint los artículos, documentación, dashboards, tiendas, páginas de aprendizaje, aplicaciones web, chats de IA y mensajeros.",
+    "description": "Descubra qué artículos, tiendas, paneles, cursos, aplicaciones web, chats de IA y mensajeros se adaptan a PDF o PowerPoint.",
     "imageAlt": "Distintos tipos de sitios web convergen en documentos PDF y presentaciones"
   }
 }

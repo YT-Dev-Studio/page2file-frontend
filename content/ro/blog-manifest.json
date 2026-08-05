@@ -2,13 +2,13 @@
   "save-webpage-as-pdf": {
     "author": "Redacția Page 2 File",
     "title": "Cum să salvați o pagină web ca PDF",
-    "description": "Salvați o pagină web ca PDF, alegeți un rezultat tip captură sau editabil, verificați întreruperile de pagină și înțelegeți ce se întâmplă cu datele temporare ale conversiei.",
+    "description": "Salvați o pagină web ca PDF, alegeți o captură sau un rezultat editabil și verificați întreruperile și datele temporare.",
     "imageAlt": "O pagină lungă din browser devine un teanc ordonat de pagini PDF"
   },
   "why-print-to-pdf-breaks": {
     "author": "Redacția Page 2 File",
     "title": "URL în PDF sau imprimarea browserului: ce capturează mai mult?",
-    "description": "Comparați conversia URL în PDF cu imprimarea browserului, inclusiv stilurile de tipărire, conținutul întârziat, filele private, fidelitatea vizuală și rezultatul editabil.",
+    "description": "Comparați conversia URL în PDF cu imprimarea browserului, inclusiv conținutul întârziat, filele private și rezultatul editabil.",
     "imageAlt": "Fluxul de imprimare al browserului comparat cu fluxul de captură a paginii web"
   },
   "capture-full-webpage-as-pdf": {
@@ -104,7 +104,7 @@
   "export-chatgpt-conversation-to-pdf": {
     "author": "Redacția Page 2 File",
     "title": "Cum să exportați o conversație ChatGPT în PDF",
-    "description": "Exportați o conversație ChatGPT vizibilă în PDF, încărcați intervalul corect, verificați codul, tabelele, sursele și datele sensibile și separați documentul de arhiva contului.",
+    "description": "Exportați o conversație ChatGPT vizibilă în PDF, verificați codul, tabelele, sursele și datele sensibile.",
     "imageAlt": "O conversație ChatGPT cu mesaje, cod și surse pregătită pentru export în PDF"
   },
   "export-claude-chat-to-pdf": {

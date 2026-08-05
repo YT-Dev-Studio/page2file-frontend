@@ -6,6 +6,24 @@ import {
 } from "./blog-instruction-scenes.mjs";
 
 const ROOT = process.cwd();
+const LOCALES = [
+  "en",
+  "ru",
+  "de",
+  "fr",
+  "es",
+  "nl",
+  "pt",
+  "it",
+  "pl",
+  "cs",
+  "sv",
+  "no",
+  "da",
+  "fi",
+  "ro",
+  "hu",
+];
 const BLOG_DIRECTORY = join(ROOT, "content", "blog");
 const UPDATE_DIRECTORY = join(ROOT, "content", "updates");
 const RUSSIAN_BLOG_DIRECTORY = join(ROOT, "content", "ru", "blog");
@@ -54,6 +72,67 @@ const FIGURE_CLOSE_LABEL_PATTERN = /closeLabel=\{"([^"]+)"\}/;
 const POPUP_MASTER_VERSION = "page2file-popup-v3";
 const POPUP_GEOMETRY_SIGNATURE = "455x751";
 const SOURCE_TITLE_SAFE_ZONE = "91,139,214,21";
+const SITE_TITLE_SUFFIX = " | Page 2 File";
+const LANDING_SOURCE_PATHS = {
+  en: ["src/content/landings.ts"],
+  ru: ["src/content/russian-landings.ts"],
+  de: [
+    "src/content/german-landings.ts",
+    "src/content/german-legal-landings.ts",
+  ],
+  fr: [
+    "src/content/french-landings.ts",
+    "src/content/french-legal-landings.ts",
+  ],
+  es: [
+    "src/content/spanish-landings.ts",
+    "src/content/spanish-legal-landings.ts",
+  ],
+  nl: [
+    "src/content/dutch-landings.ts",
+    "src/content/dutch-legal-landings.ts",
+  ],
+  pt: [
+    "src/content/portuguese-landings.ts",
+    "src/content/portuguese-legal-landings.ts",
+  ],
+  it: [
+    "src/content/italian-landings.ts",
+    "src/content/italian-legal-landings.ts",
+  ],
+  pl: [
+    "src/content/polish-landings.ts",
+    "src/content/polish-legal-landings.ts",
+  ],
+  cs: [
+    "src/content/czech-landings.ts",
+    "src/content/czech-legal-landings.ts",
+  ],
+  sv: [
+    "src/content/swedish-landings.ts",
+    "src/content/swedish-legal-landings.ts",
+  ],
+  no: [
+    "src/content/norwegian-landings.ts",
+    "src/content/norwegian-legal-landings.ts",
+  ],
+  da: [
+    "src/content/danish-landings.ts",
+    "src/content/danish-legal-landings.ts",
+  ],
+  fi: [
+    "src/content/finnish-landings.ts",
+    "src/content/finnish-legal-landings.ts",
+  ],
+  ro: [
+    "src/content/romanian-landings.ts",
+    "src/content/romanian-legal-landings.ts",
+  ],
+  hu: [
+    "src/content/hungarian-landings.ts",
+    "src/content/hungarian-legal-landings.ts",
+  ],
+};
 
 const readMdxFiles = async (directory) => {
   const names = await readdir(directory);
@@ -351,48 +430,42 @@ const validateInstructionFigures = async (englishFiles, russianFiles) => {
   );
 };
 
-const NOINDEX_SHORT_TITLES = new Set([
-  "Privacy policy",
-  "Terms of service",
-  "Политика конфиденциальности",
-  "Условия использования",
-]);
-
-const NOINDEX_SHORT_DESCRIPTIONS = new Set();
-
 const extractStringFields = (source, field) => [
   ...source.matchAll(new RegExp(`${field}:\\s*"([^"]+)"`, "g")),
 ].map(function selectValue(match) {
   return match[1];
 });
 
-const validateMetadataSource = (source, label) => {
+const validateMetadataSource = (source, label, allowLocaleDuplicates = false) => {
   const titles = extractStringFields(source, "title");
   const descriptions = extractStringFields(source, "description");
-  if (new Set(titles).size !== titles.length) {
-    throw new Error(`${label} contains duplicate metadata titles.`);
+  const problems = [];
+  if (!allowLocaleDuplicates && new Set(titles).size !== titles.length) {
+    problems.push(`${label} contains duplicate metadata titles.`);
   }
-  if (new Set(descriptions).size !== descriptions.length) {
-    throw new Error(`${label} contains duplicate metadata descriptions.`);
+  if (!allowLocaleDuplicates && new Set(descriptions).size !== descriptions.length) {
+    problems.push(`${label} contains duplicate metadata descriptions.`);
   }
   titles.forEach(function validateTitle(title) {
-    if (
-      !NOINDEX_SHORT_TITLES.has(title) &&
-      (title.length < 30 || title.length > 65)
-    ) {
-      throw new Error(`${label} metadata title is outside 30-65 characters: ${title}`);
+    const titleWithBrand = `${title}${SITE_TITLE_SUFFIX}`;
+    const renderedTitle =
+      titleWithBrand.length <= 65 ? titleWithBrand : title;
+    if (renderedTitle.length < 30 || renderedTitle.length > 65) {
+      problems.push(
+        `${label} rendered metadata title is outside 30-65 characters: ${renderedTitle}`,
+      );
     }
   });
   descriptions.forEach(function validateDescription(description) {
-    if (
-      !NOINDEX_SHORT_DESCRIPTIONS.has(description) &&
-      (description.length < 100 || description.length > 170)
-    ) {
-      throw new Error(
+    if (description.length < 100 || description.length > 170) {
+      problems.push(
         `${label} metadata description is outside 100-170 characters: ${description}`,
       );
     }
   });
+  if (problems.length > 0) {
+    throw new Error(problems.join("\n"));
+  }
 };
 
 const run = async () => {
@@ -406,6 +479,20 @@ const run = async () => {
   validateFiles(russianUpdateFiles, "Russian update");
   validateMatchingFiles(blogFiles, russianBlogFiles, "blog");
   validateMatchingFiles(updateFiles, russianUpdateFiles, "update");
+  const localizedBlogFiles = new Map([
+    ["en", blogFiles],
+    ["ru", russianBlogFiles],
+  ]);
+  for (const locale of LOCALES.filter(
+    (candidate) => candidate !== "en" && candidate !== "ru",
+  )) {
+    const files = await readMdxFiles(
+      join(ROOT, "content", locale, "blog"),
+    );
+    validateFiles(files, `${locale} blog`);
+    validateMatchingFiles(blogFiles, files, "blog");
+    localizedBlogFiles.set(locale, files);
+  }
   await validateInstructionFigures(blogFiles, russianBlogFiles);
   const blogSlugs = blogFiles
     .map(function selectBlogSlug(file) {
@@ -546,22 +633,38 @@ const run = async () => {
     );
   }
 
-  const landingSource = await readFile(
-    join(ROOT, "src", "content", "russian-landings.ts"),
-    "utf8",
-  );
-  const englishLandingSource = await readFile(
-    join(ROOT, "src", "content", "landings.ts"),
-    "utf8",
-  );
+  const landingSources = new Map();
+  for (const [locale, relativePaths] of Object.entries(
+    LANDING_SOURCE_PATHS,
+  )) {
+    const sources = await Promise.all(
+      relativePaths.map((relativePath) =>
+        readFile(join(ROOT, relativePath), "utf8"),
+      ),
+    );
+    landingSources.set(locale, sources.join("\n"));
+  }
   const seoCopySource = await readFile(
     join(ROOT, "src", "shared", "seo", "seo-copy.ts"),
     "utf8",
   );
-  validateMetadataSource(englishLandingSource, "English landing content");
-  validateMetadataSource(landingSource, "Russian landing content");
-  validateMetadataSource(seoCopySource, "Route SEO copy");
-  const requiredRussianLandingRoutes = [
+  const metadataErrors = [];
+  for (const [locale, source] of landingSources) {
+    try {
+      validateMetadataSource(source, `${locale} landing content`);
+    } catch (error) {
+      metadataErrors.push(error instanceof Error ? error.message : String(error));
+    }
+  }
+  try {
+    validateMetadataSource(seoCopySource, "Route SEO copy");
+  } catch (error) {
+    metadataErrors.push(error instanceof Error ? error.message : String(error));
+  }
+  if (metadataErrors.length > 0) {
+    throw new Error(`Metadata validation failed:\n- ${metadataErrors.join("\n- ")}`);
+  }
+  const requiredLandingRoutes = [
     "page2pdf-gpt",
     "web2pdf-gpt",
     "html2pdf-gpt",
@@ -574,15 +677,35 @@ const run = async () => {
     "export-grok-to-pdf",
     "privacy",
     "terms",
+    "about",
   ];
-  requiredRussianLandingRoutes.forEach(function validateRussianLanding(route) {
-    if (!landingSource.includes(`"${route}"`) && !landingSource.includes(`${route}:`)) {
-      throw new Error(`Missing Russian landing content: ${route}`);
+  const aboutSource = await readFile(
+    join(ROOT, "src", "content", "about-landings.ts"),
+    "utf8",
+  );
+  validateMetadataSource(aboutSource, "About landing content", true);
+  for (const [locale, source] of landingSources) {
+    requiredLandingRoutes.forEach(function validateLocalizedLanding(route) {
+      const routeSource = route === "about" ? aboutSource : source;
+      if (
+        !routeSource.includes(`"${route}"`) &&
+        !routeSource.includes(`${route}:`)
+      ) {
+        throw new Error(`Missing ${locale} landing content: ${route}`);
+      }
+    });
+  }
+
+  for (const [locale, files] of localizedBlogFiles) {
+    if (files.length !== blogFiles.length) {
+      throw new Error(
+        `${locale} blog corpus contains ${files.length} files; expected ${blogFiles.length}.`,
+      );
     }
-  });
+  }
 
   console.log(
-    `Content valid: ${blogFiles.length} English and ${russianBlogFiles.length} Russian blog entries; ${updateFiles.length} updates per locale.`,
+    `Content valid: ${blogFiles.length} blog entries across ${localizedBlogFiles.size} locales; ${updateFiles.length} updates per published update locale.`,
   );
 };
 

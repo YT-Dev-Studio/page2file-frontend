@@ -52,22 +52,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     indexableLocales.forEach(addLanguage);
     return languages;
   };
-  const getLastModified = (route: string): Date => {
+  const getLastModified = (route: string): Date | undefined => {
     if (route.startsWith("blog/")) {
       const slug = route.slice("blog/".length);
       const entry = blogEntries.find(
         (candidate): boolean => candidate.slug === slug,
       );
-      return new Date(`${entry?.updatedAt ?? "2026-07-30"}T00:00:00Z`);
+      return entry?.updatedAt
+        ? new Date(`${entry.updatedAt}T00:00:00Z`)
+        : undefined;
     }
     if (route.startsWith("updates/")) {
       const slug = route.slice("updates/".length);
       const entry = updateEntries.find(
         (candidate): boolean => candidate.slug === slug,
       );
-      return new Date(`${entry?.updatedAt ?? "2026-07-30"}T00:00:00Z`);
+      return entry?.updatedAt
+        ? new Date(`${entry.updatedAt}T00:00:00Z`)
+        : undefined;
     }
-    return new Date("2026-07-30T00:00:00Z");
+    return undefined;
   };
   const addLocale = (
     locale: (typeof localeRegistry)[number],
@@ -76,7 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: absoluteUrl(routePath(locale.code, route)),
         lastModified: getLastModified(route),
-        changeFrequency: route.startsWith("blog/") ? "monthly" : "weekly",
+        changeFrequency: route.startsWith("blog/") ? "monthly" : undefined,
         priority: route === "" ? 1 : 0.7,
         alternates: {
           languages: getAlternates(route),

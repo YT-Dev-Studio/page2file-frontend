@@ -4,7 +4,10 @@ import type { ContentEntry } from "@/content/content-registry";
 import {
   absoluteUrl,
   indexingEnabled,
+  legalProfile,
+  organizationId,
   siteName,
+  websiteId,
 } from "@/shared/config/site";
 import {
   getLocaleDefinition,
@@ -41,11 +44,61 @@ export const WebsiteJsonLd = ({ locale }: { locale: Locale }): ReactNode => {
     <JsonLd
       data={{
         "@context": "https://schema.org",
-        "@type": "WebSite",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": organizationId,
+            name: siteName,
+            legalName: legalProfile.entityName,
+            url: absoluteUrl("/"),
+            logo: {
+              "@type": "ImageObject",
+              url: absoluteUrl("/brand/page2file-logo.png"),
+              width: 512,
+              height: 512,
+            },
+            email: legalProfile.contactEmail,
+          },
+          {
+            "@type": "WebSite",
+            "@id": websiteId,
+            name: siteName,
+            description: copy.description,
+            inLanguage: definition.htmlLang,
+            url: absoluteUrl(routePath(locale, "")),
+            publisher: { "@id": organizationId },
+          },
+        ],
+      }}
+    />
+  );
+};
+
+export const OrganizationJsonLd = ({
+  locale,
+}: {
+  locale: Locale;
+}): ReactNode => {
+  const definition = getLocaleDefinition(locale);
+  if (!indexingEnabled || !definition.indexable || !definition.reviewed) {
+    return null;
+  }
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": organizationId,
         name: siteName,
-        description: copy.description,
-        inLanguage: definition.htmlLang,
-        url: absoluteUrl(routePath(locale, "")),
+        legalName: legalProfile.entityName,
+        url: absoluteUrl("/"),
+        logo: {
+          "@type": "ImageObject",
+          url: absoluteUrl("/brand/page2file-logo.png"),
+          width: 512,
+          height: 512,
+        },
+        email: legalProfile.contactEmail,
       }}
     />
   );
@@ -119,8 +172,9 @@ export const ArticleJsonLd = ({
         image: absoluteUrl(entry.image),
         author: {
           "@type": "Organization",
+          "@id": organizationId,
           name: entry.author,
-          url: absoluteUrl(routePath(locale, "")),
+          url: absoluteUrl(routePath(locale, "about")),
         },
         datePublished: entry.publishedAt,
         dateModified: entry.updatedAt,
@@ -130,8 +184,9 @@ export const ArticleJsonLd = ({
         ),
         publisher: {
           "@type": "Organization",
+          "@id": organizationId,
           name: siteName,
-          url: absoluteUrl(routePath(locale, "")),
+          url: absoluteUrl("/"),
         },
       }}
     />

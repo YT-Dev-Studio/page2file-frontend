@@ -39,7 +39,7 @@ export const italianLegalLandingContent: Partial<
     eyebrow: "Accordo del servizio",
     title: "Termini di utilizzo",
     description:
-      "Termini per usare Page 2 File, incluse fonti consentite, limiti, responsabilità e disponibilità.",
+      "Legga i termini per usare Page 2 File, incluse fonti consentite, limiti, responsabilità, disponibilità del servizio e modalità di contatto.",
     lead:
       "Questi Termini regolano l’uso del sito Page 2 File, dell’estensione Chrome e dei servizi di conversione in PDF o PowerPoint.",
     sections: [

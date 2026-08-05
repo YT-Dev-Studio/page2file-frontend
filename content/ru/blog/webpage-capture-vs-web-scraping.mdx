@@ -61,7 +61,7 @@ Capture создаёт документ или deck для человека. К�
 
 ## Учтите динамические страницы
 
-Оба подхода сталкиваются с lazy loading, virtualization и authentication. Capture требует видимого rendered state. Scraper может использовать разрешённый API или source data без воспроизведения интерфейса.
+Оба подхода сталкиваются с контент, который загружается только при прокрутке, показ только видимой части длинного списка и вход в учётную запись. Capture требует видимого видимое состояние страницы. Scraper может использовать разрешённый API или исходные данные без воспроизведения интерфейса.
 
 Расширение работает с открытой signed-in tab, но не создаёт crawling credential. Interactive chart можно сохранить визуально; для scraping нужны underlying values и их schema. Page 2 File этого не обещает.
 
@@ -96,7 +96,7 @@ AI и messenger chats подчиняются той же границе: Page 2 
 
 ## Задайте operational-вопросы для scraping
 
-Определите permission, volume, rate limits, authentication, schema ownership, retention и обработку failures. Предпочитайте official API или поддерживаемый export, если он даёт нужные данные.
+Определите permission, volume, rate limits, вход в учётную запись, schema ownership, retention и обработку failures. Предпочитайте official API или поддерживаемый export, если он даёт нужные данные.
 
 Capture требует другой подготовки: стабилизировать visible state, задать boundary, выбрать mode и проверить preview. Copyright, personal data и права распространения применимы к обоим подходам.
 
@@ -117,7 +117,7 @@ OCR или копирование текста из PDF не превращае�
 
 ## Применяйте разные критерии приёмки
 
-Capture сверяют с visible outline: boundaries, order, legibility, links, fallbacks и privacy. Scraping — со specification: fields, types, IDs, pagination, duplicates и errors.
+Сохранённую страницу сверяют с видимым планом: границами, порядком, читаемостью, ссылками, заменами сложных элементов и приватностью. Извлечённые данные сверяют с требованиями к полям, типам, идентификаторам, разбивке на страницы, повторам и ошибкам.
 
 Один артефакт не валидирует другой автоматически: screenshot может отражать другое время, filter или session.
 

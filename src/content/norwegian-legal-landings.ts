@@ -33,7 +33,7 @@ export const norwegianLegalLandingContent: Partial<Record<StaticRoute, LandingCo
   terms: {
     route: "terms",
     eyebrow: "Tjenesteavtale",
-    title: "Bruksvilkår",
+    title: "Vilkår for bruk av Page 2 File",
     description: "Vilkår for bruk av Page 2 File, inkludert tillatte kilder, begrensninger, ansvar og tilgjengelighet.",
     lead: "Disse Vilkårene regulerer bruken av Page 2 File-nettstedet, Chrome-utvidelsen og tjenestene for konvertering til PDF eller PowerPoint.",
     sections: [

@@ -34,7 +34,7 @@ export const czechLegalLandingContent: Partial<Record<StaticRoute, LandingConten
     route: "terms",
     eyebrow: "Smlouva o službě",
     title: "Podmínky používání",
-    description: "Podmínky používání Page 2 File včetně povolených zdrojů, omezení, odpovědnosti a dostupnosti.",
+    description: "Přečtěte si podmínky používání Page 2 File včetně povolených zdrojů, omezení, odpovědnosti, dostupnosti služby a kontaktu.",
     lead: "Tyto Podmínky upravují používání webu Page 2 File, rozšíření Chrome a služeb konverze do PDF nebo PowerPointu.",
     sections: [
       { heading: "Souhlas a provozovatel", body: "Přístupem nebo používáním Page 2 File přijímáte tyto Podmínky. Službu provozuje {{entityName}}, se sídlem na adrese {{address}}. Jednáte-li za organizaci, potvrzujete oprávnění přijmout Podmínky jejím jménem." },

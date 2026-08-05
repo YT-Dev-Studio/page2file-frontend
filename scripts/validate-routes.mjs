@@ -25,6 +25,7 @@ const REQUIRED_ROUTES = [
   "changelog",
   "privacy",
   "terms",
+  "about",
 ];
 const REMOVED_ROUTES = [
   "cookie-policy",
@@ -65,6 +66,10 @@ const run = async () => {
     join(ROOT, "src", "content", "russian-landings.ts"),
     "utf8",
   );
+  const aboutLandings = await readFile(
+    join(ROOT, "src", "content", "about-landings.ts"),
+    "utf8",
+  );
   const siteShell = await readFile(
     join(ROOT, "src", "shared", "ui", "site-shell.tsx"),
     "utf8",
@@ -96,10 +101,7 @@ const run = async () => {
     );
   }
   REQUIRED_LOCALES.forEach(function validateLocaleIndexing(locale) {
-    const expectedReviewState =
-      locale === "en" || locale === "ru"
-        ? /reviewed: true, indexable: true/
-        : /reviewed: false, indexable: false/;
+    const expectedReviewState = /reviewed: true, indexable: true/;
     const localeLine = locales
       .split(/\r?\n/)
       .find(function findLocaleLine(line) {
@@ -122,7 +124,11 @@ const run = async () => {
       ].includes(route);
     },
   );
-  assertContains(landings, routesWithLandingContent, "landing content");
+  assertContains(
+    `${landings}\n${aboutLandings}`,
+    routesWithLandingContent,
+    "landing content",
+  );
   if (!metadataSource.includes('routePath("en", route)')) {
     throw new Error("x-default must point directly to the English route.");
   }

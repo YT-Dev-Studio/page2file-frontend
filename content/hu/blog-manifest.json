@@ -2,19 +2,19 @@
   "save-webpage-as-pdf": {
     "author": "A Page 2 File szerkesztősége",
     "title": "Weboldal mentése PDF-ként",
-    "description": "Mentsen weboldalt PDF-ként, válasszon képernyőképszerű vagy szerkeszthető kimenetet, ellenőrizze az oldaltöréseket, és ismerje meg az ideiglenes konverziós adatok kezelését.",
+    "description": "Mentsen weboldalt PDF-ként, válasszon képszerű vagy szerkeszthető kimenetet, és ellenőrizze az oldaltöréseket.",
     "imageAlt": "Egy hosszú böngészőoldal rendezett PDF-oldalhalommá alakul"
   },
   "why-print-to-pdf-breaks": {
     "author": "A Page 2 File szerkesztősége",
     "title": "URL-ből PDF vagy böngészőnyomtatás: melyik rögzít többet?",
-    "description": "Hasonlítsa össze az URL-ből PDF-et készítő konverziót a böngésző nyomtatásával, beleértve a nyomtatási stílusokat, késői tartalmat, privát lapokat, vizuális hűséget és szerkeszthető kimenetet.",
+    "description": "Hasonlítsa össze az URL-ből készített PDF-et a böngésző nyomtatásával, a későn betöltődő tartalommal és a szerkeszthető kimenettel.",
     "imageAlt": "A böngésző nyomtatási folyamata összehasonlítva a weboldal-rögzítési folyamattal"
   },
   "capture-full-webpage-as-pdf": {
     "author": "A Page 2 File szerkesztősége",
     "title": "Teljes weboldal rögzítése PDF-ként",
-    "description": "Rögzítsen egy teljes görgethető weboldalt PDF-ként a határ meghatározásával, a dinamikus szakaszok betöltésével, az oldaltörések ellenőrzésével és a hozzáférési korlátozások tiszteletben tartásával.",
+    "description": "Mentsen teljes görgethető weboldalt PDF-ként, töltse be a dinamikus részeket, és ellenőrizze az oldaltöréseket.",
     "imageAlt": "Egy teljes görgethető weboldal PDF-dokumentumba folyik"
   },
   "long-webpage-page-breaks": {
@@ -32,7 +32,7 @@
   "visual-vs-editable": {
     "author": "A Page 2 File szerkesztősége",
     "title": "Képernyőképszerű vagy szerkeszthető weboldal-konverzió",
-    "description": "Hasonlítsa össze a képernyőképszerű és szerkeszthető weboldal-konverziót PDF-hez és PowerPointhoz, beleértve az elrendezést, szöveget, hivatkozásokat és helyettesítéseket.",
+    "description": "Hasonlítsa össze a képszerű és szerkeszthető PDF- vagy PowerPoint-kimenetet, az elrendezést, szöveget és hivatkozásokat.",
     "imageAlt": "Egy weboldal képernyőképszerű kimenetként és szerkeszthető dokumentumként összehasonlítva"
   },
   "html-to-pdf-safely": {
@@ -98,13 +98,13 @@
   "export-ai-chats-privately": {
     "author": "A Page 2 File szerkesztősége",
     "title": "AI-csevegések privát exportálása PDF-be",
-    "description": "Rögzítsen látható AI-beszélgetést az aktív lapról, határozza meg a tartományt, ellenőrizze az ágakat, forrásokat és érzékeny adatokat, és válassza külön a PDF-et a fiókarchívumtól.",
+    "description": "Mentsen látható AI-beszélgetést az aktív lapról, ellenőrizze a forrásokat és az érzékeny adatokat, majd válasszon PDF-módot.",
     "imageAlt": "Ellenőrzött és korlátozott AI-beszélgetés privát PDF-exporthoz előkészítve"
   },
   "export-chatgpt-conversation-to-pdf": {
     "author": "A Page 2 File szerkesztősége",
     "title": "ChatGPT-beszélgetés exportálása PDF-be",
-    "description": "Exportáljon látható ChatGPT-beszélgetést PDF-be, töltse be a megfelelő tartományt, ellenőrizze a kódot, táblázatokat, forrásokat és érzékeny adatokat, és különítse el a dokumentumot a fiókarchívumtól.",
+    "description": "Exportáljon látható ChatGPT-beszélgetést PDF-be, és ellenőrizze a kódot, táblázatokat, forrásokat és érzékeny adatokat.",
     "imageAlt": "Üzeneteket, kódot és forrásokat tartalmazó ChatGPT-beszélgetés PDF-exporthoz előkészítve"
   },
   "export-claude-chat-to-pdf": {
@@ -116,7 +116,7 @@
   "export-gemini-chat-to-pdf": {
     "author": "A Page 2 File szerkesztősége",
     "title": "Gemini-csevegés exportálása PDF-be",
-    "description": "Exportáljon látható Gemini-csevegést PDF-be, készítse elő az üzeneteket, forrásokat és médiát, ellenőrizze a fiókadatokat, és különítse el a dokumentumot a Takeout-archívumtól.",
+    "description": "Exportáljon látható Gemini-csevegést PDF-be, készítse elő az üzeneteket, forrásokat és médiát, majd ellenőrizze a fiókadatokat.",
     "imageAlt": "Üzeneteket, képeket és forráskártyákat tartalmazó Gemini-csevegés PDF-hez előkészítve"
   },
   "export-other-ai-chats-to-pdf": {
@@ -134,13 +134,13 @@
   "export-telegram-chat-to-pdf": {
     "author": "A Page 2 File szerkesztősége",
     "title": "Telegram-csevegés exportálása PDF-be",
-    "description": "Exportáljon Telegram Web-csevegést vagy -csatornát PDF-be, töltse be az előzményeket, őrizze meg a válaszokat és forrásmegjelölést, majd ellenőrizze a médiát, hivatkozásokat és határokat.",
+    "description": "Exportáljon Telegram Web-csevegést PDF-be, töltse be az előzményeket, és ellenőrizze a médiát, hivatkozásokat és határokat.",
     "imageAlt": "Válaszokat, médiát és üzenetforrásokat tartalmazó Telegram Web-csevegés PDF-hez előkészítve"
   },
   "export-browser-messenger-chats-to-pdf": {
     "author": "A Page 2 File szerkesztősége",
     "title": "Böngészős üzenetküldési csevegések exportálása PDF-be",
-    "description": "Exportáljon Discord-, Slack-, Teams-, Messenger- és Instagram-beszélgetéseket Chrome-ból PDF-be, határozza meg a tartományt, és ellenőrizze a válaszokat, médiát és adatvédelmet.",
+    "description": "Exportáljon böngészős üzenetváltásokat PDF-be, határozza meg a tartományt, és ellenőrizze a médiát és az adatvédelmet.",
     "imageAlt": "Többféle böngészős beszélgetés ellenőrzött PDF-dokumentumként előkészítve"
   }
 }

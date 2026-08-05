@@ -30,10 +30,10 @@ Print CSS can change widths and hide elements just before printing. Canvas, vide
 In Accurate copy (screenshot-style output), complex sections remain images. In Editable document (editable output), supported text and links are reconstructed while difficult graphics can fall back to raster. Neither mode should claim that every browser feature becomes editable.
 
 <ArticleFigure
-  alt={"Browser and Page 2 File extension: Scroll deliberately until lazy sections remain loaded."}
-  caption={"Scroll deliberately until lazy sections remain loaded."}
+  alt={"Browser and Page 2 File extension: Scroll deliberately until delayed sections appear and remain loaded."}
+  caption={"Scroll deliberately until delayed sections appear and remain loaded."}
   closeLabel={"Close image preview"}
-  openLabel={"Open full-size image: Scroll deliberately until lazy sections remain loaded."}
+  openLabel={"Open full-size image: Scroll deliberately until delayed sections appear and remain loaded."}
   src="/blog/instructions/long-webpage-page-breaks/02.svg"
   step={2}
 />
@@ -75,7 +75,7 @@ Desktop preview can hide legibility problems because the canvas is large. Inspec
 
 Search for a distinctive phrase near several page boundaries. In editable output, this confirms that text remains in the expected reading order. In screenshot output, zoom into the same locations to check for seams, duplicated pixels or missing lines.
 
-Compare page count and section count with the source outline. An unexpected increase may indicate repeated sticky content; an unexpected decrease may signal omitted lazy-loaded material. Resolve the discrepancy before sharing.
+Compare page count and section count with the source outline. An unexpected increase may indicate repeated fixed content; an unexpected decrease may mean that material which appears only after scrolling was omitted. Resolve the discrepancy before sharing.
 
 ## Choose page size and orientation for the content
 
@@ -98,7 +98,7 @@ When a source contains one exceptionally wide component, consider capturing that
 
 A lone heading at the bottom of a page usually means the heading and its opening paragraph were not treated as a unit. A repeated strip at each boundary often points to sticky interface chrome. A missing line between pages can indicate an unsafe visual split, while duplicated lines suggest overlapping section boundaries.
 
-Tables need a distinct diagnosis. If columns are clipped, width or orientation is the problem. If the reader loses column meanings on later pages, repeated context is the problem. If rows disappear, confirm that the table was fully rendered and not virtualized before changing pagination settings.
+Tables need a distinct diagnosis. If columns are clipped, width or orientation is the problem. If the reader loses column meanings on later pages, repeated context is the problem. If rows disappear, confirm that the complete table remained loaded while you scrolled before changing pagination settings.
 
 For code and preformatted text, preserve indentation and wrapping intentionally. A forced line wrap can change readability, while horizontal clipping can hide meaningful characters. Inspect several of the longest lines rather than only the first block.
 

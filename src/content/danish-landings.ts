@@ -22,7 +22,7 @@ export const danishLandingContent: Partial<Record<StaticRoute, LandingContent>> 
     eyebrow: "GPT-app · nøjagtige URL'er, PDF'er eller skærmbilleder",
     title: "Webpage to PDF Converter — Web2File",
     displayTitle: "GPT: Webpage 2 PDF",
-    description: "Webpage to PDF Converter — Web2File konverterer nøjagtige offentlige webadresser og behandler uploadede webside-PDF'er eller skærmbilleder til separate Visual PDF- eller Interactive PDF-filer.",
+    description: "Webpage to PDF Converter — Web2File behandler nøjagtige offentlige adresser, webside-PDF'er og skærmbilleder som Visual PDF eller Interactive PDF.",
     lead: "Angiv en nøjagtig offentlig URL, en liste med nøjagtige URL'er, en webside-PDF eller helsides eller sammenhængende skærmbilleder. Vælg Visual PDF for at gemme webstedet som skærmbilleder eller Interactive PDF for markerbar tekst og klikbare links.",
     sections: [
       { heading: "1. Angiv en eller flere URL'er", body: "Send en offentlig URL, en liste med nøjagtige offentlige URL'er, en eksisterende webside-PDF eller helsides eller sammenhængende skærmbilleder. Hver webside forbliver en separat PDF." },
@@ -139,7 +139,7 @@ export const danishLandingContent: Partial<Record<StaticRoute, LandingContent>> 
     sections: [
       { heading: "Det bevares", body: "Beskeder, deltagerrækkefølge, kode, tabeller og synlige links vises i forhåndsvisningen." },
       { heading: "To læsestile", body: "Behold den oprindelige visuelle rytme, eller vælg et roligere dokument til læsning og udskrivning." },
-      { heading: "Platformens begrænsninger", body: "Sammenfoldede grene, beskeder der ikke er indlæst, og indhold uden for DOM kan kræve rulning eller åbning før optagelse." },
+      { heading: "Platformens begrænsninger", body: "Sammenfoldede grene, beskeder der ikke er indlæst, og indhold som browseren endnu ikke har indlæst kan kræve rulning eller åbning før optagelse." },
       { heading: "Ingen officiel tilknytning", body: "Page 2 File er et uafhængigt værktøj og er ikke godkendt eller drevet af OpenAI eller ChatGPT." },
     ],
     externalLinkKey: "chromeExtension",
@@ -171,7 +171,7 @@ export const danishLandingContent: Partial<Record<StaticRoute, LandingContent>> 
     lead: "Kontrollér, hvordan kildekort og synlige billeder vises, før du opretter et overskueligt eller visuelt nøjagtigt dokument.",
     sections: [
       { heading: "Kilderne forbliver nyttige", body: "Synlige citater og links forbliver klikbare, når målene er sikre." },
-      { heading: "Billeder følger DOM", body: "Kun medier, der er tilgængelige for den aktive side, kan vises i den midlertidige forhåndsvisning." },
+      { heading: "Billeder afhænger af den indlæste side", body: "Kun medier, der er tilgængelige for den aktive side, kan vises i den midlertidige forhåndsvisning." },
       { heading: "Ingen officiel tilknytning", body: "Page 2 File er uafhængigt og er ikke et produkt fra Google eller Gemini." },
     ],
     externalLinkKey: "chromeExtension",

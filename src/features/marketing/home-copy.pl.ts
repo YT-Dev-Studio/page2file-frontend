@@ -96,7 +96,7 @@ export const homeCopyPl: HomeCopy = {
     items: [
       { title: "Jak przekonwertować stronę do PDF lub PowerPoint?", body: "W przypadku publicznej strony wklej jej URL HTTPS, wybierz PDF lub PowerPoint oraz zrzuty strony albo tryb edytowalny, a następnie sprawdź sekcje. Dla strony po zalogowaniu użyj rozszerzenia Page 2 File w aktywnej karcie." },
       { title: "Czy Page 2 File zachowuje wygląd strony?", body: "Zrzuty strony zachowują renderowany wygląd, w tym układ, kolory, obrazy i widoczne wykresy. Animacje, filmy i interaktywne elementy przeglądarki są przedstawiane statycznie." },
-      { title: "Czy tekst i łącza pozostają edytowalne?", body: "Tryb edytowalny zachowuje obsługiwany tekst i bezpieczne cele łączy. Złożone widżety, canvas i nieobsługiwane elementy mogą zostać zapisane jako obrazy. Zrzuty strony stawiają na wygląd." },
+      { title: "Czy tekst i łącza pozostają edytowalne?", body: "Tryb edytowalny zachowuje obsługiwany tekst i bezpieczne cele łączy. Złożone widżety, grafika rysowana bezpośrednio przez przeglądarkę i nieobsługiwane elementy mogą zostać zapisane jako obrazy. Zrzuty strony stawiają na wygląd." },
       { title: "Czy można przechwycić długie i dynamiczne strony?", body: "Rozszerzenie pracuje z wyrenderowaną aktywną kartą. Najpierw rozwiń treści i przewiń stronę do końca. Ukrytej lub niewczytanej zawartości nie można wyeksportować." },
       { title: "Czy mogę konwertować strony po zalogowaniu?", body: "Tak, za pomocą rozszerzenia Chrome po normalnym otwarciu strony. Rozszerzenie używa aktywnej karty i nie prosi o hasło w formularzu publicznego URL. Nie omija kontroli dostępu." },
       {

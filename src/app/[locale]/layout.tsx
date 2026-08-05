@@ -5,6 +5,7 @@ import { getLocaleDefinition, isLocale, localeRegistry } from "@/shared/i18n/loc
 import { SiteShell } from "@/shared/ui/site-shell";
 import { getMessages } from "@/shared/i18n/messages";
 import { manrope } from "@/shared/ui/manrope-font";
+import { OrganizationJsonLd } from "@/shared/seo/structured-data";
 
 export const generateStaticParams = (): Array<{ locale: string }> => {
   const localeParam = (
@@ -29,6 +30,7 @@ export default async function LocaleLayout({
   return (
     <html data-scroll-behavior="smooth" lang={definition.htmlLang}>
       <body className={manrope.className}>
+        <OrganizationJsonLd locale={locale} />
         <a className="skipLink" href="#main-content">
           {messages.shell.skipToContent}
         </a>

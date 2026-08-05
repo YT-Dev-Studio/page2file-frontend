@@ -308,7 +308,7 @@ export const spanishLandingContent: Partial<
       {
         heading: "Límites específicos de la plataforma",
         body:
-          "Las ramas contraídas, los mensajes no cargados y el contenido fuera del DOM quizá deban abrirse o cargarse antes de capturar.",
+          "Las ramas contraídas, los mensajes no cargados y el contenido que el navegador aún no ha cargado quizá deban abrirse o cargarse antes de capturar.",
       },
       {
         heading: "Sin relación oficial",
@@ -381,7 +381,7 @@ export const spanishLandingContent: Partial<
           "Las citas y los enlaces visibles permanecen accesibles cuando sus destinos son seguros.",
       },
       {
-        heading: "Las imágenes siguen el DOM",
+        heading: "Las imágenes dependen de la página cargada",
         body:
           "Solo los medios disponibles para la página activa pueden aparecer en la vista previa temporal.",
       },

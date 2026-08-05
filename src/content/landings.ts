@@ -30,6 +30,7 @@ import { romanianLandingContent } from "./romanian-landings";
 import { hungarianLandingContent } from "./hungarian-landings";
 import { romanianLegalLandingContent } from "./romanian-legal-landings";
 import { hungarianLegalLandingContent } from "./hungarian-legal-landings";
+import { aboutLandingContent } from "./about-landings";
 
 export type ContentSection = {
   id?: string;
@@ -314,7 +315,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
   privacy: {
     route: "privacy",
     eyebrow: "Privacy and data processing",
-    title: "Privacy policy",
+    title: "Page 2 File privacy policy",
     description: "How Page 2 File processes webpage content, temporary conversion files, service cookies, analytics data and privacy requests.",
     lead:
       "This Privacy Policy explains what Page 2 File processes when you visit the website, use the Chrome extension or convert a webpage to PDF or PowerPoint.",
@@ -540,22 +541,22 @@ const localizedLandingContent: Record<
   Locale,
   Partial<Record<StaticRoute, LandingContent>>
 > = {
-  en: landingContent,
-  ru: russianLandingContent,
-  de: { ...germanLandingContent, ...germanLegalLandingContent },
-  fr: { ...frenchLandingContent, ...frenchLegalLandingContent },
-  es: { ...spanishLandingContent, ...spanishLegalLandingContent },
-  nl: { ...dutchLandingContent, ...dutchLegalLandingContent },
-  pt: { ...portugueseLandingContent, ...portugueseLegalLandingContent },
-  it: { ...italianLandingContent, ...italianLegalLandingContent },
-  pl: { ...polishLandingContent, ...polishLegalLandingContent },
-  cs: { ...czechLandingContent, ...czechLegalLandingContent },
-  sv: { ...swedishLandingContent, ...swedishLegalLandingContent },
-  no: { ...norwegianLandingContent, ...norwegianLegalLandingContent },
-  da: { ...danishLandingContent, ...danishLegalLandingContent },
-  fi: { ...finnishLandingContent, ...finnishLegalLandingContent },
-  ro: { ...romanianLandingContent, ...romanianLegalLandingContent },
-  hu: { ...hungarianLandingContent, ...hungarianLegalLandingContent },
+  en: { ...landingContent, about: aboutLandingContent.en },
+  ru: { ...russianLandingContent, about: aboutLandingContent.ru },
+  de: { ...germanLandingContent, ...germanLegalLandingContent, about: aboutLandingContent.de },
+  fr: { ...frenchLandingContent, ...frenchLegalLandingContent, about: aboutLandingContent.fr },
+  es: { ...spanishLandingContent, ...spanishLegalLandingContent, about: aboutLandingContent.es },
+  nl: { ...dutchLandingContent, ...dutchLegalLandingContent, about: aboutLandingContent.nl },
+  pt: { ...portugueseLandingContent, ...portugueseLegalLandingContent, about: aboutLandingContent.pt },
+  it: { ...italianLandingContent, ...italianLegalLandingContent, about: aboutLandingContent.it },
+  pl: { ...polishLandingContent, ...polishLegalLandingContent, about: aboutLandingContent.pl },
+  cs: { ...czechLandingContent, ...czechLegalLandingContent, about: aboutLandingContent.cs },
+  sv: { ...swedishLandingContent, ...swedishLegalLandingContent, about: aboutLandingContent.sv },
+  no: { ...norwegianLandingContent, ...norwegianLegalLandingContent, about: aboutLandingContent.no },
+  da: { ...danishLandingContent, ...danishLegalLandingContent, about: aboutLandingContent.da },
+  fi: { ...finnishLandingContent, ...finnishLegalLandingContent, about: aboutLandingContent.fi },
+  ro: { ...romanianLandingContent, ...romanianLegalLandingContent, about: aboutLandingContent.ro },
+  hu: { ...hungarianLandingContent, ...hungarianLegalLandingContent, about: aboutLandingContent.hu },
 };
 
 export const getLandingContent = (

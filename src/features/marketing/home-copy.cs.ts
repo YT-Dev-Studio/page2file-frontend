@@ -80,7 +80,7 @@ export const homeCopyCs: HomeCopy = {
     items: [
       { title: "Jak převedu webovou stránku do PDF nebo PowerPointu?", body: "U veřejné stránky vložte URL s HTTPS, zvolte PDF nebo PowerPoint a snímky stránky či upravitelný režim a před vytvořením souboru zkontrolujte části. U přihlášené stránky použijte rozšíření Page 2 File v aktivní kartě." },
       { title: "Dokáže Page 2 File zachovat vzhled stránky?", body: "Snímky stránky zachovávají vykreslený vzhled včetně rozvržení, barev, obrázků a viditelných grafů. Animace, video a interaktivní ovládací prvky se zobrazují staticky." },
-      { title: "Zůstanou text a odkazy upravitelné?", body: "Upravitelný režim zachová podporovaný text a bezpečné cíle odkazů. Složité widgety, canvas a nepodporované prvky mohou být převedeny na obrázky. Snímky stránky upřednostňují vzhled." },
+      { title: "Zůstanou text a odkazy upravitelné?", body: "Upravitelný režim zachová podporovaný text a bezpečné cíle odkazů. Složité widgety, grafika kreslená přímo prohlížečem a nepodporované prvky mohou být převedeny na obrázky. Snímky stránky upřednostňují vzhled." },
       { title: "Lze zachytit dlouhé a dynamické stránky?", body: "Rozšíření pracuje s vykreslenou aktivní kartou. Nejprve rozbalte obsah a posuňte stránku až dolů. Skrytý nebo nenačtený obsah nelze exportovat." },
       { title: "Mohu převádět stránky po přihlášení?", body: "Ano, pomocí rozšíření Chrome po běžném otevření stránky. Rozšíření používá aktivní kartu a nevyžaduje heslo ve formuláři veřejné URL. Neobchází řízení přístupu." },
       {

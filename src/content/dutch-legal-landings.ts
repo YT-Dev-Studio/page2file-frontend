@@ -7,11 +7,11 @@ export const dutchLegalLandingContent: Partial<
   privacy: {
     route: "privacy",
     eyebrow: "Privacy en gegevensverwerking",
-    title: "Privacybeleid",
+    title: "Privacy en gegevensgebruik",
     description:
       "Hoe Page 2 File webinhoud, tijdelijke conversiebestanden, cookies, analytische gegevens en privacyverzoeken verwerkt.",
     lead:
-      "Dit Privacybeleid legt uit welke gegevens Page 2 File verwerkt wanneer u de website bezoekt, de Chrome-extensie gebruikt of een webpagina naar PDF of PowerPoint converteert.",
+      "Dit Privacy en gegevensgebruik legt uit welke gegevens Page 2 File verwerkt wanneer u de website bezoekt, de Chrome-extensie gebruikt of een webpagina naar PDF of PowerPoint converteert.",
     sections: [
       {
         heading: "Beheerder en toepassingsgebied",
@@ -149,7 +149,7 @@ export const dutchLegalLandingContent: Partial<
       {
         heading: "Tijdelijke verwerking",
         body:
-          "De Dienst kan broninhoud, instellingen en gegenereerde bestanden tijdelijk verwerken om een voorbeeld en download te leveren. Page 2 File biedt geen conversiegeschiedenis die aan een account is gekoppeld. Het Privacybeleid beschrijft de tijdelijke gegevens, cookies en aanbieders.",
+          "De Dienst kan broninhoud, instellingen en gegenereerde bestanden tijdelijk verwerken om een voorbeeld en download te leveren. Page 2 File biedt geen conversiegeschiedenis die aan een account is gekoppeld. Het Privacy en gegevensgebruik beschrijft de tijdelijke gegevens, cookies en aanbieders.",
       },
       {
         heading: "Beperkingen van resultaat en weergave",
@@ -164,7 +164,7 @@ export const dutchLegalLandingContent: Partial<
       {
         heading: "Privacy en cookies",
         body:
-          "Ons Privacybeleid legt de tijdelijke conversieverwerking, analytics, dienstverleners en cookies uit. Door de Dienst te gebruiken erkent u dat de verwerking die nodig is voor de gevraagde conversie plaatsvindt zoals daar beschreven.",
+          "Ons Privacy en gegevensgebruik legt de tijdelijke conversieverwerking, analytics, dienstverleners en cookies uit. Door de Dienst te gebruiken erkent u dat de verwerking die nodig is voor de gevraagde conversie plaatsvindt zoals daar beschreven.",
       },
       {
         heading: "Intellectuele eigendom van Page 2 File",
@@ -209,7 +209,7 @@ export const dutchLegalLandingContent: Partial<
       {
         heading: "Scheidbaarheid, afstand en volledige overeenkomst",
         body:
-          "Als een bepaling ongeldig of onafdwingbaar is, blijven de overige bepalingen geldig en wordt de getroffen bepaling zo dicht mogelijk bij haar doel uitgelegd. Het niet afdwingen van een bepaling is geen afstand daarvan. Deze Voorwaarden en het Privacybeleid vormen de overeenkomst over de Dienst.",
+          "Als een bepaling ongeldig of onafdwingbaar is, blijven de overige bepalingen geldig en wordt de getroffen bepaling zo dicht mogelijk bij haar doel uitgelegd. Het niet afdwingen van een bepaling is geen afstand daarvan. Deze Voorwaarden en het Privacy en gegevensgebruik vormen de overeenkomst over de Dienst.",
       },
       {
         heading: "Toepasselijk recht en geschillen",
