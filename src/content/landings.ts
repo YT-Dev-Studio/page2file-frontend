@@ -140,22 +140,30 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
   "html2pdf-gpt": {
     route: "html2pdf-gpt",
     eyebrow: "GPT App · uploaded HTML file",
-    title: "Convert an Uploaded HTML File with HTML 2 PDF",
-    description: "HTML 2 PDF is a GPT-only conversion App that accepts an uploaded HTML file and returns one tidy PDF while keeping rendering limits visible.",
+    title: "HTML to PDF Converter — Web2File",
+    displayTitle: "GPT: HTML 2 PDF",
+    description: "HTML to PDF Converter — Web2File turns one uploaded HTML file into a checked PDF that preserves layout, images, selectable text, and links.",
     lead:
-      "Upload an HTML file to the GPT App. HTML 2 PDF sends the supplied document for isolated rendering and returns a downloadable PDF; this raw-file workflow is available only through this GPT App.",
+      "Upload exactly one HTML file. GPT HTML 2 PDF previews its design, loads accessible styles, fonts, and images, then creates one checked PDF with selectable text and clickable links where possible.",
     sections: [
-      { heading: "1. Upload the HTML file", body: "Attach the HTML document you are allowed to process. This workflow starts from the uploaded file, not from a public webpage URL." },
-      { heading: "2. Convert to one PDF", body: "The GPT App returns one PDF for the uploaded document. Remote resources, scripts, custom fonts, and browser-only features may not reproduce exactly." },
-      { heading: "3. Treat HTML as untrusted input", body: "Safe rendering requires isolation from private networks, local files, and uncontrolled scripts. The result is a document conversion, not hosted web execution." },
+      { heading: "1. Upload exactly one HTML file", body: "Attach one HTML document. The GPT does not accept a URL instead, process several HTML files, crawl websites, follow links for extra pages, or merge multiple documents." },
+      { heading: "2. Include the styles and assets", body: "Inline and embedded styles are used automatically, along with accessible remote stylesheets, fonts, and images. If the HTML references a missing local CSS file, upload the matching file for a closer visual result or continue without it." },
+      { heading: "3. Preview and preserve the design", body: "The HTML is previewed at a suitable desktop width before conversion. The result aims to retain the source theme, colors, typography, spacing, columns, cards, images, and content order without activating interactive controls." },
+      { heading: "4. Create one readable PDF", body: "The GPT produces one PDF with selectable text and working hyperlinks where possible. Wide layouts can use landscape or a suitable page size so major columns and visual elements are not squeezed, cropped, or split." },
+      { heading: "5. Check the finished file", body: "Every PDF is reviewed for missing content, clipped components, unexplained blank areas, readability, page breaks, image placement, and supported links before it is delivered." },
     ],
     externalLinkKey: "html2pdfGpt",
-    primaryLabel: "Open HTML 2 PDF GPT App",
+    primaryLabel: "Open GPT HTML 2 PDF",
     articleLinks: [
       { slug: "html-to-pdf-safely", label: "Convert HTML to PDF safely" },
       { slug: "webpage-capture-vs-web-scraping", label: "Capture compared with scraping" },
     ],
     relatedRoutes: gptRelatedRoutes,
+    workflowOverride: {
+      detailsTitle: "Five steps from HTML to PDF",
+      firstStageDescription: "Give the GPT App one HTML file.",
+      firstStageLabel: "Upload HTML",
+    },
   },
   "one-page2powerpoint-gpt": {
     route: "one-page2powerpoint-gpt",

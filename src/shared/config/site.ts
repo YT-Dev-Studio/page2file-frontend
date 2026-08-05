@@ -107,6 +107,8 @@ const externalLink = (
 const GPT_CATALOG_URL = "https://chatgpt.com/gpts";
 const PAGE2PDF_GPT_URL =
   "https://chatgpt.com/g/g-6a6911cbe52c819182c9cc66d9e68d01-web2file-webpage-to-pdf-converter";
+const HTML2PDF_GPT_URL =
+  "https://chatgpt.com/g/g-6a7227252b1081918497653732efb3a8-web2file-html-to-pdf-converter";
 const CHROME_WEB_STORE_URL = "https://chromewebstore.google.com/";
 
 export const externalLinks: Record<ExternalLinkKey, ExternalLink> = {
@@ -123,7 +125,7 @@ export const externalLinks: Record<ExternalLinkKey, ExternalLink> = {
     GPT_CATALOG_URL,
   ),
   html2pdfGpt: externalLink(
-    process.env.NEXT_PUBLIC_HTML2PDF_GPT_URL,
+    process.env.NEXT_PUBLIC_HTML2PDF_GPT_URL ?? HTML2PDF_GPT_URL,
     GPT_CATALOG_URL,
   ),
   onePage2PowerpointGpt: externalLink(

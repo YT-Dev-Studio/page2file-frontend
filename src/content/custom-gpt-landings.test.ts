@@ -73,7 +73,11 @@ describe("GPT App landing content", () => {
       expect(portuguese?.externalLinkKey).toBe(externalLinkKey);
       expect(italian?.externalLinkKey).toBe(externalLinkKey);
       const ctaName =
-        route === "page2pdf-gpt" ? "GPT Webpage 2 PDF" : serviceName;
+        route === "page2pdf-gpt"
+          ? "GPT Webpage 2 PDF"
+          : route === "html2pdf-gpt"
+            ? "GPT HTML 2 PDF"
+            : serviceName;
       expect(english?.primaryLabel).toContain(ctaName);
       expect(russian?.primaryLabel).toContain(ctaName);
       expect(german?.primaryLabel).toContain(ctaName);
@@ -82,7 +86,8 @@ describe("GPT App landing content", () => {
       expect(dutch?.primaryLabel).toContain(ctaName);
       expect(portuguese?.primaryLabel).toContain(ctaName);
       expect(italian?.primaryLabel).toContain(ctaName);
-      const sectionCount = route === "page2pdf-gpt" ? 5 : 3;
+      const sectionCount =
+        route === "page2pdf-gpt" || route === "html2pdf-gpt" ? 5 : 3;
       expect(english?.sections).toHaveLength(sectionCount);
       expect(russian?.sections).toHaveLength(sectionCount);
       expect(german?.sections).toHaveLength(sectionCount);
@@ -156,6 +161,42 @@ describe("GPT App landing content", () => {
     expect(russian?.sections[0]?.heading).toBe(
       "1. Укажите один или несколько URL",
     );
+  });
+
+  test("keeps the HTML converter contract aligned in every locale", () => {
+    for (const { code } of localeRegistry) {
+      const content = getLandingContent(code, "html2pdf-gpt");
+      const visibleCopy = [
+        content?.displayTitle,
+        content?.description,
+        content?.lead,
+        content?.primaryLabel,
+        content?.workflowOverride?.detailsTitle,
+        content?.workflowOverride?.firstStageDescription,
+        content?.workflowOverride?.firstStageLabel,
+        ...content?.sections.flatMap(({ body, heading }) => [heading, body]) ?? [],
+      ].join(" ");
+
+      expect(content?.title).toBe("HTML to PDF Converter — Web2File");
+      expect(content?.displayTitle).toBe("GPT: HTML 2 PDF");
+      expect(content?.description.length).toBeGreaterThanOrEqual(100);
+      expect(content?.description.length).toBeLessThanOrEqual(170);
+      expect(content?.primaryLabel).toContain("GPT HTML 2 PDF");
+      expect(content?.sections).toHaveLength(5);
+      expect(content?.sections[0]?.heading).toContain("HTML");
+      expect(content?.workflowOverride?.detailsTitle.length).toBeGreaterThan(5);
+      expect(
+        content?.workflowOverride?.firstStageDescription.length,
+      ).toBeGreaterThan(10);
+      expect(
+        content?.workflowOverride?.firstStageLabel.length,
+      ).toBeGreaterThan(3);
+      expect(visibleCopy).toContain("HTML");
+      expect(visibleCopy).toContain("CSS");
+      expect(visibleCopy).toContain("PDF");
+      expect(visibleCopy).not.toContain("page2file.com");
+      expect(visibleCopy).not.toContain("Code Interpreter");
+    }
   });
 });
 
@@ -235,6 +276,10 @@ describe("completed landing localization batches", () => {
         if (route === "page2pdf-gpt") {
           expect(localized?.title).toBe(
             "Webpage to PDF Converter — Web2File",
+          );
+        } else if (route === "html2pdf-gpt") {
+          expect(localized?.title).toBe(
+            "HTML to PDF Converter — Web2File",
           );
         } else {
           expect(localized?.title).not.toBe(english?.title);

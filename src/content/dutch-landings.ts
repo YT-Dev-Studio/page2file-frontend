@@ -73,23 +73,31 @@ export const dutchLandingContent: Partial<
   "html2pdf-gpt": {
     route: "html2pdf-gpt",
     eyebrow: "GPT-app · geüpload HTML-bestand",
-    title: "Een geüpload HTML-bestand converteren met HTML 2 PDF",
+    title: "HTML to PDF Converter — Web2File",
+    displayTitle: "GPT: HTML 2 PDF",
     description:
-      "HTML 2 PDF accepteert een geüpload HTML-bestand en geeft binnen zichtbare weergavegrenzen een overzichtelijke PDF terug.",
+      "HTML to PDF Converter — Web2File zet één geüpload HTML-bestand om in een gecontroleerde PDF met behoud van lay-out, afbeeldingen, tekst en links.",
     lead:
-      "Upload een HTML-bestand naar de GPT-app. HTML 2 PDF geeft het geïsoleerd weer en levert een PDF; deze workflow voor een onbewerkt bestand is alleen in deze app beschikbaar.",
+      "Upload precies één HTML-bestand. GPT HTML 2 PDF bekijkt het ontwerp vooraf, laadt bereikbare stijlen, lettertypen en afbeeldingen en maakt één gecontroleerde PDF met selecteerbare tekst en klikbare links waar mogelijk.",
     sections: [
-      { heading: "1. Upload het HTML-bestand", body: "Voeg het HTML-document toe dat u mag verwerken. Deze workflow begint met een bestand, niet met een openbare webpagina-URL." },
-      { heading: "2. Converteer naar PDF", body: "De app levert een PDF van het geüploade document. Externe bronnen, scripts, eigen lettertypen en browserfuncties kunnen afwijken." },
-      { heading: "3. Behandel HTML als niet-vertrouwde invoer", body: "Veilige weergave vereist isolatie van privénetwerken, lokale bestanden en ongecontroleerde scripts. Het resultaat is documentconversie, geen gehoste webuitvoering." },
+      { heading: "1. Upload precies één HTML-bestand", body: "Voeg één HTML-document toe. De GPT-app accepteert geen URL in plaats daarvan, verwerkt geen meerdere HTML-bestanden, doorzoekt geen websites, volgt geen links naar extra pagina’s en voegt geen documenten samen." },
+      { heading: "2. Neem stijlen en bronnen op", body: "Inline en ingebouwde stijlen worden automatisch gebruikt met bereikbare externe stylesheets, lettertypen en afbeeldingen. Verwijst de HTML naar een ontbrekend lokaal CSS-bestand, upload dan het passende bestand voor een nauwkeuriger resultaat of ga zonder verder." },
+      { heading: "3. Bekijk en behoud het ontwerp", body: "Voor de conversie wordt de HTML bekeken op een geschikte desktopbreedte. De PDF probeert thema, kleuren, typografie, witruimte, kolommen, kaarten, afbeeldingen en inhoudsvolgorde te behouden zonder interactieve bediening te activeren." },
+      { heading: "4. Maak één leesbare PDF", body: "De GPT-app maakt één PDF met selecteerbare tekst en werkende hyperlinks waar mogelijk. Brede lay-outs kunnen liggend of op een passend paginaformaat worden uitgevoerd, zodat belangrijke elementen niet worden samengedrukt, afgesneden of gesplitst." },
+      { heading: "5. Controleer het voltooide bestand", body: "Elke PDF wordt vóór levering gecontroleerd op ontbrekende inhoud, afgesneden onderdelen, onverklaarde lege vlakken, leesbaarheid, pagina-einden, plaatsing van afbeeldingen en ondersteunde links." },
     ],
     externalLinkKey: "html2pdfGpt",
-    primaryLabel: "HTML 2 PDF GPT-app openen",
+    primaryLabel: "GPT HTML 2 PDF openen",
     articleLinks: [
       { slug: "html-to-pdf-safely", label: "HTML veilig naar PDF converteren" },
       { slug: "webpage-capture-vs-web-scraping", label: "Vastlegging tegenover web scraping" },
     ],
     relatedRoutes: gptRoutes,
+    workflowOverride: {
+      detailsTitle: "Vijf stappen van HTML naar PDF",
+      firstStageDescription: "Geef de GPT-app één HTML-bestand.",
+      firstStageLabel: "HTML uploaden",
+    },
   },
   "one-page2powerpoint-gpt": {
     route: "one-page2powerpoint-gpt",

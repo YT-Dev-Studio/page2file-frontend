@@ -10,6 +10,21 @@ afterEach(() => {
 });
 
 describe("ExternalCta", () => {
+  test("uses the direct HTML 2 PDF GPT URL", () => {
+    render(
+      <ExternalCta
+        externalLinkKey="html2pdfGpt"
+        label="Open GPT HTML 2 PDF"
+        placeholderLabel="Browse GPTs"
+      />,
+    );
+
+    const link = screen.getByRole("link", { name: "Open GPT HTML 2 PDF" });
+    expect(link.getAttribute("href")).toBe(
+      "https://chatgpt.com/g/g-6a7227252b1081918497653732efb3a8-web2file-html-to-pdf-converter",
+    );
+  });
+
   test("links an honest placeholder label to the GPT catalog", () => {
     externalLinks.page2pdfGpt = {
       href: "https://chatgpt.com/gpts",

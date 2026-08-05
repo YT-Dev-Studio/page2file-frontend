@@ -73,23 +73,31 @@ export const germanLandingContent: Partial<
   "html2pdf-gpt": {
     route: "html2pdf-gpt",
     eyebrow: "GPT-App · hochgeladene HTML-Datei",
-    title: "Eine hochgeladene HTML-Datei mit HTML 2 PDF umwandeln",
+    title: "HTML to PDF Converter — Web2File",
+    displayTitle: "GPT: HTML 2 PDF",
     description:
-      "HTML 2 PDF ist eine GPT-App, die eine hochgeladene HTML-Datei annimmt und unter sichtbaren Rendering-Grenzen ein aufgeräumtes PDF zurückgibt.",
+      "HTML to PDF Converter — Web2File wandelt eine hochgeladene HTML-Datei in ein geprüftes PDF um und bewahrt Layout, Bilder, Text und Links.",
     lead:
-      "Laden Sie eine HTML-Datei in die GPT-App hoch. HTML 2 PDF rendert das Dokument isoliert und liefert ein PDF; dieser Rohdatei-Ablauf ist nur in dieser GPT-App verfügbar.",
+      "Laden Sie genau eine HTML-Datei hoch. GPT HTML 2 PDF prüft die Gestaltung, lädt erreichbare Stile, Schriften und Bilder und erstellt ein geprüftes PDF mit auswählbarem Text und anklickbaren Links, soweit möglich.",
     sections: [
-      { heading: "1. HTML-Datei hochladen", body: "Fügen Sie das HTML-Dokument hinzu, das Sie verarbeiten dürfen. Dieser Ablauf beginnt mit einer Datei, nicht mit einer öffentlichen Webseiten-URL." },
-      { heading: "2. In ein PDF umwandeln", body: "Die GPT-App liefert ein PDF für das hochgeladene Dokument. Externe Ressourcen, Skripte, eigene Schriften und Browserfunktionen können abweichen." },
-      { heading: "3. HTML als nicht vertrauenswürdige Eingabe behandeln", body: "Sicheres Rendering erfordert die Isolation von privaten Netzwerken, lokalen Dateien und unkontrollierten Skripten. Das Ergebnis ist eine Dokumentkonvertierung, keine gehostete Webausführung." },
+      { heading: "1. Genau eine HTML-Datei hochladen", body: "Fügen Sie ein HTML-Dokument hinzu. Die GPT-App akzeptiert stattdessen keine URL, verarbeitet nicht mehrere HTML-Dateien, durchsucht keine Websites, folgt keinen Links zu weiteren Seiten und führt keine Dokumente zusammen." },
+      { heading: "2. Stile und Ressourcen einbinden", body: "Inline- und eingebettete Stile werden automatisch mit erreichbaren externen Stylesheets, Schriften und Bildern verwendet. Verweist das HTML auf eine fehlende lokale CSS-Datei, laden Sie die passende Datei für eine genauere Darstellung hoch oder fahren Sie ohne sie fort." },
+      { heading: "3. Gestaltung prüfen und bewahren", body: "Vor der Umwandlung wird das HTML in einer passenden Desktop-Breite angezeigt. Das PDF soll Thema, Farben, Typografie, Abstände, Spalten, Karten, Bilder und Inhaltsreihenfolge bewahren, ohne interaktive Bedienelemente auszulösen." },
+      { heading: "4. Ein lesbares PDF erstellen", body: "Die GPT-App erstellt ein PDF mit auswählbarem Text und funktionierenden Hyperlinks, soweit möglich. Breite Layouts können im Querformat oder auf einem passenden Seitenformat ausgegeben werden, damit wichtige Elemente nicht gequetscht, abgeschnitten oder geteilt werden." },
+      { heading: "5. Die fertige Datei prüfen", body: "Jedes PDF wird vor der Ausgabe auf fehlende Inhalte, abgeschnittene Komponenten, unerklärliche Leerflächen, Lesbarkeit, Seitenumbrüche, Bildplatzierung und unterstützte Links geprüft." },
     ],
     externalLinkKey: "html2pdfGpt",
-    primaryLabel: "HTML 2 PDF GPT-App öffnen",
+    primaryLabel: "GPT HTML 2 PDF öffnen",
     articleLinks: [
       { slug: "html-to-pdf-safely", label: "HTML sicher in PDF umwandeln" },
       { slug: "webpage-capture-vs-web-scraping", label: "Erfassung im Vergleich zu Scraping" },
     ],
     relatedRoutes: gptRoutes,
+    workflowOverride: {
+      detailsTitle: "Fünf Schritte von HTML zu PDF",
+      firstStageDescription: "Übergeben Sie der GPT-App eine HTML-Datei.",
+      firstStageLabel: "HTML hochladen",
+    },
   },
   "one-page2powerpoint-gpt": {
     route: "one-page2powerpoint-gpt",

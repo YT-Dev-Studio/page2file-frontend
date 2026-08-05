@@ -73,23 +73,31 @@ export const frenchLandingContent: Partial<
   "html2pdf-gpt": {
     route: "html2pdf-gpt",
     eyebrow: "Application GPT · fichier HTML importé",
-    title: "Convertir un fichier HTML importé avec HTML 2 PDF",
+    title: "HTML to PDF Converter — Web2File",
+    displayTitle: "GPT: HTML 2 PDF",
     description:
-      "HTML 2 PDF est une application GPT qui accepte un fichier HTML importé et renvoie un PDF propre tout en indiquant les limites du rendu.",
+      "HTML to PDF Converter — Web2File transforme un fichier HTML importé en PDF vérifié en conservant la mise en page, les images, le texte et les liens.",
     lead:
-      "Importez un fichier HTML dans l’application GPT. HTML 2 PDF effectue un rendu isolé et renvoie un PDF ; ce parcours à partir d’un fichier brut n’est disponible que dans cette application GPT.",
+      "Importez exactement un fichier HTML. GPT HTML 2 PDF prévisualise sa présentation, charge les styles, polices et images accessibles, puis crée un PDF vérifié avec du texte sélectionnable et des liens cliquables lorsque cela est possible.",
     sections: [
-      { heading: "1. Importer le fichier HTML", body: "Joignez le document HTML que vous êtes autorisé à traiter. Ce parcours part du fichier importé, pas de l’URL d’une page web publique." },
-      { heading: "2. Convertir en un PDF", body: "L’application GPT renvoie un PDF du document importé. Les ressources distantes, scripts, polices personnalisées et fonctions du navigateur peuvent différer." },
-      { heading: "3. Considérer le HTML comme non fiable", body: "Un rendu sûr exige une isolation des réseaux privés, fichiers locaux et scripts non contrôlés. Le résultat est une conversion de document, pas une exécution web hébergée." },
+      { heading: "1. Importer exactement un fichier HTML", body: "Joignez un seul document HTML. L’application GPT n’accepte pas une URL à sa place, ne traite pas plusieurs fichiers HTML, n’explore pas les sites, ne suit pas les liens vers d’autres pages et ne fusionne pas les documents." },
+      { heading: "2. Inclure les styles et les ressources", body: "Les styles intégrés sont utilisés automatiquement avec les feuilles de style, polices et images distantes accessibles. Si le HTML référence un fichier CSS local manquant, importez le fichier correspondant pour un résultat plus fidèle ou continuez sans lui." },
+      { heading: "3. Prévisualiser et préserver la conception", body: "Le HTML est prévisualisé dans une largeur de bureau adaptée avant la conversion. Le PDF vise à conserver le thème, les couleurs, la typographie, les espacements, les colonnes, les cartes, les images et l’ordre du contenu sans activer les commandes interactives." },
+      { heading: "4. Créer un PDF lisible", body: "L’application GPT produit un PDF avec du texte sélectionnable et des hyperliens fonctionnels lorsque cela est possible. Les mises en page larges peuvent utiliser le mode paysage ou un format adapté afin de ne pas comprimer, rogner ou couper les éléments importants." },
+      { heading: "5. Vérifier le fichier terminé", body: "Chaque PDF est contrôlé avant sa livraison pour repérer le contenu manquant, les éléments rognés, les zones vides inexpliquées, les problèmes de lisibilité, les sauts de page, le placement des images et les liens pris en charge." },
     ],
     externalLinkKey: "html2pdfGpt",
-    primaryLabel: "Ouvrir l’application GPT HTML 2 PDF",
+    primaryLabel: "Ouvrir GPT HTML 2 PDF",
     articleLinks: [
       { slug: "html-to-pdf-safely", label: "Convertir du HTML en PDF en toute sécurité" },
       { slug: "webpage-capture-vs-web-scraping", label: "Comparer la capture et le scraping" },
     ],
     relatedRoutes: gptRoutes,
+    workflowOverride: {
+      detailsTitle: "Cinq étapes du HTML au PDF",
+      firstStageDescription: "Transmettez un fichier HTML à l’application GPT.",
+      firstStageLabel: "Importer le HTML",
+    },
   },
   "one-page2powerpoint-gpt": {
     route: "one-page2powerpoint-gpt",

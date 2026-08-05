@@ -73,23 +73,31 @@ export const portugueseLandingContent: Partial<
   "html2pdf-gpt": {
     route: "html2pdf-gpt",
     eyebrow: "Aplicação GPT · ficheiro HTML carregado",
-    title: "Converta um ficheiro HTML carregado com HTML 2 PDF",
+    title: "HTML to PDF Converter — Web2File",
+    displayTitle: "GPT: HTML 2 PDF",
     description:
-      "HTML 2 PDF aceita um ficheiro HTML carregado e devolve um PDF limpo dentro de limites visíveis de renderização.",
+      "HTML to PDF Converter — Web2File transforma um ficheiro HTML carregado num PDF verificado, preservando o layout, as imagens, o texto e as ligações.",
     lead:
-      "Carregue um ficheiro HTML na aplicação GPT. HTML 2 PDF renderiza-o de forma isolada e devolve um PDF; este fluxo de ficheiro original está disponível apenas nesta aplicação.",
+      "Carregue exatamente um ficheiro HTML. GPT HTML 2 PDF pré-visualiza o design, carrega estilos, tipos de letra e imagens acessíveis e cria um PDF verificado com texto selecionável e ligações clicáveis sempre que possível.",
     sections: [
-      { heading: "1. Carregue o ficheiro HTML", body: "Adicione o documento HTML que tem autorização para processar. Este fluxo começa com um ficheiro, não com o URL público de uma página web." },
-      { heading: "2. Converta-o em PDF", body: "A aplicação devolve um PDF do documento carregado. Recursos externos, scripts, tipos de letra personalizados e funcionalidades do navegador podem variar." },
-      { heading: "3. Trate o HTML como entrada não fiável", body: "A renderização segura exige isolar redes privadas, ficheiros locais e scripts não controlados. O resultado é uma conversão de documento, não uma execução web alojada." },
+      { heading: "1. Carregue exatamente um ficheiro HTML", body: "Adicione um único documento HTML. A aplicação GPT não aceita um URL em alternativa, não processa vários ficheiros HTML, não percorre sites, não segue ligações para páginas adicionais e não combina documentos." },
+      { heading: "2. Inclua os estilos e recursos", body: "Os estilos inline e incorporados são usados automaticamente com folhas de estilo, tipos de letra e imagens remotos acessíveis. Se o HTML referenciar um ficheiro CSS local em falta, carregue o ficheiro correspondente para maior fidelidade ou continue sem ele." },
+      { heading: "3. Pré-visualize e preserve o design", body: "Antes da conversão, o HTML é pré-visualizado numa largura de ecrã adequada. O PDF procura preservar o tema, as cores, a tipografia, os espaçamentos, as colunas, os cartões, as imagens e a ordem do conteúdo sem ativar controlos interativos." },
+      { heading: "4. Crie um PDF legível", body: "A aplicação GPT produz um PDF com texto selecionável e hiperligações funcionais sempre que possível. Os layouts largos podem usar orientação horizontal ou um formato adequado para evitar comprimir, cortar ou dividir elementos importantes." },
+      { heading: "5. Verifique o ficheiro final", body: "Cada PDF é verificado antes da entrega quanto a conteúdo em falta, componentes cortados, áreas vazias inexplicáveis, legibilidade, quebras de página, colocação de imagens e ligações suportadas." },
     ],
     externalLinkKey: "html2pdfGpt",
-    primaryLabel: "Abrir a aplicação GPT HTML 2 PDF",
+    primaryLabel: "Abrir GPT HTML 2 PDF",
     articleLinks: [
       { slug: "html-to-pdf-safely", label: "Converter HTML em PDF com segurança" },
       { slug: "webpage-capture-vs-web-scraping", label: "Captura de página ou web scraping" },
     ],
     relatedRoutes: gptRoutes,
+    workflowOverride: {
+      detailsTitle: "Cinco passos de HTML para PDF",
+      firstStageDescription: "Forneça um ficheiro HTML à aplicação GPT.",
+      firstStageLabel: "Carregar HTML",
+    },
   },
   "one-page2powerpoint-gpt": {
     route: "one-page2powerpoint-gpt",
