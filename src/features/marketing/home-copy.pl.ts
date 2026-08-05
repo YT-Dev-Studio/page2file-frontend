@@ -103,7 +103,7 @@ export const homeCopyPl: HomeCopy = {
         title: "Czy mogę przekonwertować stronę lub całą witrynę?",
         body: [
           { kind: "text", text: "Konwertery stron, a także " },
-          { kind: "link", label: "One Page 2 PDF", route: "page2pdf-gpt" },
+          { kind: "link", label: "Webpage to PDF Converter — Web2File", route: "page2pdf-gpt" },
           { kind: "text", text: " i " },
           { kind: "link", label: "One Page 2 PowerPoint", route: "one-page2powerpoint-gpt" },
           { kind: "text", text: " przetwarzają jeden URL. Dla wielu dostępnych stron publicznych użyj " },

@@ -66,7 +66,9 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
 
           <nav aria-label={copy.gptsTitle} className={styles.footerLinks}>
             <h2>{copy.gptsTitle}</h2>
-            <Link href={`/${locale}/page2pdf-gpt`}>One Page 2 PDF</Link>
+            <Link href={`/${locale}/page2pdf-gpt`}>
+              Webpage 2 PDF
+            </Link>
             <Link href={`/${locale}/web2pdf-gpt`}>Web 2 PDF</Link>
             <Link href={`/${locale}/html2pdf-gpt`}>HTML 2 PDF</Link>
             <Link href={`/${locale}/one-page2powerpoint-gpt`}>

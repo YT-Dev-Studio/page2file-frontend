@@ -2,7 +2,7 @@ import type { LandingContent, RelatedRoute } from "./landings";
 import type { StaticRoute } from "@/shared/routes/routes";
 
 const gptRoutes: ReadonlyArray<RelatedRoute> = [
-  { route: "page2pdf-gpt", label: "One Page 2 PDF" },
+  { route: "page2pdf-gpt", label: "Webpage to PDF Converter — Web2File" },
   { route: "web2pdf-gpt", label: "Web 2 PDF" },
   { route: "html2pdf-gpt", label: "HTML 2 PDF" },
   { route: "one-page2powerpoint-gpt", label: "One Page 2 PowerPoint" },
@@ -22,24 +22,31 @@ export const dutchLandingContent: Partial<
 > = {
   "page2pdf-gpt": {
     route: "page2pdf-gpt",
-    eyebrow: "GPT-app · één openbare URL",
-    title: "Converteer één openbare URL naar één PDF met One Page 2 PDF",
+    eyebrow: "GPT-app · exacte URL's, PDF's of screenshots",
+    title: "Webpage to PDF Converter — Web2File",
     description:
-      "One Page 2 PDF is een gerichte GPT-app die één openbare webpagina-URL voor conversie verstuurt en één PDF voor die pagina teruggeeft.",
+      "Webpage to PDF Converter — Web2File converteert exacte openbare webpagina-URL's en verwerkt geüploade webpagina-PDF's of screenshots tot afzonderlijke Visual PDF- of Interactive PDF-bestanden.",
     lead:
-      "Geef de GPT-app één openbare HTTPS-URL. One Page 2 PDF stuurt het adres naar Page 2 File en levert een downloadbare PDF voor de aangevraagde pagina.",
+      "Geef één exacte openbare URL, een lijst met exacte URL's, een webpagina-PDF of volledige of opeenvolgende screenshots. Kies Visual PDF om de website als schermafbeeldingen op te slaan of Interactive PDF voor selecteerbare tekst en klikbare links.",
     sections: [
-      { heading: "1. Stuur één openbare URL", body: "Plak het exacte HTTPS-adres van de gewenste pagina. De aanvraag omvat één pagina en start geen zoekactie door de hele website." },
-      { heading: "2. Ontvang één PDF", body: "De GPT-app geeft een link naar een PDF van die pagina. Controleer tekst, links, afbeeldingen en pagina-einden voordat u het bestand gebruikt." },
-      { heading: "3. Gebruik de juiste grens", body: "One Page 2 PDF opent geen aangemelde browsertabbladen en omzeilt geen toegangscontrole. Gebruik de Page 2 File-extensie voor een pagina die achter een aanmelding is geopend." },
+      { heading: "1. Geef één of meer URL's op", body: "Stuur één openbare URL, een lijst met exacte openbare URL's, een bestaande webpagina-PDF of volledige of opeenvolgende screenshots. Iedere webpagina blijft een afzonderlijke PDF." },
+      { heading: "2. Kies het PDF-type", body: "Kies Visual PDF voor een afbeeldingsresultaat dat de vormgeving vooropstelt, of Interactive PDF wanneer selecteerbare tekst en klikbare links belangrijker zijn. Voor een URL-lijst geldt één modus voor alle bestanden." },
+      { heading: "3. Converteer alleen opgegeven pagina's", body: "De GPT-app opent alleen de exacte openbare URL's. De app crawlt geen domeinen of sitemaps, ontdekt geen pagina's, volgt geen interne links en omzeilt geen aanmelding, paywall, CAPTCHA, geografische of andere toegangsbeperking. Gebruik Web2File: Website 2 PDF voor ontdekking op websiteniveau." },
+      { heading: "4. Verwerk PDF's en screenshots", body: "Geüploade screenshots kunnen van boven naar beneden tot een Visual PDF worden samengevoegd. Webpagina-PDF's worden verwerkt zonder ontbrekende inhoud te verzinnen; Interactive PDF geeft voorrang aan bestaande tekst, opmaak, afbeeldingen en geverifieerde links." },
+      { heading: "5. Krijg passende opslaghulp en controleer het resultaat", body: "Als directe conversie niet beschikbaar of onvolledig is, geeft de GPT-app pagina-, browser- of exportspecifieke stappen. Controleer iedere PDF op ontbrekende of afgesneden inhoud, lege vlakken, leesbaarheid, volgorde, opmaak, links en trouw aan de gekozen modus." },
     ],
     externalLinkKey: "page2pdfGpt",
-    primaryLabel: "One Page 2 PDF GPT-app openen",
+    primaryLabel: "GPT Webpage 2 PDF openen",
     articleLinks: [
       { slug: "save-webpage-as-pdf", label: "Een webpagina als PDF opslaan" },
       { slug: "long-webpage-page-breaks", label: "Pagina-einden op lange webpagina's herstellen" },
     ],
     relatedRoutes: gptRoutes,
+    workflowOverride: {
+      detailsTitle: "Gebruiksinstructies",
+      firstStageDescription: "Geef de GPT-app een werkende URL.",
+      firstStageLabel: "URL's verzenden",
+    },
   },
   "web2pdf-gpt": {
     route: "web2pdf-gpt",

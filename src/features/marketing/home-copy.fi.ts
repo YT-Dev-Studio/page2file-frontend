@@ -87,7 +87,7 @@ export const homeCopyFi: HomeCopy = {
         title: "Voinko muuntaa yhden sivun tai koko verkkosivuston?",
         body: [
           { kind: "text", text: "Verkkosivumuuntimet sekä " },
-          { kind: "link", label: "One Page 2 PDF", route: "page2pdf-gpt" },
+          { kind: "link", label: "Webpage to PDF Converter — Web2File", route: "page2pdf-gpt" },
           { kind: "text", text: " ja " },
           { kind: "link", label: "One Page 2 PowerPoint", route: "one-page2powerpoint-gpt" },
           { kind: "text", text: " käsittelevät yhden URL-osoitteen. Käytä useille saavutettaville julkisille sivuille " },

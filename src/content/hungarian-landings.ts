@@ -2,7 +2,7 @@ import type { LandingContent, RelatedRoute } from "./landings";
 import type { StaticRoute } from "@/shared/routes/routes";
 
 const gptRoutes: ReadonlyArray<RelatedRoute> = [
-  { route: "page2pdf-gpt", label: "One Page 2 PDF" },
+  { route: "page2pdf-gpt", label: "Webpage to PDF Converter — Web2File" },
   { route: "web2pdf-gpt", label: "Web 2 PDF" },
   { route: "html2pdf-gpt", label: "HTML 2 PDF" },
   { route: "one-page2powerpoint-gpt", label: "One Page 2 PowerPoint" },
@@ -18,16 +18,23 @@ const chatRoutes: ReadonlyArray<RelatedRoute> = [
 
 export const hungarianLandingContent: Partial<Record<StaticRoute, LandingContent>> = {
   "page2pdf-gpt": {
-    route: "page2pdf-gpt", eyebrow: "GPT-alkalmazás · egy nyilvános URL", title: "Nyilvános URL konvertálása PDF-be a One Page 2 PDF segítségével",
-    description: "A One Page 2 PDF egy célzott GPT-alkalmazás, amely egy nyilvános weboldal URL-jét küldi konvertálásra, és egy PDF-et ad vissza az oldalról.",
-    lead: "Adjon a GPT-alkalmazásnak egy nyilvános HTTPS URL-t. A One Page 2 PDF elküldi a címet a Page 2 File szolgáltatásnak, és egy letölthető PDF-et ad vissza a kért oldalról.",
+    route: "page2pdf-gpt", eyebrow: "GPT-alkalmazás · pontos URL-ek, PDF-ek vagy képernyőképek", title: "Webpage to PDF Converter — Web2File",
+    description: "A Webpage to PDF Converter — Web2File pontos nyilvános weboldal-URL-eket konvertál, valamint feltöltött weboldal-PDF-eket vagy képernyőképeket dolgoz fel külön Visual PDF vagy Interactive PDF fájlokká.",
+    lead: "Adjon meg egy pontos nyilvános URL-t, pontos URL-ek listáját, weboldal-PDF-et vagy teljes oldalas, illetve egymást követő képernyőképeket. Válassza a Visual PDF módot a webhely képernyőképként történő mentéséhez, vagy az Interactive PDF módot a kijelölhető szöveghez és kattintható linkekhez.",
     sections: [
-      { heading: "1. Küldjön nyilvános URL-t", body: "Illessze be a konvertálandó oldal pontos HTTPS-címét. A kérés egy oldalra terjed ki, és nem indít keresést a teljes webhelyen." },
-      { heading: "2. Kapjon egy PDF-et", body: "A GPT-alkalmazás egy, az oldalból készült PDF hivatkozását adja vissza. Használat előtt ellenőrizze a szöveget, hivatkozásokat, képeket és oldaltöréseket." },
-      { heading: "3. Használja a megfelelő hatókört", body: "A One Page 2 PDF nem nyit meg bejelentkezett lapokat, és nem kerüli meg a hozzáférés-vezérlést. A bejelentkezés után már megnyitott oldalhoz használja a Page 2 File bővítményt." },
+      { heading: "1. Adjon meg egy vagy több URL-t", body: "Küldjön nyilvános URL-t, pontos nyilvános URL-ek listáját, meglévő weboldal-PDF-et vagy teljes oldalas, illetve egymást követő képernyőképeket. Minden weboldal külön PDF marad." },
+      { heading: "2. Válassza ki a PDF típusát", body: "Válassza a Visual PDF módot a megjelenést előtérbe helyező képalapú eredményhez, vagy az Interactive PDF módot, ha a kijelölhető szöveg és a kattintható linkek fontosabbak. Egy URL-listára egyetlen mód vonatkozik." },
+      { heading: "3. Csak a megadott oldalakat konvertálja", body: "Az alkalmazás csak a pontosan megadott nyilvános URL-eket nyitja meg. Nem jár be tartományokat vagy sitemapeket, nem keres oldalakat, nem követ belső linkeket, és nem kerüli meg a bejelentkezést, paywallt, CAPTCHA-t, földrajzi vagy más hozzáférési korlátozást. A teljes webhelyhez használja a Web2File: Website 2 PDF alkalmazást." },
+      { heading: "4. Dolgozzon fel PDF-eket és képernyőképeket", body: "A feltöltött képernyőképek felülről lefelé Visual PDF-fé állíthatók össze. A weboldal-PDF-ek feldolgozása nem talál ki hiányzó tartalmat; az Interactive PDF a meglévő szöveget, elrendezést, képeket és ellenőrzött linkeket részesíti előnyben." },
+      { heading: "5. Kapjon személyre szabott útmutatót és ellenőrizze az eredményt", body: "Ha a közvetlen konvertálás nem érhető el vagy hiányos, az alkalmazás oldal-, böngésző- vagy natív exporthoz illő lépéseket ad. Ellenőrizze a hiányzó vagy levágott tartalmat, üres területeket, olvashatóságot, sorrendet, elrendezést, linkeket és a módhoz való hűséget." },
     ],
-    externalLinkKey: "page2pdfGpt", primaryLabel: "One Page 2 PDF GPT-alkalmazás megnyitása",
+    externalLinkKey: "page2pdfGpt", primaryLabel: "GPT Webpage 2 PDF megnyitása",
     articleLinks: [{ slug: "save-webpage-as-pdf", label: "Weboldal mentése PDF-ként" }, { slug: "long-webpage-page-breaks", label: "Hosszú weboldalak oldaltöréseinek javítása" }], relatedRoutes: gptRoutes,
+    workflowOverride: {
+      detailsTitle: "Használati útmutató",
+      firstStageDescription: "Adjon a GPT-alkalmazásnak egy működő URL-t.",
+      firstStageLabel: "Küldjön URL-eket",
+    },
   },
   "web2pdf-gpt": {
     route: "web2pdf-gpt", eyebrow: "GPT-alkalmazás · elérhető weboldalak", title: "Webhelyoldalak konvertálása külön PDF-ekbe a Web 2 PDF segítségével",

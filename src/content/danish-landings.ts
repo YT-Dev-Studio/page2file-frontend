@@ -2,7 +2,7 @@ import type { LandingContent, RelatedRoute } from "./landings";
 import type { StaticRoute } from "@/shared/routes/routes";
 
 const gptRoutes: ReadonlyArray<RelatedRoute> = [
-  { route: "page2pdf-gpt", label: "One Page 2 PDF" },
+  { route: "page2pdf-gpt", label: "Webpage to PDF Converter — Web2File" },
   { route: "web2pdf-gpt", label: "Web 2 PDF" },
   { route: "html2pdf-gpt", label: "HTML 2 PDF" },
   { route: "one-page2powerpoint-gpt", label: "One Page 2 PowerPoint" },
@@ -19,19 +19,26 @@ const chatRoutes: ReadonlyArray<RelatedRoute> = [
 export const danishLandingContent: Partial<Record<StaticRoute, LandingContent>> = {
   "page2pdf-gpt": {
     route: "page2pdf-gpt",
-    eyebrow: "GPT-app · én offentlig URL",
-    title: "Konvertér en offentlig URL til PDF med One Page 2 PDF",
-    description: "One Page 2 PDF er en fokuseret GPT-app, der sender én offentlig webside-URL til konvertering og returnerer én PDF for denne side.",
-    lead: "Giv GPT-appen én offentlig HTTPS-URL. One Page 2 PDF sender adressen til Page 2 File-tjenesten og returnerer en PDF, der kan downloades.",
+    eyebrow: "GPT-app · nøjagtige URL'er, PDF'er eller skærmbilleder",
+    title: "Webpage to PDF Converter — Web2File",
+    description: "Webpage to PDF Converter — Web2File konverterer nøjagtige offentlige webadresser og behandler uploadede webside-PDF'er eller skærmbilleder til separate Visual PDF- eller Interactive PDF-filer.",
+    lead: "Angiv en nøjagtig offentlig URL, en liste med nøjagtige URL'er, en webside-PDF eller helsides eller sammenhængende skærmbilleder. Vælg Visual PDF for at gemme webstedet som skærmbilleder eller Interactive PDF for markerbar tekst og klikbare links.",
     sections: [
-      { heading: "1. Send en offentlig URL", body: "Indsæt den nøjagtige HTTPS-adresse på siden, der skal konverteres. Anmodningen omfatter én side og starter ikke en søgning på hele webstedet." },
-      { heading: "2. Modtag én PDF", body: "GPT-appen returnerer et link til en PDF af siden. Kontrollér tekst, links, billeder og sideskift, før filen bruges." },
-      { heading: "3. Brug det rigtige omfang", body: "One Page 2 PDF åbner ikke faner med login og omgår ikke adgangskontrol. Brug Page 2 File-udvidelsen til en side, der allerede er åbnet efter login." },
+      { heading: "1. Angiv en eller flere URL'er", body: "Send en offentlig URL, en liste med nøjagtige offentlige URL'er, en eksisterende webside-PDF eller helsides eller sammenhængende skærmbilleder. Hver webside forbliver en separat PDF." },
+      { heading: "2. Vælg PDF-type", body: "Vælg Visual PDF for et billedbaseret resultat, der prioriterer sidens udseende, eller Interactive PDF, når markerbar tekst og klikbare links er vigtigst. Én tilstand gælder for hele URL-listen." },
+      { heading: "3. Konvertér kun angivne sider", body: "Appen åbner kun de nøjagtige offentlige URL'er. Den gennemgår ikke domæner eller sitemaps, finder ikke sider, følger ikke interne links og omgår ikke login, betalingsmure, CAPTCHA, geografiske eller andre adgangsbegrænsninger. Brug Web2File: Website 2 PDF til hele webstedet." },
+      { heading: "4. Behandl PDF'er og skærmbilleder", body: "Uploadede skærmbilleder kan samles oppefra og ned i en Visual PDF. Webside-PDF'er behandles uden at opfinde manglende indhold; Interactive PDF prioriterer eksisterende tekst, layout, billeder og verificerede links." },
+      { heading: "5. Få tilpasset hjælp og kontrollér resultatet", body: "Hvis direkte konvertering er utilgængelig eller ufuldstændig, giver appen trin til siden, browseren eller den indbyggede eksport. Kontrollér manglende eller beskåret indhold, tomme områder, læsbarhed, rækkefølge, layout, links og overensstemmelse med tilstanden." },
     ],
     externalLinkKey: "page2pdfGpt",
-    primaryLabel: "Åbn GPT-appen One Page 2 PDF",
+    primaryLabel: "Åbn GPT Webpage 2 PDF",
     articleLinks: [{ slug: "save-webpage-as-pdf", label: "Gem en webside som PDF" }, { slug: "long-webpage-page-breaks", label: "Ret sideskift på lange websider" }],
     relatedRoutes: gptRoutes,
+    workflowOverride: {
+      detailsTitle: "Brugsanvisning",
+      firstStageDescription: "Giv GPT-appen en fungerende URL.",
+      firstStageLabel: "Send URL'er",
+    },
   },
   "web2pdf-gpt": {
     route: "web2pdf-gpt",

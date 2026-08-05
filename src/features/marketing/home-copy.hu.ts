@@ -87,7 +87,7 @@ export const homeCopyHu: HomeCopy = {
         title: "Egy oldalt vagy teljes webhelyet konvertálhatok?",
         body: [
           { kind: "text", text: "A weboldal-konverterek, valamint a " },
-          { kind: "link", label: "One Page 2 PDF", route: "page2pdf-gpt" },
+          { kind: "link", label: "Webpage to PDF Converter — Web2File", route: "page2pdf-gpt" },
           { kind: "text", text: " és a " },
           { kind: "link", label: "One Page 2 PowerPoint", route: "one-page2powerpoint-gpt" },
           { kind: "text", text: " egy URL-t dolgoznak fel. Több elérhető nyilvános oldalhoz használja a " },

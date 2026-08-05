@@ -2,7 +2,7 @@ import type { LandingContent, RelatedRoute } from "./landings";
 import type { StaticRoute } from "@/shared/routes/routes";
 
 const gptRelatedRoutes: ReadonlyArray<RelatedRoute> = [
-  { route: "page2pdf-gpt", label: "One Page 2 PDF" },
+  { route: "page2pdf-gpt", label: "Webpage to PDF Converter — Web2File" },
   { route: "web2pdf-gpt", label: "Web 2 PDF" },
   { route: "html2pdf-gpt", label: "HTML 2 PDF" },
   { route: "one-page2powerpoint-gpt", label: "One Page 2 PowerPoint" },
@@ -22,23 +22,30 @@ export const russianLandingContent: Partial<
 > = {
   "page2pdf-gpt": {
     route: "page2pdf-gpt",
-    eyebrow: "GPT-приложение · один публичный URL",
-    title: "Один публичный URL в один PDF через One Page 2 PDF",
-    description: "One Page 2 PDF — GPT-приложение, которое отправляет один публичный URL на конвертацию и возвращает один PDF для этой веб-страницы.",
+    eyebrow: "GPT-приложение · точные URL, PDF или скриншоты",
+    title: "Webpage to PDF Converter — Web2File",
+    description: "Webpage to PDF Converter — Web2File конвертирует точные публичные URL, загруженные PDF веб-страниц и скриншоты в отдельные Visual PDF или Interactive PDF.",
     lead:
-      "Передайте GPT-приложению один публичный HTTPS-адрес. One Page 2 PDF отправит его в сервис конвертации Page 2 File и вернёт ссылку на один PDF для выбранной страницы.",
+      "Передайте один точный публичный URL, список точных URL, PDF веб-страницы либо полноразмерные или последовательные скриншоты. Выберите Visual PDF для сохранения сайта снимками или Interactive PDF для выделяемого текста и кликабельных ссылок.",
     sections: [
-      { heading: "1. Передайте один публичный URL", body: "Вставьте точный HTTPS-адрес нужной страницы. Запрос относится к одной странице и не запускает поиск по всему сайту." },
-      { heading: "2. Получите один PDF", body: "GPT-приложение вернёт ссылку на один PDF. Перед использованием проверьте текст, ссылки, изображения и разрывы страниц." },
-      { heading: "3. Учитывайте границы функции", body: "One Page 2 PDF не открывает закрытые вкладки и не обходит контроль доступа. Для страницы после входа используйте расширение Page 2 File." },
+      { heading: "1. Укажите один или несколько URL", body: "Отправьте один публичный URL, список точных публичных URL, существующий PDF веб-страницы либо полноразмерные или последовательные скриншоты. Каждая веб-страница останется отдельным PDF." },
+      { heading: "2. Выберите тип PDF", body: "Выберите Visual PDF для результата на основе изображений с приоритетом внешнего вида страницы или Interactive PDF, если важны выделяемый текст и кликабельные ссылки. Для списка URL один режим применяется ко всем файлам." },
+      { heading: "3. Конвертируйте только переданные страницы", body: "GPT открывает только указанные публичные URL. Он не обходит домен, не читает sitemap, не ищет страницы, не переходит по внутренним ссылкам и не обходит авторизацию, paywall, CAPTCHA, географические и другие ограничения доступа. Для поиска страниц всего сайта используйте Web2File: Website 2 PDF." },
+      { heading: "4. Обрабатывайте PDF и скриншоты", body: "Загруженные скриншоты можно собрать в Visual PDF с сохранением порядка сверху вниз. Загруженные PDF веб-страниц проверяются и обрабатываются без выдумывания отсутствующего контента; в Interactive PDF приоритет отдан существующим тексту, макету, изображениям и подтверждённым ссылкам." },
+      { heading: "5. Получите подходящие инструкции и проверьте результат", body: "Если прямая конвертация недоступна или неполна, GPT даст инструкции для конкретной страницы, браузера или встроенного экспорта. Проверьте каждый PDF на пропущенный или обрезанный контент, пустые области, читаемость, порядок страниц, макет, ссылки и соответствие выбранному режиму." },
     ],
     externalLinkKey: "page2pdfGpt",
-    primaryLabel: "Открыть One Page 2 PDF GPT-приложение",
+    primaryLabel: "Открыть GPT Webpage 2 PDF",
     articleLinks: [
       { slug: "save-webpage-as-pdf", label: "Как сохранить веб-страницу в PDF" },
       { slug: "long-webpage-page-breaks", label: "Разрывы страниц на длинных сайтах" },
     ],
     relatedRoutes: gptRelatedRoutes,
+    workflowOverride: {
+      detailsTitle: "Инструкция по использованию",
+      firstStageDescription: "Передайте GPT-приложению рабочий URL.",
+      firstStageLabel: "Отправьте URL",
+    },
   },
   "web2pdf-gpt": {
     route: "web2pdf-gpt",

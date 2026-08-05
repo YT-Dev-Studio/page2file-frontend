@@ -85,7 +85,7 @@ describe("HomeFaq", () => {
     );
 
     expect(
-      screen.getByRole("link", { name: "One Page 2 PDF" })
+      screen.getByRole("link", { name: "Webpage to PDF Converter — Web2File" })
         .getAttribute("href"),
     ).toBe("/ru/page2pdf-gpt");
     expect(

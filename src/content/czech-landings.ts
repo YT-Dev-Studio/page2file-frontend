@@ -2,7 +2,7 @@ import type { LandingContent, RelatedRoute } from "./landings";
 import type { StaticRoute } from "@/shared/routes/routes";
 
 const gptRoutes: ReadonlyArray<RelatedRoute> = [
-  { route: "page2pdf-gpt", label: "One Page 2 PDF" },
+  { route: "page2pdf-gpt", label: "Webpage to PDF Converter — Web2File" },
   { route: "web2pdf-gpt", label: "Web 2 PDF" },
   { route: "html2pdf-gpt", label: "HTML 2 PDF" },
   { route: "one-page2powerpoint-gpt", label: "One Page 2 PowerPoint" },
@@ -19,19 +19,26 @@ const chatRoutes: ReadonlyArray<RelatedRoute> = [
 export const czechLandingContent: Partial<Record<StaticRoute, LandingContent>> = {
   "page2pdf-gpt": {
     route: "page2pdf-gpt",
-    eyebrow: "Aplikace GPT · jedna veřejná URL",
-    title: "Převeďte veřejnou URL do PDF pomocí One Page 2 PDF",
-    description: "One Page 2 PDF je specializovaná aplikace GPT, která odešle veřejnou URL ke konverzi a vrátí PDF této jediné stránky.",
-    lead: "Zadejte aplikaci GPT veřejnou URL s HTTPS. One Page 2 PDF odešle adresu službě Page 2 File a vrátí PDF požadované stránky ke stažení.",
+    eyebrow: "Aplikace GPT · přesné URL, PDF nebo snímky",
+    title: "Webpage to PDF Converter — Web2File",
+    description: "Webpage to PDF Converter — Web2File převádí přesné veřejné URL a zpracovává nahrané PDF webových stránek nebo snímky do samostatných souborů Visual PDF či Interactive PDF.",
+    lead: "Zadejte přesnou veřejnou URL, seznam přesných URL, PDF webové stránky nebo celostránkové či navazující snímky. Zvolte Visual PDF pro uložení webu jako snímků nebo Interactive PDF pro označitelný text a klikací odkazy.",
     sections: [
-      { heading: "1. Odešlete veřejnou URL", body: "Vložte přesnou adresu HTTPS stránky, kterou chcete převést. Požadavek zahrnuje jednu stránku a nespouští procházení celého webu." },
-      { heading: "2. Získejte PDF", body: "Aplikace GPT vrátí odkaz na PDF dané stránky. Před použitím zkontrolujte text, odkazy, obrázky a zalomení stránek." },
-      { heading: "3. Dodržte správný rozsah", body: "One Page 2 PDF neotevírá přihlášené karty ani neobchází řízení přístupu. Pro stránku otevřenou po přihlášení použijte rozšíření Page 2 File." },
+      { heading: "1. Zadejte jednu nebo více URL", body: "Odešlete veřejnou URL, seznam přesných veřejných URL, existující PDF webové stránky nebo celostránkové či navazující snímky. Každá webová stránka zůstane v samostatném PDF." },
+      { heading: "2. Zvolte typ PDF", body: "Zvolte Visual PDF pro obrazový výsledek upřednostňující vzhled stránky, nebo Interactive PDF, pokud jsou důležitější označitelný text a klikací odkazy. Pro celý seznam URL platí jeden režim." },
+      { heading: "3. Převádějte pouze zadané stránky", body: "Aplikace otevírá jen přesné veřejné URL. Neprochází domény ani sitemapy, nevyhledává stránky, nenásleduje interní odkazy a neobchází přihlášení, paywally, CAPTCHA, geografická ani jiná omezení přístupu. Pro nalezení celého webu použijte Web2File: Website 2 PDF." },
+      { heading: "4. Zpracujte PDF a snímky", body: "Nahrané snímky lze sestavit shora dolů do Visual PDF. PDF webových stránek se zpracují bez vymýšlení chybějícího obsahu; Interactive PDF upřednostňuje existující text, rozvržení, obrázky a ověřené odkazy." },
+      { heading: "5. Získejte vhodný návod a ověřte výsledek", body: "Pokud přímý převod není dostupný nebo je neúplný, aplikace poskytne postup pro konkrétní stránku, prohlížeč nebo nativní export. Zkontrolujte chybějící či oříznutý obsah, prázdná místa, čitelnost, pořadí, rozvržení, odkazy a věrnost režimu." },
     ],
     externalLinkKey: "page2pdfGpt",
-    primaryLabel: "Otevřít aplikaci GPT One Page 2 PDF",
+    primaryLabel: "Otevřít GPT Webpage 2 PDF",
     articleLinks: [{ slug: "save-webpage-as-pdf", label: "Uložit webovou stránku jako PDF" }, { slug: "long-webpage-page-breaks", label: "Opravit zalomení dlouhých stránek" }],
     relatedRoutes: gptRoutes,
+    workflowOverride: {
+      detailsTitle: "Návod k použití",
+      firstStageDescription: "Zadejte aplikaci GPT funkční URL.",
+      firstStageLabel: "Odešlete adresy URL",
+    },
   },
   "web2pdf-gpt": {
     route: "web2pdf-gpt",

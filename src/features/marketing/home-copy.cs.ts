@@ -87,7 +87,7 @@ export const homeCopyCs: HomeCopy = {
         title: "Mohu převést jednu stránku nebo celý web?",
         body: [
           { kind: "text", text: "Konvertory stránek a také " },
-          { kind: "link", label: "One Page 2 PDF", route: "page2pdf-gpt" },
+          { kind: "link", label: "Webpage to PDF Converter — Web2File", route: "page2pdf-gpt" },
           { kind: "text", text: " a " },
           { kind: "link", label: "One Page 2 PowerPoint", route: "one-page2powerpoint-gpt" },
           { kind: "text", text: " zpracují jednu URL. Pro více dostupných veřejných stránek použijte " },

@@ -2,7 +2,7 @@ import type { LandingContent, RelatedRoute } from "./landings";
 import type { StaticRoute } from "@/shared/routes/routes";
 
 const gptRoutes: ReadonlyArray<RelatedRoute> = [
-  { route: "page2pdf-gpt", label: "One Page 2 PDF" },
+  { route: "page2pdf-gpt", label: "Webpage to PDF Converter — Web2File" },
   { route: "web2pdf-gpt", label: "Web 2 PDF" },
   { route: "html2pdf-gpt", label: "HTML 2 PDF" },
   { route: "one-page2powerpoint-gpt", label: "One Page 2 PowerPoint" },
@@ -19,19 +19,26 @@ const chatRoutes: ReadonlyArray<RelatedRoute> = [
 export const finnishLandingContent: Partial<Record<StaticRoute, LandingContent>> = {
   "page2pdf-gpt": {
     route: "page2pdf-gpt",
-    eyebrow: "GPT-sovellus · yksi julkinen URL",
-    title: "Muunna julkinen URL PDF-tiedostoksi One Page 2 PDF:llä",
-    description: "One Page 2 PDF on kohdennettu GPT-sovellus, joka lähettää yhden julkisen verkkosivun URL-osoitteen muunnettavaksi ja palauttaa yhden PDF-tiedoston.",
-    lead: "Anna GPT-sovellukselle yksi julkinen HTTPS-URL. One Page 2 PDF lähettää osoitteen Page 2 File -palveluun ja palauttaa ladattavan PDF-tiedoston.",
+    eyebrow: "GPT-sovellus · tarkat URL-osoitteet, PDF:t tai kuvakaappaukset",
+    title: "Webpage to PDF Converter — Web2File",
+    description: "Webpage to PDF Converter — Web2File muuntaa tarkkoja julkisia verkkosivuosoitteita ja käsittelee ladattuja verkkosivu-PDF:iä tai kuvakaappauksia erillisiksi Visual PDF- tai Interactive PDF -tiedostoiksi.",
+    lead: "Anna tarkka julkinen URL, tarkkojen URL-osoitteiden luettelo, verkkosivun PDF tai koko sivun tai peräkkäiset kuvakaappaukset. Valitse Visual PDF tallentaaksesi sivuston kuvakaappauksina tai Interactive PDF valittavaa tekstiä ja napsautettavia linkkejä varten.",
     sections: [
-      { heading: "1. Lähetä julkinen URL", body: "Liitä muunnettavan sivun tarkka HTTPS-osoite. Pyyntö koskee yhtä sivua eikä käynnistä koko sivuston läpikäyntiä." },
-      { heading: "2. Vastaanota yksi PDF", body: "GPT-sovellus palauttaa linkin sivusta luotuun PDF-tiedostoon. Tarkista teksti, linkit, kuvat ja sivunvaihdot ennen tiedoston käyttöä." },
-      { heading: "3. Käytä oikeaa laajuutta", body: "One Page 2 PDF ei avaa kirjautuneita välilehtiä eikä ohita käyttöoikeuksia. Käytä Page 2 File -laajennusta sivulle, joka on jo avattu kirjautumisen jälkeen." },
+      { heading: "1. Anna yksi tai useampi URL-osoite", body: "Lähetä julkinen URL, tarkkojen julkisten URL-osoitteiden luettelo, olemassa oleva verkkosivu-PDF tai koko sivun tai peräkkäiset kuvakaappaukset. Jokainen verkkosivu pysyy erillisenä PDF:nä." },
+      { heading: "2. Valitse PDF-tyyppi", body: "Valitse Visual PDF kuvapohjaiseen tulokseen, joka painottaa sivun ulkoasua, tai Interactive PDF, kun valittava teksti ja napsautettavat linkit ovat tärkeimpiä. Yksi tila koskee koko URL-luetteloa." },
+      { heading: "3. Muunna vain annetut sivut", body: "Sovellus avaa vain annetut tarkat julkiset URL-osoitteet. Se ei indeksoi verkkotunnuksia tai sivukarttoja, etsi sivuja, seuraa sisäisiä linkkejä eikä ohita kirjautumista, maksumuureja, CAPTCHA-tarkistuksia, maantieteellisiä tai muita käyttörajoituksia. Käytä koko sivustoon Web2File: Website 2 PDF:ää." },
+      { heading: "4. Käsittele PDF:iä ja kuvakaappauksia", body: "Ladatut kuvakaappaukset voidaan koota ylhäältä alas Visual PDF:ksi. Verkkosivu-PDF:t käsitellään keksimättä puuttuvaa sisältöä; Interactive PDF painottaa olemassa olevaa tekstiä, asettelua, kuvia ja vahvistettuja linkkejä." },
+      { heading: "5. Saat sovitetut ohjeet ja voit tarkistaa tuloksen", body: "Jos suora muunnos ei ole käytettävissä tai jää vajaaksi, sovellus antaa sivu-, selain- tai vientikohtaiset ohjeet. Tarkista puuttuva tai rajautunut sisältö, tyhjät alueet, luettavuus, järjestys, asettelu, linkit ja valitun tilan vastaavuus." },
     ],
     externalLinkKey: "page2pdfGpt",
-    primaryLabel: "Avaa One Page 2 PDF -GPT-sovellus",
+    primaryLabel: "Avaa GPT Webpage 2 PDF",
     articleLinks: [{ slug: "save-webpage-as-pdf", label: "Tallenna verkkosivu PDF-tiedostoksi" }, { slug: "long-webpage-page-breaks", label: "Korjaa pitkien verkkosivujen sivunvaihdot" }],
     relatedRoutes: gptRoutes,
+    workflowOverride: {
+      detailsTitle: "Käyttöohjeet",
+      firstStageDescription: "Anna GPT-sovellukselle toimiva URL.",
+      firstStageLabel: "Lähetä URL-osoitteet",
+    },
   },
   "web2pdf-gpt": {
     route: "web2pdf-gpt",

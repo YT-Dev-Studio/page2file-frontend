@@ -87,7 +87,7 @@ export const homeCopyRo: HomeCopy = {
         title: "Pot converti o singură pagină sau un site întreg?",
         body: [
           { kind: "text", text: "Convertoarele de pagini web și " },
-          { kind: "link", label: "One Page 2 PDF", route: "page2pdf-gpt" },
+          { kind: "link", label: "Webpage to PDF Converter — Web2File", route: "page2pdf-gpt" },
           { kind: "text", text: " și " },
           { kind: "link", label: "One Page 2 PowerPoint", route: "one-page2powerpoint-gpt" },
           { kind: "text", text: " procesează un singur URL. Pentru mai multe pagini publice accesibile, folosiți " },

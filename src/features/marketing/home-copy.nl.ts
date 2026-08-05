@@ -176,7 +176,7 @@ export const homeCopyNl: HomeCopy = {
         title: "Kan ik één pagina of een hele website converteren?",
         body: [
           { kind: "text", text: "De webpaginaconverters en " },
-          { kind: "link", label: "One Page 2 PDF", route: "page2pdf-gpt" },
+          { kind: "link", label: "Webpage to PDF Converter — Web2File", route: "page2pdf-gpt" },
           { kind: "text", text: " en " },
           {
             kind: "link",

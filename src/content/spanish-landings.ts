@@ -2,7 +2,7 @@ import type { LandingContent, RelatedRoute } from "./landings";
 import type { StaticRoute } from "@/shared/routes/routes";
 
 const gptRoutes: ReadonlyArray<RelatedRoute> = [
-  { route: "page2pdf-gpt", label: "One Page 2 PDF" },
+  { route: "page2pdf-gpt", label: "Webpage to PDF Converter — Web2File" },
   { route: "web2pdf-gpt", label: "Web 2 PDF" },
   { route: "html2pdf-gpt", label: "HTML 2 PDF" },
   { route: "one-page2powerpoint-gpt", label: "One Page 2 PowerPoint" },
@@ -22,31 +22,41 @@ export const spanishLandingContent: Partial<
 > = {
   "page2pdf-gpt": {
     route: "page2pdf-gpt",
-    eyebrow: "Aplicación GPT · una URL pública",
-    title: "Convierta una URL pública en un PDF con One Page 2 PDF",
+    eyebrow: "Aplicación GPT · URL exactas, PDF o capturas",
+    title: "Webpage to PDF Converter — Web2File",
     description:
-      "One Page 2 PDF es una aplicación GPT especializada que envía una URL pública para convertirla y devuelve un PDF para esa única página.",
+      "Webpage to PDF Converter — Web2File convierte URL públicas exactas y procesa PDF de páginas web o capturas subidas en archivos Visual PDF o Interactive PDF separados.",
     lead:
-      "Proporcione a la aplicación GPT una URL HTTPS pública. One Page 2 PDF envía la dirección al servicio Page 2 File y devuelve un PDF descargable de la página solicitada.",
+      "Proporcione una URL pública exacta, una lista de URL exactas, un PDF de una página web o capturas completas o consecutivas. Elija Visual PDF para guardar el sitio como capturas o Interactive PDF para texto seleccionable y enlaces activos.",
     sections: [
       {
-        heading: "1. Envíe una URL pública",
+        heading: "1. Indique una o varias URL",
         body:
-          "Pegue la dirección HTTPS exacta de la página que desea convertir. La solicitud abarca una página y no inicia una búsqueda en todo el sitio.",
+          "Envíe una URL pública, una lista de URL públicas exactas, un PDF existente de una página web o capturas completas o consecutivas. Cada página web se entrega como un PDF independiente.",
       },
       {
-        heading: "2. Reciba un PDF",
+        heading: "2. Elija el tipo de PDF",
         body:
-          "La aplicación GPT devuelve un enlace a un PDF de esa página. Revise el texto, los enlaces, las imágenes y los saltos de página antes de usar el archivo.",
+          "Elija Visual PDF para un resultado basado en imágenes que prioriza la apariencia, o Interactive PDF cuando importan más el texto seleccionable y los enlaces activos. Un modo se aplica a toda la lista de URL.",
       },
       {
-        heading: "3. Use el límite correcto",
+        heading: "3. Convierta solo las páginas proporcionadas",
         body:
-          "One Page 2 PDF no abre pestañas con sesión iniciada ni elude controles de acceso. Use la extensión Page 2 File para una página ya abierta después de iniciar sesión.",
+          "La aplicación GPT solo abre las URL públicas exactas indicadas. No rastrea dominios ni sitemaps, no descubre páginas, no sigue enlaces internos y no elude autenticación, paywalls, CAPTCHA, restricciones geográficas ni otros controles de acceso. Para descubrir un sitio completo, use Web2File: Website 2 PDF.",
+      },
+      {
+        heading: "4. Procese PDF y capturas",
+        body:
+          "Las capturas subidas pueden ensamblarse de arriba abajo en un Visual PDF. Los PDF de páginas web se procesan sin inventar contenido ausente; Interactive PDF prioriza el texto, el diseño, las imágenes y los enlaces verificados existentes.",
+      },
+      {
+        heading: "5. Obtenga instrucciones adaptadas y revise el resultado",
+        body:
+          "Si la conversión directa no está disponible o queda incompleta, la aplicación ofrece pasos específicos para la página, el navegador o la exportación nativa. Revise contenido recortado o ausente, zonas vacías, legibilidad, orden, diseño, enlaces y fidelidad al modo.",
       },
     ],
     externalLinkKey: "page2pdfGpt",
-    primaryLabel: "Abrir la aplicación GPT One Page 2 PDF",
+    primaryLabel: "Abrir GPT Webpage 2 PDF",
     articleLinks: [
       { slug: "save-webpage-as-pdf", label: "Guardar una página web como PDF" },
       {
@@ -55,6 +65,11 @@ export const spanishLandingContent: Partial<
       },
     ],
     relatedRoutes: gptRoutes,
+    workflowOverride: {
+      detailsTitle: "Instrucciones de uso",
+      firstStageDescription: "Proporcione a la aplicación GPT una URL válida.",
+      firstStageLabel: "Envíe las URL",
+    },
   },
   "web2pdf-gpt": {
     route: "web2pdf-gpt",

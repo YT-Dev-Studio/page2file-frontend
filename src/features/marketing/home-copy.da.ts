@@ -87,7 +87,7 @@ export const homeCopyDa: HomeCopy = {
         title: "Kan jeg konvertere én side eller et helt websted?",
         body: [
           { kind: "text", text: "Websidekonverterne og " },
-          { kind: "link", label: "One Page 2 PDF", route: "page2pdf-gpt" },
+          { kind: "link", label: "Webpage to PDF Converter — Web2File", route: "page2pdf-gpt" },
           { kind: "text", text: " og " },
           { kind: "link", label: "One Page 2 PowerPoint", route: "one-page2powerpoint-gpt" },
           { kind: "text", text: " behandler én URL. Brug " },

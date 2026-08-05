@@ -1,5 +1,6 @@
 import { describe, expect, test } from "vitest";
 import type { ExternalLinkKey } from "@/shared/config/site";
+import { localeRegistry } from "@/shared/i18n/locales";
 import type { StaticRoute } from "@/shared/routes/routes";
 import { getLandingContent } from "./landings";
 
@@ -11,7 +12,7 @@ const gptRoutes: ReadonlyArray<{
   {
     externalLinkKey: "page2pdfGpt",
     route: "page2pdf-gpt",
-    serviceName: "One Page 2 PDF",
+    serviceName: "Webpage to PDF Converter — Web2File",
   },
   {
     externalLinkKey: "web2pdfGpt",
@@ -71,26 +72,25 @@ describe("GPT App landing content", () => {
       expect(dutch?.externalLinkKey).toBe(externalLinkKey);
       expect(portuguese?.externalLinkKey).toBe(externalLinkKey);
       expect(italian?.externalLinkKey).toBe(externalLinkKey);
-      expect(english?.primaryLabel).toBe(
-        `Open ${serviceName} GPT App`,
-      );
-      expect(russian?.primaryLabel).toBe(
-        `Открыть ${serviceName} GPT-приложение`,
-      );
-      expect(german?.primaryLabel).toContain(serviceName);
-      expect(french?.primaryLabel).toContain(serviceName);
-      expect(spanish?.primaryLabel).toContain(serviceName);
-      expect(dutch?.primaryLabel).toContain(serviceName);
-      expect(portuguese?.primaryLabel).toContain(serviceName);
-      expect(italian?.primaryLabel).toContain(serviceName);
-      expect(english?.sections).toHaveLength(3);
-      expect(russian?.sections).toHaveLength(3);
-      expect(german?.sections).toHaveLength(3);
-      expect(french?.sections).toHaveLength(3);
-      expect(spanish?.sections).toHaveLength(3);
-      expect(dutch?.sections).toHaveLength(3);
-      expect(portuguese?.sections).toHaveLength(3);
-      expect(italian?.sections).toHaveLength(3);
+      const ctaName =
+        route === "page2pdf-gpt" ? "GPT Webpage 2 PDF" : serviceName;
+      expect(english?.primaryLabel).toContain(ctaName);
+      expect(russian?.primaryLabel).toContain(ctaName);
+      expect(german?.primaryLabel).toContain(ctaName);
+      expect(french?.primaryLabel).toContain(ctaName);
+      expect(spanish?.primaryLabel).toContain(ctaName);
+      expect(dutch?.primaryLabel).toContain(ctaName);
+      expect(portuguese?.primaryLabel).toContain(ctaName);
+      expect(italian?.primaryLabel).toContain(ctaName);
+      const sectionCount = route === "page2pdf-gpt" ? 5 : 3;
+      expect(english?.sections).toHaveLength(sectionCount);
+      expect(russian?.sections).toHaveLength(sectionCount);
+      expect(german?.sections).toHaveLength(sectionCount);
+      expect(french?.sections).toHaveLength(sectionCount);
+      expect(spanish?.sections).toHaveLength(sectionCount);
+      expect(dutch?.sections).toHaveLength(sectionCount);
+      expect(portuguese?.sections).toHaveLength(sectionCount);
+      expect(italian?.sections).toHaveLength(sectionCount);
       expect(english?.lead.length).toBeGreaterThan(120);
       expect(russian?.lead.length).toBeGreaterThan(120);
       expect(german?.lead.length).toBeGreaterThan(120);
@@ -101,6 +101,60 @@ describe("GPT App landing content", () => {
       expect(italian?.lead.length).toBeGreaterThan(120);
     },
   );
+
+  test("keeps the renamed webpage converter contract aligned in every locale", () => {
+    for (const { code } of localeRegistry) {
+      const content = getLandingContent(code, "page2pdf-gpt");
+      const visibleCopy = [
+        content?.title,
+        content?.description,
+        content?.lead,
+        content?.primaryLabel,
+        content?.workflowOverride?.detailsTitle,
+        content?.workflowOverride?.firstStageDescription,
+        content?.workflowOverride?.firstStageLabel,
+        ...content?.sections.flatMap(({ body, heading }) => [heading, body]) ?? [],
+      ].join(" ");
+
+      expect(content?.sections).toHaveLength(5);
+      expect(content?.title).toBe(
+        "Webpage to PDF Converter — Web2File",
+      );
+      expect(content?.primaryLabel).toContain("GPT Webpage 2 PDF");
+      expect(content?.sections[0]?.heading).toContain("URL");
+      expect(content?.workflowOverride?.detailsTitle.length).toBeGreaterThan(5);
+      expect(
+        content?.workflowOverride?.firstStageDescription.length,
+      ).toBeGreaterThan(10);
+      expect(
+        content?.workflowOverride?.firstStageLabel.length,
+      ).toBeGreaterThan(3);
+      expect(visibleCopy).toContain("Webpage to PDF Converter — Web2File");
+      expect(visibleCopy).toContain("Visual PDF");
+      expect(visibleCopy).toContain("Interactive PDF");
+      expect(visibleCopy).not.toContain("One Page 2 PDF");
+    }
+  });
+
+  test("uses the requested English and Russian workflow copy", () => {
+    const english = getLandingContent("en", "page2pdf-gpt");
+    const russian = getLandingContent("ru", "page2pdf-gpt");
+
+    expect(english?.workflowOverride).toEqual({
+      detailsTitle: "Instructions for use",
+      firstStageDescription: "Give the GPT App a working URL.",
+      firstStageLabel: "Send URLs",
+    });
+    expect(russian?.workflowOverride).toEqual({
+      detailsTitle: "Инструкция по использованию",
+      firstStageDescription: "Передайте GPT-приложению рабочий URL.",
+      firstStageLabel: "Отправьте URL",
+    });
+    expect(russian?.primaryLabel).toBe("Открыть GPT Webpage 2 PDF");
+    expect(russian?.sections[0]?.heading).toBe(
+      "1. Укажите один или несколько URL",
+    );
+  });
 });
 
 describe("Spanish and Dutch legal content", () => {
@@ -176,7 +230,13 @@ describe("completed landing localization batches", () => {
         const english = getLandingContent("en", route);
         const localized = getLandingContent(locale, route);
 
-        expect(localized?.title).not.toBe(english?.title);
+        if (route === "page2pdf-gpt") {
+          expect(localized?.title).toBe(
+            "Webpage to PDF Converter — Web2File",
+          );
+        } else {
+          expect(localized?.title).not.toBe(english?.title);
+        }
         expect(localized?.description).not.toBe(english?.description);
         expect(localized?.lead).not.toBe(english?.lead);
       }

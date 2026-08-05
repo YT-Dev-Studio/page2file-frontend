@@ -87,7 +87,7 @@ export const homeCopySv: HomeCopy = {
         title: "Kan jag konvertera en sida eller en hel webbplats?",
         body: [
           { kind: "text", text: "Webbsideskonverterarna samt " },
-          { kind: "link", label: "One Page 2 PDF", route: "page2pdf-gpt" },
+          { kind: "link", label: "Webpage to PDF Converter — Web2File", route: "page2pdf-gpt" },
           { kind: "text", text: " och " },
           { kind: "link", label: "One Page 2 PowerPoint", route: "one-page2powerpoint-gpt" },
           { kind: "text", text: " bearbetar en URL. För flera tillgängliga offentliga sidor använder du " },

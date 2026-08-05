@@ -305,7 +305,7 @@ const publishedHomeCopy: Record<"en" | "ru", HomeCopy> = {
             },
             {
               kind: "link",
-              label: "One Page 2 PDF",
+              label: "Webpage to PDF Converter — Web2File",
               route: "page2pdf-gpt",
             },
             {
@@ -550,7 +550,7 @@ const publishedHomeCopy: Record<"en" | "ru", HomeCopy> = {
             },
             {
               kind: "link",
-              label: "One Page 2 PDF",
+              label: "Webpage to PDF Converter — Web2File",
               route: "page2pdf-gpt",
             },
             {

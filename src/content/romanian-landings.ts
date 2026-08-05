@@ -2,7 +2,7 @@ import type { LandingContent, RelatedRoute } from "./landings";
 import type { StaticRoute } from "@/shared/routes/routes";
 
 const gptRoutes: ReadonlyArray<RelatedRoute> = [
-  { route: "page2pdf-gpt", label: "One Page 2 PDF" },
+  { route: "page2pdf-gpt", label: "Webpage to PDF Converter — Web2File" },
   { route: "web2pdf-gpt", label: "Web 2 PDF" },
   { route: "html2pdf-gpt", label: "HTML 2 PDF" },
   { route: "one-page2powerpoint-gpt", label: "One Page 2 PowerPoint" },
@@ -18,16 +18,23 @@ const chatRoutes: ReadonlyArray<RelatedRoute> = [
 
 export const romanianLandingContent: Partial<Record<StaticRoute, LandingContent>> = {
   "page2pdf-gpt": {
-    route: "page2pdf-gpt", eyebrow: "Aplicație GPT · un URL public", title: "Convertiți un URL public în PDF cu One Page 2 PDF",
-    description: "One Page 2 PDF este o aplicație GPT dedicată, care trimite un singur URL public pentru conversie și returnează un PDF pentru pagina respectivă.",
-    lead: "Furnizați aplicației GPT un singur URL HTTPS public. One Page 2 PDF trimite adresa serviciului Page 2 File și returnează un PDF descărcabil al paginii solicitate.",
+    route: "page2pdf-gpt", eyebrow: "Aplicație GPT · URL-uri exacte, PDF-uri sau capturi", title: "Webpage to PDF Converter — Web2File",
+    description: "Webpage to PDF Converter — Web2File convertește URL-uri publice exacte și procesează PDF-uri de pagini web sau capturi încărcate în fișiere Visual PDF ori Interactive PDF separate.",
+    lead: "Furnizați un URL public exact, o listă de URL-uri exacte, un PDF al unei pagini web sau capturi complete ori consecutive. Alegeți Visual PDF pentru a salva site-ul sub formă de capturi sau Interactive PDF pentru text selectabil și linkuri active.",
     sections: [
-      { heading: "1. Trimiteți un URL public", body: "Lipiți adresa HTTPS exactă a paginii care trebuie convertită. Solicitarea include o singură pagină și nu pornește o căutare în întregul site." },
-      { heading: "2. Primiți un PDF", body: "Aplicația GPT returnează un link către un PDF al paginii. Verificați textul, linkurile, imaginile și întreruperile de pagină înainte de utilizare." },
-      { heading: "3. Folosiți domeniul corect", body: "One Page 2 PDF nu deschide file autentificate și nu ocolește controalele de acces. Folosiți extensia Page 2 File pentru o pagină deja deschisă după autentificare." },
+      { heading: "1. Indicați unul sau mai multe URL-uri", body: "Trimiteți un URL public, o listă de URL-uri publice exacte, un PDF existent al unei pagini web sau capturi complete ori consecutive. Fiecare pagină web rămâne într-un PDF separat." },
+      { heading: "2. Alegeți tipul PDF", body: "Alegeți Visual PDF pentru un rezultat bazat pe imagini care prioritizează aspectul paginii sau Interactive PDF când textul selectabil și linkurile active sunt mai importante. Un singur mod se aplică întregii liste de URL-uri." },
+      { heading: "3. Convertiți numai paginile furnizate", body: "Aplicația deschide numai URL-urile publice exacte indicate. Nu explorează domenii sau sitemap-uri, nu descoperă pagini, nu urmează linkuri interne și nu ocolește autentificarea, paywall-urile, CAPTCHA, restricțiile geografice sau alte controale. Pentru întregul site folosiți Web2File: Website 2 PDF." },
+      { heading: "4. Procesați PDF-uri și capturi", body: "Capturile încărcate pot fi asamblate de sus în jos într-un Visual PDF. PDF-urile paginilor web sunt procesate fără a inventa conținut lipsă; Interactive PDF prioritizează textul, aspectul, imaginile și linkurile verificate existente." },
+      { heading: "5. Primiți instrucțiuni adaptate și verificați rezultatul", body: "Dacă conversia directă nu este disponibilă sau este incompletă, aplicația oferă pași specifici paginii, browserului sau exportului nativ. Verificați conținutul lipsă sau tăiat, zonele goale, lizibilitatea, ordinea, aspectul, linkurile și fidelitatea modului." },
     ],
-    externalLinkKey: "page2pdfGpt", primaryLabel: "Deschide aplicația GPT One Page 2 PDF",
+    externalLinkKey: "page2pdfGpt", primaryLabel: "Deschideți GPT Webpage 2 PDF",
     articleLinks: [{ slug: "save-webpage-as-pdf", label: "Salvați o pagină web ca PDF" }, { slug: "long-webpage-page-breaks", label: "Corectați întreruperile de pagină ale paginilor lungi" }], relatedRoutes: gptRoutes,
+    workflowOverride: {
+      detailsTitle: "Instrucțiuni de utilizare",
+      firstStageDescription: "Furnizați aplicației GPT un URL funcțional.",
+      firstStageLabel: "Trimiteți URL-uri",
+    },
   },
   "web2pdf-gpt": {
     route: "web2pdf-gpt", eyebrow: "Aplicație GPT · pagini web accesibile", title: "Convertiți paginile unui site în PDF-uri separate cu Web 2 PDF",

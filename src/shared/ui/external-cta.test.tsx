@@ -19,7 +19,7 @@ describe("ExternalCta", () => {
     render(
       <ExternalCta
         externalLinkKey="page2pdfGpt"
-        label="Open One Page 2 PDF GPT App"
+        label="Open GPT Webpage 2 PDF"
         placeholderLabel="Browse GPTs"
       />,
     );
@@ -39,13 +39,13 @@ describe("ExternalCta", () => {
     render(
       <ExternalCta
         externalLinkKey="page2pdfGpt"
-        label="Open One Page 2 PDF GPT App"
+        label="Open GPT Webpage 2 PDF"
         placeholderLabel="Browse GPTs"
       />,
     );
 
     const link = screen.getByRole("link", {
-      name: "Open One Page 2 PDF GPT App",
+      name: "Open GPT Webpage 2 PDF",
     });
     expect(link.getAttribute("href")).toBe(
       "https://chatgpt.com/g/example",

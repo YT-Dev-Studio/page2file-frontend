@@ -176,7 +176,7 @@ export const homeCopyPt: HomeCopy = {
         title: "Posso converter uma página ou um site completo?",
         body: [
           { kind: "text", text: "Os conversores de páginas web, além de " },
-          { kind: "link", label: "One Page 2 PDF", route: "page2pdf-gpt" },
+          { kind: "link", label: "Webpage to PDF Converter — Web2File", route: "page2pdf-gpt" },
           { kind: "text", text: " e " },
           {
             kind: "link",

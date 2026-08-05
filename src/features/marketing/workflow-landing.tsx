@@ -62,15 +62,27 @@ export const WorkflowLanding = ({
   const workflowStep = (
     label: string,
     index: number,
-  ): ReactNode => (
-    <li key={label}>
-      <span aria-hidden="true">{toStepNumber(index)}</span>
-      <div>
-        <strong>{label}</strong>
-        <small>{workflowCopy.stageDescriptions[index]}</small>
-      </div>
-    </li>
-  );
+  ): ReactNode => {
+    const stageLabel =
+      index === 0
+        ? content.workflowOverride?.firstStageLabel ?? label
+        : label;
+    const stageDescription =
+      index === 0
+        ? content.workflowOverride?.firstStageDescription ??
+          workflowCopy.stageDescriptions[index]
+        : workflowCopy.stageDescriptions[index];
+
+    return (
+      <li key={stageLabel}>
+        <span aria-hidden="true">{toStepNumber(index)}</span>
+        <div>
+          <strong>{stageLabel}</strong>
+          <small>{stageDescription}</small>
+        </div>
+      </li>
+    );
+  };
   const detailStep = (
     section: ContentSection,
     index: number,
@@ -135,7 +147,10 @@ export const WorkflowLanding = ({
           <div className={styles.detailsLayout}>
             <header className={styles.detailsIntro}>
               <p>{copy.landing.stepsLabel}</p>
-              <h2>{workflowCopy.detailsTitle}</h2>
+              <h2>
+                {content.workflowOverride?.detailsTitle ??
+                  workflowCopy.detailsTitle}
+              </h2>
             </header>
             <ol className={styles.steps}>
               {content.sections.map(detailStep)}

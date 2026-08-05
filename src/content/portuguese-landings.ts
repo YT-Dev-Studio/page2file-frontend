@@ -2,7 +2,7 @@ import type { LandingContent, RelatedRoute } from "./landings";
 import type { StaticRoute } from "@/shared/routes/routes";
 
 const gptRoutes: ReadonlyArray<RelatedRoute> = [
-  { route: "page2pdf-gpt", label: "One Page 2 PDF" },
+  { route: "page2pdf-gpt", label: "Webpage to PDF Converter — Web2File" },
   { route: "web2pdf-gpt", label: "Web 2 PDF" },
   { route: "html2pdf-gpt", label: "HTML 2 PDF" },
   { route: "one-page2powerpoint-gpt", label: "One Page 2 PowerPoint" },
@@ -22,24 +22,31 @@ export const portugueseLandingContent: Partial<
 > = {
   "page2pdf-gpt": {
     route: "page2pdf-gpt",
-    eyebrow: "Aplicação GPT · um URL público",
-    title: "Converta um URL público em PDF com One Page 2 PDF",
+    eyebrow: "Aplicação GPT · URLs exatos, PDFs ou capturas",
+    title: "Webpage to PDF Converter — Web2File",
     description:
-      "One Page 2 PDF é uma aplicação GPT especializada que envia um URL público para conversão e devolve um PDF dessa página.",
+      "Webpage to PDF Converter — Web2File converte URLs públicos exatos e processa PDFs de páginas web ou capturas carregadas em ficheiros Visual PDF ou Interactive PDF separados.",
     lead:
-      "Forneça à aplicação GPT um URL HTTPS público. One Page 2 PDF envia o endereço ao serviço Page 2 File e devolve um PDF transferível da página pedida.",
+      "Forneça um URL público exato, uma lista de URLs exatos, um PDF de página web ou capturas de página inteira ou consecutivas. Escolha Visual PDF para guardar o site como capturas ou Interactive PDF para texto selecionável e ligações clicáveis.",
     sections: [
-      { heading: "1. Envie um URL público", body: "Cole o endereço HTTPS exato da página a converter. O pedido abrange uma página e não inicia uma pesquisa em todo o site." },
-      { heading: "2. Receba um PDF", body: "A aplicação GPT devolve uma ligação para um PDF dessa página. Reveja texto, ligações, imagens e quebras de página antes de utilizar o ficheiro." },
-      { heading: "3. Utilize o limite correto", body: "One Page 2 PDF não abre separadores com sessão iniciada nem contorna controlos de acesso. Utilize a extensão Page 2 File para uma página já aberta após iniciar sessão." },
+      { heading: "1. Indique um ou mais URLs", body: "Envie um URL público, uma lista de URLs públicos exatos, um PDF existente de página web ou capturas completas ou consecutivas. Cada página web permanece num PDF separado." },
+      { heading: "2. Escolha o tipo de PDF", body: "Escolha Visual PDF para um resultado baseado em imagens que privilegia o aspeto da página, ou Interactive PDF quando o texto selecionável e as ligações clicáveis são prioritários. Um modo aplica-se a toda a lista de URLs." },
+      { heading: "3. Converta apenas as páginas fornecidas", body: "A aplicação GPT abre apenas os URLs públicos exatos indicados. Não rastreia domínios ou sitemaps, não descobre páginas, não segue ligações internas nem contorna autenticação, paywalls, CAPTCHA, restrições geográficas ou outros controlos de acesso. Para descobrir um site inteiro, use Web2File: Website 2 PDF." },
+      { heading: "4. Processe PDFs e capturas", body: "As capturas carregadas podem ser reunidas de cima para baixo num Visual PDF. Os PDFs de páginas web são processados sem inventar conteúdo em falta; Interactive PDF privilegia texto, disposição, imagens e ligações verificadas existentes." },
+      { heading: "5. Obtenha instruções adequadas e reveja o resultado", body: "Se a conversão direta estiver indisponível ou incompleta, a aplicação fornece passos específicos para a página, navegador ou exportação nativa. Reveja conteúdo em falta ou cortado, áreas vazias, legibilidade, ordem, disposição, ligações e fidelidade ao modo." },
     ],
     externalLinkKey: "page2pdfGpt",
-    primaryLabel: "Abrir a aplicação GPT One Page 2 PDF",
+    primaryLabel: "Abrir GPT Webpage 2 PDF",
     articleLinks: [
       { slug: "save-webpage-as-pdf", label: "Guardar uma página web como PDF" },
       { slug: "long-webpage-page-breaks", label: "Corrigir quebras em páginas web longas" },
     ],
     relatedRoutes: gptRoutes,
+    workflowOverride: {
+      detailsTitle: "Instruções de utilização",
+      firstStageDescription: "Forneça à aplicação GPT um URL funcional.",
+      firstStageLabel: "Envie os URLs",
+    },
   },
   "web2pdf-gpt": {
     route: "web2pdf-gpt",
