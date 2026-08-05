@@ -24,6 +24,7 @@ export const russianLandingContent: Partial<
     route: "page2pdf-gpt",
     eyebrow: "GPT-приложение · точные URL, PDF или скриншоты",
     title: "Webpage to PDF Converter — Web2File",
+    displayTitle: "GPT: Webpage 2 PDF",
     description: "Webpage to PDF Converter — Web2File конвертирует точные публичные URL, загруженные PDF веб-страниц и скриншоты в отдельные Visual PDF или Interactive PDF.",
     lead:
       "Передайте один точный публичный URL, список точных URL, PDF веб-страницы либо полноразмерные или последовательные скриншоты. Выберите Visual PDF для сохранения сайта снимками или Interactive PDF для выделяемого текста и кликабельных ссылок.",

@@ -21,6 +21,7 @@ export const swedishLandingContent: Partial<Record<StaticRoute, LandingContent>>
     route: "page2pdf-gpt",
     eyebrow: "GPT-app · exakta URL:er, PDF:er eller skärmbilder",
     title: "Webpage to PDF Converter — Web2File",
+    displayTitle: "GPT: Webpage 2 PDF",
     description: "Webpage to PDF Converter — Web2File konverterar exakta offentliga webbadresser och bearbetar uppladdade webbsides-PDF:er eller skärmbilder till separata Visual PDF- eller Interactive PDF-filer.",
     lead: "Ange en exakt offentlig URL, en lista med exakta URL:er, en webbsides-PDF eller helsides- eller sammanhängande skärmbilder. Välj Visual PDF för att spara webbplatsen som skärmbilder eller Interactive PDF för markerbar text och klickbara länkar.",
     sections: [

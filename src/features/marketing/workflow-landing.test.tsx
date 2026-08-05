@@ -47,6 +47,9 @@ describe("WorkflowLanding calls to action", () => {
 
       if (route === "page2pdf-gpt") {
         expect(
+          screen.getByRole("heading", { name: "GPT: Webpage 2 PDF", level: 1 }),
+        ).toBeTruthy();
+        expect(
           screen.getByRole("heading", { name: "Instructions for use" }),
         ).toBeTruthy();
         expect(screen.getByText("Send URLs")).toBeTruthy();

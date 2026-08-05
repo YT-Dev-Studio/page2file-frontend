@@ -109,7 +109,7 @@ export const WorkflowLanding = ({
           <PublicHero
             eyebrow={content.eyebrow}
             lead={content.lead}
-            title={content.title}
+            title={content.displayTitle ?? content.title}
           >
             <div className={styles.actions}>
               {content.externalLinkKey && content.primaryLabel ? (

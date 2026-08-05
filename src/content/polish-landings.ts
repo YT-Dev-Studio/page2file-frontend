@@ -21,6 +21,7 @@ export const polishLandingContent: Partial<Record<StaticRoute, LandingContent>> 
     route: "page2pdf-gpt",
     eyebrow: "Aplikacja GPT · dokładne URL-e, PDF-y lub zrzuty ekranu",
     title: "Webpage to PDF Converter — Web2File",
+    displayTitle: "GPT: Webpage 2 PDF",
     description: "Webpage to PDF Converter — Web2File konwertuje dokładne publiczne adresy stron i przetwarza przesłane PDF-y stron lub zrzuty ekranu do osobnych plików Visual PDF albo Interactive PDF.",
     lead: "Podaj dokładny publiczny URL, listę dokładnych URL-i, PDF strony internetowej albo pełne lub kolejne zrzuty ekranu. Wybierz Visual PDF, aby zapisać witrynę jako zrzuty, lub Interactive PDF dla zaznaczanego tekstu i aktywnych łączy.",
     sections: [

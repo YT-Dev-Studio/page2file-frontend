@@ -58,6 +58,7 @@ export type LandingContent = {
   route: StaticRoute;
   eyebrow: string;
   title: string;
+  displayTitle?: string;
   description: string;
   lead: string;
   sections: ReadonlyArray<ContentSection>;
@@ -92,6 +93,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     route: "page2pdf-gpt",
     eyebrow: "GPT App · exact URLs, PDFs, or screenshots",
     title: "Webpage to PDF Converter — Web2File",
+    displayTitle: "GPT: Webpage 2 PDF",
     description: "Webpage to PDF Converter — Web2File converts exact public URLs, uploaded webpage PDFs, and screenshots into separate Visual PDF or Interactive PDF files.",
     lead:
       "Provide one exact public URL, a list of exact URLs, a webpage PDF, or full-page or consecutive screenshots. Choose Visual PDF to save the website as page captures or Interactive PDF for selectable text and clickable links.",

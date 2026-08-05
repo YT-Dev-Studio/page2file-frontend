@@ -21,6 +21,7 @@ export const czechLandingContent: Partial<Record<StaticRoute, LandingContent>> =
     route: "page2pdf-gpt",
     eyebrow: "Aplikace GPT · přesné URL, PDF nebo snímky",
     title: "Webpage to PDF Converter — Web2File",
+    displayTitle: "GPT: Webpage 2 PDF",
     description: "Webpage to PDF Converter — Web2File převádí přesné veřejné URL a zpracovává nahrané PDF webových stránek nebo snímky do samostatných souborů Visual PDF či Interactive PDF.",
     lead: "Zadejte přesnou veřejnou URL, seznam přesných URL, PDF webové stránky nebo celostránkové či navazující snímky. Zvolte Visual PDF pro uložení webu jako snímků nebo Interactive PDF pro označitelný text a klikací odkazy.",
     sections: [

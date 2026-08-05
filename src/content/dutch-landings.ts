@@ -24,6 +24,7 @@ export const dutchLandingContent: Partial<
     route: "page2pdf-gpt",
     eyebrow: "GPT-app · exacte URL's, PDF's of screenshots",
     title: "Webpage to PDF Converter — Web2File",
+    displayTitle: "GPT: Webpage 2 PDF",
     description:
       "Webpage to PDF Converter — Web2File converteert exacte openbare webpagina-URL's en verwerkt geüploade webpagina-PDF's of screenshots tot afzonderlijke Visual PDF- of Interactive PDF-bestanden.",
     lead:

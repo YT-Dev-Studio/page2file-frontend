@@ -24,6 +24,7 @@ export const spanishLandingContent: Partial<
     route: "page2pdf-gpt",
     eyebrow: "Aplicación GPT · URL exactas, PDF o capturas",
     title: "Webpage to PDF Converter — Web2File",
+    displayTitle: "GPT: Webpage 2 PDF",
     description:
       "Webpage to PDF Converter — Web2File convierte URL públicas exactas y procesa PDF de páginas web o capturas subidas en archivos Visual PDF o Interactive PDF separados.",
     lead:

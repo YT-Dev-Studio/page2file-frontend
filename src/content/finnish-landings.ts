@@ -21,6 +21,7 @@ export const finnishLandingContent: Partial<Record<StaticRoute, LandingContent>>
     route: "page2pdf-gpt",
     eyebrow: "GPT-sovellus · tarkat URL-osoitteet, PDF:t tai kuvakaappaukset",
     title: "Webpage to PDF Converter — Web2File",
+    displayTitle: "GPT: Webpage 2 PDF",
     description: "Webpage to PDF Converter — Web2File muuntaa tarkkoja julkisia verkkosivuosoitteita ja käsittelee ladattuja verkkosivu-PDF:iä tai kuvakaappauksia erillisiksi Visual PDF- tai Interactive PDF -tiedostoiksi.",
     lead: "Anna tarkka julkinen URL, tarkkojen URL-osoitteiden luettelo, verkkosivun PDF tai koko sivun tai peräkkäiset kuvakaappaukset. Valitse Visual PDF tallentaaksesi sivuston kuvakaappauksina tai Interactive PDF valittavaa tekstiä ja napsautettavia linkkejä varten.",
     sections: [

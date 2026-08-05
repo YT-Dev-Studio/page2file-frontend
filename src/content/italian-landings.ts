@@ -24,6 +24,7 @@ export const italianLandingContent: Partial<
     route: "page2pdf-gpt",
     eyebrow: "App GPT · URL esatti, PDF o schermate",
     title: "Webpage to PDF Converter — Web2File",
+    displayTitle: "GPT: Webpage 2 PDF",
     description:
       "Webpage to PDF Converter — Web2File converte URL pubblici esatti e tratta PDF di pagine web o schermate caricate producendo file Visual PDF o Interactive PDF separati.",
     lead:

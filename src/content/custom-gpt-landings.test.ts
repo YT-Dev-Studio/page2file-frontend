@@ -106,6 +106,7 @@ describe("GPT App landing content", () => {
     for (const { code } of localeRegistry) {
       const content = getLandingContent(code, "page2pdf-gpt");
       const visibleCopy = [
+        content?.displayTitle,
         content?.title,
         content?.description,
         content?.lead,
@@ -120,6 +121,7 @@ describe("GPT App landing content", () => {
       expect(content?.title).toBe(
         "Webpage to PDF Converter — Web2File",
       );
+      expect(content?.displayTitle).toBe("GPT: Webpage 2 PDF");
       expect(content?.primaryLabel).toContain("GPT Webpage 2 PDF");
       expect(content?.sections[0]?.heading).toContain("URL");
       expect(content?.workflowOverride?.detailsTitle.length).toBeGreaterThan(5);

@@ -19,6 +19,7 @@ const chatRoutes: ReadonlyArray<RelatedRoute> = [
 export const romanianLandingContent: Partial<Record<StaticRoute, LandingContent>> = {
   "page2pdf-gpt": {
     route: "page2pdf-gpt", eyebrow: "Aplicație GPT · URL-uri exacte, PDF-uri sau capturi", title: "Webpage to PDF Converter — Web2File",
+    displayTitle: "GPT: Webpage 2 PDF",
     description: "Webpage to PDF Converter — Web2File convertește URL-uri publice exacte și procesează PDF-uri de pagini web sau capturi încărcate în fișiere Visual PDF ori Interactive PDF separate.",
     lead: "Furnizați un URL public exact, o listă de URL-uri exacte, un PDF al unei pagini web sau capturi complete ori consecutive. Alegeți Visual PDF pentru a salva site-ul sub formă de capturi sau Interactive PDF pentru text selectabil și linkuri active.",
     sections: [

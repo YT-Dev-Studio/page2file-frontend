@@ -19,6 +19,7 @@ const chatRoutes: ReadonlyArray<RelatedRoute> = [
 export const hungarianLandingContent: Partial<Record<StaticRoute, LandingContent>> = {
   "page2pdf-gpt": {
     route: "page2pdf-gpt", eyebrow: "GPT-alkalmazás · pontos URL-ek, PDF-ek vagy képernyőképek", title: "Webpage to PDF Converter — Web2File",
+    displayTitle: "GPT: Webpage 2 PDF",
     description: "A Webpage to PDF Converter — Web2File pontos nyilvános weboldal-URL-eket konvertál, valamint feltöltött weboldal-PDF-eket vagy képernyőképeket dolgoz fel külön Visual PDF vagy Interactive PDF fájlokká.",
     lead: "Adjon meg egy pontos nyilvános URL-t, pontos URL-ek listáját, weboldal-PDF-et vagy teljes oldalas, illetve egymást követő képernyőképeket. Válassza a Visual PDF módot a webhely képernyőképként történő mentéséhez, vagy az Interactive PDF módot a kijelölhető szöveghez és kattintható linkekhez.",
     sections: [
