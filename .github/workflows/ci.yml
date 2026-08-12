@@ -2,7 +2,16 @@ name: frontend-ci
 
 on:
   push:
+    branches: [main]
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: page2file-frontend-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   check:
@@ -15,3 +24,34 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+
+  deploy:
+    name: Deploy frontend
+    needs: check
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: self-hosted
+    environment: production
+    timeout-minutes: 30
+    env:
+      NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+      NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ vars.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
+      NEXT_PUBLIC_ENABLE_INDEXING: ${{ vars.NEXT_PUBLIC_ENABLE_INDEXING || 'false' }}
+      NEXT_PUBLIC_LEGAL_REVIEWED: ${{ vars.NEXT_PUBLIC_LEGAL_REVIEWED || 'false' }}
+      NEXT_PUBLIC_ENABLE_CONVERSION: ${{ vars.NEXT_PUBLIC_ENABLE_CONVERSION || 'false' }}
+      NEXT_PUBLIC_CHROME_EXTENSION_URL: ${{ vars.NEXT_PUBLIC_CHROME_EXTENSION_URL }}
+      NEXT_PUBLIC_PAGE2PDF_GPT_URL: ${{ vars.NEXT_PUBLIC_PAGE2PDF_GPT_URL }}
+      NEXT_PUBLIC_WEB2PDF_GPT_URL: ${{ vars.NEXT_PUBLIC_WEB2PDF_GPT_URL }}
+      NEXT_PUBLIC_HTML2PDF_GPT_URL: ${{ vars.NEXT_PUBLIC_HTML2PDF_GPT_URL }}
+      NEXT_PUBLIC_ONE_PAGE2POWERPOINT_GPT_URL: ${{ vars.NEXT_PUBLIC_ONE_PAGE2POWERPOINT_GPT_URL }}
+      NEXT_PUBLIC_WEB2POWERPOINT_GPT_URL: ${{ vars.NEXT_PUBLIC_WEB2POWERPOINT_GPT_URL }}
+      PAGE2FILE_BACKEND_URL: ${{ vars.PAGE2FILE_BACKEND_URL }}
+      PAGE2FILE_WEB_KEY_ID: ${{ vars.PAGE2FILE_WEB_KEY_ID || 'web-v1' }}
+      PAGE2FILE_WEB_HMAC_SECRET: ${{ secrets.PAGE2FILE_WEB_HMAC_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Docker Compose configuration
+        run: docker compose config --quiet
+      - name: Build and start frontend
+        run: docker compose up --detach --build --wait --remove-orphans
+      - name: Show service status
+        run: docker compose ps

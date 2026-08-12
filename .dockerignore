@@ -1,0 +1,10 @@
+node_modules
+.next
+.open-next
+.git
+.github
+.env
+.env.*
+!.env.example
+!.env.production.example
+*.log
