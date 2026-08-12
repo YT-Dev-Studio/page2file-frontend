@@ -1,4 +1,3 @@
-import { blogEntries } from "@/content/content-registry";
 import { absoluteUrl, legalProfile, siteDescription } from "@/shared/config/site";
 import { localeRegistry } from "@/shared/i18n/locales";
 import { routePath, staticRoutes } from "@/shared/routes/routes";
@@ -6,16 +5,12 @@ import { routePath, staticRoutes } from "@/shared/routes/routes";
 export const dynamic = "force-static";
 
 const routeLabel = (route: string): string =>
-  route.length === 0 ? "Home and webpage converter" : route;
+  route.length === 0 ? "Chrome extension overview" : route;
 
 export function GET(): Response {
   const englishRoutes = staticRoutes.map(
     (route): string =>
       `- ${routeLabel(route)}: ${absoluteUrl(routePath("en", route))}`,
-  );
-  const englishGuides = blogEntries.map(
-    (entry): string =>
-      `- ${entry.title}: ${absoluteUrl(routePath("en", `blog/${entry.slug}`))}`,
   );
   const languages = localeRegistry
     .map(
@@ -30,16 +25,13 @@ export function GET(): Response {
     "# Page 2 File",
     "",
     siteDescription,
-    "Page 2 File helps people preview and save public webpages or permitted active browser tabs as PDF or PowerPoint files. Product pages explain the difference between visual snapshots and files with reusable text and links.",
+    "Page 2 File is a Chrome extension for saving the current webpage or a supported browser chat as a PDF. It offers appearance-first, selectable-text, and chat-focused output.",
     "",
     "## Languages",
     languages,
     "",
     "## Main pages",
     ...englishRoutes,
-    "",
-    "## Practical guides",
-    ...englishGuides,
     "",
     "## Discovery and contact",
     `- Sitemap: ${absoluteUrl("/sitemap.xml")}`,

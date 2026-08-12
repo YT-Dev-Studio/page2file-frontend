@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
-import { getBlogEntry, getUpdateEntry } from "@/content/content-registry";
 import { getLandingContent } from "@/content/landings";
 import { isRealJobId } from "@/shared/api/backend-contract";
 import type { Locale } from "@/shared/i18n/locales";
@@ -23,53 +22,11 @@ export const resolvePublicPage = async ({
     return <HomePage locale={locale} />;
   }
 
-  if (
-    route === "convert-webpage-to-pdf" ||
-    route === "convert-webpage-to-powerpoint"
-  ) {
-    const { ConverterPage } = await import("@/features/converter/converter-page");
-    const format =
-      route === "convert-webpage-to-powerpoint" ? "pptx" : "pdf";
-    return <ConverterPage format={format} locale={locale} />;
-  }
-
   if (route === "chrome-extension/how-to-use") {
     const { ExtensionGuide } = await import(
       "@/features/extension/extension-guide"
     );
     return <ExtensionGuide locale={locale} />;
-  }
-
-  if (route === "blog" || route === "updates") {
-    const { ContentIndexPage } = await import(
-      "@/features/content/content-pages"
-    );
-    const kind = route === "blog" ? "blog" : "updates";
-    return <ContentIndexPage kind={kind} locale={locale} />;
-  }
-
-  if (
-    (segments[0] === "blog" || segments[0] === "updates") &&
-    segments.length === 2
-  ) {
-    const entry =
-      segments[0] === "blog"
-        ? getBlogEntry(locale, segments[1])
-        : getUpdateEntry(locale, segments[1]);
-    if (!entry) {
-      notFound();
-    }
-    const { ContentArticlePage } = await import(
-      "@/features/content/content-pages"
-    );
-    return <ContentArticlePage entry={entry} locale={locale} />;
-  }
-
-  if (route === "changelog") {
-    const { ChangelogPage } = await import(
-      "@/features/content/content-pages"
-    );
-    return <ChangelogPage locale={locale} />;
   }
 
   if (segments[0] === "preview" && segments.length === 2) {

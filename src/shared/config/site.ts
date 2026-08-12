@@ -4,10 +4,7 @@ import type { Locale } from "@/shared/i18n/locales";
 export type ExternalLinkKey =
   | "chromeExtension"
   | "page2pdfGpt"
-  | "web2pdfGpt"
-  | "html2pdfGpt"
-  | "onePage2PowerpointGpt"
-  | "web2powerpointGpt";
+  | "html2pdfGpt";
 
 export type ExternalLinkStatus = "placeholder" | "live";
 
@@ -62,7 +59,7 @@ export type LegalProfile = {
 export const siteUrl = parseSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
 export const siteName = "Page 2 File";
 export const siteDescription =
-  "Preview and export webpages to PDF or PowerPoint without accounts or a stored conversion history.";
+  "Save the current webpage or a supported browser chat as a PDF with the Page 2 File Chrome extension.";
 
 export const indexingEnabled =
   parseBoolean(process.env.NEXT_PUBLIC_ENABLE_INDEXING) &&
@@ -120,20 +117,8 @@ export const externalLinks: Record<ExternalLinkKey, ExternalLink> = {
     process.env.NEXT_PUBLIC_PAGE2PDF_GPT_URL ?? PAGE2PDF_GPT_URL,
     GPT_CATALOG_URL,
   ),
-  web2pdfGpt: externalLink(
-    process.env.NEXT_PUBLIC_WEB2PDF_GPT_URL,
-    GPT_CATALOG_URL,
-  ),
   html2pdfGpt: externalLink(
     process.env.NEXT_PUBLIC_HTML2PDF_GPT_URL ?? HTML2PDF_GPT_URL,
-    GPT_CATALOG_URL,
-  ),
-  onePage2PowerpointGpt: externalLink(
-    process.env.NEXT_PUBLIC_ONE_PAGE2POWERPOINT_GPT_URL,
-    GPT_CATALOG_URL,
-  ),
-  web2powerpointGpt: externalLink(
-    process.env.NEXT_PUBLIC_WEB2POWERPOINT_GPT_URL,
     GPT_CATALOG_URL,
   ),
 };

@@ -1,189 +1,54 @@
 {
-  "version": 1,
-  "locales": [
-    "en",
-    "ru",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "pt",
-    "it",
-    "pl",
-    "cs",
-    "sv",
-    "no",
-    "da",
-    "fi",
-    "ro",
-    "hu"
-  ],
+  "version": 2,
+  "locales": ["en", "ru", "de", "fr", "es", "nl", "pt", "it", "pl", "cs", "sv", "no", "da", "fi", "ro", "hu"],
   "localizationPolicy": {
-    "primaryIntent": "Use the locale's rendered SEO title as the natural-language primary intent.",
-    "relatedQuestions": "Use visible localized FAQ questions and article H2 headings; do not inject hidden keyword variants.",
-    "validation": "Rendered titles must be unique within each locale. Related pages must explain their different scope in visible copy."
+    "primaryIntent": "Use each locale's rendered SEO title as the natural-language primary intent.",
+    "validation": "Every indexed route must exist in all 16 locales and must not link to unpublished content."
   },
   "entries": [
     {
       "route": "",
       "kind": "static",
       "primaryIntentSource": "localized-seo-title",
-      "intentType": "perform",
-      "purpose": "Choose PDF or PowerPoint and start a webpage export.",
-      "internalLinks": ["convert-webpage-to-pdf", "convert-webpage-to-powerpoint", "chrome-extension/how-to-use", "blog"],
-      "avoidCompetingWith": ["convert-webpage-to-pdf", "convert-webpage-to-powerpoint"]
-    },
-    {
-      "route": "convert-webpage-to-pdf",
-      "kind": "static",
-      "primaryIntentSource": "localized-seo-title",
-      "intentType": "perform",
-      "purpose": "Convert one public webpage URL to PDF with a preview.",
-      "internalLinks": ["page2pdf-gpt", "capture-full-webpage-as-pdf", "visual-vs-editable"],
-      "avoidCompetingWith": ["page2pdf-gpt", "web2pdf-gpt", "html2pdf-gpt"]
-    },
-    {
-      "route": "convert-webpage-to-powerpoint",
-      "kind": "static",
-      "primaryIntentSource": "localized-seo-title",
-      "intentType": "perform",
-      "purpose": "Convert one public webpage URL to PowerPoint slides.",
-      "internalLinks": ["one-page2powerpoint-gpt", "webpage-to-powerpoint", "screenshot-vs-editable-powerpoint"],
-      "avoidCompetingWith": ["one-page2powerpoint-gpt", "web2powerpoint-gpt"]
+      "intentType": "learn",
+      "purpose": "Explain how the Page 2 File Chrome extension saves the current browser tab as PDF.",
+      "internalLinks": ["chrome-extension/how-to-use", "page2pdf-gpt", "html2pdf-gpt"],
+      "avoidCompetingWith": ["chrome-extension/how-to-use"]
     },
     {
       "route": "chrome-extension/how-to-use",
       "kind": "static",
       "primaryIntentSource": "localized-seo-title",
       "intentType": "learn",
-      "purpose": "Explain how to export the active browser tab, including signed-in pages.",
-      "internalLinks": ["save-authenticated-webpage-as-pdf", "export-ai-chats-privately", "privacy"],
-      "avoidCompetingWith": ["convert-webpage-to-pdf"]
+      "purpose": "Give the complete linear procedure, supported chats, privacy boundary, and current limitations.",
+      "internalLinks": ["", "privacy"],
+      "avoidCompetingWith": [""]
     },
     {
       "route": "page2pdf-gpt",
       "kind": "static",
       "primaryIntentSource": "localized-seo-title",
       "intentType": "perform",
-      "purpose": "Use GPT Webpage 2 PDF for one exact URL, a list of exact URLs, a webpage PDF, or ordered screenshots.",
-      "internalLinks": ["convert-webpage-to-pdf", "web2pdf-gpt", "save-webpage-as-pdf"],
-      "avoidCompetingWith": ["convert-webpage-to-pdf", "web2pdf-gpt", "html2pdf-gpt"]
-    },
-    {
-      "route": "web2pdf-gpt",
-      "kind": "static",
-      "primaryIntentSource": "localized-seo-title",
-      "intentType": "perform",
-      "purpose": "Discover accessible pages on one public website and create a separate PDF for each selected page.",
-      "internalLinks": ["page2pdf-gpt", "multi-page-website-to-pdf", "website-types-to-pdf-or-powerpoint"],
-      "avoidCompetingWith": ["page2pdf-gpt", "convert-webpage-to-pdf"]
+      "purpose": "Use the confirmed Web2File GPT for exact public webpage URLs, webpage PDFs, or screenshots.",
+      "internalLinks": ["html2pdf-gpt"],
+      "avoidCompetingWith": [""]
     },
     {
       "route": "html2pdf-gpt",
       "kind": "static",
       "primaryIntentSource": "localized-seo-title",
       "intentType": "perform",
-      "purpose": "Upload exactly one HTML file and create one reviewed PDF.",
-      "internalLinks": ["html-to-pdf-safely", "page2pdf-gpt", "visual-vs-editable"],
-      "avoidCompetingWith": ["page2pdf-gpt", "convert-webpage-to-pdf"]
-    },
-    {
-      "route": "one-page2powerpoint-gpt",
-      "kind": "static",
-      "primaryIntentSource": "localized-seo-title",
-      "intentType": "perform",
-      "purpose": "Use a GPT to turn one exact webpage into one PowerPoint presentation.",
-      "internalLinks": ["convert-webpage-to-powerpoint", "web2powerpoint-gpt", "webpage-to-powerpoint"],
-      "avoidCompetingWith": ["convert-webpage-to-powerpoint", "web2powerpoint-gpt"]
-    },
-    {
-      "route": "web2powerpoint-gpt",
-      "kind": "static",
-      "primaryIntentSource": "localized-seo-title",
-      "intentType": "perform",
-      "purpose": "Discover selected pages on a public website and create separate PowerPoint files.",
-      "internalLinks": ["one-page2powerpoint-gpt", "website-to-powerpoint", "website-types-to-pdf-or-powerpoint"],
-      "avoidCompetingWith": ["one-page2powerpoint-gpt", "convert-webpage-to-powerpoint"]
-    },
-    {
-      "route": "export-ai-chat-to-pdf",
-      "kind": "static",
-      "primaryIntentSource": "localized-seo-title",
-      "intentType": "choose",
-      "purpose": "Choose a safe method for exporting a visible AI conversation.",
-      "internalLinks": ["export-chatgpt-to-pdf", "export-claude-to-pdf", "export-gemini-to-pdf", "export-grok-to-pdf"],
-      "avoidCompetingWith": ["export-ai-chats-privately"]
-    },
-    {
-      "route": "export-chatgpt-to-pdf",
-      "kind": "static",
-      "primaryIntentSource": "localized-seo-title",
-      "intentType": "perform",
-      "purpose": "Export the ChatGPT conversation visible in the browser to PDF.",
-      "internalLinks": ["export-chatgpt-conversation-to-pdf", "export-ai-chat-to-pdf", "privacy"],
-      "avoidCompetingWith": ["export-chatgpt-conversation-to-pdf"]
-    },
-    {
-      "route": "export-claude-to-pdf",
-      "kind": "static",
-      "primaryIntentSource": "localized-seo-title",
-      "intentType": "perform",
-      "purpose": "Export the Claude conversation visible in the browser to PDF.",
-      "internalLinks": ["export-claude-chat-to-pdf", "export-ai-chat-to-pdf", "privacy"],
-      "avoidCompetingWith": ["export-claude-chat-to-pdf"]
-    },
-    {
-      "route": "export-gemini-to-pdf",
-      "kind": "static",
-      "primaryIntentSource": "localized-seo-title",
-      "intentType": "perform",
-      "purpose": "Export the Gemini conversation visible in the browser to PDF.",
-      "internalLinks": ["export-gemini-chat-to-pdf", "export-ai-chat-to-pdf", "privacy"],
-      "avoidCompetingWith": ["export-gemini-chat-to-pdf"]
-    },
-    {
-      "route": "export-grok-to-pdf",
-      "kind": "static",
-      "primaryIntentSource": "localized-seo-title",
-      "intentType": "perform",
-      "purpose": "Export the Grok conversation visible in the browser to PDF.",
-      "internalLinks": ["export-other-ai-chats-to-pdf", "export-ai-chat-to-pdf", "privacy"],
-      "avoidCompetingWith": ["export-other-ai-chats-to-pdf"]
-    },
-    {
-      "route": "blog",
-      "kind": "static",
-      "primaryIntentSource": "localized-seo-title",
-      "intentType": "learn",
-      "purpose": "Browse practical guides about webpage, HTML, chat, PDF, and PowerPoint export.",
-      "internalLinks": ["website-types-to-pdf-or-powerpoint", "export-ai-chats-privately", "save-webpage-as-pdf"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "updates",
-      "kind": "static",
-      "primaryIntentSource": "localized-seo-title",
-      "intentType": "navigate",
-      "purpose": "Read confirmed product updates after release.",
-      "internalLinks": ["changelog", "about"],
-      "avoidCompetingWith": ["changelog"]
-    },
-    {
-      "route": "changelog",
-      "kind": "static",
-      "primaryIntentSource": "localized-seo-title",
-      "intentType": "navigate",
-      "purpose": "Read technical prototype changes and implementation decisions.",
-      "internalLinks": ["updates", "about"],
-      "avoidCompetingWith": ["updates"]
+      "purpose": "Use the confirmed Web2File GPT to convert one uploaded HTML file to PDF.",
+      "internalLinks": ["page2pdf-gpt"],
+      "avoidCompetingWith": ["chrome-extension/how-to-use"]
     },
     {
       "route": "about",
       "kind": "static",
       "primaryIntentSource": "localized-seo-title",
       "intentType": "trust",
-      "purpose": "Explain who operates Page 2 File and how product content is prepared and corrected.",
-      "internalLinks": ["privacy", "terms", "blog"],
+      "purpose": "Explain who operates Page 2 File and the scope of the Chrome extension website.",
+      "internalLinks": ["privacy", "terms"],
       "avoidCompetingWith": []
     },
     {
@@ -191,7 +56,7 @@
       "kind": "static",
       "primaryIntentSource": "localized-seo-title",
       "intentType": "trust",
-      "purpose": "Explain data processing, temporary conversion files, analytics, and privacy requests.",
+      "purpose": "Explain extension-local PDF processing separately from website analytics and legal requests.",
       "internalLinks": ["terms", "about"],
       "avoidCompetingWith": []
     },
@@ -202,222 +67,6 @@
       "intentType": "trust",
       "purpose": "Explain permitted use, access limits, responsibility, and service terms.",
       "internalLinks": ["privacy", "about"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "blog/save-webpage-as-pdf",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Save one webpage as a checked PDF.",
-      "internalLinks": ["convert-webpage-to-pdf", "blog/visual-vs-editable", "blog/capture-full-webpage-as-pdf"],
-      "avoidCompetingWith": ["convert-webpage-to-pdf"]
-    },
-    {
-      "route": "blog/why-print-to-pdf-breaks",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "solve",
-      "purpose": "Explain and fix common browser print-to-PDF failures.",
-      "internalLinks": ["blog/save-webpage-as-pdf", "blog/long-webpage-page-breaks", "blog/capture-full-webpage-as-pdf"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "blog/capture-full-webpage-as-pdf",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Prepare and capture a complete long webpage.",
-      "internalLinks": ["chrome-extension/how-to-use", "blog/long-webpage-page-breaks", "blog/save-webpage-as-pdf"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "blog/long-webpage-page-breaks",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "solve",
-      "purpose": "Prevent awkward cuts, repeated elements, and blank areas in long-page PDF output.",
-      "internalLinks": ["blog/capture-full-webpage-as-pdf", "blog/why-print-to-pdf-breaks", "convert-webpage-to-pdf"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "blog/preserve-clickable-links",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "choose",
-      "purpose": "Choose output that keeps supported links clickable.",
-      "internalLinks": ["blog/visual-vs-editable", "blog/html-to-pdf-safely", "convert-webpage-to-pdf"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "blog/visual-vs-editable",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "choose",
-      "purpose": "Choose between appearance-first and editable PDF output.",
-      "internalLinks": ["convert-webpage-to-pdf", "blog/preserve-clickable-links", "blog/save-webpage-as-pdf"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "blog/html-to-pdf-safely",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Convert one HTML file to PDF while handling its styles, fonts, images, and links safely.",
-      "internalLinks": ["html2pdf-gpt", "blog/preserve-clickable-links", "blog/visual-vs-editable"],
-      "avoidCompetingWith": ["html2pdf-gpt"]
-    },
-    {
-      "route": "blog/multi-page-website-to-pdf",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Plan separate PDF output for multiple public website pages.",
-      "internalLinks": ["web2pdf-gpt", "page2pdf-gpt", "blog/website-types-to-pdf-or-powerpoint"],
-      "avoidCompetingWith": ["web2pdf-gpt"]
-    },
-    {
-      "route": "blog/webpage-to-powerpoint",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Turn one webpage into a checked PowerPoint presentation.",
-      "internalLinks": ["convert-webpage-to-powerpoint", "one-page2powerpoint-gpt", "blog/sections-to-slides"],
-      "avoidCompetingWith": ["convert-webpage-to-powerpoint"]
-    },
-    {
-      "route": "blog/website-to-powerpoint",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Plan separate presentation output for multiple website pages.",
-      "internalLinks": ["web2powerpoint-gpt", "blog/webpage-to-powerpoint", "blog/website-types-to-pdf-or-powerpoint"],
-      "avoidCompetingWith": ["web2powerpoint-gpt"]
-    },
-    {
-      "route": "blog/html-to-powerpoint",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Turn one HTML document into understandable PowerPoint slides.",
-      "internalLinks": ["blog/sections-to-slides", "blog/screenshot-vs-editable-powerpoint", "convert-webpage-to-powerpoint"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "blog/sections-to-slides",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Split meaningful webpage sections into readable slides.",
-      "internalLinks": ["blog/webpage-to-powerpoint", "blog/screenshot-vs-editable-powerpoint", "convert-webpage-to-powerpoint"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "blog/screenshot-vs-editable-powerpoint",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "choose",
-      "purpose": "Choose between appearance-first slides and editable presentation content.",
-      "internalLinks": ["convert-webpage-to-powerpoint", "blog/sections-to-slides", "blog/webpage-to-powerpoint"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "blog/save-authenticated-webpage-as-pdf",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Safely save a webpage that is already open after sign-in.",
-      "internalLinks": ["chrome-extension/how-to-use", "privacy", "blog/export-ai-chats-privately"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "blog/website-types-to-pdf-or-powerpoint",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "choose",
-      "purpose": "Decide which website types can be exported reliably and what limitations to expect.",
-      "internalLinks": ["blog/webpage-capture-vs-web-scraping", "blog/save-webpage-as-pdf", "blog/webpage-to-powerpoint"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "blog/webpage-capture-vs-web-scraping",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "compare",
-      "purpose": "Explain the practical difference between preserving a visible page and extracting structured data.",
-      "internalLinks": ["blog/website-types-to-pdf-or-powerpoint", "privacy", "blog/save-authenticated-webpage-as-pdf"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "blog/export-ai-chats-privately",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Export visible AI conversations while limiting accidental disclosure.",
-      "internalLinks": ["export-ai-chat-to-pdf", "privacy", "blog/save-authenticated-webpage-as-pdf"],
-      "avoidCompetingWith": ["export-ai-chat-to-pdf"]
-    },
-    {
-      "route": "blog/export-chatgpt-conversation-to-pdf",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Prepare, export, and verify one ChatGPT conversation as PDF.",
-      "internalLinks": ["export-chatgpt-to-pdf", "blog/export-ai-chats-privately", "privacy"],
-      "avoidCompetingWith": ["export-chatgpt-to-pdf"]
-    },
-    {
-      "route": "blog/export-claude-chat-to-pdf",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Prepare, export, and verify one Claude conversation as PDF.",
-      "internalLinks": ["export-claude-to-pdf", "blog/export-ai-chats-privately", "privacy"],
-      "avoidCompetingWith": ["export-claude-to-pdf"]
-    },
-    {
-      "route": "blog/export-gemini-chat-to-pdf",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Prepare, export, and verify one Gemini conversation as PDF.",
-      "internalLinks": ["export-gemini-to-pdf", "blog/export-ai-chats-privately", "privacy"],
-      "avoidCompetingWith": ["export-gemini-to-pdf"]
-    },
-    {
-      "route": "blog/export-other-ai-chats-to-pdf",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Export visible Grok, DeepSeek, Perplexity, or Copilot conversations with platform-specific checks.",
-      "internalLinks": ["export-grok-to-pdf", "export-ai-chat-to-pdf", "blog/export-ai-chats-privately"],
-      "avoidCompetingWith": ["export-grok-to-pdf"]
-    },
-    {
-      "route": "blog/export-whatsapp-chat-to-pdf",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Export one visible WhatsApp Web conversation and verify its range and attachments.",
-      "internalLinks": ["blog/export-browser-messenger-chats-to-pdf", "privacy", "chrome-extension/how-to-use"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "blog/export-telegram-chat-to-pdf",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "learn",
-      "purpose": "Export one visible Telegram Web conversation and verify its range and private details.",
-      "internalLinks": ["blog/export-browser-messenger-chats-to-pdf", "privacy", "chrome-extension/how-to-use"],
-      "avoidCompetingWith": []
-    },
-    {
-      "route": "blog/export-browser-messenger-chats-to-pdf",
-      "kind": "article",
-      "primaryIntentSource": "localized-content-title",
-      "intentType": "choose",
-      "purpose": "Choose a safe export method for browser-based messenger conversations.",
-      "internalLinks": ["blog/export-whatsapp-chat-to-pdf", "blog/export-telegram-chat-to-pdf", "privacy"],
       "avoidCompetingWith": []
     }
   ]

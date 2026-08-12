@@ -7,12 +7,21 @@ const REQUIRED_LOCALES = [
   "sv", "no", "da", "fi", "cs", "ro", "hu",
 ];
 const REQUIRED_ROUTES = [
-  "convert-webpage-to-pdf",
-  "convert-webpage-to-powerpoint",
+  "",
   "chrome-extension/how-to-use",
   "page2pdf-gpt",
-  "web2pdf-gpt",
   "html2pdf-gpt",
+  "privacy",
+  "terms",
+  "about",
+];
+const REMOVED_ROUTES = [
+  "cookie-policy",
+  "security",
+  "acceptable-use",
+  "convert-webpage-to-pdf",
+  "convert-webpage-to-powerpoint",
+  "web2pdf-gpt",
   "one-page2powerpoint-gpt",
   "web2powerpoint-gpt",
   "export-ai-chat-to-pdf",
@@ -23,14 +32,11 @@ const REQUIRED_ROUTES = [
   "blog",
   "updates",
   "changelog",
-  "privacy",
-  "terms",
-  "about",
 ];
-const REMOVED_ROUTES = [
-  "cookie-policy",
-  "security",
-  "acceptable-use",
+const REMOVED_PUBLIC_REFERENCES = [
+  ...REMOVED_ROUTES,
+  "convert-webpage-to-",
+  "Website 2 PDF",
 ];
 
 const assertContains = (source, values, label) => {
@@ -45,6 +51,14 @@ const assertRemovedRoutesAbsent = (source, label) => {
   REMOVED_ROUTES.forEach(function assertRemovedRoute(route) {
     if (source.includes(`route: "${route}"`)) {
       throw new Error(`Removed route remains in ${label}: ${route}`);
+    }
+  });
+};
+
+const assertRemovedPublicReferencesAbsent = (source, label) => {
+  REMOVED_PUBLIC_REFERENCES.forEach(function assertRemovedReference(reference) {
+    if (source.includes(reference)) {
+      throw new Error(`Removed public reference remains in ${label}: ${reference}`);
     }
   });
 };
@@ -86,11 +100,39 @@ const run = async () => {
     join(ROOT, "src", "app", "(root)", "route.ts"),
     "utf8",
   );
+  const publicLinkSources = [
+    [
+      "404 page",
+      join(ROOT, "src", "features", "routing", "not-found-page.tsx"),
+    ],
+    [
+      "preview workspace",
+      join(ROOT, "src", "features", "preview", "real-preview-workspace.tsx"),
+    ],
+    [
+      "download page",
+      join(ROOT, "src", "features", "preview", "real-download-page.tsx"),
+    ],
+    [
+      "site navigation",
+      join(ROOT, "src", "shared", "ui", "site-navigation.tsx"),
+    ],
+    [
+      "site footer",
+      join(ROOT, "src", "shared", "ui", "site-shell.tsx"),
+    ],
+    ["sitemap", join(ROOT, "src", "app", "sitemap.ts")],
+    ["llms.txt", join(ROOT, "src", "app", "llms.txt", "route.ts")],
+  ];
   assertContains(locales, REQUIRED_LOCALES, "locale");
   assertContains(routes, REQUIRED_ROUTES, "route");
   assertRemovedRoutesAbsent(routes, "route registry");
   assertRemovedRoutesAbsent(landings, "English landing content");
   assertRemovedRoutesAbsent(russianLandings, "Russian landing content");
+  for (const [label, path] of publicLinkSources) {
+    const source = await readFile(path, "utf8");
+    assertRemovedPublicReferencesAbsent(source, label);
+  }
   if (
     !landings.includes('id: "cookies"') ||
     !russianLandings.includes('id: "cookies"') ||
@@ -115,12 +157,8 @@ const run = async () => {
   const routesWithLandingContent = REQUIRED_ROUTES.filter(
     function needsLandingContent(route) {
       return ![
-        "convert-webpage-to-pdf",
-        "convert-webpage-to-powerpoint",
+        "",
         "chrome-extension/how-to-use",
-        "blog",
-        "updates",
-        "changelog",
       ].includes(route);
     },
   );

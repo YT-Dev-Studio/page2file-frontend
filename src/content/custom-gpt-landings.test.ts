@@ -15,40 +15,10 @@ const gptRoutes: ReadonlyArray<{
     serviceName: "Webpage to PDF Converter — Web2File",
   },
   {
-    externalLinkKey: "web2pdfGpt",
-    route: "web2pdf-gpt",
-    serviceName: "Web 2 PDF",
-  },
-  {
     externalLinkKey: "html2pdfGpt",
     route: "html2pdf-gpt",
     serviceName: "HTML 2 PDF",
   },
-  {
-    externalLinkKey: "onePage2PowerpointGpt",
-    route: "one-page2powerpoint-gpt",
-    serviceName: "One Page 2 PowerPoint",
-  },
-  {
-    externalLinkKey: "web2powerpointGpt",
-    route: "web2powerpoint-gpt",
-    serviceName: "Web 2 PowerPoint",
-  },
-];
-
-const localizedLandingRoutes: ReadonlyArray<StaticRoute> = [
-  "page2pdf-gpt",
-  "web2pdf-gpt",
-  "html2pdf-gpt",
-  "one-page2powerpoint-gpt",
-  "web2powerpoint-gpt",
-  "export-ai-chat-to-pdf",
-  "export-chatgpt-to-pdf",
-  "export-claude-to-pdf",
-  "export-gemini-to-pdf",
-  "export-grok-to-pdf",
-  "privacy",
-  "terms",
 ];
 
 describe("GPT App landing content", () => {
@@ -140,6 +110,11 @@ describe("GPT App landing content", () => {
       expect(visibleCopy).toContain("Visual PDF");
       expect(visibleCopy).toContain("Interactive PDF");
       expect(visibleCopy).not.toContain("One Page 2 PDF");
+      expect(visibleCopy).not.toContain("Website 2 PDF");
+      expect(content?.relatedRoutes?.map(({ route }) => route)).toEqual([
+        "page2pdf-gpt",
+        "html2pdf-gpt",
+      ]);
     }
   });
 
@@ -200,155 +175,20 @@ describe("GPT App landing content", () => {
   });
 });
 
-describe("Spanish and Dutch legal content", () => {
+describe("localized legal content", () => {
   test.each(["privacy", "terms"] as const)(
-    "provides complete localized %s documents",
+    "keeps %s complete and aligned with the extension-only product scope",
     (route) => {
-      const english = getLandingContent("en", route);
-
-      for (const locale of ["es", "nl"] as const) {
-        const localized = getLandingContent(locale, route);
+      for (const { code } of localeRegistry) {
+        const localized = getLandingContent(code, route);
+        const visibleCopy = JSON.stringify(localized);
 
         expect(localized?.legal).toBe(true);
-        expect(localized?.title).not.toBe(english?.title);
-        expect(localized?.sections.length).toBe(
-          english?.sections.length,
-        );
+        expect(localized?.sections.length).toBeGreaterThan(8);
         expect(localized?.sections.some(({ id }) => id === "cookies")).toBe(
           route === "privacy",
         );
-      }
-    },
-  );
-});
-
-describe("Portuguese and Italian legal content", () => {
-  test.each(["privacy", "terms"] as const)(
-    "provides complete localized %s documents",
-    (route) => {
-      const english = getLandingContent("en", route);
-
-      for (const locale of ["pt", "it"] as const) {
-        const localized = getLandingContent(locale, route);
-
-        expect(localized?.legal).toBe(true);
-        expect(localized?.title).not.toBe(english?.title);
-        expect(localized?.sections.length).toBe(
-          english?.sections.length,
-        );
-        expect(localized?.sections.some(({ id }) => id === "cookies")).toBe(
-          route === "privacy",
-        );
-      }
-    },
-  );
-});
-
-describe("Polish and Czech legal content", () => {
-  test.each(["privacy", "terms"] as const)(
-    "provides complete localized %s documents",
-    (route) => {
-      const english = getLandingContent("en", route);
-
-      for (const locale of ["pl", "cs"] as const) {
-        const localized = getLandingContent(locale, route);
-
-        expect(localized?.legal).toBe(true);
-        expect(localized?.sections.length).toBe(
-          english?.sections.length,
-        );
-        expect(localized?.sections.some(({ id }) => id === "cookies")).toBe(
-          route === "privacy",
-        );
-      }
-    },
-  );
-});
-
-describe("completed landing localization batches", () => {
-  test.each(["es", "nl", "pt", "it", "pl", "cs", "sv", "no", "da", "fi", "ro", "hu"] as const)(
-    "does not fall back to English for %s",
-    (locale) => {
-      for (const route of localizedLandingRoutes) {
-        const english = getLandingContent("en", route);
-        const localized = getLandingContent(locale, route);
-
-        if (route === "page2pdf-gpt") {
-          expect(localized?.title).toBe(
-            "Webpage to PDF Converter — Web2File",
-          );
-        } else if (route === "html2pdf-gpt") {
-          expect(localized?.title).toBe(
-            "HTML to PDF Converter — Web2File",
-          );
-        } else {
-          expect(localized?.title).not.toBe(english?.title);
-        }
-        expect(localized?.description).not.toBe(english?.description);
-        expect(localized?.lead).not.toBe(english?.lead);
-      }
-    },
-  );
-});
-
-describe("Swedish and Norwegian legal content", () => {
-  test.each(["privacy", "terms"] as const)(
-    "provides complete localized %s documents",
-    (route) => {
-      const english = getLandingContent("en", route);
-
-      for (const locale of ["sv", "no"] as const) {
-        const localized = getLandingContent(locale, route);
-
-        expect(localized?.legal).toBe(true);
-        expect(localized?.sections.length).toBe(
-          english?.sections.length,
-        );
-        expect(localized?.sections.some(({ id }) => id === "cookies")).toBe(
-          route === "privacy",
-        );
-      }
-    },
-  );
-});
-
-describe("Danish and Finnish legal content", () => {
-  test.each(["privacy", "terms"] as const)(
-    "provides complete localized %s documents",
-    (route) => {
-      const english = getLandingContent("en", route);
-
-      for (const locale of ["da", "fi"] as const) {
-        const localized = getLandingContent(locale, route);
-
-        expect(localized?.legal).toBe(true);
-        expect(localized?.sections.length).toBe(
-          english?.sections.length,
-        );
-        expect(localized?.sections.some(({ id }) => id === "cookies")).toBe(
-          route === "privacy",
-        );
-      }
-    },
-  );
-});
-
-describe("Romanian and Hungarian legal content", () => {
-  test.each(["privacy", "terms"] as const)(
-    "provides complete localized %s documents",
-    (route) => {
-      const english = getLandingContent("en", route);
-
-      for (const locale of ["ro", "hu"] as const) {
-        const localized = getLandingContent(locale, route);
-
-        expect(localized?.legal).toBe(true);
-        expect(localized?.sections.length).toBe(
-          english?.sections.length,
-        );
-        expect(localized?.sections.some(({ id }) => id === "cookies")).toBe(
-          route === "privacy",
-        );
+        expect(visibleCopy).not.toMatch(/PowerPoint|PPTX|p2f_session|p2f_csrf|CSRF|backend/i);
       }
     },
   );

@@ -14,7 +14,7 @@ export const LandingPage = ({
   locale: Locale;
 }): ReactNode => {
   const family = getPublicPageFamily(content.route);
-  if (family === "gpt-workflow" || family === "chat-export") {
+  if (family === "gpt-workflow") {
     return (
       <WorkflowLanding content={content} family={family} locale={locale} />
     );

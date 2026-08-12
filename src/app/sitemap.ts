@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { blogEntries, updateEntries } from "@/content/content-registry";
 import { getLandingContent } from "@/content/landings";
 import {
   absoluteUrl,
@@ -25,17 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [];
   }
   const routes = staticRoutes.filter(isIndexableRoute);
-  const articleRoutes = blogEntries.map(
-    (entry): string => `blog/${entry.slug}`,
-  );
-  const updateRoutes = updateEntries.map(
-    (entry): string => `updates/${entry.slug}`,
-  );
-  const allRoutes: ReadonlyArray<string> = [
-    ...routes,
-    ...articleRoutes,
-    ...updateRoutes,
-  ];
+  const allRoutes: ReadonlyArray<string> = routes;
   const indexableLocales = localeRegistry.filter(
     (locale): boolean => locale.indexable && locale.reviewed,
   );
@@ -52,35 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     indexableLocales.forEach(addLanguage);
     return languages;
   };
-  const getLastModified = (route: string): Date | undefined => {
-    if (route.startsWith("blog/")) {
-      const slug = route.slice("blog/".length);
-      const entry = blogEntries.find(
-        (candidate): boolean => candidate.slug === slug,
-      );
-      return entry?.updatedAt
-        ? new Date(`${entry.updatedAt}T00:00:00Z`)
-        : undefined;
-    }
-    if (route.startsWith("updates/")) {
-      const slug = route.slice("updates/".length);
-      const entry = updateEntries.find(
-        (candidate): boolean => candidate.slug === slug,
-      );
-      return entry?.updatedAt
-        ? new Date(`${entry.updatedAt}T00:00:00Z`)
-        : undefined;
-    }
-    return undefined;
-  };
   const addLocale = (
     locale: (typeof localeRegistry)[number],
   ): void => {
     const addRoute = (route: string): void => {
       entries.push({
         url: absoluteUrl(routePath(locale.code, route)),
-        lastModified: getLastModified(route),
-        changeFrequency: route.startsWith("blog/") ? "monthly" : undefined,
         priority: route === "" ? 1 : 0.7,
         alternates: {
           languages: getAlternates(route),

@@ -11,7 +11,7 @@ export const frenchLegalLandingContent: Partial<
     description:
       "Comment Page 2 File traite le contenu des pages web, les fichiers temporaires, les cookies, les données d’analyse et les demandes relatives à la confidentialité.",
     lead:
-      "Cette politique explique les traitements effectués par Page 2 File lorsque vous consultez le site, utilisez l’extension Chrome ou convertissez une page web en PDF ou PowerPoint.",
+      "Cette politique explique les traitements effectués par Page 2 File lorsque vous consultez le site, utilisez l’extension Chrome ou convertissez une page web en PDF.",
     sections: [
       {
         heading: "Opérateur et champ d’application",
@@ -21,7 +21,7 @@ export const frenchLegalLandingContent: Partial<
       {
         heading: "Définitions",
         body:
-          "Le « Service » désigne Page 2 File et ses fonctions de conversion. Le « contenu de conversion » désigne l’URL, le contenu visible, les options choisies et le fichier PDF ou PowerPoint généré. Les « données personnelles » sont les informations qui identifient une personne ou peuvent raisonnablement lui être associées.",
+          "Le « Service » désigne Page 2 File et ses fonctions de conversion. Le « contenu de conversion » désigne l’URL, le contenu visible, les options choisies et le fichier PDF généré. Les « données personnelles » sont les informations qui identifient une personne ou peuvent raisonnablement lui être associées.",
       },
       {
         heading: "Informations traitées",
@@ -114,16 +114,16 @@ export const frenchLegalLandingContent: Partial<
     description:
       "Conditions d’utilisation de Page 2 File, notamment les sources autorisées, les limites de conversion, les responsabilités de l’utilisateur et la disponibilité.",
     lead:
-      "Ces conditions régissent votre utilisation du site Page 2 File, de l’extension Chrome et des services de conversion de pages web en PDF ou PowerPoint.",
+      "Ces conditions régissent votre utilisation du site Page 2 File, de l’extension Chrome et des services de conversion de pages web en PDF.",
     sections: [
       { heading: "Acceptation et opérateur", body: "En accédant à Page 2 File ou en l’utilisant, vous acceptez ces conditions. Le Service est exploité par {{entityName}}, situé à {{address}}. Si vous utilisez le Service pour une organisation, vous confirmez être autorisé à accepter ces conditions en son nom." },
-      { heading: "Définitions", body: "Le « Service » désigne le site Page 2 File, l’extension Chrome et les fonctions de conversion. Le « contenu source » désigne une page web, le contenu d’un onglet actif ou tout autre contenu soumis. La « sortie » désigne un PDF, un fichier PowerPoint, un aperçu ou un autre résultat généré." },
+      { heading: "Définitions", body: "Le « Service » désigne le site Page 2 File, l’extension Chrome et les fonctions de conversion. Le « contenu source » désigne une page web, le contenu d’un onglet actif ou tout autre contenu soumis. La « sortie » désigne un PDF, un fichier PDF, un aperçu ou un autre résultat généré." },
       { heading: "Licence limitée", body: "Nous vous accordons un droit révocable, non exclusif, non transférable et limité d’accéder au Service et de l’utiliser conformément à ces conditions. Aucun droit de propriété sur le logiciel, la marque ou les autres éléments protégés de Page 2 File ne vous est transféré." },
       { heading: "Sources autorisées et votre responsabilité", body: "Vous ne pouvez convertir que le contenu source auquel vous êtes légalement autorisé à accéder et que vous pouvez traiter, reproduire et télécharger. Vous êtes responsable des URL et contenus d’onglet soumis, des réglages choisis et de l’utilisation ou diffusion de chaque sortie." },
       { heading: "Utilisations interdites", body: "Vous ne devez pas utiliser le Service pour enfreindre la loi ou les droits d’autrui, contourner des paywalls ou contrôles d’accès, diffuser des logiciels malveillants, soumettre du contenu abusif ou illégal, sonder des réseaux privés, perturber des contrôles de sécurité, surcharger les systèmes, automatiser des demandes excessives, rétroconcevoir des parties protégées ou présenter de manière trompeuse les fichiers générés." },
       { heading: "Contenu source et droits des tiers", body: "Vous conservez les droits que vous détenez déjà sur le contenu source. Page 2 File ne vous accorde aucun droit sur le contenu d’autrui. Vous déclarez que le traitement et la création de la sortie ne violent aucun droit d’auteur, de confidentialité, contractuel ou autre." },
       { heading: "Traitement temporaire", body: "Le Service peut traiter temporairement le contenu source, les réglages et les fichiers générés afin de fournir un aperçu et un téléchargement. Page 2 File ne fournit pas d’historique lié à un compte. La Politique de confidentialité détaille les données temporaires, cookies et prestataires." },
-      { heading: "Limites de la sortie et de la fidélité", body: "Les pages web peuvent contenir des scripts, animations, vidéos, médias protégés, polices personnalisées, graphiques canvas, données dynamiques et mises en page complexes impossibles à reproduire exactement dans un PDF ou PowerPoint statique. Accurate copy privilégie l’apparence ; Editable document reconstruit le texte, les images et les liens pris en charge. Vérifiez l’aperçu et la sortie finale." },
+      { heading: "Limites de la sortie et de la fidélité", body: "Les pages web peuvent contenir des scripts, animations, vidéos, médias protégés, polices personnalisées, graphiques canvas, données dynamiques et mises en page complexes impossibles à reproduire exactement dans un PDF statique. Accurate copy privilégie l’apparence ; Editable document reconstruit le texte, les images et les liens pris en charge. Vérifiez l’aperçu et la sortie finale." },
       { heading: "Services et liens tiers", body: "Le Service peut convertir des sites et services tiers ou proposer des liens vers eux. Page 2 File n’est pas responsable de leur disponibilité, contenu, exactitude, légalité, sécurité ou confidentialité. Leur utilisation reste soumise aux conditions du prestataire concerné." },
       { heading: "Confidentialité et cookies", body: "Notre Politique de confidentialité explique le traitement temporaire, l’analyse, les prestataires et les cookies. En utilisant le Service, vous reconnaissez que le traitement nécessaire à la conversion demandée aura lieu comme décrit." },
       { heading: "Propriété intellectuelle de Page 2 File", body: "Le Service, le logiciel, le design, les textes, logos et autres éléments Page 2 File appartiennent à {{entityName}} ou lui sont concédés sous licence et sont protégés par la loi. Vous ne pouvez supprimer les mentions de propriété, copier, vendre, sous-licencier ou exploiter commercialement le Service, sauf autorisation légale expresse." },

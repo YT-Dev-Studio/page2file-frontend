@@ -267,9 +267,9 @@ export const RealPreviewWorkspace = ({
           </p>
           <Link
             className={styles.secondaryAction}
-            href={`/${locale}/convert-webpage-to-${workspace.output === "pdf" ? "pdf" : "powerpoint"}`}
+            href={`/${locale}/chrome-extension/how-to-use`}
           >
-            {copy.retryFromConverter}
+            {copy.openExtensionGuide}
           </Link>
         </section>
       </main>
@@ -430,9 +430,9 @@ export const RealPreviewWorkspace = ({
         {stoppedStatuses.has(job.status) ? (
           <Link
             className={styles.secondaryAction}
-            href={`/${locale}/convert-webpage-to-${job.output === "pdf" ? "pdf" : "powerpoint"}`}
+            href={`/${locale}/chrome-extension/how-to-use`}
           >
-            {copy.retryFromConverter}
+            {copy.openExtensionGuide}
           </Link>
         ) : null}
       </section>

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 import {
   getLandingContent,
@@ -11,7 +10,6 @@ import type { PublicPageFamily } from "@/shared/routes/routes";
 import { ExternalCta } from "@/shared/ui/external-cta";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
-import uiStyles from "@/shared/ui/ui.module.css";
 import { getMarketingCopy } from "./marketing-copy";
 import {
   RelatedScenariosCarousel,
@@ -21,7 +19,7 @@ import styles from "./workflow-landing.module.css";
 
 type WorkflowLandingProps = {
   content: LandingContent;
-  family: Extract<PublicPageFamily, "gpt-workflow" | "chat-export">;
+  family: Extract<PublicPageFamily, "gpt-workflow">;
   locale: Locale;
 };
 
@@ -34,9 +32,7 @@ export const WorkflowLanding = ({
   locale,
 }: WorkflowLandingProps): ReactNode => {
   const copy = getMarketingCopy(locale);
-  const workflowCopy =
-    family === "gpt-workflow" ? copy.gptWorkflow : copy.chatWorkflow;
-  const showGuideAction = family === "chat-export";
+  const workflowCopy = copy.gptWorkflow;
   const relatedRoutes = content.relatedRoutes?.filter(
     (relatedRoute: RelatedRoute): boolean =>
       relatedRoute.route !== content.route,
@@ -123,14 +119,6 @@ export const WorkflowLanding = ({
                   }
                 />
               ) : null}
-              {showGuideAction ? (
-                <Link
-                  className={uiStyles.secondaryButton}
-                  href={`/${locale}/chrome-extension/how-to-use`}
-                >
-                  {copy.landing.openGuide}
-                </Link>
-              ) : null}
             </div>
           </PublicHero>
 
@@ -157,24 +145,6 @@ export const WorkflowLanding = ({
             </ol>
           </div>
         </section>
-
-        {content.articleLinks && content.articleLinks.length > 0 ? (
-          <nav
-            aria-label={copy.landing.relatedPages}
-            className={styles.articleLinks}
-          >
-            <strong>{copy.landing.relatedPages}</strong>
-            <ul>
-              {content.articleLinks.map((articleLink): ReactNode => (
-                <li key={articleLink.slug}>
-                  <Link href={`/${locale}/blog/${articleLink.slug}`}>
-                    {articleLink.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        ) : null}
 
         {relatedItems && relatedItems.length > 0 ? (
           <RelatedScenariosCarousel

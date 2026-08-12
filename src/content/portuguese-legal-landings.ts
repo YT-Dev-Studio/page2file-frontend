@@ -11,10 +11,10 @@ export const portugueseLegalLandingContent: Partial<
     description:
       "Como o Page 2 File trata conteúdo web, ficheiros temporários, cookies, dados analíticos e pedidos de privacidade.",
     lead:
-      "Esta Política explica que dados o Page 2 File trata quando visita o site, utiliza a extensão do Chrome ou converte uma página web em PDF ou PowerPoint.",
+      "Esta Política explica que dados o Page 2 File trata quando visita o site, utiliza a extensão do Chrome ou converte uma página web em PDF.",
     sections: [
       { heading: "Operador e âmbito", body: "{{entityName}}, com sede em {{address}}, opera o Page 2 File e é responsável pelo tratamento descrito. Esta política aplica-se ao site, à extensão e aos serviços de conversão relacionados." },
-      { heading: "Definições", body: "«Serviço» significa o Page 2 File e as suas funções. «Conteúdo de conversão» inclui o URL, conteúdo visível, opções e o PDF ou PowerPoint gerado. «Dados pessoais» são informações que identificam ou podem ser razoavelmente associadas a uma pessoa." },
+      { heading: "Definições", body: "«Serviço» significa o Page 2 File e as suas funções. «Conteúdo de conversão» inclui o URL, conteúdo visível, opções e o PDF gerado. «Dados pessoais» são informações que identificam ou podem ser razoavelmente associadas a uma pessoa." },
       { heading: "Informações que tratamos", body: "Consoante a utilização, podemos tratar dados técnicos do pedido, endereço IP, navegador e dispositivo, páginas visitadas, parâmetros de campanha permitidos, URL público ou conteúdo visível no separador ativo, definições, identificadores temporários e ficheiros gerados." },
       { heading: "Informações que não pedimos", body: "O Page 2 File não exige conta nem pede cartões, moradas de faturação ou palavras-passe do site de origem. A extensão utiliza a página já aberta e não recebe a palavra-passe usada para lhe aceder." },
       { heading: "Como utilizamos as informações", body: "Tratamos informações para fornecer pré-visualizações e ficheiros, evitar abusos, diagnosticar falhas, manter a fiabilidade, compreender a utilização agregada, responder a pedidos e cumprir a lei. Não vendemos dados pessoais." },
@@ -41,10 +41,10 @@ export const portugueseLegalLandingContent: Partial<
     description:
       "Termos para utilizar o Page 2 File, incluindo origens permitidas, limites, responsabilidades e disponibilidade.",
     lead:
-      "Estes Termos regem a utilização do site Page 2 File, da extensão do Chrome e dos serviços de conversão para PDF ou PowerPoint.",
+      "Estes Termos regem a utilização do site Page 2 File, da extensão do Chrome e dos serviços de conversão para PDF.",
     sections: [
       { heading: "Acordo e operador", body: "Ao aceder ou utilizar o Page 2 File, aceita estes Termos. O Serviço é operado por {{entityName}}, com sede em {{address}}. Se agir por uma organização, confirma que pode aceitar estes Termos em nome dela." },
-      { heading: "Definições", body: "«Serviço» inclui o site, a extensão e as funções de conversão. «Conteúdo de origem» é uma página, conteúdo do separador ativo ou outro material enviado. «Resultado» é um PDF, PowerPoint, pré-visualização ou outro ficheiro gerado." },
+      { heading: "Definições", body: "«Serviço» inclui o site, a extensão e as funções de conversão. «Conteúdo de origem» é uma página, conteúdo do separador ativo ou outro material enviado. «Resultado» é um PDF, pré-visualização ou outro ficheiro gerado." },
       { heading: "Licença limitada", body: "Concedemos-lhe um direito revogável, não exclusivo, intransmissível e limitado de utilizar o Serviço segundo estes Termos. Não é transferida a propriedade do software, marca ou outro material protegido." },
       { heading: "Origens permitidas e sua responsabilidade", body: "Só pode converter conteúdo ao qual tenha direito legal de acesso, tratamento, reprodução e transferência. É responsável pelos URLs, conteúdo, definições e pela utilização ou distribuição de cada Resultado." },
       { heading: "Utilização proibida", body: "Não utilize o Serviço para violar a lei ou direitos, contornar pagamentos ou controlos, distribuir malware, enviar conteúdo ilícito, sondar redes privadas, interferir com a segurança, sobrecarregar sistemas, automatizar pedidos excessivos, fazer engenharia inversa de partes protegidas ou deturpar ficheiros." },

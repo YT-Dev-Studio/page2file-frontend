@@ -30,32 +30,7 @@ const RUSSIAN_BLOG_DIRECTORY = join(ROOT, "content", "ru", "blog");
 const RUSSIAN_UPDATE_DIRECTORY = join(ROOT, "content", "ru", "updates");
 const FORBIDDEN_PATTERN =
   /<script|<iframe|dangerouslySetInnerHTML|javascript:/i;
-const EXPECTED_BLOG_SLUGS = [
-  "save-webpage-as-pdf",
-  "why-print-to-pdf-breaks",
-  "capture-full-webpage-as-pdf",
-  "long-webpage-page-breaks",
-  "preserve-clickable-links",
-  "visual-vs-editable",
-  "html-to-pdf-safely",
-  "multi-page-website-to-pdf",
-  "webpage-to-powerpoint",
-  "website-to-powerpoint",
-  "html-to-powerpoint",
-  "sections-to-slides",
-  "screenshot-vs-editable-powerpoint",
-  "save-authenticated-webpage-as-pdf",
-  "website-types-to-pdf-or-powerpoint",
-  "webpage-capture-vs-web-scraping",
-  "export-ai-chats-privately",
-  "export-chatgpt-conversation-to-pdf",
-  "export-claude-chat-to-pdf",
-  "export-gemini-chat-to-pdf",
-  "export-other-ai-chats-to-pdf",
-  "export-whatsapp-chat-to-pdf",
-  "export-telegram-chat-to-pdf",
-  "export-browser-messenger-chats-to-pdf",
-].sort();
+const EXPECTED_BLOG_SLUGS = [];
 const INSTRUCTION_DIRECTORY = join(
   ROOT,
   "public",
@@ -193,6 +168,15 @@ const extractArticleFigures = (content) =>
   });
 
 const validateInstructionFigures = async (englishFiles, russianFiles) => {
+  if (englishFiles.length === 0) {
+    const assetSlugs = (
+      await readdir(INSTRUCTION_DIRECTORY, { withFileTypes: true })
+    ).filter((entry) => entry.isDirectory());
+    if (assetSlugs.length > 0) {
+      throw new Error("An empty blog corpus must not retain instruction assets.");
+    }
+    return;
+  }
   if (expectedSceneCount !== 127) {
     throw new Error(
       `Instruction scene registry must contain 127 scenes, found ${expectedSceneCount}.`,
@@ -304,7 +288,7 @@ const validateInstructionFigures = async (englishFiles, russianFiles) => {
     })
     .sort();
   if (assetSlugs.join("|") !== EXPECTED_BLOG_SLUGS.join("|")) {
-    throw new Error("Instruction asset directories must match the 24 blog slugs.");
+    throw new Error("Instruction asset directories must match the published blog slugs.");
   }
   const assetSources = [];
   for (const slug of assetSlugs) {
@@ -501,7 +485,7 @@ const run = async () => {
     .sort();
   if (blogSlugs.join("|") !== EXPECTED_BLOG_SLUGS.join("|")) {
     throw new Error(
-      "The English blog corpus must match the approved 24-cluster content map.",
+      "The English blog corpus must match the approved published content map.",
     );
   }
   if (updateFiles.length !== 0) {
@@ -666,15 +650,7 @@ const run = async () => {
   }
   const requiredLandingRoutes = [
     "page2pdf-gpt",
-    "web2pdf-gpt",
     "html2pdf-gpt",
-    "one-page2powerpoint-gpt",
-    "web2powerpoint-gpt",
-    "export-ai-chat-to-pdf",
-    "export-chatgpt-to-pdf",
-    "export-claude-to-pdf",
-    "export-gemini-to-pdf",
-    "export-grok-to-pdf",
     "privacy",
     "terms",
     "about",

@@ -49,10 +49,6 @@ for (const locale of locales) {
     }
   }
 
-  if (filenames.length === 0) {
-    continue;
-  }
-
   const entries = filenames.map((filename) => {
     const slug = filename.slice(0, -4);
     const identifier = toIdentifier(locale, slug);

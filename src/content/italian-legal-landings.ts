@@ -11,10 +11,10 @@ export const italianLegalLandingContent: Partial<
     description:
       "Come Page 2 File tratta contenuti web, file temporanei, cookie, dati analitici e richieste relative alla privacy.",
     lead:
-      "Questa Informativa spiega quali dati tratta Page 2 File quando visiti il sito, usi l’estensione Chrome o converti una pagina web in PDF o PowerPoint.",
+      "Questa Informativa spiega quali dati tratta Page 2 File quando visiti il sito, usi l’estensione Chrome o converti una pagina web in PDF.",
     sections: [
       { heading: "Titolare e ambito", body: "{{entityName}}, con sede in {{address}}, gestisce Page 2 File ed è responsabile del trattamento descritto. Questa informativa si applica al sito, all’estensione e ai relativi servizi di conversione." },
-      { heading: "Definizioni", body: "“Servizio” indica Page 2 File e le sue funzioni. “Contenuto della conversione” include l’URL, il contenuto visibile, le opzioni e il PDF o PowerPoint generato. “Dati personali” sono informazioni che identificano o possono essere ragionevolmente collegate a una persona." },
+      { heading: "Definizioni", body: "“Servizio” indica Page 2 File e le sue funzioni. “Contenuto della conversione” include l’URL, il contenuto visibile, le opzioni e il PDF generato. “Dati personali” sono informazioni che identificano o possono essere ragionevolmente collegate a una persona." },
       { heading: "Informazioni che trattiamo", body: "In base all’uso possiamo trattare dati tecnici della richiesta, indirizzo IP, browser e dispositivo, pagine visitate, parametri di campagna consentiti, URL pubblico o contenuto visibile nella scheda attiva, impostazioni, identificativi temporanei e file generati." },
       { heading: "Informazioni che non chiediamo", body: "Page 2 File non richiede un account e non chiede carte di pagamento, indirizzi di fatturazione o password del sito di origine. L’estensione usa la pagina già aperta e non riceve la password usata per accedervi." },
       { heading: "Come usiamo le informazioni", body: "Trattiamo informazioni per fornire anteprime e file, prevenire abusi, diagnosticare errori, mantenere l’affidabilità, comprendere l’uso aggregato, rispondere alle richieste e rispettare la legge. Non vendiamo dati personali." },
@@ -41,10 +41,10 @@ export const italianLegalLandingContent: Partial<
     description:
       "Legga i termini per usare Page 2 File, incluse fonti consentite, limiti, responsabilità, disponibilità del servizio e modalità di contatto.",
     lead:
-      "Questi Termini regolano l’uso del sito Page 2 File, dell’estensione Chrome e dei servizi di conversione in PDF o PowerPoint.",
+      "Questi Termini regolano l’uso del sito Page 2 File, dell’estensione Chrome e dei servizi di conversione in PDF.",
     sections: [
       { heading: "Accettazione e gestore", body: "Accedendo o usando Page 2 File accetti questi Termini. Il Servizio è gestito da {{entityName}}, con sede in {{address}}. Se agisci per un’organizzazione, confermi di poter accettare i Termini per suo conto." },
-      { heading: "Definizioni", body: "“Servizio” include il sito, l’estensione e le funzioni di conversione. “Contenuto di origine” è una pagina, il contenuto della scheda attiva o altro materiale inviato. “Risultato” è un PDF, PowerPoint, anteprima o altro file generato." },
+      { heading: "Definizioni", body: "“Servizio” include il sito, l’estensione e le funzioni di conversione. “Contenuto di origine” è una pagina, il contenuto della scheda attiva o altro materiale inviato. “Risultato” è un PDF, anteprima o altro file generato." },
       { heading: "Licenza limitata", body: "Ti concediamo un diritto revocabile, non esclusivo, non trasferibile e limitato di usare il Servizio secondo questi Termini. Non viene trasferita la proprietà di software, marchi o altro materiale protetto." },
       { heading: "Fonti consentite e tua responsabilità", body: "Puoi convertire solo contenuti a cui hai diritto legale di accedere, che puoi trattare, riprodurre e scaricare. Sei responsabile di URL, contenuti, impostazioni e dell’uso o distribuzione di ogni Risultato." },
       { heading: "Uso vietato", body: "Non usare il Servizio per violare la legge o diritti, aggirare pagamenti o controlli, distribuire malware, inviare contenuti illeciti, sondare reti private, interferire con la sicurezza, sovraccaricare sistemi, automatizzare richieste eccessive, decodificare parti protette o rappresentare in modo ingannevole i file." },

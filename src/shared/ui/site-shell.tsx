@@ -4,8 +4,8 @@ import type { ReactNode } from "react";
 import page2FileLogo from "@/app/assets/logo.png";
 import { getLandingContent } from "@/content/landings";
 import { AnalyticsBootstrap } from "@/features/analytics/analytics-bootstrap";
+import { getExtensionCopy } from "@/features/extension/extension-copy";
 import type { Locale } from "@/shared/i18n/locales";
-import { getMessages } from "@/shared/i18n/messages";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { SiteHeader } from "./site-header";
 import styles from "./ui.module.css";
@@ -19,15 +19,9 @@ export const Container = ({ children }: { children: ReactNode }): ReactNode => (
   <div className={styles.container}>{children}</div>
 );
 
-const DevelopmentNotice = ({ locale }: { locale: Locale }): ReactNode => (
-  <div className={styles.developmentNotice}>
-    <span aria-hidden="true" className={styles.developmentNoticeDot} />
-    <p>{getMessages(locale).developmentNotice}</p>
-  </div>
-);
-
 const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getSiteCopy(locale).footer;
+  const extensionCopy = getExtensionCopy(locale);
   const about = getLandingContent(locale, "about");
 
   return (
@@ -49,17 +43,11 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
               />
               <span>PAGE 2 FILE</span>
             </Link>
-            <p>{copy.brandDescription}</p>
+            <p>{extensionCopy.homeLead}</p>
           </div>
 
           <nav aria-label={copy.servicesTitle} className={styles.footerLinks}>
             <h2>{copy.servicesTitle}</h2>
-            <Link href={`/${locale}/convert-webpage-to-pdf`}>
-              {copy.links.webpageToPdf}
-            </Link>
-            <Link href={`/${locale}/convert-webpage-to-powerpoint`}>
-              {copy.links.webpageToPowerpoint}
-            </Link>
             <Link href={`/${locale}/chrome-extension/how-to-use`}>
               {copy.links.extension}
             </Link>
@@ -70,12 +58,7 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
             <Link href={`/${locale}/page2pdf-gpt`}>
               Webpage 2 PDF
             </Link>
-            <Link href={`/${locale}/web2pdf-gpt`}>Web 2 PDF</Link>
             <Link href={`/${locale}/html2pdf-gpt`}>HTML 2 PDF</Link>
-            <Link href={`/${locale}/one-page2powerpoint-gpt`}>
-              One Page 2 PowerPoint
-            </Link>
-            <Link href={`/${locale}/web2powerpoint-gpt`}>Web 2 PowerPoint</Link>
           </nav>
 
           <nav aria-label={copy.companyTitle} className={styles.footerLinks}>
@@ -83,7 +66,6 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
             <Link href={`/${locale}/about`}>
               {about?.title ?? "About Page 2 File"}
             </Link>
-            <Link href={`/${locale}/blog`}>{copy.links.blog}</Link>
             <Link href={`/${locale}/privacy`}>{copy.links.privacy}</Link>
           </nav>
         </div>
@@ -105,7 +87,6 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
 export const SiteShell = ({ children, locale }: SiteShellProps): ReactNode => (
   <div className={styles.shell}>
     <SiteHeader locale={locale} />
-    <DevelopmentNotice locale={locale} />
     {children}
     <SiteFooter locale={locale} />
     <AnalyticsBootstrap />

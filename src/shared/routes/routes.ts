@@ -1,52 +1,23 @@
 export type StaticRoute =
   | ""
-  | "convert-webpage-to-pdf"
-  | "convert-webpage-to-powerpoint"
   | "chrome-extension/how-to-use"
   | "page2pdf-gpt"
-  | "web2pdf-gpt"
   | "html2pdf-gpt"
-  | "one-page2powerpoint-gpt"
-  | "web2powerpoint-gpt"
-  | "export-ai-chat-to-pdf"
-  | "export-chatgpt-to-pdf"
-  | "export-claude-to-pdf"
-  | "export-gemini-to-pdf"
-  | "export-grok-to-pdf"
-  | "blog"
-  | "updates"
-  | "changelog"
   | "privacy"
   | "terms"
   | "about";
 
 export type PublicPageFamily =
   | "home"
-  | "converter"
   | "extension"
   | "gpt-workflow"
-  | "chat-export"
-  | "content"
   | "legal";
 
 export const staticRoutes: ReadonlyArray<StaticRoute> = [
   "",
-  "convert-webpage-to-pdf",
-  "convert-webpage-to-powerpoint",
   "chrome-extension/how-to-use",
   "page2pdf-gpt",
-  "web2pdf-gpt",
   "html2pdf-gpt",
-  "one-page2powerpoint-gpt",
-  "web2powerpoint-gpt",
-  "export-ai-chat-to-pdf",
-  "export-chatgpt-to-pdf",
-  "export-claude-to-pdf",
-  "export-gemini-to-pdf",
-  "export-grok-to-pdf",
-  "blog",
-  "updates",
-  "changelog",
   "privacy",
   "terms",
   "about",
@@ -54,25 +25,12 @@ export const staticRoutes: ReadonlyArray<StaticRoute> = [
 
 const publicPageFamilyByRoute: Record<StaticRoute, PublicPageFamily> = {
   "": "home",
-  "blog": "content",
-  "changelog": "content",
   "chrome-extension/how-to-use": "extension",
-  "convert-webpage-to-pdf": "converter",
-  "convert-webpage-to-powerpoint": "converter",
-  "export-ai-chat-to-pdf": "chat-export",
-  "export-chatgpt-to-pdf": "chat-export",
-  "export-claude-to-pdf": "chat-export",
-  "export-gemini-to-pdf": "chat-export",
-  "export-grok-to-pdf": "chat-export",
   "html2pdf-gpt": "gpt-workflow",
-  "one-page2powerpoint-gpt": "gpt-workflow",
   "page2pdf-gpt": "gpt-workflow",
   "privacy": "legal",
   "terms": "legal",
   "about": "legal",
-  "updates": "content",
-  "web2pdf-gpt": "gpt-workflow",
-  "web2powerpoint-gpt": "gpt-workflow",
 };
 
 export const technicalRoutePrefixes: ReadonlyArray<string> = [

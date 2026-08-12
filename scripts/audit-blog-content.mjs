@@ -207,6 +207,20 @@ for (const locale of locales) {
   }
 }
 
+if (filesByLocale.en.length === 0) {
+  if (writeReview) {
+    await writeFile(
+      join(root, "SEO", "editorial-review.csv"),
+      "locale,slug,status,blocker\n",
+      "utf8",
+    );
+  }
+  console.log(
+    `Editorial audit checked an empty, locale-matched blog corpus${writeReview ? "; review CSV updated" : "; read-only mode"}.`,
+  );
+  process.exit(0);
+}
+
 const validBlogPaths = new Set(
   filesByLocale.en.flatMap((name) => {
     const slug = name.replace(/\.mdx$/, "");

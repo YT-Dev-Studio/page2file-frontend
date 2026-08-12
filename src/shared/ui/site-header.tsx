@@ -66,7 +66,6 @@ export const SiteHeader = ({
         <SiteNavigation
           ariaLabel={copy.navigationLabel}
           className={styles.desktopNavigation}
-          labels={copy.navigation}
           locale={locale}
         />
 
@@ -90,7 +89,6 @@ export const SiteHeader = ({
           <div className={styles.mobilePanel}>
             <SiteNavigation
               ariaLabel={copy.mobileNavigationLabel}
-              labels={copy.navigation}
               locale={locale}
             />
             <div className={styles.mobileActions}>

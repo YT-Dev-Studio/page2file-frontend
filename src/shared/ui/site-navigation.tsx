@@ -3,15 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import { getLandingContent } from "@/content/landings";
+import { getExtensionCopy } from "@/features/extension/extension-copy";
 import type { Locale } from "@/shared/i18n/locales";
 import styles from "./site-header.module.css";
-
-type NavigationLabels = {
-  blog: string;
-  faq: string;
-  features: string;
-  howItWorks: string;
-};
 
 type NavigationItem = {
   activePrefix?: string;
@@ -22,12 +17,8 @@ type NavigationItem = {
 type SiteNavigationProps = {
   ariaLabel: string;
   className?: string;
-  labels: NavigationLabels;
   locale: Locale;
 };
-
-const isHomePath = (pathname: string, locale: Locale): boolean =>
-  pathname === `/${locale}` || pathname === `/${locale}/`;
 
 const isNavigationItemActive = (
   item: NavigationItem,
@@ -40,51 +31,43 @@ const isNavigationItemActive = (
 export const SiteNavigation = ({
   ariaLabel,
   className,
-  labels,
   locale,
 }: SiteNavigationProps): ReactNode => {
   const pathname = usePathname();
-  const home = isHomePath(pathname, locale);
-  const homeItems: ReadonlyArray<NavigationItem> = [
+  const extensionCopy = getExtensionCopy(locale);
+  const about = getLandingContent(locale, "about");
+  const items: ReadonlyArray<NavigationItem> = [
     {
-      href: `/${locale}#features`,
-      label: labels.features,
+      href: `/${locale}`,
+      label: extensionCopy.homeLabel,
     },
     {
-      href: `/${locale}#how-it-works`,
-      label: labels.howItWorks,
+      activePrefix: `/${locale}/chrome-extension/how-to-use`,
+      href: `/${locale}/chrome-extension/how-to-use`,
+      label: extensionCopy.guideLabel,
     },
     {
-      href: `/${locale}#blog`,
-      label: labels.blog,
+      activePrefix: `/${locale}/page2pdf-gpt`,
+      href: `/${locale}/page2pdf-gpt`,
+      label: "Webpage 2 PDF",
     },
     {
-      href: `/${locale}#faq`,
-      label: labels.faq,
-    },
-  ];
-  const productItems: ReadonlyArray<NavigationItem> = [
-    {
-      href: `/${locale}/convert-webpage-to-pdf`,
-      label: "Web 2 PDF",
+      activePrefix: `/${locale}/html2pdf-gpt`,
+      href: `/${locale}/html2pdf-gpt`,
+      label: "HTML 2 PDF",
     },
     {
-      href: `/${locale}/convert-webpage-to-powerpoint`,
-      label: "Web 2 PowerPoint",
-    },
-    {
-      activePrefix: `/${locale}/blog`,
-      href: `/${locale}/blog`,
-      label: labels.blog,
+      activePrefix: `/${locale}/about`,
+      href: `/${locale}/about`,
+      label: about?.title ?? "About Page 2 File",
     },
   ];
-  const items = home ? homeItems : productItems;
   const navigationClassName = className ?? "";
 
   return (
     <nav aria-label={ariaLabel} className={navigationClassName}>
       {items.map((item): ReactNode => {
-        const active = !home && isNavigationItemActive(item, pathname);
+        const active = isNavigationItemActive(item, pathname);
         return (
           <Link
             aria-current={active ? "page" : undefined}

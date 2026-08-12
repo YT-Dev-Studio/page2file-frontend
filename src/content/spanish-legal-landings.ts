@@ -11,10 +11,10 @@ export const spanishLegalLandingContent: Partial<
     description:
       "Cómo Page 2 File trata contenido web, archivos temporales, cookies, datos analíticos y solicitudes de privacidad.",
     lead:
-      "Esta Política explica qué trata Page 2 File cuando visita el sitio, usa la extensión de Chrome o convierte una página en PDF o PowerPoint.",
+      "Esta Política explica qué trata Page 2 File cuando visita el sitio, usa la extensión de Chrome o convierte una página en PDF.",
     sections: [
       { heading: "Operador y alcance", body: "{{entityName}}, con domicilio en {{address}}, opera Page 2 File y es responsable del tratamiento descrito. Esta política se aplica al sitio, la extensión y los servicios de conversión relacionados." },
-      { heading: "Definiciones", body: "«Servicio» significa Page 2 File y sus funciones. «Contenido de conversión» incluye la URL, el contenido visible, las opciones y el PDF o PowerPoint generado. «Datos personales» es información que identifica o puede vincularse razonablemente con una persona." },
+      { heading: "Definiciones", body: "«Servicio» significa Page 2 File y sus funciones. «Contenido de conversión» incluye la URL, el contenido visible, las opciones y el PDF generado. «Datos personales» es información que identifica o puede vincularse razonablemente con una persona." },
       { heading: "Información que tratamos", body: "Según el uso, podemos tratar datos técnicos de la solicitud, dirección IP, navegador y dispositivo, páginas visitadas, parámetros de campaña permitidos, URL pública o contenido visible en la pestaña activa, ajustes, identificadores temporales y archivos generados." },
       { heading: "Información que no solicitamos", body: "Page 2 File no exige una cuenta ni solicita tarjetas, direcciones de facturación o contraseñas del sitio de origen. La extensión usa la página ya abierta y no recibe la contraseña utilizada para acceder a ella." },
       { heading: "Cómo usamos la información", body: "Tratamos información para ofrecer vistas previas y archivos, evitar abusos, diagnosticar fallos, mantener la fiabilidad, comprender el uso agregado, responder solicitudes y cumplir la ley. No vendemos datos personales." },
@@ -41,10 +41,10 @@ export const spanishLegalLandingContent: Partial<
     description:
       "Condiciones para usar Page 2 File, incluidas fuentes permitidas, límites, responsabilidades y disponibilidad.",
     lead:
-      "Estas Condiciones rigen el uso del sitio Page 2 File, la extensión de Chrome y los servicios de conversión a PDF o PowerPoint.",
+      "Estas Condiciones rigen el uso del sitio Page 2 File, la extensión de Chrome y los servicios de conversión a PDF.",
     sections: [
       { heading: "Acuerdo y operador", body: "Al acceder o usar Page 2 File acepta estas Condiciones. El Servicio lo opera {{entityName}}, con domicilio en {{address}}. Si actúa por una organización, confirma que puede aceptar estas Condiciones en su nombre." },
-      { heading: "Definiciones", body: "«Servicio» incluye el sitio, la extensión y las funciones de conversión. «Contenido de origen» es una página, contenido de la pestaña activa u otro material enviado. «Resultado» es un PDF, PowerPoint, vista previa u otro archivo generado." },
+      { heading: "Definiciones", body: "«Servicio» incluye el sitio, la extensión y las funciones de conversión. «Contenido de origen» es una página, contenido de la pestaña activa u otro material enviado. «Resultado» es un PDF, vista previa u otro archivo generado." },
       { heading: "Licencia limitada", body: "Le concedemos un derecho revocable, no exclusivo, intransferible y limitado para usar el Servicio conforme a estas Condiciones. No se transfiere propiedad sobre software, marca u otro material protegido." },
       { heading: "Fuentes permitidas y su responsabilidad", body: "Solo puede convertir contenido al que tenga derecho legal de acceso, tratamiento, reproducción y descarga. Responde de las URL, el contenido, los ajustes y del uso o distribución de cada Resultado." },
       { heading: "Uso prohibido", body: "No use el Servicio para infringir la ley o derechos, eludir pagos o controles, distribuir malware, enviar contenido ilícito, sondear redes privadas, interferir con la seguridad, sobrecargar sistemas, automatizar solicitudes excesivas, aplicar ingeniería inversa a partes protegidas o tergiversar archivos." },

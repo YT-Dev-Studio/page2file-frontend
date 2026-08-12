@@ -4,7 +4,7 @@ import { getLandingContent } from "@/content/landings";
 import { WorkflowLanding } from "./workflow-landing";
 
 const requireLanding = (
-  route: "page2pdf-gpt" | "html2pdf-gpt" | "web2powerpoint-gpt",
+  route: "page2pdf-gpt" | "html2pdf-gpt",
 ) => {
   const content = getLandingContent("en", route);
   if (!content) {
@@ -14,7 +14,7 @@ const requireLanding = (
 };
 
 describe("WorkflowLanding calls to action", () => {
-  test.each(["page2pdf-gpt", "html2pdf-gpt", "web2powerpoint-gpt"] as const)(
+  test.each(["page2pdf-gpt", "html2pdf-gpt"] as const)(
     "links %s to its configured destination without an extension guide action",
     (route) => {
       render(
@@ -36,8 +36,8 @@ describe("WorkflowLanding calls to action", () => {
               name: "Open GPT HTML 2 PDF",
             }
           : {
-              href: "https://chatgpt.com/gpts",
-              name: "Browse GPTs",
+              href: "https://chatgpt.com/g/g-6a7227252b1081918497653732efb3a8-web2file-html-to-pdf-converter",
+              name: "Open GPT HTML 2 PDF",
             };
 
       expect(
@@ -73,13 +73,6 @@ describe("WorkflowLanding calls to action", () => {
         expect(
           screen.getByText("Give the GPT App one HTML file."),
         ).toBeTruthy();
-      } else {
-        expect(
-          screen.getByRole("heading", {
-            name: "Three steps from source to file",
-          }),
-        ).toBeTruthy();
-        expect(screen.getByText("Provide the source")).toBeTruthy();
       }
     },
   );

@@ -15,73 +15,73 @@ import styles from "./not-found-page.module.css";
 
 type NotFoundActions = {
   home: string;
-  converter: string;
+  guide: string;
 };
 
 const actions: Record<Locale, NotFoundActions> = {
   en: {
     home: "Return home",
-    converter: "Open the PDF converter",
+    guide: "Open the extension guide",
   },
   ru: {
     home: "Вернуться на главную",
-    converter: "Открыть конвертер PDF",
+    guide: "Открыть инструкцию по расширению",
   },
   de: {
     home: "Zur Startseite",
-    converter: "PDF-Konverter öffnen",
+    guide: "Anleitung zur Erweiterung öffnen",
   },
   fr: {
     home: "Retour à l’accueil",
-    converter: "Ouvrir le convertisseur PDF",
+    guide: "Ouvrir le guide de l’extension",
   },
   es: {
     home: "Volver al inicio",
-    converter: "Abrir el convertidor PDF",
+    guide: "Abrir la guía de la extensión",
   },
   nl: {
     home: "Terug naar de startpagina",
-    converter: "PDF-converter openen",
+    guide: "Handleiding voor de extensie openen",
   },
   pt: {
     home: "Voltar ao início",
-    converter: "Abrir o conversor PDF",
+    guide: "Abrir o guia da extensão",
   },
   it: {
     home: "Torna alla home",
-    converter: "Apri il convertitore PDF",
+    guide: "Apri la guida dell’estensione",
   },
   pl: {
     home: "Wróć na stronę główną",
-    converter: "Otwórz konwerter PDF",
+    guide: "Otwórz instrukcję rozszerzenia",
   },
   cs: {
     home: "Zpět na domovskou stránku",
-    converter: "Otevřít konvertor PDF",
+    guide: "Otevřít návod k rozšíření",
   },
   sv: {
     home: "Tillbaka till startsidan",
-    converter: "Öppna PDF-konverteraren",
+    guide: "Öppna guiden till tillägget",
   },
   no: {
     home: "Tilbake til startsiden",
-    converter: "Åpne PDF-konvertereren",
+    guide: "Åpne veiledningen for utvidelsen",
   },
   da: {
     home: "Tilbage til startsiden",
-    converter: "Åbn PDF-konverteren",
+    guide: "Åbn vejledningen til udvidelsen",
   },
   fi: {
     home: "Takaisin etusivulle",
-    converter: "Avaa PDF-muunnin",
+    guide: "Avaa laajennuksen käyttöohje",
   },
   ro: {
     home: "Înapoi la pagina principală",
-    converter: "Deschide convertorul PDF",
+    guide: "Deschide ghidul extensiei",
   },
   hu: {
     home: "Vissza a kezdőlapra",
-    converter: "PDF-konverter megnyitása",
+    guide: "Bővítmény útmutatójának megnyitása",
   },
 };
 
@@ -101,9 +101,9 @@ export const NotFoundPage = (): ReactNode => {
             </Link>
             <Link
               className={uiStyles.secondaryButton}
-              href={`/${locale}/convert-webpage-to-pdf`}
+              href={`/${locale}/chrome-extension/how-to-use`}
             >
-              {actionCopy.converter}
+              {actionCopy.guide}
             </Link>
           </div>
         </PublicHero>

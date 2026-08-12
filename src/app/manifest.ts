@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Page 2 File",
     short_name: "Page 2 File",
-    description: "Preview webpage sections as PDF pages or PowerPoint slides.",
+    description: "Save the current webpage or a supported browser chat as PDF.",
     start_url: "/en",
     display: "standalone",
     background_color: "#f4f7fb",

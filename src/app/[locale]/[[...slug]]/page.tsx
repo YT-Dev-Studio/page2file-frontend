@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { blogEntries, getBlogEntry, getUpdateEntry, updateEntries } from "@/content/content-registry";
 import { getLandingContent } from "@/content/landings";
 import { resolvePublicPage } from "@/features/routing/public-page-resolver";
 import { isLocale, localeRegistry, type Locale } from "@/shared/i18n/locales";
@@ -20,8 +19,6 @@ type PageProps = {
 
 const staticContentRoutes: ReadonlyArray<string> = [
   ...staticRoutes,
-  ...blogEntries.map((entry): string => `blog/${entry.slug}`),
-  ...updateEntries.map((entry): string => `updates/${entry.slug}`),
 ];
 
 export const generateStaticParams = (): Array<RouteParams> => {
@@ -49,16 +46,6 @@ const getRouteMetadata = (
   if (!route) {
     return buildMetadata({ locale, route, ...getSeoCopy(locale, "home") });
   }
-  if (route === "convert-webpage-to-pdf") {
-    return buildMetadata({ locale, route, ...getSeoCopy(locale, "pdf") });
-  }
-  if (route === "convert-webpage-to-powerpoint") {
-    return buildMetadata({
-      locale,
-      route,
-      ...getSeoCopy(locale, "powerpoint"),
-    });
-  }
   if (route === "chrome-extension/how-to-use") {
     return buildMetadata({ locale, route, ...getSeoCopy(locale, "guide") });
   }
@@ -70,55 +57,6 @@ const getRouteMetadata = (
       ...getSeoCopy(locale, key),
       noindex: true,
     });
-  }
-  if (segments[0] === "blog" && segments.length === 2) {
-    const entry = getBlogEntry(locale, segments[1]);
-    return entry
-      ? buildMetadata({
-          locale,
-          route,
-          title: entry.title,
-          description: entry.description,
-          kind: "article",
-          publishedAt: entry.publishedAt,
-          updatedAt: entry.updatedAt,
-          author: entry.author,
-        })
-      : buildMetadata({
-          locale,
-          route,
-          ...getSeoCopy(locale, "notFound"),
-          noindex: true,
-        });
-  }
-  if (segments[0] === "updates" && segments.length === 2) {
-    const entry = getUpdateEntry(locale, segments[1]);
-    return entry
-      ? buildMetadata({
-          locale,
-          route,
-          title: entry.title,
-          description: entry.description,
-          kind: "article",
-          publishedAt: entry.publishedAt,
-          updatedAt: entry.updatedAt,
-          author: entry.author,
-        })
-      : buildMetadata({
-          locale,
-          route,
-          ...getSeoCopy(locale, "notFound"),
-          noindex: true,
-        });
-  }
-  if (route === "blog") {
-    return buildMetadata({ locale, route, ...getSeoCopy(locale, "blog") });
-  }
-  if (route === "updates") {
-    return buildMetadata({ locale, route, ...getSeoCopy(locale, "updates") });
-  }
-  if (route === "changelog") {
-    return buildMetadata({ locale, route, ...getSeoCopy(locale, "changelog") });
   }
   if (isStaticRoute(route)) {
     const content = getLandingContent(locale, route);

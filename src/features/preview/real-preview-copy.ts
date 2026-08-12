@@ -31,7 +31,7 @@ export type RealPreviewCopy = {
   renderFinal: string;
   openDownload: string;
   cancel: string;
-  retryFromConverter: string;
+  openExtensionGuide: string;
   revision: (value: number) => string;
   dimensions: (section: BackendPreviewSection) => string;
   fidelity: Record<BackendPreviewSection["fidelity"], string>;
@@ -152,7 +152,7 @@ const realPreviewCopy: Record<
     renderFinal: "Render final file",
     openDownload: "Open download",
     cancel: "Cancel conversion",
-    retryFromConverter: "Start a new conversion",
+    openExtensionGuide: "Open the extension guide",
     revision: (value: number): string => `Revision ${value}`,
     dimensions: (section: BackendPreviewSection): string =>
       `${Math.round(section.width)} × ${Math.round(section.height)} px`,
@@ -281,7 +281,7 @@ const realPreviewCopy: Record<
     renderFinal: "Создать итоговый файл",
     openDownload: "Открыть скачивание",
     cancel: "Отменить конвертацию",
-    retryFromConverter: "Начать новую конвертацию",
+    openExtensionGuide: "Открыть инструкцию по расширению",
     revision: (value: number): string => `Ревизия ${value}`,
     dimensions: (section: BackendPreviewSection): string =>
       `${Math.round(section.width)} × ${Math.round(section.height)} пкс`,
@@ -411,7 +411,7 @@ const realPreviewCopy: Record<
     renderFinal: "Finale Datei erstellen",
     openDownload: "Download öffnen",
     cancel: "Konvertierung abbrechen",
-    retryFromConverter: "Neue Konvertierung starten",
+    openExtensionGuide: "Anleitung zur Erweiterung öffnen",
     revision: (value: number): string => `Version ${value}`,
     dimensions: (section: BackendPreviewSection): string =>
       `${Math.round(section.width)} × ${Math.round(section.height)} px`,
@@ -541,7 +541,7 @@ const realPreviewCopy: Record<
     renderFinal: "Créer le fichier final",
     openDownload: "Ouvrir le téléchargement",
     cancel: "Annuler la conversion",
-    retryFromConverter: "Démarrer une nouvelle conversion",
+    openExtensionGuide: "Ouvrir le guide de l’extension",
     revision: (value: number): string => `Version ${value}`,
     dimensions: (section: BackendPreviewSection): string =>
       `${Math.round(section.width)} × ${Math.round(section.height)} px`,
@@ -683,7 +683,7 @@ const realPreviewCopy: Record<
     renderFinal: "Crear archivo final",
     openDownload: "Abrir descarga",
     cancel: "Cancelar conversión",
-    retryFromConverter: "Iniciar una nueva conversión",
+    openExtensionGuide: "Abrir la guía de la extensión",
     revision: (value: number): string => `Revisión ${value}`,
     dimensions: (section: BackendPreviewSection): string =>
       `${Math.round(section.width)} × ${Math.round(section.height)} px`,
@@ -828,7 +828,7 @@ const realPreviewCopy: Record<
     renderFinal: "Definitief bestand maken",
     openDownload: "Download openen",
     cancel: "Conversie annuleren",
-    retryFromConverter: "Nieuwe conversie starten",
+    openExtensionGuide: "Handleiding voor de extensie openen",
     revision: (value: number): string => `Revisie ${value}`,
     dimensions: (section: BackendPreviewSection): string =>
       `${Math.round(section.width)} × ${Math.round(section.height)} px`,
@@ -974,7 +974,7 @@ const realPreviewCopy: Record<
     renderFinal: "Criar ficheiro final",
     openDownload: "Abrir transferência",
     cancel: "Cancelar conversão",
-    retryFromConverter: "Iniciar nova conversão",
+    openExtensionGuide: "Abrir o guia da extensão",
     revision: (value: number): string => `Revisão ${value}`,
     dimensions: (section: BackendPreviewSection): string =>
       `${Math.round(section.width)} × ${Math.round(section.height)} px`,
@@ -1120,7 +1120,7 @@ const realPreviewCopy: Record<
     renderFinal: "Crea file finale",
     openDownload: "Apri download",
     cancel: "Annulla conversione",
-    retryFromConverter: "Avvia nuova conversione",
+    openExtensionGuide: "Apri la guida dell’estensione",
     revision: (value: number): string => `Revisione ${value}`,
     dimensions: (section: BackendPreviewSection): string =>
       `${Math.round(section.width)} × ${Math.round(section.height)} px`,
@@ -1184,7 +1184,7 @@ const realPreviewCopy: Record<
     renderFinal: "Utwórz plik końcowy",
     openDownload: "Otwórz pobieranie",
     cancel: "Anuluj konwersję",
-    retryFromConverter: "Rozpocznij nową konwersję",
+    openExtensionGuide: "Otwórz instrukcję rozszerzenia",
     revision: (value: number): string => `Wersja ${value}`,
     dimensions: (section: BackendPreviewSection): string => `${Math.round(section.width)} × ${Math.round(section.height)} px`,
     fidelity: { native: "edytowalny", mixed: "mieszana wierność", visual: "zrzut strony" },
@@ -1237,7 +1237,7 @@ const realPreviewCopy: Record<
     renderFinal: "Vytvořit konečný soubor",
     openDownload: "Otevřít stažení",
     cancel: "Zrušit konverzi",
-    retryFromConverter: "Spustit novou konverzi",
+    openExtensionGuide: "Otevřít návod k rozšíření",
     revision: (value: number): string => `Revize ${value}`,
     dimensions: (section: BackendPreviewSection): string => `${Math.round(section.width)} × ${Math.round(section.height)} px`,
     fidelity: { native: "upravitelný", mixed: "smíšená věrnost", visual: "snímek stránky" },
@@ -1290,7 +1290,7 @@ const realPreviewCopy: Record<
     renderFinal: "Skapa slutlig fil",
     openDownload: "Öppna hämtning",
     cancel: "Avbryt konvertering",
-    retryFromConverter: "Starta en ny konvertering",
+    openExtensionGuide: "Öppna guiden till tillägget",
     revision: (value: number): string => `Version ${value}`,
     dimensions: (section: BackendPreviewSection): string => `${Math.round(section.width)} × ${Math.round(section.height)} px`,
     fidelity: { native: "redigerbar", mixed: "blandad trohet", visual: "sidbild" },
@@ -1343,7 +1343,7 @@ const realPreviewCopy: Record<
     renderFinal: "Opprett endelig fil",
     openDownload: "Åpne nedlasting",
     cancel: "Avbryt konvertering",
-    retryFromConverter: "Start en ny konvertering",
+    openExtensionGuide: "Åpne veiledningen for utvidelsen",
     revision: (value: number): string => `Versjon ${value}`,
     dimensions: (section: BackendPreviewSection): string => `${Math.round(section.width)} × ${Math.round(section.height)} px`,
     fidelity: { native: "redigerbar", mixed: "blandet trohet", visual: "sidebilde" },
@@ -1396,7 +1396,7 @@ const realPreviewCopy: Record<
     renderFinal: "Opret endelig fil",
     openDownload: "Åbn download",
     cancel: "Annullér konvertering",
-    retryFromConverter: "Start en ny konvertering",
+    openExtensionGuide: "Åbn vejledningen til udvidelsen",
     revision: (value: number): string => `Version ${value}`,
     dimensions: (section: BackendPreviewSection): string => `${Math.round(section.width)} × ${Math.round(section.height)} px`,
     fidelity: { native: "redigerbar", mixed: "blandet nøjagtighed", visual: "sidebillede" },
@@ -1449,7 +1449,7 @@ const realPreviewCopy: Record<
     renderFinal: "Luo lopullinen tiedosto",
     openDownload: "Avaa lataus",
     cancel: "Peruuta muunnos",
-    retryFromConverter: "Aloita uusi muunnos",
+    openExtensionGuide: "Avaa laajennuksen käyttöohje",
     revision: (value: number): string => `Versio ${value}`,
     dimensions: (section: BackendPreviewSection): string => `${Math.round(section.width)} × ${Math.round(section.height)} px`,
     fidelity: { native: "muokattava", mixed: "yhdistetty tarkkuus", visual: "sivukaappaus" },
@@ -1502,7 +1502,7 @@ const realPreviewCopy: Record<
     renderFinal: "Creează fișierul final",
     openDownload: "Deschide descărcarea",
     cancel: "Anulează conversia",
-    retryFromConverter: "Pornește o nouă conversie",
+    openExtensionGuide: "Deschide ghidul extensiei",
     revision: (value: number): string => `Versiunea ${value}`,
     dimensions: (section: BackendPreviewSection): string => `${Math.round(section.width)} × ${Math.round(section.height)} px`,
     fidelity: { native: "editabil", mixed: "fidelitate mixtă", visual: "instantaneu de pagină" },
@@ -1555,7 +1555,7 @@ const realPreviewCopy: Record<
     renderFinal: "Végleges fájl létrehozása",
     openDownload: "Letöltés megnyitása",
     cancel: "Konvertálás megszakítása",
-    retryFromConverter: "Új konvertálás indítása",
+    openExtensionGuide: "Bővítmény útmutatójának megnyitása",
     revision: (value: number): string => `${value}. verzió`,
     dimensions: (section: BackendPreviewSection): string => `${Math.round(section.width)} × ${Math.round(section.height)} px`,
     fidelity: { native: "szerkeszthető", mixed: "vegyes hűség", visual: "oldal-pillanatkép" },

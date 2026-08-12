@@ -1,198 +1,95 @@
 import type { ReactNode } from "react";
-import { getBlogEntry } from "@/content/content-registry";
-import { BlogCard } from "@/features/content/blog-card";
+import {
+  getExtensionCopy,
+  type ExtensionModeCopy,
+  type ExtensionStepCopy,
+} from "@/features/extension/extension-copy";
 import type { Locale } from "@/shared/i18n/locales";
-import {
-  getExtensionActionLabel,
-  getExtensionLink,
-} from "@/shared/routes/extension-link";
-import {
-  ButtonLink,
-  type ButtonLinkProps,
-} from "@/shared/ui/components/button/button";
-import { Card } from "@/shared/ui/components/card/card";
-import { FormatBadge } from "@/shared/ui/components/format-badge/format-badge";
-import { TimerIcon } from "@/shared/ui/utilities/icons/glyphs/timer-icon";
-import { HomeCopyBody } from "./home-copy-body";
-import { getHomeCopy } from "./home-copy";
-import { HomeExtensionBanner } from "./home-extension-promo";
-import { HomeSectionHeader } from "./home-section-header";
+import { Container } from "@/shared/ui/site-shell";
 import styles from "./home.module.css";
 
-type ExtensionButtonProps = Omit<ButtonLinkProps, "href"> & {
-  locale: Locale;
+type SectionIntroProps = {
+  body: string;
+  title: string;
 };
 
-export const ExtensionButtonLink = ({
-  locale,
-  ...buttonProps
-}: ExtensionButtonProps): ReactNode => {
-  const extensionLink = getExtensionLink(locale);
+const SectionIntro = ({ body, title }: SectionIntroProps): ReactNode => (
+  <header className={styles.sectionIntro}>
+    <h2>{title}</h2>
+    <p>{body}</p>
+  </header>
+);
+
+const ModeCard = ({ body, title }: ExtensionModeCopy): ReactNode => (
+  <article className={styles.modeCard}>
+    <h3>{title}</h3>
+    <p>{body}</p>
+  </article>
+);
+
+const StepCard = ({ body, title }: ExtensionStepCopy): ReactNode => (
+  <li className={styles.stepCard}>
+    <h3>{title}</h3>
+    <p>{body}</p>
+  </li>
+);
+
+export const HomeModes = ({ locale }: { locale: Locale }): ReactNode => {
+  const copy = getExtensionCopy(locale);
 
   return (
-    <ButtonLink
-      {...buttonProps}
-      href={extensionLink.href}
-      rel={extensionLink.external ? "noopener noreferrer" : undefined}
-      target={extensionLink.external ? "_blank" : undefined}
-    />
-  );
-};
-
-export const HomeHowItWorks = ({ locale }: { locale: Locale }): ReactNode => {
-  const copy = getHomeCopy(locale).howItWorks;
-  const extensionLink = getExtensionLink(locale);
-
-  return (
-    <section
-      aria-labelledby="how-it-works-title"
-      className={`${styles.contentSection} ${styles.howSection}`}
-      id="how-it-works"
-    >
-      <div className={styles.pageGutters}>
-        <HomeSectionHeader
-          body={copy.body}
-          eyebrow={copy.eyebrow}
-          id="how-it-works-title"
-          title={copy.title}
-        />
-
-        <div className={styles.howGrid}>
-          {copy.items.map((item, index): ReactNode => (
-            <Card
-              action={
-                index === 0
-                  ? {
-                      external: extensionLink.external,
-                      href: extensionLink.href,
-                      label: getExtensionActionLabel(
-                        locale,
-                        copy.extensionAction,
-                      ),
-                    }
-                  : undefined
-              }
-              body={<HomeCopyBody body={item.body} list={item.list} />}
-              className={`${styles.informationCard} ${index === 0 ? styles.installCard : ""}`.trim()}
-              key={item.title}
-              title={
-                <span className={styles.howCardHeading}>
-                  <span className={styles.stepTitle}>
-                    {copy.stepLabels[index]}
-                  </span>
-                  <span className={styles.howCardTitle}>
-                    <span>{item.title}</span>
-                    {index === 0 ? (
-                      <FormatBadge
-                        className={styles.installTimeBadge}
-                        format="master"
-                        style="subtle"
-                      >
-                        <TimerIcon />
-                        {copy.installTime}
-                      </FormatBadge>
-                    ) : null}
-                  </span>
-                </span>
-              }
-            />
-          ))}
+    <section className={styles.section} id="modes">
+      <Container>
+        <SectionIntro body={copy.modesLead} title={copy.modesTitle} />
+        <div className={styles.modeGrid}>
+          {copy.modes.map((mode): ReactNode => <ModeCard key={mode.title} {...mode} />)}
         </div>
-
-        <div className={styles.howFooter}>
-          <ButtonLink
-            className={styles.lightTextAction}
-            href={`/${locale}/chrome-extension/how-to-use`}
-            size="small"
-          >
-            {copy.action}
-          </ButtonLink>
-          <span>{copy.note}</span>
-        </div>
-      </div>
+      </Container>
     </section>
   );
 };
 
-const HomeBlogCard = ({
-  actionLabel,
-  locale,
-  slug,
-}: {
-  actionLabel: string;
-  locale: Locale;
-  slug: string;
-}): ReactNode => {
-  const entry = getBlogEntry(locale, slug);
-
-  if (!entry) {
-    throw new Error(`Missing homepage blog entry: ${slug}`);
-  }
+export const HomeSources = ({ locale }: { locale: Locale }): ReactNode => {
+  const copy = getExtensionCopy(locale);
 
   return (
-    <BlogCard actionLabel={actionLabel} entry={entry} locale={locale} />
-  );
-};
-
-export const HomeBlog = ({ locale }: { locale: Locale }): ReactNode => {
-  const copy = getHomeCopy(locale).blog;
-
-  return (
-    <section
-      aria-labelledby="home-blog-title"
-      className={styles.contentSection}
-      id="blog"
-    >
-      <div className={styles.pageGutters}>
-        <HomeSectionHeader
-          body={copy.body}
-          eyebrow={copy.eyebrow}
-          id="home-blog-title"
-          title={copy.title}
-        />
-
-        <div className={styles.blogGrid}>
-          {copy.items.map((item): ReactNode => (
-            <HomeBlogCard
-              actionLabel={copy.action}
-              key={item.slug}
-              locale={locale}
-              slug={item.slug}
-            />
-          ))}
-        </div>
-
-        <div className={styles.sectionAction}>
-          <ButtonLink
-            className={styles.lightTextAction}
-            href={`/${locale}/blog`}
-            size="small"
-          >
-            {copy.allAction}
-          </ButtonLink>
-        </div>
-      </div>
+    <section className={`${styles.section} ${styles.tintedSection}`} id="supported">
+      <Container>
+        <SectionIntro body={copy.sourcesBody} title={copy.sourcesTitle} />
+        <ul className={styles.sourceList}>
+          {copy.sources.map((source): ReactNode => <li key={source}>{source}</li>)}
+        </ul>
+      </Container>
     </section>
   );
 };
 
-export const HomeFinalCta = ({ locale }: { locale: Locale }): ReactNode => {
-  const copy = getHomeCopy(locale).finalCta;
+export const HomeProcess = ({ locale }: { locale: Locale }): ReactNode => {
+  const copy = getExtensionCopy(locale);
 
   return (
-    <section
-      aria-labelledby="home-final-cta-title"
-      className={styles.finalCtaSection}
-    >
-      <div className={styles.pageGutters}>
-        <HomeExtensionBanner
-          body={copy.body}
-          eyebrow={copy.eyebrow}
-          headingId="home-final-cta-title"
-          locale={locale}
-          title={copy.title}
-        />
-      </div>
+    <section className={styles.section} id="how-it-works">
+      <Container>
+        <SectionIntro body={copy.processBody} title={copy.processTitle} />
+        <ol className={styles.stepGrid}>
+          {copy.steps.map((step): ReactNode => <StepCard key={step.title} {...step} />)}
+        </ol>
+      </Container>
+    </section>
+  );
+};
+
+export const HomePrivacy = ({ locale }: { locale: Locale }): ReactNode => {
+  const copy = getExtensionCopy(locale);
+
+  return (
+    <section className={`${styles.section} ${styles.privacySection}`} id="privacy">
+      <Container>
+        <SectionIntro body={copy.privacyBody} title={copy.privacyTitle} />
+        <ul className={styles.privacyList}>
+          {copy.privacyPoints.map((point): ReactNode => <li key={point}>{point}</li>)}
+        </ul>
+      </Container>
     </section>
   );
 };

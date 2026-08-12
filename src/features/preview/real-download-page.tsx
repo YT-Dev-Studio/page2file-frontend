@@ -123,9 +123,9 @@ export const RealDownloadPage = ({
         {terminalJob ? (
           <p>
             <Link
-              href={`/${locale}/convert-webpage-to-${terminalJob.output === "pdf" ? "pdf" : "powerpoint"}`}
+              href={`/${locale}/chrome-extension/how-to-use`}
             >
-              {copy.retryFromConverter}
+              {copy.openExtensionGuide}
             </Link>
           </p>
         ) : null}

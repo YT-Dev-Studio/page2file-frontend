@@ -11,7 +11,7 @@ export const dutchLegalLandingContent: Partial<
     description:
       "Hoe Page 2 File webinhoud, tijdelijke conversiebestanden, cookies, analytische gegevens en privacyverzoeken verwerkt.",
     lead:
-      "Dit Privacy en gegevensgebruik legt uit welke gegevens Page 2 File verwerkt wanneer u de website bezoekt, de Chrome-extensie gebruikt of een webpagina naar PDF of PowerPoint converteert.",
+      "Dit Privacy en gegevensgebruik legt uit welke gegevens Page 2 File verwerkt wanneer u de website bezoekt, de Chrome-extensie gebruikt of een webpagina naar PDF converteert.",
     sections: [
       {
         heading: "Beheerder en toepassingsgebied",
@@ -21,7 +21,7 @@ export const dutchLegalLandingContent: Partial<
       {
         heading: "Definities",
         body:
-          "‘Dienst’ betekent Page 2 File en de conversiefuncties. ‘Conversie-inhoud’ omvat de URL, zichtbare webinhoud, geselecteerde opties en het gegenereerde PDF- of PowerPoint-bestand. ‘Persoonsgegevens’ zijn gegevens waarmee een persoon kan worden geïdentificeerd of die redelijkerwijs aan een persoon kunnen worden gekoppeld.",
+          "‘Dienst’ betekent Page 2 File en de conversiefuncties. ‘Conversie-inhoud’ omvat de URL, zichtbare webinhoud, geselecteerde opties en het gegenereerde PDF. ‘Persoonsgegevens’ zijn gegevens waarmee een persoon kan worden geïdentificeerd of die redelijkerwijs aan een persoon kunnen worden gekoppeld.",
       },
       {
         heading: "Gegevens die wij verwerken",
@@ -114,7 +114,7 @@ export const dutchLegalLandingContent: Partial<
     description:
       "Voorwaarden voor het gebruik van Page 2 File, waaronder toegestane bronnen, conversiebeperkingen, verantwoordelijkheden en beschikbaarheid.",
     lead:
-      "Deze Voorwaarden regelen uw gebruik van de Page 2 File-website, de Chrome-extensie en de diensten voor conversie naar PDF of PowerPoint.",
+      "Deze Voorwaarden regelen uw gebruik van de Page 2 File-website, de Chrome-extensie en de diensten voor conversie naar PDF.",
     sections: [
       {
         heading: "Aanvaarding en beheerder",
@@ -124,7 +124,7 @@ export const dutchLegalLandingContent: Partial<
       {
         heading: "Definities",
         body:
-          "‘Dienst’ betekent de Page 2 File-website, de Chrome-extensie en de conversiefuncties. ‘Broninhoud’ is een webpagina, inhoud van het actieve tabblad of ander materiaal dat voor conversie wordt aangeleverd. ‘Resultaat’ is een PDF, PowerPoint-bestand, voorbeeld of ander gegenereerd bestand.",
+          "‘Dienst’ betekent de Page 2 File-website, de Chrome-extensie en de conversiefuncties. ‘Broninhoud’ is een webpagina, inhoud van het actieve tabblad of ander materiaal dat voor conversie wordt aangeleverd. ‘Resultaat’ is een PDF-bestand, voorbeeld of ander gegenereerd bestand.",
       },
       {
         heading: "Beperkte licentie",
@@ -154,7 +154,7 @@ export const dutchLegalLandingContent: Partial<
       {
         heading: "Beperkingen van resultaat en weergave",
         body:
-          "Webpagina’s kunnen scripts, animaties, video, beschermde media, lettertypen, canvasafbeeldingen, dynamische gegevens en complexe lay-outs bevatten die niet exact in een statisch PDF- of PowerPoint-bestand kunnen worden gereproduceerd. Accurate copy geeft voorrang aan het uiterlijk; Editable document bouwt ondersteunde tekst, afbeeldingen en links opnieuw op. Controleer het voorbeeld en het uiteindelijke Resultaat.",
+          "Webpagina’s kunnen scripts, animaties, video, beschermde media, lettertypen, canvasafbeeldingen, dynamische gegevens en complexe lay-outs bevatten die niet exact in een statisch PDF kunnen worden gereproduceerd. Accurate copy geeft voorrang aan het uiterlijk; Editable document bouwt ondersteunde tekst, afbeeldingen en links opnieuw op. Controleer het voorbeeld en het uiteindelijke Resultaat.",
       },
       {
         heading: "Diensten en links van derden",
