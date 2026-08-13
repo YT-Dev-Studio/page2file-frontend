@@ -2,11 +2,17 @@ import { describe, expect, test } from "vitest";
 import { getSiteCopy } from "./site-copy";
 
 describe("site shell copy", () => {
-  test("localizes the shared header and removes the reviews anchor", () => {
-    const russianNavigation = getSiteCopy("ru").header.navigation;
+  test("contains only copy used by the reduced site shell", () => {
+    const russianCopy = getSiteCopy("ru");
 
-    expect(russianNavigation.blog).toBe("Блог");
-    expect(Object.values(russianNavigation)).not.toContain("Отзывы");
+    expect(russianCopy.header).not.toHaveProperty("navigation");
+    expect(russianCopy.footer).not.toHaveProperty("brandDescription");
+    expect(Object.keys(russianCopy.footer.links).sort()).toEqual([
+      "cookiePolicy",
+      "extension",
+      "privacy",
+      "terms",
+    ]);
   });
 
   test("localizes shell copy independently from indexing review state", () => {

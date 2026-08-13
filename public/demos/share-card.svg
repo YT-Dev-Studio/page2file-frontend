@@ -1,16 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Page 2 File</title>
-  <desc id="desc">Webpage sections becoming PDF pages and PowerPoint slides.</desc>
+  <title id="title">Page 2 File Chrome extension</title>
+  <desc id="desc">Page 2 File saves the current webpage or a supported browser chat as PDF.</desc>
   <rect width="1200" height="630" fill="#f4f7fb"/>
   <rect x="70" y="70" width="1060" height="490" rx="24" fill="#fff" stroke="#b9c5d4" stroke-width="2"/>
-  <text x="120" y="175" fill="#155eef" font-family="monospace" font-size="22">WEBPAGE → REVIEWED DOCUMENT</text>
-  <text x="120" y="270" fill="#101b2d" font-family="Arial, sans-serif" font-weight="700" font-size="72">Keep the page.</text>
-  <text x="120" y="350" fill="#101b2d" font-family="Arial, sans-serif" font-weight="700" font-size="72">Change the format.</text>
-  <g transform="translate(810 130)">
-    <rect width="210" height="70" rx="8" fill="#f8fafc" stroke="#dce3ec"/>
-    <rect y="90" width="210" height="70" rx="8" fill="#f8fafc" stroke="#dce3ec"/>
-    <rect y="180" width="210" height="70" rx="8" fill="#e8f0ff" stroke="#155eef"/>
-    <rect y="270" width="210" height="70" rx="8" fill="#f8fafc" stroke="#dce3ec"/>
+  <text x="120" y="155" fill="#155eef" font-family="monospace" font-size="22">CHROME EXTENSION &#8594; PDF</text>
+  <text x="120" y="255" fill="#101b2d" font-family="Arial, sans-serif" font-weight="700" font-size="70">Save webpages.</text>
+  <text x="120" y="335" fill="#101b2d" font-family="Arial, sans-serif" font-weight="700" font-size="70">Save browser chats.</text>
+  <text x="120" y="405" fill="#58667a" font-family="Arial, sans-serif" font-size="25">Page 2 File saves the current webpage or a</text>
+  <text x="120" y="442" fill="#58667a" font-family="Arial, sans-serif" font-size="25">supported browser chat as PDF.</text>
+  <g transform="translate(870 145)">
+    <rect width="150" height="58" rx="8" fill="#f8fafc" stroke="#dce3ec"/>
+    <rect y="76" width="150" height="58" rx="8" fill="#e8f0ff" stroke="#155eef"/>
+    <rect y="152" width="150" height="58" rx="8" fill="#f8fafc" stroke="#dce3ec"/>
   </g>
-  <text x="120" y="500" fill="#58667a" font-family="monospace" font-size="20">PDF · POWERPOINT · PREVIEW FIRST · NO HISTORY</text>
+  <text x="120" y="510" fill="#58667a" font-family="monospace" font-size="19">ACCURATE COPY &#183; EDITABLE DOCUMENT &#183; AI / CHAT</text>
 </svg>

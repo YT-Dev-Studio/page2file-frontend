@@ -12,7 +12,8 @@ describe("ExtensionGuide", () => {
     expect(screen.getByText("Open the source").closest("ol")?.querySelectorAll("li")).toHaveLength(6);
     expect(screen.getByRole("heading", { name: "Supported browser chats" })).toBeTruthy();
     expect(container.textContent).toContain("latest 2,000 messages");
-    expect(container.textContent).toContain("within two hours");
+    expect(container.textContent).toContain("the next time the extension runs");
+    expect(container.textContent).not.toContain("within two hours");
     expect(container.textContent).not.toMatch(/PowerPoint|PPTX|merge|split|reorder/i);
   });
 
@@ -24,7 +25,8 @@ describe("ExtensionGuide", () => {
     );
     expect(screen.getByText("Откройте материал").closest("ol")?.querySelectorAll("li")).toHaveLength(6);
     expect(container.textContent).toContain("2 000 последних сообщений");
-    expect(container.textContent).toContain("не позднее чем через два часа");
+    expect(container.textContent).toContain("при следующем запуске расширения");
+    expect(container.textContent).not.toContain("не позднее чем через два часа");
     expect(container.textContent).not.toMatch(/PowerPoint|PPTX/i);
   });
 });

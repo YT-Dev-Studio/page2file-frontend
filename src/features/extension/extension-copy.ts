@@ -71,7 +71,7 @@ const englishCopy: ExtensionCopy = {
   sources: [
     "Public webpages and pages you are already signed in to view.",
     "Local HTML files opened in Chrome, when file URL access is allowed.",
-    "Google Docs, Sheets, and Slides shown in the browser—not direct Word, Excel, or PowerPoint file uploads.",
+    "Google Docs, Sheets, and Slides shown in the browser.",
     "Supported AI conversations and web messengers, including ChatGPT, Claude, Gemini, WhatsApp Web, and Telegram Web.",
   ],
   processTitle: "From the current tab to a PDF",
@@ -89,8 +89,8 @@ const englishCopy: ExtensionCopy = {
   privacyBody:
     "The extension creates the PDF locally. Conversion content is not uploaded to Page 2 File servers, and no Page 2 File account is required.",
   privacyPoints: [
-    "The extension uses only the tab on which you click it.",
-    "The temporary result is removed when the preview closes or within two hours.",
+    "The extension reads source content only from the tab where you launch it.",
+    "The temporary PDF is deleted after the preview loads. If you never open it, data older than two hours is cleared the next time the extension runs.",
     "Website analytics, if enabled with consent, are separate from extension PDF processing.",
   ],
   guideTitle: "How to use the Page 2 File Chrome extension",
@@ -140,7 +140,7 @@ const russianCopy: ExtensionCopy = {
   sources: [
     "Публичные страницы и страницы, которые уже открыты после входа в аккаунт.",
     "Локальные HTML-файлы, открытые в Chrome, если разрешён доступ к файловым URL.",
-    "Google Docs, Sheets и Slides в браузере — без прямой загрузки файлов Word, Excel или PowerPoint.",
+    "Google Docs, Sheets и Slides, открытые в браузере.",
     "Поддерживаемые AI-диалоги и веб-мессенджеры, включая ChatGPT, Claude, Gemini, WhatsApp Web и Telegram Web.",
   ],
   processTitle: "От текущей вкладки до PDF",
@@ -158,8 +158,8 @@ const russianCopy: ExtensionCopy = {
   privacyBody:
     "Расширение создаёт PDF локально. Содержимое конвертации не загружается на серверы Page 2 File, а учётная запись Page 2 File не требуется.",
   privacyPoints: [
-    "Расширение использует только вкладку, на которой вы его запустили.",
-    "Временный результат удаляется после закрытия предпросмотра или не позднее чем через два часа.",
+    "Расширение читает исходное содержимое только из вкладки, где вы его запускаете.",
+    "Временный PDF удаляется после загрузки предпросмотра. Если его не открывать, данные старше двух часов очищаются при следующем запуске расширения.",
     "Аналитика сайта, если она включена с согласия, не относится к обработке PDF в расширении.",
   ],
   guideTitle: "Как пользоваться расширением Page 2 File для Chrome",
@@ -198,7 +198,7 @@ const germanCopy: ExtensionCopy = {
   sources: [
     "Öffentliche Webseiten und Seiten, für die Sie bereits angemeldet sind.",
     "Lokale HTML-Dateien in Chrome, wenn der Zugriff auf Datei-URLs erlaubt ist.",
-    "Google Docs, Sheets und Slides im Browser – keine direkten Uploads von Word-, Excel- oder PowerPoint-Dateien.",
+    "Google Docs, Sheets und Slides, die im Browser geöffnet sind.",
     "Unterstützte AI-Unterhaltungen und Web-Messenger, darunter ChatGPT, Claude, Gemini, WhatsApp Web und Telegram Web.",
   ],
   processTitle: "Vom aktuellen Tab zum PDF",
@@ -214,8 +214,8 @@ const germanCopy: ExtensionCopy = {
   privacyTitle: "Verarbeitung in Ihrem Browser",
   privacyBody: "Die Erweiterung erstellt das PDF lokal. Konvertierungsinhalte werden nicht auf Page-2-File-Server hochgeladen, und ein Page-2-File-Konto ist nicht erforderlich.",
   privacyPoints: [
-    "Die Erweiterung verwendet nur den Tab, in dem Sie sie anklicken.",
-    "Das temporäre Ergebnis wird beim Schließen der Vorschau oder spätestens nach zwei Stunden entfernt.",
+    "Die Erweiterung liest Quellinhalte nur aus dem Tab, in dem Sie sie starten.",
+    "Das temporäre PDF wird gelöscht, sobald die Vorschau geladen ist. Wird sie nie geöffnet, werden Daten, die älter als zwei Stunden sind, beim nächsten Start der Erweiterung entfernt.",
     "Website-Analysen, sofern mit Einwilligung aktiviert, sind von der PDF-Verarbeitung der Erweiterung getrennt.",
   ],
   guideTitle: "So verwenden Sie die Page 2 File Chrome-Erweiterung",
@@ -252,7 +252,7 @@ const frenchCopy: ExtensionCopy = {
   sources: [
     "Pages web publiques et pages auxquelles vous êtes déjà connecté.",
     "Fichiers HTML locaux ouverts dans Chrome, si l'accès aux URL de fichiers est autorisé.",
-    "Google Docs, Sheets et Slides affichés dans le navigateur, sans import direct de fichiers Word, Excel ou PowerPoint.",
+    "Google Docs, Sheets et Slides affichés dans le navigateur.",
     "Conversations AI et messageries web compatibles, notamment ChatGPT, Claude, Gemini, WhatsApp Web et Telegram Web.",
   ],
   processTitle: "De l'onglet actuel au PDF",
@@ -268,8 +268,8 @@ const frenchCopy: ExtensionCopy = {
   privacyTitle: "Traitement dans votre navigateur",
   privacyBody: "L'extension crée le PDF localement. Le contenu converti n'est pas envoyé aux serveurs de Page 2 File et aucun compte Page 2 File n'est requis.",
   privacyPoints: [
-    "L'extension utilise uniquement l'onglet dans lequel vous la lancez.",
-    "Le résultat temporaire est supprimé à la fermeture de l'aperçu ou dans un délai maximal de deux heures.",
+    "L'extension lit le contenu source uniquement dans l'onglet où vous la lancez.",
+    "Le PDF temporaire est supprimé après le chargement de l'aperçu. Si vous ne l'ouvrez jamais, les données de plus de deux heures sont effacées au prochain lancement de l'extension.",
     "Les statistiques du site, si elles sont activées avec votre accord, sont distinctes du traitement PDF de l'extension.",
   ],
   guideTitle: "Comment utiliser l'extension Chrome Page 2 File",
@@ -306,7 +306,7 @@ const spanishCopy: ExtensionCopy = {
   sources: [
     "Páginas web públicas y páginas que ya puedes ver después de iniciar sesión.",
     "Archivos HTML locales abiertos en Chrome, si está permitido el acceso a URL de archivos.",
-    "Google Docs, Sheets y Slides mostrados en el navegador, no cargas directas de archivos Word, Excel o PowerPoint.",
+    "Google Docs, Sheets y Slides abiertos en el navegador.",
     "Conversaciones AI y mensajería web compatibles, como ChatGPT, Claude, Gemini, WhatsApp Web y Telegram Web.",
   ],
   processTitle: "De la pestaña actual al PDF",
@@ -322,8 +322,8 @@ const spanishCopy: ExtensionCopy = {
   privacyTitle: "Procesado en tu navegador",
   privacyBody: "La extensión crea el PDF localmente. El contenido de la conversión no se envía a los servidores de Page 2 File y no necesitas una cuenta de Page 2 File.",
   privacyPoints: [
-    "La extensión solo utiliza la pestaña en la que la activas.",
-    "El resultado temporal se elimina al cerrar la vista previa o en un plazo máximo de dos horas.",
+    "La extensión solo lee el contenido de origen de la pestaña donde la inicias.",
+    "El PDF temporal se elimina después de cargar la vista previa. Si nunca la abres, los datos con más de dos horas se borran la próxima vez que se ejecuta la extensión.",
     "La analítica del sitio, si se activa con consentimiento, es independiente del procesamiento de PDF de la extensión.",
   ],
   guideTitle: "Cómo usar la extensión Page 2 File para Chrome",
@@ -360,7 +360,7 @@ const dutchCopy: ExtensionCopy = {
   sources: [
     "Openbare webpagina's en pagina's die je na aanmelden al kunt bekijken.",
     "Lokale HTML-bestanden die in Chrome zijn geopend, als toegang tot bestands-URL's is toegestaan.",
-    "Google Docs, Sheets en Slides in de browser, zonder rechtstreekse upload van Word-, Excel- of PowerPoint-bestanden.",
+    "Google Docs, Sheets en Slides die in de browser zijn geopend.",
     "Ondersteunde AI-gesprekken en webmessengers, waaronder ChatGPT, Claude, Gemini, WhatsApp Web en Telegram Web.",
   ],
   processTitle: "Van het huidige tabblad naar PDF",
@@ -376,8 +376,8 @@ const dutchCopy: ExtensionCopy = {
   privacyTitle: "Verwerkt in je browser",
   privacyBody: "De extensie maakt de PDF lokaal. Conversie-inhoud wordt niet naar servers van Page 2 File geüpload en een Page 2 File-account is niet nodig.",
   privacyPoints: [
-    "De extensie gebruikt alleen het tabblad waarop je haar activeert.",
-    "Het tijdelijke resultaat wordt verwijderd zodra het voorbeeld sluit of uiterlijk na twee uur.",
+    "De extensie leest broninhoud alleen uit het tabblad waarin je haar start.",
+    "De tijdelijke PDF wordt verwijderd nadat het voorbeeld is geladen. Open je het nooit, dan worden gegevens ouder dan twee uur gewist wanneer de extensie de volgende keer wordt uitgevoerd.",
     "Websiteanalyse, indien met toestemming ingeschakeld, staat los van de PDF-verwerking door de extensie.",
   ],
   guideTitle: "De Page 2 File Chrome-extensie gebruiken",
@@ -414,7 +414,7 @@ const portugueseCopy: ExtensionCopy = {
   sources: [
     "Páginas públicas e páginas que já consegue ver depois de iniciar sessão.",
     "Ficheiros HTML locais abertos no Chrome, quando o acesso a URLs de ficheiro está autorizado.",
-    "Google Docs, Sheets e Slides no navegador, sem carregamento direto de ficheiros Word, Excel ou PowerPoint.",
+    "Google Docs, Sheets e Slides abertos no navegador.",
     "Conversas de IA e mensageiros web compatíveis, incluindo ChatGPT, Claude, Gemini, WhatsApp Web e Telegram Web.",
   ],
   processTitle: "Do separador atual para PDF",
@@ -430,8 +430,8 @@ const portugueseCopy: ExtensionCopy = {
   privacyTitle: "Processamento no seu navegador",
   privacyBody: "A extensão cria o PDF localmente. O conteúdo convertido não é enviado para servidores do Page 2 File e não é necessária uma conta.",
   privacyPoints: [
-    "A extensão utiliza apenas o separador em que é acionada.",
-    "O resultado temporário é eliminado ao fechar a pré-visualização ou, no máximo, após duas horas.",
+    "A extensão lê o conteúdo de origem apenas no separador em que é iniciada.",
+    "O PDF temporário é eliminado depois de a pré-visualização carregar. Se nunca a abrir, os dados com mais de duas horas são limpos na próxima execução da extensão.",
     "A análise deste site, quando ativada com consentimento, é independente do processamento de PDF da extensão.",
   ],
   guideTitle: "Como usar a extensão Page 2 File para Chrome",
@@ -468,7 +468,7 @@ const italianCopy: ExtensionCopy = {
   sources: [
     "Pagine web pubbliche e pagine che puoi già vedere dopo aver effettuato l'accesso.",
     "File HTML locali aperti in Chrome, se è consentito l'accesso agli URL di file.",
-    "Google Docs, Sheets e Slides nel browser, senza caricamento diretto di file Word, Excel o PowerPoint.",
+    "Google Docs, Sheets e Slides aperti nel browser.",
     "Conversazioni AI e servizi di messaggistica web supportati, tra cui ChatGPT, Claude, Gemini, WhatsApp Web e Telegram Web.",
   ],
   processTitle: "Dalla scheda corrente al PDF",
@@ -484,8 +484,8 @@ const italianCopy: ExtensionCopy = {
   privacyTitle: "Elaborazione nel browser",
   privacyBody: "L'estensione crea il PDF localmente. Il contenuto convertito non viene inviato ai server di Page 2 File e non serve un account.",
   privacyPoints: [
-    "L'estensione usa soltanto la scheda in cui viene attivata.",
-    "Il risultato temporaneo viene eliminato alla chiusura dell'anteprima o entro due ore.",
+    "L'estensione legge il contenuto di origine solo dalla scheda in cui viene avviata.",
+    "Il PDF temporaneo viene eliminato dopo il caricamento dell'anteprima. Se non la apri, i dati più vecchi di due ore vengono cancellati al successivo avvio dell'estensione.",
     "Le statistiche di questo sito, se attivate con il consenso, sono separate dall'elaborazione PDF dell'estensione.",
   ],
   guideTitle: "Come usare l'estensione Page 2 File per Chrome",
@@ -522,7 +522,7 @@ const polishCopy: ExtensionCopy = {
   sources: [
     "Publiczne strony i strony, które możesz już wyświetlać po zalogowaniu.",
     "Lokalne pliki HTML otwarte w Chrome, jeśli zezwolono na dostęp do adresów plików.",
-    "Google Docs, Sheets i Slides w przeglądarce, bez bezpośredniego przesyłania plików Word, Excel lub PowerPoint.",
+    "Google Docs, Sheets i Slides otwarte w przeglądarce.",
     "Obsługiwane rozmowy AI i komunikatory internetowe, w tym ChatGPT, Claude, Gemini, WhatsApp Web i Telegram Web.",
   ],
   processTitle: "Z bieżącej karty do PDF",
@@ -538,8 +538,8 @@ const polishCopy: ExtensionCopy = {
   privacyTitle: "Przetwarzanie w przeglądarce",
   privacyBody: "Rozszerzenie tworzy PDF lokalnie. Konwertowana treść nie jest wysyłana na serwery Page 2 File i nie wymaga konta.",
   privacyPoints: [
-    "Rozszerzenie korzysta wyłącznie z karty, na której je uruchomisz.",
-    "Tymczasowy wynik jest usuwany po zamknięciu podglądu lub najpóźniej po dwóch godzinach.",
+    "Rozszerzenie odczytuje treść źródłową tylko z karty, na której je uruchomisz.",
+    "Tymczasowy PDF jest usuwany po wczytaniu podglądu. Jeśli go nie otworzysz, dane starsze niż dwie godziny zostaną wyczyszczone przy następnym uruchomieniu rozszerzenia.",
     "Analityka tej witryny, jeśli włączona za zgodą, jest niezależna od przetwarzania PDF w rozszerzeniu.",
   ],
   guideTitle: "Jak używać rozszerzenia Page 2 File do Chrome",
@@ -576,7 +576,7 @@ const czechCopy: ExtensionCopy = {
   sources: [
     "Veřejné stránky a stránky, které už můžete zobrazit po přihlášení.",
     "Místní soubory HTML otevřené v Chromu, pokud je povolen přístup k adresám souborů.",
-    "Google Docs, Sheets a Slides v prohlížeči, nikoli přímé nahrávání souborů Word, Excel nebo PowerPoint.",
+    "Google Docs, Sheets a Slides otevřené v prohlížeči.",
     "Podporované AI konverzace a webové komunikátory včetně ChatGPT, Claude, Gemini, WhatsApp Web a Telegram Web.",
   ],
   processTitle: "Z aktuální karty do PDF",
@@ -592,8 +592,8 @@ const czechCopy: ExtensionCopy = {
   privacyTitle: "Zpracování v prohlížeči",
   privacyBody: "Rozšíření vytváří PDF místně. Převáděný obsah se neodesílá na servery Page 2 File a účet není potřeba.",
   privacyPoints: [
-    "Rozšíření používá pouze kartu, na které je spustíte.",
-    "Dočasný výsledek se odstraní po zavření náhledu nebo nejpozději do dvou hodin.",
+    "Rozšíření čte zdrojový obsah pouze z karty, na které je spustíte.",
+    "Dočasné PDF se odstraní po načtení náhledu. Pokud jej nikdy neotevřete, data starší než dvě hodiny se vymažou při příštím spuštění rozšíření.",
     "Analytika tohoto webu, je-li zapnuta se souhlasem, je oddělená od zpracování PDF v rozšíření.",
   ],
   guideTitle: "Jak používat rozšíření Page 2 File pro Chrome",
@@ -630,7 +630,7 @@ const swedishCopy: ExtensionCopy = {
   sources: [
     "Offentliga webbsidor och sidor som du redan kan se efter inloggning.",
     "Lokala HTML-filer som öppnats i Chrome, om åtkomst till filadresser är tillåten.",
-    "Google Docs, Sheets och Slides i webbläsaren, utan direkt uppladdning av Word-, Excel- eller PowerPoint-filer.",
+    "Google Docs, Sheets och Slides som är öppna i webbläsaren.",
     "AI-konversationer och webbmeddelanden som stöds, bland annat ChatGPT, Claude, Gemini, WhatsApp Web och Telegram Web.",
   ],
   processTitle: "Från aktuell flik till PDF",
@@ -646,8 +646,8 @@ const swedishCopy: ExtensionCopy = {
   privacyTitle: "Bearbetas i webbläsaren",
   privacyBody: "Tillägget skapar PDF-filen lokalt. Innehållet skickas inte till Page 2 Files servrar och inget konto krävs.",
   privacyPoints: [
-    "Tillägget använder endast fliken där du startar det.",
-    "Det tillfälliga resultatet tas bort när förhandsgranskningen stängs eller senast efter två timmar.",
+    "Tillägget läser bara källinnehåll från fliken där du startar det.",
+    "Den tillfälliga PDF-filen tas bort när förhandsgranskningen har lästs in. Om du aldrig öppnar den rensas data som är äldre än två timmar nästa gång tillägget körs.",
     "Webbplatsanalys, om den aktiveras med samtycke, är skild från tilläggets PDF-bearbetning.",
   ],
   guideTitle: "Så använder du Chrome-tillägget Page 2 File",
@@ -684,7 +684,7 @@ const norwegianCopy: ExtensionCopy = {
   sources: [
     "Offentlige nettsider og sider du allerede kan se etter innlogging.",
     "Lokale HTML-filer åpnet i Chrome, når tilgang til filadresser er tillatt.",
-    "Google Docs, Sheets og Slides i nettleseren, uten direkte opplasting av Word-, Excel- eller PowerPoint-filer.",
+    "Google Docs, Sheets og Slides som er åpne i nettleseren.",
     "Støttede AI-samtaler og nettmeldinger, blant annet ChatGPT, Claude, Gemini, WhatsApp Web og Telegram Web.",
   ],
   processTitle: "Fra aktiv fane til PDF",
@@ -700,8 +700,8 @@ const norwegianCopy: ExtensionCopy = {
   privacyTitle: "Behandles i nettleseren",
   privacyBody: "Utvidelsen lager PDF-filen lokalt. Innholdet sendes ikke til Page 2 File-servere, og det kreves ingen konto.",
   privacyPoints: [
-    "Utvidelsen bruker bare fanen der du starter den.",
-    "Det midlertidige resultatet slettes når forhåndsvisningen lukkes eller senest etter to timer.",
+    "Utvidelsen leser bare kildeinnhold fra fanen der du starter den.",
+    "Den midlertidige PDF-filen slettes etter at forhåndsvisningen er lastet. Hvis du aldri åpner den, fjernes data som er eldre enn to timer neste gang utvidelsen kjører.",
     "Nettstedsanalyse, hvis aktivert med samtykke, er adskilt fra utvidelsens PDF-behandling.",
   ],
   guideTitle: "Slik bruker du Chrome-utvidelsen Page 2 File",
@@ -738,7 +738,7 @@ const danishCopy: ExtensionCopy = {
   sources: [
     "Offentlige websider og sider, som du allerede kan se efter login.",
     "Lokale HTML-filer åbnet i Chrome, når adgang til filwebadresser er tilladt.",
-    "Google Docs, Sheets og Slides i browseren, uden direkte upload af Word-, Excel- eller PowerPoint-filer.",
+    "Google Docs, Sheets og Slides, der er åbne i browseren.",
     "Understøttede AI-samtaler og webbeskeder, herunder ChatGPT, Claude, Gemini, WhatsApp Web og Telegram Web.",
   ],
   processTitle: "Fra den aktuelle fane til PDF",
@@ -754,8 +754,8 @@ const danishCopy: ExtensionCopy = {
   privacyTitle: "Behandles i din browser",
   privacyBody: "Udvidelsen opretter PDF-filen lokalt. Indholdet sendes ikke til Page 2 Files servere, og der kræves ingen konto.",
   privacyPoints: [
-    "Udvidelsen bruger kun den fane, hvor du starter den.",
-    "Det midlertidige resultat slettes, når forhåndsvisningen lukkes, eller senest efter to timer.",
+    "Udvidelsen læser kun kildeindhold fra den fane, hvor du starter den.",
+    "Den midlertidige PDF slettes, når forhåndsvisningen er indlæst. Hvis du aldrig åbner den, ryddes data, der er ældre end to timer, næste gang udvidelsen kører.",
     "Webstedsanalyse, hvis den aktiveres med samtykke, er adskilt fra udvidelsens PDF-behandling.",
   ],
   guideTitle: "Sådan bruger du Chrome-udvidelsen Page 2 File",
@@ -792,7 +792,7 @@ const finnishCopy: ExtensionCopy = {
   sources: [
     "Julkiset verkkosivut ja sivut, joita voit jo tarkastella kirjautuneena.",
     "Chromessa avatut paikalliset HTML-tiedostot, kun tiedosto-osoitteiden käyttö on sallittu.",
-    "Google Docs, Sheets ja Slides selaimessa, ei Word-, Excel- tai PowerPoint-tiedostojen suoraa lataamista.",
+    "Selaimessa avatut Google Docs-, Sheets- ja Slides-sivut.",
     "Tuetut AI-keskustelut ja verkkoviestimet, kuten ChatGPT, Claude, Gemini, WhatsApp Web ja Telegram Web.",
   ],
   processTitle: "Nykyiseltä välilehdeltä PDF:ksi",
@@ -808,8 +808,8 @@ const finnishCopy: ExtensionCopy = {
   privacyTitle: "Käsitellään selaimessasi",
   privacyBody: "Laajennus luo PDF:n paikallisesti. Sisältöä ei lähetetä Page 2 Filen palvelimille, eikä tiliä tarvita.",
   privacyPoints: [
-    "Laajennus käyttää vain välilehteä, jolla käynnistät sen.",
-    "Väliaikainen tulos poistetaan esikatselun sulkeutuessa tai viimeistään kahden tunnin kuluttua.",
+    "Laajennus lukee lähdesisällön vain välilehdeltä, jolla käynnistät sen.",
+    "Väliaikainen PDF poistetaan esikatselun latauduttua. Jos et koskaan avaa sitä, yli kaksi tuntia vanhat tiedot poistetaan, kun laajennus suoritetaan seuraavan kerran.",
     "Sivuston analytiikka, jos se otetaan käyttöön suostumuksella, on erillään laajennuksen PDF-käsittelystä.",
   ],
   guideTitle: "Page 2 File -Chrome-laajennuksen käyttö",
@@ -846,7 +846,7 @@ const romanianCopy: ExtensionCopy = {
   sources: [
     "Pagini publice și pagini pe care le poți vedea deja după autentificare.",
     "Fișiere HTML locale deschise în Chrome, dacă accesul la adresele de fișier este permis.",
-    "Google Docs, Sheets și Slides în browser, fără încărcare directă de fișiere Word, Excel sau PowerPoint.",
+    "Google Docs, Sheets și Slides deschise în browser.",
     "Conversații AI și servicii web de mesagerie compatibile, inclusiv ChatGPT, Claude, Gemini, WhatsApp Web și Telegram Web.",
   ],
   processTitle: "Din fila curentă în PDF",
@@ -862,8 +862,8 @@ const romanianCopy: ExtensionCopy = {
   privacyTitle: "Procesare în browser",
   privacyBody: "Extensia creează PDF-ul local. Conținutul nu este trimis la serverele Page 2 File și nu este necesar un cont.",
   privacyPoints: [
-    "Extensia folosește numai fila în care o pornești.",
-    "Rezultatul temporar este șters la închiderea previzualizării sau în cel mult două ore.",
+    "Extensia citește conținutul sursă numai din fila în care o pornești.",
+    "PDF-ul temporar este șters după încărcarea previzualizării. Dacă nu îl deschizi, datele mai vechi de două ore sunt eliminate la următoarea rulare a extensiei.",
     "Analiza acestui site, dacă este activată cu acord, este separată de procesarea PDF din extensie.",
   ],
   guideTitle: "Cum folosești extensia Page 2 File pentru Chrome",
@@ -900,7 +900,7 @@ const hungarianCopy: ExtensionCopy = {
   sources: [
     "Nyilvános oldalak és olyan oldalak, amelyeket bejelentkezés után már meg tud nyitni.",
     "Chrome-ban megnyitott helyi HTML-fájlok, ha engedélyezett a fájlcímek elérése.",
-    "Google Docs, Sheets és Slides a böngészőben, Word-, Excel- vagy PowerPoint-fájlok közvetlen feltöltése nélkül.",
+    "A böngészőben megnyitott Google Docs-, Sheets- és Slides-oldalak.",
     "Támogatott AI-beszélgetések és webes üzenetküldők, például ChatGPT, Claude, Gemini, WhatsApp Web és Telegram Web.",
   ],
   processTitle: "Az aktuális laptól a PDF-ig",
@@ -916,8 +916,8 @@ const hungarianCopy: ExtensionCopy = {
   privacyTitle: "Feldolgozás a böngészőben",
   privacyBody: "A bővítmény helyben hozza létre a PDF-et. A tartalom nem kerül a Page 2 File szervereire, és nincs szükség fiókra.",
   privacyPoints: [
-    "A bővítmény csak azt a lapot használja, amelyen elindítja.",
-    "Az ideiglenes eredmény az előnézet bezárásakor, de legkésőbb két órán belül törlődik.",
+    "A bővítmény csak arról a lapról olvassa a forrástartalmat, amelyen elindítja.",
+    "Az ideiglenes PDF az előnézet betöltése után törlődik. Ha soha nem nyitja meg, a két óránál régebbi adatok a bővítmény következő futtatásakor törlődnek.",
     "A webhely elemzése, ha hozzájárulással engedélyezett, elkülönül a bővítmény PDF-feldolgozásától.",
   ],
   guideTitle: "A Page 2 File Chrome-bővítmény használata",

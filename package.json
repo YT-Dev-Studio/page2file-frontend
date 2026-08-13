@@ -13,8 +13,6 @@
     "test:watch": "vitest",
     "audit:content": "node scripts/audit-blog-content.mjs",
     "audit:content:update": "node scripts/audit-blog-content.mjs --write-review --allow-pending",
-    "generate:blog-instructions": "node scripts/generate-blog-instructions.mjs",
-    "generate:extension-demo": "node scripts/generate-blog-instructions.mjs --extension-demo-only",
     "generate:localized-content": "node scripts/generate-localized-content.mjs",
     "generate:seo-images": "node scripts/generate-seo-images.mjs",
     "prebuild:next": "npm run generate:localized-content",

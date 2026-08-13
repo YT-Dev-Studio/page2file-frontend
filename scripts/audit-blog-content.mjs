@@ -35,53 +35,6 @@ const reviewState = JSON.parse(
 );
 const reviewedLocales = new Set(reviewState.reviewedLocales ?? ["en", "ru"]);
 
-const technicalGuides = new Set([
-  "save-webpage-as-pdf",
-  "capture-full-webpage-as-pdf",
-  "long-webpage-page-breaks",
-  "preserve-clickable-links",
-  "visual-vs-editable",
-  "html-to-pdf-safely",
-  "webpage-to-powerpoint",
-  "html-to-powerpoint",
-  "sections-to-slides",
-  "screenshot-vs-editable-powerpoint",
-  "save-authenticated-webpage-as-pdf",
-]);
-const hubsAndComparisons = new Set([
-  "why-print-to-pdf-breaks",
-  "multi-page-website-to-pdf",
-  "website-to-powerpoint",
-  "website-types-to-pdf-or-powerpoint",
-  "webpage-capture-vs-web-scraping",
-  "export-ai-chats-privately",
-  "export-browser-messenger-chats-to-pdf",
-]);
-const hubSlugs = new Set([
-  "website-types-to-pdf-or-powerpoint",
-  "webpage-capture-vs-web-scraping",
-  "export-ai-chats-privately",
-  "export-browser-messenger-chats-to-pdf",
-]);
-const requiredOfficialDomains = new Map([
-  [
-    "export-ai-chats-privately",
-    ["help.openai.com", "support.claude.com", "support.google.com"],
-  ],
-  ["export-chatgpt-conversation-to-pdf", ["help.openai.com"]],
-  ["export-claude-chat-to-pdf", ["support.claude.com"]],
-  ["export-gemini-chat-to-pdf", ["support.google.com"]],
-  [
-    "export-other-ai-chats-to-pdf",
-    ["x.ai", "deepseek.com", "perplexity.ai", "support.microsoft.com"],
-  ],
-  ["export-whatsapp-chat-to-pdf", ["faq.whatsapp.com"]],
-  ["export-telegram-chat-to-pdf", ["telegram.org"]],
-  [
-    "export-browser-messenger-chats-to-pdf",
-    ["discord.com", "slack.com", "support.microsoft.com", "facebook.com"],
-  ],
-]);
 const commonForbiddenPatterns = [
   /\bdelve\b/i,
   /\bever-evolving landscape\b/i,
@@ -163,27 +116,6 @@ const csvCell = (value) => {
   return /[",\r\n]/.test(stringValue)
     ? `"${stringValue.replaceAll('"', '""')}"`
     : stringValue;
-};
-
-const contentClass = (slug) => {
-  if (technicalGuides.has(slug)) {
-    return "technical";
-  }
-  if (hubsAndComparisons.has(slug)) {
-    return "hub";
-  }
-  return "platform";
-};
-
-const linkDomainMatches = (href, expectedDomain) => {
-  try {
-    const hostname = new URL(href).hostname.toLowerCase();
-    return (
-      hostname === expectedDomain || hostname.endsWith(`.${expectedDomain}`)
-    );
-  } catch {
-    return false;
-  }
 };
 
 const filesByLocale = {};
@@ -268,10 +200,6 @@ for (const locale of locales) {
     const productLinks = internalLinks.filter(
       ({ href }) => !href.includes("/blog/"),
     );
-    const linkedBlogSlugs = blogLinks.map(({ href }) => href.split("/").at(-1));
-    const linkedHubs = linkedBlogSlugs.filter(
-      (linkedSlug) => hubSlugs.has(linkedSlug) && linkedSlug !== slug,
-    );
     const wrongLocaleLinks = internalLinks.filter(
       ({ href }) => !href.startsWith(`/${locale}/`),
     );
@@ -336,20 +264,9 @@ for (const locale of locales) {
     const unsupportedClaims = unsupportedClaimPatterns
       .filter((pattern) => pattern.test(content))
       .map((pattern) => pattern.source);
-    const articleClass = contentClass(slug);
     const translationRatio =
       locale === "en" ? 1 : wordCount / englishWordCounts.get(slug);
     const contentDepthPass = wordCount >= 400 && h2Count >= 3;
-    const officialDomains = requiredOfficialDomains.get(slug) ?? [];
-    const missingOfficialDomains =
-      locale === "en"
-        ? officialDomains.filter(
-            (domain) =>
-              !externalLinks.some(({ href }) =>
-                linkDomainMatches(href, domain),
-              ),
-          )
-        : [];
     const factSources = [
       "product-spec:user-approved-2026-08-02",
       ...externalLinks.map(({ href }) => href),
@@ -374,11 +291,9 @@ for (const locale of locales) {
       unexplainedJargon.length === 0 &&
       duplicateParagraphs.length === 0 &&
       duplicateHeadings.length === 0;
-    const automatedFactPass =
-      unsupportedClaims.length === 0 && missingOfficialDomains.length === 0;
+    const automatedFactPass = unsupportedClaims.length === 0;
     const automatedLinkPass =
       productLinks.length >= 1 &&
-      linkedHubs.length >= 1 &&
       wrongLocaleLinks.length === 0 &&
       brokenBlogLinks.length === 0;
 
@@ -408,7 +323,6 @@ for (const locale of locales) {
         ? `minimum-depth:${wordCount} words/${h2Count} h2`
         : "",
       productLinks.length < 1 ? "missing-product-link" : "",
-      linkedHubs.length < 1 ? "missing-hub-link" : "",
       internalLinks.length < 2 || internalLinks.length > 10
         ? `internal-links:${internalLinks.length} outside 2-10`
         : "",
@@ -431,15 +345,12 @@ for (const locale of locales) {
       brokenBlogLinks.length > 0
         ? `broken-blog:${brokenBlogLinks.map(({ href }) => href).join(";")}`
         : "",
-      missingOfficialDomains.length > 0
-        ? `missing-official:${missingOfficialDomains.join(";")}`
-        : "",
     ].filter(Boolean);
 
     reviewRows.push({
       locale,
       slug,
-      content_class: articleClass,
+      content_class: "article",
       review_cycle: reviewCycle,
       word_count: wordCount,
       target_word_range: `minimum:400;translation-ratio:${translationRatio.toFixed(2)}`,

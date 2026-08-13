@@ -13,7 +13,7 @@ describe("homepage extension copy", () => {
       "AI / Chat",
     ]);
     expect(copy.sources.join(" ")).toContain("Local HTML");
-    expect(copy.sources.join(" ")).toContain("not direct Word");
+    expect(copy.sources.join(" ")).toContain("Google Docs, Sheets, and Slides");
   });
 
   test("provides complete localized homepage copy for every locale", () => {
@@ -35,8 +35,10 @@ describe("homepage extension copy", () => {
   test("keeps unsupported promises out of the canonical copy", () => {
     const visibleCopy = JSON.stringify(getExtensionCopy("en"));
 
-    expect(visibleCopy).not.toMatch(/PPTX|merge|split|reorder|upload a URL/i);
+    expect(visibleCopy).not.toMatch(/PowerPoint|PPTX|merge|split|reorder|upload a URL/i);
     expect(visibleCopy).toContain("2,000");
-    expect(visibleCopy).toContain("within two hours");
+    expect(visibleCopy).toContain("older than two hours");
+    expect(visibleCopy).toContain("the next time the extension runs");
+    expect(visibleCopy).not.toContain("within two hours");
   });
 });
