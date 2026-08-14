@@ -1,6 +1,7 @@
 import { describe, expect, test } from "vitest";
 import { getExtensionCopy } from "@/features/extension/extension-copy";
 import { localeRegistry } from "@/shared/i18n/locales";
+import { getHomeMarketingCopy } from "./home-content";
 
 describe("homepage extension copy", () => {
   test("uses the approved English positioning", () => {
@@ -19,15 +20,21 @@ describe("homepage extension copy", () => {
   test("provides complete localized homepage copy for every locale", () => {
     for (const { code } of localeRegistry) {
       const copy = getExtensionCopy(code);
+      const marketingCopy = getHomeMarketingCopy(code);
 
       expect(copy.homeTitle.length).toBeGreaterThan(20);
       expect(copy.modes).toHaveLength(3);
       expect(copy.sources).toHaveLength(4);
       expect(copy.steps).toHaveLength(6);
       expect(copy.privacyPoints).toHaveLength(3);
+      expect(marketingCopy.faqItems).toHaveLength(7);
+      expect(marketingCopy.heroIllustrationAlt.length).toBeGreaterThan(20);
       if (code !== "en") {
         expect(copy.homeTitle).not.toBe(getExtensionCopy("en").homeTitle);
         expect(copy.homeLead).not.toBe(getExtensionCopy("en").homeLead);
+        expect(marketingCopy.faqTitle).not.toBe(
+          getHomeMarketingCopy("en").faqTitle,
+        );
       }
     }
   });

@@ -74,9 +74,6 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
           <span>{copy.copyright}</span>
           <nav aria-label={copy.legalTitle}>
             <Link href={`/${locale}/terms`}>{copy.links.terms}</Link>
-            <Link href={`/${locale}/privacy#cookies`}>
-              {copy.links.cookiePolicy}
-            </Link>
           </nav>
         </div>
       </Container>

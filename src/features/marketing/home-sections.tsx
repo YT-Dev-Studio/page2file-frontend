@@ -53,7 +53,7 @@ export const HomeSources = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getExtensionCopy(locale);
 
   return (
-    <section className={`${styles.section} ${styles.tintedSection}`} id="supported">
+    <section className={styles.section} id="supported">
       <Container>
         <SectionIntro body={copy.sourcesBody} title={copy.sourcesTitle} />
         <ul className={styles.sourceList}>
@@ -83,7 +83,7 @@ export const HomePrivacy = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getExtensionCopy(locale);
 
   return (
-    <section className={`${styles.section} ${styles.privacySection}`} id="privacy">
+    <section className={styles.section} id="privacy">
       <Container>
         <SectionIntro body={copy.privacyBody} title={copy.privacyTitle} />
         <ul className={styles.privacyList}>
