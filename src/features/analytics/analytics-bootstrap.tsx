@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import Script from "next/script";
 import { useEffect, type ReactNode } from "react";
 import { gaMeasurementId } from "@/shared/config/site";
 
@@ -129,36 +130,36 @@ const setGoogleAnalyticsDisabled = (disabled: boolean): void => {
   analyticsWindow[`ga-disable-${gaMeasurementId}`] = disabled;
 };
 
+const initializeGoogleTagQueue = (): NonNullable<Window["gtag"]> => {
+  window.dataLayer = window.dataLayer ?? [];
+
+  if (window.gtag) {
+    return window.gtag;
+  }
+
+  const gtag = (...args: Array<unknown>): void => {
+    window.dataLayer?.push(args);
+  };
+  window.gtag = gtag;
+  gtag("js", new Date());
+
+  return gtag;
+};
+
 const loadGoogleAnalytics = (attribution: Attribution): void => {
   if (!gaMeasurementId || !isAnalyticsAllowedForCurrentHost()) {
     setGoogleAnalyticsDisabled(true);
-    document.querySelector("[data-page2file-ga]")?.remove();
     return;
   }
 
   setGoogleAnalyticsDisabled(false);
-  window.dataLayer = window.dataLayer ?? [];
-  window.gtag = (...args: Array<unknown>): void => {
-    window.dataLayer?.push(args);
-  };
-  window.gtag("consent", "default", { analytics_storage: "granted" });
-  window.gtag("js", new Date());
-  window.gtag("config", gaMeasurementId, {
+  const gtag = initializeGoogleTagQueue();
+  gtag("consent", "default", { analytics_storage: "granted" });
+  gtag("config", gaMeasurementId, {
     send_page_view: true,
     page_location: getAnalyticsPageLocation(attribution),
     ...toCampaignParameters(attribution),
   });
-
-  if (document.querySelector("[data-page2file-ga]")) {
-    return;
-  }
-
-  const script = document.createElement("script");
-
-  script.async = true;
-  script.dataset.page2fileGa = "true";
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`;
-  document.head.append(script);
 };
 
 export const AnalyticsBootstrap = (): ReactNode => {
@@ -175,5 +176,25 @@ export const AnalyticsBootstrap = (): ReactNode => {
     [pathname],
   );
 
-  return null;
+  if (!gaMeasurementId) {
+    return null;
+  }
+
+  return (
+    <>
+      <Script id="page2file-google-tag-bootstrap" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+if (!window.gtag) {
+  window.gtag = function gtag(){window.dataLayer.push(arguments);};
+  window.gtag('js', new Date());
+}`}
+      </Script>
+      <Script
+        async
+        data-page2file-ga="true"
+        src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`}
+        strategy="afterInteractive"
+      />
+    </>
+  );
 };
