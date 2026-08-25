@@ -4,6 +4,12 @@ Checked: 2026-08-25
 
 The canonical row-level evidence remains in `chrome-web-store-copy-analysis-en-US.csv` and `competitor-growth-patterns.csv`. Sixteen unique references were reviewed; the duplicated YouTube-to-text URL was counted once. Client-rendered or intermittently extractable pages remain `partial` rather than being upgraded from indirect evidence.
 
+## Rendered template sampling
+
+- **TonePerfect:** product, practice, pricing, language, localized-language, tools, pinyin, name, HSK, and blog templates were sampled in the rendered site. Tool-first pages connect a usable result to focused supporting copy and appropriate `WebApplication`, `Course`, `FAQPage`, or `LearningResource` markup. The localized language template is not adopted because a sampled Spanish/French page mixed Spanish content with English section headings, and the repeated free, instant, learner-count, rating, and AI-accuracy claims require first-party evidence.
+- **Yadaphone:** three locale homes, three destination pages, three service-number pages, three comparisons, three Google Voice country pages, three country-pair routes, and representative laptop, country-code, and Skype-alternative pages were checked. Exact route titles and practical prerequisites are useful. The scale is rejected: sampled destination pages omitted hreflang, one rendered without body content, service-number pages hit a security checkpoint, and country-pair pages repeated generic blocks while exposing inconsistent rate and locality data.
+- **Chrome Web Store:** the in-app Chrome session cannot keep control of Chrome Web Store tabs. All eight unique Store listings were therefore checked through their indexed public listing content; Sig.mobi remains `partial` because only indirect listing evidence was available. No ratings, users, privacy declarations, marketplace badges, or competitor compatibility claims were transferred to Page 2 PDF.
+
 ## Patterns accepted
 
 - **Exact result above the fold.** MessangerMax, Yadaphone, narrow Store utilities, and Parceled identify the operation before listing features. Page 2 PDF uses the active-tab result and output type in the title, H1, and first answer.

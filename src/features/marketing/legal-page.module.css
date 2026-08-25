@@ -20,6 +20,7 @@
   font-weight: var(--p2f-type-display-medium-font-weight);
   line-height: var(--p2f-type-display-medium-line-height);
   letter-spacing: var(--p2f-letter-spacing-tight);
+  overflow-wrap: anywhere;
 }
 
 .updatedAt {
