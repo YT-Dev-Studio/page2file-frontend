@@ -7,20 +7,6 @@ const converterLabels: ReadonlyArray<
 > = [
   ["en", "Page snapshots", "Warnings"],
   ["ru", "Снимки страницы", "Предупреждения"],
-  ["de", "Seitenaufnahmen", "Warnungen"],
-  ["fr", "Captures de page", "Avertissements"],
-  ["es", "Capturas de página", "Advertencias"],
-  ["nl", "Pagina-opnamen", "Waarschuwingen"],
-  ["pt", "Capturas de página", "Avisos"],
-  ["it", "Acquisizioni della pagina", "Avvisi"],
-  ["pl", "Zrzuty strony", "Ostrzeżenia"],
-  ["sv", "Sidbilder", "Varningar"],
-  ["no", "Sidebilder", "Advarsler"],
-  ["da", "Sidebilleder", "Advarsler"],
-  ["fi", "Sivukaappaukset", "Varoitukset"],
-  ["cs", "Snímky stránky", "Upozornění"],
-  ["ro", "Capturi de pagină", "Avertismente"],
-  ["hu", "Oldal-pillanatképek", "Figyelmeztetések"],
 ];
 
 describe("converter messages", () => {

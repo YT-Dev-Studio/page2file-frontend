@@ -27,62 +27,6 @@ const actions: Record<Locale, NotFoundActions> = {
     home: "Вернуться на главную",
     guide: "Открыть инструкцию по расширению",
   },
-  de: {
-    home: "Zur Startseite",
-    guide: "Anleitung zur Erweiterung öffnen",
-  },
-  fr: {
-    home: "Retour à l’accueil",
-    guide: "Ouvrir le guide de l’extension",
-  },
-  es: {
-    home: "Volver al inicio",
-    guide: "Abrir la guía de la extensión",
-  },
-  nl: {
-    home: "Terug naar de startpagina",
-    guide: "Handleiding voor de extensie openen",
-  },
-  pt: {
-    home: "Voltar ao início",
-    guide: "Abrir o guia da extensão",
-  },
-  it: {
-    home: "Torna alla home",
-    guide: "Apri la guida dell’estensione",
-  },
-  pl: {
-    home: "Wróć na stronę główną",
-    guide: "Otwórz instrukcję rozszerzenia",
-  },
-  cs: {
-    home: "Zpět na domovskou stránku",
-    guide: "Otevřít návod k rozšíření",
-  },
-  sv: {
-    home: "Tillbaka till startsidan",
-    guide: "Öppna guiden till tillägget",
-  },
-  no: {
-    home: "Tilbake til startsiden",
-    guide: "Åpne veiledningen for utvidelsen",
-  },
-  da: {
-    home: "Tilbage til startsiden",
-    guide: "Åbn vejledningen til udvidelsen",
-  },
-  fi: {
-    home: "Takaisin etusivulle",
-    guide: "Avaa laajennuksen käyttöohje",
-  },
-  ro: {
-    home: "Înapoi la pagina principală",
-    guide: "Deschide ghidul extensiei",
-  },
-  hu: {
-    home: "Vissza a kezdőlapra",
-    guide: "Bővítmény útmutatójának megnyitása",
-  },
 };
 
 export const NotFoundPage = (): ReactNode => {

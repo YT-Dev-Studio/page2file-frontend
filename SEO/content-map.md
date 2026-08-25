@@ -4,7 +4,7 @@ Updated: 2026-08-12
 
 ## Published product pages
 
-The public site now describes the working Chrome extension. The same seven routes are available in all 16 indexed locales:
+The public site now describes the working Chrome extension. The same seven routes are available in the English and Russian locales:
 
 | Route | Intent | Status |
 |---|---|---|
@@ -29,7 +29,7 @@ The homepage owns the broad product intent. The instruction page owns the proced
 
 The former blog, updates, changelog, public URL/PPTX converters, three unconfirmed GPT pages, and separate ChatGPT/Claude/Gemini/Grok SEO landings were removed from routing, navigation, sitemap, hreflang, and the content registry. Their old addresses intentionally return `404` without redirects.
 
-All 24 former articles and their 16-language MDX copies are withdrawn. Their text and article-only assets were removed because the material described obsolete or unsupported behavior. Any future publication requires new copy, current product verification, locale parity, editorial review, and a fresh route registration.
+All 24 former articles and their localized MDX copies are withdrawn. Their text and article-only assets were removed because the material described obsolete or unsupported behavior. Any future publication requires new English and Russian copy, current product verification, locale parity, editorial review, and a fresh route registration.
 
 ## Planned editorial clusters
 

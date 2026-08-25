@@ -2,24 +2,7 @@ import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 
 const ROOT = process.cwd();
-const LOCALES = [
-  "en",
-  "ru",
-  "de",
-  "fr",
-  "es",
-  "nl",
-  "pt",
-  "it",
-  "pl",
-  "cs",
-  "sv",
-  "no",
-  "da",
-  "fi",
-  "ro",
-  "hu",
-];
+const LOCALES = ["en", "ru"];
 const BLOG_DIRECTORY = join(ROOT, "content", "blog");
 const UPDATE_DIRECTORY = join(ROOT, "content", "updates");
 const RUSSIAN_BLOG_DIRECTORY = join(ROOT, "content", "ru", "blog");
@@ -30,62 +13,6 @@ const SITE_TITLE_SUFFIX = " | Page 2 File";
 const LANDING_SOURCE_PATHS = {
   en: ["src/content/landings.ts"],
   ru: ["src/content/russian-landings.ts"],
-  de: [
-    "src/content/german-landings.ts",
-    "src/content/german-legal-landings.ts",
-  ],
-  fr: [
-    "src/content/french-landings.ts",
-    "src/content/french-legal-landings.ts",
-  ],
-  es: [
-    "src/content/spanish-landings.ts",
-    "src/content/spanish-legal-landings.ts",
-  ],
-  nl: [
-    "src/content/dutch-landings.ts",
-    "src/content/dutch-legal-landings.ts",
-  ],
-  pt: [
-    "src/content/portuguese-landings.ts",
-    "src/content/portuguese-legal-landings.ts",
-  ],
-  it: [
-    "src/content/italian-landings.ts",
-    "src/content/italian-legal-landings.ts",
-  ],
-  pl: [
-    "src/content/polish-landings.ts",
-    "src/content/polish-legal-landings.ts",
-  ],
-  cs: [
-    "src/content/czech-landings.ts",
-    "src/content/czech-legal-landings.ts",
-  ],
-  sv: [
-    "src/content/swedish-landings.ts",
-    "src/content/swedish-legal-landings.ts",
-  ],
-  no: [
-    "src/content/norwegian-landings.ts",
-    "src/content/norwegian-legal-landings.ts",
-  ],
-  da: [
-    "src/content/danish-landings.ts",
-    "src/content/danish-legal-landings.ts",
-  ],
-  fi: [
-    "src/content/finnish-landings.ts",
-    "src/content/finnish-legal-landings.ts",
-  ],
-  ro: [
-    "src/content/romanian-landings.ts",
-    "src/content/romanian-legal-landings.ts",
-  ],
-  hu: [
-    "src/content/hungarian-landings.ts",
-    "src/content/hungarian-legal-landings.ts",
-  ],
 };
 
 const readMdxFiles = async (directory) => {
@@ -356,6 +283,46 @@ const run = async () => {
   }
   if (metadataErrors.length > 0) {
     throw new Error(`Metadata validation failed:\n- ${metadataErrors.join("\n- ")}`);
+  }
+  const extensionSeoSource = await readFile(
+    join(ROOT, "src", "content", "extension-seo-landings.ts"),
+    "utf8",
+  );
+  const extensionMetadata = [
+    ...extensionSeoSource.matchAll(
+      /route:\s*"(chrome-extension\/[^"]+)",[\s\S]*?title:\s*"([^"]+)",[\s\S]*?description:\s*\n?\s*"([^"]+)"/g,
+    ),
+  ].map((match) => ({
+    route: match[1],
+    title: match[2],
+    description: match[3],
+  }));
+  if (extensionMetadata.length !== 11) {
+    throw new Error(
+      `Expected 11 US-first extension landings, found ${extensionMetadata.length}.`,
+    );
+  }
+  validateMetadataSource(
+    extensionMetadata
+      .map(
+        (entry) =>
+          `title: "${entry.title}"\ndescription: "${entry.description}"`,
+      )
+      .join("\n"),
+    "US-first extension landing content",
+  );
+  for (const sample of [
+    "accurate-copy.pdf",
+    "editable-document.pdf",
+    "ai-chat.pdf",
+    "accurate-copy-preview.svg",
+    "editable-document-preview.svg",
+    "ai-chat-preview.svg",
+  ]) {
+    const bytes = await readFile(join(ROOT, "public", "samples", sample));
+    if (bytes.length === 0) {
+      throw new Error(`Empty extension sample asset: ${sample}`);
+    }
   }
   const requiredLandingRoutes = [
     "page2pdf-gpt",

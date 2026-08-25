@@ -192,3 +192,44 @@ export const ArticleJsonLd = ({
     />
   );
 };
+
+export const SoftwareApplicationJsonLd = ({
+  description,
+  locale,
+  route,
+}: {
+  description: string;
+  locale: Locale;
+  route: string;
+}): ReactNode => {
+  const definition = getLocaleDefinition(locale);
+  if (!indexingEnabled || !definition.indexable || !definition.reviewed) {
+    return null;
+  }
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "Page 2 PDF",
+        description,
+        url: absoluteUrl(routePath(locale, route)),
+        applicationCategory: "BrowserApplication",
+        applicationSubCategory: "PDF utility",
+        operatingSystem: "Chrome",
+        inLanguage: definition.htmlLang,
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+        },
+        publisher: {
+          "@type": "Organization",
+          "@id": organizationId,
+          name: siteName,
+          url: absoluteUrl("/"),
+        },
+      }}
+    />
+  );
+};

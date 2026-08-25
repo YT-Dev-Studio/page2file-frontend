@@ -2,24 +2,7 @@ import { readdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 const root = process.cwd();
-const locales = [
-  "en",
-  "ru",
-  "de",
-  "fr",
-  "es",
-  "nl",
-  "pt",
-  "it",
-  "pl",
-  "cs",
-  "sv",
-  "no",
-  "da",
-  "fi",
-  "ro",
-  "hu",
-];
+const locales = ["en", "ru"];
 const allowPending = process.argv.includes("--allow-pending");
 const writeReview = process.argv.includes("--write-review");
 const directories = Object.fromEntries(
@@ -384,20 +367,6 @@ if (writeReview) {
 const landingFiles = {
   en: "src/content/landings.ts",
   ru: "src/content/russian-landings.ts",
-  de: "src/content/german-landings.ts",
-  fr: "src/content/french-landings.ts",
-  es: "src/content/spanish-landings.ts",
-  nl: "src/content/dutch-landings.ts",
-  pt: "src/content/portuguese-landings.ts",
-  it: "src/content/italian-landings.ts",
-  pl: "src/content/polish-landings.ts",
-  cs: "src/content/czech-landings.ts",
-  sv: "src/content/swedish-landings.ts",
-  no: "src/content/norwegian-landings.ts",
-  da: "src/content/danish-landings.ts",
-  fi: "src/content/finnish-landings.ts",
-  ro: "src/content/romanian-landings.ts",
-  hu: "src/content/hungarian-landings.ts",
 };
 for (const [locale, landingFile] of Object.entries(landingFiles)) {
   const source = await readFile(join(root, landingFile), "utf8");

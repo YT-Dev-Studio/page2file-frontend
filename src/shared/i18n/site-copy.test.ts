@@ -15,26 +15,10 @@ describe("site shell copy", () => {
     ]);
   });
 
-  test("localizes shell copy independently from indexing review state", () => {
-    expect(getSiteCopy("de").header.extensionAction).toBe(
-      "Jetzt installieren",
+  test("keeps English and Russian shell copy localized", () => {
+    expect(getSiteCopy("en").header.extensionAction).toBe("Install now");
+    expect(getSiteCopy("ru").footer.links.privacy).toBe(
+      "Политика конфиденциальности",
     );
-    expect(getSiteCopy("fr").footer.links.privacy).toBe(
-      "Confidentialité",
-    );
-    expect(getSiteCopy("es").header.extensionAction).toBe("Instalar ahora");
-    expect(getSiteCopy("nl").footer.links.privacy).toBe("Privacy");
-    expect(getSiteCopy("pt").header.extensionAction).toBe("Instalar agora");
-    expect(getSiteCopy("it").footer.links.privacy).toBe("Privacy");
-    expect(getSiteCopy("pl").header.extensionAction).toBe(
-      "Zainstaluj teraz",
-    );
-    expect(getSiteCopy("cs").footer.links.privacy).toBe("Soukromí");
-    expect(getSiteCopy("sv").header.extensionAction).toBe("Installera nu");
-    expect(getSiteCopy("no").footer.links.privacy).toBe("Personvern");
-    expect(getSiteCopy("da").header.extensionAction).toBe("Installer nu");
-    expect(getSiteCopy("fi").footer.links.privacy).toBe("Tietosuoja");
-    expect(getSiteCopy("ro").header.extensionAction).toBe("Instalează acum");
-    expect(getSiteCopy("hu").footer.links.privacy).toBe("Adatvédelem");
   });
 });

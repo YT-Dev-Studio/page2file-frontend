@@ -14,14 +14,20 @@ export type MetadataInput = {
   publishedAt?: string;
   updatedAt?: string;
   author?: string;
+  localized?: boolean;
 };
 
 const getLanguageAlternates = (
   route: string,
+  localized: boolean,
 ): Record<string, string> => {
   const alternates: Record<string, string> = {
     "x-default": absoluteUrl(routePath("en", route)),
   };
+  if (!localized) {
+    alternates.en = absoluteUrl(routePath("en", route));
+    return alternates;
+  }
   const addReviewedLocale = (locale: (typeof localeRegistry)[number]): void => {
     if (locale.reviewed && locale.indexable) {
       alternates[locale.htmlLang] = absoluteUrl(routePath(locale.code, route));
@@ -42,6 +48,7 @@ export const buildMetadata = ({
   publishedAt,
   updatedAt,
   author,
+  localized = true,
 }: MetadataInput): Metadata => {
   const definition = getLocaleDefinition(locale);
   const routeIsIndexable =
@@ -53,14 +60,14 @@ export const buildMetadata = ({
   const canonical = absoluteUrl(pathname);
   const titleWithBrand = `${title} | ${siteName}`;
   const fullTitle = titleWithBrand.length <= 65 ? titleWithBrand : title;
-  const alternateLocales = localeRegistry
+  const alternateLocales = localized ? localeRegistry
     .filter(
       (candidate): boolean =>
         candidate.reviewed &&
         candidate.indexable &&
         candidate.code !== locale,
     )
-    .map((candidate): string => candidate.openGraphLocale);
+    .map((candidate): string => candidate.openGraphLocale) : [];
   const commonOpenGraph = {
     locale: definition.openGraphLocale,
     alternateLocale: canIndex ? alternateLocales : undefined,
@@ -96,7 +103,7 @@ export const buildMetadata = ({
     description,
     alternates: {
       canonical,
-      languages: canIndex ? getLanguageAlternates(route) : undefined,
+      languages: canIndex ? getLanguageAlternates(route, localized) : undefined,
     },
     robots: {
       index: canIndex,

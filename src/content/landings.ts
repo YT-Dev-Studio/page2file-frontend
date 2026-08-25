@@ -3,34 +3,6 @@ import type { StaticRoute } from "@/shared/routes/routes";
 import type { Locale } from "@/shared/i18n/locales";
 import { getExtensionCopy } from "@/features/extension/extension-copy";
 import { russianLandingContent } from "./russian-landings";
-import { germanLandingContent } from "./german-landings";
-import { frenchLandingContent } from "./french-landings";
-import { germanLegalLandingContent } from "./german-legal-landings";
-import { frenchLegalLandingContent } from "./french-legal-landings";
-import { spanishLandingContent } from "./spanish-landings";
-import { dutchLandingContent } from "./dutch-landings";
-import { spanishLegalLandingContent } from "./spanish-legal-landings";
-import { dutchLegalLandingContent } from "./dutch-legal-landings";
-import { portugueseLandingContent } from "./portuguese-landings";
-import { italianLandingContent } from "./italian-landings";
-import { portugueseLegalLandingContent } from "./portuguese-legal-landings";
-import { italianLegalLandingContent } from "./italian-legal-landings";
-import { polishLandingContent } from "./polish-landings";
-import { czechLandingContent } from "./czech-landings";
-import { polishLegalLandingContent } from "./polish-legal-landings";
-import { czechLegalLandingContent } from "./czech-legal-landings";
-import { swedishLandingContent } from "./swedish-landings";
-import { norwegianLandingContent } from "./norwegian-landings";
-import { swedishLegalLandingContent } from "./swedish-legal-landings";
-import { norwegianLegalLandingContent } from "./norwegian-legal-landings";
-import { danishLandingContent } from "./danish-landings";
-import { finnishLandingContent } from "./finnish-landings";
-import { danishLegalLandingContent } from "./danish-legal-landings";
-import { finnishLegalLandingContent } from "./finnish-legal-landings";
-import { romanianLandingContent } from "./romanian-landings";
-import { hungarianLandingContent } from "./hungarian-landings";
-import { romanianLegalLandingContent } from "./romanian-legal-landings";
-import { hungarianLegalLandingContent } from "./hungarian-legal-landings";
 import { aboutLandingContent } from "./about-landings";
 export type ContentSection = {
     id?: string;
@@ -304,20 +276,6 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
 const localizedLandingContent: Record<Locale, Partial<Record<StaticRoute, LandingContent>>> = {
     en: { ...landingContent, about: aboutLandingContent.en },
     ru: { ...russianLandingContent, about: aboutLandingContent.ru },
-    de: { ...germanLandingContent, ...germanLegalLandingContent, about: aboutLandingContent.de },
-    fr: { ...frenchLandingContent, ...frenchLegalLandingContent, about: aboutLandingContent.fr },
-    es: { ...spanishLandingContent, ...spanishLegalLandingContent, about: aboutLandingContent.es },
-    nl: { ...dutchLandingContent, ...dutchLegalLandingContent, about: aboutLandingContent.nl },
-    pt: { ...portugueseLandingContent, ...portugueseLegalLandingContent, about: aboutLandingContent.pt },
-    it: { ...italianLandingContent, ...italianLegalLandingContent, about: aboutLandingContent.it },
-    pl: { ...polishLandingContent, ...polishLegalLandingContent, about: aboutLandingContent.pl },
-    cs: { ...czechLandingContent, ...czechLegalLandingContent, about: aboutLandingContent.cs },
-    sv: { ...swedishLandingContent, ...swedishLegalLandingContent, about: aboutLandingContent.sv },
-    no: { ...norwegianLandingContent, ...norwegianLegalLandingContent, about: aboutLandingContent.no },
-    da: { ...danishLandingContent, ...danishLegalLandingContent, about: aboutLandingContent.da },
-    fi: { ...finnishLandingContent, ...finnishLegalLandingContent, about: aboutLandingContent.fi },
-    ro: { ...romanianLandingContent, ...romanianLegalLandingContent, about: aboutLandingContent.ro },
-    hu: { ...hungarianLandingContent, ...hungarianLegalLandingContent, about: aboutLandingContent.hu },
 };
 const reconcileLegalProductScope = (
     locale: Locale,

@@ -2,10 +2,7 @@ import { access, readFile } from "node:fs/promises";
 import { join } from "node:path";
 
 const ROOT = process.cwd();
-const REQUIRED_LOCALES = [
-  "en", "ru", "de", "fr", "es", "nl", "pt", "it", "pl",
-  "sv", "no", "da", "fi", "cs", "ro", "hu",
-];
+const REQUIRED_LOCALES = ["en", "ru"];
 const REQUIRED_ROUTES = [
   "",
   "chrome-extension/how-to-use",
@@ -14,6 +11,19 @@ const REQUIRED_ROUTES = [
   "privacy",
   "terms",
   "about",
+];
+const EN_ONLY_ROUTES = [
+  "chrome-extension/webpage-to-pdf",
+  "chrome-extension/ai-chat-to-pdf",
+  "chrome-extension/messenger-chat-to-pdf",
+  "chrome-extension/full-page-pdf",
+  "chrome-extension/webpage-to-pdf-with-links",
+  "chrome-extension/html-page-to-pdf",
+  "chrome-extension/chatgpt-to-pdf",
+  "chrome-extension/claude-to-pdf",
+  "chrome-extension/whatsapp-chat-to-pdf",
+  "chrome-extension/telegram-chat-to-pdf",
+  "chrome-extension/chrome-print-vs-page-2-pdf",
 ];
 const REMOVED_ROUTES = [
   "cookie-policy",
@@ -100,6 +110,14 @@ const run = async () => {
     join(ROOT, "src", "app", "(root)", "route.ts"),
     "utf8",
   );
+  const localeSwitcherSource = await readFile(
+    join(ROOT, "src", "shared", "ui", "locale-switcher.tsx"),
+    "utf8",
+  );
+  const extensionSeoLandings = await readFile(
+    join(ROOT, "src", "content", "extension-seo-landings.ts"),
+    "utf8",
+  );
   const publicLinkSources = [
     [
       "404 page",
@@ -126,6 +144,18 @@ const run = async () => {
   ];
   assertContains(locales, REQUIRED_LOCALES, "locale");
   assertContains(routes, REQUIRED_ROUTES, "route");
+  assertContains(routes, EN_ONLY_ROUTES, "US-first extension route");
+  assertContains(
+    extensionSeoLandings,
+    EN_ONLY_ROUTES,
+    "US-first extension content",
+  );
+  if (
+    !routes.includes("isStaticRouteAvailable") ||
+    !routes.includes('locale === "en"')
+  ) {
+    throw new Error("US-first extension routes must be English-only.");
+  }
   assertRemovedRoutesAbsent(routes, "route registry");
   assertRemovedRoutesAbsent(landings, "English landing content");
   assertRemovedRoutesAbsent(russianLandings, "Russian landing content");
@@ -177,14 +207,19 @@ const run = async () => {
     throw new Error("Localized sitemap alternates are required.");
   }
   if (
-    !rootRouteSource.includes('dynamic = "force-dynamic"') ||
-    !rootRouteSource.includes('request.headers.get("cf-ipcountry")') ||
-    !rootRouteSource.includes('request.headers.get("accept-language")') ||
-    !rootRouteSource.includes("resolveInitialLocale") ||
+    !rootRouteSource.includes('redirectUrl.pathname = "/en"') ||
     !rootRouteSource.includes("NextResponse.redirect")
   ) {
     throw new Error(
-      "Dynamic root route must negotiate EN/RU from country and language headers.",
+      "Root route must redirect directly to the default English locale.",
+    );
+  }
+  if (
+    !localeSwitcherSource.includes("isExtensionSeoRoute") ||
+    !localeSwitcherSource.includes('"/ru/chrome-extension/how-to-use"')
+  ) {
+    throw new Error(
+      "English-only extension routes must switch to the localized Russian guide.",
     );
   }
   await access(join(ROOT, "src", "app", "[locale]", "[[...slug]]", "page.tsx"));
@@ -233,7 +268,7 @@ const run = async () => {
     throw new Error("BFF service credentials must remain server-only.");
   }
 
-  console.log(`Routes valid: ${REQUIRED_ROUTES.length} public routes across ${REQUIRED_LOCALES.length} locales and ${bffRoutes.length} BFF routes.`);
+  console.log(`Routes valid: ${REQUIRED_ROUTES.length} localized public routes, ${EN_ONLY_ROUTES.length} en-US extension routes, and ${bffRoutes.length} BFF routes.`);
 };
 
 await run();

@@ -1,9 +1,9 @@
 {
-  "version": 2,
-  "locales": ["en", "ru", "de", "fr", "es", "nl", "pt", "it", "pl", "cs", "sv", "no", "da", "fi", "ro", "hu"],
+  "version": 3,
+  "locales": ["en", "ru"],
   "localizationPolicy": {
     "primaryIntent": "Use each locale's rendered SEO title as the natural-language primary intent.",
-    "validation": "Every indexed route must exist in all 16 locales and must not link to unpublished content."
+    "validation": "Localized routes exist in English and Russian. New US-first extension routes launch in English only and must not emit hreflang for unpublished Russian translations."
   },
   "entries": [
     {
@@ -21,8 +21,107 @@
       "primaryIntentSource": "localized-seo-title",
       "intentType": "learn",
       "purpose": "Give the complete linear procedure, supported chats, privacy boundary, and current limitations.",
-      "internalLinks": ["", "privacy"],
+      "internalLinks": ["", "privacy", "chrome-extension/webpage-to-pdf", "chrome-extension/ai-chat-to-pdf", "chrome-extension/messenger-chat-to-pdf"],
       "avoidCompetingWith": [""]
+    },
+    {
+      "route": "chrome-extension/webpage-to-pdf",
+      "kind": "static",
+      "primaryIntentSource": "localized-content-title",
+      "intentType": "perform",
+      "purpose": "Hub for saving the full webpage currently open in Chrome as a visual or selectable PDF.",
+      "internalLinks": ["chrome-extension/full-page-pdf", "chrome-extension/webpage-to-pdf-with-links", "chrome-extension/chrome-print-vs-page-2-pdf"],
+      "avoidCompetingWith": ["chrome-extension/how-to-use"]
+    },
+    {
+      "route": "chrome-extension/ai-chat-to-pdf",
+      "kind": "static",
+      "primaryIntentSource": "localized-content-title",
+      "intentType": "perform",
+      "purpose": "Hub for exporting the current supported AI conversation as a clean PDF.",
+      "internalLinks": ["chrome-extension/chatgpt-to-pdf", "chrome-extension/claude-to-pdf", "chrome-extension/messenger-chat-to-pdf"],
+      "avoidCompetingWith": ["chrome-extension/chatgpt-to-pdf", "chrome-extension/claude-to-pdf"]
+    },
+    {
+      "route": "chrome-extension/messenger-chat-to-pdf",
+      "kind": "static",
+      "primaryIntentSource": "localized-content-title",
+      "intentType": "perform",
+      "purpose": "Hub for exporting the current supported WhatsApp or Telegram conversation.",
+      "internalLinks": ["chrome-extension/whatsapp-chat-to-pdf", "chrome-extension/telegram-chat-to-pdf", "chrome-extension/ai-chat-to-pdf"],
+      "avoidCompetingWith": ["chrome-extension/whatsapp-chat-to-pdf", "chrome-extension/telegram-chat-to-pdf"]
+    },
+    {
+      "route": "chrome-extension/full-page-pdf",
+      "kind": "static",
+      "primaryIntentSource": "localized-content-title",
+      "intentType": "perform",
+      "purpose": "Explain full-page capture beyond the viewport, including a large internal scroll root.",
+      "internalLinks": ["chrome-extension/webpage-to-pdf", "chrome-extension/chrome-print-vs-page-2-pdf", "chrome-extension/webpage-to-pdf-with-links"],
+      "avoidCompetingWith": ["chrome-extension/webpage-to-pdf"]
+    },
+    {
+      "route": "chrome-extension/webpage-to-pdf-with-links",
+      "kind": "static",
+      "primaryIntentSource": "localized-content-title",
+      "intentType": "perform",
+      "purpose": "Explain Editable document output with selectable text and available links.",
+      "internalLinks": ["chrome-extension/webpage-to-pdf", "chrome-extension/html-page-to-pdf", "chrome-extension/full-page-pdf"],
+      "avoidCompetingWith": ["chrome-extension/webpage-to-pdf"]
+    },
+    {
+      "route": "chrome-extension/html-page-to-pdf",
+      "kind": "static",
+      "primaryIntentSource": "localized-content-title",
+      "intentType": "perform",
+      "purpose": "Explain active-tab conversion for an HTML page or permitted local HTML file already open in Chrome.",
+      "internalLinks": ["chrome-extension/webpage-to-pdf", "chrome-extension/webpage-to-pdf-with-links", "chrome-extension/chrome-print-vs-page-2-pdf"],
+      "avoidCompetingWith": ["html2pdf-gpt"]
+    },
+    {
+      "route": "chrome-extension/chatgpt-to-pdf",
+      "kind": "static",
+      "primaryIntentSource": "localized-content-title",
+      "intentType": "perform",
+      "purpose": "Export only the current supported ChatGPT conversation, with explicit account-wide limitations.",
+      "internalLinks": ["chrome-extension/ai-chat-to-pdf", "chrome-extension/claude-to-pdf", "chrome-extension/messenger-chat-to-pdf"],
+      "avoidCompetingWith": ["chrome-extension/ai-chat-to-pdf"]
+    },
+    {
+      "route": "chrome-extension/claude-to-pdf",
+      "kind": "static",
+      "primaryIntentSource": "localized-content-title",
+      "intentType": "perform",
+      "purpose": "Export the current supported Claude transcript with in-conversation attachments.",
+      "internalLinks": ["chrome-extension/ai-chat-to-pdf", "chrome-extension/chatgpt-to-pdf", "chrome-extension/webpage-to-pdf"],
+      "avoidCompetingWith": ["chrome-extension/ai-chat-to-pdf"]
+    },
+    {
+      "route": "chrome-extension/whatsapp-chat-to-pdf",
+      "kind": "static",
+      "primaryIntentSource": "localized-content-title",
+      "intentType": "perform",
+      "purpose": "Export the current WhatsApp Web conversation without claiming all-chat backup.",
+      "internalLinks": ["chrome-extension/messenger-chat-to-pdf", "chrome-extension/telegram-chat-to-pdf", "chrome-extension/ai-chat-to-pdf"],
+      "avoidCompetingWith": ["chrome-extension/messenger-chat-to-pdf"]
+    },
+    {
+      "route": "chrome-extension/telegram-chat-to-pdf",
+      "kind": "static",
+      "primaryIntentSource": "localized-content-title",
+      "intentType": "perform",
+      "purpose": "Export the current supported Telegram Web chat or channel.",
+      "internalLinks": ["chrome-extension/messenger-chat-to-pdf", "chrome-extension/whatsapp-chat-to-pdf", "chrome-extension/ai-chat-to-pdf"],
+      "avoidCompetingWith": ["chrome-extension/messenger-chat-to-pdf"]
+    },
+    {
+      "route": "chrome-extension/chrome-print-vs-page-2-pdf",
+      "kind": "static",
+      "primaryIntentSource": "localized-content-title",
+      "intentType": "compare",
+      "purpose": "Compare standard Chrome Print with Page 2 PDF's full-page, selectable, visual, and chat workflows.",
+      "internalLinks": ["chrome-extension/full-page-pdf", "chrome-extension/webpage-to-pdf-with-links", "chrome-extension/webpage-to-pdf"],
+      "avoidCompetingWith": ["chrome-extension/webpage-to-pdf"]
     },
     {
       "route": "page2pdf-gpt",

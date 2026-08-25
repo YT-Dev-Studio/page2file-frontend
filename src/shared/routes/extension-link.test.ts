@@ -5,7 +5,7 @@ import { getExtensionLink } from "./extension-link";
 describe("getExtensionLink", () => {
   test("uses the locale-aware internal fallback when no store URL exists", () => {
     if (externalLinks.chromeExtension.href) {
-      expect(getExtensionLink("de")).toEqual({
+      expect(getExtensionLink("ru")).toEqual({
         external: true,
         href: externalLinks.chromeExtension.href,
         placeholder: externalLinks.chromeExtension.status === "placeholder",
@@ -13,9 +13,9 @@ describe("getExtensionLink", () => {
       return;
     }
 
-    expect(getExtensionLink("de")).toEqual({
+    expect(getExtensionLink("ru")).toEqual({
       external: false,
-      href: "/de/chrome-extension/how-to-use",
+      href: "/ru/chrome-extension/how-to-use",
       placeholder: false,
     });
   });

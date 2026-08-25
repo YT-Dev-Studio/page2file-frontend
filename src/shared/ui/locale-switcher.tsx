@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import type { ChangeEvent, ReactNode } from "react";
 import { localeRegistry, replaceLocale, type Locale } from "@/shared/i18n/locales";
 import { getMessages } from "@/shared/i18n/messages";
+import { isExtensionSeoRoute } from "@/shared/routes/routes";
 import {
   Select,
   type SelectOption,
@@ -29,7 +30,12 @@ export const LocaleSwitcher = ({
 
   const handleLocaleChange = (event: ChangeEvent<HTMLSelectElement>): void => {
     const nextLocale = event.target.value as Locale;
-    router.push(replaceLocale(pathname, nextLocale));
+    const route = pathname.split("/").filter(Boolean).slice(1).join("/");
+    const nextPath =
+      nextLocale === "ru" && isExtensionSeoRoute(route)
+        ? "/ru/chrome-extension/how-to-use"
+        : replaceLocale(pathname, nextLocale);
+    router.push(nextPath);
   };
 
   const localeOption = (

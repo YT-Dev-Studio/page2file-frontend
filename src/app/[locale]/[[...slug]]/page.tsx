@@ -1,12 +1,18 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { getExtensionSeoLanding } from "@/content/extension-seo-landings";
 import { getLandingContent } from "@/content/landings";
 import { resolvePublicPage } from "@/features/routing/public-page-resolver";
 import { isLocale, localeRegistry, type Locale } from "@/shared/i18n/locales";
 import { buildMetadata } from "@/shared/seo/metadata";
 import { getSeoCopy } from "@/shared/seo/seo-copy";
-import { isStaticRoute, staticRoutes } from "@/shared/routes/routes";
+import {
+  isExtensionSeoRoute,
+  isStaticRoute,
+  isStaticRouteAvailable,
+  staticRoutesForLocale,
+} from "@/shared/routes/routes";
 
 type RouteParams = {
   locale: string;
@@ -16,10 +22,6 @@ type RouteParams = {
 type PageProps = {
   params: Promise<RouteParams>;
 };
-
-const staticContentRoutes: ReadonlyArray<string> = [
-  ...staticRoutes,
-];
 
 export const generateStaticParams = (): Array<RouteParams> => {
   const params: Array<RouteParams> = [];
@@ -32,7 +34,7 @@ export const generateStaticParams = (): Array<RouteParams> => {
         slug: route ? route.split("/") : [],
       });
     };
-    staticContentRoutes.forEach(addRoute);
+    staticRoutesForLocale(definition.code).forEach(addRoute);
   };
   localeRegistry.forEach(addLocale);
   return params;
@@ -59,6 +61,24 @@ const getRouteMetadata = (
     });
   }
   if (isStaticRoute(route)) {
+    if (!isStaticRouteAvailable(locale, route)) {
+      return buildMetadata({
+        locale,
+        route,
+        ...getSeoCopy(locale, "notFound"),
+        noindex: true,
+      });
+    }
+    if (isExtensionSeoRoute(route)) {
+      const content = getExtensionSeoLanding(route);
+      return buildMetadata({
+        locale,
+        route,
+        title: content.title,
+        description: content.description,
+        localized: false,
+      });
+    }
     const content = getLandingContent(locale, route);
     if (content) {
       return buildMetadata({

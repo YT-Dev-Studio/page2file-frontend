@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import type { Locale } from "@/shared/i18n/locales";
 import { SeoBreadcrumbs, type BreadcrumbItem } from "@/shared/seo/structured-data";
 import { ExternalCta } from "@/shared/ui/external-cta";
@@ -69,6 +70,30 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
             </ul>
           </article>
         </section>
+        {locale === "en" ? (
+          <section className={styles.details} aria-labelledby="workflow-guides">
+            <article>
+              <h2 id="workflow-guides">Explore PDF workflows</h2>
+              <ul>
+                <li>
+                  <Link href="/en/chrome-extension/webpage-to-pdf">
+                    Save the full webpage open in Chrome
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/en/chrome-extension/ai-chat-to-pdf">
+                    Export the current supported AI conversation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/en/chrome-extension/messenger-chat-to-pdf">
+                    Export a supported WhatsApp or Telegram conversation
+                  </Link>
+                </li>
+              </ul>
+            </article>
+          </section>
+        ) : null}
       </Container>
     </PublicPage>
   );

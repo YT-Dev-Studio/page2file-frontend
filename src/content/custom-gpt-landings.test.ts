@@ -25,55 +25,21 @@ describe("GPT App landing content", () => {
   test.each(gptRoutes)(
     "keeps $route bound to its own CTA and result contract",
     ({ externalLinkKey, route, serviceName }) => {
-      const english = getLandingContent("en", route);
-      const russian = getLandingContent("ru", route);
-      const german = getLandingContent("de", route);
-      const french = getLandingContent("fr", route);
-      const spanish = getLandingContent("es", route);
-      const dutch = getLandingContent("nl", route);
-      const portuguese = getLandingContent("pt", route);
-      const italian = getLandingContent("it", route);
-
-      expect(english?.externalLinkKey).toBe(externalLinkKey);
-      expect(russian?.externalLinkKey).toBe(externalLinkKey);
-      expect(german?.externalLinkKey).toBe(externalLinkKey);
-      expect(french?.externalLinkKey).toBe(externalLinkKey);
-      expect(spanish?.externalLinkKey).toBe(externalLinkKey);
-      expect(dutch?.externalLinkKey).toBe(externalLinkKey);
-      expect(portuguese?.externalLinkKey).toBe(externalLinkKey);
-      expect(italian?.externalLinkKey).toBe(externalLinkKey);
       const ctaName =
         route === "page2pdf-gpt"
           ? "GPT Webpage 2 PDF"
           : route === "html2pdf-gpt"
             ? "GPT HTML 2 PDF"
             : serviceName;
-      expect(english?.primaryLabel).toContain(ctaName);
-      expect(russian?.primaryLabel).toContain(ctaName);
-      expect(german?.primaryLabel).toContain(ctaName);
-      expect(french?.primaryLabel).toContain(ctaName);
-      expect(spanish?.primaryLabel).toContain(ctaName);
-      expect(dutch?.primaryLabel).toContain(ctaName);
-      expect(portuguese?.primaryLabel).toContain(ctaName);
-      expect(italian?.primaryLabel).toContain(ctaName);
       const sectionCount =
         route === "page2pdf-gpt" || route === "html2pdf-gpt" ? 5 : 3;
-      expect(english?.sections).toHaveLength(sectionCount);
-      expect(russian?.sections).toHaveLength(sectionCount);
-      expect(german?.sections).toHaveLength(sectionCount);
-      expect(french?.sections).toHaveLength(sectionCount);
-      expect(spanish?.sections).toHaveLength(sectionCount);
-      expect(dutch?.sections).toHaveLength(sectionCount);
-      expect(portuguese?.sections).toHaveLength(sectionCount);
-      expect(italian?.sections).toHaveLength(sectionCount);
-      expect(english?.lead.length).toBeGreaterThan(120);
-      expect(russian?.lead.length).toBeGreaterThan(120);
-      expect(german?.lead.length).toBeGreaterThan(120);
-      expect(french?.lead.length).toBeGreaterThan(120);
-      expect(spanish?.lead.length).toBeGreaterThan(120);
-      expect(dutch?.lead.length).toBeGreaterThan(120);
-      expect(portuguese?.lead.length).toBeGreaterThan(120);
-      expect(italian?.lead.length).toBeGreaterThan(120);
+      for (const { code } of localeRegistry) {
+        const content = getLandingContent(code, route);
+        expect(content?.externalLinkKey).toBe(externalLinkKey);
+        expect(content?.primaryLabel).toContain(ctaName);
+        expect(content?.sections).toHaveLength(sectionCount);
+        expect(content?.lead.length).toBeGreaterThan(120);
+      }
     },
   );
 
