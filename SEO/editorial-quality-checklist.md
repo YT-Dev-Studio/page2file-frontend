@@ -89,5 +89,11 @@ the factual, language, and link checks independently for Russian copy.
   https://support.anthropic.com/en/articles/9450526-how-can-i-export-my-claude-data
 - Google Gemini export:
   https://support.google.com/gemini/answer/16920332?hl=en
+- Perplexity Sessions and native file export:
+  https://www.perplexity.ai/help-center/en/articles/10354769-what-is-a-thread
+- Telegram Desktop history export:
+  https://telegram.org/blog/export-and-more?setln=en
 - Slack export:
   https://slack.com/help/articles/201658943-Export-your-workspace-data
+- Microsoft Teams Export APIs:
+  https://learn.microsoft.com/en-us/microsoftteams/export-teams-content

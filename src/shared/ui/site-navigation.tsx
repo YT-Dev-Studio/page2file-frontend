@@ -57,6 +57,11 @@ export const SiteNavigation = ({
       label: "HTML 2 PDF",
     },
     {
+      activePrefix: `/${locale}/blog`,
+      href: `/${locale}/blog`,
+      label: locale === "ru" ? "Блог" : "Blog",
+    },
+    {
       activePrefix: `/${locale}/about`,
       href: `/${locale}/about`,
       label: about?.title ?? "About Page 2 File",

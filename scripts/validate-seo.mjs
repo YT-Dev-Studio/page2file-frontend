@@ -647,6 +647,15 @@ const validateSource = async () => {
     }
   }
 
+  const structuredDataSource = await readText(
+    "src/shared/seo/structured-data.tsx",
+  );
+  if (/\bprice:\s*["']0["']/.test(structuredDataSource)) {
+    addError(
+      "SoftwareApplication JSON-LD must not publish unverified zero-price data.",
+    );
+  }
+
   const localeSource = await readText("src/shared/i18n/locales.ts");
   for (const locale of LOCALES) {
     const line = localeSource
@@ -808,7 +817,7 @@ const validateSource = async () => {
     const blogFiles = (await readdir(join(ROOT, "content", "blog")))
       .filter((filename) => filename.endsWith(".mdx"))
       .map((filename) => `blog/${filename.slice(0, -4)}`);
-    const expectedRoutes = new Set([...staticRoutes, ...blogFiles]);
+    const expectedRoutes = new Set([...staticRoutes, "blog", ...blogFiles]);
     for (const route of expectedRoutes) {
       if (!keys.has(route)) {
         addError(`Intent map is missing route: ${route || "/"}`);

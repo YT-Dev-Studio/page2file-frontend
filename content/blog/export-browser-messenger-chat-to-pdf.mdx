@@ -1,0 +1,50 @@
+Page 2 PDF supports a semantic PDF of the current WhatsApp Web thread or Telegram Web chat or channel. It reads the active conversation, separates detected participant roles, and preserves supported message structures. It does not migrate chats or export an entire messaging account.
+
+## Start from the exact active thread
+
+Open WhatsApp Web or Telegram Web in Chrome and select the conversation you intend to keep. Confirm the title and participants, load the relevant history, and expand media that must appear. Launch Page 2 PDF from that tab and choose **AI / Chat**.
+
+Select all messages or replies only, then decide whether to remove images, video, audio, or links. Keep the tab open until history loading and preview finish. The transcript uses portrait pages and includes at most the latest 2,000 retrievable messages.
+
+<ArticleFigure
+  src="/blog/demos/messenger-thread-workflow.webp"
+  alt="Verified test conversation transformed into a clean one-page messenger PDF"
+  caption="The supported workflow begins with one selected browser thread and ends with a reviewable transcript."
+  step={1}
+  openLabel="Open the browser messenger workflow"
+  closeLabel="Close the browser messenger workflow"
+/>
+
+## What messenger structure can survive
+
+The transcript can preserve detected senders, message order, text, links, files, images, video posters, and audio or voice references when the platform exposes them in a supported form. WhatsApp handling excludes the conversation sidebar and recognizes message direction. Telegram handling covers a normal chat and channel variant.
+
+View-once WhatsApp content is explicitly not exported. Protected, expired, unloaded, or unsupported media may be absent or represented by a reference. The PDF is not a substitute for the platform's own backup or legal-preservation tools.
+
+For platform instructions, use the [WhatsApp Web guide](/en/blog/export-whatsapp-web-chat-to-pdf) or [Telegram Web guide](/en/blog/export-telegram-web-chat-to-pdf). The direct product hub is [messenger chat to PDF](/en/chrome-extension/messenger-chat-to-pdf).
+
+## Separate a readable thread from account export
+
+A current-thread PDF is convenient for review, a support record, meeting follow-up, or an authorized conversation handoff. An account archive has a wider scope and may use JSON, HTML, ZIP files, or platform-specific formats. Choose the native export for migration, compliance, or full history.
+
+Neither WhatsApp Web nor Telegram Web compatibility implies Slack, Teams, Discord, Instagram, or Messenger support. Those interfaces have different message structures and authorization boundaries. The [compatibility guide](/en/blog/supported-and-unsupported-browser-messengers) lists the explicit exclusions.
+
+## Review identity and completeness
+
+Check the thread title, participants, first and last included messages, timestamps when exposed, quoted replies, links, and missing-media notices. A role error can invert the meaning of a conversation. If the platform changed its markup, stop rather than treating a malformed preview as complete.
+
+Respect participant privacy, workplace policy, confidentiality, and applicable law. The extension does not grant the right to distribute a conversation.
+
+## Messenger export questions
+
+### Can I export every WhatsApp or Telegram chat at once?
+
+No. Page 2 PDF handles the current conversation. Use a platform-provided archive or backup workflow for broader scope.
+
+### Does it transfer the chat into another messenger?
+
+No. It creates a PDF and does not migrate messages.
+
+### Can it export Slack or Microsoft Teams?
+
+No. Those platforms are not supported Page 2 PDF messenger adapters.

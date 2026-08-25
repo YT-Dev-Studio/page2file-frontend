@@ -40,6 +40,19 @@ English-only routes emit only `x-default` and `en` alternates. Their language sw
 - The source tab must remain open during preparation. Very tall pages, virtualized lists, protected frames, unavailable assets, and platform DOM changes can produce partial output or require an adapter update.
 - Page and conversation content is not uploaded to Page 2 File servers by the extension. Temporary preview data follows the extension lifecycle, with orphaned data older than two hours cleared on a later run.
 
+## Published blog architecture
+
+The bilingual blog adds twenty English/Russian article pairs under `/{locale}/blog`. Articles support the product routes without duplicating their acquisition job:
+
+| Cluster | Article jobs | Editorial boundary |
+|---|---|---|
+| Output decisions | Choose a PDF mode; diagnose clipped Chrome Print output; compare capture with scraping. | Explain when Chrome Print or a crawler is the better tool. Do not present the extension as a pasted-URL converter. |
+| Webpage cases | Long and internally scrolling pages; signed-in or local pages; links, forms and regional OCR; dashboards; research pages; receipts and confirmations. | One active accessible tab only. No authentication bypass, arbitrary clipping, whole-site crawl, whole-document OCR, PDF/UA certification or DOM editor. |
+| AI conversations | All supported adapters; ChatGPT; Claude and Gemini; Grok, Perplexity, Copilot and Manus; semantic code/table/citation handling; replies-only and long-history limits. | One current conversation, latest 2,000 retrievable messages. Live platform status is rechecked before guaranteed compatibility wording. Generic AI support remains conditional. |
+| Browser messaging | WhatsApp Web; Telegram Web chat/channel; supported-versus-unsupported matrix; readable chat PDF versus account-data archive. | No account-wide backup or migration. Slack, Teams, Discord, Instagram and Messenger remain unsupported by Page 2 PDF; official platform export routes may be recommended instead. |
+
+Each article owns one primary question, one opening answer, one limitation set and one next-step path. Platform names are combined when separate pages would only substitute a brand name. English copy is frozen before Russian is independently edited; both locales use the same slug and shared evidence image.
+
 ## Intent ownership
 
 - The homepage owns the broad product choice and mode comparison.
@@ -48,6 +61,7 @@ English-only routes emit only `x-default` and `en` alternates. Their language sw
 - The AI and messenger hubs explain category-wide boundaries. Platform pages answer only the current-conversation workflow for that platform.
 - The two GPT routes remain separate from the extension because their inputs and processing boundaries differ.
 - About, Privacy, and Terms are not acquisition landing pages and must not absorb product queries.
+- Product landings own the direct install/conversion query. Blog articles own decisions, troubleshooting, platform comparisons and use-case instructions; their titles must not duplicate landing metadata.
 
 ## Evidence policy
 
@@ -57,4 +71,4 @@ US SERP validation is recorded per query in `us-serp-validation.csv`. Only direc
 
 ## Unpublished content
 
-The blog, updates, changelog, public URL/PPTX converters, unconfirmed GPTs, and former standalone platform pages are not published. Their routes return `404` without redirects. Empty editorial registries remain valid; new publication requires current product evidence, English/Russian parity where applicable, intent review, and rendered QA.
+Updates, changelog, public URL/PPTX converters, unconfirmed GPTs, and former standalone thin platform pages are not published. Their routes return `404` without redirects. The blog is published only from paired EN/RU registry entries that pass product-evidence, intent, anti-slop, link, image and rendered checks.

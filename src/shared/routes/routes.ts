@@ -28,6 +28,7 @@ export type PublicPageFamily =
   | "extension"
   | "extension-seo"
   | "gpt-workflow"
+  | "content"
   | "legal";
 
 export const extensionSeoRoutes: ReadonlyArray<ExtensionSeoRoute> = [

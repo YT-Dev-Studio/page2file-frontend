@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getLandingContent } from "@/content/landings";
+import { getBlogEntries } from "@/content/content-registry";
 import {
   absoluteUrl,
   indexingEnabled,
@@ -62,5 +63,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .forEach(addRoute);
   };
   indexableLocales.forEach(addLocale);
+  const blogSlugs = getBlogEntries("en").map((entry) => entry.slug);
+  const blogRoutes = ["blog", ...blogSlugs.map((slug) => `blog/${slug}`)];
+  const blogAlternates = (route: string): Record<string, string> => ({
+    "x-default": absoluteUrl(routePath("en", route)),
+    en: absoluteUrl(routePath("en", route)),
+    ru: absoluteUrl(routePath("ru", route)),
+  });
+  for (const locale of indexableLocales) {
+    for (const route of blogRoutes) {
+      const article = route === "blog"
+        ? undefined
+        : getBlogEntries(locale.code).find(
+            (entry) => `blog/${entry.slug}` === route,
+          );
+      entries.push({
+        url: absoluteUrl(routePath(locale.code, route)),
+        lastModified: article?.updatedAt,
+        priority: route === "blog" ? 0.7 : 0.6,
+        alternates: { languages: blogAlternates(route) },
+      });
+    }
+  }
   return entries;
 }

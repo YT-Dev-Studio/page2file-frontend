@@ -15,6 +15,8 @@ export type MetadataInput = {
   updatedAt?: string;
   author?: string;
   localized?: boolean;
+  image?: string;
+  imageAlt?: string;
 };
 
 const getLanguageAlternates = (
@@ -49,6 +51,8 @@ export const buildMetadata = ({
   updatedAt,
   author,
   localized = true,
+  image = "/og/page2file-share.png",
+  imageAlt,
 }: MetadataInput): Metadata => {
   const definition = getLocaleDefinition(locale);
   const routeIsIndexable =
@@ -77,10 +81,10 @@ export const buildMetadata = ({
     siteName,
     images: [
       {
-        url: absoluteUrl("/og/page2file-share.png"),
+        url: absoluteUrl(image),
         width: 1200,
-        height: 630,
-        alt: `${title} — ${siteName}`,
+        height: image.startsWith("/blog/mocks/") ? 675 : 630,
+        alt: imageAlt ?? `${title} — ${siteName}`,
       },
     ],
   };
@@ -118,7 +122,7 @@ export const buildMetadata = ({
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [absoluteUrl("/og/page2file-share.png")],
+      images: [absoluteUrl(image)],
     },
   };
 };

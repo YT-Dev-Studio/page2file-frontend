@@ -1,5 +1,6 @@
 import { absoluteUrl, legalProfile, siteDescription } from "@/shared/config/site";
 import { localeRegistry } from "@/shared/i18n/locales";
+import { getBlogEntries } from "@/content/content-registry";
 import { routePath, staticRoutes } from "@/shared/routes/routes";
 
 export const dynamic = "force-static";
@@ -20,6 +21,10 @@ export function GET(): Response {
         )}`,
     )
     .join("\n");
+  const blogRoutes = getBlogEntries("en").map(
+    (entry): string =>
+      `- ${entry.title}: ${absoluteUrl(routePath("en", `blog/${entry.slug}`))}`,
+  );
 
   const body = [
     "# Page 2 File",
@@ -32,6 +37,10 @@ export function GET(): Response {
     "",
     "## Main pages",
     ...englishRoutes,
+    `- Blog: ${absoluteUrl(routePath("en", "blog"))}`,
+    "",
+    "## Field guides",
+    ...blogRoutes,
     "",
     "## Discovery and contact",
     `- Sitemap: ${absoluteUrl("/sitemap.xml")}`,

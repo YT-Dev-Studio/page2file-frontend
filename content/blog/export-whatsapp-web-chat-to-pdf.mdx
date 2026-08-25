@@ -1,0 +1,50 @@
+To save one WhatsApp Web conversation as a readable PDF, open that thread in Chrome, choose **AI / Chat** in Page 2 PDF, set the message and media scope, and keep the tab open during preparation. The adapter reads the active conversation rather than the chat list or the whole account.
+
+## Verify the selected WhatsApp thread
+
+Check the contact or group title and participants before export. Load the part of history you need and open quoted messages or media only when the interface requires it for visibility. The bounded loader can include no more than the latest 2,000 messages it can retrieve.
+
+WhatsApp Web often keeps the chat list beside the active thread. The dedicated adapter ignores that sidebar and uses message direction to distinguish participants in the selected conversation. Review the first page to confirm roles before relying on the file.
+
+<ArticleFigure
+  src="/blog/demos/whatsapp-thread-proof.webp"
+  alt="Verified test conversation transformed into a clean one-page messenger PDF"
+  caption="The adapter targets the selected thread, preserves detected direction, and leaves account-wide history outside the PDF."
+  step={1}
+  openLabel="Open the WhatsApp Web transcript example"
+  closeLabel="Close the WhatsApp Web transcript example"
+/>
+
+## Decide which media belongs in the record
+
+Images, video, audio or voice references, and links have separate removal controls. Keep a category when it carries evidence or context; remove it when disclosure or readability matters more. The transcript can preserve supported visible media references, not every binary file stored by WhatsApp.
+
+View-once content is not exported. Unavailable, protected, expired, or unloaded media can be missing or reduced to a reference. Test representative links and compare media order with the source thread.
+
+For shared messenger controls, read the [browser messenger guide](/en/blog/export-browser-messenger-chat-to-pdf). The direct product route is [WhatsApp chat to PDF](/en/chrome-extension/whatsapp-chat-to-pdf).
+
+## Compare with WhatsApp's own export
+
+WhatsApp mobile clients provide their own chat-export and transfer features, which can be more appropriate for portability or a broader text-and-media package. Page 2 PDF focuses on a formatted PDF of the current browser thread. Do not describe it as a backup, migration, or account export.
+
+Choose based on the output: a readable PDF for review, or the platform's native workflow for moving or archiving data. The [chat PDF versus account export guide](/en/blog/chat-pdf-vs-account-data-export) compares those jobs.
+
+## Review privacy and completeness
+
+Conversations may contain personal data, workplace information, payment details, access links, or third-party media. Confirm permission to save and share them. A participant's presence in the thread does not automatically authorize distribution.
+
+Inspect participants, message direction, timestamps when exposed, quoted replies, the first and last included messages, and missing-media notices. If WhatsApp changes its browser structure and the preview is malformed, wait for adapter verification or use WhatsApp's own export.
+
+## WhatsApp questions
+
+### Does the PDF include every chat in the sidebar?
+
+No. The adapter intentionally targets the active conversation and ignores sidebar items.
+
+### Are view-once messages included?
+
+No. View-once media is explicitly outside the export.
+
+### Can I use replies-only for a WhatsApp conversation?
+
+The semantic mode provides the scope control, but messenger roles do not always map to “assistant replies” in a useful way. Review the result and normally keep all messages for a participant conversation.

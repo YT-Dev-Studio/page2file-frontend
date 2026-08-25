@@ -218,11 +218,6 @@ export const SoftwareApplicationJsonLd = ({
         applicationSubCategory: "PDF utility",
         operatingSystem: "Chrome",
         inLanguage: definition.htmlLang,
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "USD",
-        },
         publisher: {
           "@type": "Organization",
           "@id": organizationId,

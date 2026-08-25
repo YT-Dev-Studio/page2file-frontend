@@ -276,6 +276,19 @@
 }
 
 @media (max-width: 767px) {
+  .breadcrumbs li {
+    min-width: 0;
+  }
+
+  .breadcrumbs li:last-child {
+    flex: 1 1 100%;
+  }
+
+  .breadcrumbs li:last-child a {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
   .footerGrid {
     grid-template-columns: 1fr;
     gap: var(--p2f-space-32);

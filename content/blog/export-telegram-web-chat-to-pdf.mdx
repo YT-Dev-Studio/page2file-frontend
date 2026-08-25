@@ -1,0 +1,50 @@
+Page 2 PDF can create a portrait transcript from the current Telegram Web chat or channel. Open the exact conversation in Chrome, choose **AI / Chat**, set the content controls, and review the PDF. Use Telegram Desktop's own export when you need a wider chat-history archive.
+
+## Export one Telegram Web chat or channel
+
+Select the target chat or channel and load the relevant messages. Confirm the title and the first message needed for context. Launch Page 2 PDF from that active tab. The dedicated adapter handles normal Telegram Web conversation and channel structures supported by the release.
+
+The loader is limited to the latest 2,000 retrievable messages. Telegram may expose fewer, especially in long or dynamically loaded histories. Keep the tab open and do not navigate to another thread while preparation runs.
+
+<ArticleFigure
+  src="/blog/demos/telegram-chat-channel-proof.webp"
+  alt="Verified test conversation transformed into a clean one-page messenger PDF"
+  caption="The web adapter covers the selected chat or channel; Telegram Desktop remains the broader native history-export path."
+  step={1}
+  openLabel="Open the Telegram Web transcript example"
+  closeLabel="Close the Telegram Web transcript example"
+/>
+
+## Check messages, links, and media
+
+Review detected participants or channel posts, order, timestamps when exposed, quoted content, safe links, files, images, video posters, and audio references. Remove supported media categories or links only when the remaining transcript still makes sense.
+
+Protected, expired, unavailable, or unloaded assets can be absent. A changing platform interface can break role or block detection after release tests. The preview is required evidence that the current thread exported correctly.
+
+The [browser messenger overview](/en/blog/export-browser-messenger-chat-to-pdf) explains the shared workflow. The direct route is [Telegram chat to PDF](/en/chrome-extension/telegram-chat-to-pdf).
+
+## Know when Telegram Desktop is better
+
+Telegram documents history export in its desktop application, including individual chats and broader account data in human-readable HTML or JSON. That native workflow is better for portability, a large archive, or machine-readable history. It is not provided by Telegram Web.
+
+Use Page 2 PDF when you need the current web conversation or channel as a reviewed PDF. Use Telegram Desktop when you need the platform's supported archive. Telegram's own [export announcement](https://telegram.org/blog/export-and-more?setln=en) describes the desktop route.
+
+## Preserve the right scope
+
+A channel can contain a large publication history, comments, media, and links. Page 2 PDF does not claim full-channel backup. Filter or narrow the needed period where possible and confirm the first included post. For legal or compliance preservation, use approved organizational tools and policies rather than assuming a browser transcript is sufficient.
+
+The [PDF versus account-data guide](/en/blog/chat-pdf-vs-account-data-export) compares readable and archival outputs. Do not use Page 2 PDF to bypass deleted-message, private-channel, or access restrictions.
+
+## Telegram questions
+
+### Can Page 2 PDF export a Telegram channel?
+
+It supports the current Telegram Web channel structure covered by the adapter, subject to the same loading and interface-change limits as chats.
+
+### Is Telegram Desktop required for Page 2 PDF?
+
+No. Page 2 PDF uses Telegram Web in Chrome. Telegram Desktop is a separate native option for broader history export.
+
+### Can the PDF be imported back into Telegram?
+
+No. It is a document, not a Telegram import package.

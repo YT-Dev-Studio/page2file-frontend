@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import { getExtensionSeoLanding } from "@/content/extension-seo-landings";
 import { getLandingContent } from "@/content/landings";
+import { getBlogEntry } from "@/content/content-registry";
 import { isRealJobId } from "@/shared/api/backend-contract";
 import type { Locale } from "@/shared/i18n/locales";
 import {
@@ -32,6 +33,24 @@ export const resolvePublicPage = async ({
       "@/features/extension/extension-guide"
     );
     return <ExtensionGuide locale={locale} />;
+  }
+
+  if (route === "blog") {
+    const { ContentIndexPage } = await import(
+      "@/features/content/content-pages"
+    );
+    return <ContentIndexPage locale={locale} />;
+  }
+
+  if (segments[0] === "blog" && segments.length === 2) {
+    const entry = getBlogEntry(locale, segments[1]);
+    if (!entry) {
+      notFound();
+    }
+    const { ContentArticlePage } = await import(
+      "@/features/content/content-pages"
+    );
+    return <ContentArticlePage entry={entry} locale={locale} />;
   }
 
   if (segments[0] === "preview" && segments.length === 2) {

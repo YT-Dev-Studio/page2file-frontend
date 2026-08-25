@@ -1,0 +1,52 @@
+To export an AI conversation as a readable PDF, open the exact thread in Chrome, select **AI / Chat**, choose all messages or replies only, adjust media and link controls, and keep the tab open while Page 2 PDF loads the available history. The output covers the current conversation, not the whole account.
+
+## Platforms with dedicated adapters
+
+The verified release code includes adapters for ChatGPT, Gemini, Claude, Grok, Perplexity, Microsoft Copilot, and Manus. It also includes WhatsApp Web and Telegram Web for the messenger workflow. A different AI page is conditional: Page 2 PDF can build a transcript only when it can identify unambiguous user and assistant roles.
+
+Platform interfaces change. A release checklist must smoke-test named services before a compatibility statement is treated as current. If a site's message structure changes, the result may be partial until its adapter is updated.
+
+For platform-specific preparation, compare [Claude and Gemini](/en/blog/export-claude-and-gemini-chat-to-pdf) or review the shared boundaries for [Grok, Perplexity, Copilot, and Manus](/en/blog/export-grok-perplexity-copilot-manus-to-pdf).
+
+<ArticleFigure
+  src="/blog/demos/ai-chat-workflow.webp"
+  alt="Two-message Page 2 PDF test transcript with links and supported media references"
+  caption="The semantic mode rebuilds the current conversation rather than photographing the platform interface."
+  step={1}
+  openLabel="Open the AI chat export workflow"
+  closeLabel="Close the AI chat export workflow"
+/>
+
+## What the transcript can preserve
+
+The semantic model supports speaker roles, headings, lists, quotations, code blocks, tables, source or citation links, file references, images, video posters, and audio or voice references when the platform exposes them in a supported form. The result uses portrait pages and removes unrelated account navigation.
+
+You can remove images, video, audio, or links independently. Replies-only excludes user turns while retaining assistant responses. That is useful for a clean answer packet, but it can remove questions needed to interpret an answer. Review the first and last pages before sharing.
+
+For technical material, the [code, table, and citation guide](/en/blog/preserve-code-tables-citations-in-chat-pdf) explains what to verify. For long histories and the replies-only option, use the [message-scope guide](/en/blog/export-ai-replies-only-and-long-chats).
+
+## The 2,000-message and loading boundary
+
+The loader can include at most the latest 2,000 messages it can retrieve. A platform may expose fewer because older content is unloaded, access expired, or the interface changed. Page 2 PDF cannot reconstruct messages that are not exposed to the current page.
+
+Open the desired conversation, scroll far enough to confirm the relevant period, expand hidden code or citations, and wait for attachments to load. Keep the source tab open. If the result starts too late, narrow the required range or use the platform's account-data export where available.
+
+## PDF versus account archive
+
+A conversation PDF is designed for reading and sharing one visible thread. OpenAI, Anthropic, and other providers may offer broader account-data archives that take longer to prepare and use machine-oriented files. Neither output replaces the other. The [PDF versus account-data comparison](/en/blog/chat-pdf-vs-account-data-export) helps choose by scope.
+
+The direct product route is [AI chat to PDF](/en/chrome-extension/ai-chat-to-pdf). It does not claim affiliation with any supported platform.
+
+## AI export questions
+
+### Can I export every conversation in my account?
+
+No. Page 2 PDF handles the current open conversation. Use the provider's official data export for an account archive.
+
+### Will a generated attachment be downloaded into the PDF?
+
+The transcript can include supported file references and visible attachment information. It does not promise to download every protected or expired file.
+
+### Can it summarize the conversation?
+
+No. The mode preserves the detected transcript. It does not add a summary or rewrite the messages.

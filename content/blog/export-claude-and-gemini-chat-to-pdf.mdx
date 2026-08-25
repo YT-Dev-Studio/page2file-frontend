@@ -1,0 +1,50 @@
+Claude and Gemini both have dedicated Page 2 PDF adapters, but their native export options and attachment interfaces differ. Use the extension for a readable PDF of the current browser thread; use each provider's own export when you need broader account data or a platform-generated document.
+
+## Export a current Claude conversation
+
+Open the exact Claude thread, load the relevant history, and expand content that must appear. Choose **AI / Chat** in Page 2 PDF, then set message scope and media or link removals. The Claude adapter includes transcript attachment thumbnails and excludes a closed attachment drawer so hidden duplicates do not enter the PDF.
+
+Anthropic also documents an official [Claude data export](https://support.anthropic.com/en/articles/9450526-how-can-i-export-my-claude-data). That path is better for account portability. Page 2 PDF is intended for one current conversation as a readable document.
+
+<ArticleFigure
+  src="/blog/demos/claude-gemini-export.webp"
+  alt="Two-message Page 2 PDF test transcript with links and supported media references"
+  caption="Use the browser transcript for one readable thread and the provider's own export for broader data scope."
+  step={1}
+  openLabel="Open the Claude and Gemini export comparison"
+  closeLabel="Close the Claude and Gemini export comparison"
+/>
+
+## Export a current Gemini conversation
+
+Open the target Gemini chat in Chrome and check that older turns, citations, and attachments needed for the record are loaded. The Gemini adapter maps detected speaker roles and supported semantic blocks into the same portrait transcript model.
+
+Gemini can also create files or move some outputs into Google documents. A provider-generated document may be better when one answer is already a report that you plan to edit. A Page 2 PDF transcript is better when the conversation sequence itself is the record. Google documents current Gemini file features in its product and help materials; availability can vary by account and region.
+
+## Apply the shared limits
+
+Both exports cover one open conversation and at most the latest 2,000 messages the bounded loader can retrieve. Keep the source tab open. Platform changes, unloaded history, protected attachments, or expired sources can produce missing material. Page 2 PDF does not summarize, migrate, or bulk-export either account.
+
+Review roles, first and last message, code, tables, citations, and file references. If an attachment appears both in the transcript and a drawer, confirm that it is not duplicated. Use all messages for a complete reading trail or replies-only for a response packet whose context you have checked.
+
+The [AI chat overview](/en/blog/export-ai-chat-to-pdf) covers shared controls. The [code and citation guide](/en/blog/preserve-code-tables-citations-in-chat-pdf) gives a block-by-block review. The Claude product route is [Claude to PDF](/en/chrome-extension/claude-to-pdf), while the broader supported-platform route is [AI chat to PDF](/en/chrome-extension/ai-chat-to-pdf).
+
+## Avoid false equivalence
+
+Claude data export, Gemini-generated files, browser printing, and Page 2 PDF transcripts solve different jobs. Compare scope, format, preparation time, and future access. Do not call one “better” without naming the requirement.
+
+Live interfaces can change after release tests. A dedicated adapter is code evidence, not a guarantee that every future interface variant will continue to match. Recheck the preview before sharing.
+
+## Claude and Gemini questions
+
+### Can one PDF combine conversations from both services?
+
+No. Export each current conversation separately. Page 2 PDF does not merge account histories.
+
+### Does the Claude drawer export every attachment?
+
+The adapter uses attachment information exposed in the transcript and deliberately ignores a closed drawer. Protected or unavailable files may not be included.
+
+### Can Gemini's generated file replace a transcript?
+
+It can be the better output when the file itself is the deliverable. Use a transcript when prompts, replies, and sources in sequence must remain visible.

@@ -51,6 +51,9 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
             <Link href={`/${locale}/chrome-extension/how-to-use`}>
               {copy.links.extension}
             </Link>
+            <Link href={`/${locale}/blog`}>
+              {locale === "ru" ? "Блог" : "Blog"}
+            </Link>
             {locale === "en" ? (
               <>
                 <Link href="/en/chrome-extension/webpage-to-pdf">

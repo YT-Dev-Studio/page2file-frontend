@@ -157,6 +157,216 @@
       "avoidCompetingWith": ["chrome-extension/how-to-use"]
     },
     {
+      "route": "blog",
+      "kind": "static",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "webpage and browser chat pdf guides",
+      "intentType": "learn",
+      "purpose": "Help readers choose a focused, evidence-based guide for webpage, AI conversation, or supported browser-messenger PDF export.",
+      "internalLinks": ["blog/choose-webpage-pdf-mode", "blog/export-ai-chat-to-pdf", "blog/export-browser-messenger-chat-to-pdf"],
+      "avoidCompetingWith": [""]
+    },
+    {
+      "route": "blog/choose-webpage-pdf-mode",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "best pdf mode for webpage",
+      "intentType": "compare",
+      "purpose": "Help readers choose between visual Accurate copy, selectable Editable document, and semantic AI / Chat output before they start an export.",
+      "internalLinks": ["chrome-extension/webpage-to-pdf", "blog/save-long-dynamic-webpage-to-pdf", "blog/preserve-webpage-links-forms-text"],
+      "avoidCompetingWith": ["", "chrome-extension/chrome-print-vs-page-2-pdf"]
+    },
+    {
+      "route": "blog/save-long-dynamic-webpage-to-pdf",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "save dynamic webpage as pdf",
+      "intentType": "perform",
+      "purpose": "Show how to preserve one long or internally scrolling active tab and explain lazy-content, virtual-list, page-height, and keep-tab-open limits.",
+      "internalLinks": ["chrome-extension/full-page-pdf", "blog/chrome-print-cuts-off-webpage", "blog/choose-webpage-pdf-mode"],
+      "avoidCompetingWith": ["chrome-extension/full-page-pdf"]
+    },
+    {
+      "route": "blog/save-private-or-local-page-to-pdf",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "save signed in webpage as pdf",
+      "intentType": "perform",
+      "purpose": "Explain active-tab capture for pages the reader can already access, including authenticated dashboards and permitted local HTML files, without implying access bypass.",
+      "internalLinks": ["chrome-extension/html-page-to-pdf", "chrome-extension/how-to-use", "blog/save-dashboard-report-to-pdf", "blog/save-receipt-order-page-to-pdf"],
+      "avoidCompetingWith": ["chrome-extension/html-page-to-pdf"]
+    },
+    {
+      "route": "blog/preserve-webpage-links-forms-text",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "preserve forms in pdf from webpage",
+      "intentType": "learn",
+      "purpose": "Explain what Editable document can retain, what regional OCR covers, which sensitive controls are excluded, and how the optional project archive differs from an editable source file.",
+      "internalLinks": ["chrome-extension/webpage-to-pdf-with-links", "blog/choose-webpage-pdf-mode", "blog/save-private-or-local-page-to-pdf"],
+      "avoidCompetingWith": ["chrome-extension/webpage-to-pdf-with-links"]
+    },
+    {
+      "route": "blog/save-dashboard-report-to-pdf",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "save dashboard as pdf",
+      "intentType": "perform",
+      "purpose": "Give a decision process for exporting a signed-in dashboard or report with wide tables, charts, internal scroll areas, links, and partial-data risks.",
+      "internalLinks": ["blog/save-private-or-local-page-to-pdf", "blog/save-long-dynamic-webpage-to-pdf", "chrome-extension/webpage-to-pdf"],
+      "avoidCompetingWith": ["blog/save-receipt-order-page-to-pdf"]
+    },
+    {
+      "route": "blog/save-web-research-to-pdf",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "save research webpage as pdf",
+      "intentType": "perform",
+      "purpose": "Help readers preserve an article, documentation page, source list, or research result with the right balance of appearance, searchable text, and working references.",
+      "internalLinks": ["chrome-extension/webpage-to-pdf-with-links", "blog/preserve-webpage-links-forms-text", "blog/webpage-capture-vs-web-scraping"],
+      "avoidCompetingWith": ["blog/save-dashboard-report-to-pdf"]
+    },
+    {
+      "route": "blog/save-receipt-order-page-to-pdf",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "save receipt page as pdf",
+      "intentType": "perform",
+      "purpose": "Explain how to preserve a visible receipt, invoice, booking, or order-confirmation page while excluding account-wide download and arbitrary clipping claims.",
+      "internalLinks": ["blog/save-private-or-local-page-to-pdf", "blog/preserve-webpage-links-forms-text", "chrome-extension/webpage-to-pdf"],
+      "avoidCompetingWith": ["blog/save-dashboard-report-to-pdf"]
+    },
+    {
+      "route": "blog/chrome-print-cuts-off-webpage",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "chrome print cuts off webpage",
+      "intentType": "troubleshoot",
+      "purpose": "Diagnose clipped internal scroll areas, print styles, wide layouts, hidden lazy content, and explain when Chrome Print remains the simpler choice.",
+      "internalLinks": ["chrome-extension/chrome-print-vs-page-2-pdf", "blog/save-long-dynamic-webpage-to-pdf", "blog/choose-webpage-pdf-mode"],
+      "avoidCompetingWith": ["chrome-extension/chrome-print-vs-page-2-pdf"]
+    },
+    {
+      "route": "blog/webpage-capture-vs-web-scraping",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "webpage capture vs web scraping",
+      "intentType": "compare",
+      "purpose": "Separate preserving the current rendered page from collecting structured data across URLs, and direct readers away from Page 2 PDF when they need a crawler.",
+      "internalLinks": ["chrome-extension/webpage-to-pdf", "blog/save-web-research-to-pdf", "chrome-extension/how-to-use"],
+      "avoidCompetingWith": ["chrome-extension/webpage-to-pdf"]
+    },
+    {
+      "route": "blog/export-ai-chat-to-pdf",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "export ai conversation to pdf",
+      "intentType": "perform",
+      "purpose": "Provide the cross-platform current-conversation workflow for all dedicated AI adapters plus the conditional generic-role fallback.",
+      "internalLinks": ["chrome-extension/ai-chat-to-pdf", "blog/preserve-code-tables-citations-in-chat-pdf", "blog/chat-pdf-vs-account-data-export", "blog/export-claude-and-gemini-chat-to-pdf", "blog/export-grok-perplexity-copilot-manus-to-pdf"],
+      "avoidCompetingWith": ["chrome-extension/ai-chat-to-pdf"]
+    },
+    {
+      "route": "blog/export-chatgpt-conversation-to-pdf",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "save chatgpt conversation as pdf",
+      "intentType": "perform",
+      "purpose": "Explain one-current-ChatGPT-conversation PDF export, supported transcript blocks, the 2,000-message ceiling, and the difference from OpenAI account-data export.",
+      "internalLinks": ["chrome-extension/chatgpt-to-pdf", "blog/export-ai-chat-to-pdf", "blog/chat-pdf-vs-account-data-export"],
+      "avoidCompetingWith": ["chrome-extension/chatgpt-to-pdf"]
+    },
+    {
+      "route": "blog/export-claude-and-gemini-chat-to-pdf",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "export claude or gemini conversation",
+      "intentType": "compare",
+      "purpose": "Compare current-conversation PDF capture for Claude and Gemini with each platform's own data or document export options and adapter-specific attachment limits.",
+      "internalLinks": ["chrome-extension/claude-to-pdf", "chrome-extension/ai-chat-to-pdf", "blog/export-ai-chat-to-pdf"],
+      "avoidCompetingWith": ["chrome-extension/claude-to-pdf"]
+    },
+    {
+      "route": "blog/export-grok-perplexity-copilot-manus-to-pdf",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "export grok perplexity copilot manus chat",
+      "intentType": "compare",
+      "purpose": "Cover four dedicated adapters in one substantive guide, including Perplexity's own PDF export and the live-interface verification boundary for all four.",
+      "internalLinks": ["chrome-extension/ai-chat-to-pdf", "blog/export-ai-chat-to-pdf", "blog/chat-pdf-vs-account-data-export"],
+      "avoidCompetingWith": ["blog/export-claude-and-gemini-chat-to-pdf"]
+    },
+    {
+      "route": "blog/preserve-code-tables-citations-in-chat-pdf",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "preserve code and tables in chat pdf",
+      "intentType": "learn",
+      "purpose": "Explain which semantic transcript blocks Page 2 PDF rebuilds and when source citations, files, images, video posters, or audio references may be absent.",
+      "internalLinks": ["chrome-extension/ai-chat-to-pdf", "blog/export-ai-chat-to-pdf", "blog/export-ai-replies-only-and-long-chats"],
+      "avoidCompetingWith": ["blog/export-ai-chat-to-pdf"]
+    },
+    {
+      "route": "blog/export-ai-replies-only-and-long-chats",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "export ai replies only",
+      "intentType": "perform",
+      "purpose": "Explain replies-only filtering, the latest-2,000-retrievable-message cap, media-removal controls, and troubleshooting for partially loaded histories.",
+      "internalLinks": ["chrome-extension/ai-chat-to-pdf", "blog/preserve-code-tables-citations-in-chat-pdf", "blog/export-ai-chat-to-pdf"],
+      "avoidCompetingWith": ["blog/export-ai-chat-to-pdf"]
+    },
+    {
+      "route": "blog/export-browser-messenger-chat-to-pdf",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "export browser messenger chat",
+      "intentType": "perform",
+      "purpose": "Introduce the semantic current-thread workflow for WhatsApp Web and Telegram Web while separating it from migration and account backup.",
+      "internalLinks": ["chrome-extension/messenger-chat-to-pdf", "blog/export-whatsapp-web-chat-to-pdf", "blog/export-telegram-web-chat-to-pdf"],
+      "avoidCompetingWith": ["chrome-extension/messenger-chat-to-pdf"]
+    },
+    {
+      "route": "blog/export-whatsapp-web-chat-to-pdf",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "save whatsapp web chat as pdf",
+      "intentType": "perform",
+      "purpose": "Explain export of one active WhatsApp Web thread with direction-aware roles and supported media, including view-once and sidebar exclusions.",
+      "internalLinks": ["chrome-extension/whatsapp-chat-to-pdf", "blog/export-browser-messenger-chat-to-pdf", "blog/chat-pdf-vs-account-data-export"],
+      "avoidCompetingWith": ["chrome-extension/whatsapp-chat-to-pdf"]
+    },
+    {
+      "route": "blog/export-telegram-web-chat-to-pdf",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "save telegram web chat as pdf",
+      "intentType": "perform",
+      "purpose": "Explain one active Telegram Web chat or channel export and contrast it with Telegram Desktop's broader native history export.",
+      "internalLinks": ["chrome-extension/telegram-chat-to-pdf", "blog/export-browser-messenger-chat-to-pdf", "blog/chat-pdf-vs-account-data-export"],
+      "avoidCompetingWith": ["chrome-extension/telegram-chat-to-pdf"]
+    },
+    {
+      "route": "blog/supported-and-unsupported-browser-messengers",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "browser messenger export compatibility",
+      "intentType": "compare",
+      "purpose": "State why WhatsApp Web and Telegram Web are supported while Slack, Teams, Discord, Instagram, and Messenger are not Page 2 PDF claims, then point to official export paths where available.",
+      "internalLinks": ["chrome-extension/messenger-chat-to-pdf", "blog/export-browser-messenger-chat-to-pdf", "blog/chat-pdf-vs-account-data-export"],
+      "avoidCompetingWith": ["blog/export-browser-messenger-chat-to-pdf"]
+    },
+    {
+      "route": "blog/chat-pdf-vs-account-data-export",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "chat pdf vs account data export",
+      "intentType": "compare",
+      "purpose": "Help readers choose a readable PDF of the open conversation or a platform-native account archive based on scope, format, permissions, and retention needs.",
+      "internalLinks": ["blog/export-ai-chat-to-pdf", "blog/export-browser-messenger-chat-to-pdf", "chrome-extension/how-to-use"],
+      "avoidCompetingWith": ["blog/export-ai-chat-to-pdf", "blog/export-browser-messenger-chat-to-pdf"]
+    },
+    {
       "route": "about",
       "kind": "static",
       "primaryIntentSource": "localized-seo-title",

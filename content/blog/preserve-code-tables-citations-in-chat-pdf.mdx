@@ -1,0 +1,50 @@
+AI conversations are more than alternating paragraphs. A useful transcript must preserve code boundaries, table structure, quotations, headings, citations, file references, and supported media without copying the platform's account interface. Page 2 PDF's AI / Chat mode rebuilds these detected blocks into a portrait PDF.
+
+## Verify code before trusting the PDF
+
+Check indentation, line wrapping, syntax characters, and long unbroken strings. Expand collapsed code before export. A browser chat may display a horizontal scroller that cannot fit on a portrait page without wrapping or scaling; compare important lines with the source.
+
+The transcript preserves code as a semantic block when the adapter recognizes it. It does not run the code, validate its output, or guarantee that copy buttons and interactive sandboxes become part of the PDF.
+
+<ArticleFigure
+  src="/blog/demos/chat-semantic-blocks.webp"
+  alt="Two-message Page 2 PDF test transcript with links, images, and a video reference"
+  caption="Review every structured block that carries meaning; plain paragraphs are only one part of the transcript."
+  step={1}
+  openLabel="Open the chat semantic block diagram"
+  closeLabel="Close the chat semantic block diagram"
+/>
+
+## Review tables, quotations, and headings
+
+Tables should retain row and column relationships, not collapse into an unreadable word stream. Wide tables can still require wrapping, so inspect headers and the final columns. Quotations need visible boundaries from surrounding assistant text. Heading levels should create a readable hierarchy without turning every bold fragment into a section.
+
+If a platform widget cannot be represented by the shared transcript model, the PDF may include a reduced label or omit unsupported interaction. The objective is a readable record of exposed content, not a clone of every control.
+
+## Test citations and file references
+
+Open representative citation links from the PDF. Safe links can be retained, but the destination may require access, change, or expire. A citation number without its destination is incomplete for research use, so compare the source list before sharing.
+
+Files can appear as supported references rather than embedded binary attachments. Images, video posters, and audio or voice references depend on what the platform exposes. Removal controls can intentionally exclude each media category or links. Protected, view-once, or unavailable assets are not recoverable.
+
+The [research-page guide](/en/blog/save-web-research-to-pdf) explains source verification outside chat. For ChatGPT-specific preparation, use the [ChatGPT conversation guide](/en/blog/export-chatgpt-conversation-to-pdf).
+
+## Preserve enough conversational context
+
+Replies-only can make a cleaner answer document, but code and tables may rely on a prompt, schema, or earlier correction. Use all messages when auditability matters. The bounded loader includes no more than the latest 2,000 retrievable messages, so verify the first included turn.
+
+The [replies-only and long-chat guide](/en/blog/export-ai-replies-only-and-long-chats) covers scope choices. The product entry point is [AI chat to PDF](/en/chrome-extension/ai-chat-to-pdf).
+
+## Semantic block questions
+
+### Are files embedded inside the PDF?
+
+Not as a universal rule. The transcript can preserve supported file information and references; file availability remains controlled by the source platform.
+
+### Does removing links remove citation text?
+
+It removes supported link behavior according to the option. Review how each citation appears because platform markup differs.
+
+### Can the extension make an inaccessible chat accessible?
+
+No. The transcript can improve reading structure, but Page 2 PDF does not claim PDF/UA certification or remediate every source accessibility issue.

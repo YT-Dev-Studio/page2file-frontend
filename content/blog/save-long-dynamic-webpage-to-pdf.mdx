@@ -1,0 +1,50 @@
+To save a long or application-like webpage, open the finished state in Chrome, choose **Accurate copy**, and keep the tab open while Page 2 PDF prepares the main scrolling area. The extension can load content that appears during a bounded scroll pass, but it cannot recover data the page never exposes.
+
+## Why the visible window is not always the page
+
+Many dashboards and web apps keep the browser window fixed while a panel inside it scrolls. A print command or a viewport screenshot can see only that panel's current portion. Other pages delay images, cards, or charts until they approach the visible part of the screen. Lists may also discard older rows to reduce memory use.
+
+Page 2 PDF looks for the primary scroll area, performs a limited preparation pass, freezes animation during visual capture, and restores the page's scroll, focus, selection, and temporary layout changes afterward. This improves coverage without turning the extension into a site crawler.
+
+<ArticleFigure
+  src="/blog/demos/full-page-preparation.webp"
+  alt="Page 2 PDF preparation dialog at 73 percent over a nested-scroll test page"
+  caption="The active tab remains the source while the extension prepares the primary scroll area and then restores page state."
+  step={1}
+  openLabel="Open the long-page preparation diagram"
+  closeLabel="Close the long-page preparation diagram"
+/>
+
+## Prepare the page in a repeatable order
+
+First, finish signing in and navigate to the exact report, article, or result you want. Close menus that cover the content and expand accordions that must appear. Wait for visible charts and media to settle. Then open Page 2 PDF from that tab, select Accurate copy, choose portrait or landscape, and start preparation. The [full-page PDF product guide](/en/chrome-extension/full-page-pdf) summarizes the same bounded workflow.
+
+Do not close the source, change routes, or switch the page into another state while the extension works. If a consent dialog, sticky toolbar, or chat widget should not appear, dismiss it before capture. The extension preserves the current page; it does not decide which business state is correct.
+
+For wide tables or landscape reports, compare portrait and landscape in separate runs. For searchable text or clickable references, Accurate copy is the wrong output: follow the [mode selection guide](/en/blog/choose-webpage-pdf-mode) and use Editable document instead.
+
+## Understand the stopping conditions
+
+Preparation is bounded. Extremely tall pages can exceed page-height, PDF-size, or page-count limits. Protected frames may not expose their content. A virtual list that keeps only a small set of rows in the browser can never present the entire history at once. A page that continuously appends data may not reach a stable end.
+
+The correct response to those limits is not to promise a complete export. Narrow the date range, filter the report, expand the required sections manually, or save separate parts. If the goal is to collect structured records across many URLs, use a data-export or scraping tool; Page 2 PDF handles one active tab. The [capture-versus-scraping comparison](/en/blog/webpage-capture-vs-web-scraping) explains that boundary.
+
+## When Chrome Print is enough
+
+Chrome Print remains a good choice for a conventional article with reliable print styles and no internal scrolling. It is built in, produces searchable text, and needs no extension. Page 2 PDF is useful when the rendered screen state matters, when the main content scrolls inside the window, or when you need its separate selectable and chat workflows.
+
+If Print produces missing sections, cut-off tables, or an unexpected mobile-like layout, use the [Chrome Print troubleshooting guide](/en/blog/chrome-print-cuts-off-webpage) before changing tools. Sometimes the page's own print stylesheet, rather than the length, explains the result.
+
+## Questions about long pages
+
+### Will every item loaded by endless scrolling appear?
+
+No. The loader is limited, and some sites replace older items as new ones appear. Filter or shorten the source whenever completeness matters.
+
+### Does the extension leave the page scrolled to the bottom?
+
+The workflow is designed to restore the original scroll and temporary state after preparation, including cleanup after a failure. Check the tab after a run if the source is sensitive to navigation or focus.
+
+### Can it capture several linked pages as one PDF?
+
+No. Open and save each page separately. The extension does not follow links or crawl a site.

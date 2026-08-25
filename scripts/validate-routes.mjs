@@ -39,7 +39,6 @@ const REMOVED_ROUTES = [
   "export-claude-to-pdf",
   "export-gemini-to-pdf",
   "export-grok-to-pdf",
-  "blog",
   "updates",
   "changelog",
 ];
@@ -118,6 +117,10 @@ const run = async () => {
     join(ROOT, "src", "content", "extension-seo-landings.ts"),
     "utf8",
   );
+  const publicPageResolver = await readFile(
+    join(ROOT, "src", "features", "routing", "public-page-resolver.tsx"),
+    "utf8",
+  );
   const publicLinkSources = [
     [
       "404 page",
@@ -150,6 +153,12 @@ const run = async () => {
     EN_ONLY_ROUTES,
     "US-first extension content",
   );
+  if (
+    !publicPageResolver.includes('route === "blog"') ||
+    !publicPageResolver.includes('segments[0] === "blog"')
+  ) {
+    throw new Error("The bilingual blog index and article routes are required.");
+  }
   if (
     !routes.includes("isStaticRouteAvailable") ||
     !routes.includes('locale === "en"')

@@ -1,0 +1,50 @@
+Page 2 PDF has dedicated messenger adapters for WhatsApp Web and Telegram Web. It does not claim semantic export for Slack, Microsoft Teams, Discord, Instagram, or Messenger. A visible-page PDF may still be possible on an accessible webpage, but that is not a structured, supported messenger transcript.
+
+## Supported means a tested message model
+
+WhatsApp Web handling targets the active thread, ignores the conversation sidebar, distinguishes message direction, and covers supported text and media structures. Telegram Web handling covers a current chat and channel variant. Both use the shared portrait transcript with a latest-2,000-retrievable-message cap.
+
+This support is narrower than “any browser chat.” Dedicated adapters encode platform-specific roles, containers, replies, and media. Live compatibility can still change when a platform updates its page structure.
+
+<ArticleFigure
+  src="/blog/demos/messenger-compatibility-matrix.webp"
+  alt="Verified test conversation transformed into a clean one-page messenger PDF"
+  caption="A named adapter is required for a supported semantic transcript; visual access alone does not establish compatibility."
+  step={1}
+  openLabel="Open the messenger compatibility matrix"
+  closeLabel="Close the messenger compatibility matrix"
+/>
+
+## Slack and Teams have different export boundaries
+
+Slack documents workspace exports whose scope depends on plan, role, approval, retention settings, and conversation type. Its [official export guide](https://slack.com/help/articles/201658943-Export-your-workspace-data) is the right starting point for authorized archives. Page 2 PDF does not have a Slack adapter.
+
+Microsoft documents Teams Export APIs for organizational and programmatic content export. Those APIs require the appropriate tenant, authorization, licensing, and compliance context. They are not equivalent to saving one browser conversation, and Page 2 PDF does not support Teams chat extraction.
+
+## Discord, Instagram, and Messenger remain excluded
+
+No Page 2 PDF adapter is implemented for Discord, Instagram, or Messenger. Their interfaces, encryption states, message loading, and account export tools differ. Do not use generic AI role matching to present them as supported: that fallback requires unambiguous user and assistant roles, which participant messengers do not provide.
+
+Use each platform's official data-download or administrative export path where available. Browser printing or Accurate copy can only preserve what is visibly rendered and accessible; it does not create participant-aware structure or a complete history.
+
+For the two supported services, use the [WhatsApp Web guide](/en/blog/export-whatsapp-web-chat-to-pdf) and [Telegram Web guide](/en/blog/export-telegram-web-chat-to-pdf). The product hub is [messenger chat to PDF](/en/chrome-extension/messenger-chat-to-pdf).
+
+## Choose the honest fallback
+
+If a messenger is unsupported, first check its native export. If you only need a visual record of the visible page and are authorized to save it, Accurate copy may be suitable, but label it as a visual webpage capture. Do not claim sender detection, full history, attachments, or reply structure.
+
+The [browser messenger overview](/en/blog/export-browser-messenger-chat-to-pdf) describes what the supported semantic workflow adds. For account-level requirements, use the [PDF versus account-data comparison](/en/blog/chat-pdf-vs-account-data-export).
+
+## Compatibility questions
+
+### Why not call visual capture “support”?
+
+Because it does not prove correct roles, message order, history loading, or media handling. Supported chat export requires those platform-specific behaviors.
+
+### Is Microsoft Copilot supported even though Teams is not?
+
+Yes, they are separate web products and adapters. The Copilot AI conversation adapter does not imply Microsoft Teams messenger support.
+
+### Will unsupported services be added automatically?
+
+No. A service should be named only after implementation, tests, release verification, and accurate documentation.

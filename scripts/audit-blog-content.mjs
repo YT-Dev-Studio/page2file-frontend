@@ -260,7 +260,10 @@ for (const locale of locales) {
         : locale === "ru"
           ? reviewState.russianProofread.includes(slug)
           : reviewedLocales.has(locale);
-    const reviewCycle = reviewState.reviewCycles[reviewKey] ?? 0;
+    const reviewCycle =
+      reviewState.reviewCycles[reviewKey] ??
+      reviewState.reviewCycles[`${locale}:*`] ??
+      0;
     const renderedComplete =
       reviewState.renderedReviewed.includes(reviewKey) ||
       reviewState.renderedReviewed.includes(`${locale}:*`);

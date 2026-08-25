@@ -1,0 +1,50 @@
+A dashboard PDF is useful only if it preserves the chosen filters, the visible data range, and the charts or tables needed by the reader. Open the final report state first, then choose Accurate copy for visual evidence or Editable document for searchable text and working links.
+
+## Freeze the report state before export
+
+Set the date range, account, region, comparison period, and other filters. Wait for loading indicators to finish and scroll through panels that load on demand. Record the filter values in the report itself when the dashboard does not print them. A PDF cannot explain an unlabeled state later.
+
+Dismiss navigation drawers or help widgets that cover the report. Do not hide legal notices, warnings, units, or data-quality messages that a recipient needs to interpret the result. If the page keeps refreshing, pause auto-refresh when the application provides a supported control.
+
+<ArticleFigure
+  src="/blog/demos/dashboard-export-check.webp"
+  alt="Image-based full-page dashboard test fixture open in Chrome's PDF viewer"
+  caption="Verify the report state and its loading boundaries before choosing visual or selectable output."
+  step={1}
+  openLabel="Open the dashboard export checklist"
+  closeLabel="Close the dashboard export checklist"
+/>
+
+## Choose the output around the evidence
+
+Accurate copy is suited to chart arrangement, conditional colors, maps, and screen-specific layout. It produces image-based pages, so recipients cannot search the text or follow links. Landscape orientation often fits wide reports better, but test portrait when the page is designed as a narrow column.
+
+Editable document can preserve selectable text and safe links. **As viewed** follows the screen presentation; **Print optimized** uses the site's print stylesheet. Print rules may hide controls or rearrange columns, which can be helpful or destructive. Run both profiles when the report is important and compare the result.
+
+The [mode selection guide](/en/blog/choose-webpage-pdf-mode) explains the tradeoff. The [webpage-to-PDF page](/en/chrome-extension/webpage-to-pdf) shows the two normal webpage outputs.
+
+## Handle wide tables and scrolling panels
+
+A table wider than the page can wrap, scale, or clip depending on its CSS and the selected profile. Accurate copy preserves what the prepared page renders; Editable document follows Chromium pagination. If the dashboard offers a column chooser, keep only the fields the recipient needs. If it offers a native CSV or report export, that is often better for analysis, while PDF is better for a readable snapshot.
+
+Internally scrolling panels require the long-page preparation path. Page 2 PDF can look for the primary scroll area and perform a bounded loading pass, but a virtual table may remove rows that are off-screen. Filter the dataset or export smaller date ranges if row-level completeness matters. See the [long dynamic page guide](/en/blog/save-long-dynamic-webpage-to-pdf).
+
+## Review before sending
+
+Compare totals, labels, legends, units, and page breaks with the source tab. Open representative links in a selectable PDF. Make sure a chart tooltip was not required to understand a value, because hover-only details may not appear. Keep the source tab open until the preview is complete.
+
+For confidential dashboards, confirm authorization and remove unrelated account details before export. Page 2 PDF does not bypass access controls and does not turn a filtered view into a complete account archive.
+
+## Dashboard questions
+
+### Can Page 2 PDF export the dashboard's underlying data?
+
+It preserves the rendered page or document output. It is not a data connector and does not extract a full dataset behind a chart.
+
+### Which mode is better for a map?
+
+Accurate copy is usually better for preserving map appearance. Editable document may preserve surrounding labels and links but cannot promise that a canvas-rendered map becomes selectable.
+
+### Can several dashboard pages be combined automatically?
+
+No. Save each active tab separately or use the application's own multi-report export.

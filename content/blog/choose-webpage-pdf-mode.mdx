@@ -1,0 +1,50 @@
+Page 2 PDF has three output modes because a faithful picture, selectable page content, and a readable conversation require different capture methods. Pick the result you need before changing any options: **Accurate copy** for appearance, **Editable document** for text and links, or **AI / Chat** for a supported conversation.
+
+## Choose by what must still work in the PDF
+
+Accurate copy prepares the page's main scrolling area and turns the rendered result into image-based PDF pages. It is the safer choice for dashboards, maps, complex layouts, custom fonts, or pages whose screen appearance is the evidence. Text is not selectable and links are not interactive because each page is an image.
+
+Editable document asks Chromium to produce the PDF. Source text can remain searchable and selectable, safe links can remain clickable, and eligible form controls can be represented. The result follows either the screen-oriented **As viewed** profile or the site's print rules through **Print optimized**. Some layout details can change because this is document output rather than a picture of the screen.
+
+AI / Chat does not photograph the conversation. A supported adapter reads the current thread and rebuilds messages, code blocks, tables, citations, files, and supported media references as a portrait transcript. Use it for an AI dialogue, WhatsApp Web thread, or Telegram Web chat or channel—not for a normal webpage.
+
+<ArticleFigure
+  src="/blog/demos/output-mode-decision.webp"
+  alt="Page 2 PDF preparation dialog at 73 percent over a nested-scroll test page"
+  caption="Start with the property the saved PDF must retain; the three modes do not produce interchangeable files."
+  step={1}
+  openLabel="Open the PDF mode decision chart"
+  closeLabel="Close the PDF mode decision chart"
+/>
+
+## Match the options to the selected mode
+
+Accurate copy offers portrait or landscape orientation. Editable document adds the two rendering profiles and independent controls for removing images, links, or styling, plus supported form handling and an optional scrubbed project archive. AI / Chat always uses portrait pages and offers all messages or replies-only together with separate removal controls for images, video, audio, and links.
+
+Options from one mode do not silently carry into another. For example, replies-only has no meaning on an article page, while landscape is not part of the semantic chat workflow. This separation prevents a switch that sounds useful but cannot affect the selected capture method.
+
+## Check the source before starting
+
+Open the exact source in Chrome and leave that tab open until preparation finishes. Page 2 PDF does not take a pasted URL, crawl related pages, or sign in on your behalf. Expand the part you need, wait for charts or images to load, and pause any interaction that keeps changing the page.
+
+Very tall pages, content that is removed from the page when it scrolls off-screen, protected frames, and unavailable media can still produce a partial result. For a long application page, read the [full-page preparation guide](/en/blog/save-long-dynamic-webpage-to-pdf). For a document that must retain text, links, or form values, use the [editable-content guide](/en/blog/preserve-webpage-links-forms-text).
+
+## A practical selection rule
+
+Choose Accurate copy when another person needs to see what you saw. Choose Editable document when they need to search, quote, or follow links. Choose AI / Chat when speaker order and message structure matter more than the platform interface around the conversation.
+
+If two properties matter, decide which loss would be unacceptable. A visual PDF can prove layout but cannot provide selectable text. An editable PDF can preserve text and links but may follow print styling. A chat transcript can preserve roles and semantic blocks but intentionally omits account navigation and unrelated interface panels. The [webpage-to-PDF overview](/en/chrome-extension/webpage-to-pdf) shows the first two outputs side by side.
+
+## Questions before export
+
+### Can one run create all three versions?
+
+No. Each run uses one capture method. Run the extension again if you need a visual record and a selectable copy of the same tab.
+
+### Does Editable document mean I can edit the page inside Page 2 PDF?
+
+No. It refers to selectable document content and configurable output. Page 2 PDF is not a DOM editor or a PDF editor.
+
+### Which mode handles an unsupported messenger?
+
+None can promise a semantic transcript for an unsupported service. Accurate copy may preserve the visible page as images if Chrome permits access, but it is not a structured chat export and does not establish platform compatibility.
