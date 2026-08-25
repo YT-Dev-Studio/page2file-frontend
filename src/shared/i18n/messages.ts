@@ -33,7 +33,6 @@ export type Messages = {
     language: string;
     footerDescription: string;
     pdfLink: string;
-    powerpointLink: string;
     extensionLink: string;
     changelogLink: string;
     footerMeta: string;
@@ -45,10 +44,10 @@ export type Messages = {
 };
 
 const en: Messages = {
-  developmentNotice: "This project is currently under development.",
+  developmentNotice: "The website conversion workspace is currently unavailable.",
   navigation: {
     convert: "Convert",
-    extension: "Extension",
+    extension: "Page 2 PDF",
     guides: "Guides",
     blog: "Blog",
   },
@@ -77,12 +76,11 @@ const en: Messages = {
     menu: "Menu",
     language: "Language",
     footerDescription:
-      "A privacy-first service for turning webpage sections into reviewed PDF pages or PowerPoint slides.",
+      "Page 2 File explains and supports Page 2 PDF for saving the active Chrome tab as a visual, selectable, or chat-focused PDF.",
     pdfLink: "Webpage to PDF",
-    powerpointLink: "Webpage to PowerPoint",
-    extensionLink: "Chrome extension",
+    extensionLink: "Page 2 PDF for Chrome",
     changelogLink: "Changelog",
-    footerMeta: "No accounts · No conversion history · Temporary processing",
+    footerMeta: "Active-tab workflow · No account-wide export · Temporary previews",
   },
   footer: { privacy: "Privacy", terms: "Terms" },
 };
@@ -91,10 +89,10 @@ const messages: Record<Locale, Messages> = {
   en,
   ru: {
     ...en,
-    developmentNotice: "Проект находится на стадии разработки.",
+    developmentNotice: "Рабочая область конвертации на сайте сейчас недоступна.",
     navigation: {
       convert: "Конвертация",
-      extension: "Расширение",
+      extension: "Page 2 PDF",
       guides: "Инструкции",
       blog: "Блог",
     },
@@ -123,13 +121,12 @@ const messages: Record<Locale, Messages> = {
       menu: "Меню",
       language: "Язык",
       footerDescription:
-        "Сервис с приоритетом конфиденциальности: превращает секции веб-страницы в проверяемые страницы PDF или слайды PowerPoint.",
+        "Page 2 File объясняет работу Page 2 PDF — расширения для сохранения активной вкладки Chrome в визуальный, текстовый или чат-PDF.",
       pdfLink: "Веб-страница в PDF",
-      powerpointLink: "Веб-страница в PowerPoint",
-      extensionLink: "Расширение Chrome",
+      extensionLink: "Page 2 PDF для Chrome",
       changelogLink: "История изменений",
       footerMeta:
-        "Без аккаунтов · Без истории конвертаций · Временная обработка",
+        "Активная вкладка · Без экспорта всего аккаунта · Временный предпросмотр",
     },
     footer: {
       privacy: "Конфиденциальность",

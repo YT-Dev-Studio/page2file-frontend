@@ -25,7 +25,7 @@ export function GET(): Response {
     "# Page 2 File",
     "",
     siteDescription,
-    "Page 2 File is a Chrome extension for saving the current webpage or a supported browser chat as a PDF. It offers appearance-first, selectable-text, and chat-focused output.",
+    "Page 2 File is the website for Page 2 PDF, a Chrome extension that saves the active webpage or a supported browser conversation as a visual, selectable, or transcript-focused PDF.",
     "",
     "## Languages",
     languages,

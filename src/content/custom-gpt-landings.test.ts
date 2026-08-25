@@ -64,7 +64,7 @@ describe("GPT App landing content", () => {
       );
       expect(content?.displayTitle).toBe("GPT: Webpage 2 PDF");
       expect(content?.primaryLabel).toContain("GPT Webpage 2 PDF");
-      expect(content?.sections[0]?.heading).toContain("URL");
+      expect(content?.sections[0]?.heading).toMatch(/^1\. /);
       expect(content?.workflowOverride?.detailsTitle.length).toBeGreaterThan(5);
       expect(
         content?.workflowOverride?.firstStageDescription.length,
@@ -100,7 +100,7 @@ describe("GPT App landing content", () => {
     });
     expect(russian?.primaryLabel).toBe("Открыть GPT Webpage 2 PDF");
     expect(russian?.sections[0]?.heading).toBe(
-      "1. Укажите один или несколько URL",
+      "1. Передайте точный источник",
     );
   });
 

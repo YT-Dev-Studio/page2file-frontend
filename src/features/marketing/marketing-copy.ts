@@ -53,8 +53,8 @@ const marketingCopy: Record<Locale, MarketingCopy> = {
       stages: ["Open the conversation", "Review the preview", "Save the PDF"],
       stageDescriptions: [
         "Load the messages you want in the active tab.",
-        "Check text, media, links, and omissions.",
-        "Choose screenshot or editable PDF output.",
+        "Choose all messages or replies only and remove media or links if needed.",
+        "Keep the source tab open, then check and save the PDF preview.",
       ],
     },
   },
@@ -84,8 +84,8 @@ const marketingCopy: Record<Locale, MarketingCopy> = {
       stages: ["Откройте диалог", "Проверьте предпросмотр", "Сохраните PDF"],
       stageDescriptions: [
         "Загрузите нужные сообщения в активной вкладке.",
-        "Проверьте текст, медиа, ссылки и пропуски.",
-        "Выберите PDF в режиме скриншотов или редактируемом режиме.",
+        "Выберите все сообщения или только ответы и при необходимости уберите медиа или ссылки.",
+        "Не закрывайте исходную вкладку, затем проверьте и сохраните предпросмотр PDF.",
       ],
     },
   },

@@ -18,7 +18,7 @@ describe("HomeHero", () => {
     expect(cta.getAttribute("target")).toBe("_blank");
     expect(cta.getAttribute("rel")).toBe("noopener noreferrer");
     expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
-      "Save webpages and browser chats as PDF",
+      "Save the current webpage or browser chat as PDF",
     );
     expect(
       screen.getByAltText(

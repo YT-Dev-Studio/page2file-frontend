@@ -27,7 +27,7 @@ const siteCopy: Record<Locale, SiteCopy> = {
   en: {
     header: {
       brandLabel: "Page 2 File — home",
-      extensionAction: "Install now",
+      extensionAction: "Open Page 2 PDF",
       menuLabel: "Open menu",
       mobileNavigationLabel: "Mobile navigation",
       navigationLabel: "Primary navigation",
@@ -39,7 +39,7 @@ const siteCopy: Record<Locale, SiteCopy> = {
       legalTitle: "Legal information",
       links: {
         cookiePolicy: "Cookies",
-        extension: "Chrome extension",
+        extension: "Page 2 PDF for Chrome",
         privacy: "Privacy",
         terms: "Terms",
       },
@@ -49,7 +49,7 @@ const siteCopy: Record<Locale, SiteCopy> = {
   ru: {
     header: {
       brandLabel: "Page 2 File — главная",
-      extensionAction: "Установить сейчас",
+      extensionAction: "Открыть Page 2 PDF",
       menuLabel: "Открыть меню",
       mobileNavigationLabel: "Мобильная навигация",
       navigationLabel: "Основная навигация",
@@ -61,7 +61,7 @@ const siteCopy: Record<Locale, SiteCopy> = {
       legalTitle: "Юридическая информация",
       links: {
         cookiePolicy: "Cookies",
-        extension: "Расширение Chrome",
+        extension: "Page 2 PDF для Chrome",
         privacy: "Политика конфиденциальности",
         terms: "Условия использования",
       },

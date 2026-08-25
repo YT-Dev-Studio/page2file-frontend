@@ -16,7 +16,7 @@ describe("site shell copy", () => {
   });
 
   test("keeps English and Russian shell copy localized", () => {
-    expect(getSiteCopy("en").header.extensionAction).toBe("Install now");
+    expect(getSiteCopy("en").header.extensionAction).toBe("Open Page 2 PDF");
     expect(getSiteCopy("ru").footer.links.privacy).toBe(
       "Политика конфиденциальности",
     );

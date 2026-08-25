@@ -7,7 +7,9 @@ describe("homepage extension copy", () => {
   test("uses the approved English positioning", () => {
     const copy = getExtensionCopy("en");
 
-    expect(copy.homeTitle).toBe("Save webpages and browser chats as PDF");
+    expect(copy.homeTitle).toBe(
+      "Save the current webpage or browser chat as PDF",
+    );
     expect(copy.modes.map(({ title }) => title)).toEqual([
       "Accurate copy",
       "Editable document",
@@ -45,7 +47,7 @@ describe("homepage extension copy", () => {
     expect(visibleCopy).not.toMatch(/PowerPoint|PPTX|merge|split|reorder|upload a URL/i);
     expect(visibleCopy).toContain("2,000");
     expect(visibleCopy).toContain("older than two hours");
-    expect(visibleCopy).toContain("the next time the extension runs");
+    expect(visibleCopy).toContain("when the extension runs again");
     expect(visibleCopy).not.toContain("within two hours");
   });
 });

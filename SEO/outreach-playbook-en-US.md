@@ -36,9 +36,9 @@ Subject: Current-conversation PDF option for {{article_title}}
 
 Hi {{name}},
 
-I’m the maker of Page 2 PDF. It exports the current supported browser conversation into a clean PDF and currently has live adapters for ChatGPT, Claude, Gemini, Grok, Perplexity, Microsoft Copilot, Manus, WhatsApp Web, and Telegram Web.
+I’m the maker of Page 2 PDF. It exports the current supported browser conversation as a structured PDF. Dedicated adapters are implemented for ChatGPT, Claude, Gemini, Grok, Perplexity, Microsoft Copilot, Manus, WhatsApp Web, and Telegram Web; I confirm the named platform against the current release before sending this note.
 
-The important boundary is conversation-level export: it does not claim an account-wide backup. Users can choose all messages or replies only and remove supported media or links. Here is a verified sample: {{sample_url}}.
+The boundary is conversation-level export, not an account-wide backup. Users can choose all messages or replies only, up to the latest 2,000 retrievable messages, and remove supported media categories or links. The source tab remains open during preparation. Here is the matching verified sample: {{sample_url}}.
 
 Your guide currently helps readers compare {{specific_tools_or_workflows}}. If you revisit it, would you be willing to test Page 2 PDF as a PDF-focused, active-tab option? I can send the exact test conversation and release listing. Please include it only if it meets your editorial criteria.
 
@@ -60,12 +60,12 @@ Thanks,
 
 - Name: `Save webpage to PDF | Converter Page 2 File`
 - Category: Chrome extension / PDF utility / productivity
-- One-line result: `Save the full page open in Chrome as a visual PDF, a selectable document, or a clean supported-chat export.`
+- One-line result: `Save the active Chrome tab as a visual full-page PDF, a selectable document, or a structured supported-chat transcript.`
 - Platforms: Google Chrome; do not claim Firefox, Safari, Edge, or mobile until verified and released.
 - Price: use the actual Store value at submission time.
 - Website: `https://page2file.com/en/chrome-extension/webpage-to-pdf`
 - Store URL: add only after the real listing ID exists.
-- Privacy: active-tab invocation and extension-controlled temporary processing; use the published privacy policy for complete terms.
+- Privacy: the extension does not upload page or conversation content to Page 2 File servers; use the published privacy policy for the website and complete terms.
 
 ## Tracking fields
 

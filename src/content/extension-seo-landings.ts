@@ -44,24 +44,24 @@ const commonSteps: readonly [
 ] = [
   {
     title: "Open the page",
-    body: "Open the page or supported conversation in Chrome and keep that tab selected.",
+    body: "Open the page or supported conversation in Chrome and load the content you need in that tab.",
   },
   {
     title: "Choose the output",
-    body: "Pick Accurate copy, Editable document, or AI / Chat and adjust the available options.",
+    body: "Pick Accurate copy, Editable document, or AI / Chat according to the result you need, then set the available controls.",
   },
   {
     title: "Preview the PDF",
-    body: "Select Get PDF, review the result in a separate preview tab, and download it when ready.",
+    body: "Select Get PDF, keep the source tab open during preparation, then review and download the result from Chrome's PDF viewer.",
   },
 ];
 
 const privacy =
-  "Page 2 PDF works on the tab you choose. Temporary processing stays in the extension workflow; the product does not ask you to paste a private page URL into a public converter.";
+  "Page 2 PDF reads the tab where you launch it and creates the document inside the extension workflow. Page and conversation content is not uploaded to Page 2 File servers.";
 
 const webpageDemo: ExtensionSeoDemo = {
   title: "See a long page become a complete PDF",
-  body: "This verified sample shows the Accurate copy pipeline turning a long test page into a multi-page visual PDF.",
+  body: "This sample was generated from the extension's nested-scroll test fixture. It shows a long rendered page split into a multi-page, image-based PDF.",
   image: "/samples/accurate-copy-preview.svg",
   imageAlt: "Before and after preview of a long webpage saved as a multi-page PDF",
   samplePdf: "/samples/accurate-copy.pdf",
@@ -70,7 +70,7 @@ const webpageDemo: ExtensionSeoDemo = {
 
 const editableDemo: ExtensionSeoDemo = {
   title: "Keep useful page content selectable",
-  body: "The Editable document sample preserves text and available links while applying the chosen page orientation and content options.",
+  body: "This extension-generated sample shows selectable text and available links in Chromium PDF output rather than a screenshot wrapped in a PDF.",
   image: "/samples/editable-document-preview.svg",
   imageAlt: "Preview of a webpage exported as a PDF with selectable text and links",
   samplePdf: "/samples/editable-document.pdf",
@@ -79,7 +79,7 @@ const editableDemo: ExtensionSeoDemo = {
 
 const chatDemo: ExtensionSeoDemo = {
   title: "Turn the current conversation into a clean PDF",
-  body: "This sample uses the chat-focused layout: messages stay in order without exporting the surrounding application interface.",
+  body: "This extension-generated sample keeps the conversation order and supported content structure without the surrounding app sidebar or navigation.",
   image: "/samples/ai-chat-preview.svg",
   imageAlt: "Preview of a supported browser conversation exported to a clean PDF",
   samplePdf: "/samples/ai-chat.pdf",
@@ -89,34 +89,35 @@ const chatDemo: ExtensionSeoDemo = {
 const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
   "chrome-extension/webpage-to-pdf": {
     route: "chrome-extension/webpage-to-pdf",
-    title: "Save Any Webpage as PDF in Chrome",
+    title: "Webpage to PDF Chrome Extension",
     description:
-      "Save the full webpage open in Chrome as a visual PDF or a document with selectable text, links, and available media.",
+      "Save the webpage open in Chrome as a full visual PDF or a document with selectable text, safe links, and supported page controls.",
     eyebrow: "WEBPAGE TO PDF",
-    heading: "Save the full webpage open in Chrome",
+    heading: "Save the webpage open in Chrome as PDF",
     lead:
-      "Page 2 PDF captures the current tab from top to bottom. Choose a visual copy for appearance or an editable document for selectable content.",
+      "Page 2 PDF prepares the active tab, including its main internal scroller when detected. Choose Accurate copy for the rendered appearance or Editable document for selectable content.",
     demo: webpageDemo,
     steps: commonSteps,
     supportedTitle: "What this workflow supports",
     supported: [
       "Long pages that extend beyond the visible viewport",
+      "A primary nested scroll area and available lazy-loaded content",
       "Portrait and landscape output",
-      "Visual PDFs or selectable text and available links",
-      "Pages you can open normally in the current Chrome tab",
+      "Image-based visual output or selectable text and safe links",
     ],
     limitsTitle: "What it does not promise",
     limits: [
       "It is not a server-side URL-to-PDF service and does not accept pasted URLs.",
       "Content hidden behind logins, closed menus, or unloaded virtualized lists may remain unavailable.",
       "A visual copy prioritizes appearance; use Editable document when selectable text matters.",
+      "The source tab must stay open while Page 2 PDF prepares and checks the result.",
     ],
     privacy,
     faqs: [
       {
         question: "Does it save more than the visible screen?",
         answer:
-          "Yes. Page 2 PDF prepares and captures the full main page flow, including pages that scroll inside their own content container.",
+          "Yes. It prepares the main page flow and can normalize one large internal content scroller before capture. Independent sidebars and every nested scroller are not treated as the document body.",
       },
       {
         question: "Can I keep links clickable?",
@@ -139,24 +140,25 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     route: "chrome-extension/ai-chat-to-pdf",
     title: "AI Chat to PDF Chrome Extension",
     description:
-      "Export the current supported AI conversation to a clean PDF with ordered messages, links, and available media options.",
+      "Export the current supported AI conversation to PDF with ordered messages, code, tables, citations, files, links, and available media references.",
     eyebrow: "AI CHAT TO PDF",
     heading: "Export the current supported AI conversation",
     lead:
-      "Page 2 PDF reads the open conversation, removes surrounding app chrome, and formats the messages for a clean PDF preview.",
+      "Page 2 PDF reads the open conversation, walks backward through retrievable history, removes surrounding app chrome, and formats supported message content as a transcript.",
     demo: chatDemo,
     steps: commonSteps,
     supportedTitle: "Supported AI chat workflows",
     supported: [
-      "The currently open ChatGPT, Claude, Gemini, Grok, Perplexity, Copilot, or Manus conversation",
+      "The currently open ChatGPT, Claude, Gemini, Grok, Perplexity, Microsoft Copilot, or Manus conversation",
       "All messages or replies-only output",
-      "Available images, video references, audio references, and links when enabled",
-      "Long conversations that the adapter can load from the open page",
+      "Supported headings, lists, quotes, code, tables, citations, and file references",
+      "Available images, video posters, audio or voice references, and links when enabled",
     ],
     limitsTitle: "Clear boundaries",
     limits: [
       "Page 2 PDF does not export every conversation in an account at once.",
-      "Unsupported chat products and changed platform markup may require a future adapter update.",
+      "The PDF includes at most the latest 2,000 messages the bounded loader can retrieve from the open conversation.",
+      "A different AI site works only when user and assistant roles are unambiguous; platform markup changes can require an adapter update.",
       "Private assets that the active page cannot retrieve may appear as a placeholder.",
     ],
     privacy,
@@ -174,7 +176,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
       {
         question: "Are conversation images included?",
         answer:
-          "Available conversation images are included unless you enable Remove images. An inaccessible asset is replaced without stopping the whole export.",
+          "Available conversation images are included unless Remove images is enabled. An inaccessible asset is retried, then represented without aborting the rest of the transcript.",
       },
     ],
     related: [
@@ -187,25 +189,26 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     route: "chrome-extension/messenger-chat-to-pdf",
     title: "Messenger Chat to PDF for Chrome",
     description:
-      "Save the current supported WhatsApp or Telegram conversation as a clean PDF from the browser tab you already have open.",
+      "Save the current WhatsApp Web conversation or Telegram Web chat or channel as a structured PDF from the browser tab already open.",
     eyebrow: "MESSENGER CHAT TO PDF",
     heading: "Save the open WhatsApp or Telegram conversation",
     lead:
-      "Use the AI / Chat output style to export the current supported messenger thread without the surrounding inbox and navigation interface.",
+      "AI / Chat isolates the current thread from the surrounding inbox, keeps detected participant roles, and formats available text, links, files, and media references.",
     demo: chatDemo,
     steps: commonSteps,
     supportedTitle: "Supported messenger workflows",
     supported: [
       "The current conversation in WhatsApp Web",
       "The current Telegram Web chat or channel",
-      "All messages or replies-only output where the platform exposes roles",
-      "Optional removal of available media and links",
+      "Detected incoming, outgoing, participant, or channel-message roles",
+      "Optional removal of images, video, audio or voice references, and links",
     ],
     limitsTitle: "Not an account backup",
     limits: [
       "The extension does not export all WhatsApp or Telegram chats in one operation.",
       "Slack, Instagram, Messenger, Discord, and Teams are not currently supported live adapters.",
-      "Only messages loaded or retrievable in the current browser conversation can be exported.",
+      "Only the latest 2,000 messages loaded or retrievable in the current browser conversation can be included.",
+      "Keep the source tab open while history and media are being prepared.",
     ],
     privacy,
     faqs: [
@@ -239,7 +242,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     eyebrow: "FULL PAGE PDF",
     heading: "Capture beyond the visible viewport",
     lead:
-      "Accurate copy prepares the page, loads the main scrollable content, and creates a multi-page visual PDF from the top of the page to the bottom.",
+      "Accurate copy identifies the main scroll area, performs a bounded pass for available lazy content, freezes animation during capture, and restores page state afterward.",
     demo: webpageDemo,
     steps: commonSteps,
     supportedTitle: "Designed for long pages",
@@ -253,7 +256,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     limits: [
       "Nested menus, sidebars, and every independent scroller are not expanded as main content.",
       "Virtualized lists that remove old DOM nodes can require a platform-specific workflow.",
-      "The capture remains subject to documented height, file-size, and processing limits.",
+      "The capture remains subject to height, file-size, page-count, and processing limits.",
     ],
     privacy,
     faqs: [
@@ -270,7 +273,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
       {
         question: "Does the page return to its original position?",
         answer:
-          "The capture workflow restores the page scroll position and temporary layout changes after processing.",
+          "The workflow restores scroll position, focus, selection, animation state, and temporary layout changes after processing, including failure cleanup.",
       },
     ],
     related: [
@@ -283,11 +286,11 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     route: "chrome-extension/webpage-to-pdf-with-links",
     title: "Convert a Webpage to PDF with Links",
     description:
-      "Save the current Chrome page as a PDF with selectable text and available clickable links using Editable document mode.",
+      "Save the current Chrome page as a PDF with selectable text, safe clickable links, screen or print layout, and supported document controls.",
     eyebrow: "PDF WITH LINKS",
     heading: "Keep selectable text and available links",
     lead:
-      "Editable document uses Chromium PDF output after preparing the complete page. Keep links enabled and remove only the content you do not need.",
+      "Editable document uses Chromium PDF output after preparing the page. Keep links enabled, choose As viewed or Print optimized, and remove only the content you do not need.",
     demo: editableDemo,
     steps: commonSteps,
     supportedTitle: "Editable document controls",
@@ -296,12 +299,14 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
       "Available clickable links when Remove links is off",
       "Optional removal of images and styling",
       "Portrait or landscape output and screen or print-optimized profiles",
+      "Eligible form controls and bounded OCR for canvas-like regions without searchable text",
     ],
     limitsTitle: "What editable means here",
     limits: [
       "The extension does not provide a built-in PDF editor.",
       "Text drawn inside images, canvases, or inaccessible embedded viewers may not become selectable.",
       "Some sites alter their layout under print styles; use As viewed when screen layout matters.",
+      "Regional OCR is not full-document OCR, and eligible forms exclude password, file, token, and other sensitive controls.",
     ],
     privacy,
     faqs: [
@@ -318,7 +323,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
       {
         question: "What is the project ZIP?",
         answer:
-          "It is an optional project archive of the captured material. Page 2 PDF does not currently import or edit that archive.",
+          "It is an optional ZIP containing the PDF, capture manifest, scrubbed source archive, and checksums when that archive can be produced safely. Page 2 PDF does not import it for editing.",
       },
     ],
     related: [
@@ -335,7 +340,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     eyebrow: "HTML PAGE TO PDF",
     heading: "Save the HTML page already open in Chrome",
     lead:
-      "Page 2 PDF works with the active browser tab. Open the HTML document first, choose the output style, and preview the generated PDF.",
+      "Page 2 PDF does not parse pasted markup on this website. Render the HTML in Chrome first, then choose a visual or selectable result for that active tab.",
     demo: editableDemo,
     steps: commonSteps,
     supportedTitle: "Works with the active HTML document",
@@ -379,18 +384,18 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     route: "chrome-extension/chatgpt-to-pdf",
     title: "Export a ChatGPT Conversation to PDF",
     description:
-      "Save the current ChatGPT conversation as a clean PDF with ordered messages, available links, and optional media removal.",
+      "Save the current ChatGPT conversation as PDF with ordered prompts and replies, supported code, sources, files, images, and links.",
     eyebrow: "CHATGPT TO PDF",
     heading: "Export the ChatGPT conversation you have open",
     lead:
-      "Page 2 PDF formats the current supported ChatGPT thread for reading and sharing without exporting the surrounding sidebar and account interface.",
+      "Page 2 PDF extracts the current ChatGPT thread, keeps supported semantic blocks and source citations, and leaves the account sidebar outside the PDF.",
     demo: chatDemo,
     steps: commonSteps,
     supportedTitle: "ChatGPT export options",
     supported: [
       "The current conversation open in ChatGPT",
       "All messages or assistant replies only",
-      "Available images, code, lists, and links",
+      "Supported images, generated images, files, code, tables, source citations, lists, and links",
       "Optional removal of images, video references, audio references, or links",
     ],
     limitsTitle: "Conversation-level export",
@@ -427,11 +432,11 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     route: "chrome-extension/claude-to-pdf",
     title: "Export a Claude Conversation to PDF",
     description:
-      "Save the current Claude conversation as a clean PDF, including ordered messages and available conversation images and links.",
+      "Save the current Claude conversation as PDF with ordered messages, supported code, links, and attachments that belong to the transcript.",
     eyebrow: "CLAUDE TO PDF",
     heading: "Save the Claude conversation you have open",
     lead:
-      "Page 2 PDF groups Claude transcript rows, keeps user and assistant messages in order, and hydrates available conversation attachments for print.",
+      "Page 2 PDF keeps Claude transcript rows in order, ignores hidden interface duplicates, and retries transcript attachments independently before print.",
     demo: chatDemo,
     steps: commonSteps,
     supportedTitle: "Claude export coverage",
@@ -475,11 +480,11 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     route: "chrome-extension/whatsapp-chat-to-pdf",
     title: "Export a WhatsApp Chat to PDF",
     description:
-      "Save the current WhatsApp Web conversation as a clean PDF with ordered messages and optional media and link removal.",
+      "Save the current WhatsApp Web conversation as PDF with detected message direction, ordered text, links, and supported media references.",
     eyebrow: "WHATSAPP CHAT TO PDF",
     heading: "Save the open WhatsApp Web conversation",
     lead:
-      "Page 2 PDF loads the current supported thread, formats its messages in a clean document, and prints it without switching you to a service tab.",
+      "Page 2 PDF works inside the open WhatsApp Web thread, loads retrievable history within its limits, and excludes the conversation list and other app chrome.",
     demo: chatDemo,
     steps: commonSteps,
     supportedTitle: "WhatsApp Web workflow",
@@ -523,7 +528,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     route: "chrome-extension/telegram-chat-to-pdf",
     title: "Export a Telegram Chat to PDF",
     description:
-      "Save the current Telegram Web chat or channel as a clean PDF with ordered messages and optional media and links.",
+      "Save the current Telegram Web chat or channel as PDF with ordered messages, supported links, files, and media references.",
     eyebrow: "TELEGRAM CHAT TO PDF",
     heading: "Save the open Telegram Web chat or channel",
     lead:
@@ -575,13 +580,14 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     eyebrow: "CHROME PRINT ALTERNATIVE",
     heading: "Choose the right PDF workflow for the page",
     lead:
-      "Chrome Print is useful for standard documents. Page 2 PDF adds full-page preparation, a visual capture mode, content controls, and clean supported-chat export.",
+      "Chrome Print is often enough for a short page with a good print stylesheet. Page 2 PDF adds main-scroller preparation, an appearance-first mode, selectable output controls, and structured chat export.",
     demo: editableDemo,
     steps: commonSteps,
     supportedTitle: "Where Page 2 PDF adds control",
     supported: [
       "Accurate copy for appearance-first capture",
       "Editable document for selectable text and available links",
+      "As viewed and Print optimized profiles plus supported content removal",
       "Detection of a large internal page scroller before capture",
       "Clean export for supported AI and messenger conversations",
     ],
@@ -596,7 +602,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
       {
         question: "Does Page 2 PDF replace Chrome Print?",
         answer:
-          "It adds specialized workflows. Chrome Print remains suitable for simple pages that already have good print styles.",
+          "It adds specialized workflows rather than replacing the browser command. Use Chrome Print when its preview already contains the complete page in the form you need.",
       },
       {
         question: "Which mode looks most like the screen?",

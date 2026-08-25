@@ -432,6 +432,7 @@ const validateSemanticData = async () => {
   const usQueueQueries = new Set();
   for (const row of usValidation) {
     const query = normalizeQuery(row.query ?? "");
+    const target = targetRows.get(query);
     if (usQueueQueries.has(query)) {
       addError(`Duplicate US SERP validation query: ${query}`);
     }
@@ -445,11 +446,38 @@ const validateSemanticData = async () => {
     if (!allowedValidationStates.has(row.us_validation_status ?? "")) {
       addError(`${query}: invalid US SERP validation status.`);
     }
+    if (target && row.us_validation_status !== target.us_validation_status) {
+      addError(`${query}: US SERP queue state does not match semantic core.`);
+    }
+    if (target && row.target_url !== target.target_url) {
+      addError(`${query}: US SERP target URL does not match semantic core.`);
+    }
     if (
       row.us_validation_status === "validated" &&
       (!row.us_serp_checked_at || !row.evidence_url)
     ) {
       addError(`${query}: validated US demand requires a date and evidence URL.`);
+    }
+    if (
+      Boolean(row.us_serp_checked_at) !== Boolean(row.evidence_url)
+    ) {
+      addError(`${query}: SERP check date and evidence URL must be recorded together.`);
+    }
+    if (
+      row.us_serp_checked_at &&
+      (!/^\d{4}-\d{2}-\d{2}$/.test(row.us_serp_checked_at) ||
+        Number.isNaN(Date.parse(`${row.us_serp_checked_at}T00:00:00Z`)))
+    ) {
+      addError(`${query}: invalid SERP check date ${row.us_serp_checked_at}.`);
+    }
+    if (row.evidence_url) {
+      try {
+        if (new URL(row.evidence_url).protocol !== "https:") {
+          addError(`${query}: SERP evidence URL must use HTTPS.`);
+        }
+      } catch {
+        addError(`${query}: invalid SERP evidence URL.`);
+      }
     }
   }
   for (const query of targetQueries) {
@@ -640,6 +668,43 @@ const validateSource = async () => {
     );
   }
 
+  const extensionContractSource = [
+    await readText("src/features/extension/extension-copy.ts"),
+    await readText("src/content/extension-seo-landings.ts"),
+  ].join("\n");
+  for (const marker of [
+    "active tab",
+    "2,000",
+    "selectable text",
+    "safe links",
+    "Regional OCR",
+    "project archive",
+    "ChatGPT",
+    "Gemini",
+    "Claude",
+    "Grok",
+    "Perplexity",
+    "Microsoft Copilot",
+    "Manus",
+    "WhatsApp Web",
+    "Telegram Web",
+    "conditional compatibility, not universal support",
+  ]) {
+    if (!extensionContractSource.includes(marker)) {
+      addError(`Product-copy contract is missing: ${marker}.`);
+    }
+  }
+  if (
+    /\b(?:supports?|compatible with)\s+(?:Slack|Instagram|Discord|Messenger|Teams)\b/i.test(
+      extensionContractSource,
+    ) ||
+    /\b(?:any|all|every) AI (?:chat|conversation|website|site)\b/i.test(
+      extensionContractSource,
+    )
+  ) {
+    addError("Product copy makes an unsupported universal platform claim.");
+  }
+
   const packageJson = JSON.parse(await readText("package.json"));
   for (const script of [
     "audit:content",
@@ -688,6 +753,12 @@ const validateSource = async () => {
       addError("SEO/page-intent-map.json does not cover all locales.");
     }
     const keys = new Set();
+    const primaryQueries = new Set();
+    const semanticTargets = new Map(
+      (await readCsv("SEO/semantic-core-en.csv"))
+        .filter((row) => row.status === "target")
+        .map((row) => [normalizeQuery(row.query ?? ""), row.target_url]),
+    );
     for (const entry of entries) {
       const key = entry.route;
       if (keys.has(key)) {
@@ -701,11 +772,26 @@ const validateSource = async () => {
           entry.primaryIntentSource,
         ) ||
         !entry.intentType ||
+        !entry.primaryQuery ||
         !entry.purpose ||
         !Array.isArray(entry.internalLinks) ||
         !Array.isArray(entry.avoidCompetingWith)
       ) {
         addError(`Incomplete intent-map entry: ${key}`);
+      }
+      const primaryQuery = normalizeQuery(entry.primaryQuery ?? "");
+      if (primaryQueries.has(primaryQuery)) {
+        addError(`Duplicate primary query in intent map: ${primaryQuery}.`);
+      }
+      primaryQueries.add(primaryQuery);
+      if (entry.primaryIntentSource === "localized-content-title") {
+        const targetUrl = semanticTargets.get(primaryQuery);
+        const expectedTargetUrl = `/en/${entry.route}`;
+        if (targetUrl !== expectedTargetUrl) {
+          addError(
+            `${entry.route}: primary query ${primaryQuery} does not target ${expectedTargetUrl} in the semantic core.`,
+          );
+        }
       }
     }
     const routeSource = await readText("src/shared/routes/routes.ts");

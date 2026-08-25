@@ -7,12 +7,12 @@ describe("ExtensionGuide", () => {
     const { container } = render(<ExtensionGuide locale="en" />);
 
     expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
-      "How to use the Page 2 File Chrome extension",
+      "How to use the Page 2 PDF Chrome extension",
     );
     expect(screen.getByText("Open the source").closest("ol")?.querySelectorAll("li")).toHaveLength(6);
     expect(screen.getByRole("heading", { name: "Supported browser chats" })).toBeTruthy();
     expect(container.textContent).toContain("latest 2,000 messages");
-    expect(container.textContent).toContain("the next time the extension runs");
+    expect(container.textContent).toContain("when the extension runs again");
     expect(container.textContent).not.toContain("within two hours");
     expect(container.textContent).not.toMatch(/PowerPoint|PPTX|merge|split|reorder/i);
   });
@@ -21,7 +21,7 @@ describe("ExtensionGuide", () => {
     const { container } = render(<ExtensionGuide locale="ru" />);
 
     expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
-      "Как пользоваться расширением Page 2 File для Chrome",
+      "Как пользоваться расширением Page 2 PDF для Chrome",
     );
     expect(screen.getByText("Откройте материал").closest("ol")?.querySelectorAll("li")).toHaveLength(6);
     expect(container.textContent).toContain("2 000 последних сообщений");

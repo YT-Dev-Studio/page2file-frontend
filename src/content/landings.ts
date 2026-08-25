@@ -47,17 +47,17 @@ const gptRelatedRoutes: ReadonlyArray<RelatedRoute> = [
 export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     "page2pdf-gpt": {
         route: "page2pdf-gpt",
-        eyebrow: "GPT App · exact URLs, PDFs, or screenshots",
+        eyebrow: "Web2File GPT · exact URLs, PDFs, or screenshots",
         title: "Webpage to PDF Converter — Web2File",
         displayTitle: "GPT: Webpage 2 PDF",
-        description: "Webpage to PDF Converter — Web2File converts exact public URLs, uploaded webpage PDFs, and screenshots into separate Visual PDF or Interactive PDF files.",
-        lead: "Provide one exact public URL, a list of exact URLs, a webpage PDF, or full-page or consecutive screenshots. Choose Visual PDF to save the website as page captures or Interactive PDF for selectable text and clickable links.",
+        description: "Webpage to PDF Converter — Web2File accepts exact public URLs, webpage PDFs, or ordered screenshots and returns separate visual or interactive PDFs.",
+        lead: "Send the exact public pages or files you want processed. Web2File returns one PDF per webpage: choose Visual PDF for page images or Interactive PDF for selectable text and verified links where the source allows them.",
         sections: [
-            { heading: "1. Enter one or more URLs", body: "Send one public webpage URL, a list of exact public URLs, an existing webpage PDF, or full-page or consecutive screenshots. Each webpage remains a separate PDF." },
-            { heading: "2. Choose the PDF type", body: "Select Visual PDF for an image-based result that prioritizes the page's appearance, or Interactive PDF when selectable text and clickable links matter most. One mode applies to every URL in a submitted list." },
-            { heading: "3. Convert only the pages you supply", body: "The GPT opens only the exact public URLs provided. It does not crawl domains, inspect sitemaps, discover pages, follow internal links, or bypass authentication, paywalls, CAPTCHAs, geographic restrictions, or other access controls." },
-            { heading: "4. Post-process PDFs and screenshots", body: "Uploaded screenshots can be assembled into a Visual PDF while preserving their top-to-bottom order. Uploaded webpage PDFs can be checked and processed without inventing missing content; Interactive PDF results prioritize existing text, layout, images, and verified links." },
-            { heading: "5. Get tailored save guidance and verify the result", body: "If direct conversion is unavailable or incomplete, the GPT provides page-specific browser or native-export guidance. Review every delivered PDF for missing or cropped content, blank areas, readability, page order, layout, links, and fidelity to the selected mode." },
+            { heading: "1. Supply the exact source", body: "Send one public URL, a list of exact public URLs, an existing webpage PDF, or ordered full-page screenshots. Each supplied webpage remains a separate output file." },
+            { heading: "2. Choose visual or interactive output", body: "Visual PDF prioritizes the supplied page appearance. Interactive PDF prioritizes existing selectable text and links that can be checked; one mode applies to every URL in the same request." },
+            { heading: "3. Stay within the supplied pages", body: "Web2File opens only the exact public URLs you provide. It does not crawl a domain, inspect a sitemap, follow links for extra pages, or bypass sign-in, paywalls, CAPTCHAs, location rules, or other access controls." },
+            { heading: "4. Use PDFs and screenshots as evidence", body: "Ordered screenshots can be assembled into a Visual PDF. An uploaded webpage PDF can be checked and processed from the content it already contains; missing page content is not reconstructed or invented." },
+            { heading: "5. Check every delivered file", body: "Review page order, cropped or missing areas, unexplained blanks, readability, layout, and supported links. If direct conversion is blocked, Web2File can explain a browser or native-export path instead of pretending the page was captured." },
         ],
         externalLinkKey: "page2pdfGpt",
         primaryLabel: "Open GPT Webpage 2 PDF",
@@ -70,17 +70,17 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     },
     "html2pdf-gpt": {
         route: "html2pdf-gpt",
-        eyebrow: "GPT App · uploaded HTML file",
+        eyebrow: "Web2File GPT · one uploaded HTML file",
         title: "HTML to PDF Converter — Web2File",
         displayTitle: "GPT: HTML 2 PDF",
-        description: "HTML to PDF Converter — Web2File turns one uploaded HTML file into a checked PDF that preserves layout, images, selectable text, and links.",
-        lead: "Upload exactly one HTML file. GPT HTML 2 PDF previews its design, loads accessible styles, fonts, and images, then creates one checked PDF with selectable text and clickable links where possible.",
+        description: "HTML to PDF Converter — Web2File renders one uploaded HTML file and returns one checked PDF with its available layout, text, images, and links.",
+        lead: "Upload one HTML document. Web2File renders the file with the styles and assets it can access, chooses a suitable page orientation, and checks the resulting PDF for clipping and missing content.",
         sections: [
-            { heading: "1. Upload exactly one HTML file", body: "Attach one HTML document. The GPT does not accept a URL instead, process several HTML files, crawl websites, follow links for extra pages, or merge multiple documents." },
-            { heading: "2. Include the styles and assets", body: "Inline and embedded styles are used automatically, along with accessible remote stylesheets, fonts, and images. If the HTML references a missing local CSS file, upload the matching file for a closer visual result or continue without it." },
-            { heading: "3. Preview and preserve the design", body: "The HTML is previewed at a suitable desktop width before conversion. The result aims to retain the source theme, colors, typography, spacing, columns, cards, images, and content order without activating interactive controls." },
-            { heading: "4. Create one readable PDF", body: "The GPT produces one PDF with selectable text and working hyperlinks where possible. Wide layouts can use landscape or a suitable page size so major columns and visual elements are not squeezed, cropped, or split." },
-            { heading: "5. Check the finished file", body: "Every PDF is reviewed for missing content, clipped components, unexplained blank areas, readability, page breaks, image placement, and supported links before it is delivered." },
+            { heading: "1. Upload one HTML document", body: "The GPT accepts one HTML file for this workflow. It does not substitute a URL, process a batch of HTML files, crawl linked pages, or merge several documents." },
+            { heading: "2. Make required assets accessible", body: "Inline and embedded styles load with the document. Accessible remote stylesheets, fonts, and images may load too; missing local CSS or image files must be supplied if they are needed for the intended appearance." },
+            { heading: "3. Render without activating the page", body: "Web2File previews the HTML at a suitable desktop width and preserves the available content order, typography, spacing, columns, cards, and images. Interactive controls are not treated as a live application." },
+            { heading: "4. Fit the document to PDF pages", body: "The output keeps existing selectable text and supported hyperlinks where possible. A wide design may use landscape or a more suitable page size to reduce squeezing, clipping, and awkward column breaks." },
+            { heading: "5. Inspect the result", body: "Before delivery, check for missing assets, clipped components, unexplained blank areas, unreadable text, poor page breaks, displaced images, and links that could not be preserved." },
         ],
         externalLinkKey: "html2pdfGpt",
         primaryLabel: "Open GPT HTML 2 PDF",
@@ -96,11 +96,11 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
         eyebrow: "Privacy and data processing",
         title: "Page 2 File privacy policy",
         description: "How Page 2 File processes webpage content, temporary conversion files, service cookies, analytics data and privacy requests.",
-        lead: "This Privacy Policy explains what Page 2 File processes when you visit the website, use the Chrome extension or convert a webpage to PDF.",
+        lead: "This Privacy Policy explains what Page 2 File processes when you visit the website, use the Page 2 PDF Chrome extension, or use an available website conversion workflow.",
         sections: [
             {
                 heading: "Operator and scope",
-                body: "{{entityName}}, located at {{address}}, operates Page 2 File and is responsible for the processing described in this policy. This policy applies to the Page 2 File website, browser extension and related webpage-to-file conversion services.",
+                body: "{{entityName}}, located at {{address}}, operates Page 2 File and is responsible for the processing described in this policy. This policy applies to the Page 2 File website, the Page 2 PDF browser extension and related webpage-to-file conversion services.",
             },
             {
                 heading: "Definitions",
@@ -120,7 +120,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 heading: "Conversion content and temporary processing",
-                body: "A public-URL conversion or an extension preview requires temporary processing of the submitted page and selected options. Page 2 File does not provide an account-based conversion history. Preview data and generated artifacts are short-lived and are deleted after the preview closes or when the configured technical expiry is reached.",
+                body: "A website conversion, where available, requires temporary server processing of the submitted public page and selected options. Page 2 PDF creates active-tab documents inside the extension workflow and does not upload page or conversation content to Page 2 File servers. Neither workflow provides an account-based conversion history; temporary preview data and generated artifacts are removed after their lifecycle or configured technical expiry.",
             },
             {
                 heading: "Analytics and attribution",
@@ -179,7 +179,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
         eyebrow: "Service agreement",
         title: "Terms of service",
         description: "Terms for using Page 2 File, including permitted webpage sources, conversion limits, user responsibilities and service availability.",
-        lead: "These Terms govern your use of the Page 2 File website, Chrome extension and webpage-to-PDF conversion services.",
+        lead: "These Terms govern your use of the Page 2 File website, the Page 2 PDF Chrome extension and related webpage-to-PDF conversion services.",
         sections: [
             {
                 heading: "Agreement and operator",
@@ -187,7 +187,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 heading: "Definitions",
-                body: "“Service” means the Page 2 File website, Chrome extension and conversion features. “Source content” means a webpage, active-tab content or other material submitted for conversion. “Output” means a PDF, preview or other generated result.",
+                body: "“Service” means the Page 2 File website, the Page 2 PDF Chrome extension and related conversion features. “Source content” means a webpage, active-tab content or other material submitted for conversion. “Output” means a PDF, preview or other generated result.",
             },
             {
                 heading: "Limited license",
