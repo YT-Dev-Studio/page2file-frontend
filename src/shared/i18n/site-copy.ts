@@ -16,6 +16,7 @@ export type SiteCopy = {
   };
   header: {
     brandLabel: string;
+    downloadAction: string;
     extensionAction: string;
     menuLabel: string;
     mobileNavigationLabel: string;
@@ -27,7 +28,8 @@ const siteCopy: Record<Locale, SiteCopy> = {
   en: {
     header: {
       brandLabel: "Page 2 File — home",
-      extensionAction: "Open Page 2 PDF",
+      downloadAction: "Download extension",
+      extensionAction: "Install Page 2 PDF",
       menuLabel: "Open menu",
       mobileNavigationLabel: "Mobile navigation",
       navigationLabel: "Primary navigation",
@@ -49,7 +51,8 @@ const siteCopy: Record<Locale, SiteCopy> = {
   ru: {
     header: {
       brandLabel: "Page 2 File — главная",
-      extensionAction: "Открыть Page 2 PDF",
+      downloadAction: "Скачать расширение",
+      extensionAction: "Установить Page 2 PDF",
       menuLabel: "Открыть меню",
       mobileNavigationLabel: "Мобильная навигация",
       navigationLabel: "Основная навигация",

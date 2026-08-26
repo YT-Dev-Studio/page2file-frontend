@@ -16,7 +16,10 @@ describe("site shell copy", () => {
   });
 
   test("keeps English and Russian shell copy localized", () => {
-    expect(getSiteCopy("en").header.extensionAction).toBe("Open Page 2 PDF");
+    expect(getSiteCopy("en").header.downloadAction).toBe("Download extension");
+    expect(getSiteCopy("ru").header.downloadAction).toBe("Скачать расширение");
+    expect(getSiteCopy("en").header.extensionAction).toBe("Install Page 2 PDF");
+    expect(getSiteCopy("ru").header.extensionAction).toBe("Установить Page 2 PDF");
     expect(getSiteCopy("ru").footer.links.privacy).toBe(
       "Политика конфиденциальности",
     );

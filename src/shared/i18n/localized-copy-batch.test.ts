@@ -15,12 +15,13 @@ describe("localized extension copy", () => {
       const copy = getExtensionCopy(code);
       expect(copy.steps).toHaveLength(6);
       expect(copy.limits).toHaveLength(5);
-      expect(copy.browseChromeLabel.length).toBeGreaterThan(10);
+      expect(copy.bannerActionLabel.length).toBeGreaterThan(10);
+      expect(copy.supportedGroups).toHaveLength(3);
 
       if (code !== "en") {
         expect(copy.homeTitle).not.toBe(english.homeTitle);
         expect(copy.guideLead).not.toBe(english.guideLead);
-        expect(copy.supportedBody).not.toBe(english.supportedBody);
+        expect(copy.supportedGroups[0].body).not.toBe(english.supportedGroups[0].body);
       }
     }
   });

@@ -94,7 +94,7 @@
 }
 
 .primary {
-  color: var(--p2f-color-action-primary-foreground);
+  color: var(--p2f-color-text-inverse);
   background: var(--p2f-color-action-primary-background);
 }
 

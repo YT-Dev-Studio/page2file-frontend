@@ -8,15 +8,40 @@ describe("homepage extension copy", () => {
     const copy = getExtensionCopy("en");
 
     expect(copy.homeTitle).toBe(
-      "Save the current webpage or browser chat as PDF",
+      "Save the current webpage or chat as PDF.",
     );
     expect(copy.modes.map(({ title }) => title)).toEqual([
       "Accurate copy",
       "Editable document",
       "AI / Chat",
     ]);
-    expect(copy.sources.join(" ")).toContain("Local HTML");
+    expect(copy.sources.join(" ")).toContain("Authorized pages");
     expect(copy.sources.join(" ")).toContain("Google Docs, Sheets, and Slides");
+    expect(copy.modes[1].body).not.toContain("Chromium");
+    expect(copy.modes[1].bodyLink).toEqual({
+      href: "/en/blog/preserve-webpage-links-forms-text",
+      label: "project archive",
+    });
+  });
+
+  test("uses the source-provided Russian positioning and localized modes", () => {
+    const copy = getExtensionCopy("ru");
+
+    expect(copy.homeTitle).toBe("Сохраняйте текущую веб-страницу или чат в PDF.");
+    expect(copy.modes.map(({ title }) => title)).toEqual([
+      "Точная копия",
+      "Редактируемый документ",
+      "AI / Чат",
+    ]);
+    expect(copy.sources[1]).toBe(
+      "Авторизованные страницы, которые открыты в текущей вкладке браузера.",
+    );
+    expect(copy.steps[4].body).toBe(
+      "Дождитесь загрузки доступного контента и подготовки предпросмотра, не закрывая исходную страницу и не переходя на другую страницу.",
+    );
+    expect(copy.privacyPoints[1]).toBe(
+      "Временные данные предпросмотра удаляются после сессии. Оставшиеся данные старше двух часов очищаются при следующем запуске расширения.",
+    );
   });
 
   test("provides complete localized homepage copy for every locale", () => {
@@ -47,7 +72,7 @@ describe("homepage extension copy", () => {
     expect(visibleCopy).not.toMatch(/PowerPoint|PPTX|merge|split|reorder|upload a URL/i);
     expect(visibleCopy).toContain("2,000");
     expect(visibleCopy).toContain("older than two hours");
-    expect(visibleCopy).toContain("when the extension runs again");
+    expect(visibleCopy).toContain("the next time the extension runs");
     expect(visibleCopy).not.toContain("within two hours");
   });
 });

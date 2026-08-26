@@ -220,6 +220,17 @@
   margin: 0 0 0.75rem;
 }
 
+.cardCopy a {
+  color: var(--p2f-color-text-link);
+  font-weight: 700;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+.cardCopy a:hover {
+  color: var(--p2f-color-gel-blue-600);
+}
+
 .sourceList,
 .privacyList {
   display: grid;

@@ -7,11 +7,6 @@ export type ExtensionLink = {
   placeholder: boolean;
 };
 
-const extensionCatalogLabels: Record<Locale, string> = {
-  en: "Browse Chrome extensions",
-  ru: "Каталог расширений Chrome",
-};
-
 export const getExtensionLink = (locale: Locale): ExtensionLink => {
   const link = externalLinks.chromeExtension;
 
@@ -26,15 +21,4 @@ export const getExtensionLink = (locale: Locale): ExtensionLink => {
         href: `/${locale}/chrome-extension/how-to-use`,
         placeholder: false,
       };
-};
-
-export const getExtensionActionLabel = (
-  locale: Locale,
-  liveLabel: string,
-): string => {
-  const link = getExtensionLink(locale);
-  if (!link.placeholder) {
-    return liveLabel;
-  }
-  return extensionCatalogLabels[locale];
 };

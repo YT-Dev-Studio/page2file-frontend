@@ -6,28 +6,23 @@ import { ExtensionPromoBanner } from "@/shared/ui/extension-promo-banner";
 import styles from "./home.module.css";
 
 type HomeExtensionBannerProps = {
-  body: string;
   headingId: string;
   locale: Locale;
-  title: string;
 };
 
 const HomeExtensionBanner = ({
-  body,
   headingId,
   locale,
-  title,
 }: HomeExtensionBannerProps): ReactNode => {
   const copy = getExtensionCopy(locale);
 
   return (
     <ExtensionPromoBanner
-      actionLabel={copy.browseChromeLabel}
-      body={body}
-      eyebrow="PAGE 2 FILE · CHROME"
+      actionLabel={copy.bannerActionLabel}
+      body={copy.bannerBody}
       headingId={headingId}
       locale={locale}
-      title={title}
+      title={copy.bannerTitle}
     />
   );
 };
@@ -37,8 +32,6 @@ export const HomeExtensionPromo = ({
 }: {
   locale: Locale;
 }): ReactNode => {
-  const copy = getExtensionCopy(locale);
-
   return (
     <section
       aria-labelledby="home-extension-promo-title"
@@ -46,10 +39,8 @@ export const HomeExtensionPromo = ({
     >
       <Container>
         <HomeExtensionBanner
-          body={copy.processBody}
           headingId="home-extension-promo-title"
           locale={locale}
-          title={copy.processTitle}
         />
       </Container>
     </section>
@@ -61,8 +52,6 @@ export const HomeFinalCta = ({
 }: {
   locale: Locale;
 }): ReactNode => {
-  const copy = getExtensionCopy(locale);
-
   return (
     <section
       aria-labelledby="home-final-cta-title"
@@ -70,10 +59,8 @@ export const HomeFinalCta = ({
     >
       <Container>
         <HomeExtensionBanner
-          body={copy.privacyBody}
           headingId="home-final-cta-title"
           locale={locale}
-          title={copy.privacyTitle}
         />
       </Container>
     </section>

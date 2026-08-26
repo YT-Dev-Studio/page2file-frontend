@@ -4,6 +4,7 @@ import {
   type ExtensionModeCopy,
   type ExtensionStepCopy,
 } from "@/features/extension/extension-copy";
+import { ModeDescription } from "@/features/extension/mode-description";
 import type { Locale } from "@/shared/i18n/locales";
 import {
   ExtensionArtwork,
@@ -65,12 +66,12 @@ const getArtworkVariant = (
   fallback: ExtensionArtworkVariant,
 ): ExtensionArtworkVariant => variants[index] ?? fallback;
 
-const ModeCard = ({ body, title, variant }: VisualCardProps): ReactNode => (
+const ModeCard = ({ body, bodyLink, title, variant }: VisualCardProps): ReactNode => (
   <article className={styles.modeCard}>
     <ExtensionArtwork className={styles.cardArtwork} variant={variant} />
     <div className={styles.cardCopy}>
       <h3>{title}</h3>
-      <p>{body}</p>
+      <ModeDescription body={body} bodyLink={bodyLink} />
     </div>
   </article>
 );
@@ -159,7 +160,7 @@ export const HomePrivacy = ({ locale }: { locale: Locale }): ReactNode => {
   return (
     <section className={styles.section} id="privacy">
       <Container>
-        <SectionIntro body={copy.privacyBody} title={copy.privacyTitle} />
+        <SectionIntro body={copy.privacyBody} title={copy.homePrivacyTitle} />
         <div className={styles.privacyPanel}>
           <ExtensionArtwork className={styles.privacyArtwork} variant="privacy" />
           <ul className={styles.privacyList}>

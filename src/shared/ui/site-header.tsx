@@ -4,10 +4,7 @@ import type { ReactNode } from "react";
 import page2FileLogo from "@/app/assets/logo.png";
 import type { Locale } from "@/shared/i18n/locales";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
-import {
-  getExtensionActionLabel,
-  getExtensionLink,
-} from "@/shared/routes/extension-link";
+import { getExtensionLink } from "@/shared/routes/extension-link";
 import { ButtonLink } from "@/shared/ui/components/button/button";
 import { LocaleSwitcher } from "./locale-switcher";
 import { SiteNavigation } from "./site-navigation";
@@ -32,7 +29,7 @@ const ExtensionButton = ({
       rel={extensionLink.external ? "noopener noreferrer" : undefined}
       target={extensionLink.external ? "_blank" : undefined}
     >
-      {getExtensionActionLabel(locale, copy.extensionAction)}
+      {copy.downloadAction}
     </ButtonLink>
   );
 };

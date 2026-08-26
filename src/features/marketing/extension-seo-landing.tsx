@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { ExtensionSeoLandingContent } from "@/content/extension-seo-landings";
+import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { routePath } from "@/shared/routes/routes";
 import {
   SeoBreadcrumbs,
@@ -42,6 +43,7 @@ export const ExtensionSeoLanding = ({
   content,
 }: ExtensionSeoLandingProps): ReactNode => {
   const locale = "en";
+  const extensionAction = getSiteCopy(locale).header.extensionAction;
   const breadcrumbs: ReadonlyArray<BreadcrumbItem> = [
     { label: "Page 2 PDF", href: routePath(locale, "") },
     {
@@ -97,8 +99,8 @@ export const ExtensionSeoLanding = ({
             <div className={styles.actions}>
               <ExternalCta
                 externalLinkKey="chromeExtension"
-                label="Add Page 2 PDF to Chrome"
-                placeholderLabel="View Page 2 PDF in Chrome Web Store"
+                label={extensionAction}
+                placeholderLabel={extensionAction}
               />
               <a className={styles.sampleLink} href={content.demo.samplePdf}>
                 {content.demo.sampleLabel}

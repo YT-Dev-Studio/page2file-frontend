@@ -13,12 +13,12 @@ describe("HomeHero", () => {
       </>,
     );
 
-    const cta = screen.getByRole("link", { name: "Browse Chrome extensions" });
+    const cta = screen.getByRole("link", { name: "Install Page 2 PDF" });
     expect(cta.getAttribute("href")).toBe("https://chromewebstore.google.com/");
     expect(cta.getAttribute("target")).toBe("_blank");
     expect(cta.getAttribute("rel")).toBe("noopener noreferrer");
     expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
-      "Save the current webpage or browser chat as PDF",
+      "Save the current webpage or chat as PDF.",
     );
     expect(
       screen.getByAltText(
@@ -26,13 +26,23 @@ describe("HomeHero", () => {
       ),
     ).toBeTruthy();
     expect(
-      screen.getByRole("heading", { name: "From the current tab to a PDF" }),
-    ).toBeTruthy();
+      screen.getAllByRole("heading", { name: "Export the open tab to PDF" }),
+    ).toHaveLength(2);
     expect(
-      screen.getByRole("heading", { name: "Processed in your browser" }),
-    ).toBeTruthy();
+      screen.getAllByText(
+        "The website does not receive the tab content or store user data. Open any website in a new tab and run Page 2 PDF.",
+      ),
+    ).toHaveLength(2);
     expect(
-      screen.getAllByRole("link", { name: /Browse Chrome extensions/ }),
-    ).toHaveLength(3);
+      screen.getAllByRole("link", {
+        name: "Export the open tab to PDF. Install extension",
+      }),
+    ).toHaveLength(2);
+    expect(
+      screen.queryByText("PAGE 2 FILE · CHROME"),
+    ).toBeNull();
+    expect(
+      screen.getByRole("link", { name: "View instructions" }),
+    ).toBeTruthy();
   });
 });

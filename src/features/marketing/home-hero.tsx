@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { getExtensionCopy } from "@/features/extension/extension-copy";
 import type { Locale } from "@/shared/i18n/locales";
+import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { ExternalCta } from "@/shared/ui/external-cta";
 import { ButtonLink } from "@/shared/ui/components/button/button";
 import { Container } from "@/shared/ui/site-shell";
@@ -11,6 +12,7 @@ import styles from "./home.module.css";
 export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getExtensionCopy(locale);
   const marketingCopy = getHomeMarketingCopy(locale);
+  const siteCopy = getSiteCopy(locale);
 
   return (
     <section className={styles.heroSection}>
@@ -23,8 +25,8 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
             <div className={styles.heroActions}>
               <ExternalCta
                 externalLinkKey="chromeExtension"
-                label={copy.browseChromeLabel}
-                placeholderLabel={copy.browseChromeLabel}
+                label={siteCopy.header.extensionAction}
+                placeholderLabel={siteCopy.header.extensionAction}
               />
               <ButtonLink
                 href={`/${locale}/chrome-extension/how-to-use`}
@@ -32,7 +34,7 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
                 size="medium"
                 variant="secondary"
               >
-                {copy.guideLabel}
+                {copy.guideActionLabel}
               </ButtonLink>
             </div>
           </div>

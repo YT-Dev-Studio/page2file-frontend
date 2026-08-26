@@ -18,8 +18,11 @@ describe("homepage sections", () => {
     expect(screen.getByRole("heading", { name: "Accurate copy" })).toBeTruthy();
     expect(screen.getByRole("heading", { name: "Editable document" })).toBeTruthy();
     expect(screen.getByRole("heading", { name: "AI / Chat" })).toBeTruthy();
-    expect(screen.getByText("Open the source").closest("ol")).not.toBeNull();
-    expect(screen.getByText(/Local HTML files/).closest("ul")).not.toBeNull();
+    expect(screen.getByText("Open a website").closest("ol")).not.toBeNull();
+    expect(screen.getByText(/Authorized pages/).closest("ul")).not.toBeNull();
+    expect(screen.getByRole("link", { name: "project archive" }).getAttribute("href")).toBe(
+      "/en/blog/preserve-webpage-links-forms-text",
+    );
     expect(container.querySelectorAll("section")).toHaveLength(5);
     const faqSection = screen
       .getByRole("heading", {

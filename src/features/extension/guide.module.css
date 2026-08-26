@@ -73,67 +73,139 @@
   padding: 1.5rem;
 }
 
-.step h2,
-.details h2,
-.details h3 {
+.step h2 {
+  font-size: 1.15rem;
   margin-top: 0;
 }
 
-.step h2 {
-  font-size: 1.15rem;
-}
-
 .step p,
-.details p,
-.details li {
+.detailHeading p,
+.factCopy p,
+.workflowSection li {
   color: var(--p2f-color-ink-navy-500);
   line-height: 1.7;
 }
 
-.details {
+.detailSections {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--p2f-space-48);
 }
 
-.details + .details {
-  margin-top: var(--p2f-space-48);
-}
-
-.details > article {
+.detailSection {
   background: var(--p2f-color-background-surface);
   border: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
   border-radius: var(--p2f-radius-card);
-  overflow: hidden;
-  padding: clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(1.5rem, 4vw, 3rem);
 }
 
-.detailArtwork {
-  border: 0;
-  border-bottom: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
-  border-radius: 0;
-  margin: calc(clamp(1.5rem, 4vw, 2.5rem) * -1) calc(clamp(1.5rem, 4vw, 2.5rem) * -1)
-    clamp(1.5rem, 4vw, 2.5rem);
+.detailHeader {
+  align-items: center;
+  display: grid;
+  gap: clamp(var(--p2f-space-24), 4vw, var(--p2f-space-48));
+  grid-template-columns: minmax(0, 1fr) minmax(13rem, 17rem);
+  margin-bottom: var(--p2f-space-32);
 }
 
-.details ul {
-  margin-bottom: 0;
+.detailHeading {
+  max-width: 48rem;
+}
+
+.detailHeading h2,
+.detailHeading p,
+.factCopy h3,
+.factCopy p,
+.workflowSection h2 {
+  margin: 0;
+}
+
+.detailHeading h2,
+.workflowSection h2 {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.detailHeading p {
+  margin-top: var(--p2f-space-12);
+}
+
+.detailArtwork,
+.workflowArtwork {
+  justify-self: center;
+  max-width: 17rem;
+}
+
+.factGrid {
+  display: grid;
+  gap: var(--p2f-space-16);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.limitGrid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+}
+
+.factCard {
+  align-content: start;
+  background: var(--p2f-color-background-subtle);
+  border: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
+  border-radius: var(--p2f-radius-control);
+  display: grid;
+  gap: var(--p2f-space-24);
+  min-width: 0;
+  padding: var(--p2f-space-24);
+}
+
+.factArtwork {
+  justify-self: center;
+  max-width: 14rem;
+}
+
+.factCopy {
+  max-width: 34rem;
+}
+
+.factCopy h3 {
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.factCopy p {
+  margin-top: var(--p2f-space-8);
+}
+
+.factCopy a,
+.workflowSection a {
+  color: var(--p2f-color-text-link);
+  font-weight: 700;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+.factCopy a:hover,
+.workflowSection a:hover {
+  color: var(--p2f-color-gel-blue-600);
+}
+
+.workflowSection {
+  align-items: center;
+  background: var(--p2f-color-background-surface);
+  border: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
+  border-radius: var(--p2f-radius-card);
+  display: grid;
+  gap: var(--p2f-space-32);
+  grid-template-columns: minmax(0, 1fr) minmax(13rem, 17rem);
+  margin-top: var(--p2f-space-48);
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.workflowSection ul {
+  margin: var(--p2f-space-24) 0 0;
   padding-left: 1.25rem;
 }
 
-.modeList {
-  display: grid;
-  gap: 1rem;
-}
-
-.modeList > div + div {
-  border-top: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
-  padding-top: 1rem;
-}
-
 @media (max-width: 900px) {
-  .heroLayout,
-  .details {
+  .heroLayout {
     grid-template-columns: 1fr;
   }
 
@@ -141,7 +213,8 @@
     max-width: 38rem;
   }
 
-  .steps {
+  .steps,
+  .factGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -156,12 +229,32 @@
 }
 
 @media (max-width: 560px) {
-  .details + .details {
-    margin-top: var(--p2f-space-32);
+  .steps,
+  .factGrid,
+  .detailHeader,
+  .workflowSection {
+    grid-template-columns: 1fr;
   }
 
-  .steps {
-    grid-template-columns: 1fr;
+  .detailSections {
+    gap: var(--p2f-space-32);
+  }
+
+  .detailHeader {
+    margin-bottom: var(--p2f-space-24);
+  }
+
+  .detailArtwork,
+  .workflowArtwork {
+    max-width: min(100%, 16rem);
+  }
+
+  .factCard {
+    padding: var(--p2f-space-16);
+  }
+
+  .factArtwork {
+    max-width: min(100%, 15rem);
   }
 
   .step::after,

@@ -1,6 +1,7 @@
-import type { ReactNode } from "react";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import type { Locale } from "@/shared/i18n/locales";
+import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { SeoBreadcrumbs, type BreadcrumbItem } from "@/shared/seo/structured-data";
 import { ExternalCta } from "@/shared/ui/external-cta";
 import {
@@ -9,10 +10,28 @@ import {
 } from "@/shared/ui/extension-artwork";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
-import { getExtensionCopy, type ExtensionStepCopy } from "./extension-copy";
+import {
+  getExtensionCopy,
+  type ExtensionGuideFactCopy,
+  type ExtensionInlineLinkCopy,
+  type ExtensionStepCopy,
+} from "./extension-copy";
+import { ModeDescription } from "./mode-description";
 import styles from "./guide.module.css";
 
 type StepProps = ExtensionStepCopy & {
+  variant: ExtensionArtworkVariant;
+};
+
+type GuideFactCardProps = ExtensionGuideFactCopy & {
+  bodyLink?: ExtensionInlineLinkCopy;
+  variant: ExtensionArtworkVariant;
+};
+
+type GuideDetailSectionProps = {
+  children: ReactNode;
+  lead?: string;
+  title: string;
   variant: ExtensionArtworkVariant;
 };
 
@@ -25,6 +44,38 @@ const stepArtworkVariants: ReadonlyArray<ExtensionArtworkVariant> = [
   "save",
 ];
 
+const modeArtworkVariants: ReadonlyArray<ExtensionArtworkVariant> = [
+  "accurate",
+  "editable",
+  "chat",
+];
+
+const supportArtworkVariants: ReadonlyArray<ExtensionArtworkVariant> = [
+  "chat",
+  "conversation",
+  "supported",
+];
+
+const limitArtworkVariants: ReadonlyArray<ExtensionArtworkVariant> = [
+  "limits",
+  "wait",
+  "conversation",
+  "file",
+  "page",
+];
+
+const privacyArtworkVariants: ReadonlyArray<ExtensionArtworkVariant> = [
+  "open",
+  "wait",
+  "privacy",
+];
+
+const getArtworkVariant = (
+  variants: ReadonlyArray<ExtensionArtworkVariant>,
+  index: number,
+  fallback: ExtensionArtworkVariant,
+): ExtensionArtworkVariant => variants[index] ?? fallback;
+
 const Step = ({ body, title, variant }: StepProps): ReactNode => (
   <li className={styles.step}>
     <ExtensionArtwork className={styles.stepArtwork} variant={variant} />
@@ -35,8 +86,42 @@ const Step = ({ body, title, variant }: StepProps): ReactNode => (
   </li>
 );
 
+const GuideFactCard = ({
+  body,
+  bodyLink,
+  title,
+  variant,
+}: GuideFactCardProps): ReactNode => (
+  <article className={styles.factCard}>
+    <ExtensionArtwork className={styles.factArtwork} variant={variant} />
+    <div className={styles.factCopy}>
+      <h3>{title}</h3>
+      <ModeDescription body={body} bodyLink={bodyLink} />
+    </div>
+  </article>
+);
+
+const GuideDetailSection = ({
+  children,
+  lead,
+  title,
+  variant,
+}: GuideDetailSectionProps): ReactNode => (
+  <section className={styles.detailSection}>
+    <header className={styles.detailHeader}>
+      <div className={styles.detailHeading}>
+        <h2>{title}</h2>
+        {lead ? <p>{lead}</p> : null}
+      </div>
+      <ExtensionArtwork className={styles.detailArtwork} variant={variant} />
+    </header>
+    {children}
+  </section>
+);
+
 export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getExtensionCopy(locale);
+  const extensionAction = getSiteCopy(locale).header.extensionAction;
   const breadcrumbs: ReadonlyArray<BreadcrumbItem> = [
     { label: copy.homeLabel, href: `/${locale}` },
     { label: copy.guideLabel, href: `/${locale}/chrome-extension/how-to-use` },
@@ -45,62 +130,93 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
     <Step
       key={step.title}
       {...step}
-      variant={stepArtworkVariants[index] ?? "open"}
+      variant={getArtworkVariant(stepArtworkVariants, index, "open")}
     />
   );
-  const mapMode = (mode: (typeof copy.modes)[number]): ReactNode => (
-    <div key={mode.title}>
-      <h3>{mode.title}</h3>
-      <p>{mode.body}</p>
-    </div>
+  const mapMode = (mode: (typeof copy.modes)[number], index: number): ReactNode => (
+    <GuideFactCard
+      body={mode.body}
+      bodyLink={mode.bodyLink}
+      key={mode.title}
+      title={mode.title}
+      variant={getArtworkVariant(modeArtworkVariants, index, "accurate")}
+    />
   );
-  const mapLimit = (limit: string): ReactNode => <li key={limit}>{limit}</li>;
-  const mapPrivacyPoint = (point: string): ReactNode => <li key={point}>{point}</li>;
+  const mapSupportGroup = (
+    group: (typeof copy.supportedGroups)[number],
+    index: number,
+  ): ReactNode => (
+    <GuideFactCard
+      {...group}
+      key={group.title}
+      variant={getArtworkVariant(supportArtworkVariants, index, "supported")}
+    />
+  );
+  const mapLimit = (limit: string, index: number): ReactNode => (
+    <GuideFactCard
+      body={limit}
+      key={copy.limitTitles[index]}
+      title={copy.limitTitles[index] ?? copy.limitsTitle}
+      variant={getArtworkVariant(limitArtworkVariants, index, "limits")}
+    />
+  );
+  const mapPrivacyPoint = (point: string, index: number): ReactNode => (
+    <GuideFactCard
+      body={point}
+      key={copy.privacyFactTitles[index]}
+      title={copy.privacyFactTitles[index] ?? copy.privacyTitle}
+      variant={getArtworkVariant(privacyArtworkVariants, index, "privacy")}
+    />
+  );
 
   return (
     <PublicPage className={styles.page} family="extension">
       <Container>
         <SeoBreadcrumbs items={breadcrumbs} label={copy.breadcrumbLabel} locale={locale} />
         <div className={styles.heroLayout}>
-        <PublicHero eyebrow="PAGE 2 FILE · CHROME" lead={copy.guideLead} title={copy.guideTitle}>
-          <ExternalCta
-            externalLinkKey="chromeExtension"
-            label={copy.browseChromeLabel}
-            placeholderLabel={copy.browseChromeLabel}
-          />
-        </PublicHero>
+          <PublicHero eyebrow="PAGE 2 FILE · CHROME" lead={copy.guideLead} title={copy.guideTitle}>
+            <ExternalCta
+              externalLinkKey="chromeExtension"
+              label={extensionAction}
+              placeholderLabel={extensionAction}
+            />
+          </PublicHero>
           <ExtensionArtwork className={styles.heroArtwork} variant="flow" />
         </div>
 
         <ol className={styles.steps}>{copy.steps.map(mapStep)}</ol>
 
-        <section className={styles.details}>
-          <article>
-            <ExtensionArtwork className={styles.detailArtwork} variant="choose" />
-            <h2>{copy.modesTitle}</h2>
-            <div className={styles.modeList}>{copy.modes.map(mapMode)}</div>
-          </article>
-          <article>
-            <ExtensionArtwork className={styles.detailArtwork} variant="supported" />
-            <h2>{copy.supportedTitle}</h2>
-            <p>{copy.supportedBody}</p>
-          </article>
-          <article>
-            <ExtensionArtwork className={styles.detailArtwork} variant="limits" />
-            <h2>{copy.limitsTitle}</h2>
-            <ul>{copy.limits.map(mapLimit)}</ul>
-          </article>
-          <article>
-            <ExtensionArtwork className={styles.detailArtwork} variant="privacy" />
-            <h2>{copy.privacyTitle}</h2>
-            <p>{copy.privacyBody}</p>
-            <ul>{copy.privacyPoints.map(mapPrivacyPoint)}</ul>
-          </article>
-        </section>
+        <div className={styles.detailSections}>
+          <GuideDetailSection title={copy.modesTitle} variant="choose">
+            <div className={styles.factGrid}>{copy.modes.map(mapMode)}</div>
+          </GuideDetailSection>
+
+          <GuideDetailSection title={copy.supportedTitle} variant="supported">
+            <div className={styles.factGrid}>
+              {copy.supportedGroups.map(mapSupportGroup)}
+            </div>
+          </GuideDetailSection>
+
+          <GuideDetailSection title={copy.limitsTitle} variant="limits">
+            <div className={`${styles.factGrid} ${styles.limitGrid}`}>
+              {copy.limits.map(mapLimit)}
+            </div>
+          </GuideDetailSection>
+
+          <GuideDetailSection
+            lead={copy.privacyBody}
+            title={copy.privacyTitle}
+            variant="privacy"
+          >
+            <div className={styles.factGrid}>
+              {copy.privacyPoints.map(mapPrivacyPoint)}
+            </div>
+          </GuideDetailSection>
+        </div>
+
         {locale === "en" ? (
-          <section className={styles.details} aria-labelledby="workflow-guides">
-            <article>
-              <ExtensionArtwork className={styles.detailArtwork} variant="related" />
+          <section className={styles.workflowSection} aria-labelledby="workflow-guides">
+            <div>
               <h2 id="workflow-guides">Explore PDF workflows</h2>
               <ul>
                 <li>
@@ -119,7 +235,8 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
                   </Link>
                 </li>
               </ul>
-            </article>
+            </div>
+            <ExtensionArtwork className={styles.workflowArtwork} variant="related" />
           </section>
         ) : null}
       </Container>
