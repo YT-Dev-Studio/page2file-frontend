@@ -1,0 +1,161 @@
+.artwork {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  place-items: center;
+  border: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
+  border-radius: var(--p2f-radius-card);
+  background:
+    linear-gradient(
+      90deg,
+      transparent 24px,
+      color-mix(in srgb, var(--p2f-color-ink-navy-300) 14%, transparent) 25px,
+      transparent 26px
+    ),
+    linear-gradient(
+      transparent 24px,
+      color-mix(in srgb, var(--p2f-color-ink-navy-300) 14%, transparent) 25px,
+      transparent 26px
+    ),
+    var(--p2f-color-background-subtle);
+  background-size: 26px 26px;
+}
+
+.artwork svg {
+  width: 100%;
+  height: auto;
+}
+
+.frame {
+  fill: var(--p2f-color-background-surface);
+  stroke: var(--p2f-color-ink-navy-800);
+  stroke-linejoin: round;
+  stroke-width: 2.5;
+}
+
+.divider,
+.inkLine,
+.mutedLine,
+.gridLine,
+.accentLine,
+.inverseLine,
+.inverseLineSmall,
+.arrow,
+.accentOutline {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.divider,
+.gridLine {
+  stroke: var(--p2f-color-border-strong);
+  stroke-width: 1.5;
+}
+
+.inkLine {
+  stroke: var(--p2f-color-ink-navy-800);
+  stroke-width: 3;
+}
+
+.mutedLine {
+  stroke: var(--p2f-color-ink-navy-300);
+  stroke-width: 3;
+}
+
+.arrow {
+  stroke: var(--p2f-color-ink-navy-800);
+  stroke-width: 2.5;
+}
+
+.mutedSoft {
+  fill: var(--p2f-color-ink-navy-100);
+}
+
+.dotMuted {
+  fill: var(--p2f-color-ink-navy-300);
+}
+
+.inverseLine {
+  stroke: var(--p2f-color-text-inverse);
+  stroke-width: 3;
+}
+
+.inverseLineSmall {
+  stroke: var(--p2f-color-text-inverse);
+  stroke-width: 2;
+}
+
+.pointer {
+  fill: var(--p2f-color-background-surface);
+  stroke: var(--p2f-color-ink-navy-800);
+  stroke-linejoin: round;
+  stroke-width: 2.5;
+}
+
+.blue .accentFill,
+.blue .dotAccent {
+  fill: var(--p2f-color-gel-blue-500);
+}
+
+.blue .accentSoft {
+  fill: var(--p2f-color-gel-blue-100);
+}
+
+.blue .accentLine,
+.blue .accentOutline {
+  stroke: var(--p2f-color-gel-blue-600);
+  stroke-width: 3;
+}
+
+.coral .accentFill,
+.coral .dotAccent {
+  fill: var(--p2f-color-coral-ink-500);
+}
+
+.coral .accentSoft {
+  fill: var(--p2f-color-coral-ink-100);
+}
+
+.coral .accentLine,
+.coral .accentOutline {
+  stroke: var(--p2f-color-coral-ink-600);
+  stroke-width: 3;
+}
+
+.orange .accentFill,
+.orange .dotAccent {
+  fill: var(--p2f-color-orange-ink-500);
+}
+
+.orange .accentSoft {
+  fill: var(--p2f-color-orange-ink-100);
+}
+
+.orange .accentLine,
+.orange .accentOutline {
+  stroke: var(--p2f-color-orange-ink-600);
+  stroke-width: 3;
+}
+
+.violet .accentFill,
+.violet .dotAccent {
+  fill: var(--p2f-color-violet-ink-500);
+}
+
+.violet .accentSoft {
+  fill: var(--p2f-color-violet-ink-100);
+}
+
+.violet .accentLine,
+.violet .accentOutline {
+  stroke: var(--p2f-color-violet-ink-600);
+  stroke-width: 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .artwork {
+    scroll-behavior: auto;
+  }
+}

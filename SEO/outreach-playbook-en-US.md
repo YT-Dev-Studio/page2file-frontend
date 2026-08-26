@@ -58,7 +58,7 @@ Thanks,
 
 ## Directory submission facts
 
-- Name: `Save webpage to PDF | Converter Page 2 File`
+- Name: `Page 2 PDF — Webpages & Chats`
 - Category: Chrome extension / PDF utility / productivity
 - One-line result: `Save the active Chrome tab as a visual full-page PDF, a selectable document, or a structured supported-chat transcript.`
 - Platforms: Google Chrome; do not claim Firefox, Safari, Edge, or mobile until verified and released.

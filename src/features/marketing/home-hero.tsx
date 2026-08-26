@@ -36,15 +36,26 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
             </div>
           </div>
           <div className={styles.heroArtwork}>
-            <Image
-              alt={marketingCopy.heroIllustrationAlt}
-              className={styles.heroImage}
-              height={1254}
-              priority
-              sizes="(max-width: 900px) 90vw, 42vw"
-              src="/brand/extension-flow-gel-pen.png"
-              width={1254}
-            />
+            <div className={styles.heroStage}>
+              <div aria-hidden="true" className={styles.heroStageBar}>
+                <span />
+                <span />
+                <span />
+                <i />
+              </div>
+              <Image
+                alt={marketingCopy.heroIllustrationAlt}
+                className={styles.heroImage}
+                height={1254}
+                priority
+                sizes="(max-width: 900px) 90vw, 42vw"
+                src="/brand/extension-flow-gel-pen.png"
+                width={1254}
+              />
+              <span aria-hidden="true" className={styles.heroExtensionChip}>
+                <Image alt="" height={52} src="/demos/icon.svg" width={52} />
+              </span>
+            </div>
           </div>
         </div>
       </Container>

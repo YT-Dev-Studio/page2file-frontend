@@ -58,11 +58,84 @@
   min-width: 0;
 }
 
+.heroStage {
+  background-color: var(--p2f-color-background-surface);
+  background-image:
+    linear-gradient(var(--p2f-color-border-default) 1px, transparent 1px),
+    linear-gradient(90deg, var(--p2f-color-border-default) 1px, transparent 1px);
+  background-size: 1.5rem 1.5rem;
+  border: var(--p2f-border-width-default) solid var(--p2f-color-border-strong);
+  border-radius: clamp(1.4rem, 3vw, 2.2rem);
+  box-shadow: 0 1.5rem 3.5rem rgb(16 30 54 / 10%);
+  overflow: hidden;
+  padding: clamp(2.4rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem);
+  position: relative;
+  width: 100%;
+}
+
+.heroStageBar {
+  align-items: center;
+  background: var(--p2f-color-background-surface);
+  border-bottom: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
+  display: flex;
+  gap: 0.45rem;
+  inset: 0 0 auto;
+  min-height: 2.5rem;
+  padding: 0 0.9rem;
+  position: absolute;
+}
+
+.heroStageBar span {
+  background: var(--p2f-color-coral-ink-500);
+  border-radius: 50%;
+  height: 0.55rem;
+  width: 0.55rem;
+}
+
+.heroStageBar span:nth-child(2) {
+  background: var(--p2f-color-orange-ink-500);
+}
+
+.heroStageBar span:nth-child(3) {
+  background: var(--p2f-color-gel-blue-500);
+}
+
+.heroStageBar i {
+  background: var(--p2f-color-background-page);
+  border: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
+  border-radius: 999px;
+  height: 1.25rem;
+  margin-left: 0.5rem;
+  width: min(12rem, 55%);
+}
+
 .heroImage {
   display: block;
   height: auto;
   max-width: 36rem;
   width: 100%;
+}
+
+.heroExtensionChip {
+  align-items: center;
+  background: var(--p2f-color-background-surface);
+  border: var(--p2f-border-width-default) solid var(--p2f-color-border-strong);
+  border-radius: 1rem;
+  bottom: clamp(0.75rem, 2vw, 1.4rem);
+  box-shadow: 0 0.75rem 1.8rem rgb(16 30 54 / 16%);
+  display: flex;
+  height: 4.2rem;
+  justify-content: center;
+  position: absolute;
+  right: clamp(0.75rem, 2vw, 1.4rem);
+  transform: rotate(3deg);
+  width: 4.2rem;
+}
+
+.heroExtensionChip img {
+  display: block;
+  height: 3rem;
+  width: 3rem;
 }
 
 .promoSection,
@@ -76,6 +149,10 @@
 
 .section {
   padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.sectionSurface {
+  background: var(--p2f-color-background-surface);
 }
 
 .sectionIntro {
@@ -112,7 +189,32 @@
   background: var(--p2f-color-background-surface);
   border: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
   border-radius: var(--p2f-radius-card);
-  padding: clamp(1.4rem, 3vw, 2rem);
+  overflow: hidden;
+  position: relative;
+}
+
+.modeCard {
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.modeCard:hover {
+  border-color: var(--p2f-color-border-strong);
+  transform: translateY(-0.2rem);
+}
+
+.cardArtwork,
+.sourceArtwork,
+.stepArtwork,
+.privacyArtwork {
+  border: 0;
+  border-bottom: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
+  border-radius: 0;
+}
+
+.cardCopy {
+  padding: clamp(1.25rem, 2.5vw, 1.8rem);
 }
 
 .modeCard h3,
@@ -134,7 +236,29 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.sourceList li,
+.sourceCard {
+  align-items: center;
+  background: var(--p2f-color-background-surface);
+  border: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
+  border-radius: var(--p2f-radius-card);
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 0.45fr) minmax(0, 1fr);
+  line-height: 1.65;
+  overflow: hidden;
+}
+
+.sourceArtwork {
+  align-self: stretch;
+  border-bottom: 0;
+  border-right: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
+  border-radius: 0;
+  min-height: 9rem;
+}
+
+.sourceCard span {
+  padding: clamp(1.1rem, 2.5vw, 1.6rem);
+}
+
 .privacyList li {
   background: var(--p2f-color-background-page);
   border-left: 0.25rem solid var(--p2f-color-orange-ink-500);
@@ -155,20 +279,64 @@
 
 .stepCard {
   counter-increment: step;
+  overflow: visible;
+}
+
+.stepArtwork {
+  border-radius: var(--p2f-radius-card) var(--p2f-radius-card) 0 0;
 }
 
 .stepCard::before {
+  background: var(--p2f-color-background-surface);
+  border: var(--p2f-border-width-default) solid var(--p2f-color-border-strong);
+  border-radius: 999px;
   color: var(--p2f-color-gel-blue-800);
   content: counter(step, decimal-leading-zero);
-  display: block;
   font-size: 0.78rem;
   font-weight: 800;
+  inset: 1rem auto auto 1rem;
   letter-spacing: 0.1em;
-  margin-bottom: 1rem;
+  padding: 0.35rem 0.55rem;
+  position: absolute;
+  z-index: 1;
+}
+
+.stepCard::after {
+  border-top: 0.15rem dashed var(--p2f-color-gel-blue-500);
+  content: "";
+  height: 0;
+  left: calc(100% + 0.15rem);
+  position: absolute;
+  top: 5.75rem;
+  width: 0.7rem;
+  z-index: 2;
+}
+
+.stepCard:nth-child(3n)::after,
+.stepCard:last-child::after {
+  display: none;
+}
+
+.privacyPanel {
+  align-items: stretch;
+  background: var(--p2f-color-background-surface);
+  border: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
+  border-radius: var(--p2f-radius-card);
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.72fr) minmax(0, 1.28fr);
+  overflow: hidden;
+}
+
+.privacyArtwork {
+  border-bottom: 0;
+  border-right: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
+  border-radius: 0;
+  min-height: 100%;
 }
 
 .privacyList {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: clamp(1rem, 3vw, 2rem);
 }
 
 .privacyList li {
@@ -288,12 +456,29 @@
   }
 
   .modeGrid,
-  .stepGrid,
-  .privacyList {
+  .stepGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stepCard:nth-child(3n)::after {
+    display: block;
+  }
+
+  .stepCard:nth-child(2n)::after,
+  .stepCard:last-child::after {
+    display: none;
+  }
+
+  .privacyPanel {
     grid-template-columns: 1fr;
   }
 
-  .sourceList {
+  .privacyArtwork {
+    border-bottom: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
+    border-right: 0;
+  }
+
+  .privacyList {
     grid-template-columns: 1fr;
   }
 }
@@ -321,6 +506,42 @@
     justify-content: center;
   }
 
+  .heroStage {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .modeGrid,
+  .sourceList,
+  .stepGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sourceCard {
+    grid-template-columns: 1fr;
+  }
+
+  .sourceArtwork {
+    border-bottom: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
+    border-right: 0;
+  }
+
+  .stepCard::after,
+  .stepCard:nth-child(3n)::after {
+    border-left: 0.15rem dashed var(--p2f-color-gel-blue-500);
+    border-top: 0;
+    bottom: -1rem;
+    display: block;
+    height: 1rem;
+    left: 50%;
+    top: auto;
+    width: 0;
+  }
+
+  .stepCard:last-child::after {
+    display: none;
+  }
+
   .faqQuestion {
     padding: 1.1rem 1.15rem;
   }
@@ -331,8 +552,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .modeCard,
   .faqIcon::before,
   .faqIcon::after {
     transition: none;
+  }
+
+  .modeCard:hover {
+    transform: none;
   }
 }

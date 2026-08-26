@@ -2,6 +2,17 @@
   padding: 2rem 0 clamp(5rem, 9vw, 8rem);
 }
 
+.heroLayout {
+  align-items: center;
+  display: grid;
+  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+}
+
+.heroArtwork {
+  min-height: clamp(18rem, 32vw, 28rem);
+}
+
 .steps {
   counter-reset: guide-step;
   display: grid;
@@ -18,17 +29,48 @@
   border-radius: var(--p2f-radius-card);
   counter-increment: guide-step;
   min-height: 12rem;
-  padding: 1.5rem;
+  overflow: visible;
+  position: relative;
 }
 
 .step::before {
+  background: var(--p2f-color-background-surface);
+  border: var(--p2f-border-width-default) solid var(--p2f-color-border-strong);
+  border-radius: 999px;
   color: var(--p2f-color-gel-blue-800);
   content: counter(guide-step, decimal-leading-zero);
-  display: block;
   font-size: 0.78rem;
   font-weight: 800;
+  inset: 1rem auto auto 1rem;
   letter-spacing: 0.1em;
-  margin-bottom: 1.5rem;
+  padding: 0.35rem 0.55rem;
+  position: absolute;
+  z-index: 1;
+}
+
+.step::after {
+  border-top: 0.15rem dashed var(--p2f-color-gel-blue-500);
+  content: "";
+  left: calc(100% + 0.15rem);
+  position: absolute;
+  top: 5.75rem;
+  width: 0.7rem;
+  z-index: 2;
+}
+
+.step:nth-child(3n)::after,
+.step:last-child::after {
+  display: none;
+}
+
+.stepArtwork {
+  border: 0;
+  border-bottom: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
+  border-radius: var(--p2f-radius-card) var(--p2f-radius-card) 0 0;
+}
+
+.stepCopy {
+  padding: 1.5rem;
 }
 
 .step h2,
@@ -58,7 +100,16 @@
   background: var(--p2f-color-background-surface);
   border: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
   border-radius: var(--p2f-radius-card);
+  overflow: hidden;
   padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.detailArtwork {
+  border: 0;
+  border-bottom: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
+  border-radius: 0;
+  margin: calc(clamp(1.5rem, 4vw, 2.5rem) * -1) calc(clamp(1.5rem, 4vw, 2.5rem) * -1)
+    clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .details ul {
@@ -77,8 +128,47 @@
 }
 
 @media (max-width: 900px) {
-  .steps,
+  .heroLayout,
   .details {
     grid-template-columns: 1fr;
+  }
+
+  .heroArtwork {
+    max-width: 38rem;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .step:nth-child(3n)::after {
+    display: block;
+  }
+
+  .step:nth-child(2n)::after,
+  .step:last-child::after {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .step::after,
+  .step:nth-child(3n)::after {
+    border-left: 0.15rem dashed var(--p2f-color-gel-blue-500);
+    border-top: 0;
+    bottom: -1rem;
+    display: block;
+    height: 1rem;
+    left: 50%;
+    top: auto;
+    width: 0;
+  }
+
+  .step:last-child::after {
+    display: none;
   }
 }

@@ -9,6 +9,10 @@ import {
   type BreadcrumbItem,
 } from "@/shared/seo/structured-data";
 import { ExternalCta } from "@/shared/ui/external-cta";
+import {
+  ExtensionArtwork,
+  type ExtensionArtworkVariant,
+} from "@/shared/ui/extension-artwork";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
 import styles from "./extension-seo-landing.module.css";
@@ -16,6 +20,22 @@ import styles from "./extension-seo-landing.module.css";
 type ExtensionSeoLandingProps = {
   content: ExtensionSeoLandingContent;
 };
+
+const stepArtworkVariants: ReadonlyArray<ExtensionArtworkVariant> = [
+  "open",
+  "choose",
+  "save",
+];
+
+const formatRoutePart = (part: string): string =>
+  part === "pdf" ? "PDF" : part.charAt(0).toUpperCase() + part.slice(1);
+
+const formatRelatedRoute = (route: string): string =>
+  route
+    .replace("chrome-extension/", "")
+    .split("-")
+    .map(formatRoutePart)
+    .join(" ");
 
 export const ExtensionSeoLanding = ({
   content,
@@ -29,6 +49,35 @@ export const ExtensionSeoLanding = ({
     },
     { label: content.heading, href: routePath(locale, content.route) },
   ];
+  const mapStep = (
+    step: (typeof content.steps)[number],
+    index: number,
+  ): ReactNode => (
+    <li key={step.title}>
+      <ExtensionArtwork
+        className={styles.stepArtwork}
+        variant={stepArtworkVariants[index] ?? "open"}
+      />
+      <div className={styles.stepCopy}>
+        <span aria-hidden="true">{index + 1}</span>
+        <h3>{step.title}</h3>
+        <p>{step.body}</p>
+      </div>
+    </li>
+  );
+  const mapListItem = (item: string): ReactNode => <li key={item}>{item}</li>;
+  const mapFaq = (faq: (typeof content.faqs)[number]): ReactNode => (
+    <details key={faq.question}>
+      <summary>{faq.question}</summary>
+      <p>{faq.answer}</p>
+    </details>
+  );
+  const mapRelatedRoute = (route: string): ReactNode => (
+    <Link key={route} href={routePath(locale, route)}>
+      {formatRelatedRoute(route)}
+      <span aria-hidden="true">→</span>
+    </Link>
+  );
 
   return (
     <PublicPage className={styles.page} family="extension-seo">
@@ -43,23 +92,26 @@ export const ExtensionSeoLanding = ({
           label="Breadcrumb"
           locale={locale}
         />
-        <PublicHero
-          className={styles.hero}
-          eyebrow={content.eyebrow}
-          lead={content.lead}
-          title={content.heading}
-        >
-          <div className={styles.actions}>
-            <ExternalCta
-              externalLinkKey="chromeExtension"
-              label="Add Page 2 PDF to Chrome"
-              placeholderLabel="View Page 2 PDF in Chrome Web Store"
-            />
-            <a className={styles.sampleLink} href={content.demo.samplePdf}>
-              {content.demo.sampleLabel}
-            </a>
-          </div>
-        </PublicHero>
+        <div className={styles.heroLayout}>
+          <PublicHero
+            className={styles.hero}
+            eyebrow={content.eyebrow}
+            lead={content.lead}
+            title={content.heading}
+          >
+            <div className={styles.actions}>
+              <ExternalCta
+                externalLinkKey="chromeExtension"
+                label="Add Page 2 PDF to Chrome"
+                placeholderLabel="View Page 2 PDF in Chrome Web Store"
+              />
+              <a className={styles.sampleLink} href={content.demo.samplePdf}>
+                {content.demo.sampleLabel}
+              </a>
+            </div>
+          </PublicHero>
+          <ExtensionArtwork className={styles.heroArtwork} variant="flow" />
+        </div>
 
         <section className={styles.demo} aria-labelledby="sample-result">
           <div className={styles.demoCopy}>
@@ -89,39 +141,26 @@ export const ExtensionSeoLanding = ({
             <p className={styles.kicker}>THREE STEPS</p>
             <h2 id="how-it-works">From open tab to PDF preview</h2>
           </div>
-          <ol className={styles.steps}>
-            {content.steps.map((step, index): ReactNode => (
-              <li key={step.title}>
-                <span aria-hidden="true">{index + 1}</span>
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
-              </li>
-            ))}
-          </ol>
+          <ol className={styles.steps}>{content.steps.map(mapStep)}</ol>
         </section>
 
         <section className={styles.boundaries}>
           <article>
+            <ExtensionArtwork className={styles.boundaryArtwork} variant="supported" />
             <p className={styles.kicker}>SUPPORTED</p>
             <h2>{content.supportedTitle}</h2>
-            <ul>
-              {content.supported.map((item): ReactNode => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+            <ul>{content.supported.map(mapListItem)}</ul>
           </article>
           <article>
+            <ExtensionArtwork className={styles.boundaryArtwork} variant="limits" />
             <p className={styles.kicker}>BOUNDARIES</p>
             <h2>{content.limitsTitle}</h2>
-            <ul>
-              {content.limits.map((item): ReactNode => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+            <ul>{content.limits.map(mapListItem)}</ul>
           </article>
         </section>
 
         <section className={styles.privacy} aria-labelledby="privacy-boundary">
+          <ExtensionArtwork className={styles.privacyArtwork} variant="privacy" />
           <div>
             <p className={styles.kicker}>PRIVACY BOUNDARY</p>
             <h2 id="privacy-boundary">The tab you choose, not a URL upload</h2>
@@ -134,37 +173,18 @@ export const ExtensionSeoLanding = ({
             <p className={styles.kicker}>FAQ</p>
             <h2 id="questions">Common questions</h2>
           </div>
-          <div className={styles.faqs}>
-            {content.faqs.map((faq): ReactNode => (
-              <details key={faq.question}>
-                <summary>{faq.question}</summary>
-                <p>{faq.answer}</p>
-              </details>
-            ))}
-          </div>
+          <div className={styles.faqs}>{content.faqs.map(mapFaq)}</div>
         </section>
 
         <section className={styles.related} aria-labelledby="related-guides">
-          <div className={styles.sectionHeading}>
-            <p className={styles.kicker}>RELATED GUIDES</p>
-            <h2 id="related-guides">Choose the next workflow</h2>
+          <div className={styles.relatedHeading}>
+            <div className={styles.sectionHeading}>
+              <p className={styles.kicker}>RELATED GUIDES</p>
+              <h2 id="related-guides">Choose the next workflow</h2>
+            </div>
+            <ExtensionArtwork className={styles.relatedArtwork} variant="related" />
           </div>
-          <div className={styles.relatedGrid}>
-            {content.related.map((route): ReactNode => (
-              <Link key={route} href={routePath(locale, route)}>
-                {route
-                  .replace("chrome-extension/", "")
-                  .split("-")
-                  .map((part): string =>
-                    part === "pdf"
-                      ? "PDF"
-                      : part.charAt(0).toUpperCase() + part.slice(1),
-                  )
-                  .join(" ")}
-                <span aria-hidden="true">→</span>
-              </Link>
-            ))}
-          </div>
+          <div className={styles.relatedGrid}>{content.related.map(mapRelatedRoute)}</div>
         </section>
       </Container>
     </PublicPage>

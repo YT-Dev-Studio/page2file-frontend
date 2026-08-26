@@ -6,6 +6,17 @@
   max-width: 880px;
 }
 
+.heroLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: center;
+}
+
+.heroArtwork {
+  min-height: clamp(260px, 32vw, 410px);
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -30,8 +41,20 @@
   align-items: center;
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: var(--surface-subtle);
+  background: var(--surface);
   box-shadow: 0 24px 64px rgb(17 38 79 / 10%);
+  position: relative;
+}
+
+.demo::before {
+  position: absolute;
+  inset: 18px 18px auto auto;
+  width: 54px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  content: "";
+  opacity: 0.25;
 }
 
 .demoCopy h2,
@@ -57,6 +80,7 @@
   border: 1px solid var(--line-strong);
   border-radius: 18px;
   background: #fff;
+  box-shadow: 0 12px 32px rgb(17 38 79 / 12%);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -103,10 +127,21 @@
 
 .steps li,
 .boundaries article {
-  padding: 26px;
   border: 1px solid var(--line);
   border-radius: 18px;
   background: var(--surface);
+  overflow: hidden;
+}
+
+.stepArtwork,
+.boundaryArtwork {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+}
+
+.stepCopy {
+  padding: 24px 26px 26px;
 }
 
 .steps span {
@@ -138,6 +173,14 @@
   gap: 20px;
 }
 
+.boundaries article {
+  padding: 26px;
+}
+
+.boundaryArtwork {
+  margin: -26px -26px 24px;
+}
+
 .boundaries ul {
   display: grid;
   gap: 12px;
@@ -147,13 +190,18 @@
 
 .privacy {
   display: grid;
-  grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
+  grid-template-columns: minmax(220px, 0.65fr) minmax(220px, 0.75fr) minmax(0, 1.1fr);
   gap: 36px;
   padding: 34px;
   align-items: center;
   border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--line));
   border-radius: 22px;
   background: color-mix(in srgb, var(--accent) 7%, var(--surface));
+}
+
+.privacyArtwork {
+  border: 0;
+  min-height: 190px;
 }
 
 .faqs {
@@ -184,6 +232,23 @@
   gap: 14px;
 }
 
+.relatedHeading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.55fr);
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.relatedHeading .sectionHeading {
+  margin-bottom: 0;
+}
+
+.relatedArtwork {
+  border: 0;
+  min-height: 150px;
+}
+
 .relatedGrid a {
   display: flex;
   min-height: 92px;
@@ -203,19 +268,50 @@
   font-size: 1.4rem;
 }
 
-@media (max-width: 820px) {
+@media (max-width: 900px) {
+  .heroLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .heroArtwork {
+    max-width: 580px;
+  }
+
   .demo,
   .privacy {
     grid-template-columns: 1fr;
     padding: 26px;
   }
 
-  .steps,
-  .relatedGrid {
-    grid-template-columns: 1fr;
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .boundaries {
+    grid-template-columns: 1fr;
+  }
+
+  .privacyArtwork {
+    max-width: 480px;
+  }
+
+  .relatedHeading {
+    grid-template-columns: 1fr;
+  }
+
+  .relatedArtwork {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 560px) {
+  .demo,
+  .privacy {
+    padding: 20px;
+  }
+
+  .steps,
+  .relatedGrid {
     grid-template-columns: 1fr;
   }
 }

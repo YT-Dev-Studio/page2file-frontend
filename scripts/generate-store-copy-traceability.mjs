@@ -8,7 +8,7 @@ const OUTPUT_PATH = join(
   "SEO",
   "chrome-web-store-query-traceability-en-US.csv",
 );
-const TITLE = "Save webpage to PDF | Converter Page 2 File";
+const TITLE = "Page 2 PDF — Webpages & Chats";
 
 const parseCsv = (source) => {
   const rows = [];
