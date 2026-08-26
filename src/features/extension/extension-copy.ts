@@ -21,6 +21,22 @@ export type ExtensionGuideFactCopy = {
   title: string;
 };
 
+export type ExtensionGuideStepId = "pin" | "open" | "launch" | "result";
+
+export type ExtensionGuideStepCopy = {
+  id: ExtensionGuideStepId;
+  imageAlt: string;
+  title: string;
+};
+
+export type ExtensionGuideScreenId = "modes" | "settings";
+
+export type ExtensionGuideScreenCopy = {
+  id: ExtensionGuideScreenId;
+  imageAlt: string;
+  title: string;
+};
+
 export type ExtensionCopy = {
   homeTitle: string;
   homeLead: string;
@@ -51,6 +67,15 @@ export type ExtensionCopy = {
   privacyFactTitles: readonly [string, string, string];
   guideTitle: string;
   guideLead: string;
+  guideSteps: readonly [
+    ExtensionGuideStepCopy,
+    ExtensionGuideStepCopy,
+    ExtensionGuideStepCopy,
+    ExtensionGuideStepCopy,
+  ];
+  guideOptionsTitle: string;
+  guideOptionsLead: string;
+  guideOptionScreens: readonly [ExtensionGuideScreenCopy, ExtensionGuideScreenCopy];
   supportedTitle: string;
   supportedGroups: readonly [
     ExtensionGuideFactCopy,
@@ -132,6 +157,44 @@ const englishCopy: ExtensionCopy = {
   guideTitle: "How to use the Page 2 PDF Chrome extension",
   guideLead:
     "Open the source page in your browser, choose the capture mode that matches the result you need, keep the tab open during preparation, and check the PDF before saving it.",
+  guideSteps: [
+    {
+      id: "pin",
+      title: "Pin the extension",
+      imageAlt: "Chrome extensions menu showing Page 2 PDF and the Pin to toolbar action",
+    },
+    {
+      id: "open",
+      title: "Open any page",
+      imageAlt: "Page 2 File open on localhost with the Page 2 PDF icon pinned in the browser toolbar",
+    },
+    {
+      id: "launch",
+      title: "Click the extension",
+      imageAlt: "Page 2 PDF panel open on a local Page 2 File page with Accurate copy selected",
+    },
+    {
+      id: "result",
+      title: "Get the PDF",
+      imageAlt: "Page 2 PDF result open in the browser PDF preview",
+    },
+  ],
+  guideOptionsTitle: "Want to customize the PDF?",
+  guideOptionsLead:
+    "Choose the appropriate mode and open the settings if you want to adjust the result.",
+  guideOptionScreens: [
+    {
+      id: "modes",
+      title: "Choose an output mode",
+      imageAlt: "Page 2 PDF panel showing Accurate copy, Editable document, and AI / Chat",
+    },
+    {
+      id: "settings",
+      title: "Open the settings",
+      imageAlt:
+        "Page 2 PDF panel with Editable document settings for profile, orientation, and content",
+    },
+  ],
   supportedTitle: "Supported browser chats",
   supportedGroups: [
     {
@@ -234,6 +297,44 @@ const russianCopy: ExtensionCopy = {
   guideTitle: "Как пользоваться расширением Page 2 PDF для Chrome",
   guideLead:
     "Откройте исходную страницу в браузере, выберите режим под нужный результат, не закрывайте вкладку во время подготовки и проверьте PDF перед сохранением.",
+  guideSteps: [
+    {
+      id: "pin",
+      title: "Закрепите расширение",
+      imageAlt: "Меню расширений Chrome с Page 2 PDF и действием «Закрепить на панели инструментов»",
+    },
+    {
+      id: "open",
+      title: "Откройте любую страницу",
+      imageAlt: "Локальная страница Page 2 File со значком Page 2 PDF на панели браузера",
+    },
+    {
+      id: "launch",
+      title: "Кликните на расширение",
+      imageAlt: "Панель Page 2 PDF поверх локальной страницы с выбранным режимом «Точная копия»",
+    },
+    {
+      id: "result",
+      title: "Получите PDF",
+      imageAlt: "Результат Page 2 PDF в окне предпросмотра PDF браузера",
+    },
+  ],
+  guideOptionsTitle: "Хотите настроить PDF?",
+  guideOptionsLead:
+    "Выберите подходящий режим и откройте настройки, если хотите изменить результат.",
+  guideOptionScreens: [
+    {
+      id: "modes",
+      title: "Выберите режим",
+      imageAlt: "Панель Page 2 PDF с режимами «Точная копия», «Редактируемый документ» и «AI / Чат»",
+    },
+    {
+      id: "settings",
+      title: "Откройте настройки",
+      imageAlt:
+        "Панель Page 2 PDF с настройками профиля, ориентации и содержимого редактируемого документа",
+    },
+  ],
   supportedTitle: "Поддерживаемые чаты в браузере",
   supportedGroups: [
     {

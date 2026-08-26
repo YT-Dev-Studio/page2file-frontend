@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Locale } from "@/shared/i18n/locales";
@@ -13,61 +14,45 @@ import { Container } from "@/shared/ui/site-shell";
 import {
   getExtensionCopy,
   type ExtensionGuideFactCopy,
+  type ExtensionGuideScreenId,
+  type ExtensionGuideStepCopy,
+  type ExtensionGuideStepId,
   type ExtensionInlineLinkCopy,
-  type ExtensionStepCopy,
 } from "./extension-copy";
+import {
+  GuideSectionIcon,
+  type GuideSectionIconVariant,
+} from "./guide-section-icon";
 import { ModeDescription } from "./mode-description";
 import styles from "./guide.module.css";
 
-type StepProps = ExtensionStepCopy & {
-  variant: ExtensionArtworkVariant;
-};
-
-type GuideFactCardProps = ExtensionGuideFactCopy & {
+type GuideModeCardProps = ExtensionGuideFactCopy & {
   bodyLink?: ExtensionInlineLinkCopy;
   variant: ExtensionArtworkVariant;
 };
 
-type GuideDetailSectionProps = {
-  children: ReactNode;
-  lead?: string;
-  title: string;
-  variant: ExtensionArtworkVariant;
+type GuideDetailFactProps = ExtensionGuideFactCopy & {
+  bodyLink?: ExtensionInlineLinkCopy;
 };
 
-const stepArtworkVariants: ReadonlyArray<ExtensionArtworkVariant> = [
-  "open",
-  "launch",
-  "choose",
-  "adjust",
-  "wait",
-  "save",
-];
+type GuideScreenshotCardProps = {
+  alt: string;
+  className?: string;
+  sizes: string;
+  src: string;
+};
+
+type GuideDetailSectionProps = {
+  children: ReactNode;
+  icon: GuideSectionIconVariant;
+  lead?: string;
+  title: string;
+};
 
 const modeArtworkVariants: ReadonlyArray<ExtensionArtworkVariant> = [
   "accurate",
   "editable",
   "chat",
-];
-
-const supportArtworkVariants: ReadonlyArray<ExtensionArtworkVariant> = [
-  "chat",
-  "conversation",
-  "supported",
-];
-
-const limitArtworkVariants: ReadonlyArray<ExtensionArtworkVariant> = [
-  "limits",
-  "wait",
-  "conversation",
-  "file",
-  "page",
-];
-
-const privacyArtworkVariants: ReadonlyArray<ExtensionArtworkVariant> = [
-  "open",
-  "wait",
-  "privacy",
 ];
 
 const getArtworkVariant = (
@@ -76,44 +61,110 @@ const getArtworkVariant = (
   fallback: ExtensionArtworkVariant,
 ): ExtensionArtworkVariant => variants[index] ?? fallback;
 
-const Step = ({ body, title, variant }: StepProps): ReactNode => (
+const guideStepFileById: Record<ExtensionGuideStepId, string> = {
+  pin: "01-pin-extension-clean.png",
+  open: "02-open-page-clean.png",
+  launch: "03-click-extension-clean.png",
+  result: "04-pdf-result-clean.png",
+};
+
+const guideScreenFileById: Record<ExtensionGuideScreenId, string> = {
+  modes: "05-output-modes.png",
+  settings: "06-customize-settings.png",
+};
+
+const getGuideScreenshotSrc = (locale: Locale, fileName: string): string =>
+  `/guides/page-2-pdf/${locale}/${fileName}`;
+
+const GuideScreenshotCard = ({
+  alt,
+  className,
+  sizes,
+  src,
+}: GuideScreenshotCardProps): ReactNode => (
+  <figure className={`${styles.screenshotCard} ${className ?? ""}`.trim()}>
+    <Image
+      alt={alt}
+      className={styles.screenshotImage}
+      height={800}
+      sizes={sizes}
+      src={src}
+      unoptimized
+      width={1280}
+    />
+  </figure>
+);
+
+const GuideStep = ({
+  index,
+  locale,
+  step,
+}: {
+  index: number;
+  locale: Locale;
+  step: ExtensionGuideStepCopy;
+}): ReactNode => (
   <li className={styles.step}>
-    <ExtensionArtwork className={styles.stepArtwork} variant={variant} />
-    <div className={styles.stepCopy}>
-      <h2>{title}</h2>
-      <p>{body}</p>
+    <div className={styles.stepHeading}>
+      <span aria-hidden="true" className={styles.stepNumber}>
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <h2>{step.title}</h2>
     </div>
+    <GuideScreenshotCard
+      alt={step.imageAlt}
+      sizes="(max-width: 960px) calc(100vw - 2rem), 960px"
+      src={getGuideScreenshotSrc(locale, guideStepFileById[step.id])}
+    />
   </li>
 );
 
-const GuideFactCard = ({
+const GuideModeCard = ({
   body,
   bodyLink,
   title,
   variant,
-}: GuideFactCardProps): ReactNode => (
-  <article className={styles.factCard}>
-    <ExtensionArtwork className={styles.factArtwork} variant={variant} />
-    <div className={styles.factCopy}>
+}: GuideModeCardProps): ReactNode => (
+  <article className={styles.modeCard}>
+    <ExtensionArtwork className={styles.modeArtwork} variant={variant} />
+    <div className={styles.modeCopy}>
       <h3>{title}</h3>
       <ModeDescription body={body} bodyLink={bodyLink} />
     </div>
   </article>
 );
 
+const GuideDetailFact = ({
+  body,
+  bodyLink,
+  title,
+}: GuideDetailFactProps): ReactNode => (
+  <article className={styles.detailFact}>
+    <h3>{title}</h3>
+    <ModeDescription body={body} bodyLink={bodyLink} />
+  </article>
+);
+
+const GuideLimitItem = ({ body, title }: ExtensionGuideFactCopy): ReactNode => (
+  <li className={styles.limitItem}>
+    <h3>{title}</h3>
+    <ModeDescription body={body} />
+  </li>
+);
+
 const GuideDetailSection = ({
   children,
+  icon,
   lead,
   title,
-  variant,
 }: GuideDetailSectionProps): ReactNode => (
   <section className={styles.detailSection}>
     <header className={styles.detailHeader}>
+      <GuideSectionIcon className={styles.detailIcon} variant={icon} />
       <div className={styles.detailHeading}>
         <h2>{title}</h2>
         {lead ? <p>{lead}</p> : null}
       </div>
-      <ExtensionArtwork className={styles.detailArtwork} variant={variant} />
     </header>
     {children}
   </section>
@@ -126,15 +177,16 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
     { label: copy.homeLabel, href: `/${locale}` },
     { label: copy.guideLabel, href: `/${locale}/chrome-extension/how-to-use` },
   ];
-  const mapStep = (step: ExtensionStepCopy, index: number): ReactNode => (
-    <Step
+  const mapStep = (step: ExtensionGuideStepCopy, index: number): ReactNode => (
+    <GuideStep
+      index={index}
       key={step.title}
-      {...step}
-      variant={getArtworkVariant(stepArtworkVariants, index, "open")}
+      locale={locale}
+      step={step}
     />
   );
   const mapMode = (mode: (typeof copy.modes)[number], index: number): ReactNode => (
-    <GuideFactCard
+    <GuideModeCard
       body={mode.body}
       bodyLink={mode.bodyLink}
       key={mode.title}
@@ -144,28 +196,24 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
   );
   const mapSupportGroup = (
     group: (typeof copy.supportedGroups)[number],
-    index: number,
   ): ReactNode => (
-    <GuideFactCard
+    <GuideDetailFact
       {...group}
       key={group.title}
-      variant={getArtworkVariant(supportArtworkVariants, index, "supported")}
     />
   );
   const mapLimit = (limit: string, index: number): ReactNode => (
-    <GuideFactCard
+    <GuideLimitItem
       body={limit}
       key={copy.limitTitles[index]}
       title={copy.limitTitles[index] ?? copy.limitsTitle}
-      variant={getArtworkVariant(limitArtworkVariants, index, "limits")}
     />
   );
   const mapPrivacyPoint = (point: string, index: number): ReactNode => (
-    <GuideFactCard
+    <GuideDetailFact
       body={point}
       key={copy.privacyFactTitles[index]}
       title={copy.privacyFactTitles[index] ?? copy.privacyTitle}
-      variant={getArtworkVariant(privacyArtworkVariants, index, "privacy")}
     />
   );
 
@@ -181,34 +229,48 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
               placeholderLabel={extensionAction}
             />
           </PublicHero>
-          <ExtensionArtwork className={styles.heroArtwork} variant="flow" />
         </div>
 
-        <ol className={styles.steps}>{copy.steps.map(mapStep)}</ol>
+        <ol className={styles.steps}>{copy.guideSteps.map(mapStep)}</ol>
+
+        <section className={styles.optionsSection} aria-labelledby="guide-options-title">
+          <header className={styles.optionsHeader}>
+            <h2 id="guide-options-title">{copy.guideOptionsTitle}</h2>
+            <p>{copy.guideOptionsLead}</p>
+          </header>
+          <div className={styles.optionScreens}>
+            {copy.guideOptionScreens.map((screen) => (
+              <article className={styles.optionScreen} key={screen.id}>
+                <h3>{screen.title}</h3>
+                <GuideScreenshotCard
+                  alt={screen.imageAlt}
+                  className={styles.optionScreenshot}
+                  sizes="(max-width: 900px) calc(100vw - 3rem), 540px"
+                  src={getGuideScreenshotSrc(locale, guideScreenFileById[screen.id])}
+                />
+              </article>
+            ))}
+          </div>
+          <div className={styles.modeGrid}>{copy.modes.map(mapMode)}</div>
+        </section>
 
         <div className={styles.detailSections}>
-          <GuideDetailSection title={copy.modesTitle} variant="choose">
-            <div className={styles.factGrid}>{copy.modes.map(mapMode)}</div>
-          </GuideDetailSection>
-
-          <GuideDetailSection title={copy.supportedTitle} variant="supported">
-            <div className={styles.factGrid}>
+          <GuideDetailSection icon="supported" title={copy.supportedTitle}>
+            <div className={styles.detailFactGrid}>
               {copy.supportedGroups.map(mapSupportGroup)}
             </div>
           </GuideDetailSection>
 
-          <GuideDetailSection title={copy.limitsTitle} variant="limits">
-            <div className={`${styles.factGrid} ${styles.limitGrid}`}>
-              {copy.limits.map(mapLimit)}
-            </div>
+          <GuideDetailSection icon="limits" title={copy.limitsTitle}>
+            <ul className={styles.limitList}>{copy.limits.map(mapLimit)}</ul>
           </GuideDetailSection>
 
           <GuideDetailSection
+            icon="privacy"
             lead={copy.privacyBody}
             title={copy.privacyTitle}
-            variant="privacy"
           >
-            <div className={styles.factGrid}>
+            <div className={styles.detailFactGrid}>
               {copy.privacyPoints.map(mapPrivacyPoint)}
             </div>
           </GuideDetailSection>
