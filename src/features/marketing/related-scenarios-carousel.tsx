@@ -34,6 +34,7 @@ export const RelatedScenariosCarousel = ({
   nextLabel,
   previousLabel,
 }: RelatedScenariosCarouselProps): ReactNode => {
+  const hasSingleItem = items.length === 1;
   const viewportRef = useRef<HTMLUListElement>(null);
   const [hasOverflow, setHasOverflow] = useState(false);
   const [atStart, setAtStart] = useState(true);
@@ -101,7 +102,10 @@ export const RelatedScenariosCarousel = ({
   };
 
   return (
-    <nav aria-label={heading} className={styles.carousel}>
+    <nav
+      aria-label={heading}
+      className={`${styles.carousel} ${hasSingleItem ? styles.singleCarousel : ""}`}
+    >
       <div className={styles.header}>
         <h2>{heading}</h2>
         {hasOverflow ? (
@@ -127,7 +131,10 @@ export const RelatedScenariosCarousel = ({
           </div>
         ) : null}
       </div>
-      <ul className={styles.viewport} ref={viewportRef}>
+      <ul
+        className={`${styles.viewport} ${hasSingleItem ? styles.singleViewport : ""}`}
+        ref={viewportRef}
+      >
         {items.map((item): ReactNode => (
           <li className={styles.card} key={item.href}>
             <h3>

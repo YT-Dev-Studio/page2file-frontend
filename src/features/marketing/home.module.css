@@ -194,14 +194,11 @@
 }
 
 .modeCard {
-  transition:
-    border-color 180ms ease,
-    transform 180ms ease;
+  transition: border-color 180ms ease;
 }
 
 .modeCard:hover {
   border-color: var(--p2f-color-border-strong);
-  transform: translateY(-0.2rem);
 }
 
 .cardArtwork,
@@ -361,83 +358,6 @@
   text-wrap: balance;
 }
 
-.faqList {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.faqItem {
-  background: var(--p2f-color-background-surface);
-  border: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
-  border-radius: var(--p2f-radius-card);
-  overflow: clip;
-}
-
-.faqItem[open] {
-  border-color: var(--p2f-color-border-strong);
-}
-
-.faqQuestion {
-  align-items: center;
-  color: var(--p2f-color-ink-navy-800);
-  cursor: pointer;
-  display: grid;
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  font-weight: 750;
-  gap: 1rem;
-  grid-template-columns: minmax(0, 1fr) 1.5rem;
-  line-height: 1.45;
-  list-style: none;
-  min-height: 4.5rem;
-  padding: 1.25rem 1.5rem;
-}
-
-.faqQuestion::-webkit-details-marker {
-  display: none;
-}
-
-.faqQuestion:focus-visible {
-  box-shadow: inset 0 0 0 var(--p2f-interaction-focus-ring-width)
-    var(--p2f-interaction-focus-ring-color);
-  outline: none;
-}
-
-.faqIcon {
-  height: 1.25rem;
-  position: relative;
-  width: 1.25rem;
-}
-
-.faqIcon::before,
-.faqIcon::after {
-  background: var(--p2f-color-gel-blue-800);
-  border-radius: 999px;
-  content: "";
-  inset: calc(50% - 0.0625rem) 0 auto;
-  position: absolute;
-  transform-origin: center;
-  transition: transform 180ms ease;
-}
-
-.faqIcon::after {
-  transform: rotate(90deg);
-}
-
-.faqItem[open] .faqIcon::after {
-  transform: rotate(0deg);
-}
-
-.faqAnswer {
-  border-top: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
-  padding: 1.25rem 4rem 1.5rem 1.5rem;
-}
-
-.faqAnswer p {
-  color: var(--p2f-color-ink-navy-500);
-  line-height: 1.75;
-  margin: 0;
-}
-
 @media (max-width: 900px) {
   .heroLayout {
     grid-template-columns: 1fr;
@@ -542,23 +462,11 @@
     display: none;
   }
 
-  .faqQuestion {
-    padding: 1.1rem 1.15rem;
-  }
-
-  .faqAnswer {
-    padding: 1.1rem 1.15rem 1.3rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .modeCard,
-  .faqIcon::before,
-  .faqIcon::after {
+  .modeCard {
     transition: none;
   }
 
-  .modeCard:hover {
-    transform: none;
-  }
 }

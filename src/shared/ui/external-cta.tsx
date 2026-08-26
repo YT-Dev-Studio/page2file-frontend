@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { externalLinks, type ExternalLinkKey } from "@/shared/config/site";
-import styles from "./ui.module.css";
+import { ButtonLink } from "@/shared/ui/components/button/button";
 
 type ExternalCtaProps = {
   externalLinkKey: ExternalLinkKey;
@@ -17,13 +17,14 @@ export const ExternalCta = ({
   const link = externalLinks[externalLinkKey];
 
   return (
-    <a
-      className={styles.button}
+    <ButtonLink
       href={link.href}
       rel="noopener noreferrer"
+      showIcon={false}
+      size="medium"
       target="_blank"
     >
       {link.status === "placeholder" ? placeholderLabel : label}
-    </a>
+    </ButtonLink>
   );
 };

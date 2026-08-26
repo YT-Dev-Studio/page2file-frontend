@@ -22,7 +22,7 @@
     ),
     var(--p2f-color-background-inverse);
   text-decoration: none;
-  transform: translateY(0) scale(1);
+  transform: scale(1);
   transform-origin: center;
   transition:
     transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
@@ -271,13 +271,13 @@
     0 0 0 var(--p2f-interaction-focus-ring-width)
       var(--p2f-interaction-focus-ring-color),
     0 26px 64px rgb(10 16 47 / 32%);
-  transform: translateY(-6px) scale(1.025);
+  transform: scale(1.025);
 }
 
 @media (hover: hover) {
   .banner:hover {
     box-shadow: 0 26px 64px rgb(10 16 47 / 32%);
-    transform: translateY(-6px) scale(1.025);
+    transform: scale(1.025);
   }
 }
 

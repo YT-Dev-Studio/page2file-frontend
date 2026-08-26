@@ -13,6 +13,7 @@ import {
   ExtensionArtwork,
   type ExtensionArtworkVariant,
 } from "@/shared/ui/extension-artwork";
+import { FaqAccordion } from "@/shared/ui/faq-accordion";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
 import styles from "./extension-seo-landing.module.css";
@@ -66,12 +67,6 @@ export const ExtensionSeoLanding = ({
     </li>
   );
   const mapListItem = (item: string): ReactNode => <li key={item}>{item}</li>;
-  const mapFaq = (faq: (typeof content.faqs)[number]): ReactNode => (
-    <details key={faq.question}>
-      <summary>{faq.question}</summary>
-      <p>{faq.answer}</p>
-    </details>
-  );
   const mapRelatedRoute = (route: string): ReactNode => (
     <Link key={route} href={routePath(locale, route)}>
       {formatRelatedRoute(route)}
@@ -173,7 +168,7 @@ export const ExtensionSeoLanding = ({
             <p className={styles.kicker}>FAQ</p>
             <h2 id="questions">Common questions</h2>
           </div>
-          <div className={styles.faqs}>{content.faqs.map(mapFaq)}</div>
+          <FaqAccordion items={content.faqs} />
         </section>
 
         <section className={styles.related} aria-labelledby="related-guides">

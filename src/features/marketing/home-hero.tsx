@@ -1,11 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { ReactNode } from "react";
 import { getExtensionCopy } from "@/features/extension/extension-copy";
 import type { Locale } from "@/shared/i18n/locales";
 import { ExternalCta } from "@/shared/ui/external-cta";
+import { ButtonLink } from "@/shared/ui/components/button/button";
 import { Container } from "@/shared/ui/site-shell";
-import uiStyles from "@/shared/ui/ui.module.css";
 import { getHomeMarketingCopy } from "./home-content";
 import styles from "./home.module.css";
 
@@ -27,12 +26,14 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
                 label={copy.browseChromeLabel}
                 placeholderLabel={copy.browseChromeLabel}
               />
-              <Link
-                className={uiStyles.secondaryButton}
+              <ButtonLink
                 href={`/${locale}/chrome-extension/how-to-use`}
+                showIcon={false}
+                size="medium"
+                variant="secondary"
               >
                 {copy.guideLabel}
-              </Link>
+              </ButtonLink>
             </div>
           </div>
           <div className={styles.heroArtwork}>

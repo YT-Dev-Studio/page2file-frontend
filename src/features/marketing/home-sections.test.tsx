@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import { HomeFaq } from "./home-faq";
 import { HomeModes, HomePrivacy, HomeProcess, HomeSources } from "./home-sections";
@@ -21,7 +21,20 @@ describe("homepage sections", () => {
     expect(screen.getByText("Open the source").closest("ol")).not.toBeNull();
     expect(screen.getByText(/Local HTML files/).closest("ul")).not.toBeNull();
     expect(container.querySelectorAll("section")).toHaveLength(5);
-    expect(container.querySelectorAll("details")).toHaveLength(7);
+    const faqSection = screen
+      .getByRole("heading", {
+        name: "Questions about saving webpages and chats as PDF",
+      })
+      .closest("section");
+    expect(faqSection).not.toBeNull();
+    const faqButtons = within(faqSection as HTMLElement).getAllByRole("button");
+    expect(faqButtons).toHaveLength(7);
+    expect(faqButtons[0]?.getAttribute("aria-expanded")).toBe("false");
+    expect(faqButtons[1]?.getAttribute("aria-expanded")).toBe("false");
+    fireEvent.click(faqButtons[0]);
+    fireEvent.click(faqButtons[1]);
+    expect(faqButtons[0]?.getAttribute("aria-expanded")).toBe("true");
+    expect(faqButtons[1]?.getAttribute("aria-expanded")).toBe("true");
     expect(
       screen.getByRole("heading", {
         name: "Questions about saving webpages and chats as PDF",

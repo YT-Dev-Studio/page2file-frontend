@@ -44,6 +44,7 @@
   background: var(--surface);
   box-shadow: 0 24px 64px rgb(17 38 79 / 10%);
   position: relative;
+  margin-top: var(--p2f-space-80);
 }
 
 .demo::before {
@@ -81,13 +82,15 @@
   border-radius: 18px;
   background: #fff;
   box-shadow: 0 12px 32px rgb(17 38 79 / 12%);
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .previewLink:hover,
 .previewLink:focus-visible {
+  border-color: var(--accent);
   box-shadow: 0 18px 42px rgb(17 38 79 / 18%);
-  transform: translateY(-2px);
 }
 
 .previewImage {
@@ -161,8 +164,7 @@
 }
 
 .steps p,
-.boundaries li,
-.faqs p {
+.boundaries li {
   color: var(--muted);
   line-height: 1.65;
 }
@@ -202,28 +204,6 @@
 .privacyArtwork {
   border: 0;
   min-height: 190px;
-}
-
-.faqs {
-  display: grid;
-  gap: 12px;
-}
-
-.faqs details {
-  padding: 20px 22px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--surface);
-}
-
-.faqs summary {
-  cursor: pointer;
-  color: var(--ink);
-  font-weight: 750;
-}
-
-.faqs p {
-  margin: 14px 0 0;
 }
 
 .relatedGrid {
@@ -305,6 +285,14 @@
 }
 
 @media (max-width: 560px) {
+  .demo,
+  .section,
+  .boundaries,
+  .privacy,
+  .related {
+    margin-top: var(--p2f-space-64);
+  }
+
   .demo,
   .privacy {
     padding: 20px;

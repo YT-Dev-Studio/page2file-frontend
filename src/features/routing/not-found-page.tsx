@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import {
@@ -8,9 +7,9 @@ import {
   type Locale,
 } from "@/shared/i18n/locales";
 import { getSeoCopy } from "@/shared/seo/seo-copy";
+import { ButtonLink } from "@/shared/ui/components/button/button";
 import { PublicHero, PublicPage } from "@/shared/ui/public-page";
 import { Container } from "@/shared/ui/site-shell";
-import uiStyles from "@/shared/ui/ui.module.css";
 import styles from "./not-found-page.module.css";
 
 type NotFoundActions = {
@@ -40,15 +39,17 @@ export const NotFoundPage = (): ReactNode => {
       <Container>
         <PublicHero eyebrow="404" lead={copy.description} title={copy.title}>
           <div className={styles.actions}>
-            <Link className={uiStyles.button} href={`/${locale}`}>
+            <ButtonLink href={`/${locale}`} showIcon={false} size="medium">
               {actionCopy.home}
-            </Link>
-            <Link
-              className={uiStyles.secondaryButton}
+            </ButtonLink>
+            <ButtonLink
               href={`/${locale}/chrome-extension/how-to-use`}
+              showIcon={false}
+              size="medium"
+              variant="secondary"
             >
               {actionCopy.guide}
-            </Link>
+            </ButtonLink>
           </div>
         </PublicHero>
       </Container>
