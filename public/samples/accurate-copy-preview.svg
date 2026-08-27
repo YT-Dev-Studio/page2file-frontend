@@ -1,36 +1,47 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="720" viewBox="0 0 1080 720" role="img" aria-labelledby="title desc">
   <title id="title">Accurate copy sample preview</title>
   <desc id="desc">A long browser page becoming a multi-page visual PDF.</desc>
-  <rect width="1080" height="720" fill="#edf4ff"/>
-  <rect x="60" y="78" width="500" height="564" rx="24" fill="#fff" stroke="#b8c9e6" stroke-width="3"/>
-  <rect x="60" y="78" width="500" height="52" rx="24" fill="#123466"/>
-  <circle cx="96" cy="104" r="7" fill="#ff7067"/><circle cx="120" cy="104" r="7" fill="#ffd15c"/><circle cx="144" cy="104" r="7" fill="#4fca84"/>
-  <rect x="94" y="162" width="432" height="94" rx="14" fill="#dceaff"/>
-  <rect x="94" y="282" width="250" height="18" rx="9" fill="#183b6f"/>
-  <rect x="94" y="316" width="406" height="12" rx="6" fill="#a8b9d4"/>
-  <rect x="94" y="342" width="388" height="12" rx="6" fill="#a8b9d4"/>
-  <rect x="94" y="386" width="406" height="92" rx="14" fill="#f4f8ff" stroke="#c8d7ed"/>
-  <rect x="94" y="502" width="406" height="92" rx="14" fill="#f4f8ff" stroke="#c8d7ed"/>
-  <path d="M586 360h80" stroke="#357feb" stroke-width="8" stroke-linecap="round"/>
-  <path d="m646 332 32 28-32 28" fill="none" stroke="#357feb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  <g transform="translate(720 92)">
-    <rect width="270" height="190" rx="10" fill="#fff" stroke="#9db3d3" stroke-width="3"/>
-    <rect x="24" y="26" width="222" height="38" rx="8" fill="#dceaff"/>
-    <rect x="24" y="84" width="130" height="10" rx="5" fill="#183b6f"/>
-    <rect x="24" y="108" width="216" height="8" rx="4" fill="#acbdd7"/>
-    <rect x="24" y="128" width="204" height="8" rx="4" fill="#acbdd7"/>
+  <defs>
+    <filter id="rough" x="-4%" y="-4%" width="108%" height="108%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="1" seed="11" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.1"/>
+    </filter>
+    <pattern id="blueHatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#1682f3" stroke-width="4"/>
+    </pattern>
+    <pattern id="violetHatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#7356bd" stroke-width="4"/>
+    </pattern>
+  </defs>
+  <rect width="1080" height="720" fill="#f3f3fb"/>
+  <g filter="url(#rough)" stroke="#171a64" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M70 92Q70 62 101 62H442Q472 62 472 92V642H70Z" fill="#fffefe" stroke-width="5"/>
+    <path d="M76 96Q76 69 103 69H436Q465 69 465 96V636H76Z" fill="none" stroke-width="1.6" opacity=".7"/>
+    <path d="M70 126H472" fill="none" stroke-width="4"/>
+    <circle cx="101" cy="94" r="7" fill="#ef5a54" stroke-width="2"/><circle cx="125" cy="94" r="7" fill="#f28a19" stroke-width="2"/><circle cx="149" cy="94" r="7" fill="#14a467" stroke-width="2"/>
+    <rect x="102" y="158" width="338" height="72" rx="10" fill="url(#blueHatch)" stroke="#1682f3" stroke-width="4"/>
+    <rect x="102" y="263" width="120" height="112" rx="8" fill="url(#violetHatch)" stroke="#7356bd" stroke-width="4"/>
+    <path d="M244 278h172M244 304h146M244 330h172M102 405h314M102 431h280M102 480h314M102 506h252M102 555h314M102 581h286" fill="none" stroke-width="5"/>
+    <path d="M500 351h92m-27-24 27 24-27 24" fill="none" stroke-width="7"/>
+    <g transform="translate(640 70)">
+      <path d="M0 25Q0 7 18 7h194l38 38v154H0Z" fill="#fffefe" stroke-width="5"/>
+      <path d="M212 7v39h38" fill="none" stroke-width="4"/>
+      <rect x="24" y="68" width="83" height="55" rx="7" fill="url(#blueHatch)" stroke="#1682f3" stroke-width="4"/>
+      <path d="M126 76h91M126 100h75M24 148h193M24 171h151" fill="none" stroke-width="5"/>
+    </g>
+    <g transform="translate(690 260)">
+      <path d="M0 25Q0 7 18 7h194l38 38v154H0Z" fill="#fffefe" stroke-width="5"/>
+      <path d="M212 7v39h38" fill="none" stroke-width="4"/>
+      <rect x="24" y="67" width="193" height="48" rx="7" fill="url(#violetHatch)" stroke="#7356bd" stroke-width="4"/>
+      <path d="M24 145h193M24 169h159" fill="none" stroke-width="5"/>
+    </g>
+    <g transform="translate(640 457)">
+      <path d="M0 25Q0 7 18 7h194l38 38v154H0Z" fill="#fffefe" stroke-width="5"/>
+      <path d="M212 7v39h38" fill="none" stroke-width="4"/>
+      <rect x="24" y="67" width="193" height="48" rx="7" fill="url(#blueHatch)" stroke="#1682f3" stroke-width="4"/>
+      <path d="M24 145h193M24 169h141" fill="none" stroke-width="5"/>
+    </g>
+    <circle cx="956" cy="585" r="46" fill="#fffefe" stroke="#14a467" stroke-width="6"/>
+    <path d="m932 586 17 18 34-42" fill="none" stroke="#14a467" stroke-width="8"/>
   </g>
-  <g transform="translate(720 302)">
-    <rect width="270" height="190" rx="10" fill="#fff" stroke="#9db3d3" stroke-width="3"/>
-    <rect x="24" y="30" width="216" height="60" rx="8" fill="#f4f8ff" stroke="#c8d7ed"/>
-    <rect x="24" y="112" width="216" height="8" rx="4" fill="#acbdd7"/>
-    <rect x="24" y="132" width="186" height="8" rx="4" fill="#acbdd7"/>
-  </g>
-  <g transform="translate(720 512)">
-    <rect width="270" height="118" rx="10" fill="#fff" stroke="#9db3d3" stroke-width="3"/>
-    <rect x="24" y="26" width="216" height="36" rx="8" fill="#dceaff"/>
-    <rect x="24" y="82" width="154" height="8" rx="4" fill="#acbdd7"/>
-  </g>
-  <rect x="60" y="24" width="228" height="36" rx="18" fill="#d8e7ff"/>
-  <text x="174" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#153868">VERIFIED E2E SAMPLE</text>
 </svg>

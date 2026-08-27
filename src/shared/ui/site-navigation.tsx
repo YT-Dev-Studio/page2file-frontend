@@ -39,7 +39,7 @@ const navigationLabels: Record<Locale, NavigationLabels> = {
   ru: {
     about: "Редакционные принципы",
     blog: "Блог",
-    guide: "Как пользоваться",
+    guide: "Как использовать",
     home: "Главная",
     htmlToPdf: "HTML 2 PDF",
     webToPdf: "Web 2 PDF",

@@ -27,11 +27,68 @@
   height: auto;
 }
 
+.inkLayer {
+  filter: url("#p2f-gel-rough");
+}
+
+.paperFill {
+  fill: var(--p2f-color-background-subtle);
+}
+
+.blueHatch,
+.coralHatch,
+.orangeHatch,
+.violetHatch {
+  fill: none;
+  stroke-width: 2.5;
+}
+
+.blueHatch {
+  stroke: var(--p2f-color-gel-blue-500);
+}
+
+.coralHatch {
+  stroke: var(--p2f-color-coral-ink-500);
+}
+
+.orangeHatch {
+  stroke: var(--p2f-color-orange-ink-500);
+}
+
+.violetHatch {
+  stroke: var(--p2f-color-violet-ink-500);
+}
+
+.workspaceBlueLine,
+.workspaceGreenLine,
+.workspaceOrangeLine {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.5;
+}
+
+.workspaceBlueLine {
+  stroke: var(--p2f-color-gel-blue-500);
+}
+
+.workspaceGreenLine {
+  stroke: var(--success);
+}
+
+.workspaceOrangeLine {
+  stroke: var(--p2f-color-orange-ink-600);
+}
+
+.workspaceOrangeSoft {
+  fill: var(--p2f-color-orange-ink-100);
+}
+
 .frame {
   fill: var(--p2f-color-background-surface);
   stroke: var(--p2f-color-ink-navy-800);
   stroke-linejoin: round;
-  stroke-width: 2.5;
+  stroke-width: 2.8;
 }
 
 .divider,
@@ -60,8 +117,8 @@
 }
 
 .mutedLine {
-  stroke: var(--p2f-color-ink-navy-300);
-  stroke-width: 3;
+  stroke: color-mix(in srgb, var(--p2f-color-ink-navy-800) 58%, transparent);
+  stroke-width: 2.7;
 }
 
 .arrow {
@@ -100,7 +157,7 @@
 }
 
 .blue .accentSoft {
-  fill: var(--p2f-color-gel-blue-100);
+  fill: url("#p2f-gel-blue");
 }
 
 .blue .accentLine,
@@ -115,7 +172,7 @@
 }
 
 .coral .accentSoft {
-  fill: var(--p2f-color-coral-ink-100);
+  fill: url("#p2f-gel-coral");
 }
 
 .coral .accentLine,
@@ -130,7 +187,7 @@
 }
 
 .orange .accentSoft {
-  fill: var(--p2f-color-orange-ink-100);
+  fill: url("#p2f-gel-orange");
 }
 
 .orange .accentLine,
@@ -145,7 +202,7 @@
 }
 
 .violet .accentSoft {
-  fill: var(--p2f-color-violet-ink-100);
+  fill: url("#p2f-gel-violet");
 }
 
 .violet .accentLine,

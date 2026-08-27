@@ -119,8 +119,9 @@ const PageScene = (): ReactNode => (
     <rect className={styles.accentSoft} height="22" rx="5" width="100" x="31" y="52" />
     <path className={styles.inkLine} d="M38 61h49" />
     <path className={styles.mutedLine} d="M31 84h91M31 93h72M31 102h84" />
-    <circle className={styles.accentFill} cx="196" cy="68" r="28" />
-    <path className={styles.inverseLine} d="M184 68h24M196 56v24" />
+    <circle className={styles.accentSoft} cx="196" cy="68" r="27" />
+    <circle className={styles.accentOutline} cx="196" cy="68" r="27" />
+    <path className={styles.accentLine} d="M169 68h54M196 41c-8 8-12 17-12 27s4 19 12 27M196 41c8 8 12 17 12 27s-4 19-12 27M174 54h44M174 82h44" />
   </BrowserShell>
 );
 
@@ -131,8 +132,11 @@ const FileScene = (): ReactNode => (
       <rect className={styles.accentSoft} height="18" rx="5" width="88" x="31" y="74" />
     </BrowserShell>
     <DocumentShell>
-      <path className={styles.accentLine} d="M177 58h30" />
-      <path className={styles.mutedLine} d="M177 70h38M177 79h31M177 88h38M177 97h24" />
+      <rect className={styles.accentSoft} height="42" rx="6" width="40" x="176" y="57" />
+      <path className={styles.inkLine} d="M184 74v-5a12 12 0 0 1 24 0v5" />
+      <rect className={styles.accentOutline} height="22" rx="5" width="30" x="181" y="73" />
+      <circle className={styles.accentFill} cx="196" cy="83" r="3.5" />
+      <path className={styles.accentLine} d="M196 86v4" />
     </DocumentShell>
   </>
 );
@@ -143,8 +147,12 @@ const WorkspaceScene = (): ReactNode => (
       <path className={styles.gridLine} d="M31 53h92v51H31zM62 53v51M93 53v51M31 70h92M31 87h92" />
       <rect className={styles.accentSoft} height="15" rx="2" width="28" x="64" y="71" />
     </BrowserShell>
-    <circle className={styles.accentFill} cx="193" cy="68" r="29" />
-    <path className={styles.inverseLine} d="M181 61h24M181 68h24M181 75h16" />
+    <DocumentShell>
+      <path className={styles.workspaceBlueLine} d="M176 57h39M176 64h27" />
+      <path className={styles.workspaceGreenLine} d="M176 73h39v15h-39zM189 73v15M202 73v15M176 80h39" />
+      <rect className={styles.workspaceOrangeSoft} height="12" rx="3" width="39" x="176" y="94" />
+      <path className={styles.workspaceOrangeLine} d="M182 100h27" />
+    </DocumentShell>
   </>
 );
 
@@ -155,8 +163,10 @@ const ConversationScene = (): ReactNode => (
       <rect className={styles.accentSoft} height="19" rx="8" width="61" x="62" y="78" />
     </BrowserShell>
     <path className={styles.arrow} d="M145 68h18m-7-7 7 7-7 7" />
-    <rect className={styles.accentFill} height="54" rx="12" width="54" x="171" y="42" />
-    <path className={styles.inverseLine} d="M183 59h30M183 68h24M183 77h28" />
+    <path className={`${styles.accentSoft} ${styles.accentOutline}`} d="M170 43h51a8 8 0 0 1 8 8v25a8 8 0 0 1-8 8h-19l-12 11V84h-20a8 8 0 0 1-8-8V51a8 8 0 0 1 8-8Z" />
+    <path className={styles.inkLine} d="M181 57h35M181 67h27" />
+    <path className={styles.frame} d="M182 82h34a7 7 0 0 1 7 7v13a7 7 0 0 1-7 7h-10l-9 8v-8h-15a7 7 0 0 1-7-7V89a7 7 0 0 1 7-7Z" />
+    <path className={styles.accentLine} d="M187 94h24M187 101h16" />
   </>
 );
 
@@ -330,7 +340,63 @@ export const ExtensionArtwork = ({
   return (
     <div aria-hidden="true" className={artworkClassName} data-variant={variant}>
       <svg fill="none" focusable="false" viewBox="0 0 240 136">
-        {getArtworkScene(variant)}
+        <defs>
+          <filter id="p2f-gel-rough" x="-3%" y="-5%" width="106%" height="110%">
+            <feTurbulence
+              baseFrequency="0.035"
+              numOctaves="1"
+              result="gelNoise"
+              seed="9"
+              type="fractalNoise"
+            />
+            <feDisplacementMap
+              in="SourceGraphic"
+              in2="gelNoise"
+              scale="0.45"
+            />
+          </filter>
+          <pattern
+            height="7"
+            id="p2f-gel-blue"
+            patternTransform="rotate(35)"
+            patternUnits="userSpaceOnUse"
+            width="7"
+          >
+            <rect className={styles.paperFill} height="7" width="7" />
+            <path className={styles.blueHatch} d="M0 0v7" />
+          </pattern>
+          <pattern
+            height="7"
+            id="p2f-gel-coral"
+            patternTransform="rotate(35)"
+            patternUnits="userSpaceOnUse"
+            width="7"
+          >
+            <rect className={styles.paperFill} height="7" width="7" />
+            <path className={styles.coralHatch} d="M0 0v7" />
+          </pattern>
+          <pattern
+            height="7"
+            id="p2f-gel-orange"
+            patternTransform="rotate(35)"
+            patternUnits="userSpaceOnUse"
+            width="7"
+          >
+            <rect className={styles.paperFill} height="7" width="7" />
+            <path className={styles.orangeHatch} d="M0 0v7" />
+          </pattern>
+          <pattern
+            height="7"
+            id="p2f-gel-violet"
+            patternTransform="rotate(35)"
+            patternUnits="userSpaceOnUse"
+            width="7"
+          >
+            <rect className={styles.paperFill} height="7" width="7" />
+            <path className={styles.violetHatch} d="M0 0v7" />
+          </pattern>
+        </defs>
+        <g className={styles.inkLayer}>{getArtworkScene(variant)}</g>
       </svg>
     </div>
   );
