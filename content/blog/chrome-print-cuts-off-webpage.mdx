@@ -1,0 +1,48 @@
+Chrome Print can cut off a webpage when the content scrolls inside a fixed panel, the site applies destructive print CSS, a wide table exceeds the paper width, or delayed content has not loaded. Identify which failure you have before changing page scale or installing another tool.
+
+## Check the print preview first
+
+Open Chrome Print and compare preview with the original page. If only navigation disappears, the site's print stylesheet may be doing useful cleanup. If a chart, table column, expanded answer, or entire scrollable panel is missing, cancel rather than saving an incomplete PDF.
+
+Try portrait and landscape, review the selected paper size, and inspect the page count. Scaling can help with a wide table but cannot reveal rows that the print layout never included. Background graphics affect appearance but do not fix missing content.
+
+<ArticleFigure
+  src="/blog/demos/print-cutoff-diagnosis.webp"
+  alt="Image-based full-page dashboard test fixture open in Chrome's PDF viewer"
+  caption="Match the symptom to its cause before choosing Chrome Print, Accurate copy, or Editable document."
+  step={1}
+  openLabel="Open the Chrome Print cutoff diagnosis"
+  closeLabel="Close the Chrome Print cutoff diagnosis"
+/>
+
+## Internal scrolling needs page preparation
+
+Application pages often keep the browser body fixed and scroll a report panel. Print may see the panel as a box and preserve only its visible slice. Accurate copy in Page 2 PDF can look for the main internal scroll area, perform a bounded loading pass, and capture the prepared result as image pages.
+
+This does not guarantee every row of an endless or virtualized list. Some pages remove off-screen elements from the browser, so no capture method can see the entire list at one moment. Filter the data or split it into smaller ranges. The [long-page guide](/en/blog/save-long-dynamic-webpage-to-pdf) covers the preparation limits.
+
+## Print styles can be better or worse than the screen
+
+A well-made print stylesheet removes menus, expands the article column, and creates sensible page breaks. In that case Chrome Print is the simplest tool. A poor stylesheet may hide useful details, force an unexpected width, or place a fixed header over each page.
+
+Editable document offers two profiles: **Print optimized** to use those print rules and **As viewed** to stay closer to the screen layout while keeping selectable text and safe links. Accurate copy favors visual fidelity but produces image-only pages. The [mode decision guide](/en/blog/choose-webpage-pdf-mode) explains the loss each choice accepts.
+
+## Load and stabilize the original page
+
+Scroll through sections that load only when visible, expand the content you need, and wait for fonts, images, or charts. Dismiss overlays. Pause auto-refresh when the page supports it. Keep the active tab open during PDF preparation.
+
+Content inside a protected frame, an unavailable asset, or a constantly changing feed may remain incomplete. Page 2 PDF does not bypass those limits. For a conventional article with good print rules, stay with Chrome Print. For the side-by-side product comparison, see [Chrome Print versus Page 2 PDF](/en/chrome-extension/chrome-print-vs-page-2-pdf).
+
+## Print troubleshooting questions
+
+### Should I set a very small scale?
+
+Only when the content is present but too wide. A smaller scale cannot restore rows or panels omitted by the page's print layout.
+
+### Why does the PDF show blank image spaces?
+
+The images may not have loaded, may be blocked, or may depend on a file unavailable during printing. Load the section first and check the browser console or page permissions when appropriate.
+
+### Can Page 2 PDF fix every page break?
+
+No. Accurate copy paginates the visual capture, while Editable document relies on Chromium output. Very tall blocks and complex CSS can still create awkward breaks.

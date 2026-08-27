@@ -1,20 +1,4 @@
-export type Locale =
-  | "en"
-  | "ru"
-  | "de"
-  | "fr"
-  | "es"
-  | "nl"
-  | "pt"
-  | "it"
-  | "pl"
-  | "sv"
-  | "no"
-  | "da"
-  | "fi"
-  | "cs"
-  | "ro"
-  | "hu";
+export type Locale = "en" | "ru";
 
 export type LocaleDefinition = {
   code: Locale;
@@ -28,20 +12,6 @@ export type LocaleDefinition = {
 export const localeRegistry: ReadonlyArray<LocaleDefinition> = [
   { code: "en", languageName: "English", htmlLang: "en", openGraphLocale: "en_US", reviewed: true, indexable: true },
   { code: "ru", languageName: "Русский", htmlLang: "ru", openGraphLocale: "ru_RU", reviewed: true, indexable: true },
-  { code: "de", languageName: "Deutsch", htmlLang: "de", openGraphLocale: "de_DE", reviewed: true, indexable: true },
-  { code: "fr", languageName: "Français", htmlLang: "fr", openGraphLocale: "fr_FR", reviewed: true, indexable: true },
-  { code: "es", languageName: "Español", htmlLang: "es", openGraphLocale: "es_ES", reviewed: true, indexable: true },
-  { code: "nl", languageName: "Nederlands", htmlLang: "nl", openGraphLocale: "nl_NL", reviewed: true, indexable: true },
-  { code: "pt", languageName: "Português", htmlLang: "pt", openGraphLocale: "pt_PT", reviewed: true, indexable: true },
-  { code: "it", languageName: "Italiano", htmlLang: "it", openGraphLocale: "it_IT", reviewed: true, indexable: true },
-  { code: "pl", languageName: "Polski", htmlLang: "pl", openGraphLocale: "pl_PL", reviewed: true, indexable: true },
-  { code: "sv", languageName: "Svenska", htmlLang: "sv", openGraphLocale: "sv_SE", reviewed: true, indexable: true },
-  { code: "no", languageName: "Norsk", htmlLang: "no", openGraphLocale: "nb_NO", reviewed: true, indexable: true },
-  { code: "da", languageName: "Dansk", htmlLang: "da", openGraphLocale: "da_DK", reviewed: true, indexable: true },
-  { code: "fi", languageName: "Suomi", htmlLang: "fi", openGraphLocale: "fi_FI", reviewed: true, indexable: true },
-  { code: "cs", languageName: "Čeština", htmlLang: "cs", openGraphLocale: "cs_CZ", reviewed: true, indexable: true },
-  { code: "ro", languageName: "Română", htmlLang: "ro", openGraphLocale: "ro_RO", reviewed: true, indexable: true },
-  { code: "hu", languageName: "Magyar", htmlLang: "hu", openGraphLocale: "hu_HU", reviewed: true, indexable: true },
 ];
 
 const localeCodes = localeRegistry.map(

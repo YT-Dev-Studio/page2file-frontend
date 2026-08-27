@@ -51,6 +51,22 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
             <Link href={`/${locale}/chrome-extension/how-to-use`}>
               {copy.links.extension}
             </Link>
+            <Link href={`/${locale}/blog`}>
+              {locale === "ru" ? "Блог" : "Blog"}
+            </Link>
+            {locale === "en" ? (
+              <>
+                <Link href="/en/chrome-extension/webpage-to-pdf">
+                  Webpage to PDF
+                </Link>
+                <Link href="/en/chrome-extension/ai-chat-to-pdf">
+                  AI chat to PDF
+                </Link>
+                <Link href="/en/chrome-extension/messenger-chat-to-pdf">
+                  Messenger chat to PDF
+                </Link>
+              </>
+            ) : null}
           </nav>
 
           <nav aria-label={copy.gptsTitle} className={styles.footerLinks}>
@@ -66,7 +82,11 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
             <Link href={`/${locale}/about`}>
               {about?.title ?? "About Page 2 File"}
             </Link>
+            <Link href={`/${locale}/support`}>{copy.links.support}</Link>
             <Link href={`/${locale}/privacy`}>{copy.links.privacy}</Link>
+            <Link href={`/${locale}/privacy#cookies`}>
+              {copy.links.cookiePolicy}
+            </Link>
           </nav>
         </div>
 
@@ -74,9 +94,6 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
           <span>{copy.copyright}</span>
           <nav aria-label={copy.legalTitle}>
             <Link href={`/${locale}/terms`}>{copy.links.terms}</Link>
-            <Link href={`/${locale}/privacy#cookies`}>
-              {copy.links.cookiePolicy}
-            </Link>
           </nav>
         </div>
       </Container>
@@ -89,6 +106,6 @@ export const SiteShell = ({ children, locale }: SiteShellProps): ReactNode => (
     <SiteHeader locale={locale} />
     {children}
     <SiteFooter locale={locale} />
-    <AnalyticsBootstrap />
+    <AnalyticsBootstrap locale={locale} />
   </div>
 );

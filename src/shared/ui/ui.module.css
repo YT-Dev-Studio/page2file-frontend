@@ -69,44 +69,6 @@
     var(--p2f-interaction-focus-ring-color);
 }
 
-.button,
-.secondaryButton {
-  display: inline-flex;
-  min-height: 46px;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 11px 17px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-weight: 730;
-  line-height: 1.2;
-  transition:
-    transform 160ms ease,
-    background-color 160ms ease,
-    border-color 160ms ease;
-}
-
-.button {
-  color: #fff;
-  background: var(--accent);
-}
-
-.button:hover {
-  background: var(--accent-strong);
-  transform: translateY(-1px);
-}
-
-.secondaryButton {
-  border-color: var(--line-strong);
-  color: var(--ink);
-  background: var(--surface);
-}
-
-.secondaryButton:hover {
-  border-color: var(--accent);
-}
-
 .disabledButton {
   cursor: not-allowed;
   color: var(--muted);
@@ -276,6 +238,19 @@
 }
 
 @media (max-width: 767px) {
+  .breadcrumbs li {
+    min-width: 0;
+  }
+
+  .breadcrumbs li:last-child {
+    flex: 1 1 100%;
+  }
+
+  .breadcrumbs li:last-child a {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
   .footerGrid {
     grid-template-columns: 1fr;
     gap: var(--p2f-space-32);
@@ -297,8 +272,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .button,
-  .secondaryButton,
   .localeControl.localeControl,
   .footerBrandLink,
   .footerLinks a,

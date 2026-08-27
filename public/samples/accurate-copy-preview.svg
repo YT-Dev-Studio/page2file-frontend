@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="720" viewBox="0 0 1080 720" role="img" aria-labelledby="title desc">
+  <title id="title">Accurate copy sample preview</title>
+  <desc id="desc">A long browser page becoming a multi-page visual PDF.</desc>
+  <defs>
+    <filter id="rough" x="-4%" y="-4%" width="108%" height="108%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="1" seed="11" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.1"/>
+    </filter>
+    <pattern id="blueHatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#1682f3" stroke-width="4"/>
+    </pattern>
+    <pattern id="violetHatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#7356bd" stroke-width="4"/>
+    </pattern>
+  </defs>
+  <rect width="1080" height="720" fill="#f3f3fb"/>
+  <g filter="url(#rough)" stroke="#171a64" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M70 92Q70 62 101 62H442Q472 62 472 92V642H70Z" fill="#fffefe" stroke-width="5"/>
+    <path d="M76 96Q76 69 103 69H436Q465 69 465 96V636H76Z" fill="none" stroke-width="1.6" opacity=".7"/>
+    <path d="M70 126H472" fill="none" stroke-width="4"/>
+    <circle cx="101" cy="94" r="7" fill="#ef5a54" stroke-width="2"/><circle cx="125" cy="94" r="7" fill="#f28a19" stroke-width="2"/><circle cx="149" cy="94" r="7" fill="#14a467" stroke-width="2"/>
+    <rect x="102" y="158" width="338" height="72" rx="10" fill="url(#blueHatch)" stroke="#1682f3" stroke-width="4"/>
+    <rect x="102" y="263" width="120" height="112" rx="8" fill="url(#violetHatch)" stroke="#7356bd" stroke-width="4"/>
+    <path d="M244 278h172M244 304h146M244 330h172M102 405h314M102 431h280M102 480h314M102 506h252M102 555h314M102 581h286" fill="none" stroke-width="5"/>
+    <path d="M500 351h92m-27-24 27 24-27 24" fill="none" stroke-width="7"/>
+    <g transform="translate(640 70)">
+      <path d="M0 25Q0 7 18 7h194l38 38v154H0Z" fill="#fffefe" stroke-width="5"/>
+      <path d="M212 7v39h38" fill="none" stroke-width="4"/>
+      <rect x="24" y="68" width="83" height="55" rx="7" fill="url(#blueHatch)" stroke="#1682f3" stroke-width="4"/>
+      <path d="M126 76h91M126 100h75M24 148h193M24 171h151" fill="none" stroke-width="5"/>
+    </g>
+    <g transform="translate(690 260)">
+      <path d="M0 25Q0 7 18 7h194l38 38v154H0Z" fill="#fffefe" stroke-width="5"/>
+      <path d="M212 7v39h38" fill="none" stroke-width="4"/>
+      <rect x="24" y="67" width="193" height="48" rx="7" fill="url(#violetHatch)" stroke="#7356bd" stroke-width="4"/>
+      <path d="M24 145h193M24 169h159" fill="none" stroke-width="5"/>
+    </g>
+    <g transform="translate(640 457)">
+      <path d="M0 25Q0 7 18 7h194l38 38v154H0Z" fill="#fffefe" stroke-width="5"/>
+      <path d="M212 7v39h38" fill="none" stroke-width="4"/>
+      <rect x="24" y="67" width="193" height="48" rx="7" fill="url(#blueHatch)" stroke="#1682f3" stroke-width="4"/>
+      <path d="M24 145h193M24 169h141" fill="none" stroke-width="5"/>
+    </g>
+    <circle cx="956" cy="585" r="46" fill="#fffefe" stroke="#14a467" stroke-width="6"/>
+    <path d="m932 586 17 18 34-42" fill="none" stroke="#14a467" stroke-width="8"/>
+  </g>
+</svg>

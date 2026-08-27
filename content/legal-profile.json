@@ -2,40 +2,16 @@
   "entityName": "ИП YT DEV",
   "addresses": {
     "en": "Kazakhstan, Almaty, Zhetysu‑4",
-    "ru": "Казахстан, Алматы, Жетысу‑4",
-    "de": "Kasachstan, Almaty, Zhetysu‑4",
-    "fr": "Kazakhstan, Almaty, Zhetysu‑4",
-    "es": "Kazajistán, Almaty, Zhetysu‑4",
-    "nl": "Kazachstan, Almaty, Zhetysu‑4",
-    "pt": "Cazaquistão, Almaty, Zhetysu‑4",
-    "it": "Kazakistan, Almaty, Zhetysu‑4",
-    "pl": "Kazachstan, Almaty, Zhetysu‑4",
-    "sv": "Kazakstan, Almaty, Zhetysu‑4",
-    "no": "Kasakhstan, Almaty, Zhetysu‑4",
-    "da": "Kasakhstan, Almaty, Zhetysu‑4",
-    "fi": "Kazakstan, Almaty, Zhetysu‑4",
-    "cs": "Kazachstán, Almaty, Zhetysu‑4",
-    "ro": "Kazahstan, Almaty, Zhetysu‑4",
-    "hu": "Kazahsztán, Almati, Zhetysu‑4"
+    "ru": "Казахстан, Алматы, Жетысу‑4"
   },
   "jurisdictions": {
     "en": "Kazakhstan",
-    "ru": "Казахстан",
-    "de": "Kasachstan",
-    "fr": "Kazakhstan",
-    "es": "Kazajistán",
-    "nl": "Kazachstan",
-    "pt": "Cazaquistão",
-    "it": "Kazakistan",
-    "pl": "Kazachstan",
-    "sv": "Kazakstan",
-    "no": "Kasakhstan",
-    "da": "Kasakhstan",
-    "fi": "Kazakstan",
-    "cs": "Kazachstán",
-    "ro": "Kazahstan",
-    "hu": "Kazahsztán"
+    "ru": "Казахстан"
   },
-  "contactEmail": "info@page2file.com",
-  "processors": ["Google Analytics", "Cloudflare"]
+  "contactEmail": "support@page2file.com",
+  "processors": [
+    "Google Analytics",
+    "Cloudflare",
+    "Telegram"
+  ]
 }

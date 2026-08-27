@@ -13,9 +13,8 @@
     "test:watch": "vitest",
     "audit:content": "node scripts/audit-blog-content.mjs",
     "audit:content:update": "node scripts/audit-blog-content.mjs --write-review --allow-pending",
-    "generate:localized-content": "node scripts/generate-localized-content.mjs",
     "generate:seo-images": "node scripts/generate-seo-images.mjs",
-    "prebuild:next": "npm run generate:localized-content",
+    "generate:store-copy-traceability": "node scripts/generate-store-copy-traceability.mjs",
     "validate:content": "node scripts/validate-content.mjs",
     "validate:routes": "node scripts/validate-routes.mjs",
     "validate:translations": "node scripts/validate-translations.mjs",
@@ -54,6 +53,7 @@
     "wrangler": "4.115.0"
   },
   "overrides": {
+    "nanoid": "3.3.18",
     "postcss": "8.5.25",
     "sharp": "0.35.3"
   }

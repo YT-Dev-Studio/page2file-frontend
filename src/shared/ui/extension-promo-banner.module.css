@@ -3,6 +3,7 @@
   display: grid;
   min-width: 0;
   overflow: hidden;
+  isolation: isolate;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
   align-items: center;
   gap: clamp(var(--p2f-space-24), 5vw, var(--p2f-space-64));
@@ -22,11 +23,55 @@
     ),
     var(--p2f-color-background-inverse);
   text-decoration: none;
-  transform: translateY(0) scale(1);
+  transform: scale(1);
   transform-origin: center;
   transition:
     transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.banner::before {
+  position: absolute;
+  z-index: 0;
+  top: -45%;
+  bottom: -45%;
+  left: -60%;
+  width: 40%;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(255 255 255 / 24%) 48%,
+    rgb(255 255 255 / 14%) 58%,
+    transparent
+  );
+  mix-blend-mode: screen;
+  opacity: 0;
+  transform: translateX(0) skewX(-18deg);
+  animation: bannerShimmer 8.5s 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@keyframes bannerShimmer {
+  0% {
+    opacity: 0;
+    transform: translateX(0) skewX(-18deg);
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  14% {
+    opacity: 0.68;
+    transform: translateX(420%) skewX(-18deg);
+  }
+
+  15%,
+  100% {
+    opacity: 0;
+    transform: translateX(420%) skewX(-18deg);
+  }
 }
 
 .wide {
@@ -47,23 +92,12 @@
   max-width: 720px;
 }
 
-.copy p,
 .copy h2,
 .copy > span {
   margin: 0;
 }
 
-.copy p {
-  color: var(--p2f-color-gel-blue-300);
-  font-size: var(--p2f-type-label-small-font-size);
-  font-weight: var(--p2f-type-label-small-font-weight);
-  line-height: var(--p2f-type-label-small-line-height);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .copy h2 {
-  margin-top: var(--p2f-space-8);
   color: var(--p2f-color-text-inverse);
   font-size: var(--p2f-type-heading-h2-font-size);
   font-weight: var(--p2f-type-heading-h2-font-weight);
@@ -271,13 +305,13 @@
     0 0 0 var(--p2f-interaction-focus-ring-width)
       var(--p2f-interaction-focus-ring-color),
     0 26px 64px rgb(10 16 47 / 32%);
-  transform: translateY(-6px) scale(1.025);
+  transform: scale(1.025);
 }
 
 @media (hover: hover) {
   .banner:hover {
     box-shadow: 0 26px 64px rgb(10 16 47 / 32%);
-    transform: translateY(-6px) scale(1.025);
+    transform: scale(1.025);
   }
 }
 
@@ -321,6 +355,11 @@
 @media (prefers-reduced-motion: reduce) {
   .banner {
     transition: none;
+  }
+
+  .banner::before {
+    animation: none;
+    opacity: 0;
   }
 
   .banner:hover,

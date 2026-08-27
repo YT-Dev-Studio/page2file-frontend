@@ -1,12 +1,21 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { getExtensionSeoLanding } from "@/content/extension-seo-landings";
 import { getLandingContent } from "@/content/landings";
+import { getBlogEntries, getBlogEntry } from "@/content/content-registry";
+import { getContentCopy } from "@/features/content/content-copy";
+import { getSupportCopy } from "@/features/support/support-copy";
 import { resolvePublicPage } from "@/features/routing/public-page-resolver";
 import { isLocale, localeRegistry, type Locale } from "@/shared/i18n/locales";
 import { buildMetadata } from "@/shared/seo/metadata";
 import { getSeoCopy } from "@/shared/seo/seo-copy";
-import { isStaticRoute, staticRoutes } from "@/shared/routes/routes";
+import {
+  isExtensionSeoRoute,
+  isStaticRoute,
+  isStaticRouteAvailable,
+  staticRoutesForLocale,
+} from "@/shared/routes/routes";
 
 type RouteParams = {
   locale: string;
@@ -16,10 +25,6 @@ type RouteParams = {
 type PageProps = {
   params: Promise<RouteParams>;
 };
-
-const staticContentRoutes: ReadonlyArray<string> = [
-  ...staticRoutes,
-];
 
 export const generateStaticParams = (): Array<RouteParams> => {
   const params: Array<RouteParams> = [];
@@ -32,7 +37,11 @@ export const generateStaticParams = (): Array<RouteParams> => {
         slug: route ? route.split("/") : [],
       });
     };
-    staticContentRoutes.forEach(addRoute);
+    staticRoutesForLocale(definition.code).forEach(addRoute);
+    addRoute("blog");
+    getBlogEntries(definition.code).forEach((entry): void => {
+      addRoute(`blog/${entry.slug}`);
+    });
   };
   localeRegistry.forEach(addLocale);
   return params;
@@ -49,6 +58,41 @@ const getRouteMetadata = (
   if (route === "chrome-extension/how-to-use") {
     return buildMetadata({ locale, route, ...getSeoCopy(locale, "guide") });
   }
+  if (route === "blog") {
+    const copy = getContentCopy(locale).blog;
+    return buildMetadata({
+      locale,
+      route,
+      title: copy.title,
+      description: copy.description,
+    });
+  }
+  if (route === "support") {
+    const copy = getSupportCopy(locale);
+    return buildMetadata({
+      locale,
+      route,
+      title: copy.metadataTitle,
+      description: copy.metadataDescription,
+    });
+  }
+  if (segments[0] === "blog" && segments.length === 2) {
+    const entry = getBlogEntry(locale, segments[1]);
+    if (entry) {
+      return buildMetadata({
+        locale,
+        route,
+        title: entry.title,
+        description: entry.description,
+        kind: "article",
+        publishedAt: entry.publishedAt,
+        updatedAt: entry.updatedAt,
+        author: entry.author,
+        image: entry.image,
+        imageAlt: entry.imageAlt,
+      });
+    }
+  }
   if (segments[0] === "preview" || segments[0] === "download") {
     const key = segments[0] === "preview" ? "preview" : "download";
     return buildMetadata({
@@ -59,6 +103,24 @@ const getRouteMetadata = (
     });
   }
   if (isStaticRoute(route)) {
+    if (!isStaticRouteAvailable(locale, route)) {
+      return buildMetadata({
+        locale,
+        route,
+        ...getSeoCopy(locale, "notFound"),
+        noindex: true,
+      });
+    }
+    if (isExtensionSeoRoute(route)) {
+      const content = getExtensionSeoLanding(route);
+      return buildMetadata({
+        locale,
+        route,
+        title: content.title,
+        description: content.description,
+        localized: false,
+      });
+    }
     const content = getLandingContent(locale, route);
     if (content) {
       return buildMetadata({

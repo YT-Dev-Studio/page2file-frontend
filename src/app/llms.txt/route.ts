@@ -1,5 +1,6 @@
 import { absoluteUrl, legalProfile, siteDescription } from "@/shared/config/site";
 import { localeRegistry } from "@/shared/i18n/locales";
+import { getBlogEntries } from "@/content/content-registry";
 import { routePath, staticRoutes } from "@/shared/routes/routes";
 
 export const dynamic = "force-static";
@@ -20,18 +21,26 @@ export function GET(): Response {
         )}`,
     )
     .join("\n");
+  const blogRoutes = getBlogEntries("en").map(
+    (entry): string =>
+      `- ${entry.title}: ${absoluteUrl(routePath("en", `blog/${entry.slug}`))}`,
+  );
 
   const body = [
     "# Page 2 File",
     "",
     siteDescription,
-    "Page 2 File is a Chrome extension for saving the current webpage or a supported browser chat as a PDF. It offers appearance-first, selectable-text, and chat-focused output.",
+    "Page 2 File is the website for Page 2 PDF, a Chrome extension that saves the active webpage or a supported browser conversation as a visual, selectable, or transcript-focused PDF.",
     "",
     "## Languages",
     languages,
     "",
     "## Main pages",
     ...englishRoutes,
+    `- Blog: ${absoluteUrl(routePath("en", "blog"))}`,
+    "",
+    "## Field guides",
+    ...blogRoutes,
     "",
     "## Discovery and contact",
     `- Sitemap: ${absoluteUrl("/sitemap.xml")}`,
@@ -41,7 +50,7 @@ export function GET(): Response {
     `- Terms: ${absoluteUrl("/en/terms")}`,
     `- Contact: mailto:${legalProfile.contactEmail}`,
     "",
-    "Localized versions use the same path after their language prefix. HTML pages are the primary source of truth.",
+    "Localized versions use the same path after their language prefix. HTML pages are the canonical reference.",
     "",
   ].join("\n");
 

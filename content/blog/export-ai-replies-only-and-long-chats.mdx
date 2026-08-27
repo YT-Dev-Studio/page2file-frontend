@@ -1,0 +1,50 @@
+Replies-only is useful when the deliverable is a set of assistant answers, while all messages is safer when prompts, corrections, and decision history matter. Page 2 PDF lets you choose either scope and loads no more than the latest 2,000 retrievable messages from the current supported conversation.
+
+## Choose scope by how the PDF will be read
+
+Use all messages for an audit trail, a collaborative decision, troubleshooting, or any answer whose meaning depends on the prompt. Use replies-only for a response packet after checking that names, constraints, and references remain understandable without user turns.
+
+Replies-only does not summarize or merge answers. It filters detected roles. If a platform labels system notices, tool results, or agent activity differently, inspect the preview to ensure the remaining order is meaningful.
+
+<ArticleFigure
+  src="/blog/demos/chat-scope-and-limit.webp"
+  alt="Two-message Page 2 PDF test transcript with links and supported media references"
+  caption="Message scope changes context, while the history loader's hard ceiling changes how far back the transcript can begin."
+  step={1}
+  openLabel="Open the chat scope and limit diagram"
+  closeLabel="Close the chat scope and limit diagram"
+/>
+
+## Understand the 2,000-message ceiling
+
+The ceiling applies to messages the bounded loader can retrieve from the page. It is not a promise that every service exposes 2,000 turns. A virtualized conversation may discard older elements, an account may restrict history, or the platform interface may change.
+
+Check the first included message and compare it with the period you need. If the transcript begins too late, split the work into a smaller conversation where the platform permits it, preserve a narrower decision range, or use the provider's official data export. Page 2 PDF does not bypass loading restrictions.
+
+## Load the conversation without changing it
+
+Open the exact thread, expand necessary branches, code blocks, citations, and attachments, and wait for visible material to load. Keep the tab open while the extension prepares the PDF. Do not navigate to another conversation or close the browser page.
+
+Platform changes can cause duplicated, reversed, or missing roles. Stop if the preview shows those symptoms. A dedicated adapter is backed by tests for its release, but live behavior still needs a smoke check.
+
+The [general AI export guide](/en/blog/export-ai-chat-to-pdf) lists supported adapters. The [semantic block guide](/en/blog/preserve-code-tables-citations-in-chat-pdf) covers code, tables, citations, and media.
+
+## Use media controls deliberately
+
+Images, video, audio, and links have separate removal controls. Remove media to reduce distraction or disclosure only after confirming it is not evidence. A video poster may identify the referenced clip even when the video itself is not embedded. An audio reference may be necessary to explain a voice reply.
+
+For a direct product workflow, open [AI chat to PDF](/en/chrome-extension/ai-chat-to-pdf). For a broad account archive, read the [chat PDF versus account-data guide](/en/blog/chat-pdf-vs-account-data-export).
+
+## Long-chat questions
+
+### Is 2,000 a page limit?
+
+No. It is the maximum number of retrievable chat messages considered by the history loader. PDF page count and file limits are separate.
+
+### Does replies-only keep system messages?
+
+The option is based on detected roles and the supported transcript model. Review platform-specific notices in the preview rather than assuming they are included.
+
+### Can I remove images but keep file names?
+
+Media and file structures can differ by platform. The image control removes supported images; check file references separately in the output.

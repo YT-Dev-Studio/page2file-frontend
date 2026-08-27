@@ -13,8 +13,10 @@ describe("ExternalCta", () => {
   test("uses the direct HTML 2 PDF GPT URL", () => {
     render(
       <ExternalCta
+        analyticsPlacement="workflow_hero"
         externalLinkKey="html2pdfGpt"
         label="Open GPT HTML 2 PDF"
+        locale="en"
         placeholderLabel="Browse GPTs"
       />,
     );
@@ -33,8 +35,10 @@ describe("ExternalCta", () => {
 
     render(
       <ExternalCta
+        analyticsPlacement="workflow_hero"
         externalLinkKey="page2pdfGpt"
         label="Open GPT Webpage 2 PDF"
+        locale="en"
         placeholderLabel="Browse GPTs"
       />,
     );
@@ -53,8 +57,10 @@ describe("ExternalCta", () => {
 
     render(
       <ExternalCta
+        analyticsPlacement="workflow_hero"
         externalLinkKey="page2pdfGpt"
         label="Open GPT Webpage 2 PDF"
+        locale="en"
         placeholderLabel="Browse GPTs"
       />,
     );

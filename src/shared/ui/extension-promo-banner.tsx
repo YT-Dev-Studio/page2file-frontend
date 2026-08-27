@@ -1,20 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import type { Locale } from "@/shared/i18n/locales";
 import {
-  getExtensionActionLabel,
-  getExtensionLink,
-} from "@/shared/routes/extension-link";
+  analyticsDataAttributes,
+  type AnalyticsPlacement,
+} from "@/features/analytics/analytics-events";
+import type { Locale } from "@/shared/i18n/locales";
+import { getExtensionLink } from "@/shared/routes/extension-link";
 import { ArrowRightIcon } from "@/shared/ui/utilities/icons/glyphs/arrow-right-icon";
 import { ChromeIcon } from "@/shared/ui/utilities/icons/glyphs/chrome-icon";
 import styles from "./extension-promo-banner.module.css";
 
 type ExtensionPromoBannerProps = {
   actionLabel: string;
+  analyticsPlacement: Extract<
+    AnalyticsPlacement,
+    "home_promo" | "home_final"
+  >;
   body: string;
   className?: string;
-  eyebrow: string;
   headingId: string;
   locale: Locale;
   title: string;
@@ -90,16 +94,14 @@ const ChromeStoreArtwork = (): ReactNode => (
 const BannerContent = ({
   actionLabel,
   body,
-  eyebrow,
   headingId,
   title,
 }: Pick<
   ExtensionPromoBannerProps,
-  "actionLabel" | "body" | "eyebrow" | "headingId" | "title"
+  "actionLabel" | "body" | "headingId" | "title"
 >): ReactNode => (
   <>
     <div className={styles.copy}>
-      <p>{eyebrow}</p>
       <h2 id={headingId}>{title}</h2>
       <span>{body}</span>
       <strong className={styles.action}>
@@ -118,23 +120,26 @@ const BannerContent = ({
 
 export const ExtensionPromoBanner = ({
   actionLabel,
+  analyticsPlacement,
   body,
   className,
-  eyebrow,
   headingId,
   locale,
   title,
   variant = "wide",
 }: ExtensionPromoBannerProps): ReactNode => {
   const extensionLink = getExtensionLink(locale);
-  const resolvedActionLabel = getExtensionActionLabel(locale, actionLabel);
+  const analyticsAttributes = analyticsDataAttributes({
+    locale,
+    name: "extension_install_click",
+    placement: analyticsPlacement,
+  });
   const bannerClassName =
     `${styles.banner} ${styles[variant]} ${className ?? ""}`.trim();
   const content = (
     <BannerContent
-      actionLabel={resolvedActionLabel}
+      actionLabel={actionLabel}
       body={body}
-      eyebrow={eyebrow}
       headingId={headingId}
       title={title}
     />
@@ -142,7 +147,8 @@ export const ExtensionPromoBanner = ({
 
   return extensionLink.external ? (
     <a
-      aria-label={`${title}. ${resolvedActionLabel}`}
+      {...analyticsAttributes}
+      aria-label={`${title}. ${actionLabel}`}
       className={bannerClassName}
       href={extensionLink.href}
       rel="noopener noreferrer"
@@ -152,7 +158,8 @@ export const ExtensionPromoBanner = ({
     </a>
   ) : (
     <Link
-      aria-label={`${title}. ${resolvedActionLabel}`}
+      {...analyticsAttributes}
+      aria-label={`${title}. ${actionLabel}`}
       className={bannerClassName}
       href={extensionLink.href}
     >

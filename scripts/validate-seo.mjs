@@ -1,27 +1,24 @@
-import { readFile, readdir } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { readFile, readdir, stat } from "node:fs/promises";
 import { join } from "node:path";
 
 const ROOT = process.cwd();
 const SITE_NAME = "Page 2 File";
 const PRODUCTION_ORIGIN = "https://page2file.com";
-const LOCALES = [
-  "en",
-  "ru",
-  "de",
-  "fr",
-  "es",
-  "nl",
-  "pt",
-  "it",
-  "pl",
-  "cs",
-  "sv",
-  "no",
-  "da",
-  "fi",
-  "ro",
-  "hu",
-];
+const LOCALES = ["en", "ru"];
+const EN_ONLY_ROUTE_PATHS = new Set([
+  "/en/chrome-extension/webpage-to-pdf",
+  "/en/chrome-extension/ai-chat-to-pdf",
+  "/en/chrome-extension/messenger-chat-to-pdf",
+  "/en/chrome-extension/full-page-pdf",
+  "/en/chrome-extension/webpage-to-pdf-with-links",
+  "/en/chrome-extension/html-page-to-pdf",
+  "/en/chrome-extension/chatgpt-to-pdf",
+  "/en/chrome-extension/claude-to-pdf",
+  "/en/chrome-extension/whatsapp-chat-to-pdf",
+  "/en/chrome-extension/telegram-chat-to-pdf",
+  "/en/chrome-extension/chrome-print-vs-page-2-pdf",
+]);
 const SOURCE_CHECKS = [
   [
     "src/shared/seo/metadata.ts",
@@ -29,7 +26,7 @@ const SOURCE_CHECKS = [
   ],
   [
     "src/shared/seo/structured-data.tsx",
-    ["WebSite", "BlogPosting", "BreadcrumbList", "Organization"],
+    ["WebSite", "BlogPosting", "BreadcrumbList", "Organization", "SoftwareApplication"],
   ],
   [
     "src/app/robots.ts",
@@ -49,6 +46,61 @@ const addError = (message) => {
 };
 const readText = (relativePath) =>
   readFile(join(ROOT, relativePath), "utf8");
+const parseCsv = (source) => {
+  const rows = [];
+  let row = [];
+  let field = "";
+  let quoted = false;
+  for (let index = 0; index < source.length; index += 1) {
+    const character = source[index];
+    if (quoted) {
+      if (character === '"' && source[index + 1] === '"') {
+        field += '"';
+        index += 1;
+      } else if (character === '"') {
+        quoted = false;
+      } else {
+        field += character;
+      }
+      continue;
+    }
+    if (character === '"') {
+      quoted = true;
+    } else if (character === ",") {
+      row.push(field);
+      field = "";
+    } else if (character === "\n") {
+      row.push(field.replace(/\r$/, ""));
+      rows.push(row);
+      row = [];
+      field = "";
+    } else {
+      field += character;
+    }
+  }
+  if (field || row.length > 0) {
+    row.push(field.replace(/\r$/, ""));
+    rows.push(row);
+  }
+  const [header = [], ...values] = rows;
+  return values
+    .filter((valuesRow) => valuesRow.some(Boolean))
+    .map((valuesRow) =>
+      Object.fromEntries(
+        header.map((name, index) => [name, valuesRow[index] ?? ""]),
+      ),
+    );
+};
+const readCsv = async (relativePath) =>
+  parseCsv(await readText(relativePath));
+const normalizeQuery = (value) => value.trim().toLowerCase();
+const splitSources = (value) =>
+  value
+    .split("|")
+    .map((source) => source.trim())
+    .filter(Boolean);
+const sha256 = (bytes) =>
+  createHash("sha256").update(bytes).digest("hex");
 const escapeRegExp = (value) =>
   value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const decodeHtml = (value) =>
@@ -100,7 +152,486 @@ const pageTitle = (html) =>
     html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]?.trim() ?? "",
   );
 
+const validateSemanticData = async () => {
+  const [
+    core,
+    excluded,
+    ledger,
+    competitorPatterns,
+    storeCopyAnalysis,
+    storeCopyTraceability,
+    usValidation,
+    acquisitionProspects,
+  ] = await Promise.all([
+    readCsv("SEO/semantic-core-en.csv"),
+    readCsv("SEO/excluded-keywords.csv"),
+    readCsv("SEO/source-ledger.csv"),
+    readCsv("SEO/competitor-growth-patterns.csv"),
+    readCsv("SEO/chrome-web-store-copy-analysis-en-US.csv"),
+    readCsv("SEO/chrome-web-store-query-traceability-en-US.csv"),
+    readCsv("SEO/us-serp-validation.csv"),
+    readCsv("SEO/acquisition-prospects-en-US.csv"),
+  ]);
+  const coreQueries = new Set();
+  const excludedQueries = new Set();
+  const allowedTargetUrls = new Set([
+    "",
+    "/en",
+    "/en/chrome-extension/how-to-use",
+    "/en/chrome-extension/webpage-to-pdf",
+    "/en/chrome-extension/ai-chat-to-pdf",
+    "/en/chrome-extension/messenger-chat-to-pdf",
+    "/en/chrome-extension/full-page-pdf",
+    "/en/chrome-extension/webpage-to-pdf-with-links",
+    "/en/chrome-extension/html-page-to-pdf",
+    "/en/chrome-extension/chatgpt-to-pdf",
+    "/en/chrome-extension/claude-to-pdf",
+    "/en/chrome-extension/whatsapp-chat-to-pdf",
+    "/en/chrome-extension/telegram-chat-to-pdf",
+    "/en/chrome-extension/chrome-print-vs-page-2-pdf",
+  ]);
+  const allowedMarketScopes = new Set(["worldwide_english", "us_first"]);
+  const allowedValidationStates = new Set(["pending", "validated", "rejected"]);
+  const forbiddenTargets = new Set([
+    "chatgpt export data",
+    "export all whatsapp chats",
+    "whatsapp export all chats",
+    "discord export chat",
+    "export discord chat",
+    "export instagram chat",
+    "export messenger chat",
+    "export teams chat",
+    "export teams chat history",
+    "how to export instagram chat",
+    "how to export teams chat",
+    "microsoft teams export chat",
+    "teams chat export",
+    "teams export chat",
+  ]);
+  const informationalQueries = new Set([
+    "export chat in whatsapp meaning",
+    "export chat whatsapp meaning",
+    "what does export chat mean on whatsapp",
+    "what is export chat in whatsapp",
+  ]);
+  const activeTabQueries = new Set([
+    "convert webpage to pdf",
+    "html to pdf",
+    "html to pdf converter",
+    "url to pdf",
+    "webpage to pdf",
+    "website to pdf",
+  ]);
+  if (competitorPatterns.length < 10) {
+    addError("Competitor growth evidence must contain at least 10 sourced patterns.");
+  }
+  for (const row of competitorPatterns) {
+    for (const field of [
+      "product",
+      "surface",
+      "pattern",
+      "evidence",
+      "source_url",
+      "confidence",
+      "applicability",
+      "policy_risk",
+    ]) {
+      if (!row[field]?.trim()) {
+        addError(`Competitor growth evidence is missing ${field}.`);
+      }
+    }
+    if (!new Set(["high", "medium", "low"]).has(row.confidence)) {
+      addError(`${row.product || "Competitor"}: invalid evidence confidence.`);
+    }
+    try {
+      const source = new URL(row.source_url);
+      if (source.protocol !== "https:") {
+        addError(`${row.product}: evidence source must use HTTPS.`);
+      }
+    } catch {
+      addError(`${row.product || "Competitor"}: invalid evidence source URL.`);
+    }
+  }
+  if (acquisitionProspects.length !== 50) {
+    addError(
+      `Expected 50 en-US acquisition prospects, found ${acquisitionProspects.length}.`,
+    );
+  }
+  const prospectUrls = new Set();
+  for (const row of acquisitionProspects) {
+    if (prospectUrls.has(row.url)) {
+      addError(`Duplicate acquisition prospect URL: ${row.url}`);
+    }
+    prospectUrls.add(row.url);
+    if (!row.outreach_angle || !row.status) {
+      addError(`${row.title || row.url}: incomplete acquisition prospect.`);
+    }
+  }
+  const targetQueries = new Set(
+    core
+      .filter((row) => row.status === "target")
+      .map((row) => normalizeQuery(row.query ?? "")),
+  );
+  const targetRows = new Map(
+    core
+      .filter((row) => row.status === "target")
+      .map((row) => [normalizeQuery(row.query ?? ""), row]),
+  );
+  const expectedCopyReferences = new Set([
+    "sig-website",
+    "viralmaxing",
+    "messangermax",
+    "parceled",
+    "toneperfect",
+    "yadaphone",
+    "yadaphone-interview",
+    "html-to-pdf-extension",
+    "bota-chat",
+    "youtube-dark-mode",
+    "pixel-measurement",
+    "youtube-to-text",
+    "chatgpt-pdf",
+    "chatgpt-sheets",
+    "sigmobi-extension",
+    "audio-voice-recorder",
+  ]);
+  const copyReferenceIds = new Set();
+  let duplicateInputNotes = 0;
+  if (storeCopyAnalysis.length !== expectedCopyReferences.size) {
+    addError(
+      `Expected ${expectedCopyReferences.size} unique Store-copy references, found ${storeCopyAnalysis.length}.`,
+    );
+  }
+  for (const row of storeCopyAnalysis) {
+    const referenceId = row.reference_id?.trim();
+    if (copyReferenceIds.has(referenceId)) {
+      addError(`Duplicate Store-copy reference: ${referenceId}.`);
+    }
+    copyReferenceIds.add(referenceId);
+    for (const field of [
+      "reference_id",
+      "product",
+      "surface",
+      "source_url",
+      "evidence_status",
+      "useful_pattern",
+      "risk_or_weakness",
+      "applied_to_page_2_pdf",
+      "not_applied",
+      "review_status",
+    ]) {
+      if (!row[field]?.trim()) {
+        addError(`${referenceId || "Store-copy reference"}: missing ${field}.`);
+      }
+    }
+    if (!new Set(["available", "partial"]).has(row.evidence_status)) {
+      addError(`${referenceId}: invalid evidence_status.`);
+    }
+    if (row.review_status !== "pass") {
+      addError(`${referenceId}: Store-copy review is not pass.`);
+    }
+    if (row.duplicate_input_note?.trim()) {
+      duplicateInputNotes += 1;
+      if (referenceId !== "youtube-to-text") {
+        addError(`${referenceId}: unexpected duplicate-input note.`);
+      }
+    }
+    try {
+      const source = new URL(row.source_url);
+      if (source.protocol !== "https:") {
+        addError(`${referenceId}: Store-copy source must use HTTPS.`);
+      }
+    } catch {
+      addError(`${referenceId}: invalid Store-copy source URL.`);
+    }
+  }
+  for (const referenceId of expectedCopyReferences) {
+    if (!copyReferenceIds.has(referenceId)) {
+      addError(`Missing Store-copy reference: ${referenceId}.`);
+    }
+  }
+  if (duplicateInputNotes !== 1) {
+    addError("The duplicated YouTube To Text input must be documented exactly once.");
+  }
+
+  const allowedTraceabilityStatuses = new Set([
+    "included",
+    "covered semantically",
+    "excluded with reason",
+  ]);
+  const allowedStoreLocations = new Set([
+    "title",
+    "long_description",
+    "long_description_boundaries",
+    "not_applicable",
+  ]);
+  const traceabilityQueries = new Set();
+  if (storeCopyTraceability.length !== targetQueries.size) {
+    addError(
+      `Expected Store-copy traceability for ${targetQueries.size} target queries, found ${storeCopyTraceability.length}.`,
+    );
+  }
+  for (const row of storeCopyTraceability) {
+    const query = normalizeQuery(row.query ?? "");
+    const target = targetRows.get(query);
+    if (traceabilityQueries.has(query)) {
+      addError(`Duplicate Store-copy traceability query: ${query}.`);
+    }
+    traceabilityQueries.add(query);
+    if (!target) {
+      addError(`Store-copy traceability contains a non-target query: ${query}.`);
+      continue;
+    }
+    if (row.cluster !== target.cluster) {
+      addError(`${query}: traceability cluster does not match semantic core.`);
+    }
+    if (row.product_relevance !== target.product_relevance) {
+      addError(`${query}: traceability product relevance does not match semantic core.`);
+    }
+    if (!allowedTraceabilityStatuses.has(row.status)) {
+      addError(`${query}: invalid Store-copy traceability status.`);
+    }
+    if (!allowedStoreLocations.has(row.store_location)) {
+      addError(`${query}: invalid Store-copy location.`);
+    }
+    if (!row.coverage_or_reason?.trim()) {
+      addError(`${query}: missing Store-copy coverage or exclusion reason.`);
+    }
+    if (row.review_status !== "pass") {
+      addError(`${query}: Store-copy traceability review is not pass.`);
+    }
+    if (row.us_validation_status !== target.us_validation_status) {
+      addError(`${query}: traceability US validation state does not match semantic core.`);
+    }
+    if (
+      row.us_validation_status === "pending" &&
+      !/worldwide trends is not treated as us search volume/i.test(
+        row.us_validation_note ?? "",
+      )
+    ) {
+      addError(`${query}: pending US demand requires an explicit non-US-volume note.`);
+    }
+    if (
+      row.status === "excluded with reason" &&
+      row.store_location !== "not_applicable"
+    ) {
+      addError(`${query}: excluded Store intent must use not_applicable location.`);
+    }
+    if (
+      row.status !== "excluded with reason" &&
+      row.store_location === "not_applicable"
+    ) {
+      addError(`${query}: covered Store intent cannot use not_applicable location.`);
+    }
+  }
+  for (const query of targetQueries) {
+    if (!traceabilityQueries.has(query)) {
+      addError(`Target query is missing from Store-copy traceability: ${query}.`);
+    }
+  }
+  const usQueueQueries = new Set();
+  for (const row of usValidation) {
+    const query = normalizeQuery(row.query ?? "");
+    const target = targetRows.get(query);
+    if (usQueueQueries.has(query)) {
+      addError(`Duplicate US SERP validation query: ${query}`);
+    }
+    usQueueQueries.add(query);
+    if (!targetQueries.has(query)) {
+      addError(`US SERP validation contains a non-target query: ${query}`);
+    }
+    if (row.market_scope !== "US") {
+      addError(`${query}: US SERP validation must use market_scope US.`);
+    }
+    if (!allowedValidationStates.has(row.us_validation_status ?? "")) {
+      addError(`${query}: invalid US SERP validation status.`);
+    }
+    if (target && row.us_validation_status !== target.us_validation_status) {
+      addError(`${query}: US SERP queue state does not match semantic core.`);
+    }
+    if (target && row.target_url !== target.target_url) {
+      addError(`${query}: US SERP target URL does not match semantic core.`);
+    }
+    if (
+      row.us_validation_status === "validated" &&
+      (!row.us_serp_checked_at || !row.evidence_url)
+    ) {
+      addError(`${query}: validated US demand requires a date and evidence URL.`);
+    }
+    if (
+      Boolean(row.us_serp_checked_at) !== Boolean(row.evidence_url)
+    ) {
+      addError(`${query}: SERP check date and evidence URL must be recorded together.`);
+    }
+    if (
+      row.us_serp_checked_at &&
+      (!/^\d{4}-\d{2}-\d{2}$/.test(row.us_serp_checked_at) ||
+        Number.isNaN(Date.parse(`${row.us_serp_checked_at}T00:00:00Z`)))
+    ) {
+      addError(`${query}: invalid SERP check date ${row.us_serp_checked_at}.`);
+    }
+    if (row.evidence_url) {
+      try {
+        if (new URL(row.evidence_url).protocol !== "https:") {
+          addError(`${query}: SERP evidence URL must use HTTPS.`);
+        }
+      } catch {
+        addError(`${query}: invalid SERP evidence URL.`);
+      }
+    }
+  }
+  for (const query of targetQueries) {
+    if (!usQueueQueries.has(query)) {
+      addError(`Target query is missing from the US SERP validation queue: ${query}`);
+    }
+  }
+
+  for (const row of core) {
+    const query = normalizeQuery(row.query ?? "");
+    if (!query) {
+      addError("SEO/semantic-core-en.csv contains an empty query.");
+      continue;
+    }
+    if (coreQueries.has(query)) {
+      addError(`Duplicate semantic-core query: ${query}`);
+    }
+    coreQueries.add(query);
+    if (!allowedTargetUrls.has(row.target_url ?? "")) {
+      addError(`${query}: unsupported target URL ${row.target_url}.`);
+    }
+    if (!allowedMarketScopes.has(row.market_scope ?? "")) {
+      addError(`${query}: invalid market_scope ${row.market_scope || "missing"}.`);
+    }
+    if (!allowedValidationStates.has(row.us_validation_status ?? "")) {
+      addError(
+        `${query}: invalid us_validation_status ${row.us_validation_status || "missing"}.`,
+      );
+    }
+    if (row.status === "target" && !row.target_url) {
+      addError(`${query}: target query has no target_url.`);
+    }
+    if (row.status === "research" && row.target_url) {
+      addError(`${query}: research query must not have a target_url.`);
+    }
+    if (row.status === "target" && forbiddenTargets.has(query)) {
+      addError(`${query}: target promises an unsupported product workflow.`);
+    }
+    if (informationalQueries.has(query) && row.status !== "research") {
+      addError(`${query}: WhatsApp feature-definition intent must remain research.`);
+    }
+    if (
+      activeTabQueries.has(query) &&
+      !/active-tab|opens? the webpage in chrome|open chrome tab/i.test(
+        row.serp_intent_notes ?? "",
+      )
+    ) {
+      addError(`${query}: broad converter intent is missing the active-tab boundary.`);
+    }
+    if (
+      row.us_validation_status === "validated" &&
+      (row.market_scope !== "us_first" || !row.serp_checked_at)
+    ) {
+      addError(`${query}: US validation requires US scope and a dated SERP check.`);
+    }
+  }
+
+  for (const row of excluded) {
+    const query = normalizeQuery(row.query ?? "");
+    if (!query) {
+      addError("SEO/excluded-keywords.csv contains an empty query.");
+      continue;
+    }
+    if (excludedQueries.has(query)) {
+      addError(`Duplicate excluded query: ${query}`);
+    }
+    excludedQueries.add(query);
+    if (coreQueries.has(query)) {
+      addError(`Query exists in semantic core and excluded list: ${query}`);
+    }
+  }
+
+  if (coreQueries.has("export grok deepseek perplexity or copilot chat to pdf")) {
+    addError("Mixed Grok/DeepSeek/Perplexity/Copilot seed must remain split.");
+  }
+  for (const required of [
+    "export grok chat to pdf",
+    "export perplexity chat to pdf",
+    "export microsoft copilot chat to pdf",
+    "export deepseek chat to pdf",
+  ]) {
+    if (!coreQueries.has(required)) {
+      addError(`Missing split AI-chat query: ${required}`);
+    }
+  }
+  const deepSeek = core.find(
+    (row) => normalizeQuery(row.query ?? "") === "export deepseek chat to pdf",
+  );
+  if (deepSeek?.status !== "research") {
+    addError("DeepSeek must remain research until its live adapter is verified.");
+  }
+
+  const ledgerBySource = new Map();
+  for (const row of ledger) {
+    const source = row.source_file?.trim() ?? "";
+    if (!source) {
+      addError("SEO/source-ledger.csv contains an empty source_file.");
+      continue;
+    }
+    if (ledgerBySource.has(source)) {
+      addError(`Duplicate source-ledger entry: ${source}`);
+    }
+    ledgerBySource.set(source, row);
+    const sourcePath = join(ROOT, source);
+    let present = false;
+    let bytes;
+    try {
+      const metadata = await stat(sourcePath);
+      present = metadata.isFile();
+      if (present) {
+        bytes = await readFile(sourcePath);
+      }
+    } catch {
+      present = false;
+    }
+    const expectedAvailability = present ? "present" : "missing";
+    if (row.availability !== expectedAvailability) {
+      addError(
+        `${source}: ledger availability is ${row.availability || "missing"}, expected ${expectedAvailability}.`,
+      );
+    }
+    if (present && row.source_sha256 !== sha256(bytes)) {
+      addError(`${source}: ledger SHA-256 does not match the available source.`);
+    }
+    if (!present && row.source_sha256) {
+      addError(`${source}: missing source must not have a SHA-256 value.`);
+    }
+  }
+
+  for (const row of core) {
+    for (const source of splitSources(row.source_files ?? "")) {
+      if (!ledgerBySource.has(source)) {
+        addError(`${row.query}: source is absent from the ledger: ${source}`);
+      }
+    }
+  }
+
+  let trendFiles = [];
+  try {
+    trendFiles = (await readdir(join(ROOT, "SEO", "trends"))).filter(
+      (filename) => filename.endsWith(".csv"),
+    );
+  } catch {
+    trendFiles = [];
+  }
+  for (const filename of trendFiles) {
+    if (!ledgerBySource.has(`SEO/trends/${filename}`)) {
+      addError(`Orphan Trends CSV is not present in the source ledger: ${filename}`);
+    }
+  }
+};
+
 const validateSource = async () => {
+  await validateSemanticData();
   for (const [relativePath, requiredSnippets] of SOURCE_CHECKS) {
     let source;
     try {
@@ -114,6 +645,15 @@ const validateSource = async () => {
         addError(`${relativePath} is missing required SEO marker: ${snippet}`);
       }
     }
+  }
+
+  const structuredDataSource = await readText(
+    "src/shared/seo/structured-data.tsx",
+  );
+  if (/\bprice:\s*["']0["']/.test(structuredDataSource)) {
+    addError(
+      "SoftwareApplication JSON-LD must not publish unverified zero-price data.",
+    );
   }
 
   const localeSource = await readText("src/shared/i18n/locales.ts");
@@ -135,6 +675,43 @@ const validateSource = async () => {
     addError(
       `Site configuration does not contain the canonical production origin ${PRODUCTION_ORIGIN}.`,
     );
+  }
+
+  const extensionContractSource = [
+    await readText("src/features/extension/extension-copy.ts"),
+    await readText("src/content/extension-seo-landings.ts"),
+  ].join("\n");
+  for (const marker of [
+    "active tab",
+    "2,000",
+    "selectable text",
+    "safe links",
+    "Regional OCR",
+    "project archive",
+    "ChatGPT",
+    "Gemini",
+    "Claude",
+    "Grok",
+    "Perplexity",
+    "Microsoft Copilot",
+    "Manus",
+    "WhatsApp Web",
+    "Telegram Web",
+    "conditional compatibility, not universal support",
+  ]) {
+    if (!extensionContractSource.includes(marker)) {
+      addError(`Product-copy contract is missing: ${marker}.`);
+    }
+  }
+  if (
+    /\b(?:supports?|compatible with)\s+(?:Slack|Instagram|Discord|Messenger|Teams)\b/i.test(
+      extensionContractSource,
+    ) ||
+    /\b(?:any|all|every) AI (?:chat|conversation|website|site)\b/i.test(
+      extensionContractSource,
+    )
+  ) {
+    addError("Product copy makes an unsupported universal platform claim.");
   }
 
   const packageJson = JSON.parse(await readText("package.json"));
@@ -185,6 +762,12 @@ const validateSource = async () => {
       addError("SEO/page-intent-map.json does not cover all locales.");
     }
     const keys = new Set();
+    const primaryQueries = new Set();
+    const semanticTargets = new Map(
+      (await readCsv("SEO/semantic-core-en.csv"))
+        .filter((row) => row.status === "target")
+        .map((row) => [normalizeQuery(row.query ?? ""), row.target_url]),
+    );
     for (const entry of entries) {
       const key = entry.route;
       if (keys.has(key)) {
@@ -198,11 +781,26 @@ const validateSource = async () => {
           entry.primaryIntentSource,
         ) ||
         !entry.intentType ||
+        !entry.primaryQuery ||
         !entry.purpose ||
         !Array.isArray(entry.internalLinks) ||
         !Array.isArray(entry.avoidCompetingWith)
       ) {
         addError(`Incomplete intent-map entry: ${key}`);
+      }
+      const primaryQuery = normalizeQuery(entry.primaryQuery ?? "");
+      if (primaryQueries.has(primaryQuery)) {
+        addError(`Duplicate primary query in intent map: ${primaryQuery}.`);
+      }
+      primaryQueries.add(primaryQuery);
+      if (entry.primaryIntentSource === "localized-content-title") {
+        const targetUrl = semanticTargets.get(primaryQuery);
+        const expectedTargetUrl = `/en/${entry.route}`;
+        if (targetUrl !== expectedTargetUrl) {
+          addError(
+            `${entry.route}: primary query ${primaryQuery} does not target ${expectedTargetUrl} in the semantic core.`,
+          );
+        }
       }
     }
     const routeSource = await readText("src/shared/routes/routes.ts");
@@ -219,7 +817,7 @@ const validateSource = async () => {
     const blogFiles = (await readdir(join(ROOT, "content", "blog")))
       .filter((filename) => filename.endsWith(".mdx"))
       .map((filename) => `blog/${filename.slice(0, -4)}`);
-    const expectedRoutes = new Set([...staticRoutes, ...blogFiles]);
+    const expectedRoutes = new Set([...staticRoutes, "blog", ...blogFiles]);
     for (const route of expectedRoutes) {
       if (!keys.has(route)) {
         addError(`Intent map is missing route: ${route || "/"}`);
@@ -294,7 +892,10 @@ const validateRenderedPage = (url, html) => {
   const alternateLanguages = new Set(
     alternates.map((tag) => attribute(tag, "hreflang").toLowerCase()),
   );
-  const expectedLanguages = new Set(["x-default", ...LOCALES]);
+  const pagePath = new URL(url).pathname.replace(/\/+$/, "") || "/";
+  const expectedLanguages = EN_ONLY_ROUTE_PATHS.has(pagePath)
+    ? new Set(["x-default", "en"])
+    : new Set(["x-default", ...LOCALES]);
   if (
     alternates.length < expectedLanguages.size ||
     [...expectedLanguages].some(
@@ -302,7 +903,7 @@ const validateRenderedPage = (url, html) => {
     )
   ) {
     addError(
-      `${url}: expected ${LOCALES.length + 1} hreflang links, found ${alternates.length}.`,
+      `${url}: expected ${expectedLanguages.size} hreflang links, found ${alternates.length}.`,
     );
   }
   const expectedLanguage = new URL(url).pathname.split("/")[1];
@@ -431,6 +1032,7 @@ const validateRendered = async (baseUrl) => {
     for (const linkedPath of new Set(paths)) {
       if (
         /^\/(?:api|_next)\//.test(linkedPath) ||
+        /^\/samples\//.test(linkedPath) ||
         /^\/[^/]+\/(?:preview|download)\//.test(linkedPath) ||
         /^\/[^/]+\/(?:privacy|terms)$/.test(linkedPath)
       ) {

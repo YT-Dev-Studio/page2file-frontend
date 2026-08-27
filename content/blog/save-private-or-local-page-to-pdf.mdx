@@ -1,0 +1,50 @@
+Page 2 PDF can work with a signed-in page or a permitted local HTML file because it processes the active Chrome tab. It does not receive credentials, open a private URL for you, or bypass a site's access controls. You must already be able to view the exact page.
+
+## Save a page after signing in
+
+Complete authentication in the normal site interface, open the required report or document, and confirm that the visible values are correct. Then run Page 2 PDF from that tab. Accurate copy is appropriate when the screen state is the record; Editable document is better when searchable text and safe links matter.
+
+This is different from a server converter. A pasted URL cannot carry your authenticated browser state, and sending session data to a remote service would change the privacy and security model. Page 2 PDF reads the active tab through extension permissions and creates the document within the extension workflow.
+
+<ArticleFigure
+  src="/blog/demos/private-and-local-source.webp"
+  alt="Page 2 PDF preparation dialog over the active nested-scroll test tab"
+  caption="Open the original page yourself, verify access, and start the extension from that exact tab."
+  step={1}
+  openLabel="Open the private and local page diagram"
+  closeLabel="Close the private and local page diagram"
+/>
+
+## Open a local HTML file safely
+
+Drag a permitted `.html` file into Chrome or use the browser's Open File command. Chrome may require you to enable **Allow access to file URLs** for Page 2 PDF in the extension settings. That permission applies to local file pages; it does not grant access to arbitrary files outside what Chrome exposes to the tab.
+
+After the file loads, inspect relative images, fonts, and styles. A local document can refer to assets that are missing, blocked, or expected at a web-server address. The extension cannot recreate those resources. Save the loaded result with Accurate copy for appearance or Editable document for selectable content. The [HTML-page landing](/en/chrome-extension/html-page-to-pdf) summarizes the active-tab requirements.
+
+## Treat confidential content as a permission question
+
+Browser-side preparation does not remove your obligations to the page owner, employer, customer, or conversation participants. Confirm that you are allowed to create and share the PDF. Do not use the extension to evade access restrictions or retention rules.
+
+Keep the tab being exported open during preparation. If the site logs out, changes the report, removes an expiring asset, or hides data behind a protected frame, the result may be incomplete. Review every page before sharing. For dashboards with wide tables and nested panels, continue with the [dashboard export guide](/en/blog/save-dashboard-report-to-pdf).
+
+If the private page is a purchase confirmation, use the [receipt and order-page checklist](/en/blog/save-receipt-order-page-to-pdf) before creating the file.
+
+## Know which Chrome pages are unavailable
+
+Chrome blocks extensions on browser settings, the Chrome Web Store, developer tools, the page-code viewer, and other protected browser pages. Normal `http:`, `https:`, and permitted `file:` tabs can be exported.
+
+If the icon cannot act on a page, moving the same URL into another mode will not remove that browser restriction. Use the page's own download or print function where available.
+
+## Questions about access
+
+### Does Page 2 PDF store my website password?
+
+No. Authentication remains between Chrome and the original website. The extension works with the page already rendered in the tab; it does not ask for site credentials.
+
+### Can I paste an intranet URL into Page 2 File?
+
+Not for this workflow. Open the intranet page in Chrome and launch Page 2 PDF from the active tab.
+
+### Will a local HTML file become a self-contained editable project?
+
+No. Editable document can optionally include a scrubbed project ZIP with the PDF, capture metadata, an MHTML page snapshot, and checksums. That archive is not a format Page 2 PDF can import for later editing.

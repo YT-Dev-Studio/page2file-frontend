@@ -1,8 +1,17 @@
 .carousel {
-  margin-top: var(--p2f-space-48);
-  padding-top: var(--p2f-space-24);
-  border-top: var(--p2f-border-width-default) solid
+  margin-top: var(--p2f-space-64);
+  padding: var(--p2f-space-32);
+  border: var(--p2f-border-width-default) solid
     var(--p2f-color-border-default);
+  border-radius: var(--p2f-radius-card);
+  background: var(--p2f-color-background-subtle);
+}
+
+.singleCarousel {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.36fr) minmax(0, 0.64fr);
+  align-items: center;
+  gap: var(--p2f-space-40);
 }
 
 .header {
@@ -83,6 +92,17 @@
   display: none;
 }
 
+.singleViewport {
+  display: block;
+  margin-top: 0;
+  padding-bottom: 0;
+  overflow: visible;
+}
+
+.singleViewport .card {
+  min-height: 176px;
+}
+
 .card {
   position: relative;
   display: flex;
@@ -96,13 +116,13 @@
   background: var(--p2f-color-background-surface);
   transition:
     border-color 180ms ease,
-    transform 180ms ease;
+    background-color 180ms ease;
 }
 
 .card:hover,
 .card:focus-within {
   border-color: var(--p2f-color-border-strong);
-  transform: translateY(-2px);
+  background: var(--p2f-color-background-selected);
 }
 
 .card h3,
@@ -152,6 +172,18 @@
   height: 100%;
 }
 
+@media (max-width: 767px) {
+  .carousel {
+    margin-top: var(--p2f-space-48);
+    padding: var(--p2f-space-24);
+  }
+
+  .singleCarousel {
+    grid-template-columns: 1fr;
+    gap: var(--p2f-space-16);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .viewport {
     scroll-behavior: auto;
@@ -159,10 +191,5 @@
 
   .card {
     transition: none;
-  }
-
-  .card:hover,
-  .card:focus-within {
-    transform: none;
   }
 }

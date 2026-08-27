@@ -1,0 +1,50 @@
+Page 2 PDF can turn the current ChatGPT browser conversation into a portrait transcript with detected roles and supported code, tables, references, files, and images. It does not export every chat in the OpenAI account and does not replace OpenAI's official data-export process.
+
+## Export the open ChatGPT thread
+
+Open the target conversation and confirm that its relevant messages are visible or can be loaded. Launch Page 2 PDF from the same tab, choose **AI / Chat**, then select all messages or replies only. Decide whether images, video, audio, or links should remain.
+
+Keep the tab open during history loading and preparation. The loader is bounded to the latest 2,000 retrievable messages. A very long thread may begin later than expected if ChatGPT does not expose older turns to the current page.
+
+<ArticleFigure
+  src="/blog/demos/chatgpt-transcript-proof.webp"
+  alt="Two-message Page 2 PDF test transcript with links and supported media references"
+  caption="The PDF keeps conversation structure without copying the surrounding ChatGPT account interface."
+  step={1}
+  openLabel="Open the ChatGPT transcript example"
+  closeLabel="Close the ChatGPT transcript example"
+/>
+
+## Check structured blocks, not only plain text
+
+Inspect code indentation, long lines, table columns, quotations, and citation links. Expand collapsed material before export when it belongs in the record. File and media references depend on what the platform exposes and what remains accessible; expired or protected assets may be represented incompletely.
+
+Replies-only creates a compact answer document but can remove the question that gives an answer meaning. Use it for a curated response packet after checking context. Use all messages for an audit trail or collaborative record.
+
+The [semantic content guide](/en/blog/preserve-code-tables-citations-in-chat-pdf) provides a verification list. The [long-chat guide](/en/blog/export-ai-replies-only-and-long-chats) covers the history cap and media controls.
+
+## Know when OpenAI's export is better
+
+OpenAI documents an official account-data export in its [Help Center](https://help.openai.com/en/articles/7260999-how-do-i-export-my-chatgpt-history-and-data). Choose it when the goal is account portability, a broader archive, or machine-readable history. It is not the same as a clean PDF of one conversation.
+
+Choose Page 2 PDF when the reader needs the current thread as a document and you have verified the preview. Do not present the resulting PDF as an official OpenAI record or imply affiliation. The [chat PDF versus account archive guide](/en/blog/chat-pdf-vs-account-data-export) compares scope and format.
+
+## Handle changing platform markup honestly
+
+ChatGPT can change selectors, attachment drawers, citation presentation, or history loading. Page 2 PDF has a dedicated adapter backed by tests, but current live compatibility still belongs in release smoke checks. If roles are reversed, messages repeat, or reference links disappear, stop and report the failure rather than sharing the file.
+
+The product landing for this exact task is [ChatGPT to PDF](/en/chrome-extension/chatgpt-to-pdf). It owns the direct conversion intent; this guide focuses on preparation and verification.
+
+## ChatGPT export questions
+
+### Does the PDF include hidden chats or deleted messages?
+
+No. It works with the current page and cannot retrieve deleted, hidden, or unavailable conversations.
+
+### Can I keep only assistant answers?
+
+Yes. Choose replies-only, then check that each answer remains understandable without its prompt.
+
+### Are citation links guaranteed to work later?
+
+No. Safe links can be preserved when detected, but the destination can move, expire, or require access.

@@ -1,3 +1,18 @@
+import type { Locale } from "@/shared/i18n/locales";
+
+export type ExtensionSeoRoute =
+  | "chrome-extension/webpage-to-pdf"
+  | "chrome-extension/ai-chat-to-pdf"
+  | "chrome-extension/messenger-chat-to-pdf"
+  | "chrome-extension/full-page-pdf"
+  | "chrome-extension/webpage-to-pdf-with-links"
+  | "chrome-extension/html-page-to-pdf"
+  | "chrome-extension/chatgpt-to-pdf"
+  | "chrome-extension/claude-to-pdf"
+  | "chrome-extension/whatsapp-chat-to-pdf"
+  | "chrome-extension/telegram-chat-to-pdf"
+  | "chrome-extension/chrome-print-vs-page-2-pdf";
+
 export type StaticRoute =
   | ""
   | "chrome-extension/how-to-use"
@@ -5,13 +20,32 @@ export type StaticRoute =
   | "html2pdf-gpt"
   | "privacy"
   | "terms"
-  | "about";
+  | "about"
+  | "support"
+  | ExtensionSeoRoute;
 
 export type PublicPageFamily =
   | "home"
   | "extension"
+  | "extension-seo"
   | "gpt-workflow"
-  | "legal";
+  | "content"
+  | "legal"
+  | "support";
+
+export const extensionSeoRoutes: ReadonlyArray<ExtensionSeoRoute> = [
+  "chrome-extension/webpage-to-pdf",
+  "chrome-extension/ai-chat-to-pdf",
+  "chrome-extension/messenger-chat-to-pdf",
+  "chrome-extension/full-page-pdf",
+  "chrome-extension/webpage-to-pdf-with-links",
+  "chrome-extension/html-page-to-pdf",
+  "chrome-extension/chatgpt-to-pdf",
+  "chrome-extension/claude-to-pdf",
+  "chrome-extension/whatsapp-chat-to-pdf",
+  "chrome-extension/telegram-chat-to-pdf",
+  "chrome-extension/chrome-print-vs-page-2-pdf",
+];
 
 export const staticRoutes: ReadonlyArray<StaticRoute> = [
   "",
@@ -21,6 +55,8 @@ export const staticRoutes: ReadonlyArray<StaticRoute> = [
   "privacy",
   "terms",
   "about",
+  "support",
+  ...extensionSeoRoutes,
 ];
 
 const publicPageFamilyByRoute: Record<StaticRoute, PublicPageFamily> = {
@@ -31,6 +67,18 @@ const publicPageFamilyByRoute: Record<StaticRoute, PublicPageFamily> = {
   "privacy": "legal",
   "terms": "legal",
   "about": "legal",
+  "support": "support",
+  "chrome-extension/webpage-to-pdf": "extension-seo",
+  "chrome-extension/ai-chat-to-pdf": "extension-seo",
+  "chrome-extension/messenger-chat-to-pdf": "extension-seo",
+  "chrome-extension/full-page-pdf": "extension-seo",
+  "chrome-extension/webpage-to-pdf-with-links": "extension-seo",
+  "chrome-extension/html-page-to-pdf": "extension-seo",
+  "chrome-extension/chatgpt-to-pdf": "extension-seo",
+  "chrome-extension/claude-to-pdf": "extension-seo",
+  "chrome-extension/whatsapp-chat-to-pdf": "extension-seo",
+  "chrome-extension/telegram-chat-to-pdf": "extension-seo",
+  "chrome-extension/chrome-print-vs-page-2-pdf": "extension-seo",
 };
 
 export const technicalRoutePrefixes: ReadonlyArray<string> = [
@@ -48,6 +96,24 @@ export const isStaticRoute = (route: string): route is StaticRoute => {
   const matchesRoute = (candidate: StaticRoute): boolean => candidate === route;
   return staticRoutes.some(matchesRoute);
 };
+
+export const isExtensionSeoRoute = (
+  route: string,
+): route is ExtensionSeoRoute => {
+  const matchesRoute = (candidate: ExtensionSeoRoute): boolean =>
+    candidate === route;
+  return extensionSeoRoutes.some(matchesRoute);
+};
+
+export const isStaticRouteAvailable = (
+  locale: Locale,
+  route: StaticRoute,
+): boolean => !isExtensionSeoRoute(route) || locale === "en";
+
+export const staticRoutesForLocale = (
+  locale: Locale,
+): ReadonlyArray<StaticRoute> =>
+  staticRoutes.filter((route): boolean => isStaticRouteAvailable(locale, route));
 
 export const getPublicPageFamily = (
   route: StaticRoute,

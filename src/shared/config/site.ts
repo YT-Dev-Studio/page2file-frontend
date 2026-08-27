@@ -59,7 +59,7 @@ export type LegalProfile = {
 export const siteUrl = parseSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
 export const siteName = "Page 2 File";
 export const siteDescription =
-  "Save the current webpage or a supported browser chat as a PDF with the Page 2 File Chrome extension.";
+  "Save the current webpage or a supported browser chat as PDF with the Page 2 PDF Chrome extension from Page 2 File.";
 
 export const indexingEnabled =
   parseBoolean(process.env.NEXT_PUBLIC_ENABLE_INDEXING) &&

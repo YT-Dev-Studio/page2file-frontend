@@ -2,12 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import page2FileLogo from "@/app/assets/logo.png";
+import { analyticsDataAttributes } from "@/features/analytics/analytics-events";
 import type { Locale } from "@/shared/i18n/locales";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
-import {
-  getExtensionActionLabel,
-  getExtensionLink,
-} from "@/shared/routes/extension-link";
+import { getExtensionLink } from "@/shared/routes/extension-link";
 import { ButtonLink } from "@/shared/ui/components/button/button";
 import { LocaleSwitcher } from "./locale-switcher";
 import { SiteNavigation } from "./site-navigation";
@@ -27,12 +25,17 @@ const ExtensionButton = ({
 
   return (
     <ButtonLink
+      {...analyticsDataAttributes({
+        locale,
+        name: "extension_install_click",
+        placement: "header",
+      })}
       className={buttonClassName}
       href={extensionLink.href}
       rel={extensionLink.external ? "noopener noreferrer" : undefined}
       target={extensionLink.external ? "_blank" : undefined}
     >
-      {getExtensionActionLabel(locale, copy.extensionAction)}
+      {copy.downloadAction}
     </ButtonLink>
   );
 };

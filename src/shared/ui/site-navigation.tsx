@@ -3,8 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { getLandingContent } from "@/content/landings";
-import { getExtensionCopy } from "@/features/extension/extension-copy";
 import type { Locale } from "@/shared/i18n/locales";
 import styles from "./site-header.module.css";
 
@@ -18,6 +16,31 @@ type SiteNavigationProps = {
   ariaLabel: string;
   className?: string;
   locale: Locale;
+};
+
+type NavigationLabels = {
+  blog: string;
+  guide: string;
+  home: string;
+  htmlToPdf: string;
+  webToPdf: string;
+};
+
+const navigationLabels: Record<Locale, NavigationLabels> = {
+  en: {
+    blog: "Blog",
+    guide: "How to use",
+    home: "Home",
+    htmlToPdf: "HTML 2 PDF",
+    webToPdf: "Web 2 PDF",
+  },
+  ru: {
+    blog: "Блог",
+    guide: "Как использовать",
+    home: "Главная",
+    htmlToPdf: "HTML 2 PDF",
+    webToPdf: "Web 2 PDF",
+  },
 };
 
 const isNavigationItemActive = (
@@ -34,32 +57,31 @@ export const SiteNavigation = ({
   locale,
 }: SiteNavigationProps): ReactNode => {
   const pathname = usePathname();
-  const extensionCopy = getExtensionCopy(locale);
-  const about = getLandingContent(locale, "about");
+  const labels = navigationLabels[locale];
   const items: ReadonlyArray<NavigationItem> = [
     {
       href: `/${locale}`,
-      label: extensionCopy.homeLabel,
+      label: labels.home,
     },
     {
       activePrefix: `/${locale}/chrome-extension/how-to-use`,
       href: `/${locale}/chrome-extension/how-to-use`,
-      label: extensionCopy.guideLabel,
+      label: labels.guide,
     },
     {
       activePrefix: `/${locale}/page2pdf-gpt`,
       href: `/${locale}/page2pdf-gpt`,
-      label: "Webpage 2 PDF",
+      label: labels.webToPdf,
     },
     {
       activePrefix: `/${locale}/html2pdf-gpt`,
       href: `/${locale}/html2pdf-gpt`,
-      label: "HTML 2 PDF",
+      label: labels.htmlToPdf,
     },
     {
-      activePrefix: `/${locale}/about`,
-      href: `/${locale}/about`,
-      label: about?.title ?? "About Page 2 File",
+      activePrefix: `/${locale}/blog`,
+      href: `/${locale}/blog`,
+      label: labels.blog,
     },
   ];
   const navigationClassName = className ?? "";

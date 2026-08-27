@@ -3,34 +3,6 @@ import type { StaticRoute } from "@/shared/routes/routes";
 import type { Locale } from "@/shared/i18n/locales";
 import { getExtensionCopy } from "@/features/extension/extension-copy";
 import { russianLandingContent } from "./russian-landings";
-import { germanLandingContent } from "./german-landings";
-import { frenchLandingContent } from "./french-landings";
-import { germanLegalLandingContent } from "./german-legal-landings";
-import { frenchLegalLandingContent } from "./french-legal-landings";
-import { spanishLandingContent } from "./spanish-landings";
-import { dutchLandingContent } from "./dutch-landings";
-import { spanishLegalLandingContent } from "./spanish-legal-landings";
-import { dutchLegalLandingContent } from "./dutch-legal-landings";
-import { portugueseLandingContent } from "./portuguese-landings";
-import { italianLandingContent } from "./italian-landings";
-import { portugueseLegalLandingContent } from "./portuguese-legal-landings";
-import { italianLegalLandingContent } from "./italian-legal-landings";
-import { polishLandingContent } from "./polish-landings";
-import { czechLandingContent } from "./czech-landings";
-import { polishLegalLandingContent } from "./polish-legal-landings";
-import { czechLegalLandingContent } from "./czech-legal-landings";
-import { swedishLandingContent } from "./swedish-landings";
-import { norwegianLandingContent } from "./norwegian-landings";
-import { swedishLegalLandingContent } from "./swedish-legal-landings";
-import { norwegianLegalLandingContent } from "./norwegian-legal-landings";
-import { danishLandingContent } from "./danish-landings";
-import { finnishLandingContent } from "./finnish-landings";
-import { danishLegalLandingContent } from "./danish-legal-landings";
-import { finnishLegalLandingContent } from "./finnish-legal-landings";
-import { romanianLandingContent } from "./romanian-landings";
-import { hungarianLandingContent } from "./hungarian-landings";
-import { romanianLegalLandingContent } from "./romanian-legal-landings";
-import { hungarianLegalLandingContent } from "./hungarian-legal-landings";
 import { aboutLandingContent } from "./about-landings";
 export type ContentSection = {
     id?: string;
@@ -75,17 +47,17 @@ const gptRelatedRoutes: ReadonlyArray<RelatedRoute> = [
 export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     "page2pdf-gpt": {
         route: "page2pdf-gpt",
-        eyebrow: "GPT App · exact URLs, PDFs, or screenshots",
+        eyebrow: "Web2File GPT · exact URLs, PDFs, or screenshots",
         title: "Webpage to PDF Converter — Web2File",
         displayTitle: "GPT: Webpage 2 PDF",
-        description: "Webpage to PDF Converter — Web2File converts exact public URLs, uploaded webpage PDFs, and screenshots into separate Visual PDF or Interactive PDF files.",
-        lead: "Provide one exact public URL, a list of exact URLs, a webpage PDF, or full-page or consecutive screenshots. Choose Visual PDF to save the website as page captures or Interactive PDF for selectable text and clickable links.",
+        description: "Webpage to PDF Converter — Web2File accepts exact public URLs, webpage PDFs, or ordered screenshots and returns separate visual or interactive PDFs.",
+        lead: "Send the exact public pages or files you want processed. Web2File returns one PDF per webpage: choose Visual PDF for page images or Interactive PDF for selectable text and verified links where the submitted page allows them.",
         sections: [
-            { heading: "1. Enter one or more URLs", body: "Send one public webpage URL, a list of exact public URLs, an existing webpage PDF, or full-page or consecutive screenshots. Each webpage remains a separate PDF." },
-            { heading: "2. Choose the PDF type", body: "Select Visual PDF for an image-based result that prioritizes the page's appearance, or Interactive PDF when selectable text and clickable links matter most. One mode applies to every URL in a submitted list." },
-            { heading: "3. Convert only the pages you supply", body: "The GPT opens only the exact public URLs provided. It does not crawl domains, inspect sitemaps, discover pages, follow internal links, or bypass authentication, paywalls, CAPTCHAs, geographic restrictions, or other access controls." },
-            { heading: "4. Post-process PDFs and screenshots", body: "Uploaded screenshots can be assembled into a Visual PDF while preserving their top-to-bottom order. Uploaded webpage PDFs can be checked and processed without inventing missing content; Interactive PDF results prioritize existing text, layout, images, and verified links." },
-            { heading: "5. Get tailored save guidance and verify the result", body: "If direct conversion is unavailable or incomplete, the GPT provides page-specific browser or native-export guidance. Review every delivered PDF for missing or cropped content, blank areas, readability, page order, layout, links, and fidelity to the selected mode." },
+            { heading: "1. Supply the exact page or file", body: "Send one public URL, a list of exact public URLs, an existing webpage PDF, or ordered full-page screenshots. Each supplied webpage remains a separate output file." },
+            { heading: "2. Choose visual or interactive output", body: "Visual PDF prioritizes the supplied page appearance. Interactive PDF prioritizes existing selectable text and links that can be checked; one mode applies to every URL in the same request." },
+            { heading: "3. Stay within the supplied pages", body: "Web2File opens only the exact public URLs you provide. It does not crawl a domain, inspect a sitemap, follow links for extra pages, or bypass sign-in, paywalls, CAPTCHAs, location rules, or other access controls." },
+            { heading: "4. Use PDFs and screenshots as evidence", body: "Ordered screenshots can be assembled into a Visual PDF. An uploaded webpage PDF can be checked and processed from the content it already contains; missing page content is not reconstructed or invented." },
+            { heading: "5. Check every delivered file", body: "Review page order, cropped or missing areas, unexplained blanks, readability, layout, and supported links. If direct conversion is blocked, Web2File can explain a browser or native-export path instead of pretending the page was captured." },
         ],
         externalLinkKey: "page2pdfGpt",
         primaryLabel: "Open GPT Webpage 2 PDF",
@@ -98,17 +70,17 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
     },
     "html2pdf-gpt": {
         route: "html2pdf-gpt",
-        eyebrow: "GPT App · uploaded HTML file",
+        eyebrow: "Web2File GPT · one uploaded HTML file",
         title: "HTML to PDF Converter — Web2File",
         displayTitle: "GPT: HTML 2 PDF",
-        description: "HTML to PDF Converter — Web2File turns one uploaded HTML file into a checked PDF that preserves layout, images, selectable text, and links.",
-        lead: "Upload exactly one HTML file. GPT HTML 2 PDF previews its design, loads accessible styles, fonts, and images, then creates one checked PDF with selectable text and clickable links where possible.",
+        description: "HTML to PDF Converter — Web2File renders one uploaded HTML file and returns one checked PDF with its available layout, text, images, and links.",
+        lead: "Upload one HTML document. Web2File renders the file with the styles and assets it can access, chooses a suitable page orientation, and checks the resulting PDF for clipping and missing content.",
         sections: [
-            { heading: "1. Upload exactly one HTML file", body: "Attach one HTML document. The GPT does not accept a URL instead, process several HTML files, crawl websites, follow links for extra pages, or merge multiple documents." },
-            { heading: "2. Include the styles and assets", body: "Inline and embedded styles are used automatically, along with accessible remote stylesheets, fonts, and images. If the HTML references a missing local CSS file, upload the matching file for a closer visual result or continue without it." },
-            { heading: "3. Preview and preserve the design", body: "The HTML is previewed at a suitable desktop width before conversion. The result aims to retain the source theme, colors, typography, spacing, columns, cards, images, and content order without activating interactive controls." },
-            { heading: "4. Create one readable PDF", body: "The GPT produces one PDF with selectable text and working hyperlinks where possible. Wide layouts can use landscape or a suitable page size so major columns and visual elements are not squeezed, cropped, or split." },
-            { heading: "5. Check the finished file", body: "Every PDF is reviewed for missing content, clipped components, unexplained blank areas, readability, page breaks, image placement, and supported links before it is delivered." },
+            { heading: "1. Upload one HTML document", body: "The GPT accepts one HTML file for this workflow. It does not substitute a URL, process a batch of HTML files, crawl linked pages, or merge several documents." },
+            { heading: "2. Make required assets accessible", body: "Inline and embedded styles load with the document. Accessible remote stylesheets, fonts, and images may load too; missing local CSS or image files must be supplied if they are needed for the intended appearance." },
+            { heading: "3. Render without activating the page", body: "Web2File previews the HTML at a suitable desktop width and preserves the available content order, typography, spacing, columns, cards, and images. Interactive controls are not treated as a live application." },
+            { heading: "4. Fit the document to PDF pages", body: "The output keeps existing selectable text and supported hyperlinks where possible. A wide design may use landscape or a more suitable page size to reduce squeezing, clipping, and awkward column breaks." },
+            { heading: "5. Inspect the result", body: "Before delivery, check for missing assets, clipped components, unexplained blank areas, unreadable text, poor page breaks, displaced images, and links that could not be preserved." },
         ],
         externalLinkKey: "html2pdfGpt",
         primaryLabel: "Open GPT HTML 2 PDF",
@@ -124,11 +96,11 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
         eyebrow: "Privacy and data processing",
         title: "Page 2 File privacy policy",
         description: "How Page 2 File processes webpage content, temporary conversion files, service cookies, analytics data and privacy requests.",
-        lead: "This Privacy Policy explains what Page 2 File processes when you visit the website, use the Chrome extension or convert a webpage to PDF.",
+        lead: "This Privacy Policy explains what Page 2 File processes when you visit the website, use the Page 2 PDF Chrome extension, or use an available website conversion workflow.",
         sections: [
             {
                 heading: "Operator and scope",
-                body: "{{entityName}}, located at {{address}}, operates Page 2 File and is responsible for the processing described in this policy. This policy applies to the Page 2 File website, browser extension and related webpage-to-file conversion services.",
+                body: "{{entityName}}, located at {{address}}, operates Page 2 File and is responsible for the processing described in this policy. This policy applies to the Page 2 File website, the Page 2 PDF browser extension and related webpage-to-file conversion services.",
             },
             {
                 heading: "Definitions",
@@ -140,7 +112,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 heading: "Information we do not request",
-                body: "Page 2 File does not require a Page 2 File account and does not ask for payment-card details, billing addresses or passwords for the source website. The extension uses the page already open in your browser and does not receive the password you used to access that website.",
+                body: "Page 2 File does not require a Page 2 File account and does not ask for payment-card details, billing addresses or passwords for the original website. The extension uses the page already open in your browser and does not receive the password you used to access that website.",
             },
             {
                 heading: "How we use information",
@@ -148,11 +120,15 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 heading: "Conversion content and temporary processing",
-                body: "A public-URL conversion or an extension preview requires temporary processing of the submitted page and selected options. Page 2 File does not provide an account-based conversion history. Preview data and generated artifacts are short-lived and are deleted after the preview closes or when the configured technical expiry is reached.",
+                body: "A website conversion, where available, requires temporary server processing of the submitted public page and selected options. Page 2 PDF creates active-tab documents inside the extension workflow and does not upload page or conversation content to Page 2 File servers. Neither workflow provides an account-based conversion history; temporary preview data and generated artifacts are removed after their lifecycle or configured technical expiry.",
+            },
+            {
+                heading: "Support messages",
+                body: "When you use the support form, Page 2 File sends the email address and comment you provide to a private Telegram development topic so the team can review the request. Support correspondence may be retained for the period reasonably needed to respond, investigate the issue, protect the Service or document the resolution.",
             },
             {
                 heading: "Analytics and attribution",
-                body: "When a valid Google Analytics Measurement ID is configured, Google Analytics loads automatically on public marketing pages. It may receive page, device, browser, approximate-location and campaign information. Allowed UTM values are normalized in memory and sent with the analytics event; Page 2 File does not keep them in a custom attribution cookie.",
+                body: "When a valid Google Analytics Measurement ID is configured, Google Analytics loads automatically on public pages in cookieless mode. Analytics storage remains denied, so the tag does not read or write analytics cookies. Google may receive the page title, a cleaned page address and referrer, device and browser information, approximate location, and normalized campaign values. Page 2 File does not send support-form fields or conversion content to Google Analytics and does not provide analytics controls on the site.",
             },
             {
                 heading: "Service providers and disclosures",
@@ -184,12 +160,12 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 id: "cookies",
-                heading: "Cookies",
-                body: "Page 2 File uses the short-lived p2f_session and p2f_csrf cookies to maintain an anonymous conversion session and protect requests. They use Strict SameSite settings and expire after one hour. Google Analytics may set analytics cookies on public pages when analytics is configured. We do not place conversion content or directly identifying profile data in these cookies.",
+                heading: "Analytics storage and service cookies",
+                body: "Page 2 File uses the short-lived p2f_session and p2f_csrf cookies to maintain an anonymous same-origin session and protect requests such as support feedback. They use Strict SameSite settings and expire after one hour. Google Analytics runs with analytics storage denied and does not read or write analytics cookies. We do not place feedback text, conversion content, or directly identifying profile data in these cookies.",
             },
             {
                 heading: "Blocking and deleting cookies",
-                body: "You can block or delete cookies through your browser settings. Blocking the Page 2 File session or CSRF cookies may prevent conversion requests from working. Blocking Google Analytics may limit measurement but does not prevent the core public pages from loading. Removing a cookie requires using your browser’s cookie controls.",
+                body: "The site does not provide analytics settings. You can still block network requests or delete service cookies through your browser settings. Blocking the Page 2 File session or CSRF cookies may prevent support and other protected same-origin requests from working, but it does not prevent core public pages from loading.",
             },
             {
                 heading: "Changes to this policy",
@@ -206,8 +182,8 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
         route: "terms",
         eyebrow: "Service agreement",
         title: "Terms of service",
-        description: "Terms for using Page 2 File, including permitted webpage sources, conversion limits, user responsibilities and service availability.",
-        lead: "These Terms govern your use of the Page 2 File website, Chrome extension and webpage-to-PDF conversion services.",
+        description: "Terms for using Page 2 File, including permitted submitted materials, conversion limits, user responsibilities and service availability.",
+        lead: "These Terms govern your use of the Page 2 File website, the Page 2 PDF Chrome extension and related webpage-to-PDF conversion services.",
         sections: [
             {
                 heading: "Agreement and operator",
@@ -215,27 +191,27 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 heading: "Definitions",
-                body: "“Service” means the Page 2 File website, Chrome extension and conversion features. “Source content” means a webpage, active-tab content or other material submitted for conversion. “Output” means a PDF, preview or other generated result.",
+                body: "“Service” means the Page 2 File website, the Page 2 PDF Chrome extension and related conversion features. “Submitted content” means a webpage, active-tab content or other material submitted for conversion. “Output” means a PDF, preview or other generated result.",
             },
             {
                 heading: "Limited license",
                 body: "We grant you a revocable, non-exclusive, non-transferable and limited right to access and use the Service in accordance with these Terms. No ownership in Page 2 File software, branding or other protected material is transferred to you.",
             },
             {
-                heading: "Permitted sources and your responsibility",
-                body: "You may convert only source content that you are legally permitted to access, process, reproduce and download. You are responsible for the URLs and active-tab content you submit, the conversion settings you choose, and how you use or distribute every Output.",
+                heading: "Permitted materials and your responsibility",
+                body: "You may convert only submitted content that you are legally permitted to access, process, reproduce and download. You are responsible for the URLs and active-tab content you submit, the conversion settings you choose, and how you use or distribute every Output.",
             },
             {
                 heading: "Prohibited use",
                 body: "You must not use the Service to break the law, infringe another person’s rights, bypass paywalls or access controls, distribute malware, submit abusive or unlawful content, probe private networks, interfere with security controls, overload systems, automate excessive requests, reverse engineer protected parts of the Service or misrepresent generated files.",
             },
             {
-                heading: "Source content and third-party rights",
-                body: "You retain any rights you already have in source content. Page 2 File does not grant rights to material owned by another person. You represent that processing the submitted material and creating the requested Output does not violate copyright, privacy, confidentiality, contract or other applicable rights.",
+                heading: "Submitted content and third-party rights",
+                body: "You retain any rights you already have in submitted content. Page 2 File does not grant rights to material owned by another person. You represent that processing the submitted material and creating the requested Output does not violate copyright, privacy, confidentiality, contract or other applicable rights.",
             },
             {
                 heading: "Temporary processing",
-                body: "The Service may temporarily process source content, conversion settings and generated artifacts to provide a preview and download. Page 2 File does not provide an account-based conversion history. Details about temporary data, cookies and providers are set out in the Privacy Policy.",
+                body: "The Service may temporarily process submitted content, conversion settings and generated artifacts to provide a preview and download. Page 2 File does not provide an account-based conversion history. Details about temporary data, cookies and providers are set out in the Privacy Policy.",
             },
             {
                 heading: "Output and fidelity limitations",
@@ -255,7 +231,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 heading: "Feedback",
-                body: "If you voluntarily provide suggestions or feedback, you grant us a worldwide, perpetual and royalty-free right to use that feedback to improve or develop the Service without an obligation to compensate you. This does not transfer ownership of your source content.",
+                body: "If you voluntarily provide suggestions or feedback, you grant us a worldwide, perpetual and royalty-free right to use that feedback to improve or develop the Service without an obligation to compensate you. This does not transfer ownership of your submitted content.",
             },
             {
                 heading: "Changes, updates and availability",
@@ -279,7 +255,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 heading: "Indemnity",
-                body: "To the extent permitted by law, you agree to defend and indemnify {{entityName}} against third-party claims arising from source content you submit, your use or distribution of an Output, your violation of these Terms or your infringement of another person’s rights.",
+                body: "To the extent permitted by law, you agree to defend and indemnify {{entityName}} against third-party claims arising from content you submit, your use or distribution of an Output, your violation of these Terms or your infringement of another person’s rights.",
             },
             {
                 heading: "Severability, waiver and entire agreement",
@@ -304,20 +280,6 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
 const localizedLandingContent: Record<Locale, Partial<Record<StaticRoute, LandingContent>>> = {
     en: { ...landingContent, about: aboutLandingContent.en },
     ru: { ...russianLandingContent, about: aboutLandingContent.ru },
-    de: { ...germanLandingContent, ...germanLegalLandingContent, about: aboutLandingContent.de },
-    fr: { ...frenchLandingContent, ...frenchLegalLandingContent, about: aboutLandingContent.fr },
-    es: { ...spanishLandingContent, ...spanishLegalLandingContent, about: aboutLandingContent.es },
-    nl: { ...dutchLandingContent, ...dutchLegalLandingContent, about: aboutLandingContent.nl },
-    pt: { ...portugueseLandingContent, ...portugueseLegalLandingContent, about: aboutLandingContent.pt },
-    it: { ...italianLandingContent, ...italianLegalLandingContent, about: aboutLandingContent.it },
-    pl: { ...polishLandingContent, ...polishLegalLandingContent, about: aboutLandingContent.pl },
-    cs: { ...czechLandingContent, ...czechLegalLandingContent, about: aboutLandingContent.cs },
-    sv: { ...swedishLandingContent, ...swedishLegalLandingContent, about: aboutLandingContent.sv },
-    no: { ...norwegianLandingContent, ...norwegianLegalLandingContent, about: aboutLandingContent.no },
-    da: { ...danishLandingContent, ...danishLegalLandingContent, about: aboutLandingContent.da },
-    fi: { ...finnishLandingContent, ...finnishLegalLandingContent, about: aboutLandingContent.fi },
-    ro: { ...romanianLandingContent, ...romanianLegalLandingContent, about: aboutLandingContent.ro },
-    hu: { ...hungarianLandingContent, ...hungarianLegalLandingContent, about: aboutLandingContent.hu },
 };
 const reconcileLegalProductScope = (
     locale: Locale,
@@ -331,7 +293,7 @@ const reconcileLegalProductScope = (
     const obsoleteProductClaim = /\b(?:URL|CSRF|backend|p2f_session|p2f_csrf|PPTX|PowerPoint)\b/i;
     const sections = content.sections.flatMap((section) => {
         if (section.id === "cookies") {
-            return [{ ...section, body: extension.privacyPoints[2] }];
+            return [section];
         }
         return obsoleteProductClaim.test(section.body) ? [] : [section];
     });

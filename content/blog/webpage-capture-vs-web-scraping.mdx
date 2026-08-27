@@ -1,0 +1,48 @@
+Webpage capture preserves one rendered page for reading or evidence. Web scraping collects structured fields, often across many URLs, for analysis or reuse. Page 2 PDF performs the first job on the active Chrome tab; it is not a crawler, API, or extraction pipeline.
+
+## Choose capture for a human-readable record
+
+A PDF is useful when another person needs to review the page as a document. Accurate copy preserves appearance as image pages. Editable document can retain selectable text, safe links, and eligible form values. Both start from the page already open in Chrome.
+
+Typical capture cases include a signed-in report, a research article, a receipt, a dashboard state, or a current conversation. The extension processes one page, even when it is long. Page 2 PDF does not follow navigation links, discover related pages, or combine a site automatically.
+
+<ArticleFigure
+  src="/blog/demos/capture-versus-scraping.webp"
+  alt="Image-based full-page dashboard test fixture open in Chrome's PDF viewer"
+  caption="Use capture for a readable state of one tab; use extraction tooling for records across pages."
+  step={1}
+  openLabel="Open the capture versus scraping comparison"
+  closeLabel="Close the capture versus scraping comparison"
+/>
+
+## Choose scraping or an API for datasets
+
+Use an official export, API, or authorized scraper when the output should be rows, fields, or records: product names and prices across pages, every invoice in an account, all items in a catalog, or repeated monitoring over time. Those workflows need pagination, deduplication, rate limits, schema handling, and access-policy controls that a PDF capture does not provide.
+
+Do not infer that selectable PDF text is equivalent to structured extraction. A PDF retains reading order and document elements, not a guaranteed table schema. A visual PDF contains image pages and is even less suitable for downstream data processing.
+
+## Authentication does not change the boundary
+
+Page 2 PDF can preserve a page you are already authorized to view because it runs on the active tab. That does not grant permission to collect an account, defeat access controls, or automate navigation. Website terms, privacy duties, copyright, workplace rules, and applicable law still govern the original page and its content.
+
+If you need one signed-in report, read the [private-page workflow](/en/blog/save-private-or-local-page-to-pdf). If you need a chart-and-table snapshot, use the [dashboard guide](/en/blog/save-dashboard-report-to-pdf). For the product surface, see [webpage to PDF](/en/chrome-extension/webpage-to-pdf).
+
+## Use both tools only with a clear division
+
+An authorized data workflow may use an API for analysis and a PDF for the human-readable evidence behind a decision. Keep identifiers that connect the record to the original page or dataset, and document retrieval time. Do not treat the PDF as proof that the extracted dataset is complete.
+
+Conversely, do not add a crawler because a page is merely long. If the job is to save the exact current report, full-page preparation is still capture. The distinction is the desired output and scope, not the number of screenfuls.
+
+## Capture and scraping questions
+
+### Can Page 2 PDF accept a list of URLs?
+
+No. It works from the current Chrome tab and does not provide batch URL processing.
+
+### Does the project ZIP contain a reusable webpage dataset?
+
+No. The optional scrubbed archive supports evidence and diagnostics. It is not an extraction format and cannot be imported back into Page 2 PDF.
+
+### What if I need every page of a documentation site?
+
+Use the site's official offline package, repository, documentation export, or an authorized crawler. Save individual PDFs only for the pages that need a human-readable record.

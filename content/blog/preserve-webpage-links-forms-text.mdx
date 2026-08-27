@@ -1,0 +1,48 @@
+Use **Editable document** when a webpage PDF must keep selectable text, searchable words, safe clickable links, or eligible form values. The mode uses Chromium's document output, so it preserves document behavior differently from the image-only Accurate copy mode.
+
+## What Editable document can retain
+
+Page text can remain selectable, and links that pass URL safety checks can remain clickable. You can choose **As viewed** to follow the screen-oriented page or **Print optimized** to use the site's print rules. Separate controls can remove images, links, or styling when a simpler document is more useful.
+
+Supported form types include ordinary text fields, text areas, checkboxes, radio buttons, and select lists. Password, file, hidden, and other sensitive controls are excluded. Some page layouts cannot be mapped to an interactive PDF field and may remain static. This is a supported subset, not a promise that every web form becomes a fillable PDF.
+
+<ArticleFigure
+  src="/blog/demos/editable-document-options.webp"
+  alt="Selectable multi-page PDF test fixture open in Chrome's PDF viewer"
+  caption="Selectable output has independent controls and explicit limits; it is not an editable copy of the original page."
+  step={1}
+  openLabel="Open the Editable document options diagram"
+  closeLabel="Close the Editable document options diagram"
+/>
+
+## Use regional OCR only for isolated graphics
+
+Regional OCR is intended for a limited number of canvas or WebGL areas whose text is otherwise drawn as pixels. It is not whole-document OCR. The release contract limits the number and size of regions, uses a bounded job time, and supports English and Russian recognition with a confidence threshold.
+
+If the entire page is an image scan, use a dedicated OCR tool after export. If only a chart label or canvas-rendered panel needs recognition, the regional pass can add text where the original page does not provide normal characters. Always compare recognized text with the rendered page before quoting it.
+
+## Understand the optional project archive
+
+Editable document can optionally produce a scrubbed ZIP containing the PDF, capture metadata, an MHTML page snapshot, and checksums. Scripts, event handlers, and sensitive form controls are removed from the archive. Secret detection can omit the ZIP while still allowing the PDF to finish.
+
+The archive is evidence and diagnostics, not a round-trip editing format. Page 2 PDF does not import it, rebuild the live website, or let you edit the page elements held by the browser. If you need to maintain the original HTML, preserve the original project separately.
+
+## Check link and form safety before sharing
+
+Open a few links in the finished PDF and confirm their destinations. Links with unsafe or unsupported schemes are not preserved. Review form values for personal, account, financial, or confidential data even when the original controls were eligible. A PDF is easier to forward than an authenticated page.
+
+For a visual record where no link needs to work, Accurate copy avoids document-layout changes. The [PDF mode guide](/en/blog/choose-webpage-pdf-mode) helps choose between the two. For a current research page whose citations matter, follow the [research-page workflow](/en/blog/save-web-research-to-pdf). The product details are summarized on the [webpage with links page](/en/chrome-extension/webpage-to-pdf-with-links).
+
+## Questions about selectable output
+
+### Is Editable document PDF/UA certified?
+
+No. The extension does not claim PDF/UA certification. Test the output with the accessibility requirements that apply to your organization.
+
+### Can I remove styling but keep links?
+
+Yes. Image, link, and styling removal are independent controls. Review the preview because removing CSS can change reading order or table layout.
+
+### Are all form fields interactive in the PDF?
+
+No. Only eligible, non-sensitive controls are considered, and unsupported mappings remain static. XFA forms are not supported.

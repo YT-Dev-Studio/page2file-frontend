@@ -15,6 +15,7 @@ type LegalPageProps = {
 
 type LegalPageCopy = {
   updatedAt: string;
+  privacyUpdatedAt: string;
 };
 
 type LegalSectionProps = {
@@ -26,51 +27,11 @@ type LegalSectionProps = {
 const legalPageCopy: Record<Locale, LegalPageCopy> = {
   en: {
     updatedAt: "Updated 4 August 2026",
+    privacyUpdatedAt: "Updated 27 August 2026",
   },
   ru: {
     updatedAt: "Обновлено 4 августа 2026 года",
-  },
-  de: {
-    updatedAt: "Aktualisiert am 4. August 2026",
-  },
-  fr: {
-    updatedAt: "Mis à jour le 4 août 2026",
-  },
-  es: {
-    updatedAt: "Actualizado el 4 de agosto de 2026",
-  },
-  nl: {
-    updatedAt: "Bijgewerkt op 4 augustus 2026",
-  },
-  pt: {
-    updatedAt: "Atualizado em 4 de agosto de 2026",
-  },
-  it: {
-    updatedAt: "Aggiornato il 4 agosto 2026",
-  },
-  pl: {
-    updatedAt: "Zaktualizowano 4 sierpnia 2026",
-  },
-  cs: {
-    updatedAt: "Aktualizováno 4. srpna 2026",
-  },
-  sv: {
-    updatedAt: "Uppdaterad 4 augusti 2026",
-  },
-  no: {
-    updatedAt: "Oppdatert 4. august 2026",
-  },
-  da: {
-    updatedAt: "Opdateret 4. august 2026",
-  },
-  fi: {
-    updatedAt: "Päivitetty 4. elokuuta 2026",
-  },
-  ro: {
-    updatedAt: "Actualizat la 4 august 2026",
-  },
-  hu: {
-    updatedAt: "Frissítve: 2026. augusztus 4.",
+    privacyUpdatedAt: "Обновлено 27 августа 2026 года",
   },
 };
 
@@ -115,6 +76,8 @@ export const LegalPage = ({
 }: LegalPageProps): ReactNode => {
   const copy = legalPageCopy[locale];
   const siteCopy = getSiteCopy(locale).footer;
+  const updatedAt =
+    content.route === "privacy" ? copy.privacyUpdatedAt : copy.updatedAt;
 
   return (
     <PublicPage className={styles.page} family="legal">
@@ -122,7 +85,7 @@ export const LegalPage = ({
         <article className={styles.document}>
           <header className={styles.header}>
             <h1 className={styles.title}>{content.title}</h1>
-            <p className={styles.updatedAt}>{copy.updatedAt}</p>
+            <p className={styles.updatedAt}>{updatedAt}</p>
             <p className={styles.lead}>{content.lead}</p>
           </header>
 

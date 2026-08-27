@@ -51,15 +51,14 @@
   pointer-events: none;
   border-radius: var(--p2f-radius-pill);
   background: var(--p2f-color-format-master-default);
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 220ms ease;
+  opacity: 0;
+  transition: opacity 220ms ease;
 }
 
 .card:focus-within .rail,
 .selected .rail,
 .accentLayout .rail {
-  transform: scaleY(1);
+  opacity: 1;
 }
 
 .content {
@@ -202,7 +201,7 @@
   }
 
   .card:hover .rail {
-    transform: scaleY(1);
+    opacity: 1;
   }
 }
 

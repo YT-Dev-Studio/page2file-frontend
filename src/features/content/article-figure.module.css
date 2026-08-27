@@ -15,6 +15,9 @@
   box-shadow: var(--p2f-shadow-card);
   cursor: zoom-in;
   appearance: none;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
 }
 
 .imageButton::after {
@@ -34,14 +37,16 @@
   font-size: 18px;
   line-height: 1;
   pointer-events: none;
-  transition:
-    transform 180ms ease,
-    background-color 180ms ease;
+  transition: background-color 180ms ease;
 }
 
 .imageButton:hover::after {
   background: rgb(16 38 82 / 92%);
-  transform: scale(1.08);
+}
+
+.imageButton:hover {
+  border-color: var(--p2f-color-border-strong);
+  background: var(--p2f-color-background-selected);
 }
 
 .imageButton:focus-visible {
@@ -54,11 +59,6 @@
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  transition: transform 220ms ease;
-}
-
-.imageButton:hover .image {
-  transform: scale(1.012);
 }
 
 .caption {
@@ -106,6 +106,7 @@
 .dialogSurface {
   position: relative;
   display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
   overflow: hidden;
   max-height: 90dvh;
   border: 1px solid rgb(255 255 255 / 24%);
@@ -119,7 +120,8 @@
 .dialogImage {
   display: block;
   width: 100%;
-  max-height: calc(90dvh - 58px);
+  height: 100%;
+  min-height: 0;
   object-fit: contain;
   background: #eaf0fb;
 }
@@ -128,14 +130,14 @@
   min-width: 0;
   margin: 0;
   padding: var(--p2f-space-16) 72px var(--p2f-space-16)
-    var(--p2f-space-20);
-  overflow: hidden;
+    var(--p2f-space-24);
+  border-top: var(--p2f-border-width-default) solid
+    var(--p2f-color-border-default);
+  overflow-wrap: anywhere;
   color: var(--p2f-color-text-secondary);
   background: var(--p2f-color-background-surface);
   font-size: var(--p2f-type-caption-regular-font-size);
   line-height: var(--p2f-type-caption-regular-line-height);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .closeButton {
@@ -158,14 +160,12 @@
   line-height: 1;
   transition:
     color 160ms ease,
-    background-color 160ms ease,
-    transform 160ms ease;
+    background-color 160ms ease;
 }
 
 .closeButton:hover {
   color: #ffffff;
   background: var(--p2f-color-coral-ink-500);
-  transform: scale(1.06);
 }
 
 .closeButton:focus-visible {
@@ -223,14 +223,9 @@
     border-radius: 12px;
   }
 
-  .dialogImage {
-    max-height: calc(92dvh - 70px);
-  }
-
   .dialogCaption {
     padding: var(--p2f-space-12) 60px var(--p2f-space-12)
       var(--p2f-space-16);
-    white-space: normal;
   }
 
   .closeButton {
@@ -240,8 +235,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .imageButton,
   .imageButton::after,
-  .image,
   .dialog,
   .dialog::backdrop,
   .dialogSurface,

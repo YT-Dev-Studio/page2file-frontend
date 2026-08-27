@@ -1,9 +1,15 @@
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
+import { getExtensionSeoLanding } from "@/content/extension-seo-landings";
 import { getLandingContent } from "@/content/landings";
+import { getBlogEntry } from "@/content/content-registry";
 import { isRealJobId } from "@/shared/api/backend-contract";
 import type { Locale } from "@/shared/i18n/locales";
-import { isStaticRoute } from "@/shared/routes/routes";
+import {
+  isExtensionSeoRoute,
+  isStaticRoute,
+  isStaticRouteAvailable,
+} from "@/shared/routes/routes";
 import { Container } from "@/shared/ui/site-shell";
 
 type PublicPageResolverProps = {
@@ -27,6 +33,29 @@ export const resolvePublicPage = async ({
       "@/features/extension/extension-guide"
     );
     return <ExtensionGuide locale={locale} />;
+  }
+
+  if (route === "blog") {
+    const { ContentIndexPage } = await import(
+      "@/features/content/content-pages"
+    );
+    return <ContentIndexPage locale={locale} />;
+  }
+
+  if (route === "support") {
+    const { SupportPage } = await import("@/features/support/support-page");
+    return <SupportPage locale={locale} />;
+  }
+
+  if (segments[0] === "blog" && segments.length === 2) {
+    const entry = getBlogEntry(locale, segments[1]);
+    if (!entry) {
+      notFound();
+    }
+    const { ContentArticlePage } = await import(
+      "@/features/content/content-pages"
+    );
+    return <ContentArticlePage entry={entry} locale={locale} />;
   }
 
   if (segments[0] === "preview" && segments.length === 2) {
@@ -54,6 +83,16 @@ export const resolvePublicPage = async ({
   }
 
   if (isStaticRoute(route)) {
+    if (!isStaticRouteAvailable(locale, route)) {
+      notFound();
+    }
+    if (isExtensionSeoRoute(route)) {
+      const content = getExtensionSeoLanding(route);
+      const { ExtensionSeoLanding } = await import(
+        "@/features/marketing/extension-seo-landing"
+      );
+      return <ExtensionSeoLanding content={content} />;
+    }
     const content = getLandingContent(locale, route);
     if (!content) {
       notFound();
