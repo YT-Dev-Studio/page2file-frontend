@@ -110,8 +110,8 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
     kind: "blog", locale: "en", slug: "save-web-research-to-pdf",
     image: "/blog/mocks/save-web-research-to-pdf.webp",
     imageAlt: "A research webpage saved with searchable text, citations, and a visual chart",
-    title: "Save Web Research and Sources as PDF",
-    description: "Preserve an article, documentation page, or source list with the right balance of searchable text, working references, visual evidence, and context.",
+    title: "Save Web Research and References as PDF",
+    description: "Preserve an article, documentation page, or reference list with the right balance of searchable text, working links, visual evidence, and context.",
     author: "Page 2 File editorial team", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 6, component: EnResearch,
   },
   {
@@ -149,9 +149,9 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog", locale: "en", slug: "export-chatgpt-conversation-to-pdf",
     image: "/blog/mocks/export-chatgpt-conversation-to-pdf.webp",
-    imageAlt: "A ChatGPT conversation PDF with roles, code, tables, and sources",
+    imageAlt: "A ChatGPT conversation PDF with roles, code, tables, and references",
     title: "Export One ChatGPT Conversation to PDF",
-    description: "Prepare and verify a readable PDF of the current ChatGPT thread, including supported code, tables, sources, files, media, and history limits.",
+    description: "Prepare and verify a readable PDF of the current ChatGPT thread, including supported code, tables, references, files, media, and history limits.",
     author: "Page 2 File editorial team", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: EnChatGpt,
   },
   {
@@ -175,7 +175,7 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
     image: "/blog/mocks/preserve-code-tables-citations-in-chat-pdf.webp",
     imageAlt: "Code, tables, citations, files, and media represented as chat PDF blocks",
     title: "Keep Code, Tables, and Citations in Chat PDF",
-    description: "Review the semantic blocks that carry meaning in an AI transcript, including code, tables, quotes, sources, files, images, video, and audio references.",
+    description: "Review the semantic blocks that carry meaning in an AI transcript, including code, tables, quotes, citations, files, images, video, and audio references.",
     author: "Page 2 File editorial team", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: EnChatBlocks,
   },
   {
@@ -269,9 +269,9 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog", locale: "ru", slug: "save-web-research-to-pdf",
     image: "/blog/mocks/save-web-research-to-pdf.webp",
-    imageAlt: "Исследовательская страница с текстом, источниками и диаграммой",
-    title: "Как сохранить веб-исследование и источники в PDF",
-    description: "Сохраните статью, документацию или список источников с поиском по тексту, рабочими ссылками, визуальными доказательствами и контекстом.",
+    imageAlt: "Исследовательская страница с текстом, ссылками и диаграммой",
+    title: "Как сохранить веб-исследование со ссылками в PDF",
+    description: "Сохраните статью, документацию или список материалов с поиском по тексту, рабочими ссылками, визуальными доказательствами и контекстом.",
     author: "Редакция Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 6, component: RuResearch,
   },
   {
@@ -309,9 +309,9 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog", locale: "ru", slug: "export-chatgpt-conversation-to-pdf",
     image: "/blog/mocks/export-chatgpt-conversation-to-pdf.webp",
-    imageAlt: "Переписка ChatGPT с ролями, кодом, таблицами и источниками в PDF",
+    imageAlt: "Переписка ChatGPT с ролями, кодом, таблицами и ссылками в PDF",
     title: "Как экспортировать одну переписку ChatGPT в PDF",
-    description: "Подготовьте и проверьте читаемый PDF текущего диалога ChatGPT с поддерживаемым кодом, таблицами, источниками, файлами и пределами истории.",
+    description: "Подготовьте и проверьте читаемый PDF текущего диалога ChatGPT с поддерживаемым кодом, таблицами, ссылками, файлами и пределами истории.",
     author: "Редакция Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: RuChatGpt,
   },
   {
@@ -333,9 +333,9 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog", locale: "ru", slug: "preserve-code-tables-citations-in-chat-pdf",
     image: "/blog/mocks/preserve-code-tables-citations-in-chat-pdf.webp",
-    imageAlt: "Код, таблицы, источники, файлы и медиа как отдельные блоки PDF",
-    title: "Как сохранить код, таблицы и источники из чата в PDF",
-    description: "Проверьте смысловые блоки AI-расшифровки: код, таблицы, цитаты, источники, файлы, изображения, видео и упоминания аудио.",
+    imageAlt: "Код, таблицы, ссылки, файлы и медиа как отдельные блоки PDF",
+    title: "Как сохранить код, таблицы и ссылки из чата в PDF",
+    description: "Проверьте смысловые блоки AI-расшифровки: код, таблицы, цитаты, ссылки, файлы, изображения, видео и упоминания аудио.",
     author: "Редакция Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: RuChatBlocks,
   },
   {

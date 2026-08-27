@@ -29,7 +29,7 @@ type NavigationLabels = {
 
 const navigationLabels: Record<Locale, NavigationLabels> = {
   en: {
-    about: "About",
+    about: "Editorial principles",
     blog: "Blog",
     guide: "How to use",
     home: "Home",
@@ -37,7 +37,7 @@ const navigationLabels: Record<Locale, NavigationLabels> = {
     webToPdf: "Web 2 PDF",
   },
   ru: {
-    about: "О проекте",
+    about: "Редакционные принципы",
     blog: "Блог",
     guide: "Как пользоваться",
     home: "Главная",

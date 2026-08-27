@@ -27,6 +27,10 @@ describe("localized extension copy", () => {
   });
 
   it("keeps remaining shared and technical UI dictionaries localized", () => {
+    expect(getSeoCopy("ru", "home").title).toBe(
+      "Page 2 PDF — расширение Chrome для страниц и чатов",
+    );
+
     for (const { code } of localeRegistry.filter(({ code }) => code !== "en")) {
       expect(getSiteCopy(code).header.extensionAction).not.toBe(
         getSiteCopy("en").header.extensionAction,

@@ -100,7 +100,7 @@ describe("GPT App landing content", () => {
     });
     expect(russian?.primaryLabel).toBe("Открыть GPT Webpage 2 PDF");
     expect(russian?.sections[0]?.heading).toBe(
-      "1. Передайте точный источник",
+      "1. Передайте точную страницу или файл",
     );
   });
 

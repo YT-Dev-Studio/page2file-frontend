@@ -1,4 +1,4 @@
-Page 2 PDF can turn the current ChatGPT browser conversation into a portrait transcript with detected roles and supported code, tables, sources, files, and images. It does not export every chat in the OpenAI account and does not replace OpenAI's official data-export process.
+Page 2 PDF can turn the current ChatGPT browser conversation into a portrait transcript with detected roles and supported code, tables, references, files, and images. It does not export every chat in the OpenAI account and does not replace OpenAI's official data-export process.
 
 ## Export the open ChatGPT thread
 
@@ -17,7 +17,7 @@ Keep the tab open during history loading and preparation. The loader is bounded 
 
 ## Check structured blocks, not only plain text
 
-Inspect code indentation, long lines, table columns, quotations, and source links. Expand collapsed material before export when it belongs in the record. File and media references depend on what the platform exposes and what remains accessible; expired or protected assets may be represented incompletely.
+Inspect code indentation, long lines, table columns, quotations, and citation links. Expand collapsed material before export when it belongs in the record. File and media references depend on what the platform exposes and what remains accessible; expired or protected assets may be represented incompletely.
 
 Replies-only creates a compact answer document but can remove the question that gives an answer meaning. Use it for a curated response packet after checking context. Use all messages for an audit trail or collaborative record.
 
@@ -31,7 +31,7 @@ Choose Page 2 PDF when the reader needs the current thread as a document and you
 
 ## Handle changing platform markup honestly
 
-ChatGPT can change selectors, attachment drawers, citation presentation, or history loading. Page 2 PDF has a dedicated adapter backed by tests, but current live compatibility still belongs in release smoke checks. If roles are reversed, messages repeat, or sources disappear, stop and report the failure rather than sharing the file.
+ChatGPT can change selectors, attachment drawers, citation presentation, or history loading. Page 2 PDF has a dedicated adapter backed by tests, but current live compatibility still belongs in release smoke checks. If roles are reversed, messages repeat, or reference links disappear, stop and report the failure rather than sharing the file.
 
 The product landing for this exact task is [ChatGPT to PDF](/en/chrome-extension/chatgpt-to-pdf). It owns the direct conversion intent; this guide focuses on preparation and verification.
 
@@ -45,6 +45,6 @@ No. It works with the current page and cannot retrieve deleted, hidden, or unava
 
 Yes. Choose replies-only, then check that each answer remains understandable without its prompt.
 
-### Are source links guaranteed to work later?
+### Are citation links guaranteed to work later?
 
 No. Safe links can be preserved when detected, but the destination can move, expire, or require access.

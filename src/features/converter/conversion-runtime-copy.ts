@@ -11,7 +11,7 @@ const runtimeCopy: Record<Locale, RuntimeCopy> = {
   en: {
     submitPending: "Starting secure preview…",
     runtimeNotice:
-      "The service fetches the public URL in an isolated browser. Source data and artifacts are temporary and are not kept as conversion history.",
+      "The service opens the public URL in an isolated browser. Submitted page data and generated files are temporary and are not kept as conversion history.",
     errors: {
       INVALID_REQUEST:
         "The request is incomplete or contains an unsupported value.",
@@ -26,9 +26,9 @@ const runtimeCopy: Record<Locale, RuntimeCopy> = {
       SOURCE_REQUIRES_AUTH:
         "This page requires sign-in. Use the active-tab extension workflow.",
       SOURCE_BLOCKED_AUTOMATION:
-        "The source does not allow automated access.",
+        "The submitted page does not allow automated access.",
       PAGE_TOO_LARGE:
-        "The page exceeds the supported size. Try a smaller source.",
+        "The page exceeds the supported size. Try a smaller page.",
       RESOURCE_LIMIT_EXCEEDED:
         "The page used more resources than the safe processing limit.",
       LOAD_TIMEOUT:
@@ -74,9 +74,9 @@ const runtimeCopy: Record<Locale, RuntimeCopy> = {
       SOURCE_REQUIRES_AUTH:
         "Страница требует входа. Используйте расширение для активной вкладки.",
       SOURCE_BLOCKED_AUTOMATION:
-        "Источник не разрешает автоматизированный доступ.",
+        "Переданная страница не разрешает автоматизированный доступ.",
       PAGE_TOO_LARGE:
-        "Страница превышает допустимый размер. Выберите меньший источник.",
+        "Страница превышает допустимый размер. Выберите страницу меньшего размера.",
       RESOURCE_LIMIT_EXCEEDED:
         "Страница превысила безопасный лимит ресурсов.",
       LOAD_TIMEOUT:

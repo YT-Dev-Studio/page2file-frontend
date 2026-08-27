@@ -38,11 +38,11 @@ const marketingCopy: Record<Locale, MarketingCopy> = {
       stepsLabel: "How it works",
     },
     gptWorkflow: {
-      detailsTitle: "Three steps from source to file",
-      mapLabel: "Source → review → file",
-      stages: ["Provide the source", "Review the result", "Download the file"],
+      detailsTitle: "Three steps from page to file",
+      mapLabel: "Page or file → review → download",
+      stages: ["Provide the page or file", "Review the result", "Download the file"],
       stageDescriptions: [
-        "Give the GPT App the supported source.",
+        "Give the GPT App a supported page or file.",
         "Check the pages, slides, and visible limits.",
         "Download the files returned for this request.",
       ],
@@ -54,7 +54,7 @@ const marketingCopy: Record<Locale, MarketingCopy> = {
       stageDescriptions: [
         "Load the messages you want in the active tab.",
         "Choose all messages or replies only and remove media or links if needed.",
-        "Keep the source tab open, then check and save the PDF preview.",
+        "Keep the tab being exported open, then check and save the PDF preview.",
       ],
     },
   },
@@ -69,11 +69,11 @@ const marketingCopy: Record<Locale, MarketingCopy> = {
       stepsLabel: "Как это работает",
     },
     gptWorkflow: {
-      detailsTitle: "Три шага от источника до файла",
-      mapLabel: "Источник → проверка → файл",
-      stages: ["Передайте источник", "Проверьте результат", "Скачайте файл"],
+      detailsTitle: "Три шага от страницы до файла",
+      mapLabel: "Страница или файл → проверка → скачивание",
+      stages: ["Передайте страницу или файл", "Проверьте результат", "Скачайте файл"],
       stageDescriptions: [
-        "Передайте GPT-приложению поддерживаемый источник.",
+        "Передайте GPT-приложению поддерживаемую страницу или файл.",
         "Проверьте страницы, слайды и видимые ограничения.",
         "Скачайте файлы, созданные для этого запроса.",
       ],

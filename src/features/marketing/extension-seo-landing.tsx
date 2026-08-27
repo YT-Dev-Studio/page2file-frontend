@@ -45,9 +45,9 @@ export const ExtensionSeoLanding = ({
   const locale = "en";
   const extensionAction = getSiteCopy(locale).header.extensionAction;
   const breadcrumbs: ReadonlyArray<BreadcrumbItem> = [
-    { label: "Page 2 PDF", href: routePath(locale, "") },
+    { label: "Page 2 File", href: routePath(locale, "") },
     {
-      label: "Chrome extension",
+      label: "Page 2 PDF",
       href: routePath(locale, "chrome-extension/how-to-use"),
     },
     { label: content.heading, href: routePath(locale, content.route) },

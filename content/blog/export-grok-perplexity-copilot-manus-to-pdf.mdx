@@ -2,7 +2,7 @@ Page 2 PDF includes dedicated extractors for Grok, Perplexity, Microsoft Copilot
 
 ## Use one verified workflow for four adapters
 
-Open the target thread in Chrome, load the messages and sources you need, and launch Page 2 PDF from that tab. Select **AI / Chat**, choose all messages or replies only, and decide whether to remove images, video, audio, or links. Keep the tab open until preparation and preview finish.
+Open the target thread in Chrome, load the messages and references you need, and launch Page 2 PDF from that tab. Select **AI / Chat**, choose all messages or replies only, and decide whether to remove images, video, audio, or links. Keep the tab open until preparation and preview finish.
 
 The Grok adapter covers current markup on `grok.com` and `x.com` plus a tested legacy structure. Microsoft Copilot covers its supported Microsoft host variants. Perplexity and Manus have their own adapter rules. These are implementation facts; live service compatibility still requires a release smoke check.
 
@@ -19,13 +19,13 @@ The Grok adapter covers current markup on `grok.com` and `x.com` plus a tested l
 
 Perplexity documents export of a Session to PDF, Markdown, or DOCX in its [Help Center](https://www.perplexity.ai/help-center/en/articles/10354769-what-is-a-thread). Use that native PDF when it contains the exact session and structure you need. Page 2 PDF is an alternative when you want the shared transcript controls or need the same review process used for other supported chats.
 
-Microsoft documentation includes many file-conversion and enterprise export features, but those are not automatically exports of one Copilot browser conversation. Confirm the exact Microsoft product and account context. Manus separates chat and agent modes; the current browser conversation remains the Page 2 PDF source.
+Microsoft documentation includes many file-conversion and enterprise export features, but those are not automatically exports of one Copilot browser conversation. Confirm the exact Microsoft product and account context. Manus separates chat and agent modes; Page 2 PDF continues to process only the current browser conversation.
 
 No reliable native option should be invented for Grok. If the platform adds one, compare it with the desired current-thread PDF rather than assuming the extension remains preferable.
 
 ## Review the platform-specific failure points
 
-Check speaker order, citations, generated cards, file references, and the first and last included messages. Grok can expose modern and legacy layouts. Perplexity sources may be central to the answer. Copilot surfaces differ across Microsoft hosts. Manus may present agent activity that is not equivalent to a simple assistant reply.
+Check speaker order, citations, generated cards, file references, and the first and last included messages. Grok can expose modern and legacy layouts. Perplexity reference links may be central to the answer. Copilot surfaces differ across Microsoft hosts. Manus may present agent activity that is not equivalent to a simple assistant reply.
 
 Page 2 PDF preserves supported semantic blocks exposed by the page; it does not promise every proprietary widget. The latest 2,000 retrievable messages are the upper bound, and unloaded history can shorten the result. Use the [AI export overview](/en/blog/export-ai-chat-to-pdf) and [semantic block checklist](/en/blog/preserve-code-tables-citations-in-chat-pdf) for review.
 

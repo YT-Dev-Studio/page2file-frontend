@@ -52,7 +52,7 @@ const commonSteps: readonly [
   },
   {
     title: "Preview the PDF",
-    body: "Select Get PDF, keep the source tab open during preparation, then review and download the result from Chrome's PDF viewer.",
+    body: "Select Get PDF, keep the tab being exported open during preparation, then review and download the result from Chrome's PDF viewer.",
   },
 ];
 
@@ -110,7 +110,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
       "It is not a server-side URL-to-PDF service and does not accept pasted URLs.",
       "Content hidden behind logins, closed menus, or unloaded virtualized lists may remain unavailable.",
       "A visual copy prioritizes appearance; use Editable document when selectable text matters.",
-      "The source tab must stay open while Page 2 PDF prepares and checks the result.",
+      "The tab being exported must stay open while Page 2 PDF prepares and checks the result.",
     ],
     privacy,
     faqs: [
@@ -208,7 +208,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
       "The extension does not export all WhatsApp or Telegram chats in one operation.",
       "Slack, Instagram, Messenger, Discord, and Teams are not currently supported live adapters.",
       "Only the latest 2,000 messages loaded or retrievable in the current browser conversation can be included.",
-      "Keep the source tab open while history and media are being prepared.",
+      "Keep the tab being exported open while history and media are being prepared.",
     ],
     privacy,
     faqs: [
@@ -295,7 +295,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     steps: commonSteps,
     supportedTitle: "Editable document controls",
     supported: [
-      "Selectable text where the source page exposes real text",
+      "Selectable text where the original page exposes real text",
       "Available clickable links when Remove links is off",
       "Optional removal of images and styling",
       "Portrait or landscape output and screen or print-optimized profiles",
@@ -323,7 +323,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
       {
         question: "What is the project ZIP?",
         answer:
-          "It is an optional ZIP containing the PDF, capture manifest, scrubbed source archive, and checksums when that archive can be produced safely. Page 2 PDF does not import it for editing.",
+          "It is an optional ZIP containing the PDF, capture manifest, scrubbed page archive, and checksums when that archive can be produced safely. Page 2 PDF does not import it for editing.",
       },
     ],
     related: [
@@ -359,7 +359,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     privacy,
     faqs: [
       {
-        question: "Can I paste HTML source into the extension?",
+        question: "Can I paste page HTML into the extension?",
         answer:
           "No. Render the HTML as a page in Chrome, then run Page 2 PDF on that active tab.",
       },
@@ -384,18 +384,18 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     route: "chrome-extension/chatgpt-to-pdf",
     title: "Export a ChatGPT Conversation to PDF",
     description:
-      "Save the current ChatGPT conversation as PDF with ordered prompts and replies, supported code, sources, files, images, and links.",
+      "Save the current ChatGPT conversation as PDF with ordered prompts and replies, supported code, references, files, images, and links.",
     eyebrow: "CHATGPT TO PDF",
     heading: "Export the ChatGPT conversation you have open",
     lead:
-      "Page 2 PDF extracts the current ChatGPT thread, keeps supported semantic blocks and source citations, and leaves the account sidebar outside the PDF.",
+      "Page 2 PDF extracts the current ChatGPT thread, keeps supported semantic blocks and citation links, and leaves the account sidebar outside the PDF.",
     demo: chatDemo,
     steps: commonSteps,
     supportedTitle: "ChatGPT export options",
     supported: [
       "The current conversation open in ChatGPT",
       "All messages or assistant replies only",
-      "Supported images, generated images, files, code, tables, source citations, lists, and links",
+      "Supported images, generated images, files, code, tables, citations, lists, and links",
       "Optional removal of images, video references, audio references, or links",
     ],
     limitsTitle: "Conversation-level export",
@@ -498,7 +498,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     limits: [
       "Page 2 PDF does not export every WhatsApp chat at once.",
       "Messages that WhatsApp Web cannot load in the current session cannot be included.",
-      "The source tab must remain open while the conversation is being prepared.",
+      "The tab being exported must remain open while the conversation is being prepared.",
     ],
     privacy,
     faqs: [

@@ -5,12 +5,12 @@ export type SeoRouteKey = "home" | "guide" | "preview" | "download" | "notFound"
 
 const home: Record<Locale, SeoCopy> = {
   en: { title: "Page 2 PDF Chrome Extension for Pages and Chats", description: "Use Page 2 PDF on the active Chrome tab to create a visual full-page PDF, a selectable document, or a structured AI and messenger transcript." },
-  ru: { title: "Расширение Chrome для сохранения страниц в PDF", description: "Запустите Page 2 PDF на активной вкладке Chrome и получите визуальную копию всей страницы, документ с текстом или расшифровку поддерживаемого чата." },
+  ru: { title: "Page 2 PDF — расширение Chrome для страниц и чатов", description: "Запустите Page 2 PDF на активной вкладке Chrome и получите визуальную копию всей страницы, документ с текстом или расшифровку поддерживаемого чата." },
 };
 
 const guide: Record<Locale, SeoCopy> = {
-  en: { title: "How to Save a Webpage as PDF in Chrome", description: "Open the source in Chrome, choose the Page 2 PDF capture mode, keep the tab open during preparation, then check and download the PDF preview." },
-  ru: { title: "Как сохранить веб-страницу в PDF в Chrome", description: "Откройте источник в Chrome, выберите режим Page 2 PDF, не закрывайте вкладку во время подготовки, затем проверьте и скачайте готовый PDF." },
+  en: { title: "How to Save a Webpage as PDF in Chrome", description: "Open the original page in Chrome, choose the Page 2 PDF capture mode, keep the tab open during preparation, then check and download the PDF preview." },
+  ru: { title: "Как сохранить веб-страницу в PDF в Chrome", description: "Откройте исходную страницу в Chrome, выберите режим Page 2 PDF, не закрывайте вкладку во время подготовки, затем проверьте и скачайте готовый PDF." },
 };
 
 const preview: Record<Locale, SeoCopy> = {

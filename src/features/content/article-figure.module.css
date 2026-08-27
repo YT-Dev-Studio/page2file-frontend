@@ -106,6 +106,7 @@
 .dialogSurface {
   position: relative;
   display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
   overflow: hidden;
   max-height: 90dvh;
   border: 1px solid rgb(255 255 255 / 24%);
@@ -119,7 +120,8 @@
 .dialogImage {
   display: block;
   width: 100%;
-  max-height: calc(90dvh - 58px);
+  height: 100%;
+  min-height: 0;
   object-fit: contain;
   background: #eaf0fb;
 }
@@ -128,14 +130,14 @@
   min-width: 0;
   margin: 0;
   padding: var(--p2f-space-16) 72px var(--p2f-space-16)
-    var(--p2f-space-20);
-  overflow: hidden;
+    var(--p2f-space-24);
+  border-top: var(--p2f-border-width-default) solid
+    var(--p2f-color-border-default);
+  overflow-wrap: anywhere;
   color: var(--p2f-color-text-secondary);
   background: var(--p2f-color-background-surface);
   font-size: var(--p2f-type-caption-regular-font-size);
   line-height: var(--p2f-type-caption-regular-line-height);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .closeButton {
@@ -221,14 +223,9 @@
     border-radius: 12px;
   }
 
-  .dialogImage {
-    max-height: calc(92dvh - 70px);
-  }
-
   .dialogCaption {
     padding: var(--p2f-space-12) 60px var(--p2f-space-12)
       var(--p2f-space-16);
-    white-space: normal;
   }
 
   .closeButton {

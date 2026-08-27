@@ -134,10 +134,10 @@ const englishCopy: ExtensionCopy = {
     "The website does not receive the tab content or store user data. Open any website in a new tab and run Page 2 PDF.",
   steps: [
     { title: "Open a website", body: "Load the webpage, local HTML file, or conversation you want to keep." },
-    { title: "Open Page 2 PDF", body: "Click the extension icon while the source page tab is active." },
+    { title: "Open Page 2 PDF", body: "Click the extension icon while the tab being exported is active." },
     { title: "Choose an output style", body: "Select Accurate copy, Editable document, or AI / Chat." },
     { title: "Configure the target PDF", body: "Choose orientation, output profile, message scope, or content to remove when those controls apply." },
-    { title: "Keep the tab open", body: "Wait for available content to load and the preview to be prepared without closing the source page or navigating to another page." },
+    { title: "Keep the tab open", body: "Wait for available content to load and the preview to be prepared without closing the original page or navigating elsewhere." },
     { title: "Check and save", body: "Review the PDF pages in Chrome's preview, then use the download or print button." },
   ],
   homePrivacyTitle: "Local processing with no sign-up",
@@ -156,7 +156,7 @@ const englishCopy: ExtensionCopy = {
   ],
   guideTitle: "How to use the Page 2 PDF Chrome extension",
   guideLead:
-    "Open the source page in your browser, choose the capture mode that matches the result you need, keep the tab open during preparation, and check the PDF before saving it.",
+    "Open the original page in your browser, choose the capture mode that matches the result you need, keep the tab open during preparation, and check the PDF before saving it.",
   guideSteps: [
     {
       id: "pin",
@@ -213,7 +213,7 @@ const englishCopy: ExtensionCopy = {
   limitsTitle: "Before you start",
   limits: [
     "Chrome blocks extensions on browser settings, the Chrome Web Store, and other protected pages.",
-    "Expand the content you need and keep the source page open. Items the page cannot load may be omitted or represented by a placeholder.",
+    "Expand the content you need and keep the original page open. Items the page cannot load may be omitted or represented by a placeholder.",
     "AI / Chat uses portrait pages and includes at most the latest 2,000 messages that its bounded history loader can retrieve.",
     "Local HTML may require enabling file URL access for Page 2 PDF in Chrome's extension settings.",
     "Very tall pages, virtualized lists, unavailable media, protected frames, or a page that keeps changing can prevent a complete result.",
@@ -257,7 +257,7 @@ const russianCopy: ExtensionCopy = {
     },
     {
       title: "AI / Чат",
-      body: "Экспортирует диалог из популярных мессенджеров, таких как Telegram, WhatsApp. А также, популярные ИИ-чаты. Можно оставить все сообщения или только ответы, сохранить поддерживаемые блоки кода, таблицы, источники, файлы и медиа либо убрать медиа и ссылки.",
+      body: "Экспортирует диалог из популярных мессенджеров, таких как Telegram, WhatsApp. А также, популярные ИИ-чаты. Можно оставить все сообщения или только ответы, сохранить поддерживаемые блоки кода, таблицы, ссылки, файлы и медиа либо убрать медиа и ссылки.",
     },
   ],
   sourcesTitle: "Какие страницы и чаты можно сохранить",

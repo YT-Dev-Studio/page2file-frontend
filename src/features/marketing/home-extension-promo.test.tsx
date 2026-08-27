@@ -39,7 +39,13 @@ describe("HomeHero", () => {
       }),
     ).toHaveLength(2);
     expect(
-      screen.queryByText("PAGE 2 FILE · CHROME"),
+      screen.getByText("PAGE 2 PDF · CHROME EXTENSION"),
+    ).toBeTruthy();
+    expect(
+      screen.getByText("Page 2 PDF — Page 2 File"),
+    ).toBeTruthy();
+    expect(
+      screen.queryByText("PAGE 2 FILE · CHROME EXTENSION"),
     ).toBeNull();
     expect(
       screen.getByRole("link", { name: "View instructions" }),

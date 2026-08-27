@@ -2,9 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Locale } from "@/shared/i18n/locales";
-import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { SeoBreadcrumbs, type BreadcrumbItem } from "@/shared/seo/structured-data";
-import { ExternalCta } from "@/shared/ui/external-cta";
 import {
   ExtensionArtwork,
   type ExtensionArtworkVariant,
@@ -172,7 +170,6 @@ const GuideDetailSection = ({
 
 export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getExtensionCopy(locale);
-  const extensionAction = getSiteCopy(locale).header.extensionAction;
   const breadcrumbs: ReadonlyArray<BreadcrumbItem> = [
     { label: copy.homeLabel, href: `/${locale}` },
     { label: copy.guideLabel, href: `/${locale}/chrome-extension/how-to-use` },
@@ -222,13 +219,7 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
       <Container>
         <SeoBreadcrumbs items={breadcrumbs} label={copy.breadcrumbLabel} locale={locale} />
         <div className={styles.heroLayout}>
-          <PublicHero eyebrow="PAGE 2 FILE · CHROME" lead={copy.guideLead} title={copy.guideTitle}>
-            <ExternalCta
-              externalLinkKey="chromeExtension"
-              label={extensionAction}
-              placeholderLabel={extensionAction}
-            />
-          </PublicHero>
+          <PublicHero eyebrow="PAGE 2 PDF · CHROME EXTENSION" lead={copy.guideLead} title={copy.guideTitle} />
         </div>
 
         <ol className={styles.steps}>{copy.guideSteps.map(mapStep)}</ol>

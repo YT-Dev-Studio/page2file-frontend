@@ -9,7 +9,7 @@ Page 2 PDF looks for the primary scroll area, performs a limited preparation pas
 <ArticleFigure
   src="/blog/demos/full-page-preparation.webp"
   alt="Page 2 PDF preparation dialog at 73 percent over a nested-scroll test page"
-  caption="The active tab remains the source while the extension prepares the primary scroll area and then restores page state."
+  caption="The tab being exported stays open while the extension prepares the primary scroll area and then restores page state."
   step={1}
   openLabel="Open the long-page preparation diagram"
   closeLabel="Close the long-page preparation diagram"
@@ -19,7 +19,7 @@ Page 2 PDF looks for the primary scroll area, performs a limited preparation pas
 
 First, finish signing in and navigate to the exact report, article, or result you want. Close menus that cover the content and expand accordions that must appear. Wait for visible charts and media to settle. Then open Page 2 PDF from that tab, select Accurate copy, choose portrait or landscape, and start preparation. The [full-page PDF product guide](/en/chrome-extension/full-page-pdf) summarizes the same bounded workflow.
 
-Do not close the source, change routes, or switch the page into another state while the extension works. If a consent dialog, sticky toolbar, or chat widget should not appear, dismiss it before capture. The extension preserves the current page; it does not decide which business state is correct.
+Do not close the original page, change routes, or switch it into another state while the extension works. If a consent dialog, sticky toolbar, or chat widget should not appear, dismiss it before capture. The extension preserves the current page; it does not decide which business state is correct.
 
 For wide tables or landscape reports, compare portrait and landscape in separate runs. For searchable text or clickable references, Accurate copy is the wrong output: follow the [mode selection guide](/en/blog/choose-webpage-pdf-mode) and use Editable document instead.
 
@@ -39,11 +39,11 @@ If Print produces missing sections, cut-off tables, or an unexpected mobile-like
 
 ### Will every item loaded by endless scrolling appear?
 
-No. The loader is limited, and some sites replace older items as new ones appear. Filter or shorten the source whenever completeness matters.
+No. The loader is limited, and some sites replace older items as new ones appear. Filter or shorten the page whenever completeness matters.
 
 ### Does the extension leave the page scrolled to the bottom?
 
-The workflow is designed to restore the original scroll and temporary state after preparation, including cleanup after a failure. Check the tab after a run if the source is sensitive to navigation or focus.
+The workflow is designed to restore the original scroll and temporary state after preparation, including cleanup after a failure. Check the tab after a run if the page is sensitive to navigation or focus.
 
 ### Can it capture several linked pages as one PDF?
 

@@ -50,7 +50,7 @@ export function GET(): Response {
     `- Terms: ${absoluteUrl("/en/terms")}`,
     `- Contact: mailto:${legalProfile.contactEmail}`,
     "",
-    "Localized versions use the same path after their language prefix. HTML pages are the primary source of truth.",
+    "Localized versions use the same path after their language prefix. HTML pages are the canonical reference.",
     "",
   ].join("\n");
 

@@ -117,7 +117,7 @@ const realPreviewCopy: Record<
       },
       failed_terminal: {
         title: "Conversion stopped",
-        text: "The source could not be processed within the safety limits.",
+        text: "The submitted page could not be processed within the safety limits.",
         tone: "error",
         pending: false,
       },
@@ -246,7 +246,7 @@ const realPreviewCopy: Record<
       },
       failed_terminal: {
         title: "Конвертация остановлена",
-        text: "Источник нельзя обработать в пределах безопасных ограничений.",
+        text: "Переданную страницу нельзя обработать в пределах безопасных ограничений.",
         tone: "error",
         pending: false,
       },

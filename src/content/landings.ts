@@ -51,9 +51,9 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
         title: "Webpage to PDF Converter — Web2File",
         displayTitle: "GPT: Webpage 2 PDF",
         description: "Webpage to PDF Converter — Web2File accepts exact public URLs, webpage PDFs, or ordered screenshots and returns separate visual or interactive PDFs.",
-        lead: "Send the exact public pages or files you want processed. Web2File returns one PDF per webpage: choose Visual PDF for page images or Interactive PDF for selectable text and verified links where the source allows them.",
+        lead: "Send the exact public pages or files you want processed. Web2File returns one PDF per webpage: choose Visual PDF for page images or Interactive PDF for selectable text and verified links where the submitted page allows them.",
         sections: [
-            { heading: "1. Supply the exact source", body: "Send one public URL, a list of exact public URLs, an existing webpage PDF, or ordered full-page screenshots. Each supplied webpage remains a separate output file." },
+            { heading: "1. Supply the exact page or file", body: "Send one public URL, a list of exact public URLs, an existing webpage PDF, or ordered full-page screenshots. Each supplied webpage remains a separate output file." },
             { heading: "2. Choose visual or interactive output", body: "Visual PDF prioritizes the supplied page appearance. Interactive PDF prioritizes existing selectable text and links that can be checked; one mode applies to every URL in the same request." },
             { heading: "3. Stay within the supplied pages", body: "Web2File opens only the exact public URLs you provide. It does not crawl a domain, inspect a sitemap, follow links for extra pages, or bypass sign-in, paywalls, CAPTCHAs, location rules, or other access controls." },
             { heading: "4. Use PDFs and screenshots as evidence", body: "Ordered screenshots can be assembled into a Visual PDF. An uploaded webpage PDF can be checked and processed from the content it already contains; missing page content is not reconstructed or invented." },
@@ -112,7 +112,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 heading: "Information we do not request",
-                body: "Page 2 File does not require a Page 2 File account and does not ask for payment-card details, billing addresses or passwords for the source website. The extension uses the page already open in your browser and does not receive the password you used to access that website.",
+                body: "Page 2 File does not require a Page 2 File account and does not ask for payment-card details, billing addresses or passwords for the original website. The extension uses the page already open in your browser and does not receive the password you used to access that website.",
             },
             {
                 heading: "How we use information",
@@ -178,7 +178,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
         route: "terms",
         eyebrow: "Service agreement",
         title: "Terms of service",
-        description: "Terms for using Page 2 File, including permitted webpage sources, conversion limits, user responsibilities and service availability.",
+        description: "Terms for using Page 2 File, including permitted submitted materials, conversion limits, user responsibilities and service availability.",
         lead: "These Terms govern your use of the Page 2 File website, the Page 2 PDF Chrome extension and related webpage-to-PDF conversion services.",
         sections: [
             {
@@ -187,27 +187,27 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 heading: "Definitions",
-                body: "“Service” means the Page 2 File website, the Page 2 PDF Chrome extension and related conversion features. “Source content” means a webpage, active-tab content or other material submitted for conversion. “Output” means a PDF, preview or other generated result.",
+                body: "“Service” means the Page 2 File website, the Page 2 PDF Chrome extension and related conversion features. “Submitted content” means a webpage, active-tab content or other material submitted for conversion. “Output” means a PDF, preview or other generated result.",
             },
             {
                 heading: "Limited license",
                 body: "We grant you a revocable, non-exclusive, non-transferable and limited right to access and use the Service in accordance with these Terms. No ownership in Page 2 File software, branding or other protected material is transferred to you.",
             },
             {
-                heading: "Permitted sources and your responsibility",
-                body: "You may convert only source content that you are legally permitted to access, process, reproduce and download. You are responsible for the URLs and active-tab content you submit, the conversion settings you choose, and how you use or distribute every Output.",
+                heading: "Permitted materials and your responsibility",
+                body: "You may convert only submitted content that you are legally permitted to access, process, reproduce and download. You are responsible for the URLs and active-tab content you submit, the conversion settings you choose, and how you use or distribute every Output.",
             },
             {
                 heading: "Prohibited use",
                 body: "You must not use the Service to break the law, infringe another person’s rights, bypass paywalls or access controls, distribute malware, submit abusive or unlawful content, probe private networks, interfere with security controls, overload systems, automate excessive requests, reverse engineer protected parts of the Service or misrepresent generated files.",
             },
             {
-                heading: "Source content and third-party rights",
-                body: "You retain any rights you already have in source content. Page 2 File does not grant rights to material owned by another person. You represent that processing the submitted material and creating the requested Output does not violate copyright, privacy, confidentiality, contract or other applicable rights.",
+                heading: "Submitted content and third-party rights",
+                body: "You retain any rights you already have in submitted content. Page 2 File does not grant rights to material owned by another person. You represent that processing the submitted material and creating the requested Output does not violate copyright, privacy, confidentiality, contract or other applicable rights.",
             },
             {
                 heading: "Temporary processing",
-                body: "The Service may temporarily process source content, conversion settings and generated artifacts to provide a preview and download. Page 2 File does not provide an account-based conversion history. Details about temporary data, cookies and providers are set out in the Privacy Policy.",
+                body: "The Service may temporarily process submitted content, conversion settings and generated artifacts to provide a preview and download. Page 2 File does not provide an account-based conversion history. Details about temporary data, cookies and providers are set out in the Privacy Policy.",
             },
             {
                 heading: "Output and fidelity limitations",
@@ -227,7 +227,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 heading: "Feedback",
-                body: "If you voluntarily provide suggestions or feedback, you grant us a worldwide, perpetual and royalty-free right to use that feedback to improve or develop the Service without an obligation to compensate you. This does not transfer ownership of your source content.",
+                body: "If you voluntarily provide suggestions or feedback, you grant us a worldwide, perpetual and royalty-free right to use that feedback to improve or develop the Service without an obligation to compensate you. This does not transfer ownership of your submitted content.",
             },
             {
                 heading: "Changes, updates and availability",
@@ -251,7 +251,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 heading: "Indemnity",
-                body: "To the extent permitted by law, you agree to defend and indemnify {{entityName}} against third-party claims arising from source content you submit, your use or distribution of an Output, your violation of these Terms or your infringement of another person’s rights.",
+                body: "To the extent permitted by law, you agree to defend and indemnify {{entityName}} against third-party claims arising from content you submit, your use or distribution of an Output, your violation of these Terms or your infringement of another person’s rights.",
             },
             {
                 heading: "Severability, waiver and entire agreement",

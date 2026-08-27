@@ -145,7 +145,7 @@ const ChromeBrowserChrome = (): ReactNode => (
           src="/brand/page-2-pdf-icon-16.png"
           width={16}
         />
-        <span className={styles.browserTabTitle}>Page 2 File — extension</span>
+        <span className={styles.browserTabTitle}>Page 2 PDF — Page 2 File</span>
         <i className={styles.browserTabClose}>×</i>
       </span>
       <span className={styles.browserNewTab}>+</span>
@@ -188,7 +188,7 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
       <Container>
         <div className={styles.heroLayout}>
           <div className={styles.heroContent}>
-            <p className={styles.eyebrow}>PAGE 2 FILE · CHROME EXTENSION</p>
+            <p className={styles.eyebrow}>PAGE 2 PDF · CHROME EXTENSION</p>
             <h1 className={styles.title}>{copy.homeTitle}</h1>
             <p className={styles.lead}>{copy.homeLead}</p>
             <div className={styles.heroActions}>

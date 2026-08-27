@@ -6,9 +6,19 @@ import { getHomeMarketingCopy } from "./home-content";
 describe("homepage extension copy", () => {
   test("uses the approved English positioning", () => {
     const copy = getExtensionCopy("en");
+    const marketingCopy = getHomeMarketingCopy("en");
 
     expect(copy.homeTitle).toBe(
       "Save the current webpage or chat as PDF.",
+    );
+    expect(copy.homeLead).toContain(
+      "Page 2 PDF is the Chrome extension from Page 2 File.",
+    );
+    expect(marketingCopy.faqItems.map(({ question }) => question)).toContain(
+      "Can Page 2 PDF save a webpage that requires sign-in?",
+    );
+    expect(marketingCopy.faqItems.map(({ question }) => question)).toContain(
+      "Does Page 2 PDF upload or store my webpage and chat content?",
     );
     expect(copy.modes.map(({ title }) => title)).toEqual([
       "Accurate copy",
@@ -26,8 +36,18 @@ describe("homepage extension copy", () => {
 
   test("uses the source-provided Russian positioning and localized modes", () => {
     const copy = getExtensionCopy("ru");
+    const marketingCopy = getHomeMarketingCopy("ru");
 
     expect(copy.homeTitle).toBe("Сохраняйте текущую веб-страницу или чат в PDF.");
+    expect(copy.homeLead).toContain(
+      "Page 2 PDF — расширение Chrome от Page 2 File.",
+    );
+    expect(marketingCopy.faqItems.map(({ question }) => question)).toContain(
+      "Может ли Page 2 PDF сохранить страницу после входа в аккаунт?",
+    );
+    expect(marketingCopy.faqItems.map(({ question }) => question)).toContain(
+      "Загружает или хранит ли Page 2 PDF содержимое страниц и чатов?",
+    );
     expect(copy.modes.map(({ title }) => title)).toEqual([
       "Точная копия",
       "Редактируемый документ",

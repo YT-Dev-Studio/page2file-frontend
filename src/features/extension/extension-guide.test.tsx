@@ -9,6 +9,7 @@ describe("ExtensionGuide", () => {
     expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
       "How to use the Page 2 PDF Chrome extension",
     );
+    expect(screen.getByText("PAGE 2 PDF · CHROME EXTENSION")).toBeTruthy();
     const steps = screen.getByText("Pin the extension").closest("ol");
     expect(steps?.querySelectorAll("li")).toHaveLength(4);
     expect(
@@ -48,7 +49,7 @@ describe("ExtensionGuide", () => {
     expect(screen.getByRole("link", { name: "project archive" }).getAttribute("href")).toBe(
       "/en/blog/preserve-webpage-links-forms-text",
     );
-    expect(screen.getByRole("link", { name: "Install Page 2 PDF" })).toBeTruthy();
+    expect(screen.queryByRole("link", { name: "Install Page 2 PDF" })).toBeNull();
     expect(container.textContent).toContain("latest 2,000 messages");
     expect(container.textContent).toContain("the next time the extension runs");
     expect(container.textContent).not.toContain("within two hours");
@@ -61,6 +62,7 @@ describe("ExtensionGuide", () => {
     expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
       "Как пользоваться расширением Page 2 PDF для Chrome",
     );
+    expect(screen.getByText("PAGE 2 PDF · CHROME EXTENSION")).toBeTruthy();
     const steps = screen.getByText("Закрепите расширение").closest("ol");
     expect(steps?.querySelectorAll("li")).toHaveLength(4);
     expect(
@@ -96,7 +98,7 @@ describe("ExtensionGuide", () => {
     expect(screen.getByRole("link", { name: "архив проекта" }).getAttribute("href")).toBe(
       "/ru/blog/preserve-webpage-links-forms-text",
     );
-    expect(screen.getByRole("link", { name: "Установить Page 2 PDF" })).toBeTruthy();
+    expect(screen.queryByRole("link", { name: "Установить Page 2 PDF" })).toBeNull();
     expect(container.textContent).toContain("2 000 последних сообщений");
     expect(container.textContent).toContain("при следующем запуске расширения");
     expect(container.textContent).not.toContain("не позднее чем через два часа");
