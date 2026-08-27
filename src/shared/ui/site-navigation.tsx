@@ -19,7 +19,6 @@ type SiteNavigationProps = {
 };
 
 type NavigationLabels = {
-  about: string;
   blog: string;
   guide: string;
   home: string;
@@ -29,7 +28,6 @@ type NavigationLabels = {
 
 const navigationLabels: Record<Locale, NavigationLabels> = {
   en: {
-    about: "Editorial principles",
     blog: "Blog",
     guide: "How to use",
     home: "Home",
@@ -37,7 +35,6 @@ const navigationLabels: Record<Locale, NavigationLabels> = {
     webToPdf: "Web 2 PDF",
   },
   ru: {
-    about: "Редакционные принципы",
     blog: "Блог",
     guide: "Как использовать",
     home: "Главная",
@@ -85,11 +82,6 @@ export const SiteNavigation = ({
       activePrefix: `/${locale}/blog`,
       href: `/${locale}/blog`,
       label: labels.blog,
-    },
-    {
-      activePrefix: `/${locale}/about`,
-      href: `/${locale}/about`,
-      label: labels.about,
     },
   ];
   const navigationClassName = className ?? "";

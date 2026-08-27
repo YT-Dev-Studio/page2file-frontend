@@ -222,7 +222,7 @@ const realPreviewCopy: Record<
       },
       final_rendering: {
         title: "Создание итогового файла",
-        text: "Документ создаётся из той же ревизии, которая показана здесь.",
+        text: "Документ создается из той же ревизии, которая показана здесь.",
         tone: "progress",
         pending: true,
       },
@@ -257,7 +257,7 @@ const realPreviewCopy: Record<
         pending: false,
       },
       expired: {
-        title: "Срок предпросмотра истёк",
+        title: "Срок предпросмотра истек",
         text: "Временные задачи не сохраняются как история конвертаций.",
         tone: "error",
         pending: false,
@@ -292,7 +292,7 @@ const realPreviewCopy: Record<
     },
     warnings: {
       RASTER_FALLBACK: "Сложный элемент преобразован в изображение.",
-      FONT_SUBSTITUTED: "Веб-шрифт заменён безопасным шрифтом документа.",
+      FONT_SUBSTITUTED: "Веб-шрифт заменен безопасным шрифтом документа.",
       RESOURCE_OMITTED: "Ресурс за пределами безопасного лимита пропущен.",
       STABILIZATION_INCOMPLETE:
         "Страница не перешла в полностью стабильное состояние.",
@@ -302,7 +302,7 @@ const realPreviewCopy: Record<
     },
     downloadEyebrow: "Временный зашифрованный файл",
     downloadTitle: "Ваш файл готов",
-    downloadPending: "Итоговый документ ещё создаётся.",
+    downloadPending: "Итоговый документ еще создается.",
     downloadFile: "Скачать файл",
     returnToPreview: "Вернуться к предпросмотру",
   },

@@ -231,7 +231,7 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
     image: "/blog/mocks/choose-webpage-pdf-mode.webp",
     imageAlt: "Три режима Page 2 PDF по свойству, которое они сохраняют",
     title: "Как выбрать подходящий режим PDF для страницы",
-    description: "Сравните Accurate copy, Editable document и AI / Chat до запуска: внешний вид, выделяемый текст и структура переписки требуют разных способов.",
+    description: "Сравните Точная копия, Редактируемый документ и AI / Чат до запуска: внешний вид, выделяемый текст и структура переписки требуют разных способов.",
     author: "Редакция Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 6, component: RuChooseMode,
   },
   {
@@ -239,7 +239,7 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
     image: "/blog/mocks/save-long-dynamic-webpage-to-pdf.webp",
     imageAlt: "Длинная страница приложения с подготовленной внутренней прокруткой",
     title: "Как сохранить длинную динамическую страницу в PDF",
-    description: "Подготовьте отложенное содержимое и внутреннюю прокрутку, учитывая виртуальные списки, защищённые фреймы и пределы очень высоких страниц.",
+    description: "Подготовьте отложенное содержимое и внутреннюю прокрутку, учитывая виртуальные списки, защищенные фреймы и пределы очень высоких страниц.",
     author: "Редакция Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 6, component: RuLongPage,
   },
   {
@@ -247,7 +247,7 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
     image: "/blog/mocks/save-private-or-local-page-to-pdf.webp",
     imageAlt: "Закрытая страница и локальный HTML в активных вкладках Chrome",
     title: "Как сохранить закрытую или локальную страницу в PDF",
-    description: "Работайте с уже открытой разрешённой страницей или локальным HTML в Chrome, не передавая пароль и не подразумевая обход ограничений доступа.",
+    description: "Работайте с уже открытой разрешенной страницей или локальным HTML в Chrome, не передавая пароль и не подразумевая обход ограничений доступа.",
     author: "Редакция Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 6, component: RuPrivatePage,
   },
   {
@@ -255,14 +255,14 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
     image: "/blog/mocks/preserve-webpage-links-forms-text.webp",
     imageAlt: "Выделяемый текст, безопасные ссылки, формы и настройки распознавания",
     title: "Как сохранить ссылки, формы и текст страницы в PDF",
-    description: "Разберите возможности Editable document: подходящие поля, исключения для чувствительных данных, региональное распознавание и состав архива проекта.",
+    description: "Разберите возможности Редактируемый документ: подходящие поля, исключения для чувствительных данных, региональное распознавание и состав архива проекта.",
     author: "Редакция Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 6, component: RuLinksForms,
   },
   {
     kind: "blog", locale: "ru", slug: "save-dashboard-report-to-pdf",
     image: "/blog/mocks/save-dashboard-report-to-pdf.webp",
     imageAlt: "Панель управления с фильтрами, диаграммами, таблицами и выбором PDF",
-    title: "Как сохранить панель управления или отчёт в PDF",
+    title: "Как сохранить панель управления или отчет в PDF",
     description: "Зафиксируйте фильтры и выбранный период, выберите визуальный или текстовый PDF и проверьте диаграммы, широкие таблицы и вложенную прокрутку.",
     author: "Редакция Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 6, component: RuDashboard,
   },
@@ -279,7 +279,7 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
     image: "/blog/mocks/save-receipt-order-page-to-pdf.webp",
     imageAlt: "Чек и подтверждение заказа перед сохранением в PDF",
     title: "Как сохранить чек или подтверждение заказа в PDF",
-    description: "Зафиксируйте видимый чек, бронь, счёт или заказ, проверив сумму, статус, персональные данные, ссылки и границу официального документа.",
+    description: "Зафиксируйте видимый чек, бронь, счет или заказ, проверив сумму, статус, персональные данные, ссылки и границу официального документа.",
     author: "Редакция Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: RuReceipt,
   },
   {
@@ -295,7 +295,7 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
     image: "/blog/mocks/webpage-capture-vs-web-scraping.webp",
     imageAlt: "Читаемый PDF одной страницы и структурированные записи со множества адресов",
     title: "Захват веб-страницы или сбор данных: что выбрать",
-    description: "Используйте PDF для одной читаемой вкладки, а разрешённый экспорт, API или сборщик — когда нужны одинаковые поля со многих страниц.",
+    description: "Используйте PDF для одной читаемой вкладки, а разрешенный экспорт, API или сборщик — когда нужны одинаковые поля со многих страниц.",
     author: "Редакция Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: RuCaptureScraping,
   },
   {
@@ -373,7 +373,7 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog", locale: "ru", slug: "supported-and-unsupported-browser-messengers",
     image: "/blog/mocks/supported-and-unsupported-browser-messengers.webp",
-    imageAlt: "Матрица поддерживаемых и исключённых браузерных мессенджеров",
+    imageAlt: "Матрица поддерживаемых и исключенных браузерных мессенджеров",
     title: "Какие веб-мессенджеры можно экспортировать в PDF",
     description: "Узнайте, почему WhatsApp Web и Telegram Web имеют отдельные адаптеры, а Slack, Teams, Discord, Instagram и Messenger не заявлены как поддерживаемые.",
     author: "Редакция Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: RuMessengerMatrix,
