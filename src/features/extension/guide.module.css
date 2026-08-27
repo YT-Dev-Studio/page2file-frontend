@@ -271,6 +271,10 @@
   padding: var(--p2f-space-24) 0;
 }
 
+.limitItem:last-child {
+  border-bottom: 0;
+}
+
 .detailFact a,
 .limitItem a,
 .modeCopy a,
