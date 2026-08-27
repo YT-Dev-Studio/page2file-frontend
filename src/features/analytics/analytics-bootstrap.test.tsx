@@ -37,8 +37,16 @@ vi.mock("./analytics-events", async (importOriginal) => {
   };
 });
 
+const isArrayLikeCommand = (value: unknown): value is ArrayLike<unknown> =>
+  typeof value === "object" &&
+  value !== null &&
+  "length" in value &&
+  typeof value.length === "number";
+
 const queuedCommands = (): Array<Array<unknown>> =>
-  (window.dataLayer ?? []).filter(Array.isArray) as Array<Array<unknown>>;
+  (window.dataLayer ?? [])
+    .filter(isArrayLikeCommand)
+    .map((command): Array<unknown> => Array.from(command));
 
 const resetAnalyticsWindow = (): void => {
   window.dataLayer = [];
@@ -77,6 +85,10 @@ describe("AnalyticsBootstrap", (): void => {
     });
 
     const commands = queuedCommands();
+    expect(Array.isArray(window.dataLayer?.[0])).toBe(false);
+    expect(Object.prototype.toString.call(window.dataLayer?.[0])).toBe(
+      "[object Arguments]",
+    );
     const consentIndex = commands.findIndex(
       ([command, action]) => command === "consent" && action === "default",
     );

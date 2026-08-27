@@ -327,6 +327,7 @@
   border: 1px solid var(--accent);
   color: #fff;
   background: var(--accent);
+  transition: color 200ms ease;
 }
 
 .secondaryAction {
@@ -364,7 +365,14 @@
   color: #fff;
   background: var(--accent);
   font-weight: 750;
-  transition: background-color 200ms ease;
+  transition:
+    color 200ms ease,
+    background-color 200ms ease;
+}
+
+.primaryAction:hover:not(:disabled),
+.downloadLink:hover {
+  color: var(--p2f-color-text-brand);
 }
 
 @media (max-width: 1080px) {

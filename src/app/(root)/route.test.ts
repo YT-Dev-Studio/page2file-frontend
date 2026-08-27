@@ -16,7 +16,7 @@ describe("root locale route", (): void => {
       }),
     );
 
-    expect(response.status).toBe(307);
+    expect(response.status).toBe(308);
     expect(response.headers.get("location")).toBe(
       "https://page2file.test/en",
     );
