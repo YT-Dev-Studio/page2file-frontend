@@ -57,6 +57,18 @@ describe("support Telegram configuration", (): void => {
       topicId: 42,
     });
   });
+
+  test("converts a Telegram Web supergroup ID to the Bot API chat ID", (): void => {
+    process.env.TELEGRAM_BOT_TOKEN = "123:token_value";
+    process.env.TELEGRAM_GROUP_ID = "1673304144";
+    process.env.TELEGRAM_TOPIC_ID = "1813";
+
+    expect(getSupportConfig()).toEqual({
+      botToken: "123:token_value",
+      groupId: -1001673304144,
+      topicId: 1813,
+    });
+  });
 });
 
 describe("support feedback payload", (): void => {

@@ -32,15 +32,27 @@ const parseInteger = (
   return result;
 };
 
+const parseTelegramGroupId = (value: string | undefined): number | null => {
+  const normalized = value?.trim() ?? "";
+  if (!/^-?\d+$/.test(normalized) || normalized === "0") return null;
+
+  // Telegram Web links expose a supergroup's positive internal ID, while the
+  // Bot API requires the full chat ID with the -100 prefix.
+  const botApiId = normalized.startsWith("-")
+    ? normalized
+    : `-100${normalized}`;
+  const result = Number(botApiId);
+  return Number.isSafeInteger(result) && result < 0 ? result : null;
+};
+
 export const getSupportConfig = (): SupportConfig | null => {
   const botToken = process.env.TELEGRAM_BOT_TOKEN?.trim() ?? "";
-  const groupId = parseInteger(process.env.TELEGRAM_GROUP_ID, true);
+  const groupId = parseTelegramGroupId(process.env.TELEGRAM_GROUP_ID);
   const topicId = parseInteger(process.env.TELEGRAM_TOPIC_ID, false);
 
   if (
     !BOT_TOKEN_PATTERN.test(botToken) ||
     groupId === null ||
-    groupId === 0 ||
     topicId === null
   ) {
     return null;
