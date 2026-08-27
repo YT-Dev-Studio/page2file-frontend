@@ -6,5 +6,5 @@ export const GET = (request: NextRequest): NextResponse => {
   redirectUrl.pathname = "/en";
   redirectUrl.search = "";
 
-  return NextResponse.redirect(redirectUrl, 307);
+  return NextResponse.redirect(redirectUrl, 308);
 };

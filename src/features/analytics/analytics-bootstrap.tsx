@@ -142,8 +142,10 @@ const initializeGoogleAnalytics = (): NonNullable<Window["gtag"]> => {
   window.dataLayer = window.dataLayer ?? [];
 
   if (!window.gtag) {
-    const gtag = (...args: Array<unknown>): void => {
-      window.dataLayer?.push(args);
+    const gtag: NonNullable<Window["gtag"]> = function googleTag(): void {
+      // Google tag commands use the native Arguments object, not a rest array.
+      // eslint-disable-next-line prefer-rest-params
+      window.dataLayer?.push(arguments);
     };
     window.gtag = gtag;
     gtag("js", new Date());

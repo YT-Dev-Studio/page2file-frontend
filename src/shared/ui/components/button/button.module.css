@@ -107,6 +107,7 @@
 
 /* Figma uses Gel Blue 300 here; the frozen semantic hover token points to 600. */
 .primary:not(:disabled):is(:hover, .previewHover) {
+  color: var(--p2f-color-text-brand);
   background: #8fcfff;
 }
 
