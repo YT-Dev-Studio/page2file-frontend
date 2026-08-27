@@ -149,6 +149,10 @@
   padding: clamp(var(--p2f-space-32), 5vw, var(--p2f-space-64)) 0;
 }
 
+.detailSection:nth-child(-n + 2) {
+  border-top: 0;
+}
+
 .detailHeader {
   align-items: start;
   display: grid;
