@@ -4,7 +4,14 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 import { getSupportCopy } from "./support-copy";
 import { SupportForm } from "./support-form";
 
+const analyticsMocks = vi.hoisted(() => ({
+  trackAnalyticsEvent: vi.fn(),
+}));
+
+vi.mock("@/features/analytics/analytics-events", () => analyticsMocks);
+
 afterEach((): void => {
+  analyticsMocks.trackAnalyticsEvent.mockReset();
   vi.unstubAllGlobals();
 });
 
@@ -76,6 +83,13 @@ describe("support form", (): void => {
     expect((email as HTMLInputElement).value).toBe("");
     expect((comment as HTMLTextAreaElement).value).toBe("");
     expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(analyticsMocks.trackAnalyticsEvent).toHaveBeenCalledWith({
+      locale: "en",
+      name: "support_feedback_submit",
+    });
+    expect(JSON.stringify(analyticsMocks.trackAnalyticsEvent.mock.calls)).not.toMatch(
+      /sender@example\.com|A useful comment/,
+    );
   });
 
   test("preserves input when delivery fails", async (): Promise<void> => {

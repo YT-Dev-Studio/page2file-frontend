@@ -106,6 +106,6 @@ export const SiteShell = ({ children, locale }: SiteShellProps): ReactNode => (
     <SiteHeader locale={locale} />
     {children}
     <SiteFooter locale={locale} />
-    <AnalyticsBootstrap />
+    <AnalyticsBootstrap locale={locale} />
   </div>
 );

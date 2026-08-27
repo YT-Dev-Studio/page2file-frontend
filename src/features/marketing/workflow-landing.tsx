@@ -110,8 +110,10 @@ export const WorkflowLanding = ({
             <div className={styles.actions}>
               {content.externalLinkKey && content.primaryLabel ? (
                 <ExternalCta
+                  analyticsPlacement="workflow_hero"
                   externalLinkKey={content.externalLinkKey}
                   label={content.primaryLabel}
+                  locale={locale}
                   placeholderLabel={
                     family === "gpt-workflow"
                       ? copy.landing.browseGpts

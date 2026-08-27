@@ -60,7 +60,7 @@ describe("ExtensionGuide", () => {
     const { container } = render(<ExtensionGuide locale="ru" />);
 
     expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
-      "Как пользоваться расширением Page 2 PDF для Chrome",
+      "Как использовать расширение Page 2 PDF",
     );
     expect(screen.getByText("PAGE 2 PDF · CHROME EXTENSION")).toBeTruthy();
     const steps = screen.getByText("Закрепите расширение").closest("ol");

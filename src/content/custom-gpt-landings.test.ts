@@ -143,7 +143,7 @@ describe("GPT App landing content", () => {
 
 describe("localized legal content", () => {
   test.each(["privacy", "terms"] as const)(
-    "keeps %s complete and aligned with the extension-only product scope",
+    "keeps %s complete and aligned with the current product scope",
     (route) => {
       for (const { code } of localeRegistry) {
         const localized = getLandingContent(code, route);
@@ -154,7 +154,11 @@ describe("localized legal content", () => {
         expect(localized?.sections.some(({ id }) => id === "cookies")).toBe(
           route === "privacy",
         );
-        expect(visibleCopy).not.toMatch(/PowerPoint|PPTX|p2f_session|p2f_csrf|CSRF|backend/i);
+        expect(visibleCopy).not.toMatch(/PowerPoint|PPTX|backend/i);
+        if (route === "privacy") {
+          expect(visibleCopy).toContain("p2f_session");
+          expect(visibleCopy).toContain("p2f_csrf");
+        }
       }
     },
   );

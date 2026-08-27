@@ -128,7 +128,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 heading: "Analytics and attribution",
-                body: "When a valid Google Analytics Measurement ID is configured, Google Analytics loads automatically on public marketing pages. It may receive page, device, browser, approximate-location and campaign information. Allowed UTM values are normalized in memory and sent with the analytics event; Page 2 File does not keep them in a custom attribution cookie.",
+                body: "When a valid Google Analytics Measurement ID is configured, Google Analytics loads automatically on public pages in cookieless mode. Analytics storage remains denied, so the tag does not read or write analytics cookies. Google may receive the page title, a cleaned page address and referrer, device and browser information, approximate location, and normalized campaign values. Page 2 File does not send support-form fields or conversion content to Google Analytics and does not provide analytics controls on the site.",
             },
             {
                 heading: "Service providers and disclosures",
@@ -160,12 +160,12 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 id: "cookies",
-                heading: "Cookies",
-                body: "Page 2 File uses the short-lived p2f_session and p2f_csrf cookies to maintain an anonymous conversion session and protect requests. They use Strict SameSite settings and expire after one hour. Google Analytics may set analytics cookies on public pages when analytics is configured. We do not place conversion content or directly identifying profile data in these cookies.",
+                heading: "Analytics storage and service cookies",
+                body: "Page 2 File uses the short-lived p2f_session and p2f_csrf cookies to maintain an anonymous same-origin session and protect requests such as support feedback. They use Strict SameSite settings and expire after one hour. Google Analytics runs with analytics storage denied and does not read or write analytics cookies. We do not place feedback text, conversion content, or directly identifying profile data in these cookies.",
             },
             {
                 heading: "Blocking and deleting cookies",
-                body: "You can block or delete cookies through your browser settings. Blocking the Page 2 File session or CSRF cookies may prevent conversion requests from working. Blocking Google Analytics may limit measurement but does not prevent the core public pages from loading. Removing a cookie requires using your browser’s cookie controls.",
+                body: "The site does not provide analytics settings. You can still block network requests or delete service cookies through your browser settings. Blocking the Page 2 File session or CSRF cookies may prevent support and other protected same-origin requests from working, but it does not prevent core public pages from loading.",
             },
             {
                 heading: "Changes to this policy",
@@ -293,7 +293,7 @@ const reconcileLegalProductScope = (
     const obsoleteProductClaim = /\b(?:URL|CSRF|backend|p2f_session|p2f_csrf|PPTX|PowerPoint)\b/i;
     const sections = content.sections.flatMap((section) => {
         if (section.id === "cookies") {
-            return [{ ...section, body: extension.privacyPoints[2] }];
+            return [section];
         }
         return obsoleteProductClaim.test(section.body) ? [] : [section];
     });

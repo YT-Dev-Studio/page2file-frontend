@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import page2FileLogo from "@/app/assets/logo.png";
+import { analyticsDataAttributes } from "@/features/analytics/analytics-events";
 import type { Locale } from "@/shared/i18n/locales";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { getExtensionLink } from "@/shared/routes/extension-link";
@@ -24,6 +25,11 @@ const ExtensionButton = ({
 
   return (
     <ButtonLink
+      {...analyticsDataAttributes({
+        locale,
+        name: "extension_install_click",
+        placement: "header",
+      })}
       className={buttonClassName}
       href={extensionLink.href}
       rel={extensionLink.external ? "noopener noreferrer" : undefined}

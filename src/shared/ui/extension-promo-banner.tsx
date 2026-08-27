@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import {
+  analyticsDataAttributes,
+  type AnalyticsPlacement,
+} from "@/features/analytics/analytics-events";
 import type { Locale } from "@/shared/i18n/locales";
 import { getExtensionLink } from "@/shared/routes/extension-link";
 import { ArrowRightIcon } from "@/shared/ui/utilities/icons/glyphs/arrow-right-icon";
@@ -9,6 +13,10 @@ import styles from "./extension-promo-banner.module.css";
 
 type ExtensionPromoBannerProps = {
   actionLabel: string;
+  analyticsPlacement: Extract<
+    AnalyticsPlacement,
+    "home_promo" | "home_final"
+  >;
   body: string;
   className?: string;
   headingId: string;
@@ -112,6 +120,7 @@ const BannerContent = ({
 
 export const ExtensionPromoBanner = ({
   actionLabel,
+  analyticsPlacement,
   body,
   className,
   headingId,
@@ -120,6 +129,11 @@ export const ExtensionPromoBanner = ({
   variant = "wide",
 }: ExtensionPromoBannerProps): ReactNode => {
   const extensionLink = getExtensionLink(locale);
+  const analyticsAttributes = analyticsDataAttributes({
+    locale,
+    name: "extension_install_click",
+    placement: analyticsPlacement,
+  });
   const bannerClassName =
     `${styles.banner} ${styles[variant]} ${className ?? ""}`.trim();
   const content = (
@@ -133,6 +147,7 @@ export const ExtensionPromoBanner = ({
 
   return extensionLink.external ? (
     <a
+      {...analyticsAttributes}
       aria-label={`${title}. ${actionLabel}`}
       className={bannerClassName}
       href={extensionLink.href}
@@ -143,6 +158,7 @@ export const ExtensionPromoBanner = ({
     </a>
   ) : (
     <Link
+      {...analyticsAttributes}
       aria-label={`${title}. ${actionLabel}`}
       className={bannerClassName}
       href={extensionLink.href}

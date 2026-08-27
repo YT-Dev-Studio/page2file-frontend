@@ -98,8 +98,10 @@ export const ExtensionSeoLanding = ({
           >
             <div className={styles.actions}>
               <ExternalCta
+                analyticsPlacement="extension_seo"
                 externalLinkKey="chromeExtension"
                 label={extensionAction}
+                locale={locale}
                 placeholderLabel={extensionAction}
               />
               <a className={styles.sampleLink} href={content.demo.samplePdf}>

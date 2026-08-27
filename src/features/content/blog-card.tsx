@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { ContentEntry } from "@/content/content-registry";
+import { analyticsDataAttributes } from "@/features/analytics/analytics-events";
 import type { Locale } from "@/shared/i18n/locales";
 import { formatContentDate, getContentCopy } from "./content-copy";
 import styles from "./blog-card.module.css";
@@ -34,6 +35,13 @@ export const BlogCard = ({
         </div>
         <h2 className={styles.title}>
           <Link
+            {...analyticsDataAttributes({
+              contentId: entry.slug,
+              contentType: "blog_post",
+              locale,
+              name: "select_content",
+              placement: "blog_index",
+            })}
             aria-label={`${copy.readArticleLabel}: ${entry.title}`}
             className={styles.link}
             href={`/${locale}/blog/${entry.slug}`}

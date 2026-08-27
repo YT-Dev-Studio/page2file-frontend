@@ -9,6 +9,7 @@ import {
   type FormEvent,
   type ReactNode,
 } from "react";
+import { trackAnalyticsEvent } from "@/features/analytics/analytics-events";
 import type { Locale } from "@/shared/i18n/locales";
 import { Button } from "@/shared/ui/components/button/button";
 import type { SupportCopy } from "./support-copy";
@@ -185,6 +186,7 @@ export const SupportForm = ({
       setEmail("");
       setComment("");
       if (honeypotRef.current) honeypotRef.current.value = "";
+      trackAnalyticsEvent({ locale, name: "support_feedback_submit" });
       setSubmission({ status: "success" });
       setCooldown(true);
       cooldownTimerRef.current = window.setTimeout((): void => {

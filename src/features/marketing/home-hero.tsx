@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { analyticsDataAttributes } from "@/features/analytics/analytics-events";
 import { getExtensionCopy } from "@/features/extension/extension-copy";
 import type { Locale } from "@/shared/i18n/locales";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
@@ -193,11 +194,18 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
             <p className={styles.lead}>{copy.homeLead}</p>
             <div className={styles.heroActions}>
               <ExternalCta
+                analyticsPlacement="home_hero"
                 externalLinkKey="chromeExtension"
                 label={siteCopy.header.extensionAction}
+                locale={locale}
                 placeholderLabel={siteCopy.header.extensionAction}
               />
               <ButtonLink
+                {...analyticsDataAttributes({
+                  locale,
+                  name: "tutorial_begin",
+                  placement: "home_hero",
+                })}
                 href={`/${locale}/chrome-extension/how-to-use`}
                 showIcon={false}
                 size="medium"

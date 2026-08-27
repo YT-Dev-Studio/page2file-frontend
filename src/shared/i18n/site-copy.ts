@@ -41,7 +41,7 @@ const siteCopy: Record<Locale, SiteCopy> = {
       gptsTitle: "GPTs",
       legalTitle: "Legal information",
       links: {
-        cookiePolicy: "Cookies",
+        cookiePolicy: "Analytics and cookies",
         extension: "Page 2 PDF for Chrome",
         privacy: "Privacy",
         support: "Support",
@@ -65,7 +65,7 @@ const siteCopy: Record<Locale, SiteCopy> = {
       gptsTitle: "GPTs",
       legalTitle: "Юридическая информация",
       links: {
-        cookiePolicy: "Cookies",
+        cookiePolicy: "Аналитика и cookies",
         extension: "Page 2 PDF для Chrome",
         privacy: "Политика конфиденциальности",
         support: "Поддержка",

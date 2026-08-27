@@ -147,7 +147,7 @@ const englishCopy: ExtensionCopy = {
   privacyPoints: [
     "The extension reads content only from the active tab where you launch it.",
     "Temporary preview data is removed after the session. Remaining data older than two hours is cleared the next time the extension runs.",
-    "Website analytics, if enabled with consent, are separate from extension PDF processing.",
+    "Cookieless website analytics are separate from extension PDF processing and never receive the active-tab content.",
   ],
   privacyFactTitles: [
     "Only the active tab",
@@ -287,7 +287,7 @@ const russianCopy: ExtensionCopy = {
   privacyPoints: [
     "Расширение читает содержимое только из активной вкладки, где вы его запускаете.",
     "Временные данные предпросмотра удаляются после сессии. Оставшиеся данные старше двух часов очищаются при следующем запуске расширения.",
-    "Аналитика сайта, если она включена с согласия, не относится к обработке PDF в расширении.",
+    "Аналитика сайта без аналитических cookies не относится к обработке PDF в расширении и не получает содержимое активной вкладки.",
   ],
   privacyFactTitles: [
     "Только активная вкладка",

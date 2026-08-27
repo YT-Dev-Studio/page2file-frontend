@@ -48,7 +48,7 @@ const supportCopy: Record<Locale, SupportCopy> = {
     lead:
       "Tell us about a problem, an unclear step, or an idea related to the Page 2 PDF.",
     metadataDescription:
-      "Contact Page 2 PDF support and send feedback to the Page 2 File development team.",
+      "Contact Page 2 PDF support to report an extension problem, describe an unclear step, or send product feedback to the Page 2 File team.",
     metadataTitle: "Page 2 PDF support",
     privacyAfter: ".",
     privacyBefore:
@@ -83,7 +83,7 @@ const supportCopy: Record<Locale, SupportCopy> = {
     lead:
       "Расскажите о проблеме, непонятном шаге или идее, связанной с расширением Page 2 PDF.",
     metadataDescription:
-      "Свяжитесь с поддержкой Page 2 PDF и отправьте комментарий команде разработки Page 2 File.",
+      "Обратитесь в поддержку Page 2 PDF, чтобы сообщить о проблеме с расширением, непонятном шаге или отправить комментарий команде Page 2 File.",
     metadataTitle: "Поддержка Page 2 PDF",
     privacyAfter: ".",
     privacyBefore:

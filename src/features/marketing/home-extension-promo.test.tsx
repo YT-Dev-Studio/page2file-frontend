@@ -17,6 +17,10 @@ describe("HomeHero", () => {
     expect(cta.getAttribute("href")).toBe("https://chromewebstore.google.com/");
     expect(cta.getAttribute("target")).toBe("_blank");
     expect(cta.getAttribute("rel")).toBe("noopener noreferrer");
+    expect(cta.getAttribute("data-p2f-analytics-event")).toBe(
+      "extension_install_click",
+    );
+    expect(cta.getAttribute("data-p2f-analytics-placement")).toBe("home_hero");
     expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
       "Save the current webpage or chat as PDF.",
     );
@@ -50,5 +54,10 @@ describe("HomeHero", () => {
     expect(
       screen.getByRole("link", { name: "View instructions" }),
     ).toBeTruthy();
+    expect(
+      screen
+        .getByRole("link", { name: "View instructions" })
+        .getAttribute("data-p2f-analytics-event"),
+    ).toBe("tutorial_begin");
   });
 });

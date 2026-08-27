@@ -6,11 +6,13 @@ import { ExtensionPromoBanner } from "@/shared/ui/extension-promo-banner";
 import styles from "./home.module.css";
 
 type HomeExtensionBannerProps = {
+  analyticsPlacement: "home_promo" | "home_final";
   headingId: string;
   locale: Locale;
 };
 
 const HomeExtensionBanner = ({
+  analyticsPlacement,
   headingId,
   locale,
 }: HomeExtensionBannerProps): ReactNode => {
@@ -19,6 +21,7 @@ const HomeExtensionBanner = ({
   return (
     <ExtensionPromoBanner
       actionLabel={copy.bannerActionLabel}
+      analyticsPlacement={analyticsPlacement}
       body={copy.bannerBody}
       headingId={headingId}
       locale={locale}
@@ -39,6 +42,7 @@ export const HomeExtensionPromo = ({
     >
       <Container>
         <HomeExtensionBanner
+          analyticsPlacement="home_promo"
           headingId="home-extension-promo-title"
           locale={locale}
         />
@@ -59,6 +63,7 @@ export const HomeFinalCta = ({
     >
       <Container>
         <HomeExtensionBanner
+          analyticsPlacement="home_final"
           headingId="home-final-cta-title"
           locale={locale}
         />

@@ -29,6 +29,13 @@ describe("BlogCard", () => {
     "uses the short %s reading action",
     (locale, action, title) => {
       render(<BlogCard entry={createEntry(locale)} locale={locale} />);
+      const link = screen.getByRole("link");
+      expect(link.getAttribute("data-p2f-analytics-event")).toBe(
+        "select_content",
+      );
+      expect(link.getAttribute("data-p2f-analytics-content-type")).toBe(
+        "blog_post",
+      );
 
       expect(screen.getByText(action)).toBeTruthy();
       expect(screen.getByRole("link", { name: `${action}: ${title}` })).toBeTruthy();
