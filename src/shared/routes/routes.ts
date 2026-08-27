@@ -21,6 +21,7 @@ export type StaticRoute =
   | "privacy"
   | "terms"
   | "about"
+  | "support"
   | ExtensionSeoRoute;
 
 export type PublicPageFamily =
@@ -29,7 +30,8 @@ export type PublicPageFamily =
   | "extension-seo"
   | "gpt-workflow"
   | "content"
-  | "legal";
+  | "legal"
+  | "support";
 
 export const extensionSeoRoutes: ReadonlyArray<ExtensionSeoRoute> = [
   "chrome-extension/webpage-to-pdf",
@@ -53,6 +55,7 @@ export const staticRoutes: ReadonlyArray<StaticRoute> = [
   "privacy",
   "terms",
   "about",
+  "support",
   ...extensionSeoRoutes,
 ];
 
@@ -64,6 +67,7 @@ const publicPageFamilyByRoute: Record<StaticRoute, PublicPageFamily> = {
   "privacy": "legal",
   "terms": "legal",
   "about": "legal",
+  "support": "support",
   "chrome-extension/webpage-to-pdf": "extension-seo",
   "chrome-extension/ai-chat-to-pdf": "extension-seo",
   "chrome-extension/messenger-chat-to-pdf": "extension-seo",

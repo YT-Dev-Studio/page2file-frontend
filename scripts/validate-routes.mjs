@@ -11,6 +11,7 @@ const REQUIRED_ROUTES = [
   "privacy",
   "terms",
   "about",
+  "support",
 ];
 const EN_ONLY_ROUTES = [
   "chrome-extension/webpage-to-pdf",
@@ -198,6 +199,7 @@ const run = async () => {
       return ![
         "",
         "chrome-extension/how-to-use",
+        "support",
       ].includes(route);
     },
   );

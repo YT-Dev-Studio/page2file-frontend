@@ -11,6 +11,7 @@ describe("site shell copy", () => {
       "cookiePolicy",
       "extension",
       "privacy",
+      "support",
       "terms",
     ]);
   });
@@ -23,5 +24,7 @@ describe("site shell copy", () => {
     expect(getSiteCopy("ru").footer.links.privacy).toBe(
       "Политика конфиденциальности",
     );
+    expect(getSiteCopy("en").footer.links.support).toBe("Support");
+    expect(getSiteCopy("ru").footer.links.support).toBe("Поддержка");
   });
 });

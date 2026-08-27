@@ -5,6 +5,7 @@ import { getExtensionSeoLanding } from "@/content/extension-seo-landings";
 import { getLandingContent } from "@/content/landings";
 import { getBlogEntries, getBlogEntry } from "@/content/content-registry";
 import { getContentCopy } from "@/features/content/content-copy";
+import { getSupportCopy } from "@/features/support/support-copy";
 import { resolvePublicPage } from "@/features/routing/public-page-resolver";
 import { isLocale, localeRegistry, type Locale } from "@/shared/i18n/locales";
 import { buildMetadata } from "@/shared/seo/metadata";
@@ -64,6 +65,15 @@ const getRouteMetadata = (
       route,
       title: copy.title,
       description: copy.description,
+    });
+  }
+  if (route === "support") {
+    const copy = getSupportCopy(locale);
+    return buildMetadata({
+      locale,
+      route,
+      title: copy.metadataTitle,
+      description: copy.metadataDescription,
     });
   }
   if (segments[0] === "blog" && segments.length === 2) {

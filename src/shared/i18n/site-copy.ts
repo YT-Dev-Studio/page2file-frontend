@@ -10,6 +10,7 @@ export type SiteCopy = {
       cookiePolicy: string;
       extension: string;
       privacy: string;
+      support: string;
       terms: string;
     };
     servicesTitle: string;
@@ -43,6 +44,7 @@ const siteCopy: Record<Locale, SiteCopy> = {
         cookiePolicy: "Cookies",
         extension: "Page 2 PDF for Chrome",
         privacy: "Privacy",
+        support: "Support",
         terms: "Terms",
       },
       servicesTitle: "Services",
@@ -66,6 +68,7 @@ const siteCopy: Record<Locale, SiteCopy> = {
         cookiePolicy: "Cookies",
         extension: "Page 2 PDF для Chrome",
         privacy: "Политика конфиденциальности",
+        support: "Поддержка",
         terms: "Условия использования",
       },
       servicesTitle: "Сервисы",

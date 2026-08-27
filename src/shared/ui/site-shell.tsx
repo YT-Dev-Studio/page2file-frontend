@@ -82,6 +82,7 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
             <Link href={`/${locale}/about`}>
               {about?.title ?? "About Page 2 File"}
             </Link>
+            <Link href={`/${locale}/support`}>{copy.links.support}</Link>
             <Link href={`/${locale}/privacy`}>{copy.links.privacy}</Link>
             <Link href={`/${locale}/privacy#cookies`}>
               {copy.links.cookiePolicy}

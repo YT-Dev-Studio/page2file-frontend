@@ -377,6 +377,16 @@
       "avoidCompetingWith": []
     },
     {
+      "route": "support",
+      "kind": "static",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "page 2 pdf support",
+      "intentType": "perform",
+      "purpose": "Let Page 2 PDF users send a problem report or product comment to the Page 2 File development team.",
+      "internalLinks": ["chrome-extension/how-to-use", "privacy"],
+      "avoidCompetingWith": []
+    },
+    {
       "route": "privacy",
       "kind": "static",
       "primaryIntentSource": "localized-seo-title",

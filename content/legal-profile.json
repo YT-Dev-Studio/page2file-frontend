@@ -11,6 +11,7 @@
   "contactEmail": "support@page2file.com",
   "processors": [
     "Google Analytics",
-    "Cloudflare"
+    "Cloudflare",
+    "Telegram"
   ]
 }

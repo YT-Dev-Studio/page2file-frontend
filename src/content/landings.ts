@@ -123,6 +123,10 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
                 body: "A website conversion, where available, requires temporary server processing of the submitted public page and selected options. Page 2 PDF creates active-tab documents inside the extension workflow and does not upload page or conversation content to Page 2 File servers. Neither workflow provides an account-based conversion history; temporary preview data and generated artifacts are removed after their lifecycle or configured technical expiry.",
             },
             {
+                heading: "Support messages",
+                body: "When you use the support form, Page 2 File sends the email address and comment you provide to a private Telegram development topic so the team can review the request. Support correspondence may be retained for the period reasonably needed to respond, investigate the issue, protect the Service or document the resolution.",
+            },
+            {
                 heading: "Analytics and attribution",
                 body: "When a valid Google Analytics Measurement ID is configured, Google Analytics loads automatically on public marketing pages. It may receive page, device, browser, approximate-location and campaign information. Allowed UTM values are normalized in memory and sent with the analytics event; Page 2 File does not keep them in a custom attribution cookie.",
             },

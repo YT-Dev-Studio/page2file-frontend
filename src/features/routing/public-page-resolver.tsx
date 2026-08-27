@@ -42,6 +42,11 @@ export const resolvePublicPage = async ({
     return <ContentIndexPage locale={locale} />;
   }
 
+  if (route === "support") {
+    const { SupportPage } = await import("@/features/support/support-page");
+    return <SupportPage locale={locale} />;
+  }
+
   if (segments[0] === "blog" && segments.length === 2) {
     const entry = getBlogEntry(locale, segments[1]);
     if (!entry) {
