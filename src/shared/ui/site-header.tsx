@@ -3,10 +3,12 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import page2FileLogo from "@/app/assets/logo.png";
 import { analyticsDataAttributes } from "@/features/analytics/analytics-events";
+import { extensionInstallAvailable } from "@/shared/config/site";
 import type { Locale } from "@/shared/i18n/locales";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { getExtensionLink } from "@/shared/routes/extension-link";
-import { ButtonLink } from "@/shared/ui/components/button/button";
+import { Button, ButtonLink } from "@/shared/ui/components/button/button";
+import { ExtensionUnavailableTooltip } from "./extension-unavailable-tooltip";
 import { LocaleSwitcher } from "./locale-switcher";
 import { SiteNavigation } from "./site-navigation";
 import styles from "./site-header.module.css";
@@ -18,10 +20,25 @@ const ExtensionButton = ({
   className?: string;
   locale: Locale;
 }): ReactNode => {
-  const copy = getSiteCopy(locale).header;
+  const siteCopy = getSiteCopy(locale);
+  const copy = siteCopy.header;
   const extensionLink = getExtensionLink(locale);
   const buttonClassName =
     `${styles.extensionButton} ${className ?? ""}`.trim();
+
+  if (!extensionInstallAvailable) {
+    return (
+      <ExtensionUnavailableTooltip
+        label={`${copy.downloadAction}. ${siteCopy.extensionUnavailableTooltip}`}
+        message={siteCopy.extensionUnavailableTooltip}
+        placement="bottom"
+      >
+        <Button className={buttonClassName} disabled>
+          {copy.downloadAction}
+        </Button>
+      </ExtensionUnavailableTooltip>
+    );
+  }
 
   return (
     <ButtonLink

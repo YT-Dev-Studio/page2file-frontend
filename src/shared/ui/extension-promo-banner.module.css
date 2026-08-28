@@ -299,6 +299,27 @@
   height: 34px;
 }
 
+.disabled {
+  cursor: not-allowed;
+  filter: saturate(0.58);
+  opacity: 0.76;
+}
+
+.disabled::before {
+  animation: none;
+  opacity: 0;
+}
+
+.disabled .action {
+  color: #98a2cd;
+  background: var(--p2f-color-background-disabled);
+  box-shadow: none;
+}
+
+.disabled .actionArrow {
+  opacity: var(--p2f-interaction-disabled-opacity);
+}
+
 .banner:focus-visible {
   outline: none;
   box-shadow:
@@ -309,7 +330,7 @@
 }
 
 @media (hover: hover) {
-  .banner:hover {
+  .banner:not(.disabled):hover {
     box-shadow: 0 26px 64px rgb(10 16 47 / 32%);
     transform: scale(1.025);
   }

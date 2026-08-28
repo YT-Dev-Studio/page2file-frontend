@@ -83,6 +83,7 @@ export const legalReviewed =
   parseBoolean(process.env.NEXT_PUBLIC_LEGAL_REVIEWED) &&
   legalDetailsComplete;
 
+export const extensionInstallAvailable = false;
 export const conversionEnabled = false;
 
 const rawGaMeasurementId =

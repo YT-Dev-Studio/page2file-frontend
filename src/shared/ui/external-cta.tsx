@@ -3,9 +3,15 @@ import {
   analyticsDataAttributes,
   type AnalyticsPlacement,
 } from "@/features/analytics/analytics-events";
-import { externalLinks, type ExternalLinkKey } from "@/shared/config/site";
+import {
+  extensionInstallAvailable,
+  externalLinks,
+  type ExternalLinkKey,
+} from "@/shared/config/site";
 import type { Locale } from "@/shared/i18n/locales";
-import { ButtonLink } from "@/shared/ui/components/button/button";
+import { getSiteCopy } from "@/shared/i18n/site-copy";
+import { Button, ButtonLink } from "@/shared/ui/components/button/button";
+import { ExtensionUnavailableTooltip } from "@/shared/ui/extension-unavailable-tooltip";
 
 type ExternalCtaProps = {
   externalLinkKey: ExternalLinkKey;
@@ -24,6 +30,23 @@ export const ExternalCta = ({
   analyticsPlacement,
 }: ExternalCtaProps): ReactNode => {
   const link = externalLinks[externalLinkKey];
+  const buttonLabel = link.status === "placeholder" ? placeholderLabel : label;
+
+  if (externalLinkKey === "chromeExtension" && !extensionInstallAvailable) {
+    const tooltip = getSiteCopy(locale).extensionUnavailableTooltip;
+
+    return (
+      <ExtensionUnavailableTooltip
+        label={`${buttonLabel}. ${tooltip}`}
+        message={tooltip}
+      >
+        <Button disabled showIcon={false} size="medium">
+          {buttonLabel}
+        </Button>
+      </ExtensionUnavailableTooltip>
+    );
+  }
+
   const analyticsAttributes =
     externalLinkKey === "chromeExtension"
       ? analyticsDataAttributes({
@@ -48,7 +71,7 @@ export const ExternalCta = ({
       size="medium"
       target="_blank"
     >
-      {link.status === "placeholder" ? placeholderLabel : label}
+      {buttonLabel}
     </ButtonLink>
   );
 };

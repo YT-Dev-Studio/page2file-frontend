@@ -32,20 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (locale): boolean => locale.indexable && locale.reviewed,
   );
   const entries: MetadataRoute.Sitemap = [];
-  const getAlternates = (route: StaticRoute): Record<string, string> => {
-    const languages: Record<string, string> = {
-      "x-default": absoluteUrl(routePath("en", route)),
-    };
-    const addLanguage = (
-      locale: (typeof localeRegistry)[number],
-    ): void => {
-      languages[locale.htmlLang] = absoluteUrl(routePath(locale.code, route));
-    };
-    indexableLocales
-      .filter((locale): boolean => isStaticRouteAvailable(locale.code, route))
-      .forEach(addLanguage);
-    return languages;
-  };
   const addLocale = (
     locale: (typeof localeRegistry)[number],
   ): void => {
@@ -53,9 +39,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: absoluteUrl(routePath(locale.code, route)),
         priority: route === "" ? 1 : 0.7,
-        alternates: {
-          languages: getAlternates(route),
-        },
       });
     };
     routes
@@ -65,11 +48,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   indexableLocales.forEach(addLocale);
   const blogSlugs = getBlogEntries("en").map((entry) => entry.slug);
   const blogRoutes = ["blog", ...blogSlugs.map((slug) => `blog/${slug}`)];
-  const blogAlternates = (route: string): Record<string, string> => ({
-    "x-default": absoluteUrl(routePath("en", route)),
-    en: absoluteUrl(routePath("en", route)),
-    ru: absoluteUrl(routePath("ru", route)),
-  });
   for (const locale of indexableLocales) {
     for (const route of blogRoutes) {
       const article = route === "blog"
@@ -81,7 +59,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: absoluteUrl(routePath(locale.code, route)),
         lastModified: article?.updatedAt,
         priority: route === "blog" ? 0.7 : 0.6,
-        alternates: { languages: blogAlternates(route) },
       });
     }
   }

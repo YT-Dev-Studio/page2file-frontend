@@ -34,7 +34,7 @@ const SOURCE_CHECKS = [
   ],
   [
     "src/app/sitemap.ts",
-    ["alternates:", "languages:", "indexingEnabled"],
+    ["indexingEnabled"],
   ],
   ["src/shared/routes/routes.ts", ['"about"']],
   ["public/_headers", ["/_next/static/*", "immutable"]],
