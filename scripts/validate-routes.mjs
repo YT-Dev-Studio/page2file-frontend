@@ -102,8 +102,16 @@ const run = async () => {
     join(ROOT, "src", "shared", "seo", "metadata.ts"),
     "utf8",
   );
+  const siteConfigSource = await readFile(
+    join(ROOT, "src", "shared", "config", "site.ts"),
+    "utf8",
+  );
   const sitemapSource = await readFile(
     join(ROOT, "src", "app", "sitemap.ts"),
+    "utf8",
+  );
+  const localizedPageSource = await readFile(
+    join(ROOT, "src", "app", "[locale]", "[[...slug]]", "page.tsx"),
     "utf8",
   );
   const rootRouteSource = await readFile(
@@ -227,6 +235,38 @@ const run = async () => {
     );
   }
   if (
+    siteConfigSource.includes("NEXT_PUBLIC_ENABLE_INDEXING") ||
+    siteConfigSource.includes("NEXT_PUBLIC_LEGAL_REVIEWED")
+  ) {
+    throw new Error(
+      "Public indexing must not depend on build-time feature flags.",
+    );
+  }
+  if (
+    !siteConfigSource.includes('"page2file.com"') ||
+    !siteConfigSource.includes("INDEXABLE_SITE_HOSTNAMES.has")
+  ) {
+    throw new Error(
+      "Indexing must be enabled automatically for the production hostname.",
+    );
+  }
+  if (
+    metadataSource.includes("legalReviewed") ||
+    sitemapSource.includes("legalReviewed") ||
+    landings.includes("noindex?:") ||
+    localizedPageSource.includes("content.noindex")
+  ) {
+    throw new Error(
+      "Published public pages must not have content or legal indexing gates.",
+    );
+  }
+  if (
+    !sitemapSource.includes("const routes = staticRoutes;") ||
+    sitemapSource.includes("staticRoutes.filter")
+  ) {
+    throw new Error("Sitemap must include every available public route.");
+  }
+  if (
     !rootRouteSource.includes('redirectUrl.pathname = "/en"') ||
     !rootRouteSource.includes("NextResponse.redirect")
   ) {
@@ -246,21 +286,6 @@ const run = async () => {
   await access(join(ROOT, "src", "app", "robots.ts"));
   await access(join(ROOT, "src", "app", "sitemap.ts"));
   await access(join(ROOT, "src", "app", "manifest.ts"));
-
-  if (process.env.NEXT_PUBLIC_ENABLE_INDEXING === "true") {
-    const siteUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "");
-    if (
-      siteUrl.protocol !== "https:" ||
-      ["localhost", "127.0.0.1", "0.0.0.0", "::1", "[::1]"].includes(
-        siteUrl.hostname.toLowerCase(),
-      ) ||
-      siteUrl.hostname.toLowerCase().endsWith(".localhost")
-    ) {
-      throw new Error(
-        "Indexing requires a public HTTPS NEXT_PUBLIC_SITE_URL.",
-      );
-    }
-  }
 
   const bffRoutes = [
     ["session", "route.ts"],

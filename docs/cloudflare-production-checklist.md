@@ -7,10 +7,11 @@ this project to Cloudflare Pages.
 
 - Copy the reviewed values from `.env.production.example` into the protected
   production build environment.
-- Keep `NEXT_PUBLIC_SITE_URL=https://page2file.com` and
-  `NEXT_PUBLIC_ENABLE_INDEXING=true`.
-- Set `NEXT_PUBLIC_LEGAL_REVIEWED=true` only after the owner has approved the
-  published Privacy and Terms text.
+- Keep `NEXT_PUBLIC_SITE_URL=https://page2file.com`. This exact production
+  hostname enables indexing automatically; public pages do not use an
+  indexing feature flag.
+- Privacy and Terms are indexable whenever they are published. Complete their
+  owner review before deploying the content.
 - Set the real extension, GPT and backend URLs. Do not publish placeholder
   catalog or store links.
 - Store `PAGE2FILE_WEB_HMAC_SECRET` with `wrangler secret put`; never commit it

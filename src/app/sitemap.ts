@@ -1,33 +1,19 @@
 import type { MetadataRoute } from "next";
-import { getLandingContent } from "@/content/landings";
 import { getBlogEntries } from "@/content/content-registry";
-import {
-  absoluteUrl,
-  indexingEnabled,
-  legalReviewed,
-} from "@/shared/config/site";
+import { absoluteUrl, indexingEnabled } from "@/shared/config/site";
 import { localeRegistry } from "@/shared/i18n/locales";
 import {
-  isExtensionSeoRoute,
   isStaticRouteAvailable,
   routePath,
   staticRoutes,
   type StaticRoute,
 } from "@/shared/routes/routes";
 
-const isIndexableRoute = (route: StaticRoute): boolean => {
-  if (isExtensionSeoRoute(route)) return true;
-  const content = getLandingContent("en", route);
-  if (content?.noindex) return false;
-  if (content?.legal && !legalReviewed) return false;
-  return true;
-};
-
 export default function sitemap(): MetadataRoute.Sitemap {
   if (!indexingEnabled) {
     return [];
   }
-  const routes = staticRoutes.filter(isIndexableRoute);
+  const routes = staticRoutes;
   const indexableLocales = localeRegistry.filter(
     (locale): boolean => locale.indexable && locale.reviewed,
   );

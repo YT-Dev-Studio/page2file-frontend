@@ -34,7 +34,6 @@ export type LandingContent = {
     primaryHref?: string;
     primaryLabel?: string;
     externalLinkKey?: ExternalLinkKey;
-    noindex?: boolean;
     legal?: boolean;
     articleLinks?: ReadonlyArray<ArticleLink>;
     relatedRoutes?: ReadonlyArray<RelatedRoute>;
