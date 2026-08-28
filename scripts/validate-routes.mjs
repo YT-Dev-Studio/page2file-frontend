@@ -212,10 +212,19 @@ const run = async () => {
     throw new Error("x-default must point directly to the English route.");
   }
   if (
-    !sitemapSource.includes("alternates:") ||
-    !sitemapSource.includes("languages:")
+    !metadataSource.includes(
+      "languages: canIndex ? getLanguageAlternates(route, localized)",
+    )
   ) {
-    throw new Error("Localized sitemap alternates are required.");
+    throw new Error("Localized HTML metadata alternates are required.");
+  }
+  if (
+    sitemapSource.includes("alternates:") ||
+    sitemapSource.includes("languages:")
+  ) {
+    throw new Error(
+      "Sitemap alternates must remain omitted for native XML tree rendering.",
+    );
   }
   if (
     !rootRouteSource.includes('redirectUrl.pathname = "/en"') ||

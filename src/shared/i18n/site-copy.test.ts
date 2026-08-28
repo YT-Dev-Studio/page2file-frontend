@@ -21,6 +21,12 @@ describe("site shell copy", () => {
     expect(getSiteCopy("ru").header.downloadAction).toBe("Скачать расширение");
     expect(getSiteCopy("en").header.extensionAction).toBe("Install Page 2 PDF");
     expect(getSiteCopy("ru").header.extensionAction).toBe("Установить Page 2 PDF");
+    expect(getSiteCopy("en").extensionUnavailableTooltip).toBe(
+      "The extension will be available soon.",
+    );
+    expect(getSiteCopy("ru").extensionUnavailableTooltip).toBe(
+      "Расширение заработает в ближайшее время.",
+    );
     expect(getSiteCopy("ru").footer.links.privacy).toBe(
       "Политика конфиденциальности",
     );

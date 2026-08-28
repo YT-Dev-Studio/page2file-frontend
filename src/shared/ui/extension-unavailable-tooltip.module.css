@@ -1,0 +1,81 @@
+.trigger {
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+  outline: none;
+}
+
+.inline {
+  display: inline-flex;
+  width: fit-content;
+}
+
+.stretch {
+  display: block;
+  width: 100%;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 40;
+  left: 0;
+  width: max-content;
+  max-width: min(320px, calc(100vw - var(--p2f-space-32)));
+  padding: var(--p2f-space-8) var(--p2f-space-12);
+  border-radius: var(--p2f-radius-compact);
+  visibility: hidden;
+  color: var(--p2f-color-text-inverse);
+  background: var(--p2f-color-background-inverse);
+  box-shadow: var(--p2f-shadow-card);
+  font-size: var(--p2f-type-caption-regular-font-size);
+  line-height: var(--p2f-type-caption-regular-line-height);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease,
+    visibility 160ms ease;
+}
+
+.top .tooltip {
+  bottom: calc(100% + var(--p2f-space-8));
+  transform: translateY(var(--p2f-space-4));
+}
+
+.bottom .tooltip {
+  top: calc(100% + var(--p2f-space-8));
+  right: 0;
+  left: auto;
+  transform: translateY(calc(var(--p2f-space-4) * -1));
+}
+
+.stretch .tooltip {
+  left: 50%;
+  transform: translate(-50%, var(--p2f-space-4));
+}
+
+.trigger:is(:hover, :focus-visible) .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.trigger:is(:hover, :focus-visible) {
+  z-index: 50;
+}
+
+.stretch:is(:hover, :focus-visible) .tooltip {
+  transform: translate(-50%, 0);
+}
+
+.trigger:focus-visible {
+  border-radius: var(--p2f-radius-control);
+  box-shadow: 0 0 0 var(--p2f-interaction-focus-ring-width)
+    var(--p2f-interaction-focus-ring-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tooltip {
+    transition: none;
+  }
+}

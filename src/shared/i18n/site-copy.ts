@@ -1,6 +1,7 @@
 import type { Locale } from "./locales";
 
 export type SiteCopy = {
+  extensionUnavailableTooltip: string;
   footer: {
     companyTitle: string;
     copyright: string;
@@ -27,6 +28,7 @@ export type SiteCopy = {
 
 const siteCopy: Record<Locale, SiteCopy> = {
   en: {
+    extensionUnavailableTooltip: "The extension will be available soon.",
     header: {
       brandLabel: "Page 2 File — home",
       downloadAction: "Download extension",
@@ -51,6 +53,7 @@ const siteCopy: Record<Locale, SiteCopy> = {
     },
   },
   ru: {
+    extensionUnavailableTooltip: "Расширение заработает в ближайшее время.",
     header: {
       brandLabel: "Page 2 File — главная",
       downloadAction: "Скачать расширение",

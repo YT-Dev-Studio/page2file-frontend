@@ -5,8 +5,11 @@ import {
   analyticsDataAttributes,
   type AnalyticsPlacement,
 } from "@/features/analytics/analytics-events";
+import { extensionInstallAvailable } from "@/shared/config/site";
 import type { Locale } from "@/shared/i18n/locales";
+import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { getExtensionLink } from "@/shared/routes/extension-link";
+import { ExtensionUnavailableTooltip } from "@/shared/ui/extension-unavailable-tooltip";
 import { ArrowRightIcon } from "@/shared/ui/utilities/icons/glyphs/arrow-right-icon";
 import { ChromeIcon } from "@/shared/ui/utilities/icons/glyphs/chrome-icon";
 import styles from "./extension-promo-banner.module.css";
@@ -144,6 +147,25 @@ export const ExtensionPromoBanner = ({
       title={title}
     />
   );
+
+  if (!extensionInstallAvailable) {
+    const tooltip = getSiteCopy(locale).extensionUnavailableTooltip;
+
+    return (
+      <ExtensionUnavailableTooltip
+        label={`${title}. ${actionLabel}. ${tooltip}`}
+        message={tooltip}
+        stretch
+      >
+        <article
+          aria-labelledby={headingId}
+          className={`${bannerClassName} ${styles.disabled}`}
+        >
+          {content}
+        </article>
+      </ExtensionUnavailableTooltip>
+    );
+  }
 
   return extensionLink.external ? (
     <a
