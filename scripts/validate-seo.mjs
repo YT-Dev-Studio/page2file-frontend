@@ -34,7 +34,11 @@ const SOURCE_CHECKS = [
   ],
   [
     "src/app/sitemap.ts",
-    ["indexingEnabled"],
+    ["indexingEnabled", "const routes = staticRoutes"],
+  ],
+  [
+    "src/shared/config/site.ts",
+    ["INDEXABLE_SITE_HOSTNAMES", '"page2file.com"'],
   ],
   ["src/shared/routes/routes.ts", ['"about"']],
   ["public/_headers", ["/_next/static/*", "immutable"]],
@@ -964,6 +968,7 @@ const validateRendered = async (baseUrl) => {
 
   const robots = specialResponses.get("/robots.txt")?.text ?? "";
   if (
+    !/User-agent:\s*\*[\s\S]*?Allow:\s*\/(?:\r?\n|$)/i.test(robots) ||
     !/User-agent:\s*OAI-SearchBot[\s\S]*Allow:\s*\//i.test(robots) ||
     !/User-agent:\s*GPTBot[\s\S]*Disallow:\s*\//i.test(robots)
   ) {
@@ -1007,6 +1012,15 @@ const validateRendered = async (baseUrl) => {
         addError(`${canonicalUrl}: returned ${response.status}.`);
         return;
       }
+      const xRobotsTag = response.headers
+        .get("x-robots-tag")
+        ?.toLowerCase() ?? "";
+      if (
+        xRobotsTag.includes("noindex") ||
+        xRobotsTag.includes("nofollow")
+      ) {
+        addError(`${canonicalUrl}: response contains ${xRobotsTag}.`);
+      }
       const result = validateRenderedPage(canonicalUrl, text);
       const locale = canonical.pathname.split("/")[1];
       const normalizedTitle = result.title
@@ -1033,8 +1047,7 @@ const validateRendered = async (baseUrl) => {
       if (
         /^\/(?:api|_next)\//.test(linkedPath) ||
         /^\/samples\//.test(linkedPath) ||
-        /^\/[^/]+\/(?:preview|download)\//.test(linkedPath) ||
-        /^\/[^/]+\/(?:privacy|terms)$/.test(linkedPath)
+        /^\/[^/]+\/(?:preview|download)\//.test(linkedPath)
       ) {
         continue;
       }

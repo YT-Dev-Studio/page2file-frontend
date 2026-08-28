@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
-import { absoluteUrl, indexingEnabled, legalReviewed, siteName } from "@/shared/config/site";
-import { getLocaleDefinition, localeRegistry, type Locale } from "@/shared/i18n/locales";
+import { absoluteUrl, indexingEnabled, siteName } from "@/shared/config/site";
+import {
+  getLocaleDefinition,
+  localeRegistry,
+  type Locale,
+} from "@/shared/i18n/locales";
 import { routePath } from "@/shared/routes/routes";
 
 export type MetadataInput = {
@@ -9,7 +13,6 @@ export type MetadataInput = {
   title: string;
   description: string;
   noindex?: boolean;
-  legal?: boolean;
   kind?: "website" | "article";
   publishedAt?: string;
   updatedAt?: string;
@@ -45,7 +48,6 @@ export const buildMetadata = ({
   title,
   description,
   noindex = false,
-  legal = false,
   kind = "website",
   publishedAt,
   updatedAt,
@@ -55,10 +57,7 @@ export const buildMetadata = ({
   imageAlt,
 }: MetadataInput): Metadata => {
   const definition = getLocaleDefinition(locale);
-  const routeIsIndexable =
-    definition.indexable &&
-    !noindex &&
-    (!legal || legalReviewed);
+  const routeIsIndexable = definition.indexable && !noindex;
   const canIndex = indexingEnabled && routeIsIndexable;
   const pathname = routePath(locale, route);
   const canonical = absoluteUrl(pathname);

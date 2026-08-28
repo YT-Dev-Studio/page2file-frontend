@@ -304,28 +304,25 @@ const run = async () => {
     legalProfile.entityName.trim().length > 0 &&
     typeof legalProfile.addresses === "object" &&
     legalProfile.addresses !== null &&
-    Object.values(legalProfile.addresses).length === 16 &&
-    Object.values(legalProfile.addresses).every(
-      (address) => typeof address === "string" && address.trim().length > 0,
+    LOCALES.every(
+      (locale) =>
+        typeof legalProfile.addresses[locale] === "string" &&
+        legalProfile.addresses[locale].trim().length > 0,
     ) &&
     typeof legalProfile.jurisdictions === "object" &&
     legalProfile.jurisdictions !== null &&
-    Object.values(legalProfile.jurisdictions).length === 16 &&
-    Object.values(legalProfile.jurisdictions).every(
-      (jurisdiction) =>
-        typeof jurisdiction === "string" &&
-        jurisdiction.trim().length > 0,
+    LOCALES.every(
+      (locale) =>
+        typeof legalProfile.jurisdictions[locale] === "string" &&
+        legalProfile.jurisdictions[locale].trim().length > 0,
     ) &&
     typeof legalProfile.contactEmail === "string" &&
     legalProfile.contactEmail.trim().length > 0 &&
     Array.isArray(legalProfile.processors) &&
     legalProfile.processors.length > 0;
-  if (
-    process.env.NEXT_PUBLIC_LEGAL_REVIEWED === "true" &&
-    !legalFieldsComplete
-  ) {
+  if (!legalFieldsComplete) {
     throw new Error(
-      "Legal indexing cannot be enabled until content/legal-profile.json is complete.",
+      "Published legal content requires a complete content/legal-profile.json.",
     );
   }
 

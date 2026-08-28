@@ -128,8 +128,6 @@ const getRouteMetadata = (
         route,
         title: content.title,
         description: content.description,
-        noindex: content.noindex,
-        legal: content.legal,
       });
     }
   }

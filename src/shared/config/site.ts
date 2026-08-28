@@ -14,15 +14,9 @@ export type ExternalLink = {
 };
 
 const DEFAULT_SITE_URL = "https://page2file.com";
-const LOCAL_HOSTNAMES: ReadonlySet<string> = new Set([
-  "0.0.0.0",
-  "127.0.0.1",
-  "::1",
-  "[::1]",
-  "localhost",
+const INDEXABLE_SITE_HOSTNAMES: ReadonlySet<string> = new Set([
+  "page2file.com",
 ]);
-
-const parseBoolean = (value: string | undefined): boolean => value === "true";
 
 const parseSiteUrl = (value: string | undefined): URL => {
   try {
@@ -62,26 +56,10 @@ export const siteDescription =
   "Save the current webpage or a supported browser chat as PDF with the Page 2 PDF Chrome extension from Page 2 File.";
 
 export const indexingEnabled =
-  parseBoolean(process.env.NEXT_PUBLIC_ENABLE_INDEXING) &&
   siteUrl.protocol === "https:" &&
-  !LOCAL_HOSTNAMES.has(siteUrl.hostname.toLowerCase()) &&
-  !siteUrl.hostname.toLowerCase().endsWith(".localhost");
+  INDEXABLE_SITE_HOSTNAMES.has(siteUrl.hostname.toLowerCase());
 
 export const legalProfile: LegalProfile = legalProfileData;
-export const legalDetailsComplete =
-  legalProfile.entityName.trim().length > 0 &&
-  Object.values(legalProfile.addresses).every(
-    (address: string): boolean => address.trim().length > 0,
-  ) &&
-  Object.values(legalProfile.jurisdictions).every(
-    (jurisdiction: string): boolean => jurisdiction.trim().length > 0,
-  ) &&
-  legalProfile.contactEmail.trim().length > 0 &&
-  legalProfile.processors.length > 0;
-
-export const legalReviewed =
-  parseBoolean(process.env.NEXT_PUBLIC_LEGAL_REVIEWED) &&
-  legalDetailsComplete;
 
 export const extensionInstallAvailable = false;
 export const conversionEnabled = false;
