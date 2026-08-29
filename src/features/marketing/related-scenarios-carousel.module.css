@@ -132,8 +132,8 @@
 
 .card h3 {
   color: var(--p2f-color-text-brand);
-  font-size: var(--p2f-type-heading-h3-font-size);
-  line-height: var(--p2f-type-heading-h3-line-height);
+  font-size: var(--p2f-font-size-18);
+  line-height: var(--p2f-line-height-28);
 }
 
 .card h3 a::after {

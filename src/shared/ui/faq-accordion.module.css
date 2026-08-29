@@ -35,9 +35,9 @@
   color: var(--p2f-color-text-brand);
   background: transparent;
   font-family: var(--p2f-font-family-primary);
-  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-size: var(--p2f-font-size-18);
   font-weight: var(--p2f-font-weight-bold);
-  line-height: 1.45;
+  line-height: var(--p2f-line-height-28);
   text-align: left;
   cursor: pointer;
   transition:
@@ -109,7 +109,8 @@
   border-top: var(--p2f-border-width-default) solid
     var(--p2f-color-border-default);
   color: var(--p2f-color-text-secondary);
-  line-height: 1.75;
+  font-size: var(--p2f-font-size-16);
+  line-height: 26px;
 }
 
 @media (max-width: 560px) {

@@ -1,14 +1,14 @@
 .page {
-  padding-block: var(--p2f-space-64) var(--p2f-space-96);
+  padding-block: var(--p2f-space-64);
 }
 
 .document {
-  width: min(100%, 800px);
+  width: min(100%, 768px);
   margin-inline: auto;
 }
 
 .header {
-  padding-bottom: var(--p2f-space-40);
+  padding-bottom: var(--p2f-space-32);
   border-bottom: var(--p2f-border-width-default) solid
     var(--p2f-color-border-strong);
 }
@@ -16,9 +16,9 @@
 .title {
   margin: 0;
   color: var(--p2f-color-text-brand);
-  font-size: var(--p2f-type-display-medium-font-size);
-  font-weight: var(--p2f-type-display-medium-font-weight);
-  line-height: var(--p2f-type-display-medium-line-height);
+  font-size: 36px;
+  font-weight: var(--p2f-font-weight-bold);
+  line-height: 40px;
   letter-spacing: var(--p2f-letter-spacing-tight);
   overflow-wrap: anywhere;
 }
@@ -32,47 +32,47 @@
 .lead {
   margin: var(--p2f-space-24) 0 0;
   color: var(--p2f-color-text-primary);
-  font-size: var(--p2f-type-body-large-font-size);
-  line-height: var(--p2f-type-body-large-line-height);
+  font-size: var(--p2f-font-size-14);
+  line-height: 23px;
 }
 
 .sections {
-  padding-top: var(--p2f-space-48);
+  padding-top: var(--p2f-space-32);
 }
 
 .section + .section {
-  margin-top: var(--p2f-space-40);
+  margin-top: var(--p2f-space-24);
 }
 
 .sectionTitle {
   scroll-margin-top: 120px;
   margin: 0;
   color: var(--p2f-color-text-brand);
-  font-size: var(--p2f-type-heading-h2-font-size);
+  font-size: var(--p2f-font-size-20);
   font-weight: var(--p2f-type-heading-h2-font-weight);
-  line-height: var(--p2f-type-heading-h2-line-height);
+  line-height: var(--p2f-line-height-28);
   letter-spacing: var(--p2f-letter-spacing-tight);
 }
 
 .sectionBody {
-  margin: var(--p2f-space-16) 0 0;
+  margin: var(--p2f-space-8) 0 0;
   color: var(--p2f-color-text-primary);
-  font-size: var(--p2f-type-body-medium-font-size);
-  line-height: 1.75;
+  font-size: var(--p2f-font-size-14);
+  line-height: 23px;
   overflow-wrap: anywhere;
 }
 
 .points {
-  margin: var(--p2f-space-16) 0 0;
+  margin: var(--p2f-space-8) 0 0;
   padding-left: var(--p2f-space-24);
   color: var(--p2f-color-text-primary);
-  font-size: var(--p2f-type-body-medium-font-size);
-  line-height: 1.75;
+  font-size: var(--p2f-font-size-14);
+  line-height: 23px;
 }
 
 @media (max-width: 767px) {
   .page {
-    padding-block: var(--p2f-space-48) var(--p2f-space-64);
+    padding-block: var(--p2f-space-64);
   }
 
   .header {
@@ -80,21 +80,21 @@
   }
 
   .title {
-    font-size: var(--p2f-type-heading-h1-font-size);
-    font-weight: var(--p2f-type-heading-h1-font-weight);
-    line-height: var(--p2f-type-heading-h1-line-height);
+    font-size: 30px;
+    font-weight: var(--p2f-font-weight-bold);
+    line-height: 36px;
   }
 
   .lead {
-    font-size: var(--p2f-type-body-medium-font-size);
-    line-height: 1.65;
+    font-size: var(--p2f-font-size-14);
+    line-height: 23px;
   }
 
   .sections {
-    padding-top: var(--p2f-space-40);
+    padding-top: var(--p2f-space-32);
   }
 
   .section + .section {
-    margin-top: var(--p2f-space-32);
+    margin-top: var(--p2f-space-24);
   }
 }

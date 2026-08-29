@@ -1,17 +1,17 @@
 .page {
-  padding: 2rem 0 clamp(5rem, 9vw, 8rem);
+  padding: var(--p2f-space-64) 0;
 }
 
 .heroLayout {
-  max-width: 58rem;
+  max-width: 48rem;
 }
 
 .steps {
   display: grid;
   gap: var(--p2f-space-48);
   list-style: none;
-  margin: var(--p2f-space-48) auto clamp(4rem, 8vw, 7rem);
-  max-width: 60rem;
+  margin: var(--p2f-space-40) auto var(--p2f-space-64);
+  max-width: 48rem;
   padding: 0;
 }
 
@@ -49,8 +49,8 @@
 }
 
 .stepHeading h2 {
-  font-size: clamp(1.35rem, 3vw, 2rem);
-  line-height: 1.15;
+  font-size: var(--p2f-font-size-24);
+  line-height: var(--p2f-line-height-32);
   margin: 0;
   text-wrap: balance;
 }
@@ -78,7 +78,7 @@
   border: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
   border-radius: var(--p2f-radius-card);
   margin-bottom: var(--p2f-space-48);
-  padding: clamp(1.5rem, 4vw, 3rem);
+  padding: var(--p2f-space-32);
 }
 
 .optionsHeader {
@@ -93,14 +93,15 @@
 }
 
 .optionsHeader h2 {
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
-  line-height: 1.1;
+  font-size: 30px;
+  line-height: 36px;
   text-wrap: balance;
 }
 
 .optionsHeader p {
   color: var(--p2f-color-ink-navy-500);
-  line-height: 1.7;
+  font-size: var(--p2f-font-size-16);
+  line-height: 26px;
   margin-top: var(--p2f-space-12);
 }
 
@@ -123,8 +124,8 @@
 }
 
 .optionScreen h3 {
-  font-size: 1.1rem;
-  line-height: 1.35;
+  font-size: var(--p2f-font-size-18);
+  line-height: var(--p2f-line-height-28);
 }
 
 .optionScreenshot {
@@ -137,7 +138,8 @@
 .modeCopy p,
 .workflowSection li {
   color: var(--p2f-color-ink-navy-500);
-  line-height: 1.7;
+  font-size: var(--p2f-font-size-16);
+  line-height: 26px;
 }
 
 .detailSections {
@@ -146,7 +148,7 @@
 
 .detailSection {
   border-top: var(--p2f-border-width-default) solid var(--p2f-color-border-default);
-  padding: clamp(var(--p2f-space-32), 5vw, var(--p2f-space-64)) 0;
+  padding: var(--p2f-space-64) 0;
 }
 
 .detailSection:nth-child(-n + 2) {
@@ -157,15 +159,15 @@
   align-items: start;
   display: grid;
   gap: var(--p2f-space-16);
-  grid-template-columns: var(--p2f-control-size-default) minmax(0, 1fr);
+  grid-template-columns: var(--p2f-control-size-compact) minmax(0, 1fr);
   margin-bottom: var(--p2f-space-32);
 }
 
 .detailIcon {
   color: var(--p2f-color-gel-blue-600);
   display: inline-flex;
-  height: var(--p2f-control-size-default);
-  width: var(--p2f-control-size-default);
+  height: var(--p2f-control-size-compact);
+  width: var(--p2f-control-size-compact);
 }
 
 .detailIcon[data-variant="limits"] {
@@ -195,8 +197,8 @@
 
 .detailHeading h2,
 .workflowSection h2 {
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
-  line-height: 1.1;
+  font-size: 30px;
+  line-height: 36px;
   text-wrap: balance;
 }
 
@@ -238,8 +240,8 @@
 .modeCopy h3,
 .detailFact h3,
 .limitItem h3 {
-  font-size: 1.05rem;
-  line-height: 1.35;
+  font-size: var(--p2f-font-size-18);
+  line-height: var(--p2f-line-height-28);
 }
 
 .modeCopy p,
@@ -305,7 +307,7 @@
   gap: var(--p2f-space-32);
   grid-template-columns: minmax(0, 1fr) minmax(13rem, 17rem);
   margin-top: var(--p2f-space-48);
-  padding: clamp(1.5rem, 4vw, 3rem);
+  padding: var(--p2f-space-32);
 }
 
 .workflowSection ul {
@@ -340,6 +342,10 @@
 
   .detailHeader {
     margin-bottom: var(--p2f-space-24);
+  }
+
+  .detailSection {
+    padding-block: var(--p2f-space-48);
   }
 
   .workflowArtwork {

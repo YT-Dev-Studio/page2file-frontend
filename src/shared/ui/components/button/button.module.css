@@ -57,6 +57,17 @@
   letter-spacing: var(--p2f-type-label-large-letter-spacing);
 }
 
+.cta {
+  min-height: 56px;
+  gap: var(--p2f-space-12);
+  padding: 14px var(--p2f-space-32);
+  border-radius: var(--p2f-radius-control);
+  font-size: var(--p2f-font-size-18);
+  font-weight: var(--p2f-font-weight-semibold);
+  line-height: var(--p2f-line-height-28);
+  letter-spacing: var(--p2f-type-label-large-letter-spacing);
+}
+
 .label {
   min-width: 0;
   overflow: hidden;
@@ -91,6 +102,11 @@
 .large .icon {
   width: var(--p2f-icon-size-large);
   height: var(--p2f-icon-size-large);
+}
+
+.cta .icon {
+  width: 22px;
+  height: 22px;
 }
 
 .primary {

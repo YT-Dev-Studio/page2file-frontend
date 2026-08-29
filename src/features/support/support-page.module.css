@@ -1,12 +1,12 @@
 .page {
-  padding-block: var(--p2f-space-64) var(--p2f-space-96);
+  padding-block: var(--p2f-space-64);
 }
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(420px, 1.12fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
-  gap: clamp(var(--p2f-space-48), 7vw, var(--p2f-space-96));
+  gap: var(--p2f-space-48);
 }
 
 .intro {
@@ -47,7 +47,7 @@
 }
 
 .artwork {
-  width: min(100%, 360px);
+  width: min(100%, 320px);
   padding: var(--p2f-space-24);
   border: var(--p2f-border-width-default) solid
     var(--p2f-color-border-default);
@@ -103,7 +103,7 @@
 
 .formCard {
   min-width: 0;
-  padding: clamp(var(--p2f-space-24), 4vw, var(--p2f-space-40));
+  padding: var(--p2f-space-32);
   border: var(--p2f-border-width-default) solid
     var(--p2f-color-border-strong);
   border-radius: var(--p2f-radius-card);
@@ -124,9 +124,9 @@
 
 .formHeader h2 {
   color: var(--p2f-color-text-brand);
-  font-size: var(--p2f-type-heading-h2-font-size);
+  font-size: var(--p2f-font-size-20);
   font-weight: var(--p2f-type-heading-h2-font-weight);
-  line-height: var(--p2f-type-heading-h2-line-height);
+  line-height: var(--p2f-line-height-28);
   letter-spacing: var(--p2f-letter-spacing-tight);
 }
 
@@ -269,7 +269,7 @@
 
 @media (max-width: 767px) {
   .page {
-    padding-block: var(--p2f-space-48) var(--p2f-space-64);
+    padding-block: var(--p2f-space-64);
   }
 
   .layout,

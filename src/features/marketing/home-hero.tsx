@@ -199,6 +199,7 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
                 label={siteCopy.header.extensionAction}
                 locale={locale}
                 placeholderLabel={siteCopy.header.extensionAction}
+                size="cta"
               />
               <ButtonLink
                 {...analyticsDataAttributes({
@@ -208,7 +209,7 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
                 })}
                 href={`/${locale}/chrome-extension/how-to-use`}
                 showIcon={false}
-                size="medium"
+                size="cta"
                 variant="secondary"
               >
                 {copy.guideActionLabel}

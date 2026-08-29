@@ -15,8 +15,16 @@ type SiteShellProps = {
   locale: Locale;
 };
 
-export const Container = ({ children }: { children: ReactNode }): ReactNode => (
-  <div className={styles.container}>{children}</div>
+type ContainerProps = {
+  children: ReactNode;
+  variant?: "public" | "workspace";
+};
+
+export const Container = ({
+  children,
+  variant = "public",
+}: ContainerProps): ReactNode => (
+  <div className={`${styles.container} ${styles[variant]}`}>{children}</div>
 );
 
 const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
@@ -37,9 +45,9 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
               <Image
                 alt=""
                 className={styles.footerLogo}
-                height={80}
+                height={36}
                 src={page2FileLogo}
-                width={80}
+                width={36}
               />
               <span>PAGE 2 FILE</span>
             </Link>

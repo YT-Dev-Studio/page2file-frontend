@@ -8,7 +8,7 @@
 .hero {
   display: grid;
   min-width: 0;
-  max-width: 880px;
+  max-width: 768px;
   gap: var(--p2f-space-16);
 }
 
@@ -27,9 +27,9 @@
   max-width: 18ch;
   margin: 0;
   color: var(--p2f-color-text-brand);
-  font-size: clamp(40px, 5.25vw, 64px);
+  font-size: 36px;
   font-weight: var(--p2f-font-weight-extrabold);
-  line-height: 1.04;
+  line-height: 40px;
   letter-spacing: var(--p2f-letter-spacing-tight);
   text-wrap: balance;
   hyphens: auto;
@@ -40,8 +40,8 @@
   max-width: 66ch;
   margin: 0;
   color: var(--p2f-color-text-secondary);
-  font-size: var(--p2f-type-body-large-font-size);
-  line-height: var(--p2f-type-body-large-line-height);
+  font-size: var(--p2f-font-size-18);
+  line-height: var(--p2f-line-height-28);
   text-wrap: pretty;
   overflow-wrap: anywhere;
 }
@@ -51,7 +51,7 @@
 }
 
 .section {
-  padding-block: var(--p2f-space-80);
+  padding-block: var(--p2f-space-64);
 }
 
 .sectionSubtle {
@@ -67,12 +67,12 @@
 
   .title {
     font-size: 30px;
-    line-height: 1.08;
+    line-height: 36px;
   }
 
   .lead {
-    font-size: var(--p2f-type-body-medium-font-size);
-    line-height: var(--p2f-type-body-medium-line-height);
+    font-size: var(--p2f-font-size-18);
+    line-height: var(--p2f-line-height-28);
   }
 
   .section {
