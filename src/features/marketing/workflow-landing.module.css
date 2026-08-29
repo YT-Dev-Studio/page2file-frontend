@@ -1,12 +1,12 @@
 .page {
-  padding-block: var(--p2f-space-64) var(--p2f-space-96);
+  padding-block: var(--p2f-space-64);
 }
 
 .heroLayout {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
-  gap: clamp(var(--p2f-space-40), 6vw, var(--p2f-space-80));
+  gap: var(--p2f-space-48);
 }
 
 .actions {
@@ -16,6 +16,9 @@
 }
 
 .workflowMap {
+  width: 100%;
+  max-width: 534px;
+  justify-self: center;
   padding: var(--p2f-space-24);
   border: var(--p2f-border-width-default) solid
     var(--p2f-color-border-default);
@@ -96,7 +99,7 @@
 .detailsLayout {
   display: grid;
   grid-template-columns: minmax(220px, 0.34fr) minmax(0, 0.66fr);
-  gap: clamp(var(--p2f-space-40), 7vw, var(--p2f-space-96));
+  gap: var(--p2f-space-64);
 }
 
 .detailsIntro {
@@ -121,8 +124,8 @@
 .detailsIntro h2 {
   margin-top: var(--p2f-space-8);
   color: var(--p2f-color-text-brand);
-  font-size: var(--p2f-type-heading-h1-font-size);
-  line-height: var(--p2f-type-heading-h1-line-height);
+  font-size: 30px;
+  line-height: 36px;
   text-wrap: balance;
 }
 
@@ -163,6 +166,8 @@
 .step p {
   margin-top: var(--p2f-space-8);
   color: var(--p2f-color-text-secondary);
+  font-size: var(--p2f-font-size-16);
+  line-height: var(--p2f-line-height-24);
 }
 
 .step ul {
@@ -215,7 +220,7 @@
 
 @media (max-width: 767px) {
   .page {
-    padding-block: var(--p2f-space-48) var(--p2f-space-64);
+    padding-block: var(--p2f-space-64);
   }
 
   .heroLayout {

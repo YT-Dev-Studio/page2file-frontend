@@ -66,7 +66,7 @@ export const resolvePublicPage = async ({
       "@/features/preview/real-preview-workspace"
     );
     return (
-      <Container>
+      <Container variant="workspace">
         <RealPreviewWorkspace jobId={segments[1]} locale={locale} />
       </Container>
     );

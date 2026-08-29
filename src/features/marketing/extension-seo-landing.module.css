@@ -1,20 +1,23 @@
 .page {
-  padding: 28px 0 96px;
+  padding: var(--p2f-space-64) 0;
 }
 
 .hero {
-  max-width: 880px;
+  max-width: 768px;
 }
 
 .heroLayout {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
-  gap: clamp(32px, 6vw, 72px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--p2f-space-48);
   align-items: center;
 }
 
 .heroArtwork {
-  min-height: clamp(260px, 32vw, 410px);
+  width: 100%;
+  max-width: 534px;
+  min-height: 300px;
+  justify-self: center;
 }
 
 .actions {
@@ -36,15 +39,15 @@
 .demo {
   display: grid;
   grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
-  gap: 40px;
-  padding: 40px;
+  gap: var(--p2f-space-32);
+  padding: var(--p2f-space-32);
   align-items: center;
   border: 1px solid var(--line);
   border-radius: 28px;
   background: var(--surface);
   box-shadow: 0 24px 64px rgb(17 38 79 / 10%);
   position: relative;
-  margin-top: var(--p2f-space-80);
+  margin-top: var(--p2f-space-64);
 }
 
 .demo::before {
@@ -64,15 +67,15 @@
 .privacy h2 {
   margin: 8px 0 14px;
   color: var(--ink);
-  font-size: clamp(1.6rem, 3vw, 2.45rem);
-  line-height: 1.08;
+  font-size: 30px;
+  line-height: 36px;
 }
 
 .demoCopy p,
 .privacy > p {
   color: var(--muted);
-  font-size: 1.06rem;
-  line-height: 1.7;
+  font-size: var(--p2f-font-size-16);
+  line-height: var(--p2f-line-height-24);
 }
 
 .previewLink {
@@ -103,7 +106,7 @@
 .boundaries,
 .privacy,
 .related {
-  margin-top: 88px;
+  margin-top: var(--p2f-space-64);
 }
 
 .sectionHeading {
@@ -160,13 +163,15 @@
 
 .steps h3 {
   margin: 20px 0 8px;
-  font-size: 1.1rem;
+  font-size: var(--p2f-font-size-18);
+  line-height: var(--p2f-line-height-28);
 }
 
 .steps p,
 .boundaries li {
   color: var(--muted);
-  line-height: 1.65;
+  font-size: var(--p2f-font-size-16);
+  line-height: var(--p2f-line-height-24);
 }
 
 .boundaries {

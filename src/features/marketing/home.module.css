@@ -4,14 +4,14 @@
 }
 
 .heroSection {
-  padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+  padding: var(--p2f-space-80) 0 var(--p2f-space-64);
 }
 
 .heroLayout {
   align-items: center;
   display: grid;
-  gap: clamp(2.5rem, 6vw, 6rem);
-  grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.92fr);
+  gap: var(--p2f-space-48);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .heroContent {
@@ -27,20 +27,20 @@
 }
 
 .title {
-  font-size: clamp(2.6rem, 7vw, 5.5rem);
-  letter-spacing: -0.055em;
-  line-height: 1.04;
+  font-size: var(--p2f-font-size-48);
+  letter-spacing: -0.01em;
+  line-height: 60px;
   margin: 0;
-  max-width: 14ch;
+  max-width: 536px;
   text-wrap: balance;
 }
 
 .lead {
   color: var(--p2f-color-ink-navy-500);
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
-  line-height: 1.7;
-  margin: 1.75rem 0 0;
-  max-width: 46rem;
+  font-size: var(--p2f-font-size-20);
+  line-height: var(--p2f-line-height-28);
+  margin: var(--p2f-space-24) 0 0;
+  max-width: 536px;
 }
 
 .heroActions {
@@ -48,7 +48,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 2rem;
+  margin-top: var(--p2f-space-40);
 }
 
 .heroArtwork {
@@ -65,6 +65,7 @@
   box-shadow: 0 1.35rem 3rem rgb(16 30 54 / 13%);
   overflow: hidden;
   position: relative;
+  max-width: 534px;
   width: 100%;
 }
 
@@ -274,15 +275,15 @@
 
 .promoSection,
 .finalCtaSection {
-  padding: clamp(2rem, 4vw, 3rem) 0;
+  padding: var(--p2f-space-32) 0;
 }
 
 .finalCtaSection {
-  padding-bottom: clamp(4rem, 8vw, 7rem);
+  padding-bottom: var(--p2f-space-64);
 }
 
 .section {
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  padding: var(--p2f-space-64) 0;
 }
 
 .sectionSurface {
@@ -291,15 +292,15 @@
 
 .sectionIntro {
   display: grid;
-  gap: 1rem;
+  gap: var(--p2f-space-24);
   grid-template-columns: minmax(0, 0.9fr) minmax(18rem, 1.1fr);
-  margin-bottom: 2.5rem;
+  margin-bottom: var(--p2f-space-40);
 }
 
 .sectionIntro h2 {
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  letter-spacing: -0.04em;
-  line-height: 1.05;
+  font-size: 30px;
+  letter-spacing: var(--p2f-letter-spacing-tight);
+  line-height: 36px;
   margin: 0;
   text-wrap: balance;
 }
@@ -308,7 +309,8 @@
 .modeCard p,
 .stepCard p {
   color: var(--p2f-color-ink-navy-500);
-  line-height: 1.7;
+  font-size: var(--p2f-font-size-16);
+  line-height: var(--p2f-line-height-24);
   margin: 0;
 }
 
@@ -350,7 +352,8 @@
 
 .modeCard h3,
 .stepCard h3 {
-  font-size: 1.15rem;
+  font-size: var(--p2f-font-size-18);
+  line-height: var(--p2f-line-height-28);
   margin: 0 0 0.75rem;
 }
 
@@ -487,7 +490,7 @@
 }
 
 .faqSection {
-  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  padding-bottom: var(--p2f-space-64);
 }
 
 .faqIntro {
@@ -496,9 +499,9 @@
 }
 
 .faqIntro h2 {
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  letter-spacing: -0.04em;
-  line-height: 1.05;
+  font-size: 30px;
+  letter-spacing: var(--p2f-letter-spacing-tight);
+  line-height: 36px;
   margin: 0;
   text-wrap: balance;
 }
@@ -506,6 +509,7 @@
 @media (max-width: 900px) {
   .heroLayout {
     grid-template-columns: 1fr;
+    gap: var(--p2f-space-40);
   }
 
   .heroArtwork {
@@ -550,11 +554,17 @@
 
 @media (max-width: 560px) {
   .heroSection {
-    padding: 3.5rem 0 4rem;
+    padding: var(--p2f-space-64) 0;
   }
 
   .title {
-    font-size: clamp(2.35rem, 13vw, 3.4rem);
+    font-size: 36px;
+    line-height: 45px;
+  }
+
+  .lead {
+    font-size: var(--p2f-font-size-18);
+    line-height: var(--p2f-line-height-28);
   }
 
   .heroActions {

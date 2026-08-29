@@ -75,8 +75,8 @@
 }
 
 .wide {
-  min-height: 232px;
-  padding: clamp(var(--p2f-space-24), 4vw, var(--p2f-space-48));
+  min-height: 196px;
+  padding: var(--p2f-space-32);
 }
 
 .compact {
@@ -117,7 +117,7 @@
 .action {
   display: inline-flex;
   width: fit-content;
-  min-height: 52px;
+  min-height: var(--p2f-control-size-default);
   margin-top: 20px;
   padding: var(--p2f-space-8) var(--p2f-space-12);
   align-items: center;
@@ -145,8 +145,8 @@
 }
 
 .actionChrome {
-  width: 30px;
-  height: 30px;
+  width: 22px;
+  height: 22px;
 }
 
 .actionChrome img {
@@ -155,8 +155,8 @@
 }
 
 .actionArrow {
-  width: var(--p2f-icon-size-medium);
-  height: var(--p2f-icon-size-medium);
+  width: 18px;
+  height: 18px;
   margin-left: var(--p2f-space-4);
 }
 
@@ -169,7 +169,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 360px;
+  max-width: 320px;
   justify-self: end;
   transform: rotate(2deg);
 }
@@ -283,8 +283,8 @@
   right: -18px;
   bottom: -22px;
   display: grid;
-  width: 66px;
-  height: 66px;
+  width: 48px;
+  height: 48px;
   place-items: center;
   border: var(--p2f-border-width-default) solid rgb(255 255 255 / 42%);
   border-radius: 20px;
@@ -295,8 +295,8 @@
 }
 
 .floatingPuzzle svg {
-  width: 34px;
-  height: 34px;
+  width: var(--p2f-icon-size-large);
+  height: var(--p2f-icon-size-large);
 }
 
 .disabled {

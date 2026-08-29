@@ -7,7 +7,7 @@ import type {
 import { ArrowRightIcon } from "@/shared/ui/utilities/icons/glyphs/arrow-right-icon";
 import styles from "./button.module.css";
 
-export type ButtonSize = "small" | "medium" | "large";
+export type ButtonSize = "small" | "medium" | "large" | "cta";
 export type ButtonVariant = "primary" | "secondary";
 export type ButtonIconPosition = "start" | "end";
 

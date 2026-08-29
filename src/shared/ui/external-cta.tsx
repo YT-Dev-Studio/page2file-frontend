@@ -10,7 +10,11 @@ import {
 } from "@/shared/config/site";
 import type { Locale } from "@/shared/i18n/locales";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
-import { Button, ButtonLink } from "@/shared/ui/components/button/button";
+import {
+  Button,
+  ButtonLink,
+  type ButtonSize,
+} from "@/shared/ui/components/button/button";
 import { ExtensionUnavailableTooltip } from "@/shared/ui/extension-unavailable-tooltip";
 
 type ExternalCtaProps = {
@@ -20,6 +24,7 @@ type ExternalCtaProps = {
   placeholderLabel: string;
   analyticsPlacement: AnalyticsPlacement;
   compact?: boolean;
+  size?: ButtonSize;
 };
 
 export const ExternalCta = ({
@@ -28,6 +33,7 @@ export const ExternalCta = ({
   locale,
   placeholderLabel,
   analyticsPlacement,
+  size = "medium",
 }: ExternalCtaProps): ReactNode => {
   const link = externalLinks[externalLinkKey];
   const buttonLabel = link.status === "placeholder" ? placeholderLabel : label;
@@ -40,7 +46,7 @@ export const ExternalCta = ({
         label={`${buttonLabel}. ${tooltip}`}
         message={tooltip}
       >
-        <Button disabled showIcon={false} size="medium">
+        <Button disabled showIcon={false} size={size}>
           {buttonLabel}
         </Button>
       </ExtensionUnavailableTooltip>
@@ -68,7 +74,7 @@ export const ExternalCta = ({
       href={link.href}
       rel="noopener noreferrer"
       showIcon={false}
-      size="medium"
+      size={size}
       target="_blank"
     >
       {buttonLabel}
