@@ -61,7 +61,7 @@ export const indexingEnabled =
 
 export const legalProfile: LegalProfile = legalProfileData;
 
-export const extensionInstallAvailable = false;
+export const extensionInstallAvailable = true;
 export const conversionEnabled = false;
 
 const rawGaMeasurementId =
@@ -85,11 +85,13 @@ const PAGE2PDF_GPT_URL =
   "https://chatgpt.com/g/g-6a6911cbe52c819182c9cc66d9e68d01-web2file-webpage-to-pdf-converter";
 const HTML2PDF_GPT_URL =
   "https://chatgpt.com/g/g-6a7227252b1081918497653732efb3a8-web2file-html-to-pdf-converter";
-const CHROME_WEB_STORE_URL = "https://chromewebstore.google.com/";
+const CHROME_WEB_STORE_URL =
+  "https://chromewebstore.google.com/detail/page-2-pdf-%E2%80%94-webpages-cha/ifonfoadgcmgfmoknphjgcgfbeampdmi";
 
 export const externalLinks: Record<ExternalLinkKey, ExternalLink> = {
   chromeExtension: externalLink(
-    process.env.NEXT_PUBLIC_CHROME_EXTENSION_URL,
+    process.env.NEXT_PUBLIC_CHROME_EXTENSION_URL?.trim() ||
+      CHROME_WEB_STORE_URL,
     CHROME_WEB_STORE_URL,
   ),
   page2pdfGpt: externalLink(
