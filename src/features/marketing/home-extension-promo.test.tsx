@@ -24,7 +24,7 @@ describe("HomeHero", () => {
       installLinks.every(
         (link) =>
           link.getAttribute("href") ===
-            "https://chromewebstore.google.com/detail/page-2-pdf-%E2%80%94-webpages-cha/ifonfoadgcmgfmoknphjgcgfbeampdmi" &&
+            "https://chromewebstore.google.com/detail/page-to-pdf-%E2%80%94-webpages-ch/oahoffgoacbbmfhiejbjpghmcnngjlga" &&
           link.getAttribute("target") === "_blank" &&
           link.getAttribute("rel") === "noopener noreferrer",
       ),

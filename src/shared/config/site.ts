@@ -86,7 +86,7 @@ const PAGE2PDF_GPT_URL =
 const HTML2PDF_GPT_URL =
   "https://chatgpt.com/g/g-6a7227252b1081918497653732efb3a8-web2file-html-to-pdf-converter";
 const CHROME_WEB_STORE_URL =
-  "https://chromewebstore.google.com/detail/page-2-pdf-%E2%80%94-webpages-cha/ifonfoadgcmgfmoknphjgcgfbeampdmi";
+  "https://chromewebstore.google.com/detail/page-to-pdf-%E2%80%94-webpages-ch/oahoffgoacbbmfhiejbjpghmcnngjlga";
 
 export const externalLinks: Record<ExternalLinkKey, ExternalLink> = {
   chromeExtension: externalLink(

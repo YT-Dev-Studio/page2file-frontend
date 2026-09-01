@@ -6,7 +6,7 @@ import {
 } from "./site";
 
 const CHROME_EXTENSION_URL =
-  "https://chromewebstore.google.com/detail/page-2-pdf-%E2%80%94-webpages-cha/ifonfoadgcmgfmoknphjgcgfbeampdmi";
+  "https://chromewebstore.google.com/detail/page-to-pdf-%E2%80%94-webpages-ch/oahoffgoacbbmfhiejbjpghmcnngjlga";
 
 describe("Chrome extension", () => {
   test("uses the live Chrome Web Store listing", () => {
