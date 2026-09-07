@@ -13,8 +13,9 @@ the factual, language, and link checks independently for Russian copy.
 - State whether the workflow accepts an active tab, exact public URL, uploaded
   HTML/PDF, or screenshots; never merge these input contracts.
 - Distinguish the current conversation from account-data export or backup.
-- Name the relevant limits: source tab stays open, latest 2,000 retrievable
-  messages, bounded lazy loading/OCR, unavailable assets, and adapter changes.
+- Name the relevant limits: source tab stays open, the installed version or
+  plan controls chat history depth, loading and OCR are bounded, assets can be
+  unavailable, and adapter behavior can change.
 - Treat generic AI matching as conditional and Telegram channels as a distinct
   supported variant. Do not imply universal AI or messenger compatibility.
 - Verify platform instructions against current first-party documentation.

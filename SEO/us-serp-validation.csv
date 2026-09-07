@@ -1,4 +1,5 @@
 "query","target_url","market_scope","us_validation_status","us_serp_checked_at","evidence_url","decision_notes"
+"url to pdf vs print to pdf","/en/blog/url-to-pdf-vs-print-to-pdf","US","pending","","","Comparison article owns method-selection intent; dedicated US SERP review remains pending."
 "ai chat exporter","/en/chrome-extension/ai-chat-to-pdf","US","pending","","","Awaiting dedicated US SERP review; Worldwide Trends signals are not US volume."
 "ai exporter","/en/chrome-extension/ai-chat-to-pdf","US","pending","","","Awaiting dedicated US SERP review; Worldwide Trends signals are not US volume."
 "capture full webpage as pdf","/en/chrome-extension/full-page-pdf","US","pending","2026-08-25","https://fullpagepdf.com/","General results favor full-page extension and how-to pages that contrast the whole scrollable page with the viewport; dedicated US demand validation is still pending."

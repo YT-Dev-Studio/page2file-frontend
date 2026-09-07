@@ -50,7 +50,7 @@ describe("ExtensionGuide", () => {
       "/en/blog/preserve-webpage-links-forms-text",
     );
     expect(screen.queryByRole("link", { name: "Install Page 2 PDF" })).toBeNull();
-    expect(container.textContent).toContain("latest 2,000 messages");
+    expect(container.textContent).toContain("history limit shown by the installed version or plan");
     expect(container.textContent).toContain("the next time the extension runs");
     expect(container.textContent).not.toContain("within two hours");
     expect(container.textContent).not.toMatch(/PowerPoint|PPTX|merge|split|reorder/i);
@@ -99,7 +99,7 @@ describe("ExtensionGuide", () => {
       "/ru/blog/preserve-webpage-links-forms-text",
     );
     expect(screen.queryByRole("link", { name: "Установить Page 2 PDF" })).toBeNull();
-    expect(container.textContent).toContain("2 000 последних сообщений");
+    expect(container.textContent).toContain("предел истории для установленной версии или тарифа");
     expect(container.textContent).toContain("при следующем запуске расширения");
     expect(container.textContent).not.toContain("не позднее чем через два часа");
     expect(container.textContent).not.toMatch(/PowerPoint|PPTX/i);

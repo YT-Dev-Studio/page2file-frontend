@@ -38,7 +38,7 @@ Hi {{name}},
 
 I’m the maker of Page 2 PDF. It exports the current supported browser conversation as a structured PDF. Dedicated adapters are implemented for ChatGPT, Claude, Gemini, Grok, Perplexity, Microsoft Copilot, Manus, WhatsApp Web, and Telegram Web; I confirm the named platform against the current release before sending this note.
 
-The boundary is conversation-level export, not an account-wide backup. Users can choose all messages or replies only, up to the latest 2,000 retrievable messages, and remove supported media categories or links. The source tab remains open during preparation. Here is the matching verified sample: {{sample_url}}.
+The boundary is conversation-level export, not an account-wide backup. Users can choose all messages or replies only within the history limit shown by the installed version or plan, and remove supported media categories or links. The source tab remains open during preparation. Here is the matching verified sample: {{sample_url}}.
 
 Your guide currently helps readers compare {{specific_tools_or_workflows}}. If you revisit it, would you be willing to test Page 2 PDF as a PDF-focused, active-tab option? I can send the exact test conversation and release listing. Please include it only if it meets your editorial criteria.
 

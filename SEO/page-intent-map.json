@@ -272,7 +272,7 @@
       "primaryIntentSource": "localized-seo-title",
       "primaryQuery": "save chatgpt conversation as pdf",
       "intentType": "perform",
-      "purpose": "Explain one-current-ChatGPT-conversation PDF export, supported transcript blocks, the 2,000-message ceiling, and the difference from OpenAI account-data export.",
+      "purpose": "Explain one-current-ChatGPT-conversation PDF export, supported transcript blocks, bounded history loading under the installed version or plan, and the difference from OpenAI account-data export.",
       "internalLinks": ["chrome-extension/chatgpt-to-pdf", "blog/export-ai-chat-to-pdf", "blog/chat-pdf-vs-account-data-export"],
       "avoidCompetingWith": ["chrome-extension/chatgpt-to-pdf"]
     },
@@ -312,7 +312,7 @@
       "primaryIntentSource": "localized-seo-title",
       "primaryQuery": "export ai replies only",
       "intentType": "perform",
-      "purpose": "Explain replies-only filtering, the latest-2,000-retrievable-message cap, media-removal controls, and troubleshooting for partially loaded histories.",
+      "purpose": "Explain replies-only filtering, the installed version or plan's history limit, media-removal controls, and troubleshooting for partially loaded histories.",
       "internalLinks": ["chrome-extension/ai-chat-to-pdf", "blog/preserve-code-tables-citations-in-chat-pdf", "blog/export-ai-chat-to-pdf"],
       "avoidCompetingWith": ["blog/export-ai-chat-to-pdf"]
     },
@@ -365,6 +365,36 @@
       "purpose": "Help readers choose a readable PDF of the open conversation or a platform-native account archive based on scope, format, permissions, and retention needs.",
       "internalLinks": ["blog/export-ai-chat-to-pdf", "blog/export-browser-messenger-chat-to-pdf", "chrome-extension/how-to-use"],
       "avoidCompetingWith": ["blog/export-ai-chat-to-pdf", "blog/export-browser-messenger-chat-to-pdf"]
+    },
+    {
+      "route": "blog/url-to-pdf-vs-print-to-pdf",
+      "kind": "article",
+      "primaryIntentSource": "localized-content-title",
+      "primaryQuery": "url to pdf vs print to pdf",
+      "intentType": "compare",
+      "purpose": "Compare a public URL converter, Chrome Print, and a permitted current-tab workflow for signed-in pages while keeping their access and output limits distinct.",
+      "internalLinks": ["chrome-extension/webpage-to-pdf", "blog/save-private-or-local-page-to-pdf", "blog/chrome-print-cuts-off-webpage", "blog/choose-webpage-pdf-mode"],
+      "avoidCompetingWith": ["chrome-extension/webpage-to-pdf", "chrome-extension/chrome-print-vs-page-2-pdf"]
+    },
+    {
+      "route": "blog/share-ai-answer-with-context",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "share ai answer with context",
+      "intentType": "perform",
+      "purpose": "Help a reader hand off one AI answer with the minimum prompt, evidence, code, tables, privacy review, and requested next action instead of exporting an entire account.",
+      "internalLinks": ["chrome-extension/ai-chat-to-pdf", "blog/preserve-code-tables-citations-in-chat-pdf", "blog/export-ai-chat-to-pdf", "blog/chat-pdf-vs-account-data-export"],
+      "avoidCompetingWith": ["blog/export-ai-chat-to-pdf", "blog/chat-pdf-vs-account-data-export"]
+    },
+    {
+      "route": "blog/save-landing-page-for-client-review",
+      "kind": "article",
+      "primaryIntentSource": "localized-seo-title",
+      "primaryQuery": "save landing page as pdf for client review",
+      "intentType": "perform",
+      "purpose": "Prepare a dated landing-page PDF for client review, record the browser width and version, and separate static visual evidence from form, motion, and responsive checks.",
+      "internalLinks": ["chrome-extension/webpage-to-pdf", "blog/choose-webpage-pdf-mode", "blog/save-long-dynamic-webpage-to-pdf", "blog/save-dashboard-report-to-pdf"],
+      "avoidCompetingWith": ["chrome-extension/webpage-to-pdf", "blog/save-dashboard-report-to-pdf"]
     },
     {
       "route": "about",

@@ -1,0 +1,52 @@
+A URL to PDF service is useful for a public page that looks the same to every visitor. For a signed-in page, compare it with Chrome Print or a current-tab tool, because a remote converter cannot see the browser session that already has access.
+
+## Why a URL converter may only see the login page
+
+A URL converter fetches an address from its own server or browser. It normally does not receive your cookies, organization login, selected filters, expanded panels, or other state from Chrome. The result may therefore be a sign-in screen, an access error, or the public version of the page.
+
+Do not solve that gap by giving an unknown service your password or copying session tokens. If the site provides an authorized download, use it. Otherwise save the page from the browser where you have already opened it, and only when you are permitted to keep a copy. The [signed-in and local page guide](/en/blog/save-private-or-local-page-to-pdf) explains that access boundary in more detail.
+
+## Compare URL conversion, Chrome Print, and current-tab capture
+
+Public URL conversion is convenient when another system must fetch a stable public article without manual preparation. Chrome Print uses the page already open in your browser and often produces searchable text and working links. It is the right first attempt for a conventional document with good print styles.
+
+Page 2 PDF is the extension we build for the current accessible Chrome tab; it is not a pasted-URL converter. **Editable document** uses Chromium PDF output and can keep selectable text and safe links. **Accurate copy** prepares the visible page and places its appearance on image-only PDF pages. Neither mode bypasses a login, a protected frame, or content the page has not loaded.
+
+<ArticleFigure
+  src="/blog/demos/url-print-current-tab-flow.webp"
+  alt="Public URL conversion, Chrome Print, and current-tab PDF paths compared"
+  caption="Choose by input first: a public address, the browser print layout, or the authorized tab already open in Chrome."
+  step={1}
+  openLabel="Open the URL, Print, and current-tab comparison"
+  closeLabel="Close the URL, Print, and current-tab comparison"
+/>
+
+## When Chrome Print is already enough
+
+Stay with Chrome Print when preview contains the complete article, the type remains readable, links work, and page breaks are acceptable. It has no extra extension workflow and exposes familiar paper, margin, orientation, and scale controls.
+
+Change methods only for a specific defect. A fixed report panel may print only its visible rows. A site stylesheet may hide a chart or repeat a header. Images that appear during scrolling may still be blank because they were never loaded. The [Chrome Print diagnosis](/en/blog/chrome-print-cuts-off-webpage) separates those failures from a table that merely needs landscape orientation.
+
+If appearance matters more than selection or search, an image-based result can be the clearer tradeoff. If the recipient needs to quote text or follow references, prefer an editable result and inspect it carefully. The [PDF mode comparison](/en/blog/choose-webpage-pdf-mode) lists what each Page 2 PDF mode gives up.
+
+## What to check before sharing the PDF
+
+Compare the first and last sections with the open page. Check totals, filter names, dates, expanded rows, images, charts, and the final page. Search for a distinctive sentence if the file is meant to contain selectable text, then test one non-sensitive link.
+
+Remove account navigation and personal details that the recipient does not need. Record the source URL, capture date, and selected filters outside the document when they affect interpretation. A PDF fixes one visible version; it does not prove that the page never changed and it does not replace the site's own records.
+
+For an active authorized page, the [webpage to PDF product page](/en/chrome-extension/webpage-to-pdf) describes the available modes and their input limits.
+
+## URL and Print questions
+
+### Can a URL converter save a page behind a login?
+
+Usually not from the URL alone. Use the site's own export or a permitted method that works from the authorized browser session; never send credentials to bridge the gap.
+
+### Does Chrome Print always preserve links and text?
+
+It often does, but the page's print rules and the PDF output determine the result. Test selection, search, and one link in the saved file.
+
+### Is Accurate copy a searchable PDF?
+
+No. It favors visual fidelity and creates image-only pages. Choose Editable document when selectable text is required, then verify that the page structure survived.

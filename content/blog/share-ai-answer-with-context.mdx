@@ -1,0 +1,52 @@
+To share one AI answer, send the smallest package that still explains the result: the relevant prompt, the answer, and any source, code, table, or constraint the recipient must inspect. A full account archive is too broad for that job, while an isolated answer can be impossible to evaluate.
+
+## Start with what the recipient needs
+
+Decide what the recipient should do after reading. A colleague reviewing a query needs the question, assumptions, code, and expected output. A student receiving an explanation may need the original task and cited references. A client approving copy needs the final wording plus the instruction that shaped it, not every abandoned draft.
+
+Mark the start and end of the useful exchange before you export chat material. If a later answer corrects an earlier one, include both or add a short note. Do not make the recipient guess which answer is current.
+
+## Choose copy and paste, a share link, or PDF
+
+Copy and paste is best for a short answer that must be edited immediately. Check that lists, code indentation, tables, and links survived the destination editor. A provider share link suits a conversation that should remain in its web interface, but access settings, later edits, and recipient sign-in can affect what opens.
+
+A PDF suits a fixed review packet that should look the same when opened later. An AI chat exporter should keep the useful roles and document structure without adding the account sidebar. Page 2 PDF is our current-tab option for supported AI conversations; it can include all messages or assistant replies only. The history-loading pass is bounded, so the preview and the first included turn still need inspection.
+
+<ArticleFigure
+  src="/blog/demos/ai-answer-handoff.webp"
+  alt="AI prompt, answer, evidence, and recipient note arranged as one handoff packet"
+  caption="A useful handoff contains enough context to judge the answer, but not unrelated conversation history."
+  step={1}
+  openLabel="Open the AI answer handoff example"
+  closeLabel="Close the AI answer handoff example"
+/>
+
+## Keep the prompt, answer, sources, code, and tables together
+
+Include the prompt when it defines the audience, date range, units, format, or prohibited assumptions. Preserve the answer's citations close to the claims they support. For code, keep the language label, required inputs, and the error or output being discussed. For a table, include its headers and units rather than sending a cropped set of values.
+
+Use replies-only when prompts add no necessary meaning and the deliverable is a clean set of results. Use all messages when revisions, approvals, or auditability matter. The [semantic block checklist](/en/blog/preserve-code-tables-citations-in-chat-pdf) covers code, tables, quotes, files, and media. The broader [AI chat export guide](/en/blog/export-ai-chat-to-pdf) lists the supported adapters and review steps.
+
+An official account-data export solves a different problem. OpenAI describes it as a downloadable data package that includes chat history and other account data, subject to the provider's current process. Consult the [current OpenAI export instructions](https://help.openai.com/en/articles/7260999-how-do-i-export-my-chatgpt-history-and-data) rather than treating one conversation PDF as a backup.
+
+## Remove private context and verify the handoff
+
+Delete names, email addresses, customer records, internal URLs, access tokens, and unrelated prompts unless the recipient is authorized to receive them. Check quoted messages and screenshots as well as the main text. A harmless-looking answer may repeat confidential material from an earlier prompt.
+
+Open the final file outside the source tab. Read the first page as the recipient would, search for a distinctive phrase, test the references, and inspect code and table page breaks. Name the file with the topic and date. In the message that accompanies it, state what decision or feedback is expected.
+
+For a direct choice between a readable thread and a broader provider package, see [chat PDF versus account-data export](/en/blog/chat-pdf-vs-account-data-export). Product controls are summarized on the [AI chat to PDF page](/en/chrome-extension/ai-chat-to-pdf).
+
+## AI answer handoff questions
+
+### Should I send the entire conversation for one answer?
+
+Only when the earlier turns change how the answer should be interpreted. Otherwise include the smallest contiguous exchange that preserves the assumptions and corrections.
+
+### Is a share link better than PDF?
+
+Use a link when the recipient should read the conversation in the provider interface and the access settings are acceptable. Use PDF when a fixed, reviewable document is the actual deliverable.
+
+### Can a conversation PDF replace account export?
+
+No. It covers the selected current conversation, not the account's broader history, settings, files, or provider metadata.

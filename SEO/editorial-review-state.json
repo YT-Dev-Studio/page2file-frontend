@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-08-25",
+  "reviewedAt": "2026-09-07",
   "reviewedLocales": ["en", "ru"],
   "englishFrozen": [
     "chat-pdf-vs-account-data-export",
@@ -21,7 +21,10 @@
     "save-receipt-order-page-to-pdf",
     "save-web-research-to-pdf",
     "supported-and-unsupported-browser-messengers",
-    "webpage-capture-vs-web-scraping"
+    "webpage-capture-vs-web-scraping",
+    "url-to-pdf-vs-print-to-pdf",
+    "share-ai-answer-with-context",
+    "save-landing-page-for-client-review"
   ],
   "russianProofread": [
     "chat-pdf-vs-account-data-export",
@@ -43,11 +46,29 @@
     "save-receipt-order-page-to-pdf",
     "save-web-research-to-pdf",
     "supported-and-unsupported-browser-messengers",
-    "webpage-capture-vs-web-scraping"
+    "webpage-capture-vs-web-scraping",
+    "url-to-pdf-vs-print-to-pdf",
+    "share-ai-answer-with-context",
+    "save-landing-page-for-client-review"
   ],
-  "renderedReviewed": ["en:*", "ru:*"],
+  "renderedReviewed": [
+    "en:*",
+    "ru:*",
+    "en:url-to-pdf-vs-print-to-pdf",
+    "ru:url-to-pdf-vs-print-to-pdf",
+    "en:share-ai-answer-with-context",
+    "ru:share-ai-answer-with-context",
+    "en:save-landing-page-for-client-review",
+    "ru:save-landing-page-for-client-review"
+  ],
   "reviewCycles": {
     "en:*": 1,
-    "ru:*": 1
+    "ru:*": 1,
+    "en:url-to-pdf-vs-print-to-pdf": 3,
+    "ru:url-to-pdf-vs-print-to-pdf": 3,
+    "en:share-ai-answer-with-context": 3,
+    "ru:share-ai-answer-with-context": 3,
+    "en:save-landing-page-for-client-review": 3,
+    "ru:save-landing-page-for-client-review": 3
   }
 }

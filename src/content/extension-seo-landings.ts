@@ -157,7 +157,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     limitsTitle: "Clear boundaries",
     limits: [
       "Page 2 PDF does not export every conversation in an account at once.",
-      "The PDF includes at most the latest 2,000 messages the bounded loader can retrieve from the open conversation.",
+      "The PDF follows the history limit shown by the installed version or plan and includes only messages the bounded loader can retrieve from the open conversation.",
       "A different AI site works only when user and assistant roles are unambiguous; platform markup changes can require an adapter update.",
       "Private assets that the active page cannot retrieve may appear as a placeholder.",
     ],
@@ -207,7 +207,7 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
     limits: [
       "The extension does not export all WhatsApp or Telegram chats in one operation.",
       "Slack, Instagram, Messenger, Discord, and Teams are not currently supported live adapters.",
-      "Only the latest 2,000 messages loaded or retrievable in the current browser conversation can be included.",
+      "The installed version or plan sets the history limit, and only loaded or retrievable messages from the current browser conversation can be included.",
       "Keep the tab being exported open while history and media are being prepared.",
     ],
     privacy,

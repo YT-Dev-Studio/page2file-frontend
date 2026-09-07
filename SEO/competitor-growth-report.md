@@ -15,7 +15,7 @@ The canonical row-level evidence remains in `chrome-web-store-copy-analysis-en-U
 - **Exact result above the fold.** MessangerMax, Yadaphone, narrow Store utilities, and Parceled identify the operation before listing features. Page 2 PDF uses the active-tab result and output type in the title, H1, and first answer.
 - **Proof before explanation.** TonePerfect and product-led tools let the visitor see or use the outcome early. Page 2 PDF uses extension-generated Accurate copy, Editable document, and AI / Chat samples before long supporting copy.
 - **Short, factual workflow.** Strong references reduce the first use to source, choice, and result. Page 2 PDF keeps the operational path visible while adding the required keep-tab-open and preview checks.
-- **Limits beside capabilities.** MessangerMax describes included and excluded content. Page 2 PDF pairs full-page, link, AI, and messenger claims with current-tab, 2,000-message, adapter, media, and platform-DOM limits.
+- **Limits beside capabilities.** MessangerMax describes included and excluded content. Page 2 PDF pairs full-page, link, AI, and messenger claims with current-tab, version-or-plan history, adapter, media, and platform-DOM limits.
 - **One route, one task.** Yadaphone demonstrates specific route intent, while narrow Store listings show that a legible transformation outperforms an abstract feature name. Page 2 PDF keeps a small hub-and-spoke set instead of mass-generating platform pages.
 - **Outcome-specific screenshots.** App and Store listings work best when each image proves one job. Page 2 PDF's five Store assets separately show visual, selectable, AI-chat, messenger, and processing states.
 

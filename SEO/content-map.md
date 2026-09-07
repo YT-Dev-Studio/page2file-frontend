@@ -35,20 +35,20 @@ English-only routes emit only `x-default` and `en` alternates. Their language sw
 - Editable document uses Chromium PDF output. It supports selectable source text, safe links, `As viewed` and `Print optimized`, optional image/link/style removal, eligible non-sensitive form controls, bounded regional OCR for canvas-like regions, and an optional scrubbed project archive.
 - AI / Chat builds a semantic transcript from the current conversation. Supported structures include headings, lists, quotes, code, tables, citations, files, images, video posters, and audio or voice references when exposed by the platform.
 - Dedicated adapters exist for ChatGPT, Gemini, Claude, Grok, Perplexity, Microsoft Copilot, Manus, WhatsApp Web, and Telegram Web chat/channel. Generic AI compatibility is conditional on unambiguous user and assistant roles.
-- Chat history loading is bounded to the latest 2,000 retrievable messages. Users can choose all messages or replies only and remove supported media categories or links.
+- Chat history loading follows the limit shown by the installed version or plan and includes only retrievable messages. Users can choose all messages or replies only and remove supported media categories or links.
 - Slack, Instagram, Discord, Messenger, Microsoft Teams, account-wide export, pasted-URL conversion, website crawling, full-document OCR, built-in PDF editing, and project-archive import are not supported claims.
 - The source tab must remain open during preparation. Very tall pages, virtualized lists, protected frames, unavailable assets, and platform DOM changes can produce partial output or require an adapter update.
 - Page and conversation content is not uploaded to Page 2 File servers by the extension. Temporary preview data follows the extension lifecycle, with orphaned data older than two hours cleared on a later run.
 
 ## Published blog architecture
 
-The bilingual blog adds twenty English/Russian article pairs under `/{locale}/blog`. Articles support the product routes without duplicating their acquisition job:
+The bilingual blog adds twenty-three English/Russian article pairs under `/{locale}/blog`. Articles support the product routes without duplicating their acquisition job:
 
 | Cluster | Article jobs | Editorial boundary |
 |---|---|---|
-| Output decisions | Choose a PDF mode; diagnose clipped Chrome Print output; compare capture with scraping. | Explain when Chrome Print or a crawler is the better tool. Do not present the extension as a pasted-URL converter. |
-| Webpage cases | Long and internally scrolling pages; signed-in or local pages; links, forms and regional OCR; dashboards; research pages; receipts and confirmations. | One active accessible tab only. No authentication bypass, arbitrary clipping, whole-site crawl, whole-document OCR, PDF/UA certification or DOM editor. |
-| AI conversations | All supported adapters; ChatGPT; Claude and Gemini; Grok, Perplexity, Copilot and Manus; semantic code/table/citation handling; replies-only and long-history limits. | One current conversation, latest 2,000 retrievable messages. Live platform status is rechecked before guaranteed compatibility wording. Generic AI support remains conditional. |
+| Output decisions | Choose a PDF mode; diagnose clipped Chrome Print output; compare URL conversion with browser Print; compare capture with scraping. | Explain when Chrome Print, a public URL converter, or a crawler is the better tool. Do not present the extension as a pasted-URL converter. |
+| Webpage cases | Long and internally scrolling pages; signed-in or local pages; links, forms and regional OCR; dashboards; research pages; receipts; landing-page client review. | One active accessible tab only. No authentication bypass, arbitrary clipping, whole-site crawl, whole-document OCR, PDF/UA certification or DOM editor. |
+| AI conversations | All supported adapters; ChatGPT; Claude and Gemini; Grok, Perplexity, Copilot and Manus; semantic code/table/citation handling; recipient handoff; replies-only and long-history limits. | One current conversation with the installed version or plan's history limit. Live platform status is rechecked before guaranteed compatibility wording. Generic AI support remains conditional. |
 | Browser messaging | WhatsApp Web; Telegram Web chat/channel; supported-versus-unsupported matrix; readable chat PDF versus account-data archive. | No account-wide backup or migration. Slack, Teams, Discord, Instagram and Messenger remain unsupported by Page 2 PDF; official platform export routes may be recommended instead. |
 
 Each article owns one primary question, one opening answer, one limitation set and one next-step path. Platform names are combined when separate pages would only substitute a brand name. English copy is frozen before Russian is independently edited; both locales use the same slug and shared evidence image.

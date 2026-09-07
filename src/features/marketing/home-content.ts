@@ -33,7 +33,7 @@ const localizedCopy: Record<Locale, HomeLocalizedCopy> = {
     ],
     answers: [
       "Open the original page in your browser, run Page 2 PDF on the active tab, and choose Accurate copy or Editable document. Keep that page open until the PDF preview appears, then check it before downloading.",
-      "Open the conversation you need and choose AI / Chat. Dedicated adapters are implemented for ChatGPT, Claude, Gemini, Grok, Perplexity, Microsoft Copilot, and Manus; export is limited to the current conversation and at most the latest 2,000 retrievable messages.",
+      "Open the conversation you need and choose AI / Chat. Dedicated adapters are implemented for ChatGPT, Claude, Gemini, Grok, Perplexity, Microsoft Copilot, and Manus; export is limited to the current conversation and the history limit shown by the installed version or plan.",
       "Yes. Page 2 PDF can format the current WhatsApp Web conversation or Telegram Web chat or channel. It does not create an account-wide backup or export every thread at once.",
       "Yes, when the page is already available in the active browser tab and the extension is allowed to read it. Page 2 PDF does not receive your password or bypass the website's access controls.",
       "Accurate copy produces image-based pages that prioritize the rendered appearance. Editable document creates selectable text and safe links, with options for screen or print layout and supported content removal.",
@@ -55,7 +55,7 @@ const localizedCopy: Record<Locale, HomeLocalizedCopy> = {
     ],
     answers: [
       "Откройте исходную страницу в браузере, запустите Page 2 PDF на активной вкладке и выберите «Точная копия» или «Редактируемый документ». Не закрывайте исходную страницу до появления предпросмотра и проверьте PDF перед скачиванием.",
-      "Откройте нужный диалог и выберите «AI / Чат». Отдельные адаптеры реализованы для ChatGPT, Claude, Gemini, Grok, Perplexity, Microsoft Copilot и Manus; экспортируется только текущая переписка и не более 2 000 последних доступных сообщений.",
+      "Откройте нужный диалог и выберите «AI / Чат». Отдельные адаптеры реализованы для ChatGPT, Claude, Gemini, Grok, Perplexity, Microsoft Copilot и Manus; экспортируется только текущая переписка с пределом истории для установленной версии или тарифа.",
       "Да. Page 2 PDF форматирует текущую переписку WhatsApp Web либо чат или канал Telegram Web. Расширение не создает резервную копию аккаунта и не экспортирует все диалоги одновременно.",
       "Да, если страница уже доступна в активной вкладке браузера и расширению разрешено ее читать. Page 2 PDF не получает ваш пароль и не обходит ограничения доступа сайта.",
       "«Точная копия» создает страницы-изображения и отдает приоритет внешнему виду. «Редактируемый документ» сохраняет выделяемый текст и безопасные ссылки, позволяет выбрать экранный или печатный вид и убрать поддерживаемый контент.",

@@ -149,7 +149,11 @@ const coverageForCluster = (cluster) => {
 
 const core = parseCsv(await readFile(CORE_PATH, "utf8"));
 const targets = core
-  .filter((row) => row.status === "target")
+  .filter(
+    (row) =>
+      row.status === "target" &&
+      !row.target_url?.startsWith("/en/blog/"),
+  )
   .sort((left, right) => left.query.localeCompare(right.query));
 
 const traceability = targets.map((row) => {

@@ -214,7 +214,7 @@ const englishCopy: ExtensionCopy = {
   limits: [
     "Chrome blocks extensions on browser settings, the Chrome Web Store, and other protected pages.",
     "Expand the content you need and keep the original page open. Items the page cannot load may be omitted or represented by a placeholder.",
-    "AI / Chat uses portrait pages and includes at most the latest 2,000 messages that its bounded history loader can retrieve.",
+    "AI / Chat uses portrait pages, follows the history limit shown by the installed version or plan, and includes only messages its bounded loader can retrieve.",
     "Local HTML may require enabling file URL access for Page 2 PDF in Chrome's extension settings.",
     "Very tall pages, virtualized lists, unavailable media, protected frames, or a page that keeps changing can prevent a complete result.",
   ],
@@ -354,7 +354,7 @@ const russianCopy: ExtensionCopy = {
   limits: [
     "Chrome запрещает расширениям работать на страницах настроек браузера, в Chrome Web Store и на других защищенных страницах.",
     "Раскройте нужный контент и не закрывайте исходную страницу. Недоступные странице элементы могут быть пропущены или заменены пометкой.",
-    "Режим AI / Чат использует книжную ориентацию и включает не более 2 000 последних сообщений, которые успевает получить ограниченный загрузчик истории.",
+    "Режим AI / Чат использует книжную ориентацию, соблюдает предел истории для установленной версии или тарифа и включает только полученные загрузчиком сообщения.",
     "Для локального HTML может потребоваться разрешить Page 2 PDF доступ к файловым URL в настройках расширений Chrome.",
     "Очень высокие страницы, виртуальные списки, недоступные медиа, защищенные фреймы или постоянно меняющаяся страница могут привести к неполному результату.",
   ],

@@ -1,4 +1,4 @@
-Replies-only is useful when the deliverable is a set of assistant answers, while all messages is safer when prompts, corrections, and decision history matter. Page 2 PDF lets you choose either scope and loads no more than the latest 2,000 retrievable messages from the current supported conversation.
+Replies-only is useful when the deliverable is a set of assistant answers, while all messages is safer when prompts, corrections, and decision history matter. Page 2 PDF lets you choose either scope and applies the history limit shown by the installed version or plan to the current supported conversation.
 
 ## Choose scope by how the PDF will be read
 
@@ -15,9 +15,9 @@ Replies-only does not summarize or merge answers. It filters detected roles. If 
   closeLabel="Close the chat scope and limit diagram"
 />
 
-## Understand the 2,000-message ceiling
+## Understand the history-loading limit
 
-The ceiling applies to messages the bounded loader can retrieve from the page. It is not a promise that every service exposes 2,000 turns. A virtualized conversation may discard older elements, an account may restrict history, or the platform interface may change.
+The limit applies to messages the bounded loader can retrieve from the page. It is not a promise that every service exposes the same number of turns. A virtualized conversation may discard older elements, an account may restrict history, or the platform interface may change.
 
 Check the first included message and compare it with the period you need. If the transcript begins too late, split the work into a smaller conversation where the platform permits it, preserve a narrower decision range, or use the provider's official data export. Page 2 PDF does not bypass loading restrictions.
 
@@ -37,7 +37,7 @@ For a direct product workflow, open [AI chat to PDF](/en/chrome-extension/ai-cha
 
 ## Long-chat questions
 
-### Is 2,000 a page limit?
+### Is the message limit a PDF page limit?
 
 No. It is the maximum number of retrievable chat messages considered by the history loader. PDF page count and file limits are separate.
 

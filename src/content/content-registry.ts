@@ -20,6 +20,9 @@ import EnWhatsapp from "../../content/blog/export-whatsapp-web-chat-to-pdf.mdx";
 import EnTelegram from "../../content/blog/export-telegram-web-chat-to-pdf.mdx";
 import EnMessengerMatrix from "../../content/blog/supported-and-unsupported-browser-messengers.mdx";
 import EnChatArchive from "../../content/blog/chat-pdf-vs-account-data-export.mdx";
+import EnUrlPrintComparison from "../../content/blog/url-to-pdf-vs-print-to-pdf.mdx";
+import EnAiAnswerHandoff from "../../content/blog/share-ai-answer-with-context.mdx";
+import EnLandingReview from "../../content/blog/save-landing-page-for-client-review.mdx";
 import RuChooseMode from "../../content/ru/blog/choose-webpage-pdf-mode.mdx";
 import RuLongPage from "../../content/ru/blog/save-long-dynamic-webpage-to-pdf.mdx";
 import RuPrivatePage from "../../content/ru/blog/save-private-or-local-page-to-pdf.mdx";
@@ -40,6 +43,9 @@ import RuWhatsapp from "../../content/ru/blog/export-whatsapp-web-chat-to-pdf.md
 import RuTelegram from "../../content/ru/blog/export-telegram-web-chat-to-pdf.mdx";
 import RuMessengerMatrix from "../../content/ru/blog/supported-and-unsupported-browser-messengers.mdx";
 import RuChatArchive from "../../content/ru/blog/chat-pdf-vs-account-data-export.mdx";
+import RuUrlPrintComparison from "../../content/ru/blog/url-to-pdf-vs-print-to-pdf.mdx";
+import RuAiAnswerHandoff from "../../content/ru/blog/share-ai-answer-with-context.mdx";
+import RuLandingReview from "../../content/ru/blog/save-landing-page-for-client-review.mdx";
 
 export type ContentKind = "blog" | "update";
 
@@ -143,7 +149,7 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
     image: "/blog/mocks/export-ai-chat-to-pdf.webp",
     imageAlt: "A supported AI conversation transformed into a structured portrait PDF",
     title: "Export a Supported AI Chat to PDF",
-    description: "Save the current supported AI conversation with roles and semantic blocks, while respecting the 2,000-message cap and account-export boundary.",
+    description: "Save the current supported AI conversation with roles and semantic blocks, while respecting bounded history loading and the account-export boundary.",
     author: "Page 2 File editorial team", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: EnAiChat,
   },
   {
@@ -181,9 +187,9 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog", locale: "en", slug: "export-ai-replies-only-and-long-chats",
     image: "/blog/mocks/export-ai-replies-only-and-long-chats.webp",
-    imageAlt: "All messages and replies-only output compared at the 2,000-message boundary",
+    imageAlt: "All messages and replies-only output compared at the bounded history-loading boundary",
     title: "Export AI Replies Only and Long Chats",
-    description: "Choose all messages or replies only, understand the latest-2,000-message ceiling, and use media controls without discarding essential context.",
+    description: "Choose all messages or replies only, understand bounded history loading, and use media controls without discarding essential context.",
     author: "Page 2 File editorial team", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: EnChatScope,
   },
   {
@@ -225,6 +231,30 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
     title: "Chat PDF vs. Account Data Export",
     description: "Choose a reviewed PDF for one current conversation or a provider-controlled archive for portability, broad history, compliance, and machine-readable data.",
     author: "Page 2 File editorial team", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: EnChatArchive,
+  },
+  {
+    kind: "blog", locale: "en", slug: "url-to-pdf-vs-print-to-pdf",
+    image: "/blog/mocks/url-to-pdf-vs-print-to-pdf.webp",
+    imageAlt: "Public URL conversion, Chrome Print, and an authorized current tab compared",
+    title: "URL to PDF vs. Print to PDF for Signed-In Pages",
+    description: "Compare public URL conversion, Chrome Print, and current-tab PDF capture for a signed-in page, including access, output, and privacy tradeoffs.",
+    author: "Page 2 File editorial team", publishedAt: "2026-09-07", updatedAt: "2026-09-07", readingMinutes: 6, component: EnUrlPrintComparison,
+  },
+  {
+    kind: "blog", locale: "en", slug: "share-ai-answer-with-context",
+    image: "/blog/mocks/share-ai-answer-with-context.webp",
+    imageAlt: "An AI prompt, answer, evidence, and recipient note prepared as one handoff",
+    title: "How to Share an AI Answer Without Losing Context",
+    description: "Choose copy, a share link, or PDF for one AI answer, then preserve the prompt, sources, code, tables, privacy, and action the recipient needs.",
+    author: "Page 2 File editorial team", publishedAt: "2026-09-07", updatedAt: "2026-09-07", readingMinutes: 6, component: EnAiAnswerHandoff,
+  },
+  {
+    kind: "blog", locale: "en", slug: "save-landing-page-for-client-review",
+    image: "/blog/mocks/save-landing-page-for-client-review.webp",
+    imageAlt: "A controlled landing page prepared as a dated PDF for client review",
+    title: "How to Save a Landing Page as PDF for Client Review",
+    description: "Create a review-ready landing page PDF, choose visual or selectable output, and record browser width, version, delayed content, forms, and motion limits.",
+    author: "Page 2 File editorial team", publishedAt: "2026-09-07", updatedAt: "2026-09-07", readingMinutes: 6, component: EnLandingReview,
   },
   {
     kind: "blog", locale: "ru", slug: "choose-webpage-pdf-mode",
@@ -303,7 +333,7 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
     image: "/blog/mocks/export-ai-chat-to-pdf.webp",
     imageAlt: "Поддерживаемый AI-диалог в виде структурированного книжного PDF",
     title: "Как экспортировать поддерживаемый AI-диалог в PDF",
-    description: "Сохраните текущую поддерживаемую переписку с ролями и смысловыми блоками, учитывая предел 2 000 сообщений и отличие от архива аккаунта.",
+    description: "Сохраните текущую поддерживаемую переписку с ролями и смысловыми блоками, учитывая ограниченную загрузку истории и отличие от архива аккаунта.",
     author: "Редакция Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: RuAiChat,
   },
   {
@@ -341,9 +371,9 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
   {
     kind: "blog", locale: "ru", slug: "export-ai-replies-only-and-long-chats",
     image: "/blog/mocks/export-ai-replies-only-and-long-chats.webp",
-    imageAlt: "Все сообщения и только ответы у границы загрузки в 2 000 реплик",
+    imageAlt: "Все сообщения и только ответы у границы ограниченной загрузки истории",
     title: "Как экспортировать ответы и длинный AI-диалог",
-    description: "Выберите все сообщения или только ответы, учтите предел последних 2 000 доступных реплик и управляйте медиа без потери необходимого контекста.",
+    description: "Выберите все сообщения или только ответы, учтите ограниченную загрузку истории и управляйте медиа без потери необходимого контекста.",
     author: "Редакция Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: RuChatScope,
   },
   {
@@ -385,6 +415,30 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
     title: "PDF переписки или экспорт данных аккаунта",
     description: "Выберите проверенный PDF одного текущего диалога либо штатный архив для переносимости, широкой истории, требований организации и машинной обработки.",
     author: "Редакция Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: RuChatArchive,
+  },
+  {
+    kind: "blog", locale: "ru", slug: "url-to-pdf-vs-print-to-pdf",
+    image: "/blog/mocks/url-to-pdf-vs-print-to-pdf.webp",
+    imageAlt: "Сравнение публичного URL, печати Chrome и авторизованной текущей вкладки",
+    title: "URL-конвертер или печать в PDF после входа",
+    description: "Сравните URL-конвертер, Chrome Print и сохранение текущей вкладки после входа с учетом доступа, типа PDF, приватности и ограничений каждого способа.",
+    author: "Редакция Page 2 File", publishedAt: "2026-09-07", updatedAt: "2026-09-07", readingMinutes: 6, component: RuUrlPrintComparison,
+  },
+  {
+    kind: "blog", locale: "ru", slug: "share-ai-answer-with-context",
+    image: "/blog/mocks/share-ai-answer-with-context.webp",
+    imageAlt: "Запрос к ИИ, ответ, подтверждающие материалы и записка получателю",
+    title: "Как передать ответ ИИ коллеге и не потерять контекст",
+    description: "Выберите копирование, ссылку или PDF для ответа ИИ и сохраните запрос, источники, код, таблицы, приватность и ожидаемое действие получателя.",
+    author: "Редакция Page 2 File", publishedAt: "2026-09-07", updatedAt: "2026-09-07", readingMinutes: 6, component: RuAiAnswerHandoff,
+  },
+  {
+    kind: "blog", locale: "ru", slug: "save-landing-page-for-client-review",
+    image: "/blog/mocks/save-landing-page-for-client-review.webp",
+    imageAlt: "Тестовый лендинг подготовлен как датированный PDF для клиентского разбора",
+    title: "Как сохранить лендинг в PDF для разбора с клиентом",
+    description: "Подготовьте PDF лендинга для клиента, выберите визуальный или текстовый результат и запишите ширину окна, версию, формы и ограничения анимации.",
+    author: "Редакция Page 2 File", publishedAt: "2026-09-07", updatedAt: "2026-09-07", readingMinutes: 6, component: RuLandingReview,
   },
 ];
 

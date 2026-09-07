@@ -90,7 +90,7 @@ describe("homepage extension copy", () => {
     const visibleCopy = JSON.stringify(getExtensionCopy("en"));
 
     expect(visibleCopy).not.toMatch(/PowerPoint|PPTX|merge|split|reorder|upload a URL/i);
-    expect(visibleCopy).toContain("2,000");
+    expect(visibleCopy).toContain("history limit shown by the installed version or plan");
     expect(visibleCopy).toContain("older than two hours");
     expect(visibleCopy).toContain("the next time the extension runs");
     expect(visibleCopy).not.toContain("within two hours");

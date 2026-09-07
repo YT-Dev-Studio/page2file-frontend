@@ -1,0 +1,52 @@
+Save a landing page as PDF after the exact review version is open, stable, and free of editing overlays. Saving a webpage as PDF is only the mechanical step; the useful deliverable is a dated visual record with enough context for the client to identify the page, screen width, selected state, and known limits.
+
+## Capture the exact version the client should review
+
+Open the approved staging or production address and confirm the version label, headline, price, campaign dates, language, consent banner, and form state. Finish loading the page, then scroll through it once so images that appear near the visible area have a chance to load. Close developer toolbars, editor controls, chat widgets, and personal account menus unless they are part of the review.
+
+Use a normal browser width agreed with the client. A desktop PDF cannot prove that the mobile layout works, and a narrow capture cannot represent a wide hero. If both layouts matter, create two clearly named files rather than presenting one as universal.
+
+<ArticleFigure
+  src="/blog/demos/landing-client-review.webp"
+  alt="Controlled landing page fixture prepared as a dated client review PDF"
+  caption="Record the page version, browser width, capture mode, and exclusions next to the PDF."
+  step={1}
+  openLabel="Open the landing page review example"
+  closeLabel="Close the landing page review example"
+/>
+
+## Choose visual fidelity or selectable content
+
+Use visual output when the review is about spacing, colors, image crops, backgrounds, and section order. In Page 2 PDF, **Accurate copy** produces image-only pages, so the client cannot search or select the original text. That tradeoff is acceptable for a visual sign-off but poor for copy editing.
+
+Use **Editable document** when the reviewer needs selectable text and safe links. **As viewed** stays closer to the screen layout; **Print optimized** follows the site's print rules. A polished print stylesheet can be the best answer, including plain Chrome Print. The [mode selection guide](/en/blog/choose-webpage-pdf-mode) gives the decision in more detail.
+
+Page 2 PDF is the active-tab tool our team builds. It does not accept a pasted URL, crawl connected campaign pages, or turn the PDF into an editable design source. The [webpage to PDF page](/en/chrome-extension/webpage-to-pdf) lists the product input and output limits.
+
+## Check long sections, delayed images, forms, and motion
+
+Compare every section heading with the live page and inspect the last call to action. Watch for missing image crops, repeated fixed headers, split pricing cards, clipped tables, and empty spaces where content appears only after scrolling. A very tall page or a list that replaces off-screen items may need a smaller review range. The [long-page preparation guide](/en/blog/save-long-dynamic-webpage-to-pdf) covers those limits.
+
+A PDF records one frame of motion. Carousels, video, hover states, animation timing, sticky transitions, form validation, and responsive changes need separate browser review. Do not use a static file as evidence that those interactions work. For a form, record the intended state—empty, completed, success, or error—and avoid real customer data.
+
+## Send the PDF with a useful review note
+
+Put the page name, date, browser width, mode, and version or commit identifier in the filename or accompanying message. List intentional exclusions such as animation, mobile layout, form submission, analytics, and destination pages. Ask for comments by section heading or PDF page number so the next revision can be traced.
+
+Check the saved file before sending: first and last sections, headline, offer, legal text, images, links when applicable, and page count. If the landing page contains a dashboard-style comparison or wide table, use the [report export checklist](/en/blog/save-dashboard-report-to-pdf) as an additional review pass.
+
+Keep the live page or design file as the maintained source. The PDF is a review artifact tied to one moment, not a replacement for version control, design comments, or the approved production page.
+
+## Landing page review questions
+
+### Should I send desktop and mobile PDFs?
+
+Send both when the client is approving responsive layouts. Label the browser width and date on each file, and do not infer mobile behavior from a scaled desktop PDF.
+
+### Which mode is better for copy review?
+
+Start with Editable document because text selection and search matter. Use Accurate copy when the review is about visual placement and the image-only tradeoff is explicit.
+
+### Does the PDF prove that forms and animation work?
+
+No. Test interaction in the browser and record the result separately. The PDF shows only the visible state captured at that time.

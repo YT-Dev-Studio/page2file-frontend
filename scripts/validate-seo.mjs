@@ -193,6 +193,7 @@ const validateSemanticData = async () => {
     "/en/chrome-extension/whatsapp-chat-to-pdf",
     "/en/chrome-extension/telegram-chat-to-pdf",
     "/en/chrome-extension/chrome-print-vs-page-2-pdf",
+    "/en/blog/url-to-pdf-vs-print-to-pdf",
   ]);
   const allowedMarketScopes = new Set(["worldwide_english", "us_first"]);
   const allowedValidationStates = new Set(["pending", "validated", "rejected"]);
@@ -271,15 +272,21 @@ const validateSemanticData = async () => {
       addError(`${row.title || row.url}: incomplete acquisition prospect.`);
     }
   }
+  const targetRowsList = core.filter((row) => row.status === "target");
   const targetQueries = new Set(
-    core
-      .filter((row) => row.status === "target")
-      .map((row) => normalizeQuery(row.query ?? "")),
+    targetRowsList.map((row) => normalizeQuery(row.query ?? "")),
   );
   const targetRows = new Map(
-    core
-      .filter((row) => row.status === "target")
-      .map((row) => [normalizeQuery(row.query ?? ""), row]),
+    targetRowsList.map((row) => [normalizeQuery(row.query ?? ""), row]),
+  );
+  const storeTargetRowsList = targetRowsList.filter(
+    (row) => !row.target_url?.startsWith("/en/blog/"),
+  );
+  const storeTargetQueries = new Set(
+    storeTargetRowsList.map((row) => normalizeQuery(row.query ?? "")),
+  );
+  const storeTargetRows = new Map(
+    storeTargetRowsList.map((row) => [normalizeQuery(row.query ?? ""), row]),
   );
   const expectedCopyReferences = new Set([
     "sig-website",
@@ -370,14 +377,14 @@ const validateSemanticData = async () => {
     "not_applicable",
   ]);
   const traceabilityQueries = new Set();
-  if (storeCopyTraceability.length !== targetQueries.size) {
+  if (storeCopyTraceability.length !== storeTargetQueries.size) {
     addError(
-      `Expected Store-copy traceability for ${targetQueries.size} target queries, found ${storeCopyTraceability.length}.`,
+      `Expected Store-copy traceability for ${storeTargetQueries.size} Store-eligible target queries, found ${storeCopyTraceability.length}.`,
     );
   }
   for (const row of storeCopyTraceability) {
     const query = normalizeQuery(row.query ?? "");
-    const target = targetRows.get(query);
+    const target = storeTargetRows.get(query);
     if (traceabilityQueries.has(query)) {
       addError(`Duplicate Store-copy traceability query: ${query}.`);
     }
@@ -428,7 +435,7 @@ const validateSemanticData = async () => {
       addError(`${query}: covered Store intent cannot use not_applicable location.`);
     }
   }
-  for (const query of targetQueries) {
+  for (const query of storeTargetQueries) {
     if (!traceabilityQueries.has(query)) {
       addError(`Target query is missing from Store-copy traceability: ${query}.`);
     }
@@ -687,7 +694,7 @@ const validateSource = async () => {
   ].join("\n");
   for (const marker of [
     "active tab",
-    "2,000",
+    "history limit shown by the installed version or plan",
     "selectable text",
     "safe links",
     "Regional OCR",
