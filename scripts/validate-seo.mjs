@@ -5,8 +5,8 @@ import { join } from "node:path";
 const ROOT = process.cwd();
 const SITE_NAME = "Page 2 File";
 const PRODUCTION_ORIGIN = "https://page2file.com";
-const LOCALES = ["en", "ru"];
-const EN_ONLY_ROUTE_PATHS = new Set([
+const LOCALES = ["en", "ru", "de"];
+const LIMITED_ROUTE_PATHS = new Set([
   "/en/chrome-extension/webpage-to-pdf",
   "/en/chrome-extension/ai-chat-to-pdf",
   "/en/chrome-extension/messenger-chat-to-pdf",
@@ -18,6 +18,17 @@ const EN_ONLY_ROUTE_PATHS = new Set([
   "/en/chrome-extension/whatsapp-chat-to-pdf",
   "/en/chrome-extension/telegram-chat-to-pdf",
   "/en/chrome-extension/chrome-print-vs-page-2-pdf",
+  "/de/chrome-extension/webpage-to-pdf",
+  "/de/chrome-extension/ai-chat-to-pdf",
+  "/de/chrome-extension/messenger-chat-to-pdf",
+  "/de/chrome-extension/full-page-pdf",
+  "/de/chrome-extension/webpage-to-pdf-with-links",
+  "/de/chrome-extension/html-page-to-pdf",
+  "/de/chrome-extension/chatgpt-to-pdf",
+  "/de/chrome-extension/claude-to-pdf",
+  "/de/chrome-extension/whatsapp-chat-to-pdf",
+  "/de/chrome-extension/telegram-chat-to-pdf",
+  "/de/chrome-extension/chrome-print-vs-page-2-pdf",
 ]);
 const SOURCE_CHECKS = [
   [
@@ -904,8 +915,8 @@ const validateRenderedPage = (url, html) => {
     alternates.map((tag) => attribute(tag, "hreflang").toLowerCase()),
   );
   const pagePath = new URL(url).pathname.replace(/\/+$/, "") || "/";
-  const expectedLanguages = EN_ONLY_ROUTE_PATHS.has(pagePath)
-    ? new Set(["x-default", "en"])
+  const expectedLanguages = LIMITED_ROUTE_PATHS.has(pagePath)
+    ? new Set(["x-default", "en", "de"])
     : new Set(["x-default", ...LOCALES]);
   if (
     alternates.length < expectedLanguages.size ||

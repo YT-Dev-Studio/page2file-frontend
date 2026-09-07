@@ -1,0 +1,44 @@
+Um einen KI-Chat als lesbare PDF zu exportieren, öffnen Sie den exakten Thread in Chrome, wählen **AI / Chat**, legen alle Nachrichten oder nur Antworten fest und prüfen Medien- sowie Linkoptionen. Page 2 PDF lädt die verfügbare Historie des aktuellen Gesprächs, nicht das gesamte Konto.
+
+## Unterstützte Plattformen und ihre Grenze
+
+Der geprüfte Release-Code enthält eigene Adapter für ChatGPT, Gemini, Claude, Grok, Perplexity, Microsoft Copilot und Manus. Für Messenger gibt es außerdem WhatsApp Web und Telegram Web. Bei einer anderen KI-Seite kann ein Transkript nur entstehen, wenn eindeutige Rollen von Nutzer und Assistent erkannt werden.
+
+Oberflächen ändern sich. Benannte Dienste müssen deshalb vor einer aktuellen Kompatibilitätsaussage im Release geprüft werden. Verändert eine Plattform ihre Nachrichtenstruktur, kann das Ergebnis teilweise fehlen, bis der Adapter angepasst ist. Für konkrete Vorbereitung vergleichen Sie [Claude und Gemini](/de/blog/export-claude-and-gemini-chat-to-pdf) sowie [Grok, Perplexity, Copilot und Manus](/de/blog/export-grok-perplexity-copilot-manus-to-pdf).
+
+<ArticleFigure
+  src="/blog/demos/ai-chat-workflow.webp"
+  alt="Zwei Nachrichten in einem Page-2-PDF-Testtranskript mit Links und Medienverweisen"
+  caption="Der semantische Modus baut das aktuelle Gespräch neu auf, statt die Plattformoberfläche zu fotografieren."
+  step={1}
+  openLabel="Ablauf für KI-Chat-Export öffnen"
+  closeLabel="Ablauf für KI-Chat-Export schließen"
+/>
+
+## Was das Transkript erhalten kann
+
+Das Modell unterstützt Sprecherrollen, Überschriften, Listen, Zitate, Codeblöcke, Tabellen, Quellenlinks, Dateidetails, Bilder, Video-Vorschaubilder und Audio- oder Sprachverweise, sofern die Plattform sie in einer unterstützten Form bereitstellt. Das Hochformat-Transkript lässt Kontonavigation und andere Bedienflächen weg.
+
+Bilder, Video, Audio und Links lassen sich getrennt entfernen. „Nur Antworten“ blendet Nutzernachrichten aus. Das ergibt ein kompaktes Antwortpaket, kann aber Fragen entfernen, die für das Verständnis nötig sind. Prüfen Sie Anfang und Ende. Für technische Inhalte hilft die [Prüfliste für Code, Tabellen und Quellen](/de/blog/preserve-code-tables-citations-in-chat-pdf), für lange Verläufe der [Leitfaden zu Nachrichtenumfang](/de/blog/export-ai-replies-only-and-long-chats).
+
+## Beachten Sie die Ladegrenze
+
+Der Loader verwendet die im installierten Tarif oder in der Version angezeigte Begrenzung. Eine Plattform kann weniger bereitstellen, wenn ältere Inhalte entladen wurden, Zugriff ablief oder die Oberfläche wechselte. Page 2 PDF rekonstruiert keine Nachrichten, die der geöffneten Seite fehlen.
+
+Scrollen Sie zum benötigten Zeitraum, klappen Sie Code und Quellen aus und warten Sie auf Anhänge. Lassen Sie den Tab geöffnet. Beginnt das Ergebnis zu spät, verkürzen Sie den gewünschten Bereich oder verwenden Sie den Kontoexport des Anbieters.
+
+## PDF und Kontoarchiv erfüllen andere Aufgaben
+
+Die Gesprächs-PDF dient zum Lesen und Teilen eines sichtbaren Threads. Anbieterarchive können breiter sein, länger dauern und maschinenorientierte Dateien enthalten. Der [Vergleich mit dem Kontoarchiv](/de/blog/chat-pdf-vs-account-data-export) hilft bei der Wahl. Die Produktseite ist [KI-Chat zu PDF](/de/chrome-extension/ai-chat-to-pdf); Page 2 PDF behauptet keine Verbindung zu den unterstützten Plattformen.
+
+### Exportiert die Erweiterung alle Gespräche meines Kontos?
+
+Nein. Sie verarbeitet das aktuell geöffnete Gespräch. Nutzen Sie für ein Kontoarchiv den offiziellen Export des Anbieters.
+
+### Werden erzeugte Anhänge vollständig heruntergeladen?
+
+Das Transkript kann sichtbare Dateiangaben und unterstützte Verweise enthalten. Geschützte oder abgelaufene Dateien sind nicht garantiert.
+
+### Fasst der Modus das Gespräch zusammen?
+
+Nein. Er erhält das erkannte Transkript und schreibt Nachrichten weder um noch zusammen.

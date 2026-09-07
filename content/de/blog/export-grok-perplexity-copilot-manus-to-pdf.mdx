@@ -1,0 +1,44 @@
+Page 2 PDF enthält eigene Extraktoren für Grok, Perplexity, Microsoft Copilot und Manus. Alle nutzen denselben Ablauf für das aktuelle Gespräch, doch jede Plattform hat andere Anbieteroptionen und kann ihr Browser-Markup ändern. Die Vorschau der konkreten Datei ist deshalb wichtiger als der Plattformname.
+
+## Verwenden Sie einen überprüfbaren Ablauf
+
+Öffnen Sie den Zielthread in Chrome, laden Sie benötigte Nachrichten und Quellen und starten Sie Page 2 PDF in diesem Tab. Wählen Sie **AI / Chat**, alle Nachrichten oder nur Antworten und entscheiden Sie über Bilder, Video, Audio sowie Links. Lassen Sie den Tab bis zur Vorschau offen.
+
+Der Grok-Adapter deckt aktuelles Markup auf `grok.com` und `x.com` sowie eine getestete ältere Struktur ab. Microsoft Copilot berücksichtigt unterstützte Microsoft-Hosts. Perplexity und Manus besitzen eigene Regeln. Das sind Fakten der Implementierung; aktuelle Live-Kompatibilität gehört weiterhin in den Release-Test.
+
+<ArticleFigure
+  src="/blog/demos/four-ai-adapters.webp"
+  alt="Testtranskript mit zwei Nachrichten und unterstützten Links sowie Medienverweisen"
+  caption="Eigene Adapter teilen ein Transkriptmodell; Anbieteroberflächen und native Exportwege müssen dennoch geprüft werden."
+  step={1}
+  openLabel="Vergleich der vier KI-Adapter öffnen"
+  closeLabel="Vergleich der vier KI-Adapter schließen"
+/>
+
+## Prüfen Sie zuerst die native Exportoption
+
+Perplexity beschreibt den Export einer Session als PDF, Markdown oder DOCX im [Help Center](https://www.perplexity.ai/help-center/en/articles/10354769-what-is-a-thread). Nutzen Sie dessen PDF, wenn sie genau die benötigte Session und Struktur enthält. Page 2 PDF ist eine Alternative für gemeinsame Transkriptoptionen oder denselben Prüfprozess wie bei anderen Chats.
+
+Microsoft bietet zahlreiche Datei- und Unternehmensfunktionen; daraus folgt nicht automatisch ein Export eines einzelnen Copilot-Browsergesprächs. Prüfen Sie Produkt und Kontokontext. Manus trennt Chat- und Agentenmodus; Page 2 PDF verarbeitet weiterhin nur die aktuelle Browserunterhaltung. Für Grok sollte keine native Option erfunden werden. Erscheint später eine, vergleichen Sie sie mit dem tatsächlichen Ziel.
+
+## Kontrollieren Sie plattformspezifische Fehler
+
+Prüfen Sie Sprecherfolge, Quellen, erzeugte Karten, Dateiverweise sowie erste und letzte Nachricht. Grok kann moderne und ältere Layouts zeigen. Bei Perplexity sind Quellenlinks oft zentral. Copilot unterscheidet sich zwischen Microsoft-Hosts. Manus kann Agentenaktivität anzeigen, die keine normale Assistentenantwort ist.
+
+Page 2 PDF erhält unterstützte Blöcke, welche die Seite offenlegt, aber nicht jedes proprietäre Widget. Das Laden folgt der Versions- oder Tarifgrenze; nicht geladene Historie verkürzt die Datei. Verwenden Sie die [Übersicht zum KI-Chat-Export](/de/blog/export-ai-chat-to-pdf) und die [Prüfliste für semantische Blöcke](/de/blog/preserve-code-tables-citations-in-chat-pdf).
+
+## Halten Sie die Seitengruppe nützlich
+
+Die vier Dienste stehen gemeinsam auf dieser Seite, weil getrennte Beiträge dieselben Schritte und Grenzen wiederholen würden. Der Produkthub [KI-Chat zu PDF](/de/chrome-extension/ai-chat-to-pdf) nennt die unterstützten Adapter, ohne dünne Einzelseiten zu erzeugen.
+
+### Garantiert Adaptercode dauerhafte Live-Kompatibilität?
+
+Nein. Er belegt implementierte und getestete Selektoren des Releases. Plattformen können sich danach ändern.
+
+### Sollte ich Perplexitys eigenen PDF-Export nutzen?
+
+Ja, wenn er das benötigte Sitzungsdokument liefert. Page 2 PDF lohnt sich nur für einen abweichenden Ablauf oder andere Bedienelemente.
+
+### Exportiert Page 2 PDF Copilot-Aktivität aus Microsoft 365?
+
+Nein. Es verarbeitet das aktuelle unterstützte Browsergespräch, nicht organisationsweite Microsoft-Daten oder Dateien.

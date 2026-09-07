@@ -17,24 +17,24 @@ export type MetadataInput = {
   publishedAt?: string;
   updatedAt?: string;
   author?: string;
-  localized?: boolean;
+  availableLocales?: ReadonlyArray<Locale>;
   image?: string;
   imageAlt?: string;
 };
 
 const getLanguageAlternates = (
   route: string,
-  localized: boolean,
+  availableLocales: ReadonlyArray<Locale>,
 ): Record<string, string> => {
   const alternates: Record<string, string> = {
     "x-default": absoluteUrl(routePath("en", route)),
   };
-  if (!localized) {
-    alternates.en = absoluteUrl(routePath("en", route));
-    return alternates;
-  }
   const addReviewedLocale = (locale: (typeof localeRegistry)[number]): void => {
-    if (locale.reviewed && locale.indexable) {
+    if (
+      locale.reviewed &&
+      locale.indexable &&
+      availableLocales.includes(locale.code)
+    ) {
       alternates[locale.htmlLang] = absoluteUrl(routePath(locale.code, route));
     }
   };
@@ -52,7 +52,7 @@ export const buildMetadata = ({
   publishedAt,
   updatedAt,
   author,
-  localized = true,
+  availableLocales = localeRegistry.map((candidate) => candidate.code),
   image = "/og/page2file-share.png",
   imageAlt,
 }: MetadataInput): Metadata => {
@@ -63,14 +63,15 @@ export const buildMetadata = ({
   const canonical = absoluteUrl(pathname);
   const titleWithBrand = `${title} | ${siteName}`;
   const fullTitle = titleWithBrand.length <= 65 ? titleWithBrand : title;
-  const alternateLocales = localized ? localeRegistry
+  const alternateLocales = localeRegistry
     .filter(
       (candidate): boolean =>
         candidate.reviewed &&
         candidate.indexable &&
-        candidate.code !== locale,
+        candidate.code !== locale &&
+        availableLocales.includes(candidate.code),
     )
-    .map((candidate): string => candidate.openGraphLocale) : [];
+    .map((candidate): string => candidate.openGraphLocale);
   const commonOpenGraph = {
     locale: definition.openGraphLocale,
     alternateLocale: canIndex ? alternateLocales : undefined,
@@ -106,7 +107,9 @@ export const buildMetadata = ({
     description,
     alternates: {
       canonical,
-      languages: canIndex ? getLanguageAlternates(route, localized) : undefined,
+      languages: canIndex
+        ? getLanguageAlternates(route, availableLocales)
+        : undefined,
     },
     robots: {
       index: canIndex,

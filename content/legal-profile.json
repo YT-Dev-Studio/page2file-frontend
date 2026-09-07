@@ -2,11 +2,13 @@
   "entityName": "ИП YT DEV",
   "addresses": {
     "en": "Kazakhstan, Almaty, Zhetysu‑4",
-    "ru": "Казахстан, Алматы, Жетысу‑4"
+    "ru": "Казахстан, Алматы, Жетысу‑4",
+    "de": "Kasachstan, Almaty, Zhetysu‑4"
   },
   "jurisdictions": {
     "en": "Kazakhstan",
-    "ru": "Казахстан"
+    "ru": "Казахстан",
+    "de": "Kasachstan"
   },
   "contactEmail": "support@page2file.com",
   "processors": [

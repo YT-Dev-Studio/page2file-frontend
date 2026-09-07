@@ -1,12 +1,12 @@
 # Page 2 File content map
 
-Updated: 2026-08-25
+Updated: 2026-09-07
 
 ## Published architecture
 
 Page 2 File is the website. Page 2 PDF is the Chrome extension. Web2File names only the two confirmed GPTs.
 
-Seven routes are published in both English and Russian:
+Eight general routes are published in English, Russian, and German:
 
 | Route | Primary job |
 |---|---|
@@ -17,8 +17,9 @@ Seven routes are published in both English and Russian:
 | `/{locale}/about` | Explain operator, evidence, editorial review, and corrections. |
 | `/{locale}/privacy` | Explain website and extension data processing. |
 | `/{locale}/terms` | Define permitted use, responsibilities, and output limits. |
+| `/{locale}/support` | Send a problem report or product comment to the development team. |
 
-Eleven additional extension routes are published in English only:
+Eleven additional extension routes are published in English and German:
 
 | Cluster | Routes | Boundary |
 |---|---|---|
@@ -26,7 +27,7 @@ Eleven additional extension routes are published in English only:
 | AI chat | `ai-chat-to-pdf`, `chatgpt-to-pdf`, `claude-to-pdf` | Current supported conversation, not an account archive. |
 | Messenger | `messenger-chat-to-pdf`, `whatsapp-chat-to-pdf`, `telegram-chat-to-pdf` | Current WhatsApp Web thread or Telegram Web chat/channel only. |
 
-English-only routes emit only `x-default` and `en` alternates. Their language switcher sends Russian readers to `/ru/chrome-extension/how-to-use` rather than inventing untranslated URLs.
+These routes emit `x-default`, `en`, and `de` alternates. Their language switcher keeps the route between English and German and sends Russian readers to `/ru/chrome-extension/how-to-use` rather than inventing untranslated URLs.
 
 ## Verified Page 2 PDF contract
 
@@ -42,7 +43,7 @@ English-only routes emit only `x-default` and `en` alternates. Their language sw
 
 ## Published blog architecture
 
-The bilingual blog adds twenty-three English/Russian article pairs under `/{locale}/blog`. Articles support the product routes without duplicating their acquisition job:
+The blog publishes twenty-three articles in English, Russian, and German under `/{locale}/blog`. Articles support the product routes without duplicating their acquisition job:
 
 | Cluster | Article jobs | Editorial boundary |
 |---|---|---|
@@ -51,7 +52,7 @@ The bilingual blog adds twenty-three English/Russian article pairs under `/{loca
 | AI conversations | All supported adapters; ChatGPT; Claude and Gemini; Grok, Perplexity, Copilot and Manus; semantic code/table/citation handling; recipient handoff; replies-only and long-history limits. | One current conversation with the installed version or plan's history limit. Live platform status is rechecked before guaranteed compatibility wording. Generic AI support remains conditional. |
 | Browser messaging | WhatsApp Web; Telegram Web chat/channel; supported-versus-unsupported matrix; readable chat PDF versus account-data archive. | No account-wide backup or migration. Slack, Teams, Discord, Instagram and Messenger remain unsupported by Page 2 PDF; official platform export routes may be recommended instead. |
 
-Each article owns one primary question, one opening answer, one limitation set and one next-step path. Platform names are combined when separate pages would only substitute a brand name. English copy is frozen before Russian is independently edited; both locales use the same slug and shared evidence image.
+Each article owns one primary question, one opening answer, one limitation set and one next-step path. Platform names are combined when separate pages would only substitute a brand name. English copy is frozen before Russian and German are independently edited; all locales use the same slug and shared evidence image.
 
 ## Intent ownership
 
@@ -71,4 +72,4 @@ US SERP validation is recorded per query in `us-serp-validation.csv`. Only direc
 
 ## Unpublished content
 
-Updates, changelog, public URL/PPTX converters, unconfirmed GPTs, and former standalone thin platform pages are not published. Their routes return `404` without redirects. The blog is published only from paired EN/RU registry entries that pass product-evidence, intent, anti-slop, link, image and rendered checks.
+Updates, changelog, public URL/PPTX converters, unconfirmed GPTs, and former standalone thin platform pages are not published. Their routes return `404` without redirects. The blog is published only from matching EN/RU/DE registry entries that pass product-evidence, intent, anti-slop, link, image and rendered checks.

@@ -112,13 +112,21 @@ const getRouteMetadata = (
       });
     }
     if (isExtensionSeoRoute(route)) {
-      const content = getExtensionSeoLanding(route);
+      const content = getExtensionSeoLanding(locale, route);
+      if (!content) {
+        return buildMetadata({
+          locale,
+          route,
+          ...getSeoCopy(locale, "notFound"),
+          noindex: true,
+        });
+      }
       return buildMetadata({
         locale,
         route,
         title: content.title,
         description: content.description,
-        localized: false,
+        availableLocales: ["en", "de"],
       });
     }
     const content = getLandingContent(locale, route);

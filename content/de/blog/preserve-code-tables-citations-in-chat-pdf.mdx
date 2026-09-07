@@ -1,0 +1,46 @@
+KI-Gespräche bestehen nicht nur aus abwechselnden Absätzen. Ein brauchbares Transkript muss Grenzen von Code, Tabellenstruktur, Zitate, Überschriften, Quellen und Dateiverweise bewahren, ohne die Kontonavigation zu kopieren. Der Modus AI / Chat baut erkannte Inhaltsblöcke als Hochformat-PDF neu auf.
+
+## Prüfen Sie Code gegen die Originalnachricht
+
+Kontrollieren Sie Einrückung, Zeilenumbruch, Sonderzeichen und lange ungetrennte Zeichenfolgen. Klappen Sie verborgenen Code vor dem Export aus. Ein horizontal scrollender Block passt nicht immer unverändert auf eine Hochformatseite; vergleichen Sie wichtige Zeilen mit dem geöffneten Chat.
+
+Der Adapter erhält Code als semantischen Block, wenn er ihn erkennt. Page 2 PDF führt den Code nicht aus, prüft kein Ergebnis und verspricht nicht, dass Kopierschaltflächen oder interaktive Entwicklungsumgebungen Teil der PDF werden.
+
+<ArticleFigure
+  src="/blog/demos/chat-semantic-blocks.webp"
+  alt="Testtranskript mit Links, Bildern und einem Videoverweis in strukturierten Blöcken"
+  caption="Prüfen Sie jeden Block, der Bedeutung trägt; Fließtext ist nur ein Teil des Gesprächs."
+  step={1}
+  openLabel="Diagramm zu semantischen Chat-Blöcken öffnen"
+  closeLabel="Diagramm zu semantischen Chat-Blöcken schließen"
+/>
+
+## Kontrollieren Sie Tabellen, Zitate und Überschriften
+
+Tabellen sollen Zeilen- und Spaltenbeziehungen behalten, statt zu einer Wortfolge zusammenzufallen. Breite Tabellen können umbrechen; prüfen Sie Kopfzeile und letzte Spalten. Zitate brauchen eine sichtbare Abgrenzung vom umgebenden Antworttext. Überschriften sollen eine lesbare Hierarchie bilden, ohne jedes fett gesetzte Fragment zur Sektion zu machen.
+
+Lässt sich ein proprietäres Widget nicht im gemeinsamen Transkriptmodell darstellen, kann die PDF eine reduzierte Bezeichnung enthalten oder die Interaktion auslassen. Ziel ist ein lesbarer Nachweis offenliegender Inhalte, keine Kopie jedes Bedienelements.
+
+## Testen Sie Quellen und Dateiverweise
+
+Öffnen Sie einige Quellenlinks aus der PDF. Sichere Links können erhalten bleiben, doch Ziele können eine Anmeldung verlangen, sich ändern oder ablaufen. Für Forschungszwecke ist eine Nummer ohne Ziel unvollständig; vergleichen Sie deshalb das Quellenverzeichnis.
+
+Dateien können als Verweise erscheinen und sind nicht generell binär eingebettet. Bilder, Video-Vorschaubilder sowie Audio- oder Sprachverweise hängen von der Plattform ab. Geschützte, einmal sichtbare oder nicht verfügbare Medien lassen sich nicht zurückholen. Die [Anleitung für Webrecherche](/de/blog/save-web-research-to-pdf) deckt externe Quellen ab, der [ChatGPT-Leitfaden](/de/blog/export-chatgpt-conversation-to-pdf) die plattformspezifische Vorbereitung.
+
+## Bewahren Sie genug Gesprächskontext
+
+„Nur Antworten“ wirkt aufgeräumt, kann aber Prompt, Schema oder frühere Korrektur entfernen, von denen Code und Tabellen abhängen. Nutzen Sie alle Nachrichten, wenn Nachvollziehbarkeit zählt. Der begrenzte Loader folgt dem Wert der installierten Version oder des Tarifs; prüfen Sie die erste enthaltene Nachricht.
+
+Mehr dazu steht im [Leitfaden zu langen Chats](/de/blog/export-ai-replies-only-and-long-chats). Der Produkteinstieg ist [KI-Chat zu PDF](/de/chrome-extension/ai-chat-to-pdf).
+
+### Sind Dateien immer in die PDF eingebettet?
+
+Nein. Das Transkript kann unterstützte Dateiinformationen und Verweise erhalten; der Zugriff bleibt bei der Originalplattform.
+
+### Entfernt „Links entfernen“ auch den Quellentext?
+
+Die Option entfernt unterstütztes Linkverhalten. Prüfen Sie die sichtbare Quellenangabe, weil Plattformen unterschiedlich markieren.
+
+### Macht die Erweiterung jeden Chat barrierefrei?
+
+Nein. Die Lesestruktur kann besser werden, doch Page 2 PDF beansprucht keine PDF/UA-Zertifizierung und behebt nicht jedes Problem der Vorlage.

@@ -1,4 +1,6 @@
 import type { ExtensionSeoRoute } from "@/shared/routes/routes";
+import type { Locale } from "@/shared/i18n/locales";
+import { germanExtensionSeoLandings } from "./german-extension-seo-landings";
 
 export type ExtensionSeoFaq = {
   question: string;
@@ -624,8 +626,17 @@ const content: Record<ExtensionSeoRoute, ExtensionSeoLandingContent> = {
 };
 
 export const getExtensionSeoLanding = (
+  locale: Locale,
   route: ExtensionSeoRoute,
-): ExtensionSeoLandingContent => content[route];
+): ExtensionSeoLandingContent | null => {
+  if (locale === "en") {
+    return content[route];
+  }
+  if (locale === "de") {
+    return germanExtensionSeoLandings[route];
+  }
+  return null;
+};
 
 export const extensionSeoLandingContent: ReadonlyArray<ExtensionSeoLandingContent> =
   Object.values(content);

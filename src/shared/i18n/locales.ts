@@ -1,4 +1,4 @@
-export type Locale = "en" | "ru";
+export type Locale = "en" | "ru" | "de";
 
 export type LocaleDefinition = {
   code: Locale;
@@ -12,6 +12,7 @@ export type LocaleDefinition = {
 export const localeRegistry: ReadonlyArray<LocaleDefinition> = [
   { code: "en", languageName: "English", htmlLang: "en", openGraphLocale: "en_US", reviewed: true, indexable: true },
   { code: "ru", languageName: "Русский", htmlLang: "ru", openGraphLocale: "ru_RU", reviewed: true, indexable: true },
+  { code: "de", languageName: "Deutsch", htmlLang: "de", openGraphLocale: "de_DE", reviewed: true, indexable: true },
 ];
 
 const localeCodes = localeRegistry.map(

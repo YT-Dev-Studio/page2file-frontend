@@ -89,6 +89,37 @@ const marketingCopy: Record<Locale, MarketingCopy> = {
       ],
     },
   },
+  de: {
+    landing: {
+      browseChromeExtensions: "Chrome-Erweiterungen ansehen",
+      browseGpts: "GPTs ansehen",
+      openGuide: "Anleitung zur Erweiterung öffnen",
+      previousScenario: "Vorherige verwandte Seite",
+      nextScenario: "Nächste verwandte Seite",
+      relatedPages: "Verwandte Seiten",
+      stepsLabel: "So funktioniert es",
+    },
+    gptWorkflow: {
+      detailsTitle: "In drei Schritten von der Seite zur Datei",
+      mapLabel: "Seite oder Datei → prüfen → herunterladen",
+      stages: ["Seite oder Datei bereitstellen", "Ergebnis prüfen", "Datei herunterladen"],
+      stageDescriptions: [
+        "Übergeben Sie der GPT-App eine unterstützte Seite oder Datei.",
+        "Prüfen Sie Seiten, Folien und sichtbare Einschränkungen.",
+        "Laden Sie die für diese Anfrage erzeugten Dateien herunter.",
+      ],
+    },
+    chatWorkflow: {
+      detailsTitle: "Den im Browser sichtbaren Dialog exportieren",
+      mapLabel: "Aktiver Tab → temporäre Vorschau",
+      stages: ["Dialog öffnen", "Vorschau prüfen", "PDF speichern"],
+      stageDescriptions: [
+        "Laden Sie die gewünschten Nachrichten im aktiven Tab.",
+        "Wählen Sie alle Nachrichten oder nur Antworten und entfernen Sie bei Bedarf Medien oder Links.",
+        "Lassen Sie den Quell-Tab geöffnet, prüfen Sie die PDF-Vorschau und speichern Sie sie.",
+      ],
+    },
+  },
 };
 
 export const getMarketingCopy = (locale: Locale): MarketingCopy =>

@@ -1,7 +1,7 @@
 # Page 2 File editorial quality checklist
 
 Use this checklist for every published route and future English article. Repeat
-the factual, language, and link checks independently for Russian copy.
+the factual, language, and link checks independently for Russian and German copy.
 
 ## Search intent and facts
 
@@ -62,6 +62,8 @@ the factual, language, and link checks independently for Russian copy.
 - Remove excessive Title Case, bold text, list fragments and redundant summary.
 - Scan for placeholders, leaked prompt text, broken citations and duplicate
   paragraphs.
+- In German copy, reject untranslated English sentences, literal English syntax,
+  vague filler such as “nahtlos” or “mühelos”, and internal links to `/en` or `/ru`.
 - Scan UTF-8 sources for replacement characters and known mojibake sequences;
   do not treat terminal display encoding as source corruption without a byte check.
 - Reject `free`, `instant`, `perfect`, `unlimited`, `works with any`, local-only,

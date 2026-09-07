@@ -1,0 +1,44 @@
+Eine Dashboard-PDF ist nur dann brauchbar, wenn sie die gewählten Filter, den sichtbaren Datenbereich und die benötigten Diagramme oder Tabellen festhält. Öffnen Sie zuerst den endgültigen Berichtszustand und wählen Sie anschließend Accurate copy für den visuellen Beleg oder Editable document für durchsuchbaren Text und funktionierende Links.
+
+## Fixieren Sie den Berichtszustand
+
+Stellen Sie Zeitraum, Konto, Region, Vergleichsperiode und weitere Filter ein. Warten Sie, bis Ladeanzeigen verschwunden sind, und scrollen Sie durch Bereiche, die Daten erst bei Bedarf abrufen. Wenn die Oberfläche Filterwerte nicht im Bericht zeigt, notieren Sie sie dort oder in der Begleitnachricht. Eine PDF erklärt später keinen unbeschrifteten Zustand.
+
+Schließen Sie Navigationsleisten oder Hilfefenster, die den Bericht verdecken. Rechtliche Hinweise, Warnungen, Einheiten und Angaben zur Datenqualität müssen sichtbar bleiben, wenn sie für die Auswertung nötig sind. Pausieren Sie eine automatische Aktualisierung nur über eine vorgesehene Funktion der Anwendung.
+
+<ArticleFigure
+  src="/blog/demos/dashboard-export-check.webp"
+  alt="Bildbasierte Dashboard-Testseite im PDF-Betrachter von Chrome"
+  caption="Prüfen Sie Zustand und Ladegrenzen des Berichts, bevor Sie visuelle oder auswählbare Ausgabe wählen."
+  step={1}
+  openLabel="Dashboard-Checkliste öffnen"
+  closeLabel="Dashboard-Checkliste schließen"
+/>
+
+## Wählen Sie die Ausgabe nach dem Beleg
+
+Accurate copy bewahrt Anordnung, bedingte Farben, Karten und bildschirmbezogenes Layout. Die Seiten bestehen aus Bildern; der Empfänger kann Text weder suchen noch Links öffnen. Für breite Berichte passt Querformat häufig besser, sollte aber gegen Hochformat getestet werden.
+
+Editable document kann Text und sichere Links erhalten. **As viewed** folgt eher der Bildschirmdarstellung, **Print optimized** dem Druck-Stylesheet der Website. Druckregeln können Steuerelemente sinnvoll entfernen oder wichtige Spalten umstellen. Vergleichen Sie bei wichtigen Berichten beide Profile. Die [Modusauswahl](/de/blog/choose-webpage-pdf-mode) erklärt den Unterschied, die [Produktseite Webseite zu PDF](/de/chrome-extension/webpage-to-pdf) zeigt beide Webseiten-Ausgaben.
+
+## Begrenzen Sie breite Tabellen und Scrollflächen
+
+Eine überbreite Tabelle kann je nach CSS und Profil umbrechen, skaliert oder abgeschnitten werden. Accurate copy bewahrt die vorbereitete Darstellung; Editable document folgt der Chromium-Paginierung. Falls ein Spaltenwähler vorhanden ist, zeigen Sie nur benötigte Felder. Für Berechnungen ist ein nativer CSV- oder Berichtsexport oft geeigneter, während die PDF einen lesbaren Zustand dokumentiert.
+
+Bei intern scrollenden Panels greift die Vorbereitung für lange Seiten. Page 2 PDF sucht einen Hauptscrollbereich und lädt begrenzt nach, doch virtuelle Tabellen können nicht sichtbare Zeilen aus dem DOM entfernen. Filtern Sie bei notwendiger Vollständigkeit kleinere Zeiträume. Details stehen im [Leitfaden für lange dynamische Seiten](/de/blog/save-long-dynamic-webpage-to-pdf).
+
+## Prüfen Sie die Datei vor dem Versand
+
+Vergleichen Sie Summen, Beschriftungen, Legenden, Einheiten und Seitenumbrüche mit dem Ursprungstab. Testen Sie einige Links. Hover-Details eines Diagramms können fehlen, wenn sie nicht dauerhaft sichtbar waren. Bei vertraulichen Dashboards entfernen Sie unnötige Kontodaten und klären die Weitergabe. Page 2 PDF umgeht keine Zugriffskontrollen und erstellt kein vollständiges Kontoarchiv. Für Marketingseiten ist die [Checkliste zur Kundenprüfung eines Landings](/de/blog/save-landing-page-for-client-review) passender.
+
+### Exportiert Page 2 PDF die Rohdaten eines Diagramms?
+
+Nein. Die Erweiterung erhält die gerenderte Seite oder Dokumentausgabe und ist kein Datenkonnektor.
+
+### Welcher Modus eignet sich für Karten?
+
+Meist Accurate copy. Editable document kann umgebende Texte erhalten, macht eine Canvas-Karte aber nicht automatisch auswählbar.
+
+### Lassen sich mehrere Dashboard-Seiten automatisch verbinden?
+
+Nein. Speichern Sie jeden aktiven Tab einzeln oder verwenden Sie den Mehrberichtsexport der Anwendung.

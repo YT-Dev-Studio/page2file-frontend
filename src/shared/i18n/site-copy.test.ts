@@ -8,17 +8,21 @@ describe("site shell copy", () => {
     expect(russianCopy.header).not.toHaveProperty("navigation");
     expect(russianCopy.footer).not.toHaveProperty("brandDescription");
     expect(Object.keys(russianCopy.footer.links).sort()).toEqual([
+      "aiChatPdf",
       "cookiePolicy",
       "extension",
+      "messengerChatPdf",
       "privacy",
       "support",
       "terms",
+      "webpagePdf",
     ]);
   });
 
-  test("keeps English and Russian shell copy localized", () => {
+  test("keeps English, Russian, and German shell copy localized", () => {
     expect(getSiteCopy("en").header.downloadAction).toBe("Download extension");
     expect(getSiteCopy("ru").header.downloadAction).toBe("Скачать расширение");
+    expect(getSiteCopy("de").header.downloadAction).toBe("Erweiterung herunterladen");
     expect(getSiteCopy("en").header.extensionAction).toBe("Install Page 2 PDF");
     expect(getSiteCopy("ru").header.extensionAction).toBe("Установить Page 2 PDF");
     expect(getSiteCopy("en").extensionUnavailableTooltip).toBe(
@@ -32,5 +36,6 @@ describe("site shell copy", () => {
     );
     expect(getSiteCopy("en").footer.links.support).toBe("Support");
     expect(getSiteCopy("ru").footer.links.support).toBe("Поддержка");
+    expect(getSiteCopy("de").footer.links.support).toBe("Support");
   });
 });

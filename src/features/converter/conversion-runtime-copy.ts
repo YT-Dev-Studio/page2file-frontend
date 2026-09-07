@@ -104,6 +104,57 @@ const runtimeCopy: Record<Locale, RuntimeCopy> = {
         "Сервис конвертации временно недоступен. Повторите попытку.",
     },
   },
+  de: {
+    submitPending: "Sichere Vorschau wird gestartet…",
+    runtimeNotice:
+      "Der Dienst öffnet die öffentliche URL in einem isolierten Browser. Übermittelte Seitendaten und erzeugte Dateien sind temporär und werden nicht als Konvertierungsverlauf gespeichert.",
+    errors: {
+      INVALID_REQUEST:
+        "Die Anfrage ist unvollständig oder enthält einen nicht unterstützten Wert.",
+      INVALID_URL: "Geben Sie eine gültige öffentliche URL ein und versuchen Sie es erneut.",
+      UNSUPPORTED_SCHEME: "Es werden nur HTTPS-URLs akzeptiert.",
+      PRIVATE_NETWORK_TARGET:
+        "Private, lokale und infrastrukturelle Adressen sind gesperrt.",
+      DNS_VALIDATION_FAILED:
+        "Das Ziel konnte nicht sicher überprüft werden.",
+      REDIRECT_BLOCKED:
+        "Die Seite hat zu einem nicht erlaubten Ziel weitergeleitet.",
+      SOURCE_REQUIRES_AUTH:
+        "Diese Seite erfordert eine Anmeldung. Verwenden Sie den Ablauf für den aktiven Tab.",
+      SOURCE_BLOCKED_AUTOMATION:
+        "Die übermittelte Seite erlaubt keinen automatisierten Zugriff.",
+      PAGE_TOO_LARGE:
+        "Die Seite überschreitet die unterstützte Größe. Versuchen Sie es mit einer kleineren Seite.",
+      RESOURCE_LIMIT_EXCEEDED:
+        "Die Seite hat mehr Ressourcen als das sichere Verarbeitungslimit verwendet.",
+      LOAD_TIMEOUT:
+        "Die Seite wurde vor Ablauf der Verarbeitungsfrist nicht stabil.",
+      UNSUPPORTED_HTML:
+        "Das übermittelte HTML kann nicht sicher verarbeitet werden.",
+      PREVIEW_EXPIRED:
+        "Diese temporäre Vorschau ist abgelaufen. Starten Sie eine neue Konvertierung.",
+      REVISION_CONFLICT:
+        "Die Vorschau wurde durch eine andere Anfrage geändert. Laden Sie neu und versuchen Sie es erneut.",
+      RATE_LIMITED:
+        "Der Dienst ist ausgelastet oder Ihr temporäres Limit wurde erreicht. Versuchen Sie es später erneut.",
+      HUMAN_VERIFICATION_REQUIRED:
+        "Schließen Sie die Überprüfung ab, bevor Sie fortfahren.",
+      RENDER_FAILED:
+        "Das Dokument konnte nicht erstellt werden. Sie können die Konvertierung wiederholen.",
+      DOWNLOAD_EXPIRED:
+        "Der temporäre Download ist abgelaufen. Starten Sie eine neue Konvertierung.",
+      UNAUTHORIZED:
+        "Ihre anonyme Sitzung ist abgelaufen. Laden Sie die Seite neu und versuchen Sie es erneut.",
+      FORBIDDEN:
+        "Dieser Vorgang ist für die aktuelle Sitzung nicht verfügbar.",
+      NOT_FOUND:
+        "Die temporäre Konvertierung wurde nicht gefunden oder ist abgelaufen.",
+      CONFLICT:
+        "Die Konvertierung ist für diesen Vorgang noch nicht bereit.",
+      INTERNAL_ERROR:
+        "Der Konvertierungsdienst ist vorübergehend nicht verfügbar. Versuchen Sie es erneut.",
+    },
+  },
 };
 
 export const getConversionRuntimeCopy = (locale: Locale): RuntimeCopy =>

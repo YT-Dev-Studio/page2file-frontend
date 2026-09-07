@@ -33,6 +33,10 @@ const legalPageCopy: Record<Locale, LegalPageCopy> = {
     updatedAt: "Обновлено 4 августа 2026 года",
     privacyUpdatedAt: "Обновлено 27 августа 2026 года",
   },
+  de: {
+    updatedAt: "Aktualisiert am 4. August 2026",
+    privacyUpdatedAt: "Aktualisiert am 27. August 2026",
+  },
 };
 
 const interpolateLegalText = (value: string, locale: Locale): string =>

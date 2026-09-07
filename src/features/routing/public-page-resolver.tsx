@@ -87,11 +87,14 @@ export const resolvePublicPage = async ({
       notFound();
     }
     if (isExtensionSeoRoute(route)) {
-      const content = getExtensionSeoLanding(route);
+      const content = getExtensionSeoLanding(locale, route);
+      if (!content) {
+        notFound();
+      }
       const { ExtensionSeoLanding } = await import(
         "@/features/marketing/extension-seo-landing"
       );
-      return <ExtensionSeoLanding content={content} />;
+      return <ExtensionSeoLanding content={content} locale={locale} />;
     }
     const content = getLandingContent(locale, route);
     if (!content) {

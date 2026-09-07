@@ -56,6 +56,24 @@ const contentCopy: Record<Locale, ContentCopy> = {
     homeLabel: "Главная",
     blogBreadcrumb: "Блог",
   },
+  de: {
+    allEntriesLabel: "Alle Anleitungen",
+    blog: {
+      eyebrow: "Praxiswissen zu Page 2 PDF",
+      title: "Anleitungen zum Export von Webseiten und Browser-Chats",
+      description:
+        "Vergleichen Sie PDF-Modi und Grenzen für den aktuellen Chrome-Tab, bevor Sie eine Webseite, einen KI-Dialog oder unterstützten Messenger-Chat exportieren.",
+    },
+    guideLabel: "Praktische Anleitung",
+    updatedLabel: "Aktualisiert",
+    minuteLabel: (minutes): string => `${minutes} Min.`,
+    readLabel: (minutes): string => `${minutes} Min. Lesezeit`,
+    readArticleLabel: "Lesen",
+    nextStepLabel: "Anleitung zu Page 2 PDF öffnen",
+    breadcrumbLabel: "Brotkrümelnavigation",
+    homeLabel: "Startseite",
+    blogBreadcrumb: "Blog",
+  },
 };
 
 export const getContentCopy = (locale: Locale): ContentCopy =>

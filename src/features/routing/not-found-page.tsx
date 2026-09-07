@@ -32,6 +32,13 @@ const actions: Record<Locale, NotFoundActions> = {
     guide: "Открыть инструкцию по расширению",
     hint: "Проверьте адрес или продолжите с одной из полезных страниц выше.",
   },
+  de: {
+    heading: "Diese Seite ist nicht auffindbar",
+    home: "Zur Startseite",
+    guide: "Anleitung zur Erweiterung öffnen",
+    hint:
+      "Prüfen Sie die Adresse oder rufen Sie eine der oben genannten Seiten auf.",
+  },
 };
 
 const NotFoundArtwork = (): ReactNode => (

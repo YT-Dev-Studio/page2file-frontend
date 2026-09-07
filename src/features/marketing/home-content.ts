@@ -63,6 +63,29 @@ const localizedCopy: Record<Locale, HomeLocalizedCopy> = {
       "Расширение создает документ без загрузки содержимого исходной страницы или переписки на серверы Page 2 File. Временные данные предпросмотра удаляются после сессии. Оставшиеся данные старше двух часов очищаются при следующем запуске расширения.",
     ],
   },
+  de: {
+    faqTitle: "Fragen zum Speichern von Webseiten und Chats als PDF",
+    heroIllustrationAlt:
+      "Ein Browser-Tab, die Schaltfläche der Erweiterung und ein fertiges PDF in drei Schritten.",
+    questions: [
+      "Wie speichere ich eine Webseite als PDF?",
+      "Wie exportiere ich einen Chat aus ChatGPT, Claude oder Gemini als PDF?",
+      "Kann ich einen Chat aus WhatsApp Web oder Telegram Web als PDF exportieren?",
+      "Kann Page 2 PDF eine Webseite nach der Anmeldung speichern?",
+      "Was unterscheidet Accurate copy von Editable document?",
+      "Wie erfasse ich eine lange Webseite, ohne Inhalte auszulassen?",
+      "Lädt oder speichert Page 2 PDF den Inhalt meiner Webseite oder meines Chats?",
+    ],
+    answers: [
+      "Öffnen Sie die Originalseite im Browser, starten Sie Page 2 PDF im aktiven Tab und wählen Sie Accurate copy oder Editable document. Lassen Sie die Seite geöffnet, bis die PDF-Vorschau erscheint, und prüfen Sie sie vor dem Herunterladen.",
+      "Öffnen Sie den gewünschten Dialog und wählen Sie AI / Chat. Eigene Adapter gibt es für ChatGPT, Claude, Gemini, Grok, Perplexity, Microsoft Copilot und Manus. Exportiert wird nur der aktuelle Dialog bis zu der in der installierten Version oder im Tarif angegebenen Verlaufsgrenze.",
+      "Ja. Page 2 PDF kann den aktuellen Dialog aus WhatsApp Web sowie einen Chat oder Kanal aus Telegram Web formatieren. Es erstellt keine Sicherung des gesamten Kontos und exportiert nicht alle Unterhaltungen auf einmal.",
+      "Ja, wenn die Seite bereits im aktiven Browser-Tab zugänglich ist und die Erweiterung sie lesen darf. Page 2 PDF erhält Ihr Passwort nicht und umgeht keine Zugriffskontrollen der Website.",
+      "Accurate copy erzeugt bildbasierte Seiten und priorisiert das sichtbare Erscheinungsbild. Editable document erstellt auswählbaren Text und sichere Links und bietet Einstellungen für Bildschirm- oder Drucklayout sowie das Entfernen unterstützter Inhalte.",
+      "Accurate copy bereitet den Haupt-Scrollbereich vor und versucht innerhalb eines begrenzten Zeitfensters, verfügbare verzögert geladene Inhalte zu laden. Virtuelle Listen, geschützte Frames, nicht verfügbare Medien oder ständig wechselnde Seiten können trotzdem unvollständig bleiben.",
+      "Die Erweiterung erstellt das Dokument, ohne Seiten- oder Chatinhalte auf Server von Page 2 File hochzuladen. Temporäre Vorschaudaten werden nach der Sitzung entfernt; verbleibende Daten, die älter als zwei Stunden sind, werden beim nächsten Start der Erweiterung gelöscht.",
+    ],
+  },
 };
 
 export const getHomeMarketingCopy = (locale: Locale): HomeMarketingCopy => {

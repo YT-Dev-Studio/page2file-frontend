@@ -2,7 +2,7 @@ import { readdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 const root = process.cwd();
-const locales = ["en", "ru"];
+const locales = ["en", "ru", "de"];
 const allowPending = process.argv.includes("--allow-pending");
 const writeReview = process.argv.includes("--write-review");
 const directories = Object.fromEntries(
@@ -16,8 +16,6 @@ const directories = Object.fromEntries(
 const reviewState = JSON.parse(
   await readFile(join(root, "SEO", "editorial-review-state.json"), "utf8"),
 );
-const reviewedLocales = new Set(reviewState.reviewedLocales ?? ["en", "ru"]);
-
 const commonForbiddenPatterns = [
   /\bdelve\b/i,
   /\bever-evolving landscape\b/i,
@@ -42,7 +40,18 @@ const commonForbiddenPatterns = [
 const localeForbiddenPatterns = {
   en: [/\bscenario\b/i],
   ru: [/сценар/iu],
+  de: [
+    /\bnahtlos\b/i,
+    /\bmühelos\b/i,
+    /\brevolutionär\b/i,
+    /\bin der heutigen digitalen (?:Welt|Landschaft)\b/i,
+  ],
 };
+const germanFallbackPatterns = [
+  /\bTo (?:save|export|share|choose|check)\b/,
+  /\bChoose (?:the|by|a)\b/,
+  /\b(?:Questions|What to check|Start with)\b/,
+];
 const untranslatedJargonPatterns = [
   /\blazy[- ]load(?:ing|ed)?\b/i,
   /\brendered state\b/i,
@@ -241,9 +250,13 @@ for (const locale of locales) {
                 term.test(content) && !explanation.test(content),
             )
             .map(({ label }) => label)
-        : untranslatedJargonPatterns
-            .filter((pattern) => pattern.test(content))
-            .map((pattern) => pattern.source);
+        : locale === "ru"
+          ? untranslatedJargonPatterns
+              .filter((pattern) => pattern.test(content))
+              .map((pattern) => pattern.source)
+          : germanFallbackPatterns
+              .filter((pattern) => pattern.test(content))
+              .map((pattern) => `english-fallback:${pattern.source}`);
     const unsupportedClaims = unsupportedClaimPatterns
       .filter((pattern) => pattern.test(content))
       .map((pattern) => pattern.source);
@@ -259,7 +272,7 @@ for (const locale of locales) {
         ? reviewState.englishFrozen.includes(slug)
         : locale === "ru"
           ? reviewState.russianProofread.includes(slug)
-          : reviewedLocales.has(locale);
+          : reviewState.germanProofread.includes(slug);
     const reviewCycle =
       reviewState.reviewCycles[reviewKey] ??
       reviewState.reviewCycles[`${locale}:*`] ??
@@ -370,6 +383,7 @@ if (writeReview) {
 const landingFiles = {
   en: "src/content/landings.ts",
   ru: "src/content/russian-landings.ts",
+  de: "src/content/german-landings.ts",
 };
 for (const [locale, landingFile] of Object.entries(landingFiles)) {
   const source = await readFile(join(root, landingFile), "utf8");

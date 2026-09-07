@@ -1,0 +1,46 @@
+Chrome Print schneidet Webseiten oft ab, wenn Inhalte in einem festen Panel scrollen, die Website ungeeignete Druckregeln verwendet, eine breite Tabelle nicht auf das Papier passt oder verzögert geladene Inhalte noch fehlen. Ermitteln Sie zuerst die Ursache; ein kleinerer Maßstab repariert keinen ausgelassenen Bereich.
+
+## Vergleichen Sie die Druckvorschau mit der Seite
+
+Öffnen Sie die Druckvorschau und legen Sie sie neben den Ursprungstab. Verschwindet nur die Navigation, räumt das Druck-Stylesheet möglicherweise sinnvoll auf. Fehlt ein Diagramm, eine Tabellenspalte, eine ausgeklappte Antwort oder das gesamte Scrollpanel, brechen Sie den Export ab.
+
+Testen Sie Hoch- und Querformat, Papiergröße und Seitenzahl. Eine Skalierung kann eine vorhandene breite Tabelle verkleinern, aber keine Zeilen sichtbar machen, die das Drucklayout nie übernommen hat. Hintergrundgrafiken beeinflussen das Aussehen, nicht die Vollständigkeit.
+
+<ArticleFigure
+  src="/blog/demos/print-cutoff-diagnosis.webp"
+  alt="Vollständige Dashboard-Testseite als bildbasierte PDF im Chrome-Betrachter"
+  caption="Ordnen Sie das sichtbare Symptom seiner Ursache zu, bevor Sie Druck, Accurate copy oder Editable document wählen."
+  step={1}
+  openLabel="Diagnose für abgeschnittene Druckausgabe öffnen"
+  closeLabel="Diagnose für abgeschnittene Druckausgabe schließen"
+/>
+
+## Interne Scrollbereiche brauchen Vorbereitung
+
+Webanwendungen halten häufig den Seitenkörper fest und scrollen nur einen Bericht. Chrome Print behandelt dieses Panel dann als Kasten und übernimmt eventuell nur den sichtbaren Ausschnitt. Accurate copy in Page 2 PDF kann den hauptsächlichen Scrollbereich suchen, begrenzt nachladen und das vorbereitete Ergebnis als Bildseiten erfassen.
+
+Das garantiert keine vollständige virtuelle oder endlose Liste. Manche Anwendungen entfernen Elemente außerhalb des Bildschirms aus dem DOM; dann sieht kein Aufnahmeverfahren alle Zeilen gleichzeitig. Filtern Sie Daten oder teilen Sie Zeiträume auf. Der [Leitfaden für lange Seiten](/de/blog/save-long-dynamic-webpage-to-pdf) beschreibt diese Grenze.
+
+## Druckstile können helfen oder schaden
+
+Ein gutes Druck-Stylesheet entfernt Menüs, erweitert die Artikelspalte und setzt vernünftige Umbrüche. Dann ist Chrome Print die einfachste Lösung. Ein schlechtes kann nützliche Details verbergen, eine unerwartete Breite erzwingen oder eine feste Kopfzeile über jede Seite legen.
+
+Editable document bietet **Print optimized** für die Druckregeln und **As viewed** für eine bildschirmnähere Dokumentausgabe mit auswählbarem Text und sicheren Links. Accurate copy priorisiert die sichtbare Darstellung, erzeugt aber reine Bildseiten. Die [Entscheidungshilfe für PDF-Modi](/de/blog/choose-webpage-pdf-mode) nennt die jeweiligen Verluste.
+
+## Laden und stabilisieren Sie die Vorlage
+
+Scrollen Sie durch nur bei Sichtkontakt ladende Abschnitte, klappen Sie benötigte Inhalte aus und warten Sie auf Schriften, Bilder und Diagramme. Schließen Sie Overlays; pausieren Sie automatische Aktualisierung nur über vorgesehene Bedienelemente. Der aktive Tab bleibt während der Vorbereitung offen.
+
+Geschützte Frames, nicht erreichbare Dateien und fortlaufend wechselnde Feeds können unvollständig bleiben. Page 2 PDF umgeht diese Grenzen nicht. Bei einem normalen Artikel mit guten Druckregeln bleiben Sie bei Chrome Print. Den direkten Produktvergleich finden Sie unter [Chrome Print und Page 2 PDF](/de/chrome-extension/chrome-print-vs-page-2-pdf).
+
+### Hilft ein sehr kleiner Maßstab?
+
+Nur wenn der Inhalt vorhanden, aber zu breit ist. Ausgelassene Zeilen oder Panels bringt er nicht zurück.
+
+### Warum bleiben Bildflächen leer?
+
+Die Bilder waren vielleicht nicht geladen, blockiert oder während des Drucks nicht erreichbar. Laden Sie den Abschnitt zuerst und prüfen Sie gegebenenfalls Seitenberechtigungen.
+
+### Kann Page 2 PDF jeden Seitenumbruch reparieren?
+
+Nein. Accurate copy teilt die visuelle Aufnahme auf, Editable document nutzt Chromium. Sehr hohe Blöcke und komplexes CSS können weiterhin ungünstig umbrechen.

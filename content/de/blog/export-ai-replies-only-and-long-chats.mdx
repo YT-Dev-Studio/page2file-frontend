@@ -1,0 +1,46 @@
+„Nur Antworten“ passt zu einem Paket aus Assistentenantworten; alle Nachrichten sind sicherer, wenn Prompts, Korrekturen und Entscheidungsverlauf zählen. Page 2 PDF bietet beide Umfänge und lädt aus dem aktuellen unterstützten Gespräch nur bis zur Grenze, die Version oder Tarif anzeigen.
+
+## Wählen Sie den Umfang nach der Leseaufgabe
+
+Nutzen Sie alle Nachrichten für Prüfpfade, gemeinsame Entscheidungen, Fehlersuche und Antworten, deren Sinn vom Prompt abhängt. Wählen Sie nur Antworten für ein kompaktes Ergebnis, nachdem Namen, Einschränkungen und Quellen auch ohne Nutzernachrichten verständlich geblieben sind.
+
+Die Funktion fasst nichts zusammen und verbindet keine Antworten. Sie filtert erkannte Rollen. Kennzeichnet eine Plattform Systemhinweise, Werkzeugergebnisse oder Agentenaktivität anders, müssen Reihenfolge und Bedeutung in der Vorschau kontrolliert werden.
+
+<ArticleFigure
+  src="/blog/demos/chat-scope-and-limit.webp"
+  alt="Testtranskript mit zwei Nachrichten zur Wahl von Umfang und Ladegrenze"
+  caption="Der Nachrichtenumfang verändert den Kontext; die Ladegrenze bestimmt, wie weit das Transkript zurückreichen kann."
+  step={1}
+  openLabel="Diagramm zu Chat-Umfang und Grenze öffnen"
+  closeLabel="Diagramm zu Chat-Umfang und Grenze schließen"
+/>
+
+## Verstehen Sie die Grenze der Historie
+
+Die Begrenzung betrifft Nachrichten, die der Loader aus der Seite abrufen kann. Sie verspricht nicht, dass jeder Dienst gleich viele Beiträge offenlegt. Ein virtualisierter Chat kann ältere Elemente verwerfen, ein Konto Historie beschränken oder die Plattform ihr Interface ändern.
+
+Vergleichen Sie die erste enthaltene Nachricht mit dem benötigten Zeitraum. Beginnt das Transkript zu spät, begrenzen Sie die Entscheidungsspanne, teilen Sie den Arbeitschat auf, sofern die Plattform es erlaubt, oder verwenden Sie deren offiziellen Datenexport. Page 2 PDF umgeht keine Ladesperren.
+
+## Laden Sie den Thread, ohne ihn zu verändern
+
+Öffnen Sie genau das Gespräch, erweitern Sie benötigte Zweige, Code, Quellen und Anhänge und warten Sie auf sichtbare Inhalte. Lassen Sie den Tab während der Vorbereitung offen und wechseln Sie nicht zu einem anderen Thread.
+
+Geänderte Plattformstrukturen können Rollen verdoppeln, vertauschen oder auslassen. Stoppen Sie bei solchen Anzeichen. Ein eigener Adapter ist für den Release getestet; Live-Verhalten braucht dennoch eine Sichtprüfung. Die [allgemeine KI-Exportanleitung](/de/blog/export-ai-chat-to-pdf) nennt Adapter, die [Prüfliste für semantische Blöcke](/de/blog/preserve-code-tables-citations-in-chat-pdf) behandelt Code und Quellen.
+
+## Setzen Sie Medienoptionen gezielt ein
+
+Bilder, Video, Audio und Links lassen sich getrennt entfernen. Entfernen Sie eine Kategorie nur, wenn sie weder Beleg noch Kontext trägt. Ein Video-Vorschaubild kann den Clip identifizieren, auch wenn kein Video eingebettet ist; ein Audioverweis kann eine Sprachantwort erklären.
+
+Der direkte Ablauf steht auf [KI-Chat zu PDF](/de/chrome-extension/ai-chat-to-pdf). Für einen größeren Datenumfang lesen Sie [Chat-PDF oder Kontoexport](/de/blog/chat-pdf-vs-account-data-export).
+
+### Ist die Nachrichtengrenze zugleich ein Seitenlimit?
+
+Nein. Sie begrenzt abrufbare Chatnachrichten. Seitenzahl und Dateigröße der PDF haben eigene Grenzen.
+
+### Bleiben Systemnachrichten bei „Nur Antworten“ erhalten?
+
+Das hängt von erkannten Rollen und der Plattformstruktur ab. Prüfen Sie Hinweise in der Vorschau.
+
+### Kann ich Bilder entfernen und Dateinamen behalten?
+
+Medien- und Dateistrukturen unterscheiden sich. Die Bildoption entfernt unterstützte Bilder; kontrollieren Sie Dateiverweise separat.

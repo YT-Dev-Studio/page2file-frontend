@@ -2,7 +2,7 @@ import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 
 const ROOT = process.cwd();
-const LOCALES = ["en", "ru"];
+const LOCALES = ["en", "ru", "de"];
 const BLOG_DIRECTORY = join(ROOT, "content", "blog");
 const UPDATE_DIRECTORY = join(ROOT, "content", "updates");
 const RUSSIAN_BLOG_DIRECTORY = join(ROOT, "content", "ru", "blog");
@@ -13,12 +13,15 @@ const SITE_TITLE_SUFFIX = " | Page 2 File";
 const LANDING_SOURCE_PATHS = {
   en: ["src/content/landings.ts"],
   ru: ["src/content/russian-landings.ts"],
+  de: ["src/content/german-landings.ts"],
 };
 const PUBLIC_COPY_PATHS = [
   "src/content/about-landings.ts",
   "src/content/extension-seo-landings.ts",
   "src/content/landings.ts",
   "src/content/russian-landings.ts",
+  "src/content/german-landings.ts",
+  "src/content/german-extension-seo-landings.ts",
   "src/features/converter/conversion-runtime-copy.ts",
   "src/features/extension/extension-copy.ts",
   "src/features/marketing/home-content.ts",
@@ -120,19 +123,19 @@ const validateFiles = (files, label) => {
   });
 };
 
-const validateMatchingFiles = (englishFiles, russianFiles, label) => {
+const validateMatchingFiles = (englishFiles, localizedFiles, label) => {
   const englishNames = englishFiles
     .map(function selectName(file) {
       return file.name;
     })
     .sort();
-  const russianNames = russianFiles
+  const localizedNames = localizedFiles
     .map(function selectName(file) {
       return file.name;
     })
     .sort();
-  if (englishNames.join("|") !== russianNames.join("|")) {
-    throw new Error(`English and Russian ${label} slugs must match.`);
+  if (englishNames.join("|") !== localizedNames.join("|")) {
+    throw new Error(`English and localized ${label} slugs must match.`);
   }
 };
 
@@ -227,14 +230,14 @@ const run = async () => {
   if (
     slugCounts.size !== blogFiles.length + updateFiles.length ||
     [...slugCounts.values()].some(function hasInvalidLocaleCount(count) {
-      return count !== 2;
+      return count !== LOCALES.length;
     })
   ) {
     throw new Error(
-      "Every English content slug must have exactly one Russian equivalent.",
+      "Every English content slug must have exactly one entry in every locale.",
     );
   }
-  const expectedEntryCount = (blogFiles.length + updateFiles.length) * 2;
+  const expectedEntryCount = (blogFiles.length + updateFiles.length) * LOCALES.length;
   const imageMatches = [...registry.matchAll(/image: "([^"]+)"/g)];
   const imageAltMatches = [...registry.matchAll(/imageAlt: "([^"]+)"/g)];
   if (
@@ -245,7 +248,7 @@ const run = async () => {
     })
   ) {
     throw new Error(
-      "Every English and Russian content entry must have an image and non-empty imageAlt.",
+      "Every localized content entry must have an image and non-empty imageAlt.",
     );
   }
   const uniqueImages = new Set(
@@ -393,6 +396,47 @@ const run = async () => {
   ) {
     throw new Error(
       "Every US-first extension landing must have a substantial, unique H1.",
+    );
+  }
+  const germanExtensionSeoSource = await readFile(
+    join(ROOT, "src", "content", "german-extension-seo-landings.ts"),
+    "utf8",
+  );
+  const germanExtensionMetadata = [
+    ...germanExtensionSeoSource.matchAll(
+      /route:\s*"(chrome-extension\/[^"]+)",[\s\S]*?title:\s*"([^"]+)",[\s\S]*?description:\s*\n?\s*"([^"]+)"[\s\S]*?heading:\s*"([^"]+)"/g,
+    ),
+  ].map((match) => ({
+    route: match[1],
+    title: match[2],
+    description: match[3],
+    heading: match[4],
+  }));
+  if (germanExtensionMetadata.length !== 11) {
+    throw new Error(
+      `Expected 11 German extension landings, found ${germanExtensionMetadata.length}.`,
+    );
+  }
+  validateMetadataSource(
+    germanExtensionMetadata
+      .map(
+        (entry) =>
+          `title: "${entry.title}"\ndescription: "${entry.description}"`,
+      )
+      .join("\n"),
+    "German extension landing content",
+  );
+  const germanExtensionHeadings = germanExtensionMetadata.map(
+    (entry) => entry.heading,
+  );
+  if (
+    germanExtensionHeadings.some((heading) => heading.trim().length < 20) ||
+    new Set(
+      germanExtensionHeadings.map((heading) => heading.toLowerCase()),
+    ).size !== germanExtensionHeadings.length
+  ) {
+    throw new Error(
+      "Every German extension landing must have a substantial, unique H1.",
     );
   }
   for (const sample of [

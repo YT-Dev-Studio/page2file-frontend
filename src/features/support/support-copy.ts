@@ -99,6 +99,41 @@ const supportCopy: Record<Locale, SupportCopy> = {
     unavailableMessage:
       "Форма временно недоступна. Вы можете написать нам по почту.",
   },
+  de: {
+    checkingButton: "Verfügbarkeit wird geprüft",
+    commentCount: "{current} von {maximum} Zeichen",
+    commentError: "Geben Sie einen Kommentar mit höchstens 3.500 Zeichen ein.",
+    commentHelper: "Beschreiben Sie, was passiert ist und welches Ergebnis Sie erwartet haben.",
+    commentLabel: "Kommentar",
+    contactLabel: "Support-E-Mail",
+    cooldownButton: "Feedback gesendet",
+    deliveryNote:
+      "Ihre Nachricht wird an den Entwicklungskanal von Page 2 PDF übermittelt.",
+    emailError: "Geben Sie eine gültige E-Mail-Adresse ein.",
+    emailHelper:
+      "Wir verwenden diese Adresse, um den Absender zuzuordnen und bei Bedarf zu antworten.",
+    emailLabel: "E-Mail",
+    eyebrow: "PAGE 2 FILE · SUPPORT",
+    formTitle: "Feedback senden",
+    lead:
+      "Beschreiben Sie ein Problem, einen unklaren Schritt oder eine Idee zu Page 2 PDF.",
+    metadataDescription:
+      "Wenden Sie sich an den Support von Page 2 PDF, um ein Problem mit der Erweiterung, einen unklaren Schritt oder Produktfeedback an das Team von Page 2 File zu melden.",
+    metadataTitle: "Support für Page 2 PDF",
+    privacyAfter: ".",
+    privacyBefore:
+      "E-Mail-Adresse und Kommentar werden an unseren Support-Chat gesendet, wie in der",
+    privacyLabel: "Datenschutzerklärung",
+    submitButton: "Kommentar senden",
+    submittingButton: "Wird gesendet",
+    submitError:
+      "Der Kommentar konnte nicht gesendet werden. Versuchen Sie es erneut oder schreiben Sie an support@page2file.com.",
+    submitSuccess: "Ihr Feedback wurde gesendet. Vielen Dank.",
+    title: "Support für Page 2 PDF",
+    unavailableButton: "Senden nicht verfügbar",
+    unavailableMessage:
+      "Das Feedbackformular ist vorübergehend nicht verfügbar. Sie können uns stattdessen per E-Mail kontaktieren.",
+  },
 };
 
 export const getSupportCopy = (locale: Locale): SupportCopy =>

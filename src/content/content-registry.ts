@@ -46,6 +46,29 @@ import RuChatArchive from "../../content/ru/blog/chat-pdf-vs-account-data-export
 import RuUrlPrintComparison from "../../content/ru/blog/url-to-pdf-vs-print-to-pdf.mdx";
 import RuAiAnswerHandoff from "../../content/ru/blog/share-ai-answer-with-context.mdx";
 import RuLandingReview from "../../content/ru/blog/save-landing-page-for-client-review.mdx";
+import DeChooseMode from "../../content/de/blog/choose-webpage-pdf-mode.mdx";
+import DeLongPage from "../../content/de/blog/save-long-dynamic-webpage-to-pdf.mdx";
+import DePrivatePage from "../../content/de/blog/save-private-or-local-page-to-pdf.mdx";
+import DeLinksForms from "../../content/de/blog/preserve-webpage-links-forms-text.mdx";
+import DeDashboard from "../../content/de/blog/save-dashboard-report-to-pdf.mdx";
+import DeResearch from "../../content/de/blog/save-web-research-to-pdf.mdx";
+import DeReceipt from "../../content/de/blog/save-receipt-order-page-to-pdf.mdx";
+import DePrintCutoff from "../../content/de/blog/chrome-print-cuts-off-webpage.mdx";
+import DeCaptureScraping from "../../content/de/blog/webpage-capture-vs-web-scraping.mdx";
+import DeAiChat from "../../content/de/blog/export-ai-chat-to-pdf.mdx";
+import DeChatGpt from "../../content/de/blog/export-chatgpt-conversation-to-pdf.mdx";
+import DeClaudeGemini from "../../content/de/blog/export-claude-and-gemini-chat-to-pdf.mdx";
+import DeOtherAi from "../../content/de/blog/export-grok-perplexity-copilot-manus-to-pdf.mdx";
+import DeChatBlocks from "../../content/de/blog/preserve-code-tables-citations-in-chat-pdf.mdx";
+import DeChatScope from "../../content/de/blog/export-ai-replies-only-and-long-chats.mdx";
+import DeMessenger from "../../content/de/blog/export-browser-messenger-chat-to-pdf.mdx";
+import DeWhatsapp from "../../content/de/blog/export-whatsapp-web-chat-to-pdf.mdx";
+import DeTelegram from "../../content/de/blog/export-telegram-web-chat-to-pdf.mdx";
+import DeMessengerMatrix from "../../content/de/blog/supported-and-unsupported-browser-messengers.mdx";
+import DeChatArchive from "../../content/de/blog/chat-pdf-vs-account-data-export.mdx";
+import DeUrlPrintComparison from "../../content/de/blog/url-to-pdf-vs-print-to-pdf.mdx";
+import DeAiAnswerHandoff from "../../content/de/blog/share-ai-answer-with-context.mdx";
+import DeLandingReview from "../../content/de/blog/save-landing-page-for-client-review.mdx";
 
 export type ContentKind = "blog" | "update";
 
@@ -439,6 +462,144 @@ export const blogEntries: ReadonlyArray<ContentEntry> = [
     title: "Как сохранить лендинг в PDF для разбора с клиентом",
     description: "Подготовьте PDF лендинга для клиента, выберите визуальный или текстовый результат и запишите ширину окна, версию, формы и ограничения анимации.",
     author: "Редакция Page 2 File", publishedAt: "2026-09-07", updatedAt: "2026-09-07", readingMinutes: 6, component: RuLandingReview,
+  },
+  {
+    kind: "blog", locale: "de", slug: "choose-webpage-pdf-mode",
+    image: "/blog/mocks/choose-webpage-pdf-mode.webp", imageAlt: "Drei PDF-Modi nach der Eigenschaft, die sie erhalten",
+    title: "Den richtigen Webseiten-PDF-Modus wählen", description: "Vergleichen Sie Accurate copy, Editable document und AI / Chat nach Layouttreue, auswählbarem Inhalt und Gesprächsstruktur.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 6, component: DeChooseMode,
+  },
+  {
+    kind: "blog", locale: "de", slug: "save-long-dynamic-webpage-to-pdf",
+    image: "/blog/mocks/save-long-dynamic-webpage-to-pdf.webp", imageAlt: "Lange Anwendungsseite mit internem Scrollbereich vor der PDF-Aufnahme",
+    title: "Eine lange dynamische Webseite als PDF speichern", description: "Bereiten Sie verzögert geladene Inhalte und interne Scrollflächen vor und erkennen Sie Grenzen virtueller Listen und sehr hoher Seiten.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 6, component: DeLongPage,
+  },
+  {
+    kind: "blog", locale: "de", slug: "save-private-or-local-page-to-pdf",
+    image: "/blog/mocks/save-private-or-local-page-to-pdf.webp", imageAlt: "Angemeldete Webseite und lokale HTML-Datei in aktiven Chrome-Tabs",
+    title: "Angemeldete oder lokale Seite als PDF speichern", description: "Speichern Sie eine bereits zugängliche Webseite oder erlaubte lokale HTML-Datei aus dem aktiven Chrome-Tab, ohne Zugriffskontrollen zu umgehen.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 6, component: DePrivatePage,
+  },
+  {
+    kind: "blog", locale: "de", slug: "preserve-webpage-links-forms-text",
+    image: "/blog/mocks/preserve-webpage-links-forms-text.webp", imageAlt: "Auswählbarer Text, sichere Links und geeignete Formularfelder in einer PDF",
+    title: "Links, Formulare und Text in Webseiten-PDFs erhalten", description: "Nutzen Sie Editable document für auswählbaren Text, sichere Links und geeignete Formularwerte und prüfen Sie OCR- sowie Archivgrenzen.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 6, component: DeLinksForms,
+  },
+  {
+    kind: "blog", locale: "de", slug: "save-dashboard-report-to-pdf",
+    image: "/blog/mocks/save-dashboard-report-to-pdf.webp", imageAlt: "Gefilterter Dashboard-Bericht mit Diagrammen und breiter Tabelle",
+    title: "Dashboard-Bericht als PDF speichern", description: "Fixieren Sie Filter und Datenbereich, wählen Sie visuelle oder auswählbare Ausgabe und prüfen Sie breite Tabellen vor dem Versand.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 6, component: DeDashboard,
+  },
+  {
+    kind: "blog", locale: "de", slug: "save-web-research-to-pdf",
+    image: "/blog/mocks/save-web-research-to-pdf.webp", imageAlt: "Rechercheartikel mit auswählbarem Text und überprüfbaren Quellenlinks",
+    title: "Webrecherche mit Quellen als PDF speichern", description: "Bewahren Sie Titel, Datum, URL, Text und Quellen eines Forschungsdokuments und halten Sie fest, was eine PDF nicht beweisen kann.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 6, component: DeResearch,
+  },
+  {
+    kind: "blog", locale: "de", slug: "save-receipt-order-page-to-pdf",
+    image: "/blog/mocks/save-receipt-order-page-to-pdf.webp", imageAlt: "Bestellbestätigung mit Betrag, Status und wichtigen Kennungen",
+    title: "Beleg oder Bestellseite als PDF speichern", description: "Kontrollieren Sie Betrag, Status und persönliche Daten und wählen Sie einen visuellen oder durchsuchbaren Nachweis des aktiven Tabs.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: DeReceipt,
+  },
+  {
+    kind: "blog", locale: "de", slug: "chrome-print-cuts-off-webpage",
+    image: "/blog/mocks/chrome-print-cuts-off-webpage.webp", imageAlt: "Diagnose für abgeschnittene Bereiche in der Chrome-Druckvorschau",
+    title: "Wenn Chrome Print eine Webseite abschneidet", description: "Unterscheiden Sie interne Scrollflächen, Druck-CSS, breite Tabellen und ungeladene Inhalte, bevor Sie Maßstab oder PDF-Methode ändern.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 6, component: DePrintCutoff,
+  },
+  {
+    kind: "blog", locale: "de", slug: "webpage-capture-vs-web-scraping",
+    image: "/blog/mocks/webpage-capture-vs-web-scraping.webp", imageAlt: "Lesbare Aufnahme eines Tabs im Vergleich zu strukturierten Datensätzen aus vielen Seiten",
+    title: "Webseitenerfassung oder Web Scraping", description: "Wählen Sie eine PDF für den lesbaren Zustand eines Tabs und Export, API oder autorisierten Scraper für strukturierte Daten über viele Seiten.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: DeCaptureScraping,
+  },
+  {
+    kind: "blog", locale: "de", slug: "export-ai-chat-to-pdf",
+    image: "/blog/mocks/export-ai-chat-to-pdf.webp", imageAlt: "Unterstützter KI-Chat als strukturiertes Hochformat-Transkript",
+    title: "Einen KI-Chat als PDF exportieren", description: "Exportieren Sie den aktuellen unterstützten KI-Thread, prüfen Sie Rollen, Verlauf, Medien und Quellen und grenzen Sie ihn vom Kontoarchiv ab.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: DeAiChat,
+  },
+  {
+    kind: "blog", locale: "de", slug: "export-chatgpt-conversation-to-pdf",
+    image: "/blog/mocks/export-chatgpt-conversation-to-pdf.webp", imageAlt: "Aktuelles ChatGPT-Gespräch als Transkript ohne Kontonavigation",
+    title: "Ein ChatGPT-Gespräch als PDF exportieren", description: "Erstellen Sie eine lesbare PDF des aktuellen ChatGPT-Threads und prüfen Sie Code, Tabellen, Quellen, Historie und den Unterschied zum OpenAI-Export.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: DeChatGpt,
+  },
+  {
+    kind: "blog", locale: "de", slug: "export-claude-and-gemini-chat-to-pdf",
+    image: "/blog/mocks/export-claude-and-gemini-chat-to-pdf.webp", imageAlt: "Claude- und Gemini-Threads im gemeinsamen Transkriptmodell",
+    title: "Claude- und Gemini-Chats als PDF exportieren", description: "Nutzen Sie die eigenen Adapter für aktuelle Browserthreads und vergleichen Sie die PDF mit nativen Datenexporten und erzeugten Dokumenten.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: DeClaudeGemini,
+  },
+  {
+    kind: "blog", locale: "de", slug: "export-grok-perplexity-copilot-manus-to-pdf",
+    image: "/blog/mocks/export-grok-perplexity-copilot-manus-to-pdf.webp", imageAlt: "Vier KI-Plattformadapter mit gemeinsamen Transkriptgrenzen",
+    title: "Grok, Perplexity, Copilot und Manus als PDF exportieren", description: "Prüfen Sie den aktuellen Thread, plattformspezifische Blöcke und native Exportwege für vier unterstützte KI-Dienste.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: DeOtherAi,
+  },
+  {
+    kind: "blog", locale: "de", slug: "preserve-code-tables-citations-in-chat-pdf",
+    image: "/blog/mocks/preserve-code-tables-citations-in-chat-pdf.webp", imageAlt: "Code, Tabellen, Zitate und Quellen in einem strukturierten Chat-Transkript",
+    title: "Code, Tabellen und Quellen in Chat-PDFs erhalten", description: "Prüfen Sie semantische Blöcke, Links, Dateiverweise und Gesprächskontext, statt sich nur auf den Fließtext zu verlassen.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: DeChatBlocks,
+  },
+  {
+    kind: "blog", locale: "de", slug: "export-ai-replies-only-and-long-chats",
+    image: "/blog/mocks/export-ai-replies-only-and-long-chats.webp", imageAlt: "Wahl zwischen allen Nachrichten und nur Antworten bei begrenzter Historie",
+    title: "Nur KI-Antworten und lange Chats exportieren", description: "Wählen Sie den Nachrichtenumfang nach dem Kontextbedarf und prüfen Sie Ladegrenze, erste Nachricht und Medienoptionen.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: DeChatScope,
+  },
+  {
+    kind: "blog", locale: "de", slug: "export-browser-messenger-chat-to-pdf",
+    image: "/blog/mocks/export-browser-messenger-chat-to-pdf.webp", imageAlt: "Ausgewählter WhatsApp- oder Telegram-Web-Thread als PDF mit Rollen",
+    title: "Einen Browser-Messenger-Chat als PDF exportieren", description: "Speichern Sie einen aktuellen WhatsApp- oder Telegram-Web-Thread und unterscheiden Sie die lesbare PDF von Backup, Migration und Kontoexport.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: DeMessenger,
+  },
+  {
+    kind: "blog", locale: "de", slug: "export-whatsapp-web-chat-to-pdf",
+    image: "/blog/mocks/export-whatsapp-web-chat-to-pdf.webp", imageAlt: "Aktiver WhatsApp-Web-Thread ohne Gesprächsseitenleiste als PDF",
+    title: "Einen WhatsApp-Web-Chat als PDF exportieren", description: "Prüfen Sie aktiven Thread, Nachrichtenrichtung und Medien, beachten Sie einmal sichtbare Inhalte und vergleichen Sie den nativen Export.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: DeWhatsapp,
+  },
+  {
+    kind: "blog", locale: "de", slug: "export-telegram-web-chat-to-pdf",
+    image: "/blog/mocks/export-telegram-web-chat-to-pdf.webp", imageAlt: "Telegram-Web-Chat oder -Kanal als strukturiertes PDF-Transkript",
+    title: "Telegram-Web-Chat oder -Kanal als PDF exportieren", description: "Speichern Sie den aktuellen Webthread und wählen Sie Telegram Desktop für ein breiteres, maschinenlesbares Archiv der Historie.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: DeTelegram,
+  },
+  {
+    kind: "blog", locale: "de", slug: "supported-and-unsupported-browser-messengers",
+    image: "/blog/mocks/supported-and-unsupported-browser-messengers.webp", imageAlt: "Matrix unterstützter und ausgeschlossener Browser-Messenger",
+    title: "Unterstützte und nicht unterstützte Browser-Messenger", description: "Erfahren Sie, warum WhatsApp Web und Telegram Web eigene Adapter haben, Slack, Teams, Discord, Instagram und Messenger aber nicht unterstützt sind.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: DeMessengerMatrix,
+  },
+  {
+    kind: "blog", locale: "de", slug: "chat-pdf-vs-account-data-export",
+    image: "/blog/mocks/chat-pdf-vs-account-data-export.webp", imageAlt: "Lesbarer aktueller Chat neben einem breiteren Kontodatenarchiv",
+    title: "Chat-PDF oder Kontodatenexport", description: "Wählen Sie einen geprüften aktuellen Thread zum Lesen oder das Anbieterarchiv für Portabilität, breitere Historie und Maschinenverarbeitung.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-08-25", updatedAt: "2026-08-25", readingMinutes: 5, component: DeChatArchive,
+  },
+  {
+    kind: "blog", locale: "de", slug: "url-to-pdf-vs-print-to-pdf",
+    image: "/blog/mocks/url-to-pdf-vs-print-to-pdf.webp", imageAlt: "Öffentliche URL, Chrome Print und autorisierter aktueller Tab im Vergleich",
+    title: "URL zu PDF oder Drucken als PDF nach der Anmeldung", description: "Vergleichen Sie URL-Konverter, Chrome Print und den aktuellen Tab nach Zugriff, Ausgabeart, Datenschutz und Grenzen.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-09-07", updatedAt: "2026-09-07", readingMinutes: 6, component: DeUrlPrintComparison,
+  },
+  {
+    kind: "blog", locale: "de", slug: "share-ai-answer-with-context",
+    image: "/blog/mocks/share-ai-answer-with-context.webp", imageAlt: "Prompt, KI-Antwort, Belege und Notiz als Übergabepaket",
+    title: "Eine KI-Antwort mit Kontext weitergeben", description: "Wählen Sie Kopie, Freigabelink oder PDF und halten Sie Prompt, Quellen, Code, Tabellen, Datenschutz und gewünschte Entscheidung zusammen.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-09-07", updatedAt: "2026-09-07", readingMinutes: 6, component: DeAiAnswerHandoff,
+  },
+  {
+    kind: "blog", locale: "de", slug: "save-landing-page-for-client-review",
+    image: "/blog/mocks/save-landing-page-for-client-review.webp", imageAlt: "Landingpage als datierte PDF für die Kundenprüfung",
+    title: "Eine Landingpage als PDF zur Kundenprüfung speichern", description: "Fixieren Sie Version und Browserbreite, wählen Sie visuelle oder auswählbare Ausgabe und dokumentieren Sie Formulare, Bewegung und Ausschlüsse.",
+    author: "Redaktion von Page 2 File", publishedAt: "2026-09-07", updatedAt: "2026-09-07", readingMinutes: 6, component: DeLandingReview,
   },
 ];
 

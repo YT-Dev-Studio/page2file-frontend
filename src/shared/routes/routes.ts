@@ -108,7 +108,8 @@ export const isExtensionSeoRoute = (
 export const isStaticRouteAvailable = (
   locale: Locale,
   route: StaticRoute,
-): boolean => !isExtensionSeoRoute(route) || locale === "en";
+): boolean =>
+  !isExtensionSeoRoute(route) || locale === "en" || locale === "de";
 
 export const staticRoutesForLocale = (
   locale: Locale,

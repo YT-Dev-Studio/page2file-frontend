@@ -104,4 +104,35 @@ describe("ExtensionGuide", () => {
     expect(container.textContent).not.toContain("не позднее чем через два часа");
     expect(container.textContent).not.toMatch(/PowerPoint|PPTX/i);
   });
+
+  test("renders German guidance while showing the real English extension UI", () => {
+    const { container } = render(<ExtensionGuide locale="de" />);
+
+    expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
+      "Page 2 PDF in Chrome verwenden",
+    );
+    expect(container.textContent).toContain(
+      "Die Abbildungen zeigen die derzeitige englische Oberfläche",
+    );
+    const steps = screen.getByText("Erweiterung anheften").closest("ol");
+    expect(steps?.querySelectorAll("li")).toHaveLength(4);
+    expect(
+      Array.from(steps?.querySelectorAll("img") ?? []).map((image) =>
+        image.getAttribute("src"),
+      ),
+    ).toEqual([
+      "/guides/page-2-pdf/en/01-pin-extension-clean.png",
+      "/guides/page-2-pdf/en/02-open-page-clean.png",
+      "/guides/page-2-pdf/en/03-click-extension-clean.png",
+      "/guides/page-2-pdf/en/04-pdf-result-clean.png",
+    ]);
+    expect(screen.getByRole("heading", { name: "Weitere PDF-Abläufe" })).toBeTruthy();
+    expect(
+      screen
+        .getByRole("link", {
+          name: "Die vollständig geöffnete Webseite in Chrome speichern",
+        })
+        .getAttribute("href"),
+    ).toBe("/de/chrome-extension/webpage-to-pdf");
+  });
 });

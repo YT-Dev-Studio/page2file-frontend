@@ -2,7 +2,7 @@ import { access, readFile } from "node:fs/promises";
 import { join } from "node:path";
 
 const ROOT = process.cwd();
-const REQUIRED_LOCALES = ["en", "ru"];
+const REQUIRED_LOCALES = ["en", "ru", "de"];
 const REQUIRED_ROUTES = [
   "",
   "chrome-extension/how-to-use",
@@ -13,7 +13,7 @@ const REQUIRED_ROUTES = [
   "about",
   "support",
 ];
-const EN_ONLY_ROUTES = [
+const EXTENSION_SEO_ROUTES = [
   "chrome-extension/webpage-to-pdf",
   "chrome-extension/ai-chat-to-pdf",
   "chrome-extension/messenger-chat-to-pdf",
@@ -90,6 +90,14 @@ const run = async () => {
     join(ROOT, "src", "content", "russian-landings.ts"),
     "utf8",
   );
+  const germanLandings = await readFile(
+    join(ROOT, "src", "content", "german-landings.ts"),
+    "utf8",
+  );
+  const germanExtensionSeoLandings = await readFile(
+    join(ROOT, "src", "content", "german-extension-seo-landings.ts"),
+    "utf8",
+  );
   const aboutLandings = await readFile(
     join(ROOT, "src", "content", "about-landings.ts"),
     "utf8",
@@ -156,11 +164,11 @@ const run = async () => {
   ];
   assertContains(locales, REQUIRED_LOCALES, "locale");
   assertContains(routes, REQUIRED_ROUTES, "route");
-  assertContains(routes, EN_ONLY_ROUTES, "US-first extension route");
+  assertContains(routes, EXTENSION_SEO_ROUTES, "extension SEO route");
   assertContains(
-    extensionSeoLandings,
-    EN_ONLY_ROUTES,
-    "US-first extension content",
+    `${extensionSeoLandings}\n${germanExtensionSeoLandings}`,
+    EXTENSION_SEO_ROUTES,
+    "English and German extension content",
   );
   if (
     !publicPageResolver.includes('route === "blog"') ||
@@ -170,13 +178,14 @@ const run = async () => {
   }
   if (
     !routes.includes("isStaticRouteAvailable") ||
-    !routes.includes('locale === "en"')
+    !routes.includes('locale === "en" || locale === "de"')
   ) {
-    throw new Error("US-first extension routes must be English-only.");
+    throw new Error("Extension SEO routes must be available only in English and German.");
   }
   assertRemovedRoutesAbsent(routes, "route registry");
   assertRemovedRoutesAbsent(landings, "English landing content");
   assertRemovedRoutesAbsent(russianLandings, "Russian landing content");
+  assertRemovedRoutesAbsent(germanLandings, "German landing content");
   for (const [label, path] of publicLinkSources) {
     const source = await readFile(path, "utf8");
     assertRemovedPublicReferencesAbsent(source, label);
@@ -184,6 +193,7 @@ const run = async () => {
   if (
     !landings.includes('id: "cookies"') ||
     !russianLandings.includes('id: "cookies"') ||
+    !germanLandings.includes('id: "cookies"') ||
     !siteShell.includes('/privacy#cookies')
   ) {
     throw new Error(
@@ -221,7 +231,7 @@ const run = async () => {
   }
   if (
     !metadataSource.includes(
-      "languages: canIndex ? getLanguageAlternates(route, localized)",
+      "getLanguageAlternates(route, availableLocales)",
     )
   ) {
     throw new Error("Localized HTML metadata alternates are required.");
@@ -275,11 +285,11 @@ const run = async () => {
     );
   }
   if (
-    !localeSwitcherSource.includes("isExtensionSeoRoute") ||
-    !localeSwitcherSource.includes('"/ru/chrome-extension/how-to-use"')
+    !localeSwitcherSource.includes("isStaticRouteAvailable") ||
+    !localeSwitcherSource.includes("chrome-extension/how-to-use")
   ) {
     throw new Error(
-      "English-only extension routes must switch to the localized Russian guide.",
+      "Unavailable localized routes must switch to the localized extension guide.",
     );
   }
   await access(join(ROOT, "src", "app", "[locale]", "[[...slug]]", "page.tsx"));
@@ -313,7 +323,7 @@ const run = async () => {
     throw new Error("BFF service credentials must remain server-only.");
   }
 
-  console.log(`Routes valid: ${REQUIRED_ROUTES.length} localized public routes, ${EN_ONLY_ROUTES.length} en-US extension routes, and ${bffRoutes.length} BFF routes.`);
+  console.log(`Routes valid: ${REQUIRED_ROUTES.length} routes in three locales, ${EXTENSION_SEO_ROUTES.length} English/German extension routes, and ${bffRoutes.length} BFF routes.`);
 };
 
 await run();

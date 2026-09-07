@@ -1,6 +1,6 @@
 {
   "reviewedAt": "2026-09-07",
-  "reviewedLocales": ["en", "ru"],
+  "reviewedLocales": ["en", "ru", "de"],
   "englishFrozen": [
     "chat-pdf-vs-account-data-export",
     "choose-webpage-pdf-mode",
@@ -51,9 +51,35 @@
     "share-ai-answer-with-context",
     "save-landing-page-for-client-review"
   ],
+  "germanProofread": [
+    "chat-pdf-vs-account-data-export",
+    "choose-webpage-pdf-mode",
+    "chrome-print-cuts-off-webpage",
+    "export-ai-chat-to-pdf",
+    "export-ai-replies-only-and-long-chats",
+    "export-browser-messenger-chat-to-pdf",
+    "export-chatgpt-conversation-to-pdf",
+    "export-claude-and-gemini-chat-to-pdf",
+    "export-grok-perplexity-copilot-manus-to-pdf",
+    "export-telegram-web-chat-to-pdf",
+    "export-whatsapp-web-chat-to-pdf",
+    "preserve-code-tables-citations-in-chat-pdf",
+    "preserve-webpage-links-forms-text",
+    "save-dashboard-report-to-pdf",
+    "save-long-dynamic-webpage-to-pdf",
+    "save-private-or-local-page-to-pdf",
+    "save-receipt-order-page-to-pdf",
+    "save-web-research-to-pdf",
+    "supported-and-unsupported-browser-messengers",
+    "webpage-capture-vs-web-scraping",
+    "url-to-pdf-vs-print-to-pdf",
+    "share-ai-answer-with-context",
+    "save-landing-page-for-client-review"
+  ],
   "renderedReviewed": [
     "en:*",
     "ru:*",
+    "de:*",
     "en:url-to-pdf-vs-print-to-pdf",
     "ru:url-to-pdf-vs-print-to-pdf",
     "en:share-ai-answer-with-context",
@@ -64,6 +90,7 @@
   "reviewCycles": {
     "en:*": 1,
     "ru:*": 1,
+    "de:*": 3,
     "en:url-to-pdf-vs-print-to-pdf": 3,
     "ru:url-to-pdf-vs-print-to-pdf": 3,
     "en:share-ai-answer-with-context": 3,

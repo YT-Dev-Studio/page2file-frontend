@@ -133,6 +133,50 @@ const messages: Record<Locale, Messages> = {
       terms: "Условия",
     },
   },
+  de: {
+    ...en,
+    developmentNotice:
+      "Der Konvertierungsbereich auf der Website ist derzeit nicht verfügbar.",
+    navigation: {
+      convert: "Konvertieren",
+      extension: "Page 2 PDF",
+      guides: "Anleitungen",
+      blog: "Blog",
+    },
+    actions: {
+      pdf: "In PDF umwandeln",
+      powerpoint: "In PowerPoint umwandeln",
+      preview: "Vorschau erstellen",
+      download: "Datei herunterladen",
+      install: "Erweiterung installieren",
+      comingSoon: "Demnächst",
+    },
+    converter: {
+      urlLabel: "Öffentlich zugängliche Webseiten-URL",
+      urlHint:
+        "Nur HTTPS. Private Seiten und Seiten nach der Anmeldung werden über die Erweiterung verarbeitet.",
+      visual: "Seitenabbilder",
+      editable: "Auswählbar und anklickbar",
+      warnings: "Warnungen",
+    },
+    shell: {
+      skipToContent: "Zum Inhalt springen",
+      primaryNavigation: "Hauptnavigation",
+      mobileNavigation: "Mobile Navigation",
+      productNavigation: "Produkt",
+      legalNavigation: "Rechtliche Informationen",
+      menu: "Menü",
+      language: "Sprache",
+      footerDescription:
+        "Page 2 File erklärt und unterstützt Page 2 PDF, eine Erweiterung zum Speichern des aktiven Chrome-Tabs als visuelles, auswählbares oder chatbezogenes PDF.",
+      pdfLink: "Webseite als PDF",
+      extensionLink: "Page 2 PDF für Chrome",
+      changelogLink: "Änderungsverlauf",
+      footerMeta:
+        "Aktiver Tab · Kein Export des gesamten Kontos · Temporäre Vorschauen",
+    },
+    footer: { privacy: "Datenschutz", terms: "Nutzungsbedingungen" },
+  },
 };
 
 export const getMessages = (locale: Locale): Messages => messages[locale];

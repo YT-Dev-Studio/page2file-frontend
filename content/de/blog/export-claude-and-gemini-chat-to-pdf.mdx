@@ -1,0 +1,44 @@
+Claude und Gemini haben eigene Page-2-PDF-Adapter, unterscheiden sich aber bei Anbieterexporten und Anhängen. Die Erweiterung erstellt eine lesbare PDF des aktuellen Browserthreads; für breitere Kontodaten oder ein vom Anbieter erzeugtes Dokument ist dessen eigener Export oft passender.
+
+## Exportieren Sie ein aktuelles Claude-Gespräch
+
+Öffnen Sie den genauen Claude-Thread, laden Sie den benötigten Verlauf und klappen Sie relevante Inhalte aus. Wählen Sie **AI / Chat**, anschließend Nachrichtenumfang sowie Medien- und Linkentfernung. Der Claude-Adapter berücksichtigt Miniaturen von Anhängen im Transkript und ignoriert eine geschlossene Anhangsleiste, damit versteckte Duplikate nicht zusätzlich erscheinen.
+
+Anthropic dokumentiert außerdem einen offiziellen [Claude-Datenexport](https://support.anthropic.com/en/articles/9450526-how-can-i-export-my-claude-data). Er passt zur Kontoportabilität. Page 2 PDF ist auf ein aktuelles Gespräch als Lesedokument ausgerichtet.
+
+<ArticleFigure
+  src="/blog/demos/claude-gemini-export.webp"
+  alt="Testtranskript mit zwei Nachrichten, Links und unterstützten Medienverweisen"
+  caption="Nutzen Sie das Browsertranskript für einen lesbaren Thread und den Anbieterexport für einen größeren Datenumfang."
+  step={1}
+  openLabel="Vergleich für Claude und Gemini öffnen"
+  closeLabel="Vergleich für Claude und Gemini schließen"
+/>
+
+## Exportieren Sie ein aktuelles Gemini-Gespräch
+
+Öffnen Sie den Gemini-Chat in Chrome und stellen Sie sicher, dass ältere benötigte Nachrichten, Quellen und Anhänge geladen sind. Der Gemini-Adapter ordnet erkannte Sprecher und unterstützte Blöcke demselben Hochformat-Transkript zu.
+
+Gemini kann einzelne Ergebnisse auch als Dateien oder Google-Dokumente bereitstellen; die Verfügbarkeit hängt von Konto und Region ab. Ein solches Dokument ist geeigneter, wenn eine Antwort bereits einen weiterzubearbeitenden Bericht darstellt. Die Page-2-PDF-Fassung ist sinnvoll, wenn die Reihenfolge von Prompts, Antworten und Quellen selbst der Nachweis ist.
+
+## Wenden Sie die gemeinsamen Grenzen an
+
+Beide Abläufe decken genau ein geöffnetes Gespräch und nur die Historie ab, welche der begrenzte Loader unter Version oder Tarif abrufen kann. Der Tab bleibt offen. Geänderte Oberflächen, nicht geladene Historie, geschützte Anhänge oder abgelaufene Links können Lücken verursachen. Die Erweiterung fasst nichts zusammen, migriert keine Konten und bietet keinen Massenexport.
+
+Prüfen Sie Rollen, erste und letzte Nachricht, Code, Tabellen, Quellen sowie Dateien. Kontrollieren Sie, ob Anhänge doppelt auftauchen. Alle Nachrichten eignen sich für einen vollständigen Lesepfad, nur Antworten für ein überprüftes Antwortpaket. Die [KI-Chat-Übersicht](/de/blog/export-ai-chat-to-pdf) erklärt die Bedienelemente, die [Prüfliste für Code und Quellen](/de/blog/preserve-code-tables-citations-in-chat-pdf) die Inhaltskontrolle. Produktseiten: [Claude zu PDF](/de/chrome-extension/claude-to-pdf) und [KI-Chat zu PDF](/de/chrome-extension/ai-chat-to-pdf).
+
+## Vergleichen Sie Aufgaben statt Markennamen
+
+Claude-Datenexport, Gemini-Datei, Browserdruck und Transkript erfüllen verschiedene Zwecke. Vergleichen Sie Umfang, Format, Vorbereitung und späteren Zugriff. Ein getesteter Adapter garantiert nicht, dass jede künftige Oberfläche unverändert funktioniert; die Vorschau bleibt der Abnahmepunkt.
+
+### Kann eine PDF Gespräche beider Dienste verbinden?
+
+Nein. Exportieren Sie jeden aktuellen Thread separat. Page 2 PDF führt keine Kontohistorien zusammen.
+
+### Exportiert die Claude-Anhangsleiste jede Datei?
+
+Der Adapter nutzt Angaben aus dem Transkript und ignoriert eine geschlossene Leiste. Geschützte oder fehlende Dateien können nicht vollständig enthalten sein.
+
+### Kann eine Gemini-Datei das Transkript ersetzen?
+
+Ja, wenn die Datei selbst das Arbeitsergebnis ist. Nutzen Sie das Transkript, wenn Prompts, Antworten und Quellen in ihrer Reihenfolge erhalten bleiben müssen.

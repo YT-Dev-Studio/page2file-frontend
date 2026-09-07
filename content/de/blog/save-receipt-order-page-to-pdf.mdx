@@ -1,0 +1,46 @@
+Um einen Beleg, eine Buchung, Rechnung oder Bestellbestätigung als PDF zu speichern, öffnen Sie den abgeschlossenen Vorgang in Chrome und exportieren genau diesen aktiven Tab. Accurate copy erhält das sichtbare Layout; Editable document eignet sich, wenn Bestellnummer, Datum, Betrag und Supportlinks durchsuchbar bleiben sollen.
+
+## Prüfen Sie den Datensatz vor der Aufnahme
+
+Kontrollieren Sie Anbieter, Transaktionsdatum, Währung, Gesamtbetrag, Steuer, Positionen, Buchungsdaten und Status. Speichern Sie die endgültige Bestätigung, nicht ein Zahlungsformular oder einen Ladebildschirm. Klappen Sie Positionen nur aus, wenn sie zum Beleg gehören.
+
+Entfernen Sie nicht benötigte Navigation mit den Funktionen der Website. Page 2 PDF bietet keinen frei gezeichneten Zuschnitt, sondern bewahrt die vorbereitete Seite. Gibt der Anbieter eine offizielle Rechnung oder Quittung aus, ist diese für Buchhaltung meist vorrangig; die Webseiten-PDF dient dann nur als zusätzlicher Kontext.
+
+<ArticleFigure
+  src="/blog/demos/receipt-export-check.webp"
+  alt="Vorbereitungsdialog über einer aktiven Testseite für Belege"
+  caption="Vergleichen Sie Betrag, Status und Kennungen, bevor die sichtbare Bestätigung zur PDF wird."
+  step={1}
+  openLabel="Checkliste für Belege öffnen"
+  closeLabel="Checkliste für Belege schließen"
+/>
+
+## Wählen Sie visuellen oder durchsuchbaren Nachweis
+
+Accurate copy erhält Karte, Branding, Layout und Statusmarkierungen als Bildseiten. Das kann die Darstellung belegen, doch Text ist nicht auswählbar und Links funktionieren nicht.
+
+Editable document nutzt die PDF-Ausgabe von Chromium. Text sowie sichere Support- oder Sendungsverfolgungslinks können erhalten bleiben. **As viewed** folgt dem Bildschirm, **Print optimized** dem Druckstil des Anbieters. Prüfen Sie diese Fassung, weil ein Druckstil zwar Navigation entfernen, aber auch Statushinweise ausblenden kann.
+
+Die [PDF-Modi im Vergleich](/de/blog/choose-webpage-pdf-mode) liefern eine kurze Auswahlregel. Für Kontoseiten gilt zusätzlich der Leitfaden zu [angemeldeten und lokalen Seiten](/de/blog/save-private-or-local-page-to-pdf). Die [Webseite-zu-PDF-Produktseite](/de/chrome-extension/webpage-to-pdf) erläutert beide Ausgaben.
+
+## Schützen Sie Zahlungs- und Personendaten
+
+Ein Beleg kann Name, Anschrift, teilweise Zahlungsdaten, Buchungscode, Kundennummer oder Zugangslink enthalten. Geben Sie nur weiter, was der Empfänger benötigt, und behandeln Sie die PDF nach denselben Regeln wie den Kontodatensatz. Der Ausschluss sensibler Formularfelder entfernt nicht automatisch jeden sichtbaren Text.
+
+Page 2 PDF exportiert keine gesamte Bestellhistorie. Öffnen Sie einzelne Nachweise oder verwenden Sie den Konto- beziehungsweise Rechnungsexport des Anbieters. Der Tab muss bis zum Ende der Vorbereitung geöffnet bleiben.
+
+## Kontrollieren Sie das fertige Dokument
+
+Vergleichen Sie Betrag, Währung, Datum, Bestellnummer, Seitenzahl und Status mit der Website. Testen Sie wichtige Links und suchen Sie nach abgeschnittenen Positionen, fehlenden QR-Codes oder ungeladenen Bildern. Für Bestätigungen in einem inneren Scrollbereich hilft der [Ablauf für lange Seiten](/de/blog/save-long-dynamic-webpage-to-pdf); bei umfangreichen Kontotabellen der [Dashboard-Leitfaden](/de/blog/save-dashboard-report-to-pdf).
+
+### Kann die Erweiterung alle Rechnungen meines Kontos herunterladen?
+
+Nein. Sie verarbeitet einen aktiven Tab und bietet keinen kontoweiten Massenexport.
+
+### Bleibt ein QR-Code nutzbar?
+
+Er kann in der visuellen Ausgabe erscheinen. Testen Sie ihn in der fertigen PDF; ablaufende oder geschützte Codes können unabhängig davon ungültig werden.
+
+### Ist die gespeicherte Seite eine offizielle Rechnung?
+
+Nicht automatisch. Rechts- und Buchhaltungsstatus bestimmt der Aussteller nach den geltenden Regeln. Verwenden Sie dessen offizielles Dokument, wenn es vorhanden ist.

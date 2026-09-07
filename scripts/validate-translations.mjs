@@ -9,13 +9,15 @@ const publishedFiles = async (directory) =>
     .filter((name) => name.endsWith(".mdx"))
     .sort();
 
+const locales = ["en", "ru", "de"];
 const englishFiles = await publishedFiles(join(contentRoot, "blog"));
-const russianFiles = await publishedFiles(join(contentRoot, "ru", "blog"));
-
-if (JSON.stringify(russianFiles) !== JSON.stringify(englishFiles)) {
-  throw new Error("ru: published MDX files do not match the English corpus.");
+for (const locale of locales.filter((candidate) => candidate !== "en")) {
+  const localizedFiles = await publishedFiles(join(contentRoot, locale, "blog"));
+  if (JSON.stringify(localizedFiles) !== JSON.stringify(englishFiles)) {
+    throw new Error(`${locale}: published MDX files do not match the English corpus.`);
+  }
 }
 
 console.log(
-  `Translation parity valid: ${englishFiles.length} published article(s) across 2 locales.`,
+  `Translation parity valid: ${englishFiles.length} published article(s) across ${locales.length} locales.`,
 );

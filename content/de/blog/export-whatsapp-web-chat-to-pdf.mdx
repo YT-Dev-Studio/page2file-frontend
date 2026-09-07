@@ -1,0 +1,46 @@
+Um einen WhatsApp-Web-Chat als lesbare PDF zu speichern, öffnen Sie den Thread in Chrome, wählen **AI / Chat**, setzen Umfang und Medienoptionen und lassen den Tab während der Vorbereitung offen. Der Adapter liest das aktive Gespräch, nicht die Seitenleiste oder das gesamte Konto.
+
+## Prüfen Sie den ausgewählten WhatsApp-Thread
+
+Kontrollieren Sie Kontakt- oder Gruppentitel und Teilnehmer. Laden Sie den benötigten Teil der Historie; öffnen Sie zitierte Nachrichten oder Medien, wenn die Oberfläche sie sonst nicht zeigt. Der begrenzte Loader folgt dem Wert der installierten Version oder des Tarifs.
+
+WhatsApp Web zeigt die Chatliste oft neben dem aktiven Thread. Der eigene Adapter ignoriert diese Seitenleiste und unterscheidet Teilnehmer anhand der Nachrichtenrichtung. Prüfen Sie die erste Seite der PDF, bevor Sie sich auf die Rollen verlassen.
+
+<ArticleFigure
+  src="/blog/demos/whatsapp-thread-proof.webp"
+  alt="Kontrolliertes WhatsApp-Testgespräch als übersichtliche einseitige PDF"
+  caption="Der Adapter richtet sich auf den ausgewählten Thread und lässt die kontoweite Historie außerhalb der Datei."
+  step={1}
+  openLabel="Beispiel eines WhatsApp-Web-Transkripts öffnen"
+  closeLabel="Beispiel eines WhatsApp-Web-Transkripts schließen"
+/>
+
+## Entscheiden Sie, welche Medien nötig sind
+
+Bilder, Video, Audio- oder Sprachverweise sowie Links haben getrennte Entfernungsschalter. Behalten Sie eine Kategorie, wenn sie Kontext oder Beleg trägt; entfernen Sie sie, wenn Datenschutz oder Lesbarkeit schwerer wiegen. Das Transkript kann unterstützte sichtbare Verweise bewahren, aber nicht jede Binärdatei, die WhatsApp speichert.
+
+Einmal sichtbare Inhalte werden nicht exportiert. Nicht verfügbare, geschützte, abgelaufene oder ungeladene Medien können fehlen oder auf einen Verweis reduziert werden. Testen Sie Links und vergleichen Sie die Medienreihenfolge. Gemeinsame Bedienelemente erklärt der [Browser-Messenger-Leitfaden](/de/blog/export-browser-messenger-chat-to-pdf), die Produktseite ist [WhatsApp-Chat zu PDF](/de/chrome-extension/whatsapp-chat-to-pdf).
+
+## Vergleichen Sie den nativen WhatsApp-Export
+
+Mobile WhatsApp-Apps bieten eigene Export- und Übertragungsfunktionen. Für Portabilität oder ein breiteres Text-und-Medien-Paket sind sie häufig geeigneter. Page 2 PDF konzentriert sich auf eine formatierte PDF des aktuellen Browserthreads und ist weder Backup noch Migration oder Kontoexport.
+
+Wählen Sie nach dem Ausgabeziel: lesbare PDF zur Prüfung oder Plattformverfahren zum Übertragen und Archivieren. Der Beitrag [Chat-PDF oder Kontoexport](/de/blog/chat-pdf-vs-account-data-export) vergleicht beide Aufgaben.
+
+## Prüfen Sie Datenschutz und Vollständigkeit
+
+Gespräche können personenbezogene Daten, Arbeitsinformationen, Zahlungsangaben, Zugangslinks und Medien Dritter enthalten. Klären Sie die Berechtigung zum Speichern und Teilen. Die bloße Teilnahme am Chat erlaubt nicht automatisch dessen Verbreitung.
+
+Prüfen Sie Beteiligte, Nachrichtenrichtung, sichtbare Zeitstempel, Zitate, Anfang, Ende und fehlende Medien. Ist die Vorschau nach einer Änderung von WhatsApp fehlerhaft, warten Sie auf eine Adapterprüfung oder verwenden Sie den nativen Export.
+
+### Enthält die PDF alle Chats aus der Seitenleiste?
+
+Nein. Der Adapter erfasst absichtlich nur das aktive Gespräch und ignoriert Listeneinträge.
+
+### Werden einmal sichtbare Medien aufgenommen?
+
+Nein. Diese Inhalte liegen ausdrücklich außerhalb des Exports.
+
+### Ist „Nur Antworten“ für WhatsApp sinnvoll?
+
+Die Option ist vorhanden, doch Teilnehmerrollen entsprechen nicht zuverlässig Assistentenantworten. Für normale Gespräche sollten Sie meist alle Nachrichten behalten und das Ergebnis prüfen.

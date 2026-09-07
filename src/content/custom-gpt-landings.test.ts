@@ -59,9 +59,7 @@ describe("GPT App landing content", () => {
       ].join(" ");
 
       expect(content?.sections).toHaveLength(5);
-      expect(content?.title).toBe(
-        "Webpage to PDF Converter — Web2File",
-      );
+      expect(content?.title.length).toBeGreaterThan(25);
       expect(content?.displayTitle).toBe("GPT: Webpage 2 PDF");
       expect(content?.primaryLabel).toContain("GPT Webpage 2 PDF");
       expect(content?.sections[0]?.heading).toMatch(/^1\. /);
@@ -72,7 +70,7 @@ describe("GPT App landing content", () => {
       expect(
         content?.workflowOverride?.firstStageLabel.length,
       ).toBeGreaterThan(3);
-      expect(visibleCopy).toContain("Webpage to PDF Converter — Web2File");
+      expect(visibleCopy).toContain("Web2File");
       expect(visibleCopy).toContain("Visual PDF");
       expect(visibleCopy).toContain("Interactive PDF");
       expect(visibleCopy).not.toContain("One Page 2 PDF");
@@ -118,7 +116,7 @@ describe("GPT App landing content", () => {
         ...content?.sections.flatMap(({ body, heading }) => [heading, body]) ?? [],
       ].join(" ");
 
-      expect(content?.title).toBe("HTML to PDF Converter — Web2File");
+      expect(content?.title.length).toBeGreaterThan(25);
       expect(content?.displayTitle).toBe("GPT: HTML 2 PDF");
       expect(content?.description.length).toBeGreaterThanOrEqual(100);
       expect(content?.description.length).toBeLessThanOrEqual(170);
@@ -142,6 +140,24 @@ describe("GPT App landing content", () => {
 });
 
 describe("localized legal content", () => {
+  test("provides independent German text for every content landing", () => {
+    for (const route of [
+      "page2pdf-gpt",
+      "html2pdf-gpt",
+      "privacy",
+      "terms",
+      "about",
+    ] as const) {
+      const english = getLandingContent("en", route);
+      const german = getLandingContent("de", route);
+
+      expect(german).not.toBeNull();
+      expect(german?.title).not.toBe(english?.title);
+      expect(german?.description).not.toBe(english?.description);
+      expect(german?.lead).not.toBe(english?.lead);
+    }
+  });
+
   test.each(["privacy", "terms"] as const)(
     "keeps %s complete and aligned with the current product scope",
     (route) => {

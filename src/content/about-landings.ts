@@ -38,6 +38,18 @@ const aboutCopy: Record<Locale, AboutCopy> = {
         correctionsHeading: "Исправления и связь",
         correctionsBody: "Если инструкция непонятна, устарела или содержит ошибку, напишите на {{contactEmail}}, укажите адрес страницы, спорный фрагмент и шаги воспроизведения, если они есть. Мы сверим сообщение с текущим продуктом и обновим опубликованный текст, когда изменятся доказательства.",
     },
+    de: {
+        title: "Redaktionelle Grundsätze",
+        description: "Erfahren Sie, wer Page 2 File betreibt, wie Aussagen zur Erweiterung und Anleitungen geprüft werden, welche Belege gelten und wie Sie eine Korrektur melden.",
+        operatorHeading: "Wer den Dienst betreibt",
+        operatorBody: "Page 2 File ist eine Informationswebsite über die Chrome-Erweiterung Page 2 PDF. Betreiber ist {{entityName}} mit Sitz unter {{address}}. Die Website ist unabhängig von den in den Anleitungen genannten Websites, KI-Plattformen und Messengern.",
+        editorialHeading: "Wie Anleitungen entstehen",
+        editorialBody: "Jede Anleitung behandelt eine konkrete Aufgabe. Aussagen zu Page 2 PDF werden mit dem Code der Erweiterung, Tests, Release-Belegen und reproduzierbaren Beispielen abgeglichen. Grenzen bei Zugriff, Datenschutz und Wiedergabetreue stehen vor dem Handlungsaufruf. Der Name einer Plattform allein gilt nicht als Beleg für aktuelle Kompatibilität.",
+        sourcesHeading: "Wie Dokumentation und Belege verwendet werden",
+        sourcesBody: "Für Chrome und externe Plattformen bevorzugen wir aktuelle Dokumentation des jeweiligen Anbieters und direkte Release-Prüfungen. Seiten von Wettbewerbern können nützliche UX- oder Suchmuster zeigen; ihre Aussagen, Kennzahlen und unterstützten Funktionen werden jedoch nicht als Fakten über Page 2 File übernommen.",
+        correctionsHeading: "Korrekturen und Kontakt",
+        correctionsBody: "Wenn eine Anleitung unklar, veraltet oder falsch ist, senden Sie die Seitenadresse, die beanstandete Passage und vorhandene Schritte zur Reproduktion an {{contactEmail}}. Wir prüfen den Hinweis am aktuellen Produkt und aktualisieren veröffentlichte Texte, wenn sich die Beleglage ändert.",
+    },
 };
 export const aboutLandingContent = (Object.keys(aboutCopy) as ReadonlyArray<Locale>).reduce<Record<Locale, LandingContent>>((result, locale) => {
     const copy = aboutCopy[locale];

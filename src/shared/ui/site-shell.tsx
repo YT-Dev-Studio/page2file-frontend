@@ -6,6 +6,7 @@ import { getLandingContent } from "@/content/landings";
 import { AnalyticsBootstrap } from "@/features/analytics/analytics-bootstrap";
 import { getExtensionCopy } from "@/features/extension/extension-copy";
 import type { Locale } from "@/shared/i18n/locales";
+import { getMessages } from "@/shared/i18n/messages";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { SiteHeader } from "./site-header";
 import styles from "./ui.module.css";
@@ -30,6 +31,7 @@ export const Container = ({
 const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getSiteCopy(locale).footer;
   const extensionCopy = getExtensionCopy(locale);
+  const messages = getMessages(locale);
   const about = getLandingContent(locale, "about");
 
   return (
@@ -60,18 +62,18 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
               {copy.links.extension}
             </Link>
             <Link href={`/${locale}/blog`}>
-              {locale === "ru" ? "Блог" : "Blog"}
+              {messages.navigation.blog}
             </Link>
-            {locale === "en" ? (
+            {locale !== "ru" ? (
               <>
-                <Link href="/en/chrome-extension/webpage-to-pdf">
-                  Webpage to PDF
+                <Link href={`/${locale}/chrome-extension/webpage-to-pdf`}>
+                  {copy.links.webpagePdf}
                 </Link>
-                <Link href="/en/chrome-extension/ai-chat-to-pdf">
-                  AI chat to PDF
+                <Link href={`/${locale}/chrome-extension/ai-chat-to-pdf`}>
+                  {copy.links.aiChatPdf}
                 </Link>
-                <Link href="/en/chrome-extension/messenger-chat-to-pdf">
-                  Messenger chat to PDF
+                <Link href={`/${locale}/chrome-extension/messenger-chat-to-pdf`}>
+                  {copy.links.messengerChatPdf}
                 </Link>
               </>
             ) : null}

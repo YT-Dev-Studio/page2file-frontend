@@ -6,11 +6,13 @@ export type SeoRouteKey = "home" | "guide" | "preview" | "download" | "notFound"
 const home: Record<Locale, SeoCopy> = {
   en: { title: "Page 2 PDF Chrome Extension for Pages and Chats", description: "Use Page 2 PDF on the active Chrome tab to create a visual full-page PDF, a selectable document, or a structured AI and messenger transcript." },
   ru: { title: "Page 2 PDF — расширение Chrome для страниц и чатов", description: "Запустите Page 2 PDF на активной вкладке Chrome и получите визуальную копию всей страницы, документ с текстом или расшифровку поддерживаемого чата." },
+  de: { title: "Page 2 PDF für Webseiten und Chats in Chrome", description: "Erstellen Sie aus dem aktiven Chrome-Tab ein visuelles Ganzseiten-PDF, ein Dokument mit auswählbarem Text oder ein Protokoll eines unterstützten Chats." },
 };
 
 const guide: Record<Locale, SeoCopy> = {
   en: { title: "How to Save a Webpage as PDF in Chrome", description: "Open the original page in Chrome, choose the Page 2 PDF capture mode, keep the tab open during preparation, then check and download the PDF preview." },
   ru: { title: "Как сохранить веб-страницу в PDF в Chrome", description: "Откройте исходную страницу в Chrome, выберите режим Page 2 PDF, не закрывайте вкладку во время подготовки, затем проверьте и скачайте готовый PDF." },
+  de: { title: "Webseite in Chrome als PDF speichern", description: "Öffnen Sie die Originalseite in Chrome, wählen Sie den passenden Modus, lassen Sie den Tab geöffnet und prüfen Sie anschließend die PDF-Vorschau." },
 };
 
 const preview: Record<Locale, SeoCopy> = {
@@ -21,6 +23,10 @@ const preview: Record<Locale, SeoCopy> = {
   ru: {
     title: "Временный предпросмотр PDF в Page 2 File",
     description: "Проверьте временную конвертацию Page 2 File, ее разделы, предупреждения и текущую ревизию перед созданием итогового файла.",
+  },
+  de: {
+    title: "Temporäre PDF-Vorschau von Page 2 File",
+    description: "Prüfen Sie die temporäre Konvertierung von Page 2 File, ihre Abschnitte, Warnungen und die aktuelle Revision, bevor Sie die endgültige Datei anfordern.",
   },
 };
 
@@ -33,6 +39,10 @@ const download: Record<Locale, SeoCopy> = {
     title: "Скачивание временного файла Page 2 File",
     description: "Скачайте временный файл, созданный из проверенной конвертации Page 2 File, до окончания защищенного периода загрузки.",
   },
+  de: {
+    title: "Temporärer PDF-Download von Page 2 File",
+    description: "Laden Sie die temporäre Datei aus der geprüften Page-2-File-Konvertierung herunter, bevor das geschützte Download-Fenster abläuft.",
+  },
 };
 
 const notFound: Record<Locale, SeoCopy> = {
@@ -43,6 +53,10 @@ const notFound: Record<Locale, SeoCopy> = {
   ru: {
     title: "Page 2 File — Страница не найдена",
     description: "Запрошенная страница недоступна. Вернитесь к описанию расширения Page 2 PDF на сайте Page 2 File или откройте актуальную инструкцию.",
+  },
+  de: {
+    title: "Page 2 File — Seite nicht gefunden",
+    description: "Die angeforderte Seite ist nicht verfügbar. Kehren Sie zur Übersicht von Page 2 PDF zurück oder öffnen Sie die aktuelle Anleitung.",
   },
 };
 

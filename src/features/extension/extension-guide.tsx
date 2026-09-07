@@ -72,7 +72,22 @@ const guideScreenFileById: Record<ExtensionGuideScreenId, string> = {
 };
 
 const getGuideScreenshotSrc = (locale: Locale, fileName: string): string =>
-  `/guides/page-2-pdf/${locale}/${fileName}`;
+  `/guides/page-2-pdf/${locale === "de" ? "en" : locale}/${fileName}`;
+
+const relatedWorkflowCopy = {
+  en: {
+    title: "Explore PDF workflows",
+    webpage: "Save the full webpage open in Chrome",
+    ai: "Export the current supported AI conversation",
+    messenger: "Export a supported WhatsApp or Telegram conversation",
+  },
+  de: {
+    title: "Weitere PDF-Abläufe",
+    webpage: "Die vollständig geöffnete Webseite in Chrome speichern",
+    ai: "Den aktuellen unterstützten KI-Dialog exportieren",
+    messenger: "Einen unterstützten WhatsApp- oder Telegram-Dialog exportieren",
+  },
+} as const;
 
 const GuideScreenshotCard = ({
   alt,
@@ -170,6 +185,7 @@ const GuideDetailSection = ({
 
 export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getExtensionCopy(locale);
+  const workflowCopy = locale === "ru" ? null : relatedWorkflowCopy[locale];
   const breadcrumbs: ReadonlyArray<BreadcrumbItem> = [
     { label: copy.homeLabel, href: `/${locale}` },
     { label: copy.guideLabel, href: `/${locale}/chrome-extension/how-to-use` },
@@ -267,24 +283,24 @@ export const ExtensionGuide = ({ locale }: { locale: Locale }): ReactNode => {
           </GuideDetailSection>
         </div>
 
-        {locale === "en" ? (
+        {workflowCopy ? (
           <section className={styles.workflowSection} aria-labelledby="workflow-guides">
             <div>
-              <h2 id="workflow-guides">Explore PDF workflows</h2>
+              <h2 id="workflow-guides">{workflowCopy.title}</h2>
               <ul>
                 <li>
-                  <Link href="/en/chrome-extension/webpage-to-pdf">
-                    Save the full webpage open in Chrome
+                  <Link href={`/${locale}/chrome-extension/webpage-to-pdf`}>
+                    {workflowCopy.webpage}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/en/chrome-extension/ai-chat-to-pdf">
-                    Export the current supported AI conversation
+                  <Link href={`/${locale}/chrome-extension/ai-chat-to-pdf`}>
+                    {workflowCopy.ai}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/en/chrome-extension/messenger-chat-to-pdf">
-                    Export a supported WhatsApp or Telegram conversation
+                  <Link href={`/${locale}/chrome-extension/messenger-chat-to-pdf`}>
+                    {workflowCopy.messenger}
                   </Link>
                 </li>
               </ul>

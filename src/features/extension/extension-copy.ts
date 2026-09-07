@@ -370,9 +370,149 @@ const russianCopy: ExtensionCopy = {
   guideLabel: "Инструкция по расширению",
 };
 
+const germanCopy: ExtensionCopy = {
+  homeTitle: "Die aktuelle Webseite oder den aktuellen Chat als PDF speichern.",
+  homeLead:
+    "Page 2 PDF ist die Chrome-Erweiterung von Page 2 File. Sie arbeitet mit dem aktiven Tab und erstellt entweder eine visuelle Ganzseitenkopie, ein Dokument mit auswählbarem Text und Links oder ein aufgeräumtes Protokoll eines unterstützten KI- oder Messenger-Chats.",
+  guideActionLabel: "Anleitung ansehen",
+  bannerTitle: "Den geöffneten Tab als PDF exportieren",
+  bannerBody:
+    "Die Website erhält den Inhalt des Tabs nicht und speichert keine Benutzerdaten. Öffnen Sie eine Website in einem neuen Tab und starten Sie Page 2 PDF.",
+  bannerActionLabel: "Erweiterung installieren",
+  modesTitle: "Das passende PDF auswählen",
+  modesLead:
+    "Die Modi verwenden unterschiedliche Erfassungsmethoden. Entscheidend ist, ob Erscheinungsbild, auswählbarer Inhalt oder die Struktur des Dialogs wichtiger ist.",
+  modes: [
+    {
+      title: "Accurate copy",
+      body: "Bereitet den Haupt-Scrollbereich vor und erfasst die sichtbare Darstellung als bildbasierte PDF-Seiten. Verwenden Sie diesen Modus, wenn das Erscheinungsbild wichtiger ist als auswählbarer Text oder funktionierende Links.",
+    },
+    {
+      title: "Editable document",
+      body: "Erstellt ein PDF mit auswählbarem Text und sicheren Links. Wählen Sie As viewed oder Print optimized, entfernen Sie Bilder, Links oder Stile und übernehmen Sie bei Bedarf unterstützte Formularfelder oder ein Projektarchiv.",
+      bodyLink: {
+        href: "/de/blog/preserve-webpage-links-forms-text",
+        label: "Projektarchiv",
+      },
+    },
+    {
+      title: "AI / Chat",
+      body: "Exportiert einen Dialog aus unterstützten Messengern wie Telegram und WhatsApp sowie aus unterstützten KI-Chats. Sie können alle Nachrichten oder nur Antworten übernehmen und unterstützte Codeblöcke, Tabellen, Quellen, Dateien und Medien erhalten oder Medien und Links entfernen.",
+    },
+  ],
+  sourcesTitle: "Speicherbare Seiten und Chats",
+  sourcesBody:
+    "Die Erweiterung liest ausschließlich den aktiven Tab. Öffnen Sie zuerst die gewünschte Seite und danach Page 2 PDF. Die Erweiterung nimmt keine eingefügte URL entgegen, durchsucht keine Website und umgeht keine Zugriffsbeschränkungen.",
+  sources: [
+    "Öffentliche Webseiten im aktuellen Browser-Tab.",
+    "Autorisierte Seiten, die im aktuellen Browser-Tab geöffnet sind.",
+    "Im Browser angezeigte Google Docs, Sheets und Slides.",
+    "Unterstützte KI-Dialoge und Web-Messenger: ChatGPT, Gemini, Claude, Grok, Perplexity, Microsoft Copilot, Manus, WhatsApp Web und Telegram Web.",
+  ],
+  processTitle: "Vom aktuellen Tab zum PDF",
+  processBody:
+    "Die Website erhält den Inhalt des Tabs nicht und speichert keine Benutzerdaten. Öffnen Sie eine Website in einem neuen Tab und starten Sie Page 2 PDF.",
+  steps: [
+    { title: "Website öffnen", body: "Laden Sie die Webseite, lokale HTML-Datei oder Unterhaltung, die Sie speichern möchten." },
+    { title: "Page 2 PDF öffnen", body: "Klicken Sie auf das Symbol der Erweiterung, während der zu exportierende Tab aktiv ist." },
+    { title: "Ausgabeart wählen", body: "Wählen Sie Accurate copy, Editable document oder AI / Chat." },
+    { title: "Ziel-PDF konfigurieren", body: "Legen Sie Ausrichtung, Ausgabeprofil, Nachrichtenumfang oder zu entfernende Inhalte fest, sofern diese Einstellungen verfügbar sind." },
+    { title: "Tab geöffnet lassen", body: "Warten Sie, bis verfügbare Inhalte geladen und die Vorschau vorbereitet sind. Schließen Sie die Originalseite nicht und wechseln Sie nicht zu einer anderen Adresse." },
+    { title: "Prüfen und speichern", body: "Kontrollieren Sie die PDF-Seiten in der Chrome-Vorschau und verwenden Sie anschließend die Download- oder Druckschaltfläche." },
+  ],
+  homePrivacyTitle: "Verarbeitung ohne Anmeldung",
+  privacyTitle: "Im Browser verarbeitet",
+  privacyBody:
+    "Page 2 PDF erstellt das Dokument innerhalb der Erweiterung. Seiten- und Chatinhalte werden nicht auf Server von Page 2 File hochgeladen. Für die Erweiterung ist kein Page-2-File-Konto erforderlich.",
+  privacyPoints: [
+    "Die Erweiterung liest Inhalte nur aus dem aktiven Tab, in dem Sie sie starten.",
+    "Temporäre Vorschaudaten werden nach der Sitzung entfernt. Verbleibende Daten, die älter als zwei Stunden sind, werden beim nächsten Start gelöscht.",
+    "Cookielose Website-Analytics sind von der PDF-Verarbeitung getrennt und erhalten niemals den Inhalt des aktiven Tabs.",
+  ],
+  privacyFactTitles: [
+    "Nur der aktive Tab",
+    "Automatische Bereinigung",
+    "Getrennte Analytics",
+  ],
+  guideTitle: "Page 2 PDF in Chrome verwenden",
+  guideLead:
+    "Öffnen Sie die Originalseite, wählen Sie den zum gewünschten Ergebnis passenden Modus, lassen Sie den Tab während der Vorbereitung geöffnet und prüfen Sie das PDF vor dem Speichern. Die Abbildungen zeigen die derzeitige englische Oberfläche der Erweiterung.",
+  guideSteps: [
+    {
+      id: "pin",
+      title: "Erweiterung anheften",
+      imageAlt: "Englisches Chrome-Erweiterungsmenü mit Page 2 PDF und der Aktion zum Anheften an die Symbolleiste",
+    },
+    {
+      id: "open",
+      title: "Gewünschte Seite öffnen",
+      imageAlt: "Page 2 File im Browser mit angeheftetem Symbol von Page 2 PDF",
+    },
+    {
+      id: "launch",
+      title: "Erweiterung anklicken",
+      imageAlt: "Englische Oberfläche von Page 2 PDF auf einer geöffneten Seite mit ausgewähltem Modus Accurate copy",
+    },
+    {
+      id: "result",
+      title: "PDF prüfen",
+      imageAlt: "Ergebnis von Page 2 PDF in der PDF-Vorschau des Browsers",
+    },
+  ],
+  guideOptionsTitle: "PDF anpassen",
+  guideOptionsLead:
+    "Wählen Sie den passenden Modus und öffnen Sie die Einstellungen, wenn Sie die Ausgabe anpassen möchten.",
+  guideOptionScreens: [
+    {
+      id: "modes",
+      title: "Ausgabemodus wählen",
+      imageAlt: "Englische Oberfläche von Page 2 PDF mit Accurate copy, Editable document und AI / Chat",
+    },
+    {
+      id: "settings",
+      title: "Einstellungen öffnen",
+      imageAlt: "Englische Einstellungen von Page 2 PDF für Profil, Ausrichtung und Inhalte eines bearbeitbaren Dokuments",
+    },
+  ],
+  supportedTitle: "Unterstützte Browser-Chats",
+  supportedGroups: [
+    {
+      title: "KI-Chats",
+      body: "Eigene Adapter sind für ChatGPT, Gemini, Claude, Grok, Perplexity, Microsoft Copilot und Manus verfügbar.",
+    },
+    {
+      title: "Messenger",
+      body: "Page 2 PDF unterstützt den aktuellen Dialog in WhatsApp Web sowie Chats und Kanäle in Telegram Web.",
+    },
+    {
+      title: "Bedingte Kompatibilität",
+      body: "Eine andere KI-Seite funktioniert nur, wenn Page 2 PDF sowohl Benutzer- als auch Assistentennachrichten erkennen kann. Das ist bedingte Kompatibilität und keine allgemeine Unterstützung.",
+    },
+  ],
+  limitsTitle: "Vor dem Start",
+  limits: [
+    "Chrome sperrt Erweiterungen auf Browser-Einstellungsseiten, im Chrome Web Store und auf anderen geschützten Seiten.",
+    "Klappen Sie benötigte Inhalte auf und lassen Sie die Originalseite geöffnet. Elemente, die die Seite nicht laden kann, können fehlen oder als Platzhalter erscheinen.",
+    "AI / Chat verwendet Seiten im Hochformat, beachtet die in der installierten Version oder im Tarif angegebene Verlaufsgrenze und übernimmt nur Nachrichten, die der begrenzte Ladevorgang erreichen kann.",
+    "Für lokale HTML-Dateien muss der Zugriff auf Datei-URLs gegebenenfalls in den Chrome-Einstellungen der Erweiterung erlaubt werden.",
+    "Sehr hohe Seiten, virtuelle Listen, nicht verfügbare Medien, geschützte Frames oder ständig wechselnde Inhalte können ein vollständiges Ergebnis verhindern.",
+  ],
+  limitTitles: [
+    "Geschützte Seiten",
+    "Seite geöffnet lassen",
+    "Grenze des Dialogverlaufs",
+    "Berechtigung für lokale HTML-Dateien",
+    "Komplexe und wechselnde Seiten",
+  ],
+  breadcrumbLabel: "Brotkrümelnavigation",
+  homeLabel: "Startseite",
+  guideLabel: "Anleitung zur Chrome-Erweiterung",
+};
+
 const copyByLocale: Record<Locale, ExtensionCopy> = {
   en: englishCopy,
   ru: russianCopy,
+  de: germanCopy,
 };
 
 export const getExtensionCopy = (locale: Locale): ExtensionCopy =>

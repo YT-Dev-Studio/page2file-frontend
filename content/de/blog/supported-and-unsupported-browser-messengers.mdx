@@ -1,0 +1,47 @@
+Page 2 PDF besitzt eigene Messenger-Adapter für WhatsApp Web und Telegram Web. Für Slack, Microsoft Teams, Discord, Instagram oder Messenger wird kein semantischer Export behauptet. Eine sichtbare Seite lässt sich eventuell als Bild-PDF sichern; daraus entsteht kein strukturierter, unterstützter Gesprächsexport.
+
+## „Unterstützt“ bedeutet ein getestetes Nachrichtenmodell
+
+Der WhatsApp-Web-Adapter richtet sich auf den aktiven Thread, ignoriert die Seitenleiste, unterscheidet Nachrichtenrichtung und verarbeitet unterstützte Text- und Medienstrukturen. Telegram Web deckt einen aktuellen Chat sowie eine Kanalvariante ab. Beide verwenden das gemeinsame Hochformat-Transkript und laden Historie begrenzt nach Version oder Tarif.
+
+Das ist enger als „jeder Browserchat“. Eigene Adapter kodieren Rollen, Container, Antworten und Medien einer Plattform. Auch ihre Kompatibilität kann sich ändern, wenn der Dienst die Seitenstruktur aktualisiert.
+
+<ArticleFigure
+  src="/blog/demos/messenger-compatibility-matrix.webp"
+  alt="Kontrolliertes Testgespräch als Beleg für die Messenger-Kompatibilitätsmatrix"
+  caption="Ein benannter Adapter ist Voraussetzung für ein unterstütztes Transkript; sichtbarer Zugriff allein reicht nicht."
+  step={1}
+  openLabel="Messenger-Kompatibilitätsmatrix öffnen"
+  closeLabel="Messenger-Kompatibilitätsmatrix schließen"
+/>
+
+## Slack und Teams haben andere Exportgrenzen
+
+Slack beschreibt Workspace-Exporte, deren Umfang von Tarif, Rolle, Genehmigung, Aufbewahrung und Gesprächsart abhängt. Ausgangspunkt für erlaubte Archive ist die [offizielle Slack-Anleitung](https://slack.com/help/articles/201658943-Export-your-workspace-data). Page 2 PDF hat keinen Slack-Adapter.
+
+Microsoft dokumentiert Teams Export APIs für organisatorische und programmatische Ausgaben. Sie benötigen passenden Mandanten-, Berechtigungs-, Lizenz- und Compliance-Kontext. Das entspricht nicht dem Speichern eines Browserthreads; Page 2 PDF unterstützt keine Teams-Chat-Extraktion.
+
+## Discord, Instagram und Messenger bleiben ausgeschlossen
+
+Für diese drei Dienste ist kein Adapter implementiert. Interface, Verschlüsselungszustand, Nachladen und Kontoexport unterscheiden sich. Die allgemeine Erkennung von Nutzer- und Assistentenrollen darf nicht als Umweg dargestellt werden: Teilnehmer-Messenger bieten diese eindeutigen KI-Rollen nicht.
+
+Nutzen Sie offizielle Daten- oder Administratorenexporte, wenn sie verfügbar sind. Browserdruck oder Accurate copy bewahren nur sichtbar gerenderte, zugängliche Inhalte und erzeugen weder Teilnehmerstruktur noch vollständige Historie. Für unterstützte Dienste gelten die Anleitungen zu [WhatsApp Web](/de/blog/export-whatsapp-web-chat-to-pdf) und [Telegram Web](/de/blog/export-telegram-web-chat-to-pdf); der Produkthub ist [Messenger-Chat zu PDF](/de/chrome-extension/messenger-chat-to-pdf).
+
+## Wählen Sie einen ehrlichen Ersatzweg
+
+Prüfen Sie bei einem nicht unterstützten Messenger zuerst dessen nativen Export. Brauchen Sie nur einen erlaubten visuellen Beleg, kann Accurate copy genügen; kennzeichnen Sie ihn als Webseitenaufnahme. Behaupten Sie keine Absendererkennung, vollständige Historie, Anhänge oder Antwortstruktur.
+
+Der [Browser-Messenger-Überblick](/de/blog/export-browser-messenger-chat-to-pdf) zeigt den Mehrwert des semantischen Ablaufs, der [Vergleich mit Kontoexporten](/de/blog/chat-pdf-vs-account-data-export) hilft bei größerem Umfang.
+Prüfen Sie im Zweifelsfall die aktuelle Produktseite und den Release-Stand, statt eine frühere Bildschirmaufnahme als Kompatibilitätsnachweis zu verwenden. Ein sichtbarer Login, ein ähnliches Chatlayout oder derselbe Konzernname reichen nicht aus. Auch eine fehlerfrei erzeugte Bild-PDF bestätigt nur die Erfassung der sichtbaren Webseite, nicht die Reihenfolge eines vollständigen Verlaufs.
+
+### Warum ist visuelle Aufnahme keine Unterstützung?
+
+Sie belegt weder korrekte Rollen und Reihenfolge noch Nachladen und Medienbehandlung. Dafür ist plattformspezifisches Verhalten nötig.
+
+### Ist Copilot unterstützt, obwohl Teams es nicht ist?
+
+Ja. Copilot-KI-Chat und Teams-Messenger sind getrennte Webprodukte und Adapter.
+
+### Werden nicht unterstützte Dienste automatisch ergänzt?
+
+Nein. Ein Dienst wird erst nach Implementierung, Tests, Releaseprüfung und korrekter Dokumentation benannt.

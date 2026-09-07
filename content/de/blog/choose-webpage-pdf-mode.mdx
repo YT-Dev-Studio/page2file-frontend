@@ -1,0 +1,44 @@
+Page 2 PDF bietet drei Ausgabemodi, weil Bildschirmtreue, auswählbarer Inhalt und ein lesbares Gespräch unterschiedliche Verfahren brauchen. Wählen Sie zuerst das gewünschte Ergebnis: **Accurate copy** für die sichtbare Darstellung, **Editable document** für Text und Links oder **AI / Chat** für einen unterstützten Gesprächsverlauf.
+
+## Entscheiden Sie nach dem Zweck der PDF-Datei
+
+Accurate copy bereitet den wichtigsten Scrollbereich vor und setzt die gerenderte Seite aus Bildern zusammen. Das passt zu Dashboards, Karten, komplexen Layouts, eigenen Schriften und allen Fällen, in denen das Aussehen als Beleg dient. Text lässt sich danach nicht markieren, Links sind nicht anklickbar.
+
+Editable document lässt Chromium eine Dokument-PDF erzeugen. Text kann durchsuchbar und auswählbar bleiben, sichere Links können funktionieren und geeignete Formularelemente lassen sich übernehmen. **As viewed** orientiert sich an der Bildschirmansicht, **Print optimized** an den Druckregeln der Website. Dabei können sich Abstände oder Umbrüche ändern.
+
+AI / Chat fotografiert die Oberfläche nicht. Ein unterstützter Adapter liest den geöffneten Thread und baut Rollen, Nachrichten, Codeblöcke, Tabellen, Quellen sowie unterstützte Medienverweise als Hochformat-Transkript neu auf. Der Modus ist für KI-Chats, WhatsApp Web und Telegram Web gedacht, nicht für beliebige Webseiten.
+
+<ArticleFigure
+  src="/blog/demos/output-mode-decision.webp"
+  alt="Auswahl der drei PDF-Modi während der Vorbereitung einer langen Testseite"
+  caption="Maßgeblich ist, welche Eigenschaft erhalten bleiben muss; die drei Ergebnisse sind nicht austauschbar."
+  step={1}
+  openLabel="Entscheidungshilfe für den PDF-Modus öffnen"
+  closeLabel="Entscheidungshilfe für den PDF-Modus schließen"
+/>
+
+## Ordnen Sie Optionen dem richtigen Modus zu
+
+Bei Accurate copy wählen Sie Hoch- oder Querformat. Editable document ergänzt die beiden Darstellungsprofile und getrennte Schalter für Bilder, Links, Gestaltung, unterstützte Formularfelder sowie ein optionales bereinigtes Projektarchiv. AI / Chat arbeitet immer im Hochformat und kann alle Nachrichten oder nur Antworten ausgeben; Bilder, Video, Audio und Links lassen sich getrennt entfernen.
+
+Eine Einstellung aus einem Modus hat im anderen keine versteckte Wirkung. „Nur Antworten“ ergibt bei einem Artikel keinen Sinn, während das Querformat nicht zum semantischen Chat-Transkript gehört. Wer zwei Eigenschaften braucht, sollte festlegen, welcher Verlust schwerer wiegt: exaktes Layout, auswählbarer Text oder Gesprächsstruktur.
+
+## Bereiten Sie die geöffnete Seite vor
+
+Öffnen Sie den exakten Zustand in Chrome und lassen Sie den Tab bis zum Abschluss geöffnet. Page 2 PDF übernimmt keine eingefügte URL, meldet sich nicht an und durchsucht keine verlinkten Seiten. Klappen Sie benötigte Bereiche aus und warten Sie, bis Diagramme und Bilder geladen sind.
+
+Sehr hohe Seiten, virtuelle Listen, geschützte Frames und nicht verfügbare Medien können unvollständig bleiben. Für Web-Apps hilft die Anleitung zu [langen dynamischen Seiten](/de/blog/save-long-dynamic-webpage-to-pdf). Wenn Text, Links oder Formularwerte entscheidend sind, lesen Sie den Leitfaden zu [auswählbaren Webseiten-PDFs](/de/blog/preserve-webpage-links-forms-text). Die [Produktübersicht zur Webseiten-PDF](/de/chrome-extension/webpage-to-pdf) stellt die beiden Webseitenmodi gegenüber.
+
+## Fragen zur Moduswahl
+
+### Kann ein Durchlauf alle drei Varianten erzeugen?
+
+Nein. Jeder Durchlauf nutzt genau ein Verfahren. Starten Sie die Erweiterung erneut, wenn Sie sowohl einen visuellen Beleg als auch eine durchsuchbare Fassung benötigen.
+
+### Bedeutet Editable document, dass ich die Webseite bearbeiten kann?
+
+Nein. Gemeint sind auswählbare Dokumentinhalte und konfigurierbare Ausgabe. Page 2 PDF ist weder DOM- noch PDF-Editor.
+
+### Welcher Modus exportiert einen nicht unterstützten Messenger?
+
+Keiner garantiert dort ein strukturiertes Transkript. Accurate copy kann die sichtbare Seite als Bilder sichern, sofern Chrome den Zugriff erlaubt. Das bestätigt jedoch keine semantische Messenger-Unterstützung.

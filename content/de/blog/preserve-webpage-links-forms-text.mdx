@@ -1,0 +1,48 @@
+Wählen Sie **Editable document**, wenn eine Webseiten-PDF auswählbaren Text, durchsuchbare Wörter, sichere anklickbare Links oder geeignete Formularwerte behalten soll. Chromium erzeugt dabei ein Dokument; deshalb unterscheidet sich das Ergebnis von der bildbasierten Bildschirmkopie in Accurate copy.
+
+## Was Editable document übernehmen kann
+
+Seitentext kann markierbar bleiben, und Links können nach einer Sicherheitsprüfung anklickbar sein. Mit **As viewed** orientiert sich die Ausgabe an der Bildschirmansicht, mit **Print optimized** an den Druckregeln der Website. Bilder, Links und Styling lassen sich unabhängig entfernen, wenn ein schlichteres Dokument nützlicher ist.
+
+Unterstützt werden gewöhnliche Textfelder, mehrzeilige Felder, Kontrollkästchen, Optionsfelder und Auswahllisten. Passwort-, Datei-, versteckte und andere sensible Eingaben werden ausgeschlossen. Manche Layouts lassen sich nicht auf interaktive PDF-Felder abbilden und bleiben statisch. Es handelt sich um eine begrenzte Unterstützung, nicht um das Versprechen, jedes Webformular in eine ausfüllbare PDF umzuwandeln.
+
+<ArticleFigure
+  src="/blog/demos/editable-document-options.webp"
+  alt="Mehrseitige, auswählbare Test-PDF im PDF-Betrachter von Chrome"
+  caption="Die auswählbare Ausgabe hat eigene Optionen und klare Grenzen; sie ist keine bearbeitbare Kopie der Website."
+  step={1}
+  openLabel="Optionen von Editable document öffnen"
+  closeLabel="Optionen von Editable document schließen"
+/>
+
+## Verwenden Sie regionale OCR nur für einzelne Grafiken
+
+Die regionale Texterkennung ist für wenige Canvas- oder WebGL-Bereiche gedacht, deren Beschriftung nur als Pixel vorliegt. Sie ist keine OCR für das gesamte Dokument. Der Produktvertrag begrenzt Anzahl und Größe der Regionen sowie die Laufzeit; erkannt werden Englisch und Russisch ab einem festgelegten Vertrauenswert.
+
+Besteht die ganze Seite aus Scans, verwenden Sie nach dem Export ein spezialisiertes OCR-Werkzeug. Bei einzelnen Diagramm- oder Canvas-Beschriftungen kann die regionale Erkennung Text ergänzen, den die Website nicht als normale Zeichen bereitstellt. Vergleichen Sie das Ergebnis vor jedem Zitat mit der sichtbaren Vorlage.
+
+## Verstehen Sie das optionale Projektarchiv
+
+Editable document kann ein bereinigtes ZIP mit der PDF, Aufnahmemetadaten, einem MHTML-Abbild und Prüfsummen erzeugen. Skripte, Ereignisbehandler und sensible Formularfelder werden entfernt. Erkennt die Schutzprüfung mögliche Geheimnisse, kann das ZIP entfallen, während die PDF trotzdem fertiggestellt wird.
+
+Das Archiv dient als Nachweis und Diagnosehilfe. Es ist kein Format für Rundlauf-Bearbeitung: Page 2 PDF importiert es nicht, baut daraus keine Live-Website auf und macht Browser-Elemente nicht editierbar. Bewahren Sie den ursprünglichen HTML-Quellbestand separat auf, wenn er weiterentwickelt werden soll.
+
+## Prüfen Sie Links und Werte vor dem Teilen
+
+Öffnen Sie einige Verweise in der fertigen PDF und kontrollieren Sie deren Ziel. Unsichere oder nicht unterstützte URL-Schemata werden nicht erhalten. Suchen Sie in Formularwerten nach persönlichen, finanziellen oder vertraulichen Angaben; eine PDF lässt sich leichter weiterleiten als eine angemeldete Seite.
+
+Wenn nur das Aussehen zählt, vermeidet Accurate copy dokumentbedingte Layoutänderungen. Die [Entscheidungshilfe für PDF-Modi](/de/blog/choose-webpage-pdf-mode) grenzt beide Verfahren ab. Für Quellenlisten folgt der Ablauf zum [Speichern von Webrecherche](/de/blog/save-web-research-to-pdf). Produktdetails stehen auf [Webseite mit Links als PDF](/de/chrome-extension/webpage-to-pdf-with-links).
+
+## Fragen zu auswählbaren PDFs
+
+### Ist die Ausgabe PDF/UA-zertifiziert?
+
+Nein. Page 2 PDF beansprucht keine PDF/UA-Zertifizierung. Prüfen Sie die Datei nach den Barrierefreiheitsregeln Ihrer Organisation.
+
+### Kann ich Styling entfernen und Links behalten?
+
+Ja. Bilder, Links und Styling haben getrennte Schalter. Prüfen Sie die Vorschau, weil entfernte CSS-Regeln Lesereihenfolge und Tabellenlayout verändern können.
+
+### Werden alle Formularfelder interaktiv?
+
+Nein. Nur geeignete, nicht sensible Steuerelemente werden berücksichtigt; nicht abbildbare Felder bleiben statisch. XFA-Formulare werden nicht unterstützt.

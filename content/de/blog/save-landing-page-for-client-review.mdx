@@ -1,0 +1,46 @@
+Speichern Sie eine Landingpage erst dann als PDF, wenn die genaue Prüfversion geöffnet, stabil und frei von Bearbeitungs-Overlays ist. Der nützliche Liefergegenstand ist nicht irgendeine Webseiten-PDF, sondern ein datierter Zustand mit URL, Browserbreite, Version und bekannten Grenzen.
+
+## Erfassen Sie genau die zu prüfende Version
+
+Öffnen Sie die freigegebene Staging- oder Produktionsadresse und kontrollieren Sie Versionskennung, Überschrift, Preis, Kampagnendaten, Sprache, Consent-Banner und Formularzustand. Warten Sie auf das Ende des Ladens und scrollen Sie einmal durch die Seite, damit verzögert erscheinende Bilder geladen werden. Schließen Sie Entwicklerleisten, Editorfunktionen, Chatwidgets und persönliche Kontomenüs, sofern sie nicht Teil der Prüfung sind.
+
+Verwenden Sie eine mit dem Kunden vereinbarte Browserbreite. Eine Desktop-PDF belegt kein funktionierendes Mobil-Layout, eine schmale Aufnahme keinen breiten Hero-Bereich. Wenn beide Ansichten freigegeben werden sollen, erstellen Sie zwei klar benannte Dateien.
+
+<ArticleFigure
+  src="/blog/demos/landing-client-review.webp"
+  alt="Kontrollierte Landingpage-Testseite als datierte PDF für die Kundenprüfung"
+  caption="Dokumentieren Sie Seitenversion, Browserbreite, Aufnahmemodus und Ausschlüsse zusammen mit der PDF."
+  step={1}
+  openLabel="Beispiel einer Landingpage-Prüfung öffnen"
+  closeLabel="Beispiel einer Landingpage-Prüfung schließen"
+/>
+
+## Visuelle Treue oder auswählbaren Inhalt wählen
+
+Für Abstände, Farben, Bildausschnitte, Hintergründe und Abschnittsreihenfolge eignet sich die visuelle Ausgabe. **Accurate copy** in Page 2 PDF erzeugt Bildseiten; der Kunde kann den ursprünglichen Text nicht suchen oder markieren. Für visuelle Freigabe ist das ein klarer Tausch, für Textredaktion ein Nachteil.
+
+**Editable document** passt, wenn Textauswahl und sichere Links nötig sind. **As viewed** orientiert sich am Bildschirm, **Print optimized** an den Druckregeln. Ein gutes Druck-Stylesheet kann die beste Lösung sein, auch mit Chrome Print. Die [Modusauswahl](/de/blog/choose-webpage-pdf-mode) erklärt die Entscheidung. Page 2 PDF verarbeitet den aktiven Tab, nimmt keine URL-Liste an und macht aus der PDF keine editierbare Designdatei; siehe [Webseite zu PDF](/de/chrome-extension/webpage-to-pdf).
+
+## Lange Abschnitte, Bilder, Formulare und Bewegung prüfen
+
+Vergleichen Sie jede Abschnittsüberschrift sowie den letzten Call-to-Action mit der Live-Seite. Achten Sie auf fehlende Bildausschnitte, wiederholte feste Header, geteilte Preiskarten, abgeschnittene Tabellen und Leerraum durch nicht geladene Inhalte. Sehr hohe Seiten oder virtuelle Listen können einen kleineren Prüfbereich brauchen. Details stehen im [Leitfaden für lange Seiten](/de/blog/save-long-dynamic-webpage-to-pdf).
+
+Eine PDF hält nur einen Moment fest. Karussells, Videos, Hover-Zustände, Animationstiming, Sticky-Übergänge, Formularvalidierung und Responsive-Verhalten müssen separat im Browser geprüft werden. Kennzeichnen Sie beim Formular den Zustand — leer, ausgefüllt, Erfolg oder Fehler — und verwenden Sie keine echten Kundendaten.
+
+## Senden Sie eine nachvollziehbare Prüfnotiz
+
+Nennen Sie Seitenname, Datum, Browserbreite, Modus und Version oder Commit im Dateinamen oder in der Nachricht. Listen Sie bewusste Ausschlüsse wie Animation, Mobilansicht, Formularversand, Analytics und Zielseiten. Bitten Sie um Kommentare nach Abschnitt oder PDF-Seite.
+
+Prüfen Sie Überschrift, Angebot, Rechtstext, Bilder, Links, Seitenzahl sowie ersten und letzten Abschnitt. Bei breiten Vergleichstabellen ergänzt die [Dashboard-Checkliste](/de/blog/save-dashboard-report-to-pdf) die Kontrolle. Die gepflegte Quelle bleibt Live-Seite oder Designdatei; die PDF ist ein zeitgebundener Prüfbeleg.
+
+### Soll ich Desktop- und Mobil-PDF senden?
+
+Ja, wenn responsive Layouts freigegeben werden. Beschriften Sie Breite und Datum jeder Datei und leiten Sie Mobilverhalten nicht aus einer skalierten Desktop-PDF ab.
+
+### Welcher Modus passt zur Textprüfung?
+
+Beginnen Sie mit Editable document. Für die visuelle Platzierung verwenden Sie Accurate copy und benennen den Bildseiten-Nachteil.
+
+### Beweist die PDF funktionierende Formulare und Animationen?
+
+Nein. Testen Sie Interaktion im Browser und dokumentieren Sie das Ergebnis separat. Die PDF zeigt nur den sichtbaren Zustand des Aufnahmezeitpunkts.

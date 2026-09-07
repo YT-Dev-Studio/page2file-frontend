@@ -1,0 +1,44 @@
+Um eine lange oder app-ähnliche Webseite als PDF zu speichern, öffnen Sie den fertigen Zustand in Chrome, wählen **Accurate copy** und lassen den Tab während der Vorbereitung offen. Page 2 PDF kann Inhalte laden, die bei einem begrenzten Scroll-Durchlauf erscheinen; Daten, die die Seite nie in den Browser einfügt, kann die Erweiterung nicht wiederherstellen.
+
+## Warum das sichtbare Fenster nicht die ganze Seite ist
+
+Viele Dashboards halten das Browserfenster fest, während nur ein inneres Panel scrollt. Ein Bildschirmfoto oder die Druckfunktion sieht dann möglicherweise nur dessen aktuellen Ausschnitt. Andere Seiten laden Bilder, Karten oder Diagramme erst kurz vor dem sichtbaren Bereich. Virtuelle Listen entfernen ältere Zeilen wieder, um Speicher zu sparen.
+
+Page 2 PDF sucht den hauptsächlichen Scrollbereich, führt eine begrenzte Vorbereitung aus, hält Animationen für die visuelle Aufnahme an und stellt Scrollposition, Fokus, Auswahl sowie vorübergehende Layoutänderungen danach wieder her. Das verbessert die Abdeckung, macht die Erweiterung aber nicht zu einem Website-Crawler.
+
+<ArticleFigure
+  src="/blog/demos/full-page-preparation.webp"
+  alt="Vorbereitung einer Testseite mit verschachteltem Scrollbereich bei 73 Prozent"
+  caption="Der Ursprungstab bleibt geöffnet, während der Hauptbereich vorbereitet und sein Zustand anschließend wiederhergestellt wird."
+  step={1}
+  openLabel="Ablauf für lange Seiten öffnen"
+  closeLabel="Ablauf für lange Seiten schließen"
+/>
+
+## Bereiten Sie die Seite in fester Reihenfolge vor
+
+Melden Sie sich an, öffnen Sie den richtigen Bericht und stellen Sie Filter oder Zeitraum ein. Schließen Sie Menüs, die Inhalte verdecken, klappen Sie benötigte Abschnitte aus und warten Sie auf sichtbare Medien. Starten Sie anschließend Page 2 PDF in diesem Tab, wählen Sie Accurate copy sowie Hoch- oder Querformat. Der [Produktleitfaden für vollständige Webseiten-PDFs](/de/chrome-extension/full-page-pdf) fasst diesen begrenzten Ablauf zusammen.
+
+Wechseln Sie währenddessen weder Route noch Ansicht. Eine Einwilligungsbox, eine angeheftete Leiste oder ein Chatfenster sollten Sie vor der Aufnahme schließen. Die Erweiterung bewahrt den aktuellen Zustand; sie kann nicht entscheiden, welcher fachliche Zustand der richtige ist. Für breite Tabellen lohnt sich je ein Probelauf in Hoch- und Querformat. Wenn Text oder Verweise auswählbar bleiben müssen, wählen Sie anhand der [Modusübersicht](/de/blog/choose-webpage-pdf-mode) stattdessen Editable document.
+
+## Erkennen Sie echte Abbruchgrenzen
+
+Die Vorbereitung ist absichtlich begrenzt. Extrem hohe Seiten können Höhen-, Größen- oder Seitenlimits überschreiten. Geschützte Frames geben ihren Inhalt nicht frei. Eine virtuelle Liste, die nur wenige Zeilen gleichzeitig im DOM hält, zeigt nie den gesamten Verlauf. Bei endlos nachgeladenen Daten gibt es möglicherweise kein stabiles Ende.
+
+Filtern Sie dann den Zeitraum, verkürzen Sie den Bericht, öffnen Sie wichtige Bereiche manuell oder speichern Sie mehrere Teile. Sollen strukturierte Datensätze aus vielen URLs gesammelt werden, ist ein Export- oder Scraping-Werkzeug geeigneter; Page 2 PDF verarbeitet einen aktiven Tab. Die Abgrenzung erklärt [Webseitenerfassung im Vergleich zu Web Scraping](/de/blog/webpage-capture-vs-web-scraping).
+
+Chrome Print reicht bei klassischen Artikeln mit guten Druckstilen und ohne interne Scrollflächen oft aus. Fehlen dort Abschnitte oder Tabellen, hilft die [Fehlersuche bei abgeschnittenen Chrome-PDFs](/de/blog/chrome-print-cuts-off-webpage).
+
+## Fragen zu langen Seiten
+
+### Erscheint jedes Element aus einem Endlos-Feed?
+
+Nein. Der Ladevorgang ist begrenzt, und manche Seiten ersetzen ältere Elemente. Kürzen oder filtern Sie die Ansicht, wenn Vollständigkeit wichtig ist.
+
+### Bleibt die Seite danach unten stehen?
+
+Der Ablauf soll Scrollposition und vorübergehenden Zustand auch nach Fehlern wiederherstellen. Prüfen Sie den Tab trotzdem, wenn Fokus oder Navigation geschäftskritisch sind.
+
+### Kann die Erweiterung mehrere verlinkte Seiten zusammenführen?
+
+Nein. Öffnen und speichern Sie jede Seite einzeln. Page 2 PDF folgt keinen Links und durchsucht keine Website.

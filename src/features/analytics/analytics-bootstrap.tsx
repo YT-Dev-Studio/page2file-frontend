@@ -11,7 +11,7 @@ import {
   type ReactNode,
 } from "react";
 import { gaMeasurementId } from "@/shared/config/site";
-import type { Locale } from "@/shared/i18n/locales";
+import { isLocale, type Locale } from "@/shared/i18n/locales";
 import {
   isAnalyticsAllowedForCurrentPage,
   trackAnalyticsEvent,
@@ -60,6 +60,11 @@ const noticeCopy: Record<
     details: "Подробнее",
     message:
       "Анонимная статистика: Google Analytics без аналитических cookies.",
+  },
+  de: {
+    details: "Mehr erfahren",
+    message:
+      "Anonyme Nutzungsstatistiken über Google Analytics, ohne Analytics-Cookies.",
   },
 };
 
@@ -212,7 +217,7 @@ const parseTrackedElement = (element: HTMLElement): AnalyticsEvent | null => {
   const name = dataset.p2fAnalyticsEvent;
   const placement = dataset.p2fAnalyticsPlacement;
 
-  if (locale !== "en" && locale !== "ru") {
+  if (!locale || !isLocale(locale)) {
     return null;
   }
   if (name === "extension_install_click") {

@@ -10,6 +10,9 @@ export type SiteCopy = {
     links: {
       cookiePolicy: string;
       extension: string;
+      webpagePdf: string;
+      aiChatPdf: string;
+      messengerChatPdf: string;
       privacy: string;
       support: string;
       terms: string;
@@ -45,6 +48,9 @@ const siteCopy: Record<Locale, SiteCopy> = {
       links: {
         cookiePolicy: "Analytics and cookies",
         extension: "Page 2 PDF for Chrome",
+        webpagePdf: "Webpage to PDF",
+        aiChatPdf: "AI chat to PDF",
+        messengerChatPdf: "Messenger chat to PDF",
         privacy: "Privacy",
         support: "Support",
         terms: "Terms",
@@ -70,11 +76,42 @@ const siteCopy: Record<Locale, SiteCopy> = {
       links: {
         cookiePolicy: "Аналитика и cookies",
         extension: "Page 2 PDF для Chrome",
+        webpagePdf: "Веб-страница в PDF",
+        aiChatPdf: "AI-чат в PDF",
+        messengerChatPdf: "Чат мессенджера в PDF",
         privacy: "Политика конфиденциальности",
         support: "Поддержка",
         terms: "Условия использования",
       },
       servicesTitle: "Сервисы",
+    },
+  },
+  de: {
+    extensionUnavailableTooltip: "Die Erweiterung wird demnächst verfügbar sein.",
+    header: {
+      brandLabel: "Page 2 File — Startseite",
+      downloadAction: "Erweiterung herunterladen",
+      extensionAction: "Page 2 PDF installieren",
+      menuLabel: "Menü öffnen",
+      mobileNavigationLabel: "Mobile Navigation",
+      navigationLabel: "Hauptnavigation",
+    },
+    footer: {
+      companyTitle: "Unternehmen und Dokumente",
+      copyright: "© 2026 Page 2 File. Alle Rechte vorbehalten.",
+      gptsTitle: "GPTs",
+      legalTitle: "Rechtliche Informationen",
+      links: {
+        cookiePolicy: "Analytics und Cookies",
+        extension: "Page 2 PDF für Chrome",
+        webpagePdf: "Webseite als PDF",
+        aiChatPdf: "KI-Chat als PDF",
+        messengerChatPdf: "Messenger-Chat als PDF",
+        privacy: "Datenschutzerklärung",
+        support: "Support",
+        terms: "Nutzungsbedingungen",
+      },
+      servicesTitle: "Dienste",
     },
   },
 };

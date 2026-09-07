@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import type { ExtensionSeoLandingContent } from "@/content/extension-seo-landings";
+import {
+  getExtensionSeoLanding,
+  type ExtensionSeoLandingContent,
+} from "@/content/extension-seo-landings";
+import type { Locale } from "@/shared/i18n/locales";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
 import { routePath } from "@/shared/routes/routes";
 import {
@@ -21,7 +25,41 @@ import styles from "./extension-seo-landing.module.css";
 
 type ExtensionSeoLandingProps = {
   content: ExtensionSeoLandingContent;
+  locale: Locale;
 };
+
+const uiCopy = {
+  en: {
+    breadcrumb: "Breadcrumb",
+    sampleKicker: "REAL SAMPLE OUTPUT",
+    openSample: "Open verified sample PDF",
+    stepsKicker: "THREE STEPS",
+    stepsTitle: "From open tab to PDF preview",
+    supportedKicker: "SUPPORTED",
+    limitsKicker: "BOUNDARIES",
+    privacyKicker: "PRIVACY BOUNDARY",
+    privacyTitle: "The tab you choose, not a URL upload",
+    faqKicker: "FAQ",
+    faqTitle: "Common questions",
+    relatedKicker: "RELATED GUIDES",
+    relatedTitle: "Choose the next workflow",
+  },
+  de: {
+    breadcrumb: "Brotkrümelnavigation",
+    sampleKicker: "GEPRÜFTES BEISPIEL",
+    openSample: "Geprüftes Beispiel-PDF öffnen",
+    stepsKicker: "DREI SCHRITTE",
+    stepsTitle: "Vom geöffneten Tab zur PDF-Vorschau",
+    supportedKicker: "UNTERSTÜTZT",
+    limitsKicker: "GRENZEN",
+    privacyKicker: "DATENSCHUTZGRENZE",
+    privacyTitle: "Der gewählte Tab statt eines URL-Uploads",
+    faqKicker: "FAQ",
+    faqTitle: "Häufige Fragen",
+    relatedKicker: "VERWANDTE ANLEITUNGEN",
+    relatedTitle: "Nächsten Ablauf auswählen",
+  },
+} as const;
 
 const stepArtworkVariants: ReadonlyArray<ExtensionArtworkVariant> = [
   "open",
@@ -41,8 +79,12 @@ const formatRelatedRoute = (route: string): string =>
 
 export const ExtensionSeoLanding = ({
   content,
+  locale,
 }: ExtensionSeoLandingProps): ReactNode => {
-  const locale = "en";
+  if (locale === "ru") {
+    return null;
+  }
+  const labels = uiCopy[locale];
   const extensionAction = getSiteCopy(locale).header.extensionAction;
   const breadcrumbs: ReadonlyArray<BreadcrumbItem> = [
     { label: "Page 2 File", href: routePath(locale, "") },
@@ -71,7 +113,8 @@ export const ExtensionSeoLanding = ({
   const mapListItem = (item: string): ReactNode => <li key={item}>{item}</li>;
   const mapRelatedRoute = (route: string): ReactNode => (
     <Link key={route} href={routePath(locale, route)}>
-      {formatRelatedRoute(route)}
+      {getExtensionSeoLanding(locale, route as ExtensionSeoLandingContent["route"])?.heading ??
+        formatRelatedRoute(route)}
       <span aria-hidden="true">→</span>
     </Link>
   );
@@ -86,7 +129,7 @@ export const ExtensionSeoLanding = ({
       <Container>
         <SeoBreadcrumbs
           items={breadcrumbs}
-          label="Breadcrumb"
+          label={labels.breadcrumb}
           locale={locale}
         />
         <div className={styles.heroLayout}>
@@ -115,10 +158,10 @@ export const ExtensionSeoLanding = ({
 
         <section className={styles.demo} aria-labelledby="sample-result">
           <div className={styles.demoCopy}>
-            <p className={styles.kicker}>REAL SAMPLE OUTPUT</p>
+            <p className={styles.kicker}>{labels.sampleKicker}</p>
             <h2 id="sample-result">{content.demo.title}</h2>
             <p>{content.demo.body}</p>
-            <a href={content.demo.samplePdf}>Open verified sample PDF</a>
+            <a href={content.demo.samplePdf}>{labels.openSample}</a>
           </div>
           <a
             className={styles.previewLink}
@@ -138,8 +181,8 @@ export const ExtensionSeoLanding = ({
 
         <section className={styles.section} aria-labelledby="how-it-works">
           <div className={styles.sectionHeading}>
-            <p className={styles.kicker}>THREE STEPS</p>
-            <h2 id="how-it-works">From open tab to PDF preview</h2>
+            <p className={styles.kicker}>{labels.stepsKicker}</p>
+            <h2 id="how-it-works">{labels.stepsTitle}</h2>
           </div>
           <ol className={styles.steps}>{content.steps.map(mapStep)}</ol>
         </section>
@@ -147,13 +190,13 @@ export const ExtensionSeoLanding = ({
         <section className={styles.boundaries}>
           <article>
             <ExtensionArtwork className={styles.boundaryArtwork} variant="supported" />
-            <p className={styles.kicker}>SUPPORTED</p>
+            <p className={styles.kicker}>{labels.supportedKicker}</p>
             <h2>{content.supportedTitle}</h2>
             <ul>{content.supported.map(mapListItem)}</ul>
           </article>
           <article>
             <ExtensionArtwork className={styles.boundaryArtwork} variant="limits" />
-            <p className={styles.kicker}>BOUNDARIES</p>
+            <p className={styles.kicker}>{labels.limitsKicker}</p>
             <h2>{content.limitsTitle}</h2>
             <ul>{content.limits.map(mapListItem)}</ul>
           </article>
@@ -162,16 +205,16 @@ export const ExtensionSeoLanding = ({
         <section className={styles.privacy} aria-labelledby="privacy-boundary">
           <ExtensionArtwork className={styles.privacyArtwork} variant="privacy" />
           <div>
-            <p className={styles.kicker}>PRIVACY BOUNDARY</p>
-            <h2 id="privacy-boundary">The tab you choose, not a URL upload</h2>
+            <p className={styles.kicker}>{labels.privacyKicker}</p>
+            <h2 id="privacy-boundary">{labels.privacyTitle}</h2>
           </div>
           <p>{content.privacy}</p>
         </section>
 
         <section className={styles.section} aria-labelledby="questions">
           <div className={styles.sectionHeading}>
-            <p className={styles.kicker}>FAQ</p>
-            <h2 id="questions">Common questions</h2>
+            <p className={styles.kicker}>{labels.faqKicker}</p>
+            <h2 id="questions">{labels.faqTitle}</h2>
           </div>
           <FaqAccordion items={content.faqs} />
         </section>
@@ -179,8 +222,8 @@ export const ExtensionSeoLanding = ({
         <section className={styles.related} aria-labelledby="related-guides">
           <div className={styles.relatedHeading}>
             <div className={styles.sectionHeading}>
-              <p className={styles.kicker}>RELATED GUIDES</p>
-              <h2 id="related-guides">Choose the next workflow</h2>
+              <p className={styles.kicker}>{labels.relatedKicker}</p>
+              <h2 id="related-guides">{labels.relatedTitle}</h2>
             </div>
             <ExtensionArtwork className={styles.relatedArtwork} variant="related" />
           </div>

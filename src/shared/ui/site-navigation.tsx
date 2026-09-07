@@ -41,6 +41,13 @@ const navigationLabels: Record<Locale, NavigationLabels> = {
     htmlToPdf: "HTML 2 PDF",
     webToPdf: "Web 2 PDF",
   },
+  de: {
+    blog: "Blog",
+    guide: "Anleitung",
+    home: "Startseite",
+    htmlToPdf: "HTML 2 PDF",
+    webToPdf: "Web 2 PDF",
+  },
 };
 
 const isNavigationItemActive = (

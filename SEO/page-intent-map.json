@@ -1,9 +1,9 @@
 {
-  "version": 3,
-  "locales": ["en", "ru"],
+  "version": 4,
+  "locales": ["en", "ru", "de"],
   "localizationPolicy": {
     "primaryIntent": "Use each locale's rendered SEO title as the natural-language primary intent.",
-    "validation": "Localized routes exist in English and Russian. New US-first extension routes launch in English only and must not emit hreflang for unpublished Russian translations."
+    "validation": "General routes and articles exist in English, Russian, and German. Extension SEO routes exist in English and German only and must not emit hreflang for an unpublished Russian translation."
   },
   "entries": [
     {

@@ -3,6 +3,7 @@ import type { StaticRoute } from "@/shared/routes/routes";
 import type { Locale } from "@/shared/i18n/locales";
 import { getExtensionCopy } from "@/features/extension/extension-copy";
 import { russianLandingContent } from "./russian-landings";
+import { germanLandingContent } from "./german-landings";
 import { aboutLandingContent } from "./about-landings";
 export type ContentSection = {
     id?: string;
@@ -279,6 +280,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
 const localizedLandingContent: Record<Locale, Partial<Record<StaticRoute, LandingContent>>> = {
     en: { ...landingContent, about: aboutLandingContent.en },
     ru: { ...russianLandingContent, about: aboutLandingContent.ru },
+    de: { ...germanLandingContent, about: aboutLandingContent.de },
 };
 const reconcileLegalProductScope = (
     locale: Locale,
