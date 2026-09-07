@@ -131,7 +131,10 @@ export const ExtensionPromoBanner = ({
   title,
   variant = "wide",
 }: ExtensionPromoBannerProps): ReactNode => {
-  const extensionLink = getExtensionLink(locale);
+  const extensionLink = getExtensionLink(locale, {
+    page: "home",
+    placement: analyticsPlacement === "home_promo" ? "promo" : "final",
+  });
   const analyticsAttributes = analyticsDataAttributes({
     locale,
     name: "extension_install_click",

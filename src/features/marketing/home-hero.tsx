@@ -195,6 +195,7 @@ export const HomeHero = ({ locale }: { locale: Locale }): ReactNode => {
             <div className={styles.heroActions}>
               <ExternalCta
                 analyticsPlacement="home_hero"
+                extensionPage="home"
                 externalLinkKey="chromeExtension"
                 label={siteCopy.header.extensionAction}
                 locale={locale}

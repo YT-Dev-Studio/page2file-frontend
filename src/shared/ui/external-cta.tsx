@@ -10,6 +10,7 @@ import {
 } from "@/shared/config/site";
 import type { Locale } from "@/shared/i18n/locales";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
+import { getExtensionLink } from "@/shared/routes/extension-link";
 import {
   Button,
   ButtonLink,
@@ -23,6 +24,7 @@ type ExternalCtaProps = {
   locale: Locale;
   placeholderLabel: string;
   analyticsPlacement: AnalyticsPlacement;
+  extensionPage?: string;
   compact?: boolean;
   size?: ButtonSize;
 };
@@ -33,10 +35,18 @@ export const ExternalCta = ({
   locale,
   placeholderLabel,
   analyticsPlacement,
+  extensionPage,
   size = "medium",
 }: ExternalCtaProps): ReactNode => {
   const link = externalLinks[externalLinkKey];
   const buttonLabel = link.status === "placeholder" ? placeholderLabel : label;
+  const extensionLink =
+    externalLinkKey === "chromeExtension"
+      ? getExtensionLink(locale, {
+          page: extensionPage ?? "home",
+          placement: "hero",
+        })
+      : null;
 
   if (externalLinkKey === "chromeExtension" && !extensionInstallAvailable) {
     const tooltip = getSiteCopy(locale).extensionUnavailableTooltip;
@@ -71,11 +81,13 @@ export const ExternalCta = ({
   return (
     <ButtonLink
       {...analyticsAttributes}
-      href={link.href}
-      rel="noopener noreferrer"
+      href={extensionLink?.href ?? link.href}
+      rel={
+        extensionLink?.external === false ? undefined : "noopener noreferrer"
+      }
       showIcon={false}
       size={size}
-      target="_blank"
+      target={extensionLink?.external === false ? undefined : "_blank"}
     >
       {buttonLabel}
     </ButtonLink>

@@ -2,60 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import page2FileLogo from "@/app/assets/logo.png";
-import { analyticsDataAttributes } from "@/features/analytics/analytics-events";
-import { extensionInstallAvailable } from "@/shared/config/site";
 import type { Locale } from "@/shared/i18n/locales";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
-import { getExtensionLink } from "@/shared/routes/extension-link";
-import { Button, ButtonLink } from "@/shared/ui/components/button/button";
-import { ExtensionUnavailableTooltip } from "./extension-unavailable-tooltip";
+import { ExtensionInstallButton } from "./extension-install-button";
 import { LocaleSwitcher } from "./locale-switcher";
 import { SiteNavigation } from "./site-navigation";
 import styles from "./site-header.module.css";
-
-const ExtensionButton = ({
-  className,
-  locale,
-}: {
-  className?: string;
-  locale: Locale;
-}): ReactNode => {
-  const siteCopy = getSiteCopy(locale);
-  const copy = siteCopy.header;
-  const extensionLink = getExtensionLink(locale);
-  const buttonClassName =
-    `${styles.extensionButton} ${className ?? ""}`.trim();
-
-  if (!extensionInstallAvailable) {
-    return (
-      <ExtensionUnavailableTooltip
-        label={`${copy.downloadAction}. ${siteCopy.extensionUnavailableTooltip}`}
-        message={siteCopy.extensionUnavailableTooltip}
-        placement="bottom"
-      >
-        <Button className={buttonClassName} disabled>
-          {copy.downloadAction}
-        </Button>
-      </ExtensionUnavailableTooltip>
-    );
-  }
-
-  return (
-    <ButtonLink
-      {...analyticsDataAttributes({
-        locale,
-        name: "extension_install_click",
-        placement: "header",
-      })}
-      className={buttonClassName}
-      href={extensionLink.href}
-      rel={extensionLink.external ? "noopener noreferrer" : undefined}
-      target={extensionLink.external ? "_blank" : undefined}
-    >
-      {copy.downloadAction}
-    </ButtonLink>
-  );
-};
 
 export const SiteHeader = ({
   locale,
@@ -95,7 +47,10 @@ export const SiteHeader = ({
             display="code"
             locale={locale}
           />
-          <ExtensionButton locale={locale} />
+          <ExtensionInstallButton
+            className={styles.extensionButton}
+            locale={locale}
+          />
         </div>
 
         <details className={styles.mobileNavigation}>
@@ -117,8 +72,8 @@ export const SiteHeader = ({
                 display="code"
                 locale={locale}
               />
-              <ExtensionButton
-                className={styles.mobileExtensionButton}
+              <ExtensionInstallButton
+                className={`${styles.extensionButton} ${styles.mobileExtensionButton}`}
                 locale={locale}
               />
             </div>

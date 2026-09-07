@@ -20,15 +20,31 @@ describe("HomeHero", () => {
       }),
     ];
     expect(installLinks).toHaveLength(3);
+    const installUrls = installLinks.map(
+      (link): URL => new URL(link.getAttribute("href") ?? ""),
+    );
     expect(
       installLinks.every(
         (link) =>
-          link.getAttribute("href") ===
-            "https://chromewebstore.google.com/detail/page-to-pdf-%E2%80%94-webpages-ch/oahoffgoacbbmfhiejbjpghmcnngjlga" &&
           link.getAttribute("target") === "_blank" &&
           link.getAttribute("rel") === "noopener noreferrer",
       ),
     ).toBe(true);
+    expect(
+      installUrls.map((url): string | null =>
+        url.searchParams.get("utm_source"),
+      ),
+    ).toEqual(["page2file.com", "page2file.com", "page2file.com"]);
+    expect(
+      installUrls.map((url): string | null =>
+        url.searchParams.get("utm_medium"),
+      ),
+    ).toEqual(["referral", "referral", "referral"]);
+    expect(
+      installUrls.map((url): string | null =>
+        url.searchParams.get("utm_campaign"),
+      ),
+    ).toEqual(["en_home_hero", "en_home_promo", "en_home_final"]);
     expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
       "Save the current webpage or chat as PDF.",
     );
