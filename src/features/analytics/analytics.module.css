@@ -3,21 +3,28 @@
   right: max(var(--p2f-space-16), env(safe-area-inset-right));
   bottom: max(var(--p2f-space-16), env(safe-area-inset-bottom));
   z-index: 40;
-  width: min(320px, calc(100vw - var(--p2f-space-24)));
-  padding: var(--p2f-space-8) var(--p2f-space-12);
+  width: min(500px, calc(100vw - var(--p2f-space-24)));
+  padding: var(--p2f-space-16);
   border: var(--p2f-border-width-default) solid
     var(--p2f-color-border-default);
   border-radius: var(--p2f-radius-compact);
   color: var(--p2f-color-text-secondary);
   background: var(--p2f-color-background-surface);
   box-shadow: var(--p2f-shadow-card);
-  font-size: var(--p2f-type-caption-regular-font-size);
-  line-height: var(--p2f-type-caption-regular-line-height);
+  font-size: var(--p2f-type-body-small-font-size);
+  line-height: var(--p2f-type-body-small-line-height);
   animation: noticeIn 180ms ease-out both;
 }
 
-.notice p {
+.notice h2 {
   margin: 0;
+  color: var(--p2f-color-text-brand);
+  font-size: var(--p2f-type-heading-h3-font-size);
+  line-height: var(--p2f-type-heading-h3-line-height);
+}
+
+.notice p {
+  margin: var(--p2f-space-8) 0;
 }
 
 .notice a {
@@ -37,6 +44,18 @@
   outline: var(--p2f-interaction-focus-ring-width) solid
     var(--p2f-interaction-focus-ring-color);
   outline-offset: 2px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--p2f-space-8);
+  margin-top: var(--p2f-space-16);
+}
+
+.actions button {
+  flex: 1 1 210px;
+  width: auto;
 }
 
 @keyframes noticeIn {

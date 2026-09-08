@@ -174,6 +174,13 @@ describe("localized legal content", () => {
         if (route === "privacy") {
           expect(visibleCopy).toContain("p2f_session");
           expect(visibleCopy).toContain("p2f_csrf");
+          expect(visibleCopy).toContain(
+            "page2file-analytics-consent-v2",
+          );
+          expect(visibleCopy).toContain("180");
+          expect(visibleCopy).not.toMatch(
+            /cookieless|cookielos|без аналитических cookies/i,
+          );
         }
       }
     },

@@ -1,13 +1,11 @@
 import { act, fireEvent, render, screen } from "@testing-library/react";
 import type { ComponentProps, ReactNode } from "react";
+import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import {
-  afterEach,
-  beforeEach,
-  describe,
-  expect,
-  test,
-  vi,
-} from "vitest";
+  ANALYTICS_CONSENT_STORAGE_KEY,
+  openAnalyticsPreferences,
+  writeAnalyticsConsent,
+} from "./analytics-consent";
 import { AnalyticsBootstrap } from "./analytics-bootstrap";
 
 let analyticsAllowed = true;
@@ -28,9 +26,7 @@ vi.mock("next/script", () => ({
 }));
 
 vi.mock("./analytics-events", async (importOriginal) => {
-  const actual = await importOriginal<
-    typeof import("./analytics-events")
-  >();
+  const actual = await importOriginal<typeof import("./analytics-events")>();
   return {
     ...actual,
     isAnalyticsAllowedForCurrentPage: (): boolean => analyticsAllowed,
@@ -52,12 +48,16 @@ const resetAnalyticsWindow = (): void => {
   window.dataLayer = [];
   delete window.gtag;
   delete window.page2fileAnalyticsConfigured;
-  delete window.page2fileAnalyticsNoticeShown;
+  delete window.page2fileAnalyticsConsent;
   delete window.page2fileLastTrackedLocation;
   delete window.page2filePreviousTrackedLocation;
-  window.sessionStorage.clear();
+  window.localStorage.clear();
   window.history.replaceState({}, "", "/en");
   document.title = "Page 2 File";
+  Object.defineProperty(navigator, "globalPrivacyControl", {
+    configurable: true,
+    value: false,
+  });
 };
 
 beforeEach((): void => {
@@ -72,7 +72,7 @@ afterEach((): void => {
 });
 
 describe("AnalyticsBootstrap", (): void => {
-  test("sets cookieless consent before config and the first page view", async (): Promise<void> => {
+  test("sends nothing before consent and configures GA only after opt-in", async (): Promise<void> => {
     window.history.replaceState(
       {},
       "",
@@ -84,51 +84,68 @@ describe("AnalyticsBootstrap", (): void => {
       await vi.runOnlyPendingTimersAsync();
     });
 
+    expect(screen.getByRole("dialog")).toBeTruthy();
+    expect(screen.queryByTestId("google-tag")).toBeNull();
+    expect(queuedCommands()).toHaveLength(0);
+
+    fireEvent.click(screen.getByRole("button", { name: "Allow analytics" }));
+
     const commands = queuedCommands();
-    expect(Array.isArray(window.dataLayer?.[0])).toBe(false);
-    expect(Object.prototype.toString.call(window.dataLayer?.[0])).toBe(
-      "[object Arguments]",
-    );
-    const consentIndex = commands.findIndex(
+    const consentDefaultIndex = commands.findIndex(
       ([command, action]) => command === "consent" && action === "default",
     );
-    const configIndex = commands.findIndex(
-      ([command]) => command === "config",
+    const consentUpdateIndex = commands.findIndex(
+      ([command, action]) => command === "consent" && action === "update",
     );
+    const configIndex = commands.findIndex(([command]) => command === "config");
     const pageViewIndex = commands.findIndex(
       ([command, eventName]) =>
         command === "event" && eventName === "page_view",
     );
-    expect(consentIndex).toBeGreaterThanOrEqual(0);
-    expect(configIndex).toBeGreaterThan(consentIndex);
+
+    expect(consentDefaultIndex).toBeGreaterThanOrEqual(0);
+    expect(consentUpdateIndex).toBeGreaterThan(consentDefaultIndex);
+    expect(configIndex).toBeGreaterThan(consentUpdateIndex);
     expect(pageViewIndex).toBeGreaterThan(configIndex);
-    expect(commands[consentIndex]?.[2]).toMatchObject({
+    expect(commands[consentDefaultIndex]?.[2]).toMatchObject({
       ad_personalization: "denied",
       ad_storage: "denied",
       ad_user_data: "denied",
       analytics_storage: "denied",
     });
-    expect(commands[configIndex]?.[2]).toMatchObject({ send_page_view: false });
+    expect(commands[consentUpdateIndex]?.[2]).toMatchObject({
+      analytics_storage: "granted",
+    });
+    expect(commands[configIndex]?.[2]).toMatchObject({
+      allow_ad_personalization_signals: false,
+      allow_google_signals: false,
+      cookie_domain: "none",
+      cookie_expires: 15_552_000,
+      cookie_prefix: "p2f",
+      cookie_update: false,
+      send_page_view: false,
+    });
 
     const pageView = commands[pageViewIndex]?.[2] as Record<string, string>;
-    expect(pageView.page_location).toContain("utm_source=launch");
-    expect(pageView.page_location).toContain("utm_medium=email");
+    expect(pageView.page_location).toBe("http://localhost:3000/en");
     expect(pageView.page_location).not.toContain("private=value");
-    expect(pageView.page_location).not.toContain("#section");
+    expect(pageView.campaign_source).toBe("launch");
+    expect(pageView.campaign_medium).toBe("email");
     expect(screen.getByTestId("google-tag").getAttribute("data-src")).toContain(
       "G-TEST123",
     );
   });
 
-  test("sends one page view for each distinct SPA pathname", async (): Promise<void> => {
+  test("honors a stored opt-in and sends one page view per SPA pathname", async (): Promise<void> => {
+    writeAnalyticsConsent("granted");
     const view = render(<AnalyticsBootstrap locale="en" />);
     await act(async (): Promise<void> => {
-      await vi.advanceTimersByTimeAsync(0);
+      await vi.runOnlyPendingTimersAsync();
     });
 
     view.rerender(<AnalyticsBootstrap locale="en" />);
     await act(async (): Promise<void> => {
-      await vi.advanceTimersByTimeAsync(0);
+      await vi.runOnlyPendingTimersAsync();
     });
 
     pathname = "/en/blog";
@@ -136,7 +153,7 @@ describe("AnalyticsBootstrap", (): void => {
     document.title = "Blog | Page 2 File";
     view.rerender(<AnalyticsBootstrap locale="en" />);
     await act(async (): Promise<void> => {
-      await vi.advanceTimersByTimeAsync(0);
+      await vi.runOnlyPendingTimersAsync();
     });
 
     const pageViews = queuedCommands().filter(
@@ -151,43 +168,78 @@ describe("AnalyticsBootstrap", (): void => {
     });
   });
 
-  test("does not load or disclose analytics on blocked pages", async (): Promise<void> => {
+  test("stores an equally accessible refusal without loading Google", async (): Promise<void> => {
+    render(<AnalyticsBootstrap locale="ru" />);
+    await act(async (): Promise<void> => {
+      await vi.runOnlyPendingTimersAsync();
+    });
+
+    fireEvent.click(
+      screen.getByRole("button", { name: "Продолжить без аналитики" }),
+    );
+
+    expect(screen.queryByRole("dialog")).toBeNull();
+    expect(screen.queryByTestId("google-tag")).toBeNull();
+    expect(queuedCommands()).toHaveLength(0);
+    expect(
+      JSON.parse(
+        window.localStorage.getItem(ANALYTICS_CONSENT_STORAGE_KEY) ?? "{}",
+      ),
+    ).toMatchObject({ status: "denied", version: 2 });
+  });
+
+  test("honors Global Privacy Control and does not offer opt-in", async (): Promise<void> => {
+    Object.defineProperty(navigator, "globalPrivacyControl", {
+      configurable: true,
+      value: true,
+    });
+    render(<AnalyticsBootstrap locale="de" />);
+    await act(async (): Promise<void> => {
+      await vi.runOnlyPendingTimersAsync();
+    });
+
+    expect(screen.queryByRole("dialog")).toBeNull();
+    act((): void => openAnalyticsPreferences());
+    expect(screen.getByRole("dialog").textContent).toContain(
+      "Global-Privacy-Control-Signal",
+    );
+    expect(
+      screen.queryByRole("button", { name: "Analytics erlauben" }),
+    ).toBeNull();
+    expect(screen.queryByTestId("google-tag")).toBeNull();
+  });
+
+  test("allows consent withdrawal and removes the Google script", async (): Promise<void> => {
+    writeAnalyticsConsent("granted");
+    render(<AnalyticsBootstrap locale="en" />);
+    await act(async (): Promise<void> => {
+      await vi.runOnlyPendingTimersAsync();
+    });
+    expect(screen.getByTestId("google-tag")).toBeTruthy();
+
+    act((): void => openAnalyticsPreferences());
+    fireEvent.click(
+      screen.getByRole("button", { name: "Continue without analytics" }),
+    );
+
+    expect(screen.queryByTestId("google-tag")).toBeNull();
+    expect(window.page2fileAnalyticsConsent).toBe("denied");
+    expect(
+      JSON.parse(
+        window.localStorage.getItem(ANALYTICS_CONSENT_STORAGE_KEY) ?? "{}",
+      ),
+    ).toMatchObject({ status: "denied", version: 2 });
+  });
+
+  test("does not load or request consent on blocked pages", async (): Promise<void> => {
     analyticsAllowed = false;
     render(<AnalyticsBootstrap locale="en" />);
     await act(async (): Promise<void> => {
-      await vi.advanceTimersByTimeAsync(0);
+      await vi.runOnlyPendingTimersAsync();
     });
 
     expect(screen.queryByTestId("google-tag")).toBeNull();
-    expect(screen.queryByRole("note")).toBeNull();
+    expect(screen.queryByRole("dialog")).toBeNull();
     expect(queuedCommands()).toHaveLength(0);
-  });
-
-  test("shows a non-interactive notice once per session and pauses while focused", async (): Promise<void> => {
-    render(<AnalyticsBootstrap locale="ru" />);
-    await act(async (): Promise<void> => {
-      await vi.advanceTimersByTimeAsync(0);
-    });
-
-    const notice = screen.getByRole("note");
-    expect(notice.textContent).toContain(
-      "Google Analytics без аналитических cookies",
-    );
-    expect(screen.queryByRole("button")).toBeNull();
-    const details = screen.getByRole("link", { name: "Подробнее" });
-    fireEvent.focus(details);
-    await act(async (): Promise<void> => {
-      await vi.advanceTimersByTimeAsync(8_000);
-    });
-    expect(screen.getByRole("note")).toBeTruthy();
-
-    fireEvent.blur(details);
-    await act(async (): Promise<void> => {
-      await vi.advanceTimersByTimeAsync(8_000);
-    });
-    expect(screen.queryByRole("note")).toBeNull();
-    expect(window.sessionStorage.getItem("page2file-analytics-notice-v1")).toBe(
-      "shown",
-    );
   });
 });

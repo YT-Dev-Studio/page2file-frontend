@@ -39,7 +39,7 @@ const supportCopy: Record<Locale, SupportCopy> = {
     contactLabel: "Support email",
     cooldownButton: "Feedback sent",
     deliveryNote:
-      "Your message is delivered to the Page 2 PDF development topic.",
+      "Your message is delivered to a private Page 2 File support topic in Telegram.",
     emailError: "Enter a valid email address.",
     emailHelper: "We use this address to identify the sender and reply if needed.",
     emailLabel: "Email",
@@ -52,7 +52,7 @@ const supportCopy: Record<Locale, SupportCopy> = {
     metadataTitle: "Page 2 PDF support",
     privacyAfter: ".",
     privacyBefore:
-      "The email address and comment are sent to our support chat as described in the",
+      "The email address and comment are sent to our private Telegram support topic as described in the",
     privacyLabel: "Privacy Policy",
     submitButton: "Send comment",
     submittingButton: "Sending",
@@ -73,7 +73,7 @@ const supportCopy: Record<Locale, SupportCopy> = {
     contactLabel: "Почта поддержки",
     cooldownButton: "Комментарий отправлен",
     deliveryNote:
-      "Сообщение поступит в топик разработки расширения Page 2 PDF.",
+      "Сообщение поступит в приватный топик поддержки Page 2 File в Telegram.",
     emailError: "Введите корректный адрес почты.",
     emailHelper:
       "Мы используем этот адрес, чтобы определить отправителя и при необходимости ответить.",
@@ -87,7 +87,7 @@ const supportCopy: Record<Locale, SupportCopy> = {
     metadataTitle: "Поддержка Page 2 PDF",
     privacyAfter: ".",
     privacyBefore:
-      "Почта и комментарий передаются в служебный чат согласно",
+      "Почта и комментарий передаются в приватный топик поддержки в Telegram согласно",
     privacyLabel: "Политике конфиденциальности",
     submitButton: "Отправить комментарий",
     submittingButton: "Отправляем",
@@ -108,7 +108,7 @@ const supportCopy: Record<Locale, SupportCopy> = {
     contactLabel: "Support-E-Mail",
     cooldownButton: "Feedback gesendet",
     deliveryNote:
-      "Ihre Nachricht wird an den Entwicklungskanal von Page 2 PDF übermittelt.",
+      "Ihre Nachricht wird an ein privates Support-Thema von Page 2 File in Telegram übermittelt.",
     emailError: "Geben Sie eine gültige E-Mail-Adresse ein.",
     emailHelper:
       "Wir verwenden diese Adresse, um den Absender zuzuordnen und bei Bedarf zu antworten.",
@@ -122,7 +122,7 @@ const supportCopy: Record<Locale, SupportCopy> = {
     metadataTitle: "Support für Page 2 PDF",
     privacyAfter: ".",
     privacyBefore:
-      "E-Mail-Adresse und Kommentar werden an unseren Support-Chat gesendet, wie in der",
+      "E-Mail-Adresse und Kommentar werden an unser privates Telegram-Support-Thema gesendet, wie in der",
     privacyLabel: "Datenschutzerklärung",
     submitButton: "Kommentar senden",
     submittingButton: "Wird gesendet",

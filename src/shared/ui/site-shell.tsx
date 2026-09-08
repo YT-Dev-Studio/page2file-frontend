@@ -3,7 +3,10 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import page2FileLogo from "@/app/assets/logo.png";
 import { getLandingContent } from "@/content/landings";
-import { AnalyticsBootstrap } from "@/features/analytics/analytics-bootstrap";
+import {
+  AnalyticsBootstrap,
+  AnalyticsSettingsButton,
+} from "@/features/analytics/analytics-bootstrap";
 import { getExtensionCopy } from "@/features/extension/extension-copy";
 import type { Locale } from "@/shared/i18n/locales";
 import { getMessages } from "@/shared/i18n/messages";
@@ -97,6 +100,10 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
             <Link href={`/${locale}/privacy#cookies`}>
               {copy.links.cookiePolicy}
             </Link>
+            <AnalyticsSettingsButton
+              className={styles.footerLinkButton}
+              locale={locale}
+            />
           </nav>
         </div>
 

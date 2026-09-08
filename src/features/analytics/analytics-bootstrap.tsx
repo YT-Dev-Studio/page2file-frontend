@@ -7,11 +7,22 @@ import {
   useEffect,
   useRef,
   useState,
-  type FocusEvent,
+  type KeyboardEvent,
   type ReactNode,
 } from "react";
 import { gaMeasurementId } from "@/shared/config/site";
+import { Button } from "@/shared/ui/components/button/button";
 import { isLocale, type Locale } from "@/shared/i18n/locales";
+import {
+  ANALYTICS_COOKIE_LIFETIME_SECONDS,
+  ANALYTICS_PREFERENCES_EVENT,
+  hasGlobalPrivacyControl,
+  openAnalyticsPreferences,
+  readAnalyticsConsent,
+  removeGoogleAnalyticsCookies,
+  writeAnalyticsConsent,
+  type AnalyticsConsentStatus,
+} from "./analytics-consent";
 import {
   isAnalyticsAllowedForCurrentPage,
   trackAnalyticsEvent,
@@ -31,14 +42,11 @@ export type Attribution = Partial<Record<AttributionKey, string>>;
 declare global {
   interface Window {
     page2fileAnalyticsConfigured?: boolean;
-    page2fileAnalyticsNoticeShown?: boolean;
     page2fileLastTrackedLocation?: string;
     page2filePreviousTrackedLocation?: string;
   }
 }
 
-const ANALYTICS_NOTICE_KEY = "page2file-analytics-notice-v1";
-const NOTICE_DURATION_MS = 8_000;
 const UTM_KEYS: ReadonlyArray<AttributionKey> = [
   "utm_source",
   "utm_medium",
@@ -47,24 +55,71 @@ const UTM_KEYS: ReadonlyArray<AttributionKey> = [
   "utm_content",
 ];
 
-const noticeCopy: Record<
-  Locale,
-  { details: string; message: string }
-> = {
+type AnalyticsConsentCopy = {
+  allow: string;
+  close: string;
+  deny: string;
+  details: string;
+  disabledMessage: string;
+  enabledMessage: string;
+  gpcMessage: string;
+  initialMessage: string;
+  settingsLabel: string;
+  settingsTitle: string;
+  title: string;
+};
+
+const consentCopy: Record<Locale, AnalyticsConsentCopy> = {
   en: {
-    details: "Learn more",
-    message:
-      "Anonymous usage statistics via Google Analytics, without analytics cookies.",
+    allow: "Allow analytics",
+    close: "Close",
+    deny: "Continue without analytics",
+    details: "Read the Privacy Policy",
+    disabledMessage:
+      "Optional analytics is disabled. Page 2 File works without it.",
+    enabledMessage:
+      "Google Analytics is enabled on public pages. You can withdraw consent at any time.",
+    gpcMessage:
+      "Your browser sends a Global Privacy Control signal, so optional analytics stays disabled.",
+    initialMessage:
+      "With your permission, Google Analytics measures public page visits and product-link clicks. No data is sent to Google before you choose Allow analytics, and the site works if you decline.",
+    settingsLabel: "Privacy settings",
+    settingsTitle: "Analytics settings",
+    title: "Optional analytics",
   },
   ru: {
-    details: "Подробнее",
-    message:
-      "Анонимная статистика: Google Analytics без аналитических cookies.",
+    allow: "Разрешить аналитику",
+    close: "Закрыть",
+    deny: "Продолжить без аналитики",
+    details: "Открыть Политику конфиденциальности",
+    disabledMessage:
+      "Необязательная аналитика отключена. Page 2 File работает без неё.",
+    enabledMessage:
+      "Google Analytics включён на публичных страницах. Согласие можно отозвать в любое время.",
+    gpcMessage:
+      "Браузер передаёт сигнал Global Privacy Control, поэтому необязательная аналитика остаётся отключённой.",
+    initialMessage:
+      "С вашего разрешения Google Analytics измеряет посещения публичных страниц и переходы по ссылкам продукта. До выбора «Разрешить аналитику» данные в Google не отправляются, а после отказа сайт продолжает работать.",
+    settingsLabel: "Настройки конфиденциальности",
+    settingsTitle: "Настройки аналитики",
+    title: "Необязательная аналитика",
   },
   de: {
-    details: "Mehr erfahren",
-    message:
-      "Anonyme Nutzungsstatistiken über Google Analytics, ohne Analytics-Cookies.",
+    allow: "Analytics erlauben",
+    close: "Schließen",
+    deny: "Ohne Analytics fortfahren",
+    details: "Datenschutzerklärung lesen",
+    disabledMessage:
+      "Optionale Analytics sind deaktiviert. Page 2 File funktioniert auch ohne sie.",
+    enabledMessage:
+      "Google Analytics ist auf öffentlichen Seiten aktiviert. Sie können Ihre Einwilligung jederzeit widerrufen.",
+    gpcMessage:
+      "Ihr Browser sendet ein Global-Privacy-Control-Signal. Optionale Analytics bleiben deshalb deaktiviert.",
+    initialMessage:
+      "Mit Ihrer Einwilligung misst Google Analytics Besuche öffentlicher Seiten und Klicks auf Produktlinks. Vor der Auswahl „Analytics erlauben“ werden keine Daten an Google gesendet; bei Ablehnung funktioniert die Website weiterhin.",
+    settingsLabel: "Datenschutzeinstellungen",
+    settingsTitle: "Analytics-Einstellungen",
+    title: "Optionale Analytics",
   },
 };
 
@@ -113,22 +168,27 @@ const toCampaignParameters = (
   return campaignParameters;
 };
 
-const getSanitizedUrl = (
-  value: string,
-  attribution: Attribution = {},
-): string => {
+const getSanitizedUrl = (value: string): string => {
   try {
     const url = new URL(value, window.location.origin);
     url.search = "";
     url.hash = "";
-    const addAttributionParameter = (key: AttributionKey): void => {
-      const parameter = attribution[key];
-      if (parameter) {
-        url.searchParams.set(key, parameter);
-      }
-    };
-    UTM_KEYS.forEach(addAttributionParameter);
     return url.toString();
+  } catch {
+    return "";
+  }
+};
+
+const getSanitizedReferrer = (value: string): string => {
+  if (!value) {
+    return "";
+  }
+
+  try {
+    const url = new URL(value, window.location.origin);
+    return url.origin === window.location.origin
+      ? getSanitizedUrl(url.toString())
+      : `${url.origin}/`;
   } catch {
     return "";
   }
@@ -163,14 +223,29 @@ const initializeGoogleAnalytics = (): NonNullable<Window["gtag"]> => {
       ad_user_data: "denied",
       analytics_storage: "denied",
     });
+  }
+
+  window.gtag("consent", "update", {
+    ad_personalization: "denied",
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    analytics_storage: "granted",
+  });
+
+  if (!window.page2fileAnalyticsConfigured) {
     window.gtag("config", gaMeasurementId, {
       allow_ad_personalization_signals: false,
       allow_google_signals: false,
+      cookie_domain: "none",
+      cookie_expires: ANALYTICS_COOKIE_LIFETIME_SECONDS,
+      cookie_prefix: "p2f",
+      cookie_update: false,
       send_page_view: false,
     });
     window.page2fileAnalyticsConfigured = true;
   }
 
+  window.page2fileAnalyticsConsent = "granted";
   return window.gtag;
 };
 
@@ -178,7 +253,7 @@ const sendCurrentPageView = (): void => {
   const isLandingView = !window.page2fileLastTrackedLocation;
   const attribution = isLandingView ? readLandingAttribution() : {};
   const canonicalLocation = getSanitizedUrl(window.location.href);
-  const pageLocation = getSanitizedUrl(window.location.href, attribution);
+  const pageLocation = canonicalLocation;
 
   if (
     !canonicalLocation ||
@@ -189,7 +264,7 @@ const sendCurrentPageView = (): void => {
   }
 
   const pageReferrer = window.page2filePreviousTrackedLocation ??
-    getSanitizedUrl(document.referrer);
+    getSanitizedReferrer(document.referrer);
   const gtag = initializeGoogleAnalytics();
   gtag("event", "page_view", {
     page_location: pageLocation,
@@ -242,43 +317,137 @@ const parseTrackedElement = (element: HTMLElement): AnalyticsEvent | null => {
   return null;
 };
 
-const AnalyticsNotice = ({
-  locale,
-  onPauseChange,
-}: {
+type AnalyticsConsentPanelProps = {
+  gpcActive: boolean;
   locale: Locale;
-  onPauseChange: (paused: boolean) => void;
-}): ReactNode => {
-  const copy = noticeCopy[locale];
-  const handleMouseEnter = (): void => {
-    onPauseChange(true);
-  };
-  const handleMouseLeave = (): void => {
-    onPauseChange(false);
-  };
-  const handleFocus = (): void => {
-    onPauseChange(true);
-  };
-  const handleBlur = (event: FocusEvent<HTMLDivElement>): void => {
-    if (!event.currentTarget.contains(event.relatedTarget)) {
-      onPauseChange(false);
+  onAllow: () => void;
+  onClose: () => void;
+  onDeny: () => void;
+  status: AnalyticsConsentStatus;
+};
+
+const AnalyticsConsentPanel = ({
+  gpcActive,
+  locale,
+  onAllow,
+  onClose,
+  onDeny,
+  status,
+}: AnalyticsConsentPanelProps): ReactNode => {
+  const copy = consentCopy[locale];
+  const message = gpcActive
+    ? copy.gpcMessage
+    : status === "granted"
+      ? copy.enabledMessage
+      : status === "denied"
+        ? copy.disabledMessage
+        : copy.initialMessage;
+  const firstActionRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(function focusFirstAction(): void {
+    firstActionRef.current?.focus();
+  }, []);
+
+  const handleKeyDown = (
+    event: KeyboardEvent<HTMLDivElement>,
+  ): void => {
+    if (event.key !== "Escape") {
+      return;
+    }
+    event.preventDefault();
+    if (status === "unset") {
+      onDeny();
+    } else {
+      onClose();
     }
   };
 
   return (
     <div
+      aria-describedby="analytics-consent-description"
+      aria-labelledby="analytics-consent-title"
+      aria-modal="false"
       className={styles.notice}
-      onBlur={handleBlur}
-      onFocus={handleFocus}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      role="note"
+      data-consent-status={status}
+      onKeyDown={handleKeyDown}
+      role="dialog"
     >
-      <p>
-        {copy.message}{" "}
-        <Link href={`/${locale}/privacy#cookies`}>{copy.details}</Link>
-      </p>
+      <h2 id="analytics-consent-title">
+        {status === "unset" ? copy.title : copy.settingsTitle}
+      </h2>
+      <p id="analytics-consent-description">{message}</p>
+      <Link href={`/${locale}/privacy#cookies`}>{copy.details}</Link>
+      <div className={styles.actions}>
+        {gpcActive ? (
+          <Button
+            ref={firstActionRef}
+            showIcon={false}
+            size="small"
+            type="button"
+            variant="secondary"
+            onClick={onClose}
+          >
+            {copy.close}
+          </Button>
+        ) : (
+          <>
+            <Button
+              ref={firstActionRef}
+              showIcon={false}
+              size="small"
+              type="button"
+              variant="secondary"
+              onClick={status === "denied" ? onClose : onDeny}
+            >
+              {status === "denied" ? copy.close : copy.deny}
+            </Button>
+            {status === "granted" ? (
+              <Button
+                showIcon={false}
+                size="small"
+                type="button"
+                variant="secondary"
+                onClick={onClose}
+              >
+                {copy.close}
+              </Button>
+            ) : (
+              <Button
+                showIcon={false}
+                size="small"
+                type="button"
+                variant="secondary"
+                onClick={onAllow}
+              >
+                {copy.allow}
+              </Button>
+            )}
+          </>
+        )}
+      </div>
     </div>
+  );
+};
+
+export const AnalyticsSettingsButton = ({
+  className,
+  locale,
+}: {
+  className?: string;
+  locale: Locale;
+}): ReactNode => {
+  if (!gaMeasurementId) {
+    return null;
+  }
+
+  return (
+    <button
+      className={className}
+      type="button"
+      onClick={openAnalyticsPreferences}
+    >
+      {consentCopy[locale].settingsLabel}
+    </button>
   );
 };
 
@@ -288,40 +457,73 @@ export const AnalyticsBootstrap = ({
   locale: Locale;
 }): ReactNode => {
   const pathname = usePathname();
+  const [consentStatus, setConsentStatus] =
+    useState<AnalyticsConsentStatus>("unset");
+  const [gpcActive, setGpcActive] = useState(false);
+  const [preferencesVisible, setPreferencesVisible] = useState(false);
   const [scriptEnabled, setScriptEnabled] = useState(false);
-  const [noticeVisible, setNoticeVisible] = useState(false);
-  const [noticePaused, setNoticePaused] = useState(false);
-  const noticeTimerRef = useRef<number | null>(null);
+
+  const enableAnalytics = (): void => {
+    if (hasGlobalPrivacyControl()) {
+      return;
+    }
+    writeAnalyticsConsent("granted");
+    setConsentStatus("granted");
+    setPreferencesVisible(false);
+    if (!isAnalyticsAllowedForCurrentPage()) {
+      return;
+    }
+    setGoogleAnalyticsDisabled(false);
+    sendCurrentPageView();
+    setScriptEnabled(true);
+  };
+
+  const disableAnalytics = (): void => {
+    writeAnalyticsConsent("denied");
+    window.page2fileAnalyticsConsent = "denied";
+    window.gtag?.("consent", "update", {
+      ad_personalization: "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      analytics_storage: "denied",
+    });
+    setGoogleAnalyticsDisabled(true);
+    removeGoogleAnalyticsCookies();
+    setConsentStatus("denied");
+    setPreferencesVisible(false);
+    setScriptEnabled(false);
+  };
 
   useEffect(
     function initializeAnalytics(): () => void {
       const timer = window.setTimeout(function startAnalytics(): void {
         if (!isAnalyticsAllowedForCurrentPage()) {
           setGoogleAnalyticsDisabled(true);
-          setNoticeVisible(false);
+          setPreferencesVisible(false);
+          setScriptEnabled(false);
           return;
         }
 
-        setGoogleAnalyticsDisabled(false);
-        initializeGoogleAnalytics();
-        sendCurrentPageView();
-        setScriptEnabled(true);
+        const globalPrivacyControl = hasGlobalPrivacyControl();
+        if (globalPrivacyControl) {
+          writeAnalyticsConsent("denied");
+        }
+        const storedConsent = readAnalyticsConsent();
+        setGpcActive(globalPrivacyControl);
+        setConsentStatus(storedConsent);
 
-        let noticeAlreadyShown = window.page2fileAnalyticsNoticeShown === true;
-        try {
-          noticeAlreadyShown =
-            noticeAlreadyShown ||
-            window.sessionStorage.getItem(ANALYTICS_NOTICE_KEY) === "shown";
-          if (!noticeAlreadyShown) {
-            window.sessionStorage.setItem(ANALYTICS_NOTICE_KEY, "shown");
-          }
-        } catch {
-          // The in-memory flag still prevents repeated notices in this tab.
+        if (storedConsent === "granted" && !globalPrivacyControl) {
+          setGoogleAnalyticsDisabled(false);
+          sendCurrentPageView();
+          setScriptEnabled(true);
+          setPreferencesVisible(false);
+          return;
         }
-        if (!noticeAlreadyShown) {
-          window.page2fileAnalyticsNoticeShown = true;
-          setNoticeVisible(true);
-        }
+
+        window.page2fileAnalyticsConsent = "denied";
+        setGoogleAnalyticsDisabled(true);
+        setScriptEnabled(false);
+        setPreferencesVisible(storedConsent === "unset");
       }, 0);
 
       return (): void => window.clearTimeout(timer);
@@ -351,26 +553,22 @@ export const AnalyticsBootstrap = ({
     return (): void => document.removeEventListener("click", handleTrackedClick);
   }, []);
 
-  useEffect(
-    function manageNoticeTimer(): () => void {
-      if (!noticeVisible || noticePaused) {
-        return (): void => undefined;
-      }
-
-      noticeTimerRef.current = window.setTimeout((): void => {
-        setNoticeVisible(false);
-        noticeTimerRef.current = null;
-      }, NOTICE_DURATION_MS);
-
-      return (): void => {
-        if (noticeTimerRef.current !== null) {
-          window.clearTimeout(noticeTimerRef.current);
-          noticeTimerRef.current = null;
-        }
-      };
-    },
-    [noticePaused, noticeVisible],
-  );
+  useEffect(function listenForPreferenceRequests(): () => void {
+    const handlePreferenceRequest = (): void => {
+      setGpcActive(hasGlobalPrivacyControl());
+      setConsentStatus(readAnalyticsConsent());
+      setPreferencesVisible(true);
+    };
+    window.addEventListener(
+      ANALYTICS_PREFERENCES_EVENT,
+      handlePreferenceRequest,
+    );
+    return (): void =>
+      window.removeEventListener(
+        ANALYTICS_PREFERENCES_EVENT,
+        handlePreferenceRequest,
+      );
+  }, []);
 
   if (!gaMeasurementId) {
     return null;
@@ -386,8 +584,15 @@ export const AnalyticsBootstrap = ({
           strategy="afterInteractive"
         />
       ) : null}
-      {noticeVisible ? (
-        <AnalyticsNotice locale={locale} onPauseChange={setNoticePaused} />
+      {preferencesVisible ? (
+        <AnalyticsConsentPanel
+          gpcActive={gpcActive}
+          locale={locale}
+          status={consentStatus}
+          onAllow={enableAnalytics}
+          onClose={(): void => setPreferencesVisible(false)}
+          onDeny={disableAnalytics}
+        />
       ) : null}
     </>
   );

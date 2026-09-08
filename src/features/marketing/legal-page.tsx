@@ -26,16 +26,16 @@ type LegalSectionProps = {
 
 const legalPageCopy: Record<Locale, LegalPageCopy> = {
   en: {
-    updatedAt: "Updated 4 August 2026",
-    privacyUpdatedAt: "Updated 27 August 2026",
+    updatedAt: "Updated 8 September 2026",
+    privacyUpdatedAt: "Updated 8 September 2026",
   },
   ru: {
-    updatedAt: "Обновлено 4 августа 2026 года",
-    privacyUpdatedAt: "Обновлено 27 августа 2026 года",
+    updatedAt: "Обновлено 8 сентября 2026 года",
+    privacyUpdatedAt: "Обновлено 8 сентября 2026 года",
   },
   de: {
-    updatedAt: "Aktualisiert am 4. August 2026",
-    privacyUpdatedAt: "Aktualisiert am 27. August 2026",
+    updatedAt: "Aktualisiert am 8. September 2026",
+    privacyUpdatedAt: "Aktualisiert am 8. September 2026",
   },
 };
 

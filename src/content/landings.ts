@@ -95,85 +95,89 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
         route: "privacy",
         eyebrow: "Privacy and data processing",
         title: "Page 2 File privacy policy",
-        description: "How Page 2 File processes webpage content, temporary conversion files, service cookies, analytics data and privacy requests.",
-        lead: "This Privacy Policy explains what Page 2 File processes when you visit the website, use the Page 2 PDF Chrome extension, or use an available website conversion workflow.",
+        description: "How Page 2 File processes service, support and consented analytics data, how long it is kept, and how to exercise privacy rights.",
+        lead: "This Privacy Policy explains what Page 2 File processes when you visit the website, contact support, use the Page 2 PDF Chrome extension, or use an available website conversion workflow. Optional Google Analytics is off until you give consent.",
         sections: [
             {
                 heading: "Operator and scope",
-                body: "{{entityName}}, located at {{address}}, operates Page 2 File and is responsible for the processing described in this policy. This policy applies to the Page 2 File website, the Page 2 PDF browser extension and related webpage-to-file conversion services.",
+                body: "{{entityName}}, located at {{address}}, operates Page 2 File and is the controller responsible for the processing described here. This policy applies to the Page 2 File website, the Page 2 PDF browser extension and related webpage-to-file conversion services.",
             },
             {
-                heading: "Definitions",
-                body: "“Service” means Page 2 File and its conversion features. “Conversion content” means the URL, visible webpage content, selected options and generated PDF file involved in a conversion. “Personal data” means information that identifies or can reasonably be linked to a person.",
+                heading: "Data sources and categories",
+                body: "We receive data directly from you, your browser and the infrastructure that delivers the Service. Depending on the feature, this can include an IP address and technical request data, browser and device information, Page 2 File pages visited after analytics consent, permitted campaign values, an email address and support message, a public URL, conversion settings, temporary job identifiers and generated files.",
             },
             {
-                heading: "Information we process",
-                body: "Depending on how you use the Service, we may process technical request data, IP address, browser and device information, visited Page 2 File pages, permitted campaign parameters, a public URL or content visible in an active browser tab, conversion settings, temporary job identifiers and generated files.",
+                heading: "Data we do not request and the extension boundary",
+                body: "Page 2 File does not require an account and does not ask for payment-card details, billing addresses or passwords for the original website. The extension uses the page already open in your browser. It creates active-tab documents inside the extension workflow and does not send page or conversation content to Page 2 File or Google Analytics.",
             },
             {
-                heading: "Information we do not request",
-                body: "Page 2 File does not require a Page 2 File account and does not ask for payment-card details, billing addresses or passwords for the original website. The extension uses the page already open in your browser and does not receive the password you used to access that website.",
-            },
-            {
-                heading: "How we use information",
-                body: "We process information to provide previews and files, protect the Service against abuse, diagnose failures, maintain reliability, understand aggregate use of public pages, respond to requests and comply with applicable law. We do not sell personal data.",
+                heading: "Purposes and legal bases",
+                body: "We process data to provide a feature you request, answer support messages, secure and operate the Service, diagnose failures, comply with law, and—only with consent—measure public-page use. Depending on applicable law, the bases are performance of a contract or steps you request, our legitimate interests in security and reliability, compliance with legal obligations, and consent for optional analytics and a support transfer where consent is required.",
             },
             {
                 heading: "Conversion content and temporary processing",
-                body: "A website conversion, where available, requires temporary server processing of the submitted public page and selected options. Page 2 PDF creates active-tab documents inside the extension workflow and does not upload page or conversation content to Page 2 File servers. Neither workflow provides an account-based conversion history; temporary preview data and generated artifacts are removed after their lifecycle or configured technical expiry.",
+                body: "A website conversion, where available, requires temporary processing of the public page and options you submit. The response supplies expiry times for temporary jobs, previews and files. Page 2 File does not provide an account-based conversion history; temporary data is removed at the stated technical expiry or earlier when the workflow permits.",
             },
             {
                 heading: "Support messages",
-                body: "When you use the support form, Page 2 File sends the email address and comment you provide to a private Telegram development topic so the team can review the request. Support correspondence may be retained for the period reasonably needed to respond, investigate the issue, protect the Service or document the resolution.",
+                body: "When you press Send in the support form, the email address and comment you provide are delivered through the Telegram Bot API to a private Page 2 File development topic. This transfer is shown beside the form before submission. Correspondence is limited to team members who need it and is kept until the request and related security or legal issues are resolved, then deleted or de-identified when it is no longer needed.",
             },
             {
-                heading: "Analytics and attribution",
-                body: "When a valid Google Analytics Measurement ID is configured, Google Analytics loads automatically on public pages in cookieless mode. Analytics storage remains denied, so the tag does not read or write analytics cookies. Google may receive the page title, a cleaned page address and referrer, device and browser information, approximate location, and normalized campaign values. Page 2 File does not send support-form fields or conversion content to Google Analytics and does not provide analytics controls on the site.",
+                heading: "Optional Google Analytics",
+                body: "Google Analytics is implemented in basic consent mode. The Google tag is not loaded and no consent ping, page view or event is sent to Google until you select Allow analytics. If you consent, Google may receive your IP address at collection, a page title and address without query or hash values, the origin of an external referrer, browser and device information, coarse location derived by Google, normalized campaign values and a small set of product-link events. We never send support fields or conversion content to Analytics.",
             },
             {
-                heading: "Service providers and disclosures",
-                body: "Page 2 File uses {{processors}} to deliver, protect and measure the Service. These providers may process technical data only as needed for their services and under their own privacy terms. We may also disclose information when required by law, to protect rights or safety, or as part of a lawful business transfer.",
+                heading: "Analytics controls and retention",
+                body: "After consent, Google Analytics uses first-party cookies with the p2f_ga prefix. They expire up to 180 days after the first consent and are not refreshed on later page loads. The Analytics property uses the shortest available user and event retention period of two months; standard aggregated reports may remain longer under Google’s product rules. Google signals, advertising personalization, automatic enhanced measurement, and detailed location and device collection are disabled.",
             },
             {
-                heading: "Retention and deletion",
-                body: "Conversion content is kept only for the temporary processing and download workflow and is not retained as a user-visible history. Security logs, infrastructure records, analytics data and correspondence may be retained for the period reasonably required for security, operations, legal obligations or resolving a request.",
+                heading: "Service providers and recipients",
+                body: "Cloudflare hosts, delivers and protects the website; Google provides consented Analytics; and Telegram delivers support messages. Each provider processes only the categories needed for that role under its applicable terms. We may also disclose data when law requires it, to protect rights or safety, or during a lawful business transfer with appropriate safeguards.",
             },
             {
-                heading: "Security",
-                body: "Page 2 File uses same-origin conversion routes, anonymous session controls, Origin and CSRF checks, signed backend requests, URL validation, isolated rendering and temporary artifacts. No technical or organizational measure can guarantee absolute security, so you should avoid converting material you are not permitted to disclose.",
+                heading: "Other retention",
+                body: "Essential session and CSRF values expire after one hour. Temporary conversion data follows the expiry returned for the job. Infrastructure and security records are kept only for the period needed to operate, investigate abuse, meet provider constraints or satisfy legal obligations. Support correspondence follows the criteria described above. We remove or de-identify personal data when its purpose and required retention end.",
             },
             {
                 heading: "International processing",
-                body: "Our providers may process technical or analytics data in countries other than your own. Where applicable, we rely on provider safeguards and lawful transfer mechanisms. The operator is established in {{jurisdiction}}.",
+                body: "The operator is established in {{jurisdiction}}. Cloudflare, Google and Telegram may process data in other countries. Where a transfer requires safeguards, we rely on the provider’s data-processing terms and available contractual transfer mechanisms; where applicable law requires consent for a third-party or cross-border transfer, we request it before optional Analytics or make the support transfer clear before submission.",
+            },
+            {
+                heading: "Security",
+                body: "Page 2 File uses same-origin routes, short-lived anonymous sessions, Origin and CSRF checks, signed backend requests, URL validation, isolated rendering and temporary artifacts. Access is limited by role. No measure can guarantee absolute security, so do not submit material you are not permitted to disclose.",
             },
             {
                 heading: "Your privacy rights",
-                body: "Depending on applicable law, you may request access to, correction of, deletion of or restriction on personal data associated with you, or object to certain processing. Because Page 2 File has no user accounts or conversion-history archive, we may need information from you to identify any relevant operational record.",
+                body: "Depending on applicable law, you may request information and access, correction, deletion, restriction, portability, or object to processing. You may withdraw consent without affecting earlier lawful processing and complain to the competent data-protection authority. We do not make decisions that produce legal or similarly significant effects solely by automated processing. We may request limited information needed to locate a record and verify the requester.",
             },
             {
-                heading: "Third-party websites",
-                body: "Page 2 File can open or convert content from websites operated by others and may link to external services. Their content, security and privacy practices are controlled by those third parties, and their own terms apply when you use them.",
-            },
-            {
-                heading: "Children",
-                body: "The Service is not directed to children under 13, and we do not knowingly collect personal data from children under 13. A parent or guardian who believes a child has provided personal data may contact us to request its deletion.",
+                heading: "No sale, targeted advertising or profiling",
+                body: "Page 2 File does not sell personal data, share it for cross-context behavioral advertising, use sensitive personal data to infer characteristics, or run targeted advertising on the website. Global Privacy Control is treated as a refusal of optional Analytics even where the signal is not legally required for this processing.",
             },
             {
                 id: "cookies",
-                heading: "Analytics storage and service cookies",
-                body: "Page 2 File uses the short-lived p2f_session and p2f_csrf cookies to maintain an anonymous same-origin session and protect requests such as support feedback. They use Strict SameSite settings and expire after one hour. Google Analytics runs with analytics storage denied and does not read or write analytics cookies. We do not place feedback text, conversion content, or directly identifying profile data in these cookies.",
+                heading: "Cookies and local storage",
+                body: "The strictly necessary p2f_session and p2f_csrf first-party cookies maintain an anonymous same-origin session and protect a requested support or conversion action; they use Strict SameSite settings and expire after one hour. The local-storage key page2file-analytics-consent-v2 remembers an allow or deny choice for up to 180 days so the site can honor it. Only after consent does Google Analytics create first-party p2f_ga-prefixed cookies for up to 180 days. These values do not contain support text or conversion content.",
             },
             {
-                heading: "Blocking and deleting cookies",
-                body: "The site does not provide analytics settings. You can still block network requests or delete service cookies through your browser settings. Blocking the Page 2 File session or CSRF cookies may prevent support and other protected same-origin requests from working, but it does not prevent core public pages from loading.",
+                heading: "Your analytics choice",
+                body: "The first consent panel gives equally available choices to continue without Analytics or allow it. Use Privacy settings in the footer to review or withdraw consent; withdrawal stops future events and removes accessible p2f_ga cookies. An expired or cleared choice returns Analytics to off. Blocking essential session or CSRF cookies may prevent protected support or conversion requests, but public pages still load.",
+            },
+            {
+                heading: "Adults only",
+                body: "The Service is intended only for people who are at least 18 and have reached the age of majority where they live. We do not knowingly collect personal data from minors. A parent or guardian who believes a minor submitted personal data can contact us to request deletion.",
+            },
+            {
+                heading: "Third-party websites",
+                body: "Page 2 File can open or convert content from websites operated by others and may link to external services. Those parties control their content, security and privacy practices, and their own terms apply when you use them.",
             },
             {
                 heading: "Changes to this policy",
-                body: "We may update this policy when the Service, providers or legal requirements change. The updated version will be published on this page with a revised date. Material changes apply from the stated effective date.",
+                body: "We may update this policy when the Service, providers or legal requirements change. The revised version is published here with a new date. A material change to consented processing invalidates the stored Analytics choice so a new choice can be requested.",
             },
             {
-                heading: "Contact",
-                body: "Questions and privacy requests can be sent to {{contactEmail}}. The operator is {{entityName}}, {{address}}, under the laws of {{jurisdiction}}.",
+                heading: "Contact and complaints",
+                body: "Send privacy questions or requests to {{contactEmail}}. The operator is {{entityName}}, {{address}}. We respond within the period required by applicable law. You may also complain to the competent authority where you live or where you believe an infringement occurred.",
             },
         ],
         legal: true,
@@ -187,7 +191,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
         sections: [
             {
                 heading: "Agreement and operator",
-                body: "By accessing or using Page 2 File, you agree to these Terms. The Service is operated by {{entityName}}, located at {{address}}. If you use the Service for an organization, you confirm that you have authority to accept these Terms for that organization.",
+                body: "By accessing or using Page 2 File, you agree to these Terms. You must be at least 18 and have reached the age of majority where you live. The Service is operated by {{entityName}}, located at {{address}}. If you use it for an organization, you confirm that you can accept these Terms for that organization.",
             },
             {
                 heading: "Definitions",
@@ -223,7 +227,7 @@ export const landingContent: Partial<Record<StaticRoute, LandingContent>> = {
             },
             {
                 heading: "Privacy and cookies",
-                body: "Our Privacy Policy explains temporary conversion processing, analytics, service providers and cookies. By using the Service, you acknowledge that processing necessary to provide the requested conversion will occur as described there.",
+                body: "Our Privacy Policy explains necessary processing, optional analytics, service providers, cookies and your choices. Using a requested feature involves the processing needed to provide it; Google Analytics remains optional and requires a separate affirmative choice.",
             },
             {
                 heading: "Page 2 File intellectual property",

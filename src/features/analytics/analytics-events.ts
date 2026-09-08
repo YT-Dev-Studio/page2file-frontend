@@ -44,6 +44,7 @@ declare global {
   interface Window {
     dataLayer?: Array<unknown>;
     gtag?: (...args: Array<unknown>) => void;
+    page2fileAnalyticsConsent?: "denied" | "granted";
   }
 }
 
@@ -120,7 +121,11 @@ const toEventParameters = (
 };
 
 export const trackAnalyticsEvent = (event: AnalyticsEvent): void => {
-  if (!isAnalyticsAllowedForCurrentPage() || !window.gtag) {
+  if (
+    !isAnalyticsAllowedForCurrentPage() ||
+    window.page2fileAnalyticsConsent !== "granted" ||
+    !window.gtag
+  ) {
     return;
   }
 
