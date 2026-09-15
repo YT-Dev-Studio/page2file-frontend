@@ -7,7 +7,6 @@ import {
   AnalyticsBootstrap,
   AnalyticsSettingsButton,
 } from "@/features/analytics/analytics-bootstrap";
-import { getExtensionCopy } from "@/features/extension/extension-copy";
 import type { Locale } from "@/shared/i18n/locales";
 import { getMessages } from "@/shared/i18n/messages";
 import { getSiteCopy } from "@/shared/i18n/site-copy";
@@ -33,7 +32,6 @@ export const Container = ({
 
 const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
   const copy = getSiteCopy(locale).footer;
-  const extensionCopy = getExtensionCopy(locale);
   const messages = getMessages(locale);
   const about = getLandingContent(locale, "about");
 
@@ -56,7 +54,7 @@ const SiteFooter = ({ locale }: { locale: Locale }): ReactNode => {
               />
               <span>PAGE 2 FILE</span>
             </Link>
-            <p>{extensionCopy.homeLead}</p>
+            <p>{copy.brandDescription}</p>
           </div>
 
           <nav aria-label={copy.servicesTitle} className={styles.footerLinks}>

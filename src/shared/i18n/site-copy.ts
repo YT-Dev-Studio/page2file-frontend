@@ -3,6 +3,7 @@ import type { Locale } from "./locales";
 export type SiteCopy = {
   extensionUnavailableTooltip: string;
   footer: {
+    brandDescription: string;
     companyTitle: string;
     copyright: string;
     gptsTitle: string;
@@ -41,6 +42,8 @@ const siteCopy: Record<Locale, SiteCopy> = {
       navigationLabel: "Primary navigation",
     },
     footer: {
+      brandDescription:
+        "A webpage in a clean PDF or PowerPoint — with preview and without manually repairing page breaks.",
       companyTitle: "Company and documents",
       copyright: "© 2026 Page 2 File. All rights reserved.",
       gptsTitle: "GPTs",
@@ -69,6 +72,8 @@ const siteCopy: Record<Locale, SiteCopy> = {
       navigationLabel: "Основная навигация",
     },
     footer: {
+      brandDescription:
+        "Веб-страница в редактируемый PDF или PowerPoint с настраиваемым предпросмотром.",
       companyTitle: "Компания и документы",
       copyright: "© 2026 Page 2 File. Все права защищены.",
       gptsTitle: "GPTs",
@@ -97,6 +102,8 @@ const siteCopy: Record<Locale, SiteCopy> = {
       navigationLabel: "Hauptnavigation",
     },
     footer: {
+      brandDescription:
+        "Eine Webseite als übersichtliche PDF- oder PowerPoint-Datei — mit Vorschau und ohne manuelle Korrektur von Seitenumbrüchen.",
       companyTitle: "Unternehmen und Dokumente",
       copyright: "© 2026 Page 2 File. Alle Rechte vorbehalten.",
       gptsTitle: "GPTs",

@@ -2,11 +2,13 @@ import { describe, expect, test } from "vitest";
 import { getSiteCopy } from "./site-copy";
 
 describe("site shell copy", () => {
-  test("contains only copy used by the reduced site shell", () => {
+  test("contains the copy used by the reduced site shell", () => {
     const russianCopy = getSiteCopy("ru");
 
     expect(russianCopy.header).not.toHaveProperty("navigation");
-    expect(russianCopy.footer).not.toHaveProperty("brandDescription");
+    expect(russianCopy.footer.brandDescription).toBe(
+      "Веб-страница в редактируемый PDF или PowerPoint с настраиваемым предпросмотром.",
+    );
     expect(Object.keys(russianCopy.footer.links).sort()).toEqual([
       "aiChatPdf",
       "cookiePolicy",
