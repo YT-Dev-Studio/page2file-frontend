@@ -1,5 +1,5 @@
 .page {
-  background: var(--p2f-color-background-page);
+  background: var(--p2f-color-violet-ink-50);
   color: var(--p2f-color-ink-navy-800);
 }
 
@@ -287,7 +287,7 @@
 }
 
 .sectionSurface {
-  background: var(--p2f-color-background-surface);
+  background: transparent;
 }
 
 .sectionIntro {
